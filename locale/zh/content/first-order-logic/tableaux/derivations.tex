@@ -21,12 +21,12 @@
 \begin{defn}[!!^{tableau}]
 对于假设 $\sFmla{S_1}{!A_1}$、\dots、$\sFmla{S_n}{!A_n}$（其中每个
 $S_i$ 要么是 $\True$ 要么是~$\False$），!!^a{tableau}是满足如下条件的
-带符号公式的有穷树：
+!!{signed formula}的有穷树：
 \begin{enumerate}
 \item 树中 $n$ 个最顶部的!!{signed formula}依次是
   $\sFmla{S_i}{!A_i}$，一个位于另一个下方。
 \item 树中不属于这些假设之一的每个!!{signed formula}，都是对其上方
-  支中的某个!!{signed formula}正确应用某条推理规则所得的结果。
+  支中的某个!!a{signed formula}正确应用某条推理规则所得的结果。
 \end{enumerate}
 !!a{tableau}的支在同时包含 $\sFmla{\True}{!A}$ 与~$\sFmla{\False}{!A}$
 时是\emph{闭的}，否则是\emph{开的}。每个支都闭的!!^a{tableau}是一个
@@ -39,7 +39,7 @@ $S_i$ 要么是 $\True$ 要么是~$\False$），!!^a{tableau}是满足如下条�
   仅当这些假设已经含有一对!!{signed formula} $\sFmla{\True}{!A}$ 与
   ~$\sFmla{\False}{!A}$ 时它才是闭的。）
 
-  通过将其中一条推理规则应用到!!a{tableau}（开的或闭的）中的某个!!{signed formula}~$!A$，我们可以得到一个新的、更大的!!{tableau}。
+  通过将其中一条推理规则应用到!!a{tableau}（开的或闭的）中的某个!!a{signed formula}~$!A$，我们可以得到一个新的、更大的表。
   该规则会把一个或多个!!{signed formula}追加到任何含有我们施以该
   规则的~$!A$之出现的支的末尾。
 

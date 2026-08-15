@@ -24,9 +24,9 @@
 \]
 就是分别管辖 $\lif$、$\lor$ 和~$\land$ 的常见公理。有些公理系统以公理数目最少为目标。视被当作初始对象的联结词而定，甚至可能找到只含一个公理的公理系统。
 
-推理规则是一个条件陈述，它给出!!a{derivation}中!!a{sentence}得以证成的充分条件。分离规则就是一条非常常见的这类规则：它说若 $!A$ 和 $!A \lif !B$ 已被证成，则 $!B$ 亦被证成。这意味着只要 $!A$ 和 $!A \lif !B$（对某个!!{sentence}~$!A$）都出现在!!{derivation}中~$!B$ 之前，则其中含!!{sentence}~$!B$ 的那一行就被证成。
+推理规则是一个条件陈述，它给出!!a{derivation}中!!a{sentence}得以证成的充分条件。分离规则就是一条非常常见的这类规则：它说若 $!A$ 和 $!A \lif !B$ 已被证成，则 $!B$ 亦被证成。这意味着只要 $!A$ 和 $!A \lif !B$（对某个!!{sentence}~$!A$）都出现在!!{derivation}中~$!B$ 之前，则!!a{derivation}中含!!{sentence}~$!B$ 的那一行就被证成。
 
-基于公理化!!{derivation}的 $\Proves$ 关系定义如下：$\Gamma \Proves !A$，当且仅当存在一个以!!{sentence}~$!A$ 为末行的!!{derivation}（并将 $\Gamma$ 视为该!!{derivation}中由上述 (2) 所证成的!!{sentence}之集合）。$!A$ 是定理，若~$!A$ 有一个其中~$\Gamma$ 为空的!!{derivation}，即!!{derivation}中每个!!{sentence}要么由 (1) 要么由~(3) 证成。例如，下面是证明 $\Proves !A \lif (!B \lif (!B \lor !A))$ 的一个!!{derivation}：
+基于公理化!!{derivation}的 $\Proves$ 关系定义如下：$\Gamma \Proves !A$，当且仅当存在一个以!!{sentence}~$!A$ 为末行的!!a{derivation}（并将 $\Gamma$ 视为该!!{derivation}中由上述 (2) 所证成的!!{sentence}之集合）。$!A$ 是定理，若~$!A$ 有一个其中~$\Gamma$ 为空的!!a{derivation}，即!!{derivation}中每个!!{sentence}要么由 (1) 要么由~(3) 证成。例如，下面是证明 $\Proves !A \lif (!B \lif (!B \lor !A))$ 的一个!!a{derivation}：
 \begin{derivation}
   1. & $!B \lif (!B \lor !A)$ \\
   2. & $(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))$\\

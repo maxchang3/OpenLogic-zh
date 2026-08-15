@@ -50,7 +50,7 @@ $!A \Proves !B$，则 $\Gamma \Proves !B$。这里还有另一个简单
 \olref[ptn]{prop:reflexivity}，$\Gamma \cup \{!A\} \Proves !A$。于是，由 \olref{prop:mp}，$\Gamma \cup
 \{!A\} \Proves !B$。
 
-对于「仅当」方向，我们以!!{derivation}的长度进行归纳，其中!!{derivation}是 $!B$ 从 $\Gamma \cup \{!A\}$ 出发的推演。
+对于「仅当」方向，我们以推演的长度进行归纳，其中!!{derivation}是 $!B$ 从 $\Gamma \cup \{!A\}$ 出发的推演。
 
 对于归纳基始，我们证明该断言对所有长度为 $1$ 的!!{derivation}成立。$!B$ 从 $\Gamma \cup \{!A\}$ 出发的长度为 $1$ 的!!^a{derivation}恰由 $!B$ 本身构成；若它是正确的，则 $!B$ 要么 $\in \Gamma \cup \{!A\}$，要么是一条公理。如果 $!B \in \Gamma$ 或者是公理，则 $\Gamma \Proves !B$。我们亦有 $\Gamma
 \Proves !B \lif (!A \lif !B)$，这来自 \olref[prp]{ax:lif1}，而

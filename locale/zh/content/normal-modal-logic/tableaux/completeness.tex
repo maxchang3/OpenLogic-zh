@@ -23,7 +23,7 @@
 \end{explain}
 
 \begin{defn}
-  若 !a{tableau} 中的一条分支，只要它包含一个可以对其应用某规则的带前缀的!!{formula} $\sFmla{S}{!A}[\sigma]$，它就会包含
+  若 !!a{tableau} 中的一条分支，只要它包含一个可以对其应用某规则的带前缀的!!{formula} $\sFmla{S}{!A}[\sigma]$，它就会包含
   \begin{enumerate}
     \item 对于命题堆叠规则的情形，该规则相应的结论带前缀!!{formula}；
     \item 对于命题分支规则的情形，相应的结论!!{formula}之一；
@@ -51,11 +51,11 @@
 \end{explain}
 
 \begin{prop}\ollabel{prop:complete-tableau}
-  每个有穷的 $\Gamma$ 都有一个所有分支均是完成分支的表列。
+  每个有穷的 $\Gamma$ 都有一个所有分支均是完成分支的!!a{tableau}。
 \end{prop}
 
 \begin{proof}
-  考虑 ~$\Gamma$ 的一个表列中的一条开放分支。分支中有有穷多个可对其应用规则的
+  考虑 ~$\Gamma$ 的一个!!a{tableau}中的一条开放分支。分支中有有穷多个可对其应用规则的
   带前缀!!{formula}。按某一固定顺序（例如从上到下），对于满足条件 (1)--(4) 尚
   未成立的那些带前缀!!{formula}中的每一个，都应用可应用于它的规则来延伸分支。
   在某些情形这将导致分支；对所得每条分支的末端，对所有剩余的带前缀!!{formula}应用规则。由于带前缀!!{formula}的数目是有穷的，且分支上已用前缀的
@@ -69,7 +69,7 @@
 \end{thm}
 
 \begin{proof}
-  由该命题，$\Gamma$ 有一个所有分支均为完成分支的表列。由于 $\Gamma$ 没有闭的!!{tableau}，它至少有一个开放且完成的分支。设 $\Delta$ 为分支上带前缀的!!{formula}的集合，$P(\Delta)$ 为出现在其中的前缀的集合。
+  由该命题，$\Gamma$ 有一个所有分支均为完成分支的!!a{tableau}。由于 $\Gamma$ 没有闭的!!{tableau}，则存在一个其中至少有一条开放且完成的分支的!!a{tableau}。设 $\Delta$ 为分支上带前缀的!!{formula}的集合，$P(\Delta)$ 为出现在其中的前缀的集合。
 
   我们定义一个模型~$\mModel{M(\Delta)} = \tuple{P(\Delta), R, V}$，其中世界就是
   出现在~$\Delta$ 中的前缀，可及关系由下式给出：

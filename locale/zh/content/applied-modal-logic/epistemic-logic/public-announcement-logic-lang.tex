@@ -17,7 +17,7 @@
 \begin{enumerate}
   \tagitem{prvFalse}{!!{falsity}的命题常元~$\lfalse$。}{}
   \tagitem{prvTrue}{!!{truth}的命题常元~$\ltrue$。}{}
-  \item 一个可数的!!{propositional variable}集合：$\Obj
+  \item 一个!!{denumerable}!!{propositional variable}集合：$\Obj
     p_0$, $\Obj p_1$, $\Obj p_2$, \dots
   \item 命题联结词：\startycommalist
   \iftag{prvNot}{\ycomma $\lnot$（否定）}{}%
@@ -25,46 +25,46 @@
   \iftag{prvOr}{\ycomma $\lor$（析取）}{}%
   \iftag{prvIf}{\ycomma $\lif$（!!{conditional}）}{}%
   \item 知识算子 $\Knows_a$，其中 $a \in G$。
-  \item 公开宣告算子 $[!B]$，其中 $!B$ 是公式。
+  \item 公开宣告算子 $[!B]$，其中 $!B$ 是!!a{formula}。
 \end{enumerate}
 \end{defn}
 
 公开宣告算子的作用与盒子算子相似，因此我们对语言的归纳定义也随之给出：
 
 \begin{defn}
-  认知语言的\emph{公式}按如下方式归纳地定义：
+  认知语言的\emph{!!^{formula}}按如下方式归纳地定义：
   \begin{enumerate}
-  \tagitem{prvFalse}{$\lfalse$ 是原子公式。}{}
+  \tagitem{prvFalse}{$\lfalse$ 是原子!!{formula}。}{}
 
-  \tagitem{prvTrue}{$\ltrue$ 是原子公式。}{}
+  \tagitem{prvTrue}{$\ltrue$ 是原子!!{formula}。}{}
 
   \item 每个命题变元 $\Obj p_i$ 都是（原子的）
-  公式。
+  !!{formula}。
 
-  \tagitem{prvNot}{如果 $!A$ 是公式，则 $\lnot !A$ 是
-  公式。}{}
+  \tagitem{prvNot}{如果 $!A$ 是!!a{formula}，则 $\lnot !A$ 是
+  !!a{formula}。}{}
 
-  \tagitem{prvAnd}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \land
-  !B)$ 是公式。}{}
+  \tagitem{prvAnd}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \land
+  !B)$ 是!!a{formula}。}{}
 
-  \tagitem{prvOr}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \lor !B)$
-  是公式。}{}
+  \tagitem{prvOr}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lor !B)$
+  是!!a{formula}。}{}
 
-  \tagitem{prvIf}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \lif !B)$
-  是公式。}{}
+  \tagitem{prvIf}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lif !B)$
+  是!!a{formula}。}{}
 
-  \tagitem{prvIff}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \liff !B)$
-  是公式。}{}
+  \tagitem{prvIff}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \liff !B)$
+  是!!a{formula}。}{}
 
-  \item 如果 $!A$ 是公式且 $a \in G$，则 $\Knows_a !A$ 是
-  公式。
+  \item 如果 $!A$ 是!!a{formula}且 $a \in G$，则 $\Knows_a !A$ 是
+  !!a{formula}。
 
-  \item 如果 $!A$ 和 $!B$ 都是公式，则 $[!A] !B$ 是公式。
+  \item 如果 $!A$ 和 $!B$ 都是!!{formula}，则 $[!A] !B$ 是!!a{formula}。
 
-  \tagitem{limitClause}{除此之外没有其他公式。}{}
+  \tagitem{limitClause}{除此之外没有其他!!a{formula}。}{}
 \end{enumerate}
 \end{defn}
 
-公式 $[!A] !B$ 的意思是「在 $!A$ 被如实宣告之后，$!B$~成立」。有时在公开宣告的语境下讨论公共知识也会很有用，因此语言还可以包含公共知识算子~$\CKnows_G !A$。
+!!{formula} $[!A] !B$ 的意思是「在 $!A$ 被如实宣告之后，$!B$~成立」。有时在公开宣告的语境下讨论公共知识也会很有用，因此语言还可以包含公共知识算子~$\CKnows_G !A$。
 
 \end{document}

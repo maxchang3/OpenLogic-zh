@@ -10,16 +10,16 @@
 
 \olsection{正规模态逻辑}
 
-并非每一组模态公式都能被轻易刻画为从一组公理出发可推演出那些公式。我们希望模态逻辑是行为良好的。首先，我们在经典命题逻辑中能推演出的一切仍然应当是可推演的，当然要考虑到公式现在还可能包含
+并非每一组模态!!{formula}都能被轻易刻画为从一组公理出发可推演出那些!!{formula}。我们希望模态逻辑是行为良好的。首先，我们在经典命题逻辑中能!!{derive}的一切应当是!!{derivable}的，当然要考虑到!!{formula}现在还可能包含
 \iftag{prvBox}{$\Box$\iftag{prvDiamond}{
     和~}{}}{}\iftag{prvDiamond}{$\Diamond$}{}。为此，我们要求一个模态逻辑包含所有的重言式特例，并对分离规则封闭。
 
 \begin{defn}
-  \emph{模态逻辑}是一个模态公式集合~$\Sigma$，它
+  \emph{模态逻辑}是一个模态!!{formula}集合~$\Sigma$，它
   \begin{enumerate}
   \item 包含所有重言式，并且
   \item 对代入封闭，即，如果 $!A \in \Sigma$，并且
-    $!D_1$, \dots, $!D_n$ 是公式，则
+    $!D_1$, \dots, $!D_n$ 是!!{formula}，则
     \[
     \SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \in \Sigma,
     \]
@@ -28,11 +28,11 @@
   \end{enumerate}
 \end{defn}
 
-为了在模态逻辑上使用关系语义，我们还必须要求所有在所有模态模型中有效的公式都被包含进来。事实证明，只要 \Ax{K}\iftag{prvDiamond}{ 和~\Dual{}}{} 的所有特例都是可推演的，并且每当公式~$!A$ 可推演时，$\Box !A$ 也可推演，这一要求就得到满足。满足这些条件的模态逻辑称为
+为了在模态逻辑上使用关系语义，我们还必须要求所有在所有模态模型中有效的!!{formula}都被包含进来。事实证明，只要 \Ax{K}\iftag{prvDiamond}{ 和~\Dual{}}{} 的所有特例都是!!{derivable}，并且每当!!a{formula}~$!A$ !!{derivable}时，$\Box !A$ 也可推演，这一要求就得到满足。满足这些条件的模态逻辑称为
 \emph{正规模态逻辑}。（当然，也有非正规模态逻辑，但通常的关系模型对它们并不合适。）
 
 \begin{defn}
-  一个模态逻辑 $\Sigma$ 是\emph{正常的}，如果它包含
+  一个模态逻辑 $\Sigma$ 是\emph{正规的}，如果它包含
   \begin{align*}
     \tag{\Ax{K}} & \Box(p \lif q) \lif (\Box p \lif \Box q),
     \iftag{prvDiamond}{\\
@@ -84,7 +84,7 @@
 \end{prob}
 
 \begin{prop}
-  设 $!A_1$, \dots, $!A_n$ 是公式。则存在一个
+  设 $!A_1$, \dots, $!A_n$ 是!!{formula}。则存在一个
   最小的模态逻辑 $\Sigma$，包含
   $!A_1$, \dots, $!A_n$ 的所有特例。
 \end{prop}
@@ -92,7 +92,7 @@
 \begin{proof}
   给定 $!A_1$, \dots, $!A_n$，把 $\Sigma$ 定义为所有
   包含 $!A_1$, \dots, $!A_n$ 之全部特例的正规模态逻辑的交。
-  该交非空，因为 $\Frm[L]$，即所有公式的集合，
+  该交非空，因为 $\Frm[L]$，即所有!!{formula}的集合，
   就是这样一个模态逻辑。
 \end{proof}
 

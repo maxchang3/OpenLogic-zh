@@ -14,7 +14,7 @@
 
 \begin{figure}
   \olasset{assets/diagrams/union.tikz}
-  \caption{两个集合的并 $A \cup B$ 是 $A$ 的!!{element}连同~$B$ 的!!{element}所组成的集合。}
+  \caption{两个集合的并 $A \cup B$ 是 $A$ 的!!{element}连同~$B$ 的元素所组成的集合。}
   \ollabel{fig:union}
 \end{figure}
 
@@ -22,7 +22,7 @@
 \end{explain}
 
 \begin{defn}[并]
-两个集合 $A$ 和 $B$ 的 \emph{并}，记作 $A \cup B$，是 $A$、$B$ 或两者中所有那些对象的集合。
+两个集合 $A$ 和 $B$ 的 \emph{并}，记作 $A \cup B$，是 $A$、$B$ 或两者中所有那些!!{element}的对象的集合。
 \[
 A \cup B = \Setabs{x}{x \in A \lor x \in B}
 \]
@@ -82,7 +82,7 @@ $\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$。
 \begin{defn}
 若 $A$ 是一个由集合组成的集合，则 $\bigcup A$ 是~$A$ 的!!{element}的!!{element}组成的集合：
 \begin{align*}
-\bigcup A & = \Setabs{x}{x \text{ 属于 } A \text{ 的某个!!{element}}},
+\bigcup A & = \Setabs{x}{x \text{ 属于 } A \text{ 的某个!!a{element}}},
 \text{ 即，}\\
 & = \Setabs{x}{\text{存在一个 } B \in A
   \text{ 使得 } x \in B}
@@ -121,12 +121,12 @@ $\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$。
 
 \begin{figure}
   \olasset{assets/diagrams/difference.tikz}
-  \caption{两个集合的差 $A \setminus B$ 是~$A$ 中那些不属于~$B$ 的!!{element}的集合。}
+  \caption{两个集合的差 $A \setminus B$ 是那些属于~$A$ 的!!{element}但不是~$B$ 的!!{element}的集合。}
   \ollabel{difference}
 \end{figure}
 
 \begin{defn}[差]
-\emph{差集}~$A \setminus B$ 是 $A$ 中所有不属于~$B$ 的!!{element}的集合，即
+\emph{差集}~$A \setminus B$ 是所有那些属于~$A$ 的!!{element}但不是~$B$ 的!!{element}的集合，即
 \[
 A\setminus B = \Setabs{x}{x\in A \text{ 且 } x \notin B}.
 \]

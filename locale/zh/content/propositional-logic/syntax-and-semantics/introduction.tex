@@ -14,9 +14,9 @@
 
 为了发展真值函项的命题逻辑的理论与元理论，我们必须首先定义其表达式的句法与语义。我们将描述从!!{propositional variable}用联结词构造!!{formula}的一种方式。其他定义也是可能的。其他系统会选取不同的符号，选择不同的联结词集合作为原始的，并以不同的方式使用括号（甚至完全不用括号，如所谓的波兰表示法的情形）。不过，所有方法所共有的是：形成规则\emph{归纳地}定义!!{formula}的集合。如果处理得当，每个表达式都实质上只能按形成规则以唯一一种方式产生。这种产生出\emph{唯一可读的}表达式的归纳定义意味着我们可以用同样的方法——归纳定义——来赋予这些表达式以意义。
 
-赋予表达式意义是语义的领域。命题逻辑语义中的核心概念是赋值中的满足。!!^a{valuation}~$\pAssign{v}$ 给!!{propositional variable}指派真值 $\True$、$\False$。任何!!{valuation}为任何!!{formula}~$!A$ 确定一个真值 $\pValue{v}(!A)$。当且仅当 $\pValue{v}(!A) = \True$ 时，!!^a{formula}才在!!a{valuation}~$\pAssign{v}$ 中被满足——我们将其记为 $\pSat{v}{!A}$。这一关系也可以用逻辑联结词的真值函项，通过对~$!A$ 的结构进行归纳来定义，例如用 $!A$ 与~$!B$ 的满足（或不满足）来定义 $!A \land !B$ 的满足。
+赋予表达式意义是语义的领域。命题逻辑语义中的核心概念是!!a{valuation}中的满足。!!^a{valuation}~$\pAssign{v}$ 给!!{propositional variable}指派真值 $\True$、$\False$。任何!!{valuation}为任何!!{formula}~$!A$ 确定一个真值 $\pValue{v}(!A)$。当且仅当 $\pValue{v}(!A) = \True$ 时，!!^a{formula}才在!!a{valuation}~$\pAssign{v}$ 中被满足——我们将其记为 $\pSat{v}{!A}$。这一关系也可以用逻辑联结词的真值函项，通过对~$!A$ 的结构进行归纳来定义，例如用 $!A$ 与~$!B$ 的满足（或不满足）来定义 $!A \land !B$ 的满足。
 
-在语句的满足关系 $\pSat{v}{!A}$ 的基础上，我们可以进而定义重言式、衍推与可满足性这些基本语义概念。如果每个!!{valuation}都满足某个!!^a{formula}，即对任何~$\pAssign{v}$ 都有 $\pValue{v}(!A) = \True$，则它是重言式，$\Entails !A$。如果每个满足~$\Gamma$ 中所有!!{formula}的!!{valuation}也满足~$!A$，则它由一组!!{formula}衍推，$\Gamma \Entails !A$。而如果某个!!{valuation}同时满足一组!!{formula}中的所有!!{formula}，则该组!!{formula}是可满足的。因为!!{formula}是归纳定义的，而满足转而又通过对!!{formula}的结构进行归纳来定义，我们可以用归纳来证明我们语义的各种性质，并把所定义的各语义概念联系起来。
+在语句的满足关系 $\pSat{v}{!A}$ 的基础上，我们可以进而定义重言式、衍推与可满足性这些基本语义概念。如果每个!!{valuation}都满足某个!!^a{formula}，即对任何~$\pAssign{v}$ 都有 $\pValue{v}(!A) = \True$，则它是重言式，$\Entails !A$。如果每个满足~$\Gamma$ 中所有!!{formula}的!!{valuation}也满足~$!A$，则它由一组!!{formula}衍推，$\Gamma \Entails !A$。而如果某个!!{valuation}同时满足一组!!{formula}中的所有!!{formula}，则该组是可满足的。因为!!{formula}是归纳定义的，而满足转而又通过对!!{formula}的结构进行归纳来定义，我们可以用归纳来证明我们语义的各种性质，并把所定义的各语义概念联系起来。
 
 
 \end{document}

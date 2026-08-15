@@ -13,10 +13,10 @@
 \olsection{可靠性}
 
 \begin{explain}
-!!a{derivation}系统，例如公理化推演，如果它不能!!{derive}那些实质上并不成立的东西，那么它就是\emph{可靠的}。因此，可靠性是一类对!!{derivation}系统而言有保证的安全性性质。取决于所讨论的是哪一证明论性质，我们希望知道，例如，
+!!^a{derivation}系统，例如公理化推演，如果它不能!!{derive}那些实质上并不成立的东西，那么它就是\emph{可靠的}。因此，可靠性是一类对!!{derivation}系统而言有保证的安全性性质。取决于所讨论的是哪一证明论性质，我们希望知道，例如，
 \begin{enumerate}
-\item 每一个可推演的~$!A$ 都是有效的；
-\item 如果 $!A$ 可从某些其他公式~$\Gamma$ 推演，那么它也是它们的后承；
+\item 每一个!!{derivable}~$!A$ 都是有效的；
+\item 如果 $!A$ 可从某些其他公式~$\Gamma$ !!{derivable}，那么它也是它们的后承；
 \item 如果一组!!{formula}~$\Gamma$ 不一致，那么它不可满足。
 \end{enumerate}
 这些是!!a{derivation}系统的重要性质。若其中之一不成立，那么该!!{derivation}系统就有缺陷——它会!!{derive}得太多。因此，确立!!a{derivation}系统的可靠性至关重要。
@@ -42,7 +42,7 @@
 对从 $\Gamma$ 推出 $!A$ 的!!{derivation}的长度作归纳。若其中没有由推理判定的步骤，那么!!{derivation}中的所有!!{formula}或者是公理的特例，或者位于~$\Gamma$ 之中。由前一命题，所有公理都是
 \iftag{FOL}{有效的}{重言式}，因此如果 $!A$ 是公理，则 $\Gamma \Entails !A$。如果 $!A \in \Gamma$，则 $\Gamma \Entails !A$ 平凡成立。
 
-如果推演~$!A$ 的最后一步由分离规则判定，那么在!!{derivation}中有!!{formula} $!B$ 与 $!B \lif !A$，并且归纳假设适用于以那些!!{formula}结尾的那部分!!{derivation}（因为它们含有的由推理判定的步数至少少一步）。因此，由归纳假设，$\Gamma \Entails !B$ 且 $\Gamma \Entails !B \lif !A$。则由
+如果!!{derivation}~$!A$ 的最后一步由分离规则判定，那么在!!{derivation}中有!!{formula} $!B$ 与 $!B \lif !A$，并且归纳假设适用于以那些!!{formula}结尾的那部分!!{derivation}（因为它们含有的由推理判定的步数至少少一步）。因此，由归纳假设，$\Gamma \Entails !B$ 且 $\Gamma \Entails !B \lif !A$。则由
 \iftag{FOL}
       {\olref[syn][sem]{thm:sem-deduction}}
       {\olref[pl][syn][sem]{thm:sem-deduction}}

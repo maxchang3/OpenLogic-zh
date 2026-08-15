@@ -27,7 +27,7 @@ Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条�
   !A \land \lnot !B & \Entails \lnot(!A \strictif !B)
   \intertext{然而，严格条件句仍支持分离规则：}
   !A, !A \strictif !B & \Entails !B
-  \intertext{严格条件句是合聚的：}
+  \intertext{严格条件句可聚合：}
   !A \strictif !B,  !A \strictif !C & \Entails !A \strictif (!B \land !C)
   \intertext{前件强化对严格条件句成立：}
   !A \strictif !B & \Entails (!A \land !C) \strictif !B
@@ -39,7 +39,7 @@ Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条�
 \end{align}
 
 \begin{prob}
-  给出对严格条件句不成立的衍生关系的 \Log{S5}-反例，即对如下各项：
+  给出对严格条件句不成立的衍推关系的 \Log{S5}-反例，即对如下各项：
   \begin{enumerate}
   \item $\lnot p \Entails/ \Box(p \lif q)$
   \item $q \Entails/ \Box(p \lif q)$
@@ -49,7 +49,7 @@ Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条�
 \end{prob}
 
 \begin{prob}
-  通过给出如下各项的 \Log{S5}-证明来表明严格条件句成立的有效衍生关系：
+  通过给出如下各项的 \Log{S5}-证明来表明严格条件句成立的有效衍推关系：
   \begin{enumerate}
   \item  $\Box(!A \lif !B) \Entails \lnot !A \lor !B$
   \item $!A \land \lnot !B \Entails \lnot\Box(!A \lif !B)$
@@ -71,7 +71,7 @@ Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条�
   !A \strictif !B& \Entails \Box(!A \strictif !B)\\
   \lnot(!A \strictif !B) & \Entails \Box\lnot(!A \strictif !B)
 \end{align}
-如果你把 $\strictif$ 想作「蕴含」，这些便不是问题。逻辑衍生关系终归是数学事实，因此不能是偶然的。但如果你想用 $\strictif$ 作为一个旨在刻画「如果……那么……」的逻辑联结词，它们确实会带来麻烦，尤其是最后两条。因为当然存在着偶然真或偶然假的「如果……那么……」语句——事实上，它们通常既非必然也非不可能。
+如果你把 $\strictif$ 想作「蕴含」，这些便不是问题。逻辑衍推关系终归是数学事实，因此不能是偶然的。但如果你想用 $\strictif$ 作为一个旨在刻画「如果……那么……」的逻辑联结词，它们确实会带来麻烦，尤其是最后两条。因为当然存在着偶然真或偶然假的「如果……那么……」语句——事实上，它们通常既非必然也非不可能。
 
 \begin{prob}
   给出如下各项在 \Log{S5} 中的证明：
