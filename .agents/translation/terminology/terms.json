@@ -2720,6 +2720,134 @@
    "module": "core",
    "source": "confirmed",
    "note": "用户确认；OLP 表列旧称（文学锋《模态逻辑导论》表列语境用「表列」）"
+  },
+  {
+   "en": "universality",
+   "zh": "全域性",
+   "module": "modal-logic",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；S5 语义（所有世界两两可达）"
+  },
+  {
+   "en": "universal frame",
+   "zh": "全域框架",
+   "module": "modal-logic",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；S5 语义"
+  },
+  {
+   "en": "universal model",
+   "zh": "全域模型",
+   "module": "modal-logic",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；S5 语义"
+  },
+  {
+   "en": "well-behaved",
+   "zh": "良态",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；正文可按语境译「性质良好的/表现良好的」；勿用「规范」（与 normal 冲突）"
+  },
+  {
+   "en": "effective procedure",
+   "zh": "能行程序",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；递归论通行译法（丘奇—图灵论题）"
+  },
+  {
+   "en": "epistemic alternative",
+   "zh": "认知选项",
+   "module": "modal-logic",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；与当前知识相容的可能世界"
+  },
+  {
+   "en": "prime set",
+   "zh": "素集",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；与格论「素滤子/素理想」同源；勿与「素数」混淆"
+  },
+  {
+   "en": "absurdity",
+   "zh": "荒谬",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；直觉主义「无构造」语义；句法语境可并用「假/假命题」"
+  },
+  {
+   "en": "Polish notation",
+   "zh": "波兰表示法",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；通行译法"
+  },
+  {
+   "en": "condensed derivation",
+   "zh": "压缩的推导",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；OLP 中为描述性用法（步骤被压缩的推演），与 condensed detachment 无关"
+  },
+  {
+   "en": "model existence result",
+   "zh": "模型存在性结果",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；完全性定理的第二表述"
+  },
+  {
+   "en": "exhaustive listing",
+   "zh": "穷尽性列出",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；与「穷尽的」一致"
+  },
+  {
+   "en": "syntactic counterpart",
+   "zh": "句法对应物",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；与已落地译文一致"
+  },
+  {
+   "en": "provability result",
+   "zh": "可证明性结果",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；「可证性」留给 provability logic"
+  },
+  {
+   "en": "Induction Basis",
+   "zh": "归纳基始",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；王宪钧《数理逻辑引论》「基始」传统，与「归纳步骤」对称"
+  },
+  {
+   "en": "knowledge closure",
+   "zh": "知识封闭",
+   "module": "modal-logic",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "用户确认；epistemic closure→认知封闭；与传递闭包等数学 closure 区分"
   }
  ]
 }
