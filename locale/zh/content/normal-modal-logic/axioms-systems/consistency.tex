@@ -1,0 +1,36 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{prf}{con}
+
+\olsection{一致性}
+
+一致性是!!{formula}之集合的重要性质。一个!!{formula}的集合若不一致，则当且仅当从中可!!{derivable}出矛盾，例如~$\lfalse$；否则便是一致的。若一个集合不一致，其!!{formula}不可能同时在一个模型中的某个世界处为真。在完全性定理中我们证明其逆命题：每个一致的集合都在某模型中的某个世界处为真，即在该「典范模型」中为真。
+
+\begin{defn}
+  一个集合 $\Gamma$ 相对于系统~$\Sigma$ 是 \emph{一致的}，或者如我们所说，是 $\Sigma$-一致的，当且仅当 $\Gamma \Proves/[\Sigma] \lfalse$。
+\end{defn}
+
+又例如，集合 $\{ \Box(p \lif q), \Box p, \lnot\Box q \}$ 相对于命题逻辑是一致的，但不是 \Log{K}-一致的。类似地，集合 $\{ \Diamond p, \Box\Diamond p \lif q, \lnot q \}$ 不是 \Log{K5}-一致的。
+
+\begin{prop}\ollabel{prop:consistencyfacts}
+  设 $\Gamma$ 是!!{formula}的一个集合。则有：
+  \begin{enumerate}
+  \item $\Gamma$ 是 $\Sigma$-一致的，当且仅当存在某个!!{formula}~$!A$ 使得 $\Gamma \Proves/[\Sigma] !A$。
+  \item \ollabel{prop:consistencyfacts-b}%
+    $\Gamma \Proves[\Sigma] !A$，当且仅当 $\Gamma \cup \{ \lnot!A \}$ 不是 $\Sigma$-一致的。
+  \item \ollabel{prop:consistencyfacts-c}%
+    若 $\Gamma$ 是 $\Sigma$-一致的，则对任意!!{formula} $!A$，或者 $\Gamma \cup \{ !A \}$ 是 $\Sigma$-一致的，或者 $\Gamma \cup \{ \lnot!A \}$ 是 $\Sigma$-一致的。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  这些事实利用经典命题逻辑容易证得。我们给出 \olref{prop:consistencyfacts-c} 的论证。反证地推进，设 $\Gamma \cup \{ !A \}$ 与 $\Gamma \cup \{ \lnot!A \}$ 都不是 $\Sigma$-一致的。则由 \olref{prop:consistencyfacts-b}，既有 $\Gamma, !A \Proves[\Sigma] \lfalse$ 又有 $\Gamma, \lnot !A \Proves[\Sigma] \lfalse$。根据演绎定理，$\Gamma \Proves[\Sigma] !A \to \lfalse$ 且 $\Gamma \Proves[\Sigma] \lnot!A \lif \lfalse$。但 $(!A \lif \lfalse) \lif ((\lnot!A \lif \lfalse) \lif \lfalse)$ 是重言式特例，故由 \olref[prp]{prop:derivabilityfacts}\olref[prp]{prop:derivabilityfacts-ruleT}，$\Gamma \Proves[\Sigma] \lfalse$。
+\end{proof}
+
+\end{document}

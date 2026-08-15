@@ -1,0 +1,115 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: deduction-theorem
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{ded}}
+      {\olfileid[zh]{pl}{axd}{ded}}
+
+\olsection{演绎定理}
+
+正如我们所看到的，在公理系统中给出!!{derivation}颇为繁琐，而且!!{derivation}可能难以找到。与其真正写出长串的!!{formula}，通常更简单的做法是利用少数几个简单结果来论证这样的!!{derivation}存在。我们已经确立了三个这样的结果：
+\olref[ptn]{prop:reflexivity}说，当我们知道 $!A \in
+\Gamma$ 时，总可以断言 $\Gamma
+\Proves !A$。\olref[ptn]{prop:monotonicity}说，如果 $\Gamma \Proves !A$，则亦有 $\Gamma \cup \{!B\} \Proves !A$。而
+\olref[ptn]{prop:transitivity}蕴含：如果 $\Gamma \Proves !A$ 且
+$!A \Proves !B$，则 $\Gamma \Proves !B$。这里还有另一个简单
+结果，即分离规则的一个「元」版本：
+
+\begin{prop}
+  \ollabel{prop:mp} 如果 $\Gamma \Proves !A$ 且 $\Gamma \Proves !A \lif
+  !B$，则 $\Gamma \Proves !B$。
+\end{prop}
+
+\begin{proof}
+  我们有 $\{!A, !A \lif !B\} \Proves !B$：
+  \begin{derivation}
+    1. & $!A$ & 假设\\
+    2. & $!A \lif !B$ & 假设\\
+    3. & $!B$ & 1, 2, MP
+  \end{derivation}
+  由 \olref[ptn]{prop:transitivity}，$\Gamma \Proves !B$。
+\end{proof}
+
+在这一语境中我们将用到的最重要的结果是演绎定理：
+
+\begin{thm}[演绎定理]
+\ollabel{thm:deduction-thm} $\Gamma \cup \{!A\} \Proves !B$ 当且仅当 $\Gamma \Proves !A \lif !B$。
+\end{thm}
+
+\begin{proof}
+「若」方向是直接的。如果 $\Gamma \Proves !A \lif !B$，则由
+\olref[ptn]{prop:monotonicity} 亦有 $\Gamma \cup \{!A\} \Proves !A \lif !B$。再由
+\olref[ptn]{prop:reflexivity}，$\Gamma \cup \{!A\} \Proves !A$。于是，由 \olref{prop:mp}，$\Gamma \cup
+\{!A\} \Proves !B$。
+
+对于「仅当」方向，我们以!!{derivation}的长度进行归纳，其中!!{derivation}是 $!B$ 从 $\Gamma \cup \{!A\}$ 出发的推演。
+
+对于归纳基始，我们证明该断言对所有长度为 $1$ 的!!{derivation}成立。$!B$ 从 $\Gamma \cup \{!A\}$ 出发的长度为 $1$ 的!!^a{derivation}恰由 $!B$ 本身构成；若它是正确的，则 $!B$ 要么 $\in \Gamma \cup \{!A\}$，要么是一条公理。如果 $!B \in \Gamma$ 或者是公理，则 $\Gamma \Proves !B$。我们亦有 $\Gamma
+\Proves !B \lif (!A \lif !B)$，这来自 \olref[prp]{ax:lif1}，而
+\olref{prop:mp} 给出 $\Gamma \Proves !A \lif !B$。如果 $!B \in \{ !A\}$，则 $\Gamma \Proves !A \lif !B$，因为最后的那个!!{sentence}~$!A
+\lif !B$ 与 $!A \lif !A$ 相同，而我们已在
+\olref[pro]{ex:identity} 中!!{derive}出了它。
+
+对于归纳步骤，设 $!B$ 从
+$\Gamma \cup \{!A\}$ 出发的!!a{derivation}以某一步骤$~!B$ 结尾，而该步骤由分离
+规则证成。（如果它不是由分离规则证成的，则 $!B \in \Gamma$、$!B
+\ident !A$，或 $!B$ 是一条公理，此时与归纳基始相同的推理适用。）那么在!!{derivation}中某两个较早的步骤是 $!C \lif !B$ 与 $!C$，对某个!!{formula}~$!C$
+而言，即 $\Gamma \cup \{!A\} \Proves !C \lif !B$ 且 $\Gamma \cup \{!A\}
+\Proves !C$，而相应的!!{derivation}更短，因此归纳
+假设适用于它们。于是我们两者皆有：
+\begin{align*}
+  & \Gamma \Proves !A \lif (!C \lif !B); \\
+  & \Gamma \Proves !A \lif !C.
+\end{align*}
+但亦由 \olref[prp]{ax:lif2}，有
+\[
+\Gamma \Proves (!A \lif (!C \lif !B)) \lif
+((!A\lif !C)  \lif (!A \lif !B)),
+\]
+而两次应用 \olref{prop:mp} 即给出
+$\Gamma \Proves !A \lif !B$，如所要求。
+\end{proof}
+
+注意 \olref[prp]{ax:lif1} 与 \olref[prp]{ax:lif2} 是如何被选定，
+恰是为了使演绎定理成立。
+
+下面是一些关于!!{derivability}的有用事实，我们把它们留作习题。
+
+\begin{prop}
+  \ollabel{prop:derivfacts}
+\begin{enumerate}
+\item $\Proves (!A \lif !B) \lif ((!B \lif !C)
+  \lif (!A \lif !C)$； \ollabel{derivfacts:a}
+\item 如果 $\Gamma \cup \{ \lnot !A\}
+  \Proves \lnot !B$，则 $\Gamma \cup \{ !B\} \Proves
+  !A$（换质位（Contraposition））； \ollabel{derivfacts:b}
+\item  $\{ !A, \lnot!A\} \Proves
+    !B$（爆炸原理（Ex Falso Quodlibet））； \ollabel{derivfacts:c}
+\item  $\{ \lnot\lnot!A\} \Proves
+  !A$（双重否定消去（Double Negation Elimination））；\ollabel{derivfacts:d}
+\item 如果 $\Gamma \Proves \lnot\lnot!A$，则 $\Gamma \Proves
+  !A$；\ollabel{derivfacts:e}
+\end{enumerate}
+\end{prop}
+
+\tagprob{FOL}
+\begin{prob}
+  证明 \olref[fol][axd][ded]{prop:derivfacts}
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  证明 \olref[pl][axd][ded]{prop:derivfacts}
+\end{prob}
+\tagendprob
+
+\end{document}

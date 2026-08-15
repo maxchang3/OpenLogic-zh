@@ -1,0 +1,54 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: logics-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{prf}{prf}
+
+\olsection{\usetoken{P}{derivation}与模态系统}
+
+我们首先为正规模态逻辑定义!!a{derivation}。粗略地说，!!a{derivation}是一个!!{formula}的序列，其中每个!!{element}要么是若干个 \emph{公理}之一（的一个代入特例），要么由先前的!!{element}通过某几条推理规则之一起到。对于正规模态逻辑，所有重言式\iftag{prvDiamond}{、\Ax{K} 与~\Dual{}}{与~\Ax{K}}的特例都算作公理。由此得到模态系统~$\Log{K}$，它是最小的正规模态逻辑。不过，我们可能希望添加额外的公理以获得其他系统。规则始终是分离规则~\MP{} 与必然化~\Nec。
+
+\begin{defn}
+  给定一个模态系统 $\Log{K} !A_1 \dots !A_n$ 与!!a{formula}~$!B$，我们说 $!B$ 在 $\Log{K} !A_1 \dots
+  !A_n$ 中\emph{!!{derivable}}，记作 $\Log{K} !A_1 \dots !A_n \Proves !B$，当且仅当存在!!{formula} $!C_1$, \dots, $!C_k$，使得 $!C_k = !B$，且每个 $!C_i$ 要么是一个重言式特例，要么是 $\Ax{K}$、\iftag{prvDiamond}{$\Dual$、}{}$!A_1$、\dots、$!A_n$ 之一的特例，要么由先前的!!{formula}通过规则 \MP{} 或~\Nec 得到。
+\end{defn}
+
+如下命题使我们能够通过给出~$!B$ 的一个 $\Sigma$-!!{derivation}来证明 $!B \in \Sigma$。
+
+\begin{prop}
+  $\Log{K} !A_1 \dots !A_n = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B}$。
+\end{prop}
+
+\begin{proof}
+  我们通过对!!{derivation}的长度作归纳来证明
+  $\Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B} \subseteq
+  \Log{K} !A_1 \dots !A_n$。
+
+  若~$!B$ 的!!{derivation}长度为~$1$，则它只含一个!!{formula}。该!!{formula}不可能是由 \MP{} 或 \Nec 从先前公式得到的，因此它必然是一个重言式特例、\Ax{K} 或 \iftag{prvDiamond}{$\Dual$、}{}$!A_1$、\dots、~$!A_n$ 之一的特例。而 $\Log{K}!A_1\dots!A_n$ 也含有这些，故 $!B \in \Log{K}!A_1 \dots !A_n$。
+
+  若 $!B$ 的!!{derivation}长度~$> 1$，则 $!B$ 还可能由 \MP{} 或 \Nec{} 从非位于!!{derivation}末行的!!{formula}推出。若 $!B$ 由 $!C$ 与 $!C \lif !B$（经 \MP）推出，则据归纳假设 $!C$ 与 $!C \lif !B \in
+  \Log{K}!A_1 \dots !A_n$。但每个模态逻辑都关于分离规则封闭，故 $!B \in \Log{K}!A_1 \dots
+  !A_n$。若 $!B \equiv \Box !C$ 由 $!C$ 经 \Nec 推出，则据归纳假设 $!C
+  \in \Log{K}!A_1 \dots !A_n$。但每个正规模态逻辑都关于 $\Nec$ 封闭，故 $!B \in
+  \Log{K}!A_1\dots!A_n$。
+
+  反向包含则由如下结论得出：$\Sigma = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B }$ 是一个包含 $!A_1$、\dots、$!A_n$ 的所有特例的正规模态逻辑，又注意到 $\Log{K} !A_1 \dots !A_n$ 按定义正是最小的这样的逻辑。
+  \begin{enumerate}
+    \item 每个重言式~$!B$ 都是一个重言式特例，故
+      $\Log{K}!A_1\dots!A_n \Proves !B$，因此 $\Sigma$ 包含所有重言式。
+    \item 若 $\Log{K}!A_1\dots!A_n \Proves !C$ 且
+      $\Log{K}!A_1\dots!A_n \Proves !C \lif !B$，则
+      $\Log{K}!A_1\dots!A_n \Proves !B$：把 $!C$ 的!!{derivation}与 $!C \lif !B$ 的拼接起来，并加上一行~$!B$。末行由 \MP{} 证明。因此 $\Sigma$ 关于分离规则封闭。
+    \item 若 $!B$ 有!!a{derivation}，则~$!B$ 的每个代入特例也有!!a{derivation}：把代入作用于!!{derivation}中的每个!!{formula}即可。（习题：通过对!!{derivation}长度作归纳证明所得结果也是一个正确的!!{derivation}）。因此 $\Sigma$ 关于统一代入封闭。（我们现在已证明 $\Sigma$ 满足模态逻辑的所有条件。）
+    \item 我们有 $\Log{K}!A_1\dots!A_n \Proves \Ax{K}$，故 $K \in \Sigma$。
+    \tagitem{prvDiamond}{我们有
+      $\Log{K}!A_1\dots!A_n \Proves \Dual$，故 $\Dual \in \Sigma$。}{}
+    \item 若 $\Log{K}!A_1\dots!A_n \Proves !C$，则附加的一行~$\Box !C$ 由~\Nec 证明。因此，$\Sigma$ 关于~\Nec 封闭。于是 $\Sigma$ 是正规模的。
+  \end{enumerate}
+\end{proof}
+
+\end{document}

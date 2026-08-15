@@ -1,0 +1,182 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: soundness.tex
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{tab}{sou}}
+      {\olfileid[zh]{pl}{tab}{sou}}
+
+\olsection{可靠性}
+
+\begin{explain}
+一个!!^a{derivation}系统（如表列）如果不能!!{derive}那些实际上并不成立的东西，它就是 \emph{可靠的}。因此，可靠性是!!{derivation}系统的一种有保证的安全性。视所讨论的是哪种证明论性质而定，我们想知道，例如，
+\begin{enumerate}
+\item 每个!!{derivable}~$!A$ 都是 \iftag{FOL}{有效的}{重言式}；
+\item 如果!!a{sentence}从某些其他的!!a{sentence}可推演，它也是它们的后承；
+\item 如果一组!!{sentence}是不一致的，它就是不可满足的。
+\end{enumerate}
+这些都是!!a{derivation}系统的重要性质。若其中任何一条不成立，该!!{derivation}系统就是有缺陷的——它会!!{derive}得太多。因此，确立!!a{derivation}系统的可靠性具有头等重要性。
+
+因为所有这些证明论性质都是通过某种闭合的!!{tableau}来定义的，证明上述 (1)--(3) 需要证明关于闭合!!{tableau}语义性质的某种东西。我们将首先定义!!a{signed formula}在一个结构中被满足是什么意思，然后证明如果!!a{tableau}是闭的，就没有结构能满足其所有假设。(1)--(3) 则作为这一结果的推论而得出。
+\end{explain}
+
+\begin{defn}
+\iftag{FOL}{!!^a{structure}}{!!^a{valuation}}~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+\emph{满足} !!a{signed formula} $\sFmla{\True}{!A}$ 当且仅当
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$，且它满足
+$\sFmla{\False}{!A}$ 当且仅当
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$。$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+满足一组!!{signed formula}~$\Gamma$ 当且仅当它满足每个
+$\sFmla{S}{!A} \in \Gamma$。$\Gamma$~是 \emph{可满足的}，如果存在
+\iftag{FOL}{!!a{structure}}{!!a{valuation}} 满足它，否则它是 \emph{不可满足的}。
+\end{defn}
+
+\begin{thm}[可靠性]
+  \ollabel{thm:tableau-soundness}
+  如果 $\Gamma$ 有一个闭的!!{tableau}，那么 $\Gamma$ 是不可满足的。
+\end{thm}
+
+\begin{proof}
+我们把!!a{tableau}的一条支称为可满足的，当且仅当它上面的一组!!{signed formula}是可满足的，并且我们把!!a{tableau}称为可满足的，如果它含有至少一条可满足的支。
+
+我们证明如下命题：用某条推理规则延长一个可满足的!!{tableau}，总是得到一个可满足的!!{tableau}。这将证明定理：任何闭的!!{tableau}都是由只含来自~$\Gamma$ 的假设的!!{tableau}应用推理规则而得到的。所以，如果 $\Gamma$ 是可满足的，任何用于它的!!{tableau}就都是可满足的。然而，一个闭的!!{tableau}显然不是可满足的：每条支都同时含有
+$\sFmla{\True}{!A}$ 和 $\sFmla{\False}{!A}$，而没有结构能既满足又不满足~$!A$。
+
+假设我们有一个可满足的!!{tableau}，即含有至少一条可满足的支的!!a{tableau}。应用一条推理规则要么把!!{signed formula}加到一条支上，要么把一条支分裂成两条。如果该!!{tableau}有一条可满足的支未被这次规则的应用所延长，它在延长后的!!{tableau}中仍然是一条可满足的支，所以延长后的表列是可满足的。因此，我们只需要考虑对一条可满足的支应用规则的情形。
+
+设 $\Gamma$ 是该支上的一组!!{signed formula}，并设 $\sFmla{S}{!A} \in \Gamma$ 是被应用规则的那个!!{signed formula}。如果该规则不导致支的分裂，我们必须证明延长后的支，即 $\Gamma$ 连同该规则的结论，仍然是可满足的。如果该规则导致支的分裂，我们必须证明分裂后产生的两条支中至少有一条是可满足的。
+
+首先，我们考虑那些不导致支的分裂的可能推理。
+\begin{enumerate}
+\item 该支通过对 $\sFmla{\True}{\lnot !B} \in \Gamma$ 应用 $\TRule{\True}{\lnot}$ 而延长。则延长后的支含有!!{signed formula} $\Gamma \cup
+  \{\sFmla{\False}{!B}\}$。设
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$。特别地，
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !B}$。因此，
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$，即
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 满足
+  $\sFmla{\False}{!B}$。
+\item 该支通过对 $\sFmla{\False}{\lnot !B} \in \Gamma$ 应用 $\TRule{\False}{\lnot}$ 而延长：练习。
+\item 该支通过对 $\sFmla{\True}{!B \land !C} \in \Gamma$ 应用 $\TRule{\True}{\land}$ 而延长，从而在该支上产生两个新的!!{signed formula}：$\sFmla{\True}{!B}$ 和
+  $\sFmla{\True}{!C}$。设
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$，特别地
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B \land !C}$。则
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ 且
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$。这意味着
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 同时满足
+  $\sFmla{\True}{!B}$ 和 $\sFmla{\True}{!C}$。
+\item 该支通过对 $\sFmla{\False}{!B \lor !C} \in \Gamma$ 应用 $\TRule{\False}{\lor}$ 而延长：练习。
+\item 该支通过对 $\sFmla{\False}{!B \lif !C} \in \Gamma$ 应用 $\TRule{\False}{\lif}$ 而延长：这在该支上产生两个新的!!{signed formula}：$\sFmla{\True}{!B}$ 和
+  $\sFmla{\False}{!C}$。设
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$，特别地
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \lif !C}$。则
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ 且
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$。这意味着
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 同时满足
+  $\sFmla{\True}{!B}$ 和 $\sFmla{\False}{!C}$。
+
+\iftag{FOL}{%
+\item 该支通过对 $\sFmla{\True}{\lforall[x][!B(x)]} \in \Gamma$ 应用 $\TRule{\True}{\lforall}$ 而延长：这在该支上产生一个新的!!{signed formula}~$\sFmla{\True}{!A(t)}$。
+  设 $\Sat{M}{\Gamma}$，特别地，
+  $\Sat{M}{\lforall[x][!A(x)]}$。由
+  \olref[syn][sem]{prop:quant-terms}，$\Sat{M}{!A(t)}$。因此，
+  $\Struct{M}$ 满足 $\sFmla{\True}{!A(t)}$。
+
+\item 该支通过对 $\sFmla{\False}{\lforall[x][!B(x)]} \in \Gamma$ 应用 $\TRule{\False}{\lforall}$ 而延长：这产生一个新的!!{signed formula}~$\sFmla{\False}{!A(a)}$，其中 $a$ 是不出现在~$\Gamma$ 中的!!a{constant}。因为 $\Gamma$ 是
+  可满足的，存在一个 $\Struct{M}$ 使得 $\Sat{M}{\Gamma}$，特别地
+  $\Sat/{M}{\lforall[x][!B(x)]}$。我们必须证明
+  $\Gamma \cup \{\sFmla{\False}{!A(a)}\}$ 是可满足的。为此，
+  我们如下定义一个适当的~$\Struct{M'}$。
+
+  由 \olref[syn][ass]{prop:sat-quant}，$\Sat/{M}{\lforall[x][!B(x)]}$
+  当且仅当对某个 $s$，$\Sat/{M}{!B(x)}[s]$。现在设 $\Struct{M'}$ 与
+  $\Struct{M}$ 完全一样，只是 $\Assign{a}{M'} = s(x)$。由
+  \olref[syn][ext]{cor:extensionality-sent}，对任何
+  $\sFmla{\True}{!C} \in \Gamma$，$\Sat{M'}{!C}$，并且对任何
+  $\sFmla{\False}{!C} \in \Gamma$，$\Sat/{M'}{!C}$，因为 $a$ 不
+  出现在~$\Gamma$ 中。
+
+  由 \olref[syn][ext]{prop:extensionality}，$\Sat/{M'}{!A(x)}[s]$。由
+  \olref[syn][ext]{prop:ext-formulas}，$\Sat/{M'}{!A(a)}[s]$。因为
+  $!A(a)$ 是!!a{sentence}，由
+  \olref[syn][ass]{prop:sentence-sat-true}，$\Sat/{M'}{!A(a)}$，即
+  $\Struct{M'}$ 满足 $\sFmla{\False}{!A(a)}$。
+\item 该支通过对 $\sFmla{\True}{\lexists[x][!B(x)]} \in \Gamma$ 应用 $\TRule{\True}{\lexists}$ 而延长：练习。
+\item 该支通过对 $\sFmla{\False}{\lexists[x][!B(x)]} \in \Gamma$ 应用 $\TRule{\False}{\lexists}$ 而延长：练习。}{}
+\end{enumerate}
+现在我们来考虑那些导致支的分裂的可能推理。
+\begin{enumerate}
+\item 该支通过对 $\sFmla{\False}{!B \land !C} \in \Gamma$ 应用 $\TRule{\False}{\land}$ 而延长，从而产生两条
+  支，左边一条继续经过 $\sFmla{\False}{!B}$，右边一条经过 $\sFmla{\False}{!C}$。设
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$，特别地
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \land !C}$。则
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$ 或
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$。在前一种情形中，
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 满足
+  $\sFmla{\False}{!B}$，即 $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  满足左边支上的公式。在后一种情形中，
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 满足
+  $\sFmla{\False}{!C}$，即 $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  满足右边支上的公式。
+\item 该支通过对 $\sFmla{\True}{!B \lor !C} \in \Gamma$ 应用 $\TRule{\True}{\lor}$ 而延长：练习。
+\item 该支通过对 $\sFmla{\True}{!B \lif !C} \in \Gamma$ 应用 $\TRule{\True}{\lif}$ 而延长：练习。
+\item 该支通过 \Cut 而延长：这产生两条支，
+  一条含有 $\sFmla{\True}{!B}$，另一条含有
+  $\sFmla{\False}{!B}$。因为 $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$
+  ，且或者 $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ 或者
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$，
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 满足左边或右边的那条支。
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+完成 \olref[fol][tab][sou]{thm:tableau-soundness} 的证明。
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+完成 \olref[pl][tab][sou]{thm:tableau-soundness} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+如果 $\Proves !A$，那么 $!A$ 是 \iftag{FOL}{有效的}{重言式}。
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+如果 $\Gamma \Proves !A$，那么 $\Gamma \Entails !A$。
+\end{cor}
+
+\begin{proof}
+  如果 $\Gamma \Proves !A$，那么对某些 $!B_1$，\dots，$!B_n \in
+  \Gamma$，$\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}\}$ 有一个闭的!!{tableau}。由
+  \olref{thm:tableau-soundness}，每个
+  \iftag{FOL}{!!{structure}}{!!{valuation}}~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  要么使某个 $!B_i$ 为假，要么使 $!A$ 为真。因此，如果
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$，那么也
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$。
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+如果 $\Gamma$ 是可满足的，那么它是一致的。
+\end{cor}
+
+\begin{proof}
+我们证明逆否命题。设 $\Gamma$ 是不一致的。
+则存在 $!B_1$，\dots，$!B_n \in \Gamma$ 和一个闭的!!{tableau}，用于 $\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$。由
+\olref{thm:tableau-soundness}，不存在
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 使得
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B_i}$ 对所有 $i=1$，\dots，~$n$。但
+那样 $\Gamma$ 就不是可满足的。
+\end{proof}
+
+\end{document}

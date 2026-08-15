@@ -1,0 +1,69 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{int}{syn}
+
+\olsection{直觉主义逻辑的句法}
+
+直觉主义逻辑的句法与命题逻辑的句法相同。在经典命题逻辑中，可以用其他联结词来定义某些联结词，例如，可以用
+$\lnot !A \lor !B$ 来定义 $!A \lif !B$，或用 $\lnot(\lnot !A \land \lnot
+!B)$ 来定义 $!A \lor !B$。因此，经典逻辑的叙述经常会引入一些作为这些定义的缩写的联结词。直觉主义逻辑却并非如此，只有两个例外：$\lnot !A$ 可以——而且通常
+也的确如此——被定义为 $!A \lif \lfalse$ 的缩写。当然，这时 $\lfalse$ 本身就不能再被定义！{}另外，$!A \liff !B$
+可以像在经典逻辑中那样，被定义为 $(!A \lif !B) \land (!B \lif
+!A)$。
+
+命题直觉主义逻辑的!!{formula}由
+\emph{!!{propositional variable}} 与命题
+常元~$\lfalse$，并借助 \emph{逻辑联结词}构造而成。我们有：
+
+\begin{enumerate}
+\item 可数的!!{propositional variable}集合~$\PVar$，即 $\Obj p_0$，
+  $\Obj p_1$，\dots
+  \item 表示!!{falsity}~$\lfalse$ 的命题常元。
+\item 逻辑联结词：$\land$
+  （合取）、$\lor$（析取）、$\lif$（条件句）
+\item 标点符号：（、）以及逗号。
+\end{enumerate}
+
+\begin{defn}[公式]
+\ollabel{defn:formulas} 命题直觉主义逻辑的 \emph{!!{formula}} 集合~$\Frm[L_0]$ 归纳定义如下：
+\begin{enumerate}
+\item $\lfalse$ 是一个原子!!{formula}。
+
+\item 每个!!{propositional variable}~$\Obj p_i$ 都是一个原子!!{formula}。
+
+\item 如果 $!A$ 与 $!B$ 是!!{formula}，那么 $(!A \land
+  !B)$ 是!!a{formula}。
+
+\item 如果 $!A$ 与 $!B$ 是!!{formula}，那么 $(!A \lor !B)$
+  是!!a{formula}。
+
+\item 如果 $!A$ 与 $!B$ 是!!{formula}，那么 $(!A \lif !B)$
+  是!!a{formula}。
+
+\tagitem{limitClause}{不再有别的!!a{formula}。}{}
+\end{enumerate}
+\end{defn}
+
+除了上述引入的初始联结词之外，我们还使用
+下列 \emph{被定义的}符号：$\lnot$（否定）与 $\liff$
+（!!{biconditional}）。用被定义的算子构造的公式
+应这样理解：
+\begin{enumerate}
+\item $\lnot !A$ 是 $!A \lif \lfalse$ 的缩写。
+
+\item $!A \liff !B$ 是 $(!A \lif !B) \land (!B
+  \lif !A)$ 的缩写。
+\end{enumerate}
+
+虽然 $\lnot$ 在正式场合被当作缩写处理，但有时我们也会
+在关于~$\lnot$ 的定义中给出明确的规则与条目，
+就好像它是初始记号那样。这样做主要是为了能够陈述练习
+题。
+
+\end{document}

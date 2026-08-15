@@ -1,0 +1,136 @@
+% Part: normal-modal-logic
+% Chapter: frame-correspondence
+% Section: properties-accessibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{frd}{acc}
+
+\olsection{可及关系的性质}
+
+许多模态!!{formula}被证明是简单乃至常见的可及关系性质的特征。一方面，这意味着任何具有给定性质的模型都使得相应的!!{formula}（以及它的全部代入特例）为真。我们以五种经典的可及关系类型以及它们所保证真值的公式为开端。
+
+\begin{thm}\ollabel{thm:soundschemas}
+  设 $\mModel{M} = \tuple{W, R, V}$ 是一个模型。若 $R$ 具有 \olref{tab:five} 中左侧的性质，那么右侧!!{formula}的每个特例都在~$\mModel{M}$ 中为真。
+\end{thm}
+
+\begin{table}[t]
+    \begin{tabular}{| l || l |}
+      \hline
+      {\emph{若 $R$ 是 \dots}} & {\emph{则 \dots 在~$\mModel{M}$ 中为真：}} \\
+      \hline \hline
+      \emph{持续的}：$\forall u \exists v Ruv$ & \hbox to.43\textwidth
+           {$\Box p \lif \Diamond p$ \hfill (\Ax{D})} \\
+      \hline
+      \emph{自反的}：$\forall w Rww$
+      & \hbox to.43\textwidth
+          {$\Box p \lif p$ \hfill (\Ax{T})} \\
+      \hline
+      \emph{对称的}： &  \hbox to .43\textwidth
+           {$p \lif \Box\Diamond p$ \hfill (\Ax{B})} \\
+           $\forall u\forall v(Ruv \lif Rvu)$ & \\
+      \hline
+      \emph{传递的}： & \hbox to.43\textwidth
+           {$\Box p \lif \Box \Box p$ \hfill (\Ax{4})} \\
+      $\forall u \forall v \forall w ((Ruv \land Rvw) \lif Ruw)$ & \\
+      \hline
+      \emph{欧性的}： & \hbox to .43\textwidth
+        {$\Diamond p \lif \Box\Diamond p$ \hfill (\Ax{5})} \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif Ruv)$ &\\
+      \hline
+    \end{tabular}
+    \caption{五条对应事实。}
+    \ollabel{tab:five}
+  \end{table}
+
+
+\begin{proof}
+  以下是以 $\Ax{B}$ 为例的情形：要表明该模式在一个模型中为真，我们需要表明它的所有特例都在模型中所有世界处为真。于是设 $!A \lif \Box\Diamond !A$ 是 $\Ax{B}$ 的一个给定特例，并设 $w \in W$ 是任意一个世界。设前件 $!A$ 在 $w$ 处为真，目的是表明 $\Box \Diamond !A$ 在 $w$ 处为真。因此我们需要表明 $\Diamond !A$ 在从 $w$ 可及的所有 $w'$ 处为真。现在，对任何满足 $Rww'$ 的 $w'$，利用对称性假设，我们也有 $Rw'w$（参见 \olref{fig:Bsymm}）。由于 $\mSat{M}{!A}[w]$，我们有 $\mSat{M}{\Diamond !A}[w']$。由于 $w'$ 是满足 $Rww'$ 的任意世界，我们有 $\mSat{M}{\Box\Diamond!A}[w]$。
+
+  其余情形我们留作练习。
+\end{proof}
+
+\begin{prob}
+  补全 \olref[nml][frd][acc]{thm:soundschemas} 的证明。
+\end{prob}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={below:$\mSat{{}}{\formula{A}}$\\
+          $\mSat{{}}{\Box\Diamond \formula{A}}$}] {$w$};
+      \node[world] (w2) [label=below:{$\mSat{{}}{\Diamond \formula{A}}$},
+        right=of w1] {$w'$};
+      \draw[->, bend left] (w1) to (w2);
+      \draw[->, bend left] (w2) to (w1);
+    \end{tikzpicture}
+  \end{center}
+\caption{基于对称性的论证。}
+\ollabel{fig:Bsymm}
+\end{figure}
+
+注意，\olref{thm:soundschemas} 的蕴含反过来并不成立：如果一个模型满足某个模式，并不一定意味着该模型的可及关系具有对应的性质。就 $\Ax{T}$ 和自反模型的情形而言，很容易给出一个 $\Ax{T}$ 本身失败的模型的例子：设 $W = \{w\}$ 且 $V(p) = \emptyset$。那么 $R$ 不是自反的，但 $\mSat{M}{\Box p}[w]$ 且 $\mSat/{M}{p}[w]$。但这只是 $\Ax{T}$ 在~$\mModel{M}$ 中失败的一个特例；其他特例，例如 $\Box \lnot p \lif \lnot p$，则为真。要给出~\Ax{T} 的\emph{每个代入特例}都在~$\mModel{M}$ 中为真、而 $\mModel{M}$ 不是自反的这样的例子则更难。但这样的模型也存在：
+
+\begin{prop}\ollabel{prop:reflexive}
+  设 $\mModel{M} = \tuple{W, R, V}$ 是一个满足 $W = \{u, v\}$ 的模型，其中世界 $u$ 和 $v$ 由 $R$ 相关联：即既有 $Ruv$ 也有 $Rvu$。设对所有 $p$ 都有：$u \in V(p) \Leftrightarrow v \in V(p)$。则：
+  \begin{enumerate}
+  \item 对所有 $!A$：$\mSat{M}{!A}[u]$ 当且仅当
+    $\mSat{M}{!A}[v]$（对 $!A$ 用归纳）。
+  \item ~\Ax{T} 的每个特例都在 $\mModel{M}$ 中为真。
+  \end{enumerate}
+  由于 $\mModel{M}$ 不是自反的（事实上它是\emph{禁自反的}），\olref{thm:soundschemas} 的逆在 $\Ax{T}$ 的情形下不成立（类似的论证也可以用于 \olref{thm:soundschemas} 中提到的其他模式中的\emph{某些}——尽管不是全部——模式）。
+\end{prop}
+
+\begin{prob}
+  证明 \olref[nml][frd][acc]{prop:reflexive} 中的诸断言。
+\end{prob}
+
+尽管我们将聚焦于五个经典!!{formula} \Ax{D}、\Ax{T}、\Ax{B}、\Ax{4} 和 \Ax{5}，我们也会在 \olref{tab:anotherfive} 中记录可及关系的另外几个性质。可及关系~$R$ 是部分函数的，如果从每个世界至多有一个世界可及。如果从每个世界恰好有一个世界可及，我们就称它是函数的。（因此函数的诸关系恰好就是既是持续的又是部分函数的那些关系。）它们被称为「函数的」，因为可及关系的作用方式就像一个（部分）函数。一个关系是弱稠密的，如果每当 $Ruv$ 时，就存在一个位于 $u$ 和~$v$ 「之间」的~$w$。因此弱稠密的关系在某种意义上与传递关系相对：在传递关系中，每当你能经由~$w$ 绕道从~$u$ 到达 $v$ 时，你就能直接从 $u$ 到达 $v$；在弱稠密的关系中，每当你能直接从 $u$ 到达 $v$ 时，你也能经由某个~$w$ 绕道到达它。一个关系是弱有向的，如果每当你能从某个世界~$w$ 到达世界 $u$ 和~$v$ 时，你就能从 $u$ 和~$v$ 两者都到达同一个世界~$t$——这有时被称为「菱形性质」或「汇合性」。
+
+\begin{table}[t]
+    \begin{tabular}{| p{.50\textwidth} || p{.43\textwidth} |}
+      \hline
+      {\emph{若 $R$ 是 \dots}} & {\emph{则 \dots 在~$\mModel{M}$ 中为真：}} \\
+      \hline \hline
+      \emph{部分函数的}： &
+      \multirow{2}{*}{$\Diamond p \lif \Box p$} \\
+      $ \forall w \forall u \forall v ((Rwu \land Rwv) \lif u =v )$ & \\
+      \hline
+      \multirow{2}{*}{\emph{函数的}：$\forall w \exists v \forall u(Rwu \liff \eq[u][v]) $}
+      & \multirow{2}{*}{$\Diamond p \liff \Box p$} \\
+      & \\
+      \hline
+      \emph{弱稠密的}： &  \multirow{2}{*}{$\Box \Box p \lif
+        \Box p$} \\
+      $\forall u\forall v(Ruv \lif \exists w(Ruw \land Rwv))$ & \\
+      \hline
+      \emph{弱连通的}： &
+      \multirow{3}{*}{\hbox to.43\textwidth{$
+        \begin{array}{@{}l@{}}
+          \Box ((p \land \Box p) \lif q) \lor {} \\
+          \qquad \Box ((q \land \Box q) \lif p)
+        \end{array}$ \hfill (\Ax{L})}
+      } \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif {}$ &\\
+      \qquad $(Ruv \lor u=v \lor Rvu))$ & \\
+      \hline
+      \emph{弱有向的}： & \multirow{3}{*}{\hbox to .43\textwidth
+        {$\Diamond\Box p \lif \Box\Diamond p$\hfill (\Ax{G})}} \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif {}$ & \\
+      \qquad $\exists t (Rut \land Rvt))$ & \\
+      \hline
+    \end{tabular}
+    \caption{另外五条对应事实。}
+    \ollabel{tab:anotherfive}
+  \end{table}
+
+\begin{prob}
+  设 $\mModel{M} = \tuple{W, R, V}$ 是一个模型。表明：若 $R$ 满足
+  \olref[nml][frd][acc]{tab:anotherfive} 中的左侧性质，则相应右侧公式的每个特例都在~$\mModel{M}$ 中为真。
+\end{prob}
+
+
+
+\end{document}

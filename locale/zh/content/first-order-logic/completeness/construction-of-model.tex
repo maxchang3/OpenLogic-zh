@@ -1,0 +1,255 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: construction-of-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{com}{mod}}
+      {\olfileid[zh]{pl}{com}{mod}}
+
+\olsection{模型的构造}
+
+\begin{explain}
+\iftag{FOL}{目前我们不关心 $\eq$，即我们只想证明不含~$\eq$ 的一致!!{sentence}集~$\Gamma$ 是可满足的。我们首先把~$\Gamma$ 扩张为一致、!!{complete}、且饱和的集~$\Gamma^*$。在这种情况下，模型~$\Struct{M(\Gamma^*)}$
+  的定义很简单：我们取~$\Lang{L'}$ 的闭项集作为论域。我们把每个!!{constant}指派给它自身，并且更为一般地确保对每个闭项~$t$，
+  $\Value{t}{M(\Gamma^*)} = t$。!!{predicate}被指派外延，方式使得一个原子!!{sentence}在 $\Struct{M(\Gamma^*)}$ 中为真当且仅当它在~$\Gamma^*$ 中。
+  这显然会使~$\Gamma^*$ 中的所有原子!!{sentence}在
+  $\Struct{M(\Gamma^*)}$ 中为真。其余的在~$\Gamma^*$ 是一致、完全且饱和的情况下
+  为真。}{我们现在准备定义!!a{valuation}，使得所有 $!A \in \Gamma$ 为真。
+  为此，我们首先应用 Lindenbaum 引理：我们得到一个完全的、一致的
+  $\Gamma^* \supseteq \Gamma$。我们让~$\Gamma^*$ 中的!!{propositional variable}决定~$\pAssign v(\Gamma^*)$。}
+\end{explain}
+
+\iftag{FOL}{%
+\begin{defn}[项模型]
+\ollabel{defn:termmodel}
+设 $\Gamma^*$ 是语言~$\Lang L$ 中!!{sentence}的!!a{complete}、
+一致且饱和的集。$\Gamma^*$ 的\emph{项模型}~$\Struct M(\Gamma^*)$ 是按如下方式
+定义的!!{structure}：
+\begin{enumerate}
+\item !!{domain}~$\Domain{M(\Gamma^*)}$ 是~$\Lang L$ 的所有闭项组成的集合。
+\item !!a{constant} $c$ 的解释是 $c$ 本身：
+  $\Assign{c}{M(\Gamma^*)} = c$。
+\item !!{function}~$f$ 被指派给一个函数，它以闭项 $t_1$、\dots、$t_n$ 作为
+  自变量，并以闭项 $f(t_1, \dots, t_n)$ 作为其值：
+\[
+\Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) = f(t_1,\dots, t_n)
+\]
+\item 若 $R$ 是 $n$ 元!!{predicate}，则
+  \[
+  \tuple{t_1, \dots,
+  t_n} \in \Assign{R}{M(\Gamma^*)} \text{ 当且仅当 } \Atom{R}{t_1, \dots,
+    t_n} \in \Gamma^*.
+  \]
+\end{enumerate}
+\end{defn}
+}{%
+\begin{defn}
+\ollabel{defn:termmodel}
+假设 $\Gamma^*$ 是!!{formula}的完全一致集。则我们令
+\[
+\pAssign v(\Gamma^*)(p) = \begin{cases}
+  \True & \text{如果 $p \in \Gamma^*$}\\
+  \False & \text{如果 $p \notin \Gamma^*$}
+  \end{cases}
+\]
+\end{defn}
+}
+
+\iftag{FOL}{%
+我们现在将验证我们的确具有 $\Value{t}{M(\Gamma^*)} = t$。
+
+\begin{lem}
+\ollabel{lem:val-in-termmodel} 设 $\Struct M(\Gamma^*)$ 是
+\olref{defn:termmodel} 的项模型，则 $\Value{t}{M(\Gamma^*)} = t$。
+\end{lem}
+\begin{proof}
+ 证明对 $t$ 归纳进行，其中基例，即 $t$ 是!!a{constant}的情形，直接由项模型的
+ 定义得出。对于归纳步骤，假设 $t_1, \ldots, t_n$ 是闭项，使得
+ $\Value{t_i}{M(\Gamma^*)} = t_i$，且 $f$ 是 $n$ 元!!{function}。则
+\begin{align*}
+\Value{f(t_1,\ldots,t_n)}{M(\Gamma^*)} &= \Assign{f}{M(\Gamma^*)}(\Value{t_1}
+ {M(\Gamma^*)},
+\ldots, \Value{t_n}{M(\Gamma^*)}) \\
+&= \Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) \\
+&= f(t_1,\dots, t_n),
+\end{align*}
+于是由归纳，这对每个闭项~$t$ 都成立。
+\end{proof}
+}
+
+\iftag{FOL}{%
+\begin{explain}
+  \iftag{prvEx}{!!^a{structure}~$\Struct{M}$ 可能使存在量化!!{sentence}~$\lexists[x][!A(x)]$ 为真，却没有任何使之为真的
+    特例~$!A(t)$。}{}
+  \iftag{prvAll}{!!^a{structure}~$\Struct{M}$ 可能使全称量化!!{sentence}~$\lforall[x][!A(x)]$ 的所有特例~$!A(t)$ 为真，却
+    不使~$\lforall[x][!A(x)]$ 为真。}{} 这是因为一般而言
+  $\Domain{M}$ 中并非每个!!{element}都是某个闭项的值
+  （$\Struct{M}$ 可能未被覆盖）。这就是满足关系通过变元指派来定义的原因。然而，
+  对我们的项模型~$\Struct{M(\Gamma^*)}$ 而言这并非必要——因为它被覆盖了。这是下面
+  结论的内容。
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:quant-termmodel}
+设 $\Struct M(\Gamma^*)$ 是 \olref{defn:termmodel} 的项模型。
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ 当且仅当
+  至少存在一个闭项~$t$，使得 $\Sat{M(\Gamma^*)}{!A(t)}$。}{}
+\tagitem{prvAll}{$\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ 当且仅当
+  对所有闭项~$t$，$\Sat{M(\Gamma^*)}{!A(t)}$。}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{%
+  \iftag{probEx}{习题。}{由 \olref[syn][ass]{prop:sat-quant}，
+    $\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ 当且仅当至少存在一个
+    变元指派~$s$，使得 $\Sat{M(\Gamma^*)}{!A(x)}[s]$。由于
+    $\Domain{M(\Gamma^*)}$ 由~$\Lang{L}$ 的闭项组成，
+    当且仅当至少存在一个闭项~$t$，使得 $s(x) = t$ 且
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$，此情形成立。由
+    \olref[fol][syn][ext]{prop:ext-formulas}，
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ 当且仅当 $\Sat{M(\Gamma^*)}{!A(t)}[s]$，
+    其中 $s(x) = t$。由 \olref[fol][syn][ass]{prop:sentence-sat-true}，
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$ 当且仅当 $\Sat{M(\Gamma^*)}{!A(t)}$，
+    因为 $!A(t)$ 是语句。}}{}
+\tagitem{prvAll}{%
+  \iftag{probAll}{习题。}{由 \olref[syn][ass]{prop:sat-quant}，
+    $\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ 当且仅当对每个变元
+    指派 $s$，$\Sat{M(\Gamma^*)}{!A(x)}[s]$。回顾一下，
+    $\Domain{M(\Gamma^*)}$ 由~$\Lang{L}$ 的闭项组成，
+    所以对每个闭项~$t$，$s(x) = t$ 都是这样一个变元指派，并且对任何变元指派，
+    $s(x)$ 都是某个闭项~$t$。由 \olref[fol][syn][ext]{prop:ext-formulas}，
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ 当且仅当 $\Sat{M(\Gamma^*)}{!A(t)}[s]$，
+    其中 $s(x) = t$。由 \olref[fol][syn][ass]{prop:sentence-sat-true}，
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$ 当且仅当 $\Sat{M(\Gamma^*)}{!A(t)}$，
+    因为 $!A(t)$ 是语句。}}{}
+\end{tagenumerate}
+\end{proof}
+}{}
+
+\tagprob[FOL]{probEx,probAll}
+\begin{prob}
+完成 \olref[fol][com][mod]{prop:quant-termmodel} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{lem}[真值引理]
+\ollabel{lem:truth} \iftag{FOL}{假设 $!A$ 不含~$\eq$。则}{}
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ 当且仅当 $!A \in \Gamma^*$。
+\end{lem}
+
+\begin{proof}
+我们同时证明两个方向，并对 $!A$ 归纳。
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}
+  {由满足的定义，$\iftag{FOL}{\Sat/{M(\Gamma^*)}{\lfalse}}{\pSat/{v(\Gamma^*)}{\lfalse}}$。
+    另一方面，由于 $\Gamma^*$ 一致，故 $\lfalse \notin
+    \Gamma^*$。}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}
+  {由满足的定义，$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\ltrue}$。
+    另一方面，由于 $\Gamma^*$ 一致且!!{complete}，并且
+    $\Gamma^* \Proves \ltrue$，故 $\ltrue \in
+    \Gamma^*$。}}{}
+
+\tagitem{FOL}{\indcase{!A}{R(t_1, \dots, t_n)}
+  {$\Sat{M(\Gamma^*)}{\Atom{R}{t_1, \dots, t_n}}$ 当且仅当 $\tuple{t_1,
+      \dots, t_n} \in \Assign{R}{M(\Gamma^*)}$（由满足的定义）
+    当且仅当 $R(t_1, \dots, t_n) \in \Gamma^*$（由 $\Struct
+    M(\Gamma^*)$ 的构造）。}}{\indcase{!A}{p}{$\pSat{v(\Gamma^*)}{p}$
+    当且仅当 $\pAssign v(\Gamma^*)(p) = \True$（由满足的定义）
+    当且仅当 $p \in \Gamma^*$（由 $\pAssign v(\Gamma^*)$ 的构造）。}}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$ 当且仅当
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$（由
+    满足的定义）。由归纳假设，
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$ 当且仅当
+    $!B \notin \Gamma^*$。由于 $\Gamma^*$ 一致且!!{complete}，$!B
+    \notin \Gamma^*$ 当且仅当 $\lnot !B \in \Gamma^*$。}}{}
+
+\tagitem{prvAnd}{%
+\iftag{probAnd}{%
+  \indcase!{!A}{!B \land !C}{}}{%
+  \indcase{!A}{!B \land
+    !C}{$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    当且仅当我们同时具有
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ 和
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$（由
+    满足的定义）当且仅当 $!B \in \Gamma^*$ 且 $!C \in
+    \Gamma^*$（由归纳假设）。由
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-and}，这当且仅当
+    $(!B \land !C) \in \Gamma^*$。}}}{}
+
+\tagitem{prvOr}{%
+\iftag{probOr}{%
+  \indcase!{!A}{!B \lor !C}{}}{%
+  \indcase{!A}{!B \lor !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    当且仅当 $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ 或
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$（由
+    满足的定义）当且仅当 $!B \in \Gamma^*$ 或 $!C \in
+    \Gamma^*$（由归纳假设）。由
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-or}，这当且仅当 $(!B
+    \lor !C) \in \Gamma^*$。}}}{}
+
+\tagitem{prvIf}{%
+\iftag{probIf}{%
+  \indcase!{!A}{!B \lif !C}{}}{%
+  \indcase{!A}{!B \lif !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    当且仅当 $\iftag{FOL}{\Sat/{M(\Gamma^*)}}{\pSat/{v(\Gamma^*)}}{!B}$ 或 $\iftag{FOL}{\Sat{M (\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$（由
+    满足的定义）当且仅当 $!B \notin \Gamma^*$ 或 $!C \in
+    \Gamma^*$（由归纳假设）。由
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-if}，这当且仅当 $(!B
+    \lif !C) \in \Gamma^*$。}}}{}
+
+\iftag{FOL}{%
+\tagitem{prvAll}{%
+  \iftag{probAll}{%
+    \indcase!{!A}{\lforall[x][!B(x)]}{}}{%
+    \indcase{!A}{\lforall[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ 当且仅当
+      对所有项~$t$，$\Sat{M(\Gamma^*)}{!B(t)}$
+      （\olref{prop:quant-termmodel}）。由归纳假设，当且仅当
+      对所有项~$t$，$!B(t) \in \Gamma^*$，这即此情形成立，由
+      \olref[hen]{prop:saturated-instances}，反过来这当且仅当
+      $\lforall[x][!A(x)] \in \Gamma^*$。}}}{}
+
+\tagitem{prvEx}{%
+  \iftag{probEx}{%
+    \indcase!{!A}{\lexists[x][!B(x)]}{}}{%
+    \indcase{!A}{\lexists[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ 当且仅当
+      至少存在一个项~$t$，使得 $\Sat{M(\Gamma^*)}{!B(t)}$
+      （\olref{prop:quant-termmodel}）。由归纳假设，当且仅当
+      至少存在一个项~$t$，使得 $!B(t) \in \Gamma^*$，这即此情形成立。
+      由 \olref[hen]{prop:saturated-instances}，反过来这当且仅当
+      $\lexists[x][!B(x)] \in \Gamma^*$。}}}{}
+}{}
+\end{enumerate}
+\end{proof}
+
+
+\tagprob[FOL]{probOr,probAnd,probIf,probEx,probAll}
+
+\begin{prob}
+完成 \olref[fol][com][mod]{lem:truth} 的证明。
+\end{prob}
+
+\tagendprob
+
+\tagprob[notFOL]{probOr,probAnd,probIf}
+
+\begin{prob}
+完成 \olref[pl][com][mod]{lem:truth} 的证明。
+\end{prob}
+
+\tagendprob
+
+\end{document}

@@ -1,0 +1,138 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: outline
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{com}{out}}
+      {\olfileid[zh]{pl}{com}{out}}
+
+\olsection{证明路线概览}
+
+完全性定理的证明略为复杂，初读时很容易迷失方向。所以让我们先概述一下证明的路线。第一步是视角的转换，它让我们看到一条通向证明的路径。当把完全性理解为「只要 $\Gamma
+\Entails !A$ 则 $\Gamma \Proves !A$」时，可能甚至连一个想法都难以产生：因为要证明 $\Gamma \Proves !A$ 我们就得找到!!a{derivation}，而看起来假设
+$\Gamma \Entails !A$ 对此没有任何帮助。对某些证明
+系统来说，是可以直接构造出!!a{derivation}的，但我们将采取一种略有不同的思路。所需要的视角转换如下：完全性也可以表述为：「若
+$\Gamma$ 是一致的，则它是可满足的。」也许我们可以利用~$\Gamma$ 中的信息连同「它是一致的」这一假设，来构造一个满足~$\Gamma$ 中每一个 \iftag{FOL}{!!{sentence}}{!!{formula}}
+的 \iftag{FOL}{!!a{structure}}{!!a{valuation}}。毕竟，我们知道
+我们在寻找怎样的 \iftag{FOL}{!!{structure}}{!!{valuation}}：一个正如 $\Gamma$ 所描述的那样的结构！{}
+
+若 $\Gamma$ 只含 \iftag{FOL}{原子!!{sentence}}{!!{propositional variable}}，为它构造
+一个模型是容易的。\iftag{FOL}{ 设原子!!{sentence}都是
+  形如 $\Atom{P}{a_1,\dots,a_n}$ 的，其中 $a_i$ 是!!{constant}。}{} 我们要做的只是拿出
+\iftag{FOL}{%
+  !!a{domain}~$\Domain{M}$ 以及~$P$ 的一个指派，使得
+  $\Sat{M}{\Atom{P}{a_1,\ldots,a_n}}$。但这并不太难：
+  取 $\Domain{M} = \Nat$，$\Assign{\Obj c_i}{M} = i$，并且对每个
+  $\Atom{P}{a_1,\ldots,a_n} \in \Gamma$，把元组 $\tuple{k_1,
+    \dots, k_n}$ 放入 $\Assign{P}{M}$，其中 $k_i$ 是常元符号~$a_i$ 的序号（即 $a_i \ident \Obj c_{k_i}$）。}{%
+  !!a{valuation}~$\pAssign{v}$，使得对所有 $p \in
+  \Gamma$ 都有 $\pSat{v}{p}$。好，就令 $\pAssign{v}(p) = \True$ 当且仅当 $p \in \Gamma$。}
+
+现在设 $\Gamma$ 含有某个!!{formula}~$\lnot !B$，其中 $!B$
+是原子的。我们可能会担心，$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 的构造
+会妨碍我们使 $\lnot !B$ 为真。但~$\Gamma$ 的一致性
+正是在这里起作用：若 $\lnot !B \in \Gamma$，则 $!B \notin
+\Gamma$，否则 $\Gamma$ 就是不一致的。而若 $!B \notin
+\Gamma$，那么根据~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ 的构造，便有
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$，从而
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !B}$。到目前为止一切顺利。
+
+如果 $\Gamma$ 含有复杂的、非原子的公式怎么办？比如说它含有
+$!A \land !B$。要使它为真，我们就应像 $!A$ 与 $!B$ 都在~$\Gamma$ 中那样行事。而若 $!A \lor !B \in \Gamma$，
+则我们就得使其中至少一个为真，也就是说，行事方式须
+像其中某一个在~$\Gamma$ 中那样。
+
+这提示了如下想法：我们向~$\Gamma$ 添加更多的!!{formula}，以便
+(a)~使所得集合保持一致，并且
+(b)~确保对每个可能的原子!!{sentence}~$!A$ 而言，要么
+$!A$ 在所得集合中，要么 $\lnot !A$ 在其中，以及 (c)~使得，
+每当 $!A \land !B$ 在集合中时，$!A$ 与 $!B$ 也都在其中，若
+$!A \lor !B$ 在集合中，则 $!A$ 或 $!B$ 至少有一个也在其中，等等。
+我们一直这样做下去（可能永远如此）。把这样添加的所有!!{formula}构成的集合记作~$\Gamma^*$。于是上面的构造
+就会为我们提供 \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}，而通过归纳我们可以证明，它满足~$\Gamma^*$ 中所有语句，
+进而也满足~$\Gamma$ 中所有语句，
+因为 $\Gamma \subseteq \Gamma^*$。事实证明，保证 (a)
+与~(b) 就够了。满足 (b) 的语句集合称为
+\emph{完全的}。所以我们的任务将是把一致
+集~$\Gamma$ 扩张为一个一致且完全的集合~$\Gamma^*$。
+
+\iftag{FOL}{%
+这个计划中有一个难点：若 $\lexists[x][!A(x)] \in \Gamma$，
+我们希望在这一过程中能选出某个!!{constant}~$c$ 并加上 $!A(c)$。
+但我们怎么知道总是可以这样做呢？也许我们的语言中
+只有少数几个!!{constant}，而对它们每一个我们都
+有 $\lnot !A(c) \in \Gamma$。我们不能再加 $!A(c)$，
+因为那会使集合变得不一致，而且我们也无从知道
+$\Struct{M}$ 究竟要使 $!A(c)$ 为真还是使 $\lnot !A(c)$ 为真。
+此外，还可能发生 $\Gamma$ 只包含某个语言中的语句，而该语言根本没有常元符号（例如
+集合论的语言）。
+
+这个问题的解决办法很简单：在一开始就添加无穷多个
+常元，再加上把这些常元与量词以恰当方式联结起来的语句。（当然，我们必须验证这
+不会引入不一致性。）
+
+如果我们只在原子语句中有!!{constant}，那么最初的构造
+就工作得很好。但语言还可能含有!!{function}。在这种情况下，要找出~$\Nat$ 上合适的函数来指派给这些!!{function}以使一切都运转起来，可能会很棘手。
+所以这里另有妙计：与其用 $i$ 来解释
+$\Obj c_i$，不如直接把!!{constant}的集合本身取作
+论域。这样 $\Struct M$ 可以把每个!!{constant}指派给它自身：
+$\Assign{\Obj c_i}{M} = \Obj c_i$。但何不更进一步：令
+$\Domain{M}$ 为语言的全部\emph{项}！{}若这样做，
+那么对!!{function}就有一个明显的函数指派（这些函数把项作为
+自变元，并以项为值）：我们把!!{function}~$\Obj f^n_i$ 指派给这样一个函数，它给定 $n$ 个项 $t_1$、
+\dots,~$t_n$ 作为输入，就产生项 $\Obj f^n_i(t_1, \dots, t_n)$
+作为值。
+
+拼图的最后一块是如何处理~$\eq$。!!{predicate}~$\eq$ 有固定的解释：$\Sat{M}{\eq[t][t']}$
+当且仅当 $\Value{t}{M} = \Value{t'}{M}$。如果如此安排，使得
+项~$t$ 的!!{value}就是 $t$ 自身，那么这个!!{structure}将不会使任何形如 $\eq[t][t']$ 的语句为真，
+除非 $t$ 与 $t'$ 是同一个项。而这
+当然是个问题，因为在带!!{function}的语言中，基本上每一个有趣的
+理论都会有形如
+$\eq[t][t']$ 的定理语句，而其中 $t$ 与 $t'$ 并不是同一个项（例如，在
+算术理论中：$\eq[(\Obj 0+ \Obj 0)][\Obj 0]$）。要解决
+这个问题，我们改变~$\Struct M$ 的论域：不再用项作为
+$\Domain{M}$ 中的对象，而改用项的集合，而且每个集合都
+包含所有那些被~$\Gamma$ 中的语句
+要求相等的项。例如，若 $\Gamma$ 是一个算术理论，
+其中有一个集合将包含：$\Obj 0$、$(\Obj 0 + \Obj 0)$、$(\Obj
+0 \times \Obj 0)$ 等等。这就是我们指派给 $\Obj 0$ 的集合，
+并且结果将表明，这个集合也是其中所有项的值，
+例如也是 $(\Obj 0 + \Obj 0)$ 的值。因此，语句
+$\eq[(\Obj 0+ \Obj 0)][\Obj 0]$ 在这个修正后的!!{structure}中将为真。}{}
+
+所以我们要这样做。首先研究!!{complete}一致集的性质，特别是我们证明：!!a{complete}一致集含有 $!A \land !B$ 当且仅当它同时含有
+$!A$ 与~$!B$，含有 $!A \lor !B$ 当且仅当它至少含有其中一个，
+等等 (\olref[ccs]{prop:ccs})。\iftag{FOL}{ 然后我们定义并
+  研究「饱和的」语句集合。一个饱和的集合是
+  这样的集合：它含有把每个量化的!!{sentence}与其特例联系起来的条件句 (\olref[hen]{defn:henkin-exp})。我们证明，任何
+  一致集~$\Gamma$ 总可以扩张为一个饱和的
+  集合~$\Gamma'$ (\olref[hen]{lem:henkin})。若一个集合是一致的、
+  饱和的且!!{complete}的，它还具有如下性质：它
+  含有 \iftag{prvEx}{$\lexists[x][!A(x)]$ 当且仅当它对某个闭项~$t$ 含有 $!A(t)$}{}\iftag{defEx,defAll}{}{ 并且
+  }\iftag{prvAll}{$\lforall[x][!A(x)]$ 当且仅当它对所有
+    闭项~$t$ 含有 $!A(t)$}{} (\olref[hen]{prop:saturated-instances})。}{}
+然后我们将取这个\iftag{FOL}{ 饱和的}{}一致
+集~$\iftag{FOL}{\Gamma'}{\Gamma}$，并证明它可以扩张
+为一个 \iftag{FOL}{饱和的、一致的且}{一致的且}
+!!{complete}的集合~$\Gamma^*$ (\olref[lin]{lem:lindenbaum})。这个集合
+$\Gamma^*$ 就是我们用来定义我们的 \iftag{FOL}{项
+  模型~$\Struct M(\Gamma^*)$}{!!{valuation}~$\pAssign v(\Gamma^*)$} 的东西。
+\iftag{FOL}{项模型以闭项的集合作为论域，
+  它的!!{predicate}的解释由~$\Gamma^*$ 中的原子!!{sentence}}{该赋值由~$\Gamma^*$ 中的 !!{propositional
+    variable}s} 确定 (\olref[mod]{defn:termmodel})。我们会
+利用\iftag{FOL}{ 饱和的、}{}完全一致
+集的性质来证明确实有
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ 当且仅当 $!A \in
+\Gamma^*$ (\olref[mod]{lem:truth})，从而特别地有
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\Gamma}$。
+\iftag{FOL}{最后，我们将考虑若
+  $\Gamma$ 也含有~$\eq$ 则如何定义项模型
+  (\olref[ide]{defn:term-model-factor})，并证明它
+  满足~$\Gamma^*$ (\olref[ide]{lem:truth})。}{}
+
+\end{document}

@@ -1,0 +1,69 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: modal-validity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{syn}{val}
+
+\olsection{有效性}
+
+\begin{explain}
+  在所有模型中为真，即在每个模型的每个世界处都为真的
+  !!^{formula}s 特别值得关注。它们代表了这样一类模态命题：无论
+  $\Box$ 与 $\Diamond$ 如何解释，只要该解释在如下意义上是
+  「正常的」——即它由可能世界上的某个可及关系生成——它们就为真。
+  我们把这样的!!{formula}称为\emph{有效的}。例如，
+  $\Box(p \land q) \lif \Box p$ 是有效的。然而，有些!!{formula}会让人
+  基于对 $\Box$ 的真性解释而期待其为有效，例如 $\Box p \lif p$，这类!!{formula}却并不有效。关系模型的趣味之一在于，对 $\Box$ 与
+  $\Diamond$ 的不同解释可以由不同种类的可及关系来刻画。这表明，我们
+  不应仅仅相对于\emph{所有}模型来定义有效性，而应相对
+  于\emph{某一种}模型来定义有效性。例如，我们将看到，$\Box p \lif p$ 在
+  所有「每个世界都自身可及」的模型中为真，亦即 $R$ 是自反的。相对于
+  模型的类别来定义有效性，使我们能够简洁地表述这一点：$\Box p \lif p$
+  在自反模型类中是有效的。
+\end{explain}
+
+\begin{defn}
+  若!!^a{formula}~$!A$ 在~$\mClass{C}$ 的每个模型中
+  都为真（即在~$\mClass{C}$ 的每个模型的每个世界处都为真），则称 $!A$
+  在某个模型类 $\mClass{C}$ 中是\emph{有效的}。若 $!A$ 在~$\mClass{C}$ 中
+  有效，我们就写 $\mClass{C} \Entails !A$；若 $!A$ 在\emph{所有}模型类
+  中有效，则写 $\Entails !A$。
+\end{defn}
+
+\begin{prop}\ollabel{prop:subset-class}
+  若 $!A$ 在 $\mClass{C}$ 中有效，则它在每个类
+  $\mClass{C}' \subseteq \mClass{C}$ 中也有效。
+\end{prop}
+
+\begin{prop}\ollabel{prop:Nec-rule}
+  若 $!A$ 有效，则 $\Box!A$ 也有效。
+\end{prop}
+
+\begin{proof}
+  设 $\Entails !A$。为证 $\Entails \Box!A$，设 $\mModel{M} =
+  \tuple{W, R, V}$ 为模型且 $w \in W$。若 $Rww'$，则因 $!A$ 有效而有
+  $\mSat{M}{!A}[w']$，从而也有 $\mSat{M}{\Box!A}[w]$。由于
+  $\mModel{M}$ 与 $w$ 是任意的，故 $\Entails \Box!A$。
+\end{proof}
+
+\begin{prob}
+  证明下列各式是有效的：
+  \begin{enumerate}
+  \item $\Box p \lif \Box (q \lif p)$；
+  \item $\Box \lnot \lfalse$；
+  \item $\Box p \lif (\Box q \lif \Box p)$。
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  证明 $!A \lif \Box!A$ 在满足 $W = \{w\}$ 的模型类
+  $\mClass{C}$（$\mModel{M} = \tuple{W, R, V}$）中有效。类似地，证明
+  $!B \lif \Box !A$ 与 $\Diamond !A \lif !B$ 在满足
+  $R = \emptyset$ 的模型类（$\mModel{M} = \tuple{W, R, V}$）中有效。
+\end{prob}
+
+\end{document}

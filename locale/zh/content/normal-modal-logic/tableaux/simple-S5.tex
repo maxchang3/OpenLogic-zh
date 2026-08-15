@@ -1,0 +1,75 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: simple-S5
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{tab}{s5}
+
+\olsection{针对 \Log{S5} 的简单\usetoken{P}{tableau}}
+
+\Log{S5} 关于全体全域模型的类是可靠的且完全的，而所谓全域模型，是指其中每个世界从每个世界都可及的模型。在全体模型中，可及关系并不重要：「存在一个世界~$w$，其中 $\mSat{M}{!A}[w]$」为真当且仅当存在这样从~$u$ 可及的 $w$。因此在 \Log{S5} 中，我们不妨把模型仅仅定义为一组世界加上一个赋值~$V$。这提示我们，或许也应该简化!!{tableau}规则。在一般情形下，我们取正整数序列作为前缀，以便我们能够追踪哪些这样的前缀命名了从其他世界可及的世界：$\sigma.n$ 命名了一个从~$\sigma$ 可及的世界。但在 \Log{S5} 中，任何世界从任何世界都可及，因此没有必要作这样的追踪。取而代之，我们可以用正整数作为前缀。简化后的规则见 \olref{tab:rules-S5}。
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \begin{tabular}{|c|c|}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[n]}
+      \RightLabel{\TRule{\True}{\Box}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Box !A}[n]}
+      \RightLabel{\TRule{\False}{\Box}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ 已用 & $m$ 是新的
+      \\[1ex]
+      \hline}{}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\True}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\True}{\Diamond}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\False}{\Diamond}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ 是新的 & $m$ 已用
+      \\[1ex]
+      \hline}{}
+    \end{tabular}
+  \end{center}
+  \caption{针对 \Log{S5} 的简化规则。}
+  \ollabel{tab:rules-S5}
+\end{table}
+
+\begin{ex}
+  我们给出一个简化的闭表列，它表明 $\Log{S5} \Proves
+  \Ax{5}$，即 $\Diamond!A \lif \Box\Diamond!A$。
+  \begin{oltableau}
+    [\pFmla{\False}{\Diamond\formula{A} \lif \Box\Diamond \formula{A}}{1},
+      just = \TAss
+      [\pFmla{\True}{\Diamond \formula{A}}{1}, just = {\TRule{\False}{\lif}[1]}
+        [\pFmla{\False}{\Box\Diamond \formula{A}}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\False}{\Diamond \formula{A}}{2},
+            just = {\TRule{\False}{\Box}[3]}
+            [\pFmla{\True}{\formula{A}}{3},
+              just = {\TRule{\True}{\Diamond}[2]}
+                [\pFmla{\False}{\formula{A}}{3},
+                  just = {\TRule{\False}{\Diamond}[4]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+\end{ex}
+
+\end{document}

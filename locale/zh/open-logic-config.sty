@@ -1,0 +1,77 @@
+% 中文术语配置 — 术语表（v3，以《模态逻辑教程》(文学锋, SYSU) 为参考；不手动折行）
+% 用法：\zhToken[English]{key}{中文}；提供 English 时该术语在全书首次出现处自动输出"中文（English）"（仿文学锋教材括号原文风格），之后无痕；不提供 English 时始终只输出"中文"；冠词形态（!!a{...}）自动置空。
+% 机制：以 \def 直接定义令牌宏为 \zhFirst{English}{中文}（不经过 \settexttoken/\definetoken，它们是 \edef 存储，会把 \zhFirst 在定义时展开掉）。
+% 首次标记：\zhFirst 为 \protected 宏（\write/\edef 中不展开、原样写入 .toc，读回时在正文上下文执行，无展开残留）；\ifcsname 无副作用（e-TeX 设计）故首次标记用 \global\expandafter\def 显式全局定义（正文令牌常出现在 \begin{defn} 等环境组内）；\ifzhInTOC 保证目录读回不消耗标记；\pdfstringdefDisableCommands 保证书签无括号。
+% 覆盖顺序：open-logic-config.sty（英文默认）→ locale/zh/open-logic-config.sty（本文件）→ bd-config.sty（英文版本地改写，中文版经 \ifdefined\ollangid 隔离）。
+% 注意：正文所有 !!{token} 都必须在此定义，否则回落到英文默认。
+% TOC 读回期间禁用首次逻辑（目录保持无括号、不消耗标记）
+\newif\ifzhInTOC
+\let\zhOldTOC\tableofcontents
+% 保留 \tableofcontents* 的 star 语义（bookmark 包据此决定是否生成"目录"书签）；
+% star 分支把 * 原样传给 \zhOldTOC，避免 \zhInTOCfalse 隔断 \@ifstar 检测
+\renewcommand{\tableofcontents}{%
+  \@ifstar{\zhInTOCtrue\zhOldTOC*\zhInTOCfalse}%
+          {\zhInTOCtrue\zhOldTOC\zhInTOCfalse}}
+\protected\def\zhFirst#1#2{%
+  \ifzhInTOC
+    #2%
+  \else
+    \ifcsname zhSeen@#1\endcsname
+      #2%
+    \else
+      \global\expandafter\def\csname zhSeen@#1\endcsname{}%
+      #2（#1）%
+    \fi
+  \fi}
+% hyperref 书签（PDF outline）不支持 \ifcsname/\csname：书签里一律只输出中文，不做首次检测、不加括号、不产生副作用
+% !!{token} 经 xparse 的 \@printtoken（robust 宏）解析，书签的 \edef 展开不了它（hyperref 会删宏留参数 → 书签显示英文键名），
+% 故在书签上下文把 \@printtoken 重定义为可展开版本（标题中的形式为 !!{token}，直接输出 \csname TOK@s@#1\endcsname）。
+% 正文中 \@printtoken 原版 !!a{...} 分支输出 \article{...}~（冠词+tie 空格），中文冠词为空导致"为 推演"式多余空格；
+% 中文无冠词区分，统一重定义为输出主形式 \csname TOK@s@#3\endcsname（\DeclareDocumentCommand 覆盖 OLP 原版）。
+\DeclareDocumentCommand{\@printtoken}{t^ ta m !ts}{%
+  \csname TOK@s@#3\endcsname}%
+\pdfstringdefDisableCommands{%
+  \def\zhFirst#1#2{#2}%
+  \long\def\@printtoken#1{\csname TOK@s@#1\endcsname}}%
+\newcommand{\zhToken}[3][]{%
+  \expandafter\def\csname TOK@s@#2\endcsname{\zhFirst{#1}{#3}}%
+  \expandafter\def\csname TOK@p@#2\endcsname{\zhFirst{#1}{#3}}%
+  \expandafter\def\csname TOK@S@#2\endcsname{\zhFirst{#1}{#3}}%
+  \expandafter\def\csname TOK@P@#2\endcsname{\zhFirst{#1}{#3}}%
+  \definetoken{a}{#2}{}%
+  \definetoken{A}{#2}{}}
+% ── 核心对象 ─────────────────────────────────────────────
+\zhToken[formula]{formula}{公式}
+\zhToken[propositional variable]{propositional variable}{命题变元}
+\zhToken[sentence]{sentence}{语句}               % 教材: 语句 sentence
+\zhToken[language]{language}{语言}
+\zhToken[operator]{operator}{算子}               % 教材: 逻辑算子
+\zhToken[main operator]{main operator}{主算子}
+\zhToken[constant symbol]{constant}{常元}        % 教材: 个体常元
+\zhToken[predicate symbol]{predicate}{谓词}      % 教材: 谓词符号
+\zhToken[function symbol]{function}{函数}        % 教材: 函数符号
+\zhToken[element]{element}{元素}
+\zhToken[structure]{structure}{结构}
+\zhToken[domain]{domain}{论域}                   % 教材: 论域 domain
+\zhToken[value]{value}{值}
+\zhToken[truth]{truth}{真}
+\zhToken[falsity]{falsity}{假}
+\zhToken[conditional]{conditional}{条件句}
+\zhToken[biconditional]{biconditional}{双条件}   % 教材: 双条件
+\zhToken[injective]{injective}{单射的}
+% ── 证明与推演 ───────────────────────────────────────────
+\zhToken[derivation]{derivation}{推演}           % 教材: 形式推演 formal derivation
+\zhToken[derive]{derive}{推演出}
+\zhToken[derivable]{derivable}{可推演的}         % 教材: 可推演的 derivable
+\zhToken[derivability]{derivability}{可推演性}
+\zhToken[non-derivability]{nonderivability}{不可推演性}
+\zhToken[undischarged]{undischarged}{未消去的}   % 自然演绎: 未消去的假设
+\zhToken[complete]{complete}{完全}             % 教材: 完全的 complete
+% ── 模态逻辑专用 ─────────────────────────────────────────
+\zhToken[tableau]{tableau}{表列}                % 教材: 表列 tableau
+\zhToken[relational model]{relational model}{关系模型}
+\zhToken[valuation]{valuation}{赋值}            % 教材: 典范赋值/赋值函数
+\zhToken[signed formula]{signed formula}{带符号公式}
+\zhToken[denumerable]{denumerable}{可数的}      % 教材: 可数的/不可数的
+% ── 术语说明（供翻译 worker 参考，不属于令牌）────────────
+% sound 可靠的 / soundness 可靠性；valid 有效的 / validity 有效性；satisfiable 可满足的；consequence 后承；entail 衍推；accessibility relation 可及关系；possible world 可能世界；frame 框架；canonical 典范的；filtration 过滤；bisimulation 双模拟；maximal consistent 极大一致的；tautology 重言式；substitution 代入；rule of necessitation 必然化规则；normal modal logic 正规模态逻辑；intuitionistic logic 直觉主义逻辑；counterfactual conditional 反事实条件句；alethic 真性模态 / epistemic 认知的 / doxastic 信念的 / deontic 道义的 / temporal 时态的；decidable 可判定的；consistent 一致的；theory 理论；dual 对偶；countermodel 反模型；truth lemma 真值引理；branch 支；closed tableau 闭的表列；reflexive 自反的 / transitive 传递的 / symmetric 对称的 / Euclidean 欧性的 / serial 持续的 / irreflexive 禁自反的；negation 否定 / disjunction 析取 / conjunction 合取 / implication 蕴含 / connective 联结词（完整对照见 TERMINOLOGY.md §2/§2b/§2c）

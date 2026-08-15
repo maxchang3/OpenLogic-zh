@@ -1,0 +1,51 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: S5-fmp
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{fil}{fmp}
+
+\olsection{\Log{K} 与 \Log{S5} 具有有穷模型性}
+
+\begin{defn}
+  系统 $\Sigma$ 的模态逻辑若每当!!a{formula}~$!A$ 在 $\Sigma$ 的某个模型中的某个世界处为真，则 $!A$ 就在某个 \emph{有穷}模型 $\Sigma$ 中的某个世界处为真，此时便说该系统具有 \emph{有穷模型性}。
+\end{defn}
+
+\begin{prop}\ollabel{prop:K-fmp}
+  \Log{K} 具有有穷模型性。
+\end{prop}
+
+\begin{proof}
+  \Log{K} 是有效!!{formula}的集合，即，任何模型都是~\Log{K} 的模型。由 \olref[fil]{thm:filtrations}，若 $\mSat{M}{!A}[w]$，则对~$\mModel{M}$ 穿过 $!A$ 的子!!{formula}的集合 $\Gamma$ 的任意过滤，都有 $\mSat{M^*}{!A}[w]$。任何!!{formula}只有有穷多个子!!{formula}，所以 $\Gamma$ 是有穷的。由 \olref[fin]{prop:filt-are-finite}，$\card{W^*} \le 2^n$，其中 $n$ 是~$\Gamma$ 中!!{formula}的数目。而且由于 \Log{K} 对模型不作任何限制，$\mModel{M^*}$ 是一个 \Log{K}-模型。
+\end{proof}
+
+要表明逻辑~\Log{L} 经由过滤而具有有穷模型性，关键在于某个 \Log{L}-模型的过滤本身是 \Log{L}-模型。这往往需要相当多的工作，而且并非任何过滤都会产生 \Log{L}-模型。不过，对于全域模型，这一点仍然成立。
+
+\begin{prop}\ollabel{prop:univ-fin}
+  设 $\mClass{U}$ 是全域模型的类（参见 \olref[frd][es5]{prop:S5=univ}），$\mClass{U}_\mathrm{Fin}$ 是所有有穷全域模型的类。则任何!!{formula}~$!A$ 在 $\mClass{U}$ 中有效当且仅当它在 $\mClass{U}_\mathrm{Fin}$ 中有效。
+\end{prop}
+
+\begin{proof}
+  有穷全域模型是全域模型，所以从左到右的方向是平凡的。对于从右到左的方向，设~$!A$ 在全域模型 $\mModel{M}$ 中的某个世界 $w$ 处为假。令 $\Gamma$ 包含 $!A$ 以及它的所有子公式；显然 $\Gamma$ 是有穷的。取 $\mModel{M}$ 的一个过滤 $\mModel{M^*}$；则由 \olref[fin]{prop:filt-are-finite}，$\mModel{M^*}$ 是有穷的，且由 \olref[fil]{thm:filtrations}$!A$ 在 $\mModel{M^*}$ 中的 $[w]$ 处为假。剩下只需观察 $\mModel{M^*}$ 也是全域的：给定 $u$ 和 $v$，由假设 $Ruv$，又由 \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R}，亦有 $R^*[u][v]$。
+\end{proof}
+
+\begin{cor}\ollabel{cor:S5fmp}
+  \Log{S5} 具有有穷模型性。
+\end{cor}
+
+\begin{proof}
+  由 \olref[frd][es5]{prop:S5=univ}，若 $!A$ 在某个自反且欧性的模型中的某个世界处为真，则它在某个全域模型中的某个世界处为真。由 \olref{prop:univ-fin}，它在某个有穷全域模型（即该模型穿过 $!A$ 的子!!{formula}的集合的过滤）中的某个世界处为真。每个全域模型也是自反且欧性的；所以 $!A$ 在某个有穷的自反欧性模型中的某个世界处为真。
+\end{proof}
+
+\begin{prob}
+  证明持续的或自反的模型的任何过滤也都是持续的或自反的（分别对应）。
+\end{prob}
+
+\begin{prob}
+  找出一个对称（传递、欧性）模型的一个非对称（非传递、非欧性）的过滤。
+\end{prob}
+
+\end{document}

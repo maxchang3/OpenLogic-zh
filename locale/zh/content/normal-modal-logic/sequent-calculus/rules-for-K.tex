@@ -1,0 +1,118 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: rules-for-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{seq}{rul}
+
+\olsection{\Log{K} 的规则}
+
+常规命题联结词的规则与常规矢列演算~$\Log{LK}$ 的规则相同。公理也相同：任何形如 $!A \Sequent !A$ 的矢列都算作公理。
+
+对于模态算子\iftag{prvBox}{\iftag{prvDiamond}{s~$\Box$
+和}{~$\Box$}}{}\iftag{prvDiamond}{~$\Diamond$}{}，我们还有如下额外的\iftag{notprvBox,notprvDiamond}{规则}{规则}：
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+此处，\iftag{prvBox}{$\Box\Gamma$ 指按如下方式从~$\Gamma$ 得到的!!{formula}序列：
+在~$\Gamma$ 中的每个!!{formula}前冠以 $\Box$\iftag{prvDiamond}{；并}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$ 指按如下方式从~$\Delta$ 得到的!!{formula}序列：
+在~$\Delta$ 中的每个!!{formula}前冠以 $\Diamond$}{}。
+\iftag{notprvDiamond}{$\Box$ 规则前提的右侧至多必须包含一个!!{formula}~$!A$。 }{}%
+\iftag{notprvBox}{$\Diamond$ 规则前提的左侧至多必须包含一个!!{formula}~$!A$。 }{}%
+\iftag{prvBox}{$\Gamma$\iftag{prvDiamond}{~和~}{}}{}\iftag{prvDiamond}{$\Delta$}{}
+可以为空；在这种情况下，结论矢列中对应的部分
+\iftag{prvBox}{$\Box\Gamma$\iftag{prvDiamond}{~和~}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$}{}
+也为空。
+
+把\iftag{prvBox}{右侧的 $\Box$\iftag{prvDiamond}{ 与
+}{}}{}\iftag{prvDiamond}{左侧的 $\Diamond$}{}
+限制为作用于单个!!{formula}~$!A$ 是必要的。如果我们允许
+\iftag{prvBox}{在右侧对任意多个!!{formula}添加 $\Box$\iftag{prvDiamond}{，
+或在}{}}{}\iftag{prvDiamond}{在左侧对任意多个!!{formula}添加 $\Diamond$}{}，
+我们就能!!{derive}：
+  \[
+    \iftag{prvBox}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\fCenter !A, \lnot !A$
+      \RightLabel{$\Box*$}
+      \UnaryInf$\fCenter \Box!A, \Box\lnot !A$
+      \doubleLine
+      \RightLabel{\RightR{\lor}}
+      \UnaryInf$\fCenter \Box!A \lor \Box \lnot !A$
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{\qquad}
+    \iftag{prvDiamond}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\LeftR{\lnot}}
+      \UnaryInf$\lnot !A, !A \fCenter$
+      \RightLabel{$\Diamond*$}
+      \UnaryInf$\Diamond\lnot !A,\Diamond!A \fCenter $
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\Diamond!A \fCenter \lnot\Diamond\lnot !A$
+      \RightLabel{\RightR{\lif}}
+      \UnaryInf$ \fCenter \Diamond!A \lif \lnot\Diamond\lnot !A$
+      \DisplayProof}{}
+  \]
+但 \iftag{prvBox}{$\Box!A \lor \Box \lnot !A$\iftag{prvDiamond}{ 与
+$\Diamond!A \lif \lnot\Diamond\lnot !A$}{}}{$\Diamond!A \lif
+\lnot\Diamond\lnot !A$} 在~$\Log{K}$ 中不有效。
+
+如果我们在前提中除~$!A$ 外还允许旁公式，并允许
+\iftag{prvBox}{$\Box$ 规则只在右侧对~$!A$ 添加 $\Box$\iftag{prvDiamond}{，
+或允许 }{}}{}\iftag{prvDiamond}{$\Diamond$ 规则只在左侧对~$!A$ 添加 $\Diamond$}{}
+（但对旁公式不施加任何操作），我们就能!!{derive}：
+\[
+  \iftag{prvBox}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\fCenter !A, \lnot !A$
+    \RightLabel{\RightR{\Exchange}}
+    \UnaryInf$\fCenter \lnot !A, !A$
+    \RightLabel{$\Box*$}
+    \UnaryInf$\fCenter \lnot!A, \Box !A$
+    \doubleLine
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\fCenter \lnot!A \lor \Box !A$
+    \DisplayProof}{}
+  \iftag{notprvBox,notprvDiamond}{}{\qquad}
+  \iftag{prvDiamond}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, !A \fCenter$
+    \RightLabel{$\Diamond*$}
+    \UnaryInf$\Diamond\lnot !A, !A \fCenter $
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$!A \fCenter \lnot\Diamond\lnot !A$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$ \fCenter !A \lif \lnot\Diamond\lnot !A$
+    \DisplayProof}{}
+\]
+但 \iftag{prvBox}{$\lnot!A \lor \Box !A$（它等价于 $!A
+\lif \Box!A$）\iftag{prvDiamond}{，且 $!A \lif \lnot\Diamond\lnot !A$
+}{}}{$!A \lif \lnot\Diamond\lnot !A$} 在~$\Log{K}$ 中不有效。
+
+\end{document}

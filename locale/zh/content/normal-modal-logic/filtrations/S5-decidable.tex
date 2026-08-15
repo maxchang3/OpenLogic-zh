@@ -1,0 +1,24 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: S5-decidable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{fil}{dec}
+
+\olsection{\Log{S5} 是可判定的}
+有穷模型性给了我们一个简便的方法来证明由模式给出的模态逻辑系统是\emph{可判定的}（即，存在一个可计算程序来判断某个!!a{formula}是否在该系统中!!{derivable}）。
+
+\begin{thm}
+  \Log{S5} 是可判定的。
+\end{thm}
+
+\begin{proof}
+  设$!A$给定，并假设$!A$中出现的!!{propositional variable}是$p_1, \dots, p_k$中的若干。由于对每个$n$而言，只有有穷多个包含$n$个世界、并在$p_1, \dots, p_k$上赋值的模型，我们可以用某种系统方式生成证明，从而\emph{并行地}枚举\Log{S5}的所有定理；同时枚举所有包含$1, 2, \dots$个世界的模型，并检查$!A$是否在某个这样的模型的某个世界处失败。最终，由\olref[com][fra]{thm:generaldet}和\olref[fmp]{cor:S5fmp}，两个并行过程中的某一个会给出答案：$!A$要么是!!{derivable}，要么在某个有穷的全域模型中失败。
+\end{proof}
+
+上述证明对\Log{S5}有效，是因为全域模型的过滤自动是全域的。这一结论对自反性和持续性同样成立，但对其他性质则需要更多处理。
+
+\end{document}

@@ -1,0 +1,52 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: canonical-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sc}{mod}
+
+\olsection{典范模型}
+
+我们的模型中的世界将是自然数的有穷序列~$\sigma$，即 $\sigma \in \Nat^*$。注意，$\Nat^*$ 由如下归纳方式定义：
+\begin{enumerate}
+\item $\emptyseq \in \Nat^*$。
+\item 若 $\sigma \in \Nat^*$ 且 $n \in \Nat$，则 $\sigma.n \in
+  \Nat^*$（其中 $\sigma.n$ 是 $\sigma \concat \tuple{n}$，而 $\sigma \concat \sigma'$ 是 $\sigma$ 与 $\sigma'$ 的拼接）。
+\item $\Nat^*$ 中再无其他东西。
+\end{enumerate}
+于是我们可以用 $\Nat^*$ 给出归纳定义。
+
+设 $\tuple{!B_1, !C_1}$、$\tuple{!B_2, !C_2}$、\dots，是所有对!!{formula}的一个枚举。给定一组!!{formula}~$\Delta$，按如下方式归纳定义 $\Delta(\sigma)$：
+\begin{enumerate}
+\item $\Delta(\emptyseq) = \Delta$
+\item $\Delta(\sigma.n) = {}$
+  \[
+  \begin{cases}
+    (\Delta(\sigma) \cup \{!B_n\})^* &
+    \text{如果 $\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$} \\
+    \Delta(\sigma) & \text{否则}
+  \end{cases}
+  \]
+\end{enumerate}
+这里 $(\Delta(\sigma) \cup \{!B_n\})^*$ 指的是将 \olref[lin]{lem:lindenbaum} 应用于集合 $\Delta(\sigma) \cup \{!B_n\}$ 与!!{formula}~$!C_n$ 所得到的素性!!{formula}集。注意，由这一定义可知，若 $\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$，则 $\Delta(\sigma.n)
+\Proves !B_n$ 且 $\Delta(\sigma.n) \Proves/ !C_n$。还要注意，对任何~$n$，都有 $\Delta(\sigma) \subseteq \Delta(\sigma.n)$。若 $\Delta$ 是素的，则对一切~$\sigma$，$\Delta(\sigma)$ 都是素的。
+
+\begin{defn}\ollabel{defn:canonical-model}
+  设 $\Delta$ 是素的。则为 $\Delta$ 定义的 \emph{典范模型} $\mModel{M(\Delta)}$ 如下：
+  \begin{enumerate}
+  \item $W = \Nat^*$，即自然数的有穷序列的集合。
+  \item $R$ 是如下的偏序：$R\sigma\sigma'$
+    当且仅当 $\sigma$ 是 $\sigma'$ 的一个初始段（即存在某个序列~$\sigma''$，使得 $\sigma' =
+    \sigma \concat \sigma''$）。
+  \item $V(p) = \Setabs{\sigma}{p \in \Delta(\sigma)}$。
+  \end{enumerate}
+\end{defn}
+
+容易验证，$R$ 确实是一个偏序。此外，对~$V$ 的单调性条件也得到满足。由于 $\Delta(\sigma)
+\subseteq \Delta(\sigma.n)$，于是当 $R\sigma\sigma'$ 时，通过对~$\sigma$ 归纳可得 $\Delta(\sigma)
+\subseteq \Delta(\sigma')$。
+
+\end{document}

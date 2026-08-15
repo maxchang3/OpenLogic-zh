@@ -1,0 +1,23 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: finite
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{fil}{fin}
+
+\olsection{过滤是有穷的}
+
+我们已经为任何对子!!{formula}封闭的集合~$\Gamma$ 定义了过滤。定义本身并未保证过滤是有穷的。事实上，当 $\Gamma$ 是无穷的（例如，它是所有!!{formula}的集合），过滤很可能也是无穷的。但是，如果 $\Gamma$ 是有穷的（例如，当它是给定!!{formula}~$!A$ 的所有子!!{formula}的集合）时，那么任何通过~$\Gamma$ 的过滤也是有穷的。
+
+\begin{prop}\ollabel{prop:filt-are-finite}
+  如果 $\Gamma$ 是有穷的，那么模型 $\mModel{M}$ 通过 $\Gamma$ 的任何过滤 $\mModel{M^*}$ 也是有穷的。
+\end{prop}
+
+\begin{proof}
+  $W^*$ 的大小是等价关系~$\equiv$ 之下不同类~$[w]$ 的数目。这样的类中的任意两个世界 $u$、$v$——也就是说，任何满足~$u \equiv v$ 的 $u$ 和 $v$——在~$\Gamma$ 中的一切!!{formula}~$!A$ 上都一致：对 $!A \in \Gamma$，要么 $!A$ 在 $u$ 和 $v$ 处都为真，要么都不为真。因此，每个类~$[w]$ 都对应于~$\Gamma$ 的一个子集，即所有使得 $!A$ 在~$[w]$ 中的世界处为真的 $!A \in \Gamma$ 的集合。不同的类 $[u]$ 和 $[v]$ 不可能会对应于~$\Gamma$ 的同一个子集。因为如果在 $u$ 处为真的!!{formula}的集合与在 $v$ 处为真的!!{formula}的集合相同，那么 $u$ 和 $v$ 在~$\Gamma$ 中的一切公式上都一致，即 $u \equiv v$。但那样就有 $[u] = [v]$。因此，存在一个从 $W^*$ 到 $\Pow{\Gamma}$ 的!!a{injective}函数，从而 $\card{W^*} \le \card{\Pow{\Gamma}}$。因此，如果 $\Gamma$ 含有 $n$ 个语句，那么 $W^*$ 的基数不超过~$2^n$。
+\end{proof}
+
+\end{document}

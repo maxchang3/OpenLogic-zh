@@ -1,0 +1,196 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: more-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{tab}{mru}
+
+\olsection{其他可及关系的规则}
+
+为了处理由特殊可及关系所确定的逻辑，我们考虑 \olref{tab:more-rules} 中的额外规则。
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \iftag{notprvBox,notprvDiamond}
+          {\begin{tabular}{|c|}}
+          {\begin{tabular}{|c|c|}}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma]}
+      \RightLabel{T$\Box$}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{&}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma]}
+      \RightLabel{T$\Diamond$}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+      \DisplayProof}{}
+    \\[1ex]
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma]}
+      \RightLabel{D$\Box$}
+      \UnaryInfC{\sFmla{\True}{\Diamond!A}[\sigma]}
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{&}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma]}
+      \RightLabel{D$\Diamond$}
+      \UnaryInfC{\sFmla{\False}{\Box!A}[\sigma]}
+      \DisplayProof}{}
+    \\[1ex]
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma.n]}
+      \RightLabel{B$\Box$}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{&}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma.n]}
+      \RightLabel{B$\Diamond$}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+      \DisplayProof}{}
+    \\[1ex]
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma]}
+      \RightLabel{4$\Box$}
+      \UnaryInfC{\sFmla{\True}{\Box!A}[\sigma.n]}
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{&}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma]}
+      \RightLabel{4$\Diamond$}
+      \UnaryInfC{\sFmla{\False}{\Diamond!A}[\sigma.n]}
+      \DisplayProof}{}
+    \\
+    \iftag{notprvBox,notprvDiamond}
+         {$\sigma.n$ is used}
+         {$\sigma.n$ is used & $\sigma.n$ is used}
+    \\[1ex]
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma.n]}
+      \RightLabel{4r$\Box$}
+      \UnaryInfC{\sFmla{\True}{\Box!A}[\sigma]}
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{&}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma.n]}
+      \RightLabel{4r$\Diamond$}
+      \UnaryInfC{\sFmla{\False}{\Diamond!A}[\sigma]}
+      \DisplayProof}{}
+    \\[1ex]
+    \hline
+    \end{tabular}
+  \end{center}
+  \caption{更多模态规则。}
+  \ollabel{tab:more-rules}
+\end{table}
+
+加入这些规则所得到的系统，对于 \olref{tab:logics-rules} 中给出的逻辑是可靠且完全的。
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{lll}
+      \hline
+      逻辑 & $R$ 是…… & 规则\\
+      \hline
+      $\Log{T} = \Log{KT}$ & reflexive &
+      \iftag{prvBox}{T$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{T$\Diamond$}{}
+      \\ \hline
+      $\Log{D} = \Log{KD}$ & serial &
+      \iftag{prvBox}{D$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{D$\Diamond$}{}
+      \\ \hline
+      $\Log{K4}$ & transitive &
+      \iftag{prvBox}{4$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{4$\Diamond$}{}
+      \\ \hline
+      $\Log{B} = \Log{KTB}$ & reflexive, &
+      \iftag{prvBox}{T$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{T$\Diamond$}{}\\
+      & symmetric &
+      \iftag{prvBox}{B$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{B$\Diamond$}{}
+      \\ \hline
+      $\Log{S4} = \Log{KT4}$ & reflexive, &
+      \iftag{prvBox}{T$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{T$\Diamond$}{},\\
+      & transitive &
+      \iftag{prvBox}{4$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{4$\Diamond$}{}
+      \\ \hline
+      $\Log{S5} = \Log{KT4B}$ & reflexive, &
+      \iftag{prvBox}{T$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{T$\Diamond$}{},\\
+      & transitive, &
+      \iftag{prvBox}{4$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{4$\Diamond$}{},\\
+      &  euclidean &
+      \iftag{prvBox}{4r$\Box$}{}%
+      \iftag{notprvBox,notprvDiamond}{}{, }%
+      \iftag{prvDiamond}{4r$\Diamond$}{}
+      \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{各种模态逻辑的表列规则。}
+  \ollabel{tab:logics-rules}
+\end{table}
+
+
+\begin{ex}
+  我们给出一个闭的表列来表明 $\Log{S5} \Proves \Ax{5}$，即
+  $\Box!A \lif \Box\Diamond!A$。
+  \begin{oltableau}
+    [\pFmla{\False}{\Box\formula{A} \lif \Box\Diamond \formula{A}}{1},
+      just = \TAss
+      [\pFmla{\True}{\Box \formula{A}}{1}, just = {\TRule{\False}{\lif}[1]}
+        [\pFmla{\False}{\Box\Diamond \formula{A}}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\False}{\Diamond \formula{A}}{1.1},
+            just = {\TRule{\False}{\Box}[3]}
+            [\pFmla{\False}{\Diamond \formula{A}}{1},
+              just = {4r$\Diamond$ 4}
+              [\pFmla{\False}{\formula{A}}{1.1},
+                just = {\TRule{\False}{\Diamond}[5]}
+                [\pFmla{\True}{\formula{A}}{1.1},
+                  just = {\TRule{\True}{\Box}[2]}, close]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+\end{ex}
+
+\begin{prob}
+给出闭的!!{tableau}，以表明以下各项：
+  \begin{enumerate}
+  \item $\Log{KT5} \Proves \Ax{B}$;
+  \item $\Log{KT5} \Proves \Ax{4}$;
+  \item $\Log{KDB4} \Proves \Ax{T}$;
+  \item $\Log{KB4} \Proves \Ax{5}$;
+  \item $\Log{KB5} \Proves \Ax{4}$;
+  \item $\Log{KT} \Proves \Ax{D}$.
+  \end{enumerate}
+\end{prob}
+
+\end{document}

@@ -1,0 +1,48 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: completeness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sc}{cpl}
+
+\olsection{完全性定理}
+
+\begin{thm}\ollabel{thm:completeness}
+  若 $\Gamma \Entails !A$，则 $\Gamma \Proves !A$。
+\end{thm}
+
+\begin{proof}
+  我们证明其逆否命题：设 $\Gamma \Proves/ !A$。则由
+  \olref[lin]{lem:lindenbaum}，存在一个素的集合~$\Gamma^*
+  \supseteq \Gamma$，使得 $\Gamma^* \Proves/ !A$。考虑
+  \olref[mod]{defn:canonical-model} 中所定义的、对 $\Gamma^*$ 的
+  典范模型~$\mModel{M(\Gamma^*)}$。对任意 $!B \in \Gamma$，$\Gamma^*
+  \Proves !B$。注意 $\Gamma^*(\emptyseq) = \Gamma^*$。由真值引理
+  （\olref[tru]{lem:truth}），对所有 $!B \in \Gamma$ 有
+  $\mSat{M(\Gamma^*)}{!B}[\emptyseq]$，并且
+  $\mSat/{M(\Gamma^*)}{!A}[\emptyseq]$。这表明 $\Gamma
+  \Entails/ !A$。
+\end{proof}
+
+\begin{prob}
+  证明：若 $!A$ 只含!!{propositional variable}、$\lor$ 与~$\land$，
+  则 $\Entails/ !A$。据此推出：在直觉主义逻辑中，$\lif$ 不能由
+  $\lor$ 与~$\land$ 定义。
+\end{prob}
+
+\begin{prob}
+  利用完全性定理证明：若 $\Proves !A \lor !B$，则 $\Proves !A$ 或
+  $\Proves !B$。（提示：设 $\mSat/{M_1}{!A}$ 与
+  $\mSat/{M_2}{!B}$，并构造一个新模型 $\mModel{M}$，使得
+  $\mSat/{M}{!A \lor !B}$。）
+\end{prob}
+
+\begin{prob}
+  证明：若 $\mModel{M}$ 是使用线性序的关系模型，则
+  $\mSat{M}{(!A \lif !B)\lor(!B \lif !A)}$。
+\end{prob}
+
+\end{document}

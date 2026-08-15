@@ -1,0 +1,117 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{tab}{rul}
+
+\olsection{直觉主义逻辑的规则}
+
+联结词 $\land$ 与 $\lor$ 的规则与正则命题带符号!!{tableau}相同，只是加上了前缀。在每种情形中，应用于带符号!!{formula} $\sFmla{S}{!A}[\sigma]$ 的规则会产生新的也用~$\sigma$ 加前缀的!!{formula}。这在直觉上应当很清楚：例如，若 $!A \land !B$ 在（由一个世界命名的）~$\sigma$ 处为真，则 $!A$ 与 $!B$ 也在~$\sigma$ 处为真（而不在任何其他世界处为真）。我们把 $\land$ 与 $\lor$ 的规则收集在 \olref{tab:prop-rules} 中。
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\land}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\True}{!B}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\land}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\False}{!B}[\sigma]$}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lor}}
+    \UnaryInfC{$\sFmla{\True}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lor}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+  \end{array}\]
+  \caption{$\land$ 与 $\lor$ 的带前缀!!{tableau}规则}
+  \ollabel{tab:prop-rules}
+\end{table}
+
+闭合条件与普通!!{tableau}的相似，不过我们要求的不仅是!!{formula}必须匹配，前缀也必须匹配。事实上，我们可以更加放宽一些：由于在直觉主义模型中，!!{formula}一旦为真便一直为真，$!A$ 在~$\sigma$ 处为真却在任何可及前缀~$\sigma.{*}$ 处为假是不可能的。因此若一个支包含
+\[
+\sFmla{\True}{!A}[\sigma] \quad\text{且}\quad \sFmla{\False}{!A}[\sigma.{*}]
+\]
+对某个前缀 $\sigma$ 与!!{formula}~$!A$（成立），则它是闭的。注意，若符号调换，即若它包含
+\[
+\sFmla{\False}{!A}[\sigma] \quad\text{且}\quad \sFmla{\True}{!A}[\sigma.{*}]
+\]
+则只有 $*$ 是空序列时该支才是闭的。
+
+此外，若一个支包含~$\sFmla{\True}{\bot}[\sigma]$，则它是闭的。
+
+设立假设的规则也与普通!!{tableau}相同，只是对于假设我们总是用前缀~$1$。（只要我们为所有假设都用同一个前缀，用哪个前缀并不重要。）因此，例如我们说
+\[
+!B_1, \dots, !B_n \Proves !A
+\]
+当且仅当对于假设
+\[
+\sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
+\sFmla{\False}{!A}[1].
+\]
+存在一个闭的表列。
+
+对于条件句~$\lif$，规则与经典情形和模态情形不同。$\TRule{\lif}{\True}$ 规则把包含 $\sFmla{\True}{!A \lif !B}[\sigma]$ 的支在两条不同的支上分别扩展为 $\sFmla{\True}{!A}[\sigma.{*}]$ 与 $\sFmla{\False}{!B}[\sigma.{*}]$。它只能应用于在应用它的那支上\emph{已经}出现的前缀~$\sigma.{*}$。我们称这样的前缀（在该支上）为「已使用」。$($由于 $\sigma.{*}$ 包含 $\sigma$ 本身，该规则总可通过在分开的支上添上带前缀的带符号公式 $\sFmla{\True}{!A}[\sigma]$ 与 $\sFmla{\False}{!B}[\sigma]$ 来应用$)$。
+
+$\TRule{\lif}{\False}$ 规则把包含 $\sFmla{\False}{!A \lif !B}[\sigma]$ 的支在同一支上同时扩展为 $\sFmla{\True}{!A}[\sigma.n]$ 与 $\sFmla{\False}{!B}[\sigma.n]$，其中 $\sigma.n$ 是对该支新的前缀。
+
+$\lnot$ 的规则类似地定义（用 $\lnot !A$ 作为 $!A \lif \lfalse$ 的定义）。
+
+这些规则列于 \olref{tab:rules-lif-lnot}。
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\True}{\lnot}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\False}{\lnot}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ 是已使用的} & \text{$\sigma.n$ 是新的}\\
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lif}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lif}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ 是已使用的} & \text{$\sigma.n$ 是新的}\\
+    \hline
+  \end{array}\]
+  \caption{$\lnot$ 与 $\lif$ 的带前缀!!{tableau}规则}
+  \ollabel{tab:rules-lif-lnot}
+\end{table}
+
+\end{document}

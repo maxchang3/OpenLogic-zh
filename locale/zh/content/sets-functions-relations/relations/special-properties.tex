@@ -1,0 +1,54 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: special-properties
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{rel}{prp}
+\olsection{关系的特殊性质}
+
+\begin{intro}
+有些类型的关系非常普遍，以至于它们被赋予了专门的名称。例如，$\le$ 和~$\subseteq$ 都以相似的方式关联各自所属的论域（比如在~$\le$ 的情形下是$\Nat$，在~$\subseteq$ 的情形下是$\Pow{A}$）。为了把握这些关系究竟有多相似、又有多不同，我们根据关系可能具有的某些特殊性质对它们进行分类。事实证明，（这些特殊性质的组合中）有些性质特别重要：序与等价关系。
+\end{intro}
+
+\begin{defn}[自反性]
+当且仅当对每个 $x \in A$ 都有 $Rxx$ 时，关系 $R \subseteq A^2$ 是 \emph{自反的}。
+\end{defn}
+
+\begin{defn}[传递性]
+当且仅当每当 $Rxy$ 与 $Ryz$ 时，也有 $Rxz$，则关系 $R \subseteq A^2$ 是 \emph{传递的}。
+\end{defn}
+
+\begin{defn}[对称性]
+当且仅当每当 $Rxy$ 时，也有 $Ryx$，则关系~$R \subseteq A^2$ 是 \emph{对称的}。
+\end{defn}
+
+\begin{defn}[反对称性]
+当且仅当每当 $Rxy$ 与 $Ryx$ 同时成立时，$x=y$（或者换句话说：若 $x\neq y$，则要么 $\lnot Rxy$ 要么 $\lnot Ryx$），则关系~$R \subseteq A^2$ 是 \emph{反对称的}。
+\end{defn}
+
+\begin{explain}
+在对称关系中，$Rxy$ 与 $Ryx$ 总是同时成立，或者都不成立。在反对称关系中，$Rxy$ 与 $Ryx$ 同时成立的唯一方式是 $x = y$。注意这并不\emph{要求}当 $x = y$ 时 $Rxy$ 与 $Ryx$ 成立，而只是说它们不被排除。因此反对称关系可以同时是自反的，但并非每个反对称关系都是自反的。还要注意，反对称与仅仅不是对称是不同的条件。事实上，一个关系可以同时既是对称的又是反对称的（例如恒等关系就是如此）。
+\end{explain}
+
+\begin{defn}[连通性]
+如果对所有 $x,y\in A$，当 $x \neq y$ 时要么 $Rxy$ 要么 $Ryx$，则关系 $R \subseteq A^2$ 是 \emph{连通的}。
+\end{defn}
+
+\begin{prob}
+给出满足如下条件的关系的例子：（a）自反且对称但不传递，（b）自反且反对称，（c）反对称、传递但不自反，以及（d）自反、对称且传递。不要在数或集合上取关系。
+\end{prob}
+
+\begin{defn}[禁自反性]
+如果对所有 $x \in A$ 都不成立 $Rxx$，则关系 $R \subseteq A^2$ 被称为 \emph{禁自反的}。
+\end{defn}
+
+\begin{defn}[禁对称性]
+如果不存在 $x,y\in A$ 使得 $Rxy$ 与 $Ryx$ 同时成立，则关系 $R \subseteq A^2$ 被称为 \emph{禁对称的}。
+\end{defn}
+
+注意，如果 $A \neq \emptyset$，那么~$A$ 上没有任何禁自反关系是自反的，并且~$A$ 上的每个禁对称关系也都是反对称的。但是，存在既不自反也不禁自反的 $R \subseteq A^2$，也存在不禁对称的反对称关系。
+
+\end{document}

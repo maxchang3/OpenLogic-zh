@@ -1,0 +1,217 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: more-soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{tab}{msn}
+
+\olsection{附加规则的可靠性}
+
+我们说，一个规则对某一类模型是可靠的，如果每当!!a{tableau}中的一个支在这类模型中的某个模型里是可满足的，那么施用该规则所得的支也在这类模型中的某个模型里是可满足的。
+
+\begin{prop}
+  \ollabel{prop:soundness-T}
+  \iftag{prvBox}{\Ax{T}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ 和 }%
+  \iftag{prvDiamond}{\Ax{T}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{}{}%
+  对自反的模型是可靠的。
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{将 T$\Box$ 施用于 $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ 来扩张这个支：
+  \iftag{probBox}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Box
+      !B}[f(\sigma)]$。由于 $R$ 是自反的，我们知道
+    $Rf(\sigma)f(\sigma)$。因此，$\mSat{M}{!B}[f(\sigma)]$，即
+    $\mModel{M}, f$ 满足 $\sFmla{\True}{!B}[\sigma]$。}}{}
+\tagitem{prvDiamond}{将 T$\Diamond$ 施用于 $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ 来扩张这个支：
+  \iftag{probDiamond}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Diamond
+      !B}[f(\sigma)]$。由于 $R$ 是自反的，我们知道
+    $Rf(\sigma)f(\sigma)$。因此，$\mSat/{M}{!B}[f(\sigma)]$，即
+    $\mModel{M}, f$ 满足 $\sFmla{\False}{!B}[\sigma]$。}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  完成 \olref[nml][tab][msn]{prop:soundness-T} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-D}
+  \iftag{prvBox}{\Ax{D}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ 和 }%
+  \iftag{prvDiamond}{\Ax{D}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{}{}%
+  对持续的模型是可靠的。
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{将 D$\Box$ 施用于 $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ 来扩张这个支：
+  \iftag{probBox}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\True}{\Diamond !B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，
+    $\mSat{M}{\Box !B}[f(\sigma)]$。由于 $R$ 是持续的，存在一个 $w
+    \in W$ 使得 $Rf(\sigma)w$。于是 $\mSat{M}{!B}[w]$，从而
+    $\mSat{M}{\Diamond !B}[f(\sigma)]$。因此，$\mModel{M}, f$
+    满足 $\sFmla{\True}{\Diamond!B}[\sigma]$。}}{}
+\tagitem{prvDiamond}{将 D$\Diamond$ 施用于 $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ 来扩张这个支：
+  \iftag{probDiamond}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\False}{\Box !B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$。由于 $R$ 是持续的，存在一个 $w
+    \in W$ 使得 $Rf(\sigma)w$。于是 $\mSat/{M}{!B}[w]$，从而
+    $\mSat/{M}{\Box !B}[f(\sigma)]$。因此，$\mModel{M}, f$
+    满足 $\sFmla{\False}{\Box!B}[\sigma]$。}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  完成 \olref[nml][tab][msn]{prop:soundness-D} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-B}
+  \iftag{prvBox}{\Ax{B}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ 和 }%
+  \iftag{prvDiamond}{\Ax{B}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{}{}%
+  对对称的模型是可靠的。
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{将 B$\Box$ 施用于 $\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$ 来扩张这个支：
+  \iftag{probBox}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Box
+      !B}[f(\sigma.n)]$。由于 $f$ 是支上前缀到~$\mModel{M}$
+    中的解释，我们知道
+    $Rf(\sigma)f(\sigma.n)$。由于 $R$ 是对称的，
+    $Rf(\sigma.n)f(\sigma)$。由于 $\mSat{M}{\Box !B}[f(\sigma.n)]$，
+    故 $\mSat{M}{!B}[f(\sigma)]$。因此，$\mModel{M}, f$ 满足
+    $\sFmla{\True}{!B}[\sigma]$。}}{}
+\tagitem{prvDiamond}{将 B$\Diamond$ 施用于 $\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$ 来扩张这个支：
+  \iftag{probDiamond}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Diamond
+      !B}[f(\sigma.n)]$。由于 $f$ 是支上前缀到~$\mModel{M}$
+    中的解释，我们知道
+    $Rf(\sigma)f(\sigma.n)$。由于 $R$ 是对称的，
+    $Rf(\sigma.n)f(\sigma)$。由于 $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$，
+    故 $\mSat/{M}{!B}[f(\sigma)]$。因此，$\mModel{M}, f$ 满足
+    $\sFmla{\False}{!B}[\sigma]$。}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  完成 \olref[nml][tab][msn]{prop:soundness-B} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4}
+  \iftag{prvBox}{\Ax{4}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ 和 }%
+  \iftag{prvDiamond}{\Ax{4}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{}{}%
+  对传递的模型是可靠的。
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{将 4$\Box$ 施用于 $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ 来扩张这个支：
+  \iftag{probBox}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\True}{\Box!B}[\sigma.n]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，
+    $\mSat{M}{\Box !B}[f(\sigma)]$。由于 $f$ 是支上前缀到~$\mModel{M}$
+    中的解释，且 $\sigma.n$ 必定被
+    使用，我们知道 $Rf(\sigma)f(\sigma.n)$。现在设 $w$ 是任意
+    使得 $Rf(\sigma.n)w$ 的那样一个
+    世界。由于 $R$ 是传递的，
+    $Rf(\sigma)w$。由于 $\mSat{M}{\Box !B}[f(\sigma)]$，
+    故 $\mSat{M}{!B}[w]$。因此，$\mSat{M}{\Box !B}[f(\sigma.n)]$，且
+    $\mModel{M}, f$ 满足 $\sFmla{\True}{\Box !B}[\sigma.n]$。}}{}
+\tagitem{prvDiamond}{将 4$\Diamond$ 施用于 $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ 来扩张这个支：
+  \iftag{probDiamond}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\False}{\Diamond!B}[\sigma.n]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$。由于 $f$ 是支上前缀到~$\mModel{M}$
+    中的解释，且 $\sigma.n$ 必定被
+    使用，我们知道 $Rf(\sigma)f(\sigma.n)$。现在设 $w$ 是任意
+    使得 $Rf(\sigma.n)w$ 的那样一个
+    世界。由于 $R$ 是传递的，
+    $Rf(\sigma)w$。由于 $\mSat/{M}{\Diamond !B}[f(\sigma)]$，
+    故 $\mSat/{M}{!B}[w]$。因此，$\mSat/{M}{\Diamond !B}[f(\sigma.n)]$，且
+    $\mModel{M}, f$ 满足 $\sFmla{\False}{\Diamond !B}[\sigma.n]$。}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  完成 \olref[nml][tab][msn]{prop:soundness-4} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4r}
+  \iftag{prvBox}{\Ax{4r}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ 和 }%
+  \iftag{prvDiamond}{\Ax{4r}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{}{}%
+  对欧性的模型是可靠的。
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{将 4r$\Box$ 施用于 $\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$ 来扩张这个支：
+  \iftag{probBox}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\True}{\Box!B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Box
+      !B}[f(\sigma.n)]$。由于 $f$ 是支上前缀到~$\mModel{M}$
+    中的解释，我们知道
+    $Rf(\sigma)f(\sigma.n)$。现在设 $w$ 是任意使得
+    $Rf(\sigma)w$ 的那样一个世界。由于 $R$ 是欧性的，$Rf(\sigma.n)w$。由于
+    $\mSat{M}{\Box !B}[f(\sigma).n]$，故 $\mSat{M}{!B}[w]$。因此，
+    $\mSat{M}{\Box !B}[f(\sigma)]$，且 $\mModel{M}, f$ 满足
+    $\sFmla{\True}{\Box !B}[\sigma]$。}}{}
+\tagitem{prvDiamond}{将 4r$\Diamond$ 施用于 $\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$ 来扩张这个支：
+  \iftag{probDiamond}{习题。}{这会在支上产生一个新的!!{signed
+      formula}~$\sFmla{\True}{\Box!B}[\sigma]$。设
+    $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Diamond
+      !B}[f(\sigma.n)]$。由于 $f$ 是支上前缀到~$\mModel{M}$
+    中的解释，我们知道
+    $Rf(\sigma)f(\sigma.n)$。现在设 $w$ 是任意使得
+    $Rf(\sigma)w$ 的那样一个世界。由于 $R$ 是欧性的，$Rf(\sigma.n)w$。由于
+    $\mSat/{M}{\Diamond !B}[f(\sigma).n]$，故 $\mSat/{M}{!B}[w]$。因此，
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$，且 $\mModel{M}, f$ 满足
+    $\sFmla{\False}{\Diamond !B}[\sigma]$。}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  完成 \olref[nml][tab][msn]{prop:soundness-4r} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:soundness-logics} 在
+\olref[mru]{tab:logics-rules} 中给出的各个!!{tableau}系统对相应各类
+模型都是可靠的。
+\end{cor}
+
+\end{document}

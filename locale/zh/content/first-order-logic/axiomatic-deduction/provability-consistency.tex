@@ -1,0 +1,70 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{prv}}
+      {\olfileid[zh]{pl}{axd}{prv}}
+
+\olsection{\usetoken{S}{derivability}与一致性}
+
+我们现在要建立!!{derivability}关系的一系列性质。它们本身各有独立的意义，但每一个都将在完全性定理的证明中发挥作用。
+
+\begin{prop}\ollabel{prop:provability-contr}
+  若 $\Gamma \Proves !A$ 且 $\Gamma \cup \{!A\}$ 不一致，则 $\Gamma$ 不一致。
+\end{prop}
+
+\begin{proof}
+  若 $\Gamma \cup \{!A\}$ 不一致，则 $\Gamma \cup \{!A\} \Proves \lfalse$。根据 \olref[ptn]{prop:reflexivity}，$\Gamma \Proves !B$ 对所有 $!B \in \Gamma$ 成立。又由于假设中有 $\Gamma \Proves !A$，于是 $\Gamma \Proves !B$ 对所有 $!B \in \Gamma \cup \{!A\}$ 成立。根据 \olref[ptn]{prop:transitivity}，$\Gamma \Proves \lfalse$，即 $\Gamma$ 不一致。
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ 当且仅当 $\Gamma \cup \{\lnot !A\}$ 不一致。
+\end{prop}
+
+\begin{proof}
+首先设 $\Gamma \Proves !A$。则根据 \olref[ptn]{prop:monotonicity}，$\Gamma \cup \{\lnot !A\} \Proves !A$。根据 \olref[ptn]{prop:reflexivity}，$\Gamma \cup \{\lnot !A\} \Proves \lnot !A$。我们还有 $\Proves \lnot !A \lif (!A \lif \lfalse)$（根据 \olref[prp]{ax:lnot2}）。因此应用两次 \olref[ded]{prop:mp}，即得 $\Gamma \cup \{\lnot !A\} \Proves \lfalse$。
+
+现在假设 $\Gamma \cup \{\lnot !A\}$ 不一致，即 $\Gamma \cup \{\lnot !A\} \Proves \lfalse$。根据演绎定理，$\Gamma \Proves \lnot !A \lif \lfalse$。$\Gamma \Proves (\lnot !A \lif \lfalse) \lif \lnot\lnot !A$（根据 \olref[prp]{ax:lfalse2}），因此根据 \olref[ded]{prop:mp} 得 $\Gamma \Proves \lnot\lnot !A$。由于 $\Gamma \Proves \lnot\lnot !A \lif !A$（\olref[prp]{ax:dne}），再根据 \olref[ded]{prop:mp} 即得 $\Gamma \Proves !A$。
+\end{proof}
+
+\begin{prob}
+证明 $\Gamma \Proves \lnot !A$ 当且仅当 $\Gamma \cup \{!A\}$ 不一致。
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  若 $\Gamma \Proves !A$ 且 $\lnot !A \in \Gamma$，则 $\Gamma$ 不一致。
+\end{prop}
+
+\begin{proof}
+  $\Gamma \Proves \lnot !A \lif (!A \lif \lfalse)$（根据 \olref[prp]{ax:lnot2}）。应用两次 \olref[ded]{prop:mp}，即得 $\Gamma \Proves \lfalse$。
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  若 $\Gamma \cup \{!A\}$ 与 $\Gamma \cup \{\lnot !A\}$ 都不一致，则 $\Gamma$ 不一致。
+\end{prop}
+
+\begin{proof}
+习题。
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+  证明 \olref[fol][axd][prv]{prop:provability-exhaustive}
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  证明 \olref[pl][axd][prv]{prop:provability-exhaustive}
+\end{prob}
+\tagendprob
+
+
+\end{document}

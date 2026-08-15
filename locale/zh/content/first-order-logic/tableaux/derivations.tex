@@ -1,0 +1,84 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{tab}{der}}
+      {\olfileid[zh]{pl}{tab}{der}}
+
+\olsection{\usetoken{P}{tableau}}
+
+\begin{explain}
+我们已说过什么是假设，并给出了推理规则。!!^{tableau} 由这些规则归纳
+地生成：每个!!{tableau}要么是由一个或多个假设构成的单个支，要么是
+由!!a{tableau}在某一支上应用某条推理规则而得到的。
+\end{explain}
+
+\begin{defn}[!!^{tableau}]
+对于假设 $\sFmla{S_1}{!A_1}$、\dots、$\sFmla{S_n}{!A_n}$（其中每个
+$S_i$ 要么是 $\True$ 要么是~$\False$），!!^a{tableau}是满足如下条件的
+带符号公式的有穷树：
+\begin{enumerate}
+\item 树中 $n$ 个最顶部的!!{signed formula}依次是
+  $\sFmla{S_i}{!A_i}$，一个位于另一个下方。
+\item 树中不属于这些假设之一的每个!!{signed formula}，都是对其上方
+  支中的某个!!{signed formula}正确应用某条推理规则所得的结果。
+\end{enumerate}
+!!a{tableau}的支在同时包含 $\sFmla{\True}{!A}$ 与~$\sFmla{\False}{!A}$
+时是\emph{闭的}，否则是\emph{开的}。每个支都闭的!!^a{tableau}是一个
+\emph{闭的!!{tableau}}（对其假设集而言）。如果!!a{tableau}不是闭的，
+即它至少含有一个开放的支，则它是\emph{开的}。
+\end{defn}
+
+\begin{ex}
+  每个单独的假设集本身就是!!a{tableau}，但它一般不会是闭的。（显然，
+  仅当这些假设已经含有一对!!{signed formula} $\sFmla{\True}{!A}$ 与
+  ~$\sFmla{\False}{!A}$ 时它才是闭的。）
+
+  通过将其中一条推理规则应用到!!a{tableau}（开的或闭的）中的某个!!{signed formula}~$!A$，我们可以得到一个新的、更大的!!{tableau}。
+  该规则会把一个或多个!!{signed formula}追加到任何含有我们施以该
+  规则的~$!A$之出现的支的末尾。
+
+  例如，考虑假设 $\sFmla{\True}{!A \land \lnot
+    !A}$。下面就是仅由该假设构成的（开的）!!{tableau}：
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss]
+    \end{tableau}{}
+  \end{center}
+  通过对该假设应用 $\TRule{\True}{\land}$ 规则，我们从它得到一个新的!!{tableau}。该规则允许我们向!!{tableau}添加两行新内容，即
+  $\sFmla{\True}{!A}$ 与 $\sFmla{\True}{\lnot !A}$：
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]},
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+  当我们书写!!{tableau}时，我们在右侧记录已应用的规则（例如，
+  $\TRule{\True}{\land} 1$ 表示那行上的!!{signed formula}是对
+  第~$1$ 行上的!!{signed formula}应用 $\TRule{\True}{\land}$ 规则得到
+  的结果）。这个新的!!{tableau}现在含有额外的!!{signed formula}，
+  但我们只能对其中一条（$\sFmla{\True}{\lnot !A}$）应用规则（在这里是
+  $\TRule{\True}{\lnot}$ 规则）。这样就得出了闭的!!{tableau}
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]}
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+            [\sFmla{\False}{\formula{A}}, just={\TRule{\True}{\lnot}[3]}, close]
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+\end{ex}
+
+\end{document}

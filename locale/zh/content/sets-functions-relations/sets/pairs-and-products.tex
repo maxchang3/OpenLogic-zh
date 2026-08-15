@@ -1,0 +1,105 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: pairs-and-products
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{set}{pai}
+\olsection{对、组、卡氏积}
+
+\begin{explain}
+由外延性可知，集合的元素没有顺序。所以如果我们要表示顺序，就使用\emph{有序对}$\tuple{x, y}$。在无序对$\{x, y\}$中，顺序无关紧要：$\{x, y\} = \{y, x\}$。在有序对中，顺序却很重要：若$x
+\neq y$，则$\tuple{x, y} \neq \tuple{y, x}$。
+
+在集合论中，我们应该如何看待有序对？关键地，我们要保留如下观念：有序对相同当且仅当它们有相同的首元素且有相同的第二元素，即：
+\[
+  \tuple{a, b}= \tuple{c, d}\text{ 当且仅当 } a = c \text{ 且 }b=d.
+\]
+我们可以在集合论中利用 Wiener--Kuratowski
+定义来定义有序对。
+\end{explain}
+
+\begin{defn}[有序对]\ollabel{wienerkuratowski}
+	$\tuple{a, b} = \{\{a\}, \{a, b\}\}$。
+\end{defn}
+
+\begin{prob}
+	利用\olref[sfr][set][pai]{wienerkuratowski}，证明$\tuple{a,
+	b}= \tuple{c, d}$当且仅当$a = c$且$b=d$。
+\end{prob}
+
+\begin{explain}
+在确定了有序对的定义之后，我们便可用它来定义进一步的集合。例如，有时我们还会想要两个以上对象的有序序列，如\emph{三元组}$\tuple{x, y, z}$、\emph{四元组}$\tuple{x, y, z, u}$，等等。我们可以把三元组看作特殊的有序对，其中首元素本身是有序对：$\tuple{x, y, z}$就是$\tuple{\tuple{x, y},z}$。四元组同样如此：$\tuple{x,y,z,u}$就是
+$\tuple{\tuple{\tuple{x,y},z},u}$，等等。一般地，我们说\emph{有序 $n$ 元组}$\tuple{x_1, \dots, x_n}$。
+
+某些有序对或其他有序 $n$ 元组的集合将是有用的。
+\end{explain}
+
+\begin{defn}[卡氏积]
+给定集合 $A$ 和 $B$，它们的\emph{卡氏积} $A \times B$ 定义为
+\[
+  A \times B = \Setabs{\tuple{x, y}}{x \in A \text{ 且 } y \in B}.
+\]
+\end{defn}
+
+\begin{ex}
+若 $A = \{0, 1\}$，且 $B = \{1, a, b\}$，则它们的积为
+\[
+A \times B = \{ \tuple{0, 1}, \tuple{0, a}, \tuple{0, b},
+    \tuple{1, 1}, \tuple{1, a}, \tuple{1, b} \}.
+\]
+\end{ex}
+
+\begin{ex}
+若 $A$ 是一个集合，则 $A$ 与自身的积 $A \times A$ 也写作~$A^2$。它是所有满足 $x, y \in A$ 的\emph{所有}对$\tuple{x, y}$的集合。所有三元组$\tuple{x, y, z}$的集合是 $A^3$，
+以此类推。我们可以给出递归定义：
+\begin{align*}
+  A^1 & = A\\
+  A^{k+1} & = A^k \times A
+\end{align*}
+\end{ex}
+
+\begin{prob}
+列出$\{1, 2, 3\}^3$的所有!!{element}。
+\end{prob}
+
+\begin{prop}\ollabel{cardnmprod}
+若 $A$ 有 $n$ 个!!{element}且 $B$ 有 $m$ 个!!{element}，则 $A
+\times B$ 有 $n\cdot m$ 个元素。
+\end{prop}
+
+\begin{proof}
+对~$A$ 中的每个!!{element}~$x$，有 $m$ 个形如 $\tuple{x, y} \in A \times B$ 的!!{element}。令 $B_x = \Setabs{\tuple{x, y}}{y
+  \in B}$。由于只要 $x_1 \neq x_2$，就有 $\tuple{x_1, y} \neq
+\tuple{x_2, y}$，所以 $B_{x_1} \cap B_{x_2} = \emptyset$。但若 $A = \{x_1,
+\dots, x_n\}$，则 $A \times B = B_{x_1} \cup \dots \cup B_{x_n}$，因此有
+$n\cdot m$ 个!!{element}。
+
+为了直观地理解这一点，把~$A \times B$ 的!!{element}排列成网格：
+\[
+\begin{array}{rcccc}
+  B_{x_1} = & \{\tuple{x_1, y_1} & \tuple{x_1, y_2} & \dots & \tuple{x_1, y_m}\}\\
+  B_{x_2} = & \{\tuple{x_2, y_1} & \tuple{x_2, y_2} & \dots & \tuple{x_2, y_m}\}\\
+  \vdots & & \vdots\\
+  B_{x_n} = & \{\tuple{x_n, y_1} & \tuple{x_n, y_2} & \dots & \tuple{x_n, y_m}\}
+\end{array}
+\]
+由于各 $x_i$ 都不同，各 $y_j$ 也都不同，所以该网格中没有两个对是相同的，且共有 $n\cdot m$
+个。
+\end{proof}
+
+\begin{prob}
+通过对~$k$ 的归纳证明：对所有 $k \ge 1$，若 $A$ 有 $n$
+个!!{element}，则 $A^k$ 有 $n^k$ 个!!{element}。
+\end{prob}
+
+\begin{ex}
+若 $A$ 是一个集合，则$A$ 上的一个\emph{词}是$A$ 的!!{element}的任意序列。一个序列可以看作为$A$ 的!!{element}的一个 $n$ 元组。例如，若 $A = \{a, b, c\}$，则序列 ``$bac$'' 可以看作三元组~$\tuple{b, a, c}$。词，即符号序列，在计算机科学中至关重要。按约定，我们把$A$ 的!!{element}计为长度为~$1$ 的序列，把 $\emptyset$ 计为长度为~$0$ 的序列。则$A$ 上\emph{所有}词的集合为
+\[
+A^* = \{\emptyset\} \cup A \cup A^2 \cup A^3 \cup \dots
+\]
+\end{ex}
+
+\end{document}

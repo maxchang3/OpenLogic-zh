@@ -1,0 +1,54 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{tab}{int}
+
+\olsection{导论}
+
+!!^{tableau}是某些特定（向下分支的）!!{signed formula}树，即由真值符（$\True$ 或
+$\False$）与!!a{sentence}组成的有序对
+\[
+\sFmla{\True}{!A} \text{ 或 } \sFmla{\False}{!A}.
+\]
+!!^a{tableau}始于若干 \emph{假设}。之后每个!!{signed formula}都通过应用某条推理
+规则而产生。有些推理规则会向树的某个末端添加一个或多个!!{signed formula}；另一些则添加两个新末端，从而形成两个支。
+规则所产生的!!{signed formula}中，其!!{formula}比
+它所应用到的那个!!{signed formula}中的公式更简单。当某个支同时含有 $\sFmla{\True}{!A}$ 与
+$\sFmla{\False}{!A}$ 时，我们称这个支是 \emph{闭的}。若!!a{tableau}中的每一个
+支都是闭的，则整个!!{tableau}就是闭的。一个
+闭的!!{tableau}构成!!a{derivation}，它表明用来起始该!!{tableau}的那一组!!{signed formula}是不可满足的。由此可以定义一个 $\Proves$ 关系：
+$\Gamma \Proves !A$ 当且仅当存在某个有穷集~$\Gamma_0 = \{!B_1,
+\dots, !B_n\} \subseteq \Gamma$，使得对于如下假设有一个闭的!!{tableau}
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+对于直觉主义逻辑，我们既要扩展!!{signed formula}的概念，也要调整各联结词的规则。除了
+符（$\True$ 或 $\False$）之外，直觉主义!!{tableau}中的!!{formula}还有 \emph{前缀}~$\sigma$。前缀是
+正整数的非空序列，即 $\sigma \in
+(\PosInt)^* \setminus \{\emptyseq\}$。书写这类前缀时，
+我们省去外层的 $\tuple{\ }$，并用~$.$'s 而非 $,$'s 分隔各个!!{element}。若 $\sigma$ 是一个前缀，则
+$\sigma.n$ 就是 $\sigma \concat \tuple{n}$；例如，若 $\sigma = 1.2.1$，
+则 $\sigma.3$ 即 $1.2.1.3$。例如，
+\[
+\sFmla{\True}{!A \lif (!B \lif !C)}[1.2]
+\]
+就是一个 \emph{带前缀的!!{signed formula}}（或简称为 \emph{带前缀的!!{formula}}）。
+
+直观上讲，前缀为!!a{tableau}某支上的!!{formula}指定了模型中一个可能满足这些公式的世界，而若 $\sigma$ 指定某个
+世界，则 $\sigma.n$ 指定一个（由~$\sigma$ 所指定的世界）可及的世界。
+
+在直觉主义模型中，可及关系是自反且
+传递的。就前缀而言，这意味着 $\sigma$
+自身可及于 $\sigma$，任何
+延展~$\sigma$ 的前缀也是如此，即任何形如
+$\sigma.n_1.\cdots.n_k$ 的前缀。引入记号 $\sigma.*$ 来表示
+$\sigma$ 本身及其任意延展。换句话说，前缀 $\sigma.*$ 恰好就是
+从~$\sigma$ 可及的所有前缀。
+
+\end{document}

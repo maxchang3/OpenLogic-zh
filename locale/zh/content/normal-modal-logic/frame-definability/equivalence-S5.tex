@@ -1,0 +1,98 @@
+% Part: normal-modal-logic
+% Chapter: frame-correspondence
+% Section: equivalence-S5
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{frd}{es5}
+
+\olsection{等价关系与 \Log{S5}}
+
+模态逻辑 \Log{S5} 可刻画为在所有全域框架上都有效的!!{formula}的集合，即每一世界与每一世界都可及，包括其自身。在这样的情形下，$\Box$ 对应必然性，$\Diamond$ 对应可能性：若 $!A$ 在\emph{每一}世界处都为真，则 $\Box !A$ 为真；若 $!A$ 在\emph{某一}世界处为真，则 $\Diamond !A$ 为真。结果证明，\Log{S5} 也可刻画为在所有自反、对称且传递的框架上都有效的!!{formula}，即在所有\emph{等价关系}上都有效。
+
+\begin{defn}
+  若 $W$ 上的二元关系 $R$ 是自反的、对称的且传递的，则它是\emph{等价关系}。若对一切 $u,v \in W$ 都有 $Ruv$，则 $W$ 上的关系 $R$ 是\emph{全域的}。
+\end{defn}
+
+由于 \Ax{T}、\Ax{B} 与 \Ax{4} 刻画了自反、对称与传递的框架，可及关系为等价关系的框架恰好就是这三种!!{formula}都有效的那些框架。结果证明，等价关系也可由!!{formula}的其他组合来刻画，因为我们用以定义等价关系的那些条件，等价于 $R$ 上其他一些熟悉条件的组合。
+
+\begin{prop}\ollabel{prop:equivalences}
+  如下各项是等价的：
+  \begin{enumerate}
+  \item $R$ 是等价关系；
+  \item $R$ 是自反的且欧性的；
+  \item $R$ 是持续的、对称的且欧性的；
+  \item $R$ 是持续的、对称的且传递的。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  习题。
+\end{proof}
+
+\begin{prob}
+  证明 \olref[nml][frd][es5]{prop:equivalences}，可如下进行：
+  \begin{enumerate}
+  \item 若 $R$ 是对称的且传递的，则它是欧性的。
+  \item 若 $R$ 是自反的，则它是持续的。
+  \item 若 $R$ 是自反的且欧性的，则它是对称的。
+  \item 若 $R$ 是对称的且欧性的，则它是传递的。
+  \item 若 $R$ 是持续的、对称的且传递的，则它是自反的。
+  \end{enumerate}
+  解释为何这些足以证明这些条件是等价的。
+\end{prob}
+
+\olref{prop:equivalences} 是 \olref[prf][prs]{prop:S5} 的语义对应部分，因为它给出了 $R$ 为其上等价关系的那些框架的模态逻辑（即传统上称之为 \Log{S5} 的逻辑）的一种等价刻画。
+
+全域关系与等价关系之间的关系是什么？尽管每一全域关系都是等价关系，但显然并非每一等价关系都是全域的。然而，在所有全域关系上都有效的!!{formula}，与在所有等价关系上都有效的!!{formula}恰好完全相同。
+
+\begin{prop}
+  设 $R$ 是等价关系，并对每一 $w \in W$，把 $w$ 的\emph{等价类} $[w]$ 定义为集合 $[w] = \{w'\in W : Rww'\}$。则：
+  \begin{enumerate}
+  \item $w \in [w]$；
+  \item $R$ 在每个等价类 $[w]$ 上是全域的；
+  \item 等价类的全体把 $W$ 划分为两两互斥且覆盖全集的子集。
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}\ollabel{prop:S5=univ}
+  !!^a{formula}~$!A$ 在所有 $R$ 为等价关系的框架 $\mModel{F} =\tuple{W,R}$ 中有效，当且仅当它在所有 $R$ 为全域的框架 $\mModel{F} =\tuple{W,R}$ 中有效。因此，全域框架的逻辑正是 \Log{S5}。
+\end{prop}
+
+\begin{proof}
+  不难直接验证，$W$ 上的全域关系 $R$ 是等价关系。因此，若 $!A$ 在所有 $R$ 为等价关系的框架中都有效，则它在所有全域框架中都有效。另一方向我们反证之：设 $!B$ 是!!a{formula}，它在一个基于框架 $\tuple{W,R}$ 的模型 $\mModel{M} = \tuple{W, R, V}$ 中的某一世界 $w$ 处不成立，其中 $R$ 是 $W$ 上的等价关系。于是 $\mSat/{M}{!B}[w]$。如下定义一个模型 $\mModel{M}' = \tuple{W', R', V'}$：
+  \begin{enumerate}
+  \item $W' = [w]$；
+  \item $R'$ 在 $W'$ 上是全域的；
+  \item $V'(p) = V(p) \cap W'$。
+  \end{enumerate}
+  （因此，$\mModel{M}'$ 中世界构成的集合 $W'$ 由 \olref{fig:partition} 中的阴影区域表示。）容易看出，$R$ 与 $R'$ 在 $W'$ 上一致。于是可对!!{formula}归纳证明，对所有 $w' \in W'$ 以及每个 $!A$：$\mSat{M'}{!A}[w']$ 当且仅当 $\mSat{M}{!A}[w']$（由于 $W' \subseteq W$，这是有意义的）。特别地，$\mSat/{M'}{!B}[w]$，于是 $!B$ 在一个基于全域框架的模型中不成立。
+\end{proof}
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[node distance=2cm, auto, thick]
+    \clip [rounded corners] (0,0) -- (6,0) -- (6,4) -- (0,4) --  cycle;
+    \begin{scope}
+      \clip (0,0) -- (2,0)  .. controls (1.5,1.5) and (4.5,1.5)
+      .. (4,4) -- (0,4) -- (0,0) -- cycle;
+      \filldraw[fill=gray!40] (0,4) -- (0,2) .. controls (1.5,1.5)
+      and (4.5,1.5) .. (4.5,0) -- (6,0) -- (6,4) -- (0,4) --  cycle;
+    \end{scope}
+    \draw [name path=line1] (2,0) .. controls (1.5,1.5) and (4.5,1.5) .. (4,4);
+    \draw [name path=line2] (0,2)  .. controls (1.5,1.5) and (4.5,1.5) .. (4.5,0);
+    \path [name intersections={of=line1 and line2}];
+    \draw [rounded corners, use as bounding box, very thick] (0,0)
+    -- (6,0) -- (6,4) -- (0,4) --  cycle;
+    \node at (2,3) {$[w]$} ;
+    \node at (1,1) {$[u]$} ;
+    \node at (3,0.75) {$[v]$} ;
+    \node at (4.75,2) {$[z]$} ;
+  \end{tikzpicture}
+  \caption{$W$ 在等价类中的一种划分。}
+  \ollabel{fig:partition}
+\end{figure}
+
+\end{document}

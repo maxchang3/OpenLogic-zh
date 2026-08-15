@@ -1,0 +1,95 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{pro}}
+      {\olfileid[zh]{pl}{axd}{pro}}
+
+\olsection{\usetoken{P}{derivation}示例}
+
+
+\begin{ex}
+设我们想证明 $(\lnot !D \lor !E) \lif (!D \lif
+!E)$。显然，这不是我们任何公理的特例，因此我们必须使用 \MP{} 规则来!!{derive}它。我们唯一的规则是~\MP，它给定 $!A$ 与 $!A \lif !B$ 便允许我们论证~$!B$。一种策略是使用 \olref[prp]{ax:lor3}，取 $!A$ 为 $\lnot
+!D$，$!B$ 为 $!E$，$!C$ 为 $!D \lif !E$，即特例
+\[
+(\lnot !D \lif (!D \lif !E)) \lif ((!E \lif (!D \lif !E)) \lif ((\lnot
+!D \lor !E) \lif (!D \lif !E))).
+\]
+为什么？两次应用 \MP 便得到最后一部分，这正是我们想要的。而我们容易看出，$\lnot !D \lif (!D \lif !E)$ 是 \olref[prp]{ax:lnot2} 的特例，$!E \lif (!D \lif !E)$ 是 \olref[prp]{ax:lif1} 的特例。所以我们的!!{derivation}是：
+\begin{derivation}
+  1. &  $\lnot !D \lif (!D \lif !E)$ & \olref[prp]{ax:lnot2} \\
+  2. & $(\lnot !D \lif (!D \lif !E)) \lif {}$\\
+  &\qquad $((!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E)))$ & \olref[prp]{ax:lor3}\\
+  3. & $(!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E))$ & 1, 2, \MP\\
+  4. & $!E \lif (!D \lif !E)$ & \olref[prp]{ax:lif1}\\
+  5. & $(\lnot !D \lor !E) \lif (!D \lif !E)$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:identity}
+让我们试着求出 $!D \lif !D$ 的!!a{derivation}。它不是公理的特例，因此我们必须使用 \MP{} 来!!{derive}它。\olref[prp]{ax:lif1} 是一个形如~$!A \lif !B$ 的公理，我们可以对之应用~\MP。当然，为了使 \MP 有用，在本情形中它要论证为正确一步的 $!B$ 必须是~$!D \lif !D$，因为这是我们想!!{derive}的。这意味着 $!A$ 也必须得是 $!D$，即我们可以考虑 \olref[prp]{ax:lif1} 的这个特例：
+\[
+!D \lif (!D \lif !D)
+\]
+为了应用 \MP，我们还需要论证相应的第二个前提，即~$!A$。但在我们的情形中，那将是~$!D$，而我们无法单独!!{derive}~$!D$。所以我们需要一种不同的策略。
+
+只涉及~$\lif$ 的另一条公理是 \olref[prp]{ax:lif2}，即
+\[
+(!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C))
+\]
+我们可以通过两次应用 \MP{} 到达最后一个嵌套的条件句。同样，这意味着我们要 \olref[prp]{ax:lif2} 的一个特例，其中 $!A \lif !C$ 是 $!D \lif !D$，即我们所要推出的!!{formula}。那么当然，$!A$ 与 $!C$ 都是~$!D$。我们应如何选取~$!B$，使得 $!A \lif (!B \lif !C)$ 与 $!A \lif
+!B$（在我们的情形中即 $!D \lif (!B \lif !D)$ 与 $!D \lif !B$）也都是!!{derivable}呢？嗯，无论我们决定 $!B$ 是什么，其中第一个都已经是 \olref[prp]{ax:lif1} 的特例了。而如果 $!B$ 是 $(!D \lif !D)$，那么 $!D \lif !B$ 将是 \olref[prp]{ax:lif1} 的另一个特例。所以，我们的!!{derivation}是：
+\begin{derivation}
+  1. & $!D \lif ((!D \lif !D) \lif !D)$ & \olref[prp]{ax:lif1}\\
+  2. & $(!D \lif ((!D \lif !D) \lif !D)) \lif {}$\\
+  & \qquad $((!D \lif (!D \lif !D)) \lif (!D \lif !D))$ & \olref[prp]{ax:lif2}\\
+  3. & $(!D \lif (!D \lif !D)) \lif (!D \lif !D)$ & 1, 2, \MP\\
+  4. & $!D \lif (!D \lif !D)$ & \olref[prp]{ax:lif1}\\
+  5. & $!D \lif !D$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:chain}
+有时我们想说明，由某些!!{formula}的集合~$\Gamma$ 存在某!!{formula}的!!a{derivation}。例如，让我们说明，我们可以由 $\Gamma = \{!A \lif !B,
+!B \lif !C\}$ 推出 $!A \lif !C$。
+\begin{derivation}
+  1. & $!A \lif !B$ & \Hyp\\
+  2. & $!B \lif !C$ & \Hyp\\
+  3. & $(!B \lif !C) \lif (!A \lif (!B \lif !C))$ & \olref[prp]{ax:lif1} \\
+  4. & $!A \lif (!B \lif !C)$ & 2, 3, \MP\\
+  5. & $(!A \lif (!B \lif !C)) \lif {}$\\
+  & \qquad $((!A \lif !B) \lif (!A \lif !C))$ & \olref[prp]{ax:lif2}\\
+  6. & $((!A \lif !B) \lif (!A \lif !C))$ & 4, 5, \MP\\
+  7. & $!A \lif !C$ & 1, 6, \MP
+\end{derivation}
+标有 「\Hyp」（表示「hypothesis」（假设））的行指出，该行的!!{formula}是~$\Gamma$ 的!!a{element}。
+\end{ex}
+
+\begin{prop}
+  \ollabel{prop:chain} 若 $\Gamma \Proves !A \lif !B$ 且 $\Gamma
+  \Proves !B \lif !C$，则 $\Gamma \Proves !A \lif !C$
+\end{prop}
+
+\begin{proof}
+  设 $\Gamma \Proves !A \lif !B$ 且 $\Gamma \Proves !B \lif
+  !C$。那么由~$\Gamma$ 存在 $!A \lif !B$ 的!!a{derivation}；同样也存在~$!B \lif !C$ 的!!a{derivation}。把它们拼接起来合并为单一的!!{derivation}。再添入前一例中!!{derivation}的第 3--7 行。这就是由~$\Gamma$ 推出的 $!A \lif !C$ 的!!a{derivation}——它是这条新!!{derivation}的最后一行。注意，如果把对第 1 行的引用替换为对~$!A \lif !B$ 的!!{derivation}最后一行的引用，把对第 2 行的引用替换为对~$!B \lif !C$ 的!!{derivation}最后一行的引用，那么第 4 行与第~7 行的论证仍然有效。
+\end{proof}
+
+\begin{prob}
+通过从公理出发给出!!{derivation}，证明如下各项成立：
+\begin{enumerate}
+\item $(!A \land !B) \lif (!B \land !A)$
+\item $((!A \land !B) \lif !C) \lif (!A \lif (!B \lif !C))$
+\item $\lnot(!A \lor !B) \lif \lnot !A$
+\end{enumerate}
+\end{prob}
+
+
+
+\end{document}

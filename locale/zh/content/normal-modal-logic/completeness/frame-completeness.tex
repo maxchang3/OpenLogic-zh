@@ -1,0 +1,213 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: frame-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{com}{fra}
+
+\olsection{框架完全性}
+
+一旦我们证明给定逻辑的典范模型具有相应的框架性质，\Log{K} 的完全性定理就可以推广到其他模态系统。
+
+\begin{thm}\ollabel{thm:completeframeprops}
+  如果一个正规模态逻辑 $\Sigma$ 包含 \olref{tab:correspondencetable}
+  左边所列的某个!!{formula}，那么~$\Sigma$ 的典范模型就具有
+  右边对应的性质。
+\end{thm}
+
+\begin{table}[htp]
+  \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      \emph{如果 $\Sigma$ 包含 \dots} & \emph{\dots 那么 $\Sigma$ 的
+        典范模型是：} \\
+      \hline \hline
+      \Ax{D}:\;\; $\Box!A \lif \Diamond !A$ & \quad \text{持续的；}\\
+      \hline
+      \Ax{T}:\;\; $\Box!A \lif !A$ &\quad  \text{自反的；}\\
+      \hline
+      \Ax{B}: \;\;$!A \lif \Box\Diamond!A$ &\quad  \text{对称的；} \\
+      \hline
+      \Ax{4}: \;\; $\Box!A \lif \Box\Box!A$ & \quad \text{传递的；} \\
+      \hline
+      \Ax{5}: \;\; $\Diamond !A \lif \Box\Diamond!A$& \quad \text{欧性的。}\\
+      \hline
+    \end{tabular}
+    \caption{基本对应事实。}
+    \ollabel{tab:correspondencetable}
+\end{table}
+
+\begin{proof}
+  我们逐一讨论以上各项。
+
+  设 $\Sigma$ 包含 \Ax{D}，并令 $\Delta \in W^\Sigma$；我们需要证明
+  存在一个 $\Delta'$ 使得 $R^\Sigma \Delta\Delta'$。只需证明
+  $\Box^{-1}\Delta$ 是 $\Sigma$-一致的，因为那样的话，由 Lindenbaum
+  引理，存在一个完全的 $\Sigma$-一致集 $\Delta' \supseteq
+  \Box^{-1}\Delta$，并且由 $R^\Sigma$ 的定义，
+  \iftag{prvBox}{}{并 \olref[mod]{lem:box-iff-diamond} }我们得到
+  $R^\Sigma \Delta\Delta'$。所以，反设 $\Box^{-1}\Delta$ \emph{不是}
+  $\Sigma$-一致的，即 $\Box^{-1}\Delta \Proves[\Sigma]
+  \lfalse$。由 \olref[mod]{lem:box2}，$\Delta \Proves[\Sigma]
+  \Box\lfalse$，并且由于 $\Sigma$ 包含 \Ax{D}，还有 $\Delta
+  \Proves[\Sigma] \Diamond\lfalse$。但 $\Sigma$ 是正规的，所以 $\Sigma
+  \Proves \lnot\Diamond \lfalse$
+  （\olref[prf][nor]{prop:notDiamondBot}），从而也有 $\Delta
+  \Proves[\Sigma] \lnot\Diamond \lfalse$，这与~$\Delta$ 的一致性相矛盾。
+
+  现在设 $\Sigma$ 包含 \Ax{T}，并令 $\Delta \in W^\Sigma$。我们要证明
+  $R^\Sigma \Delta\Delta$，即
+  \iftag{prvBox}{}{，由 \olref[mod]{lem:box-iff-diamond}，}
+  $\Box^{-1}\Delta \subseteq \Delta$。但如果 $\Box!A \in \Delta$，那么
+  由 \Ax{T} 也有 $!A \in \Delta$，正如所愿。
+
+  现在设 $\Sigma$ 包含 \Ax{B}，并设 $R^\Sigma \Delta\Delta'$，其中
+  $\Delta$、$\Delta' \in W^\Sigma$。我们需要证明 $R^\Sigma
+  \Delta'\Delta$，即
+  \iftag{prvBox}{$\Box^{-1}\Delta' \subseteq \Delta$。由
+    \olref[mod]{lem:box-iff-diamond}，这等价于}{}
+  $\Diamond\Delta \subseteq \Delta'$。所以设 $!A \in \Delta$。由 \Ax{B}，
+  也有 $\Box\Diamond!A \in \Delta$。由假设 $R^\Sigma
+  \Delta\Delta'$\iftag{prvBox}{}{及 \olref[mod]{lem:box-iff-diamond}}，
+  我们有 $\Box^{-1}\Delta \subseteq \Delta'$，从而 $\Diamond!A \in
+  \Delta'$，正如所愿。
+
+  现在设 $\Sigma$ 包含 \Ax{4}，并设 $R^\Sigma \Delta_1\Delta_2$ 且
+  $R^\Sigma \Delta_2\Delta_3$。我们需要证明 $R^\Sigma
+  \Delta_1\Delta_3$。由假设\iftag{prvBox}{}{及
+    \olref[mod]{lem:box-iff-diamond}}我们有 $\Box^{-1}\Delta_1
+  \subseteq \Delta_2$ 和 $\Box^{-1}\Delta_2 \subseteq \Delta_3$。为了
+  证明 $R^\Sigma \Delta_1\Delta_3$，只需证明 $\Box^{-1}\Delta_1
+  \subseteq \Delta_3$。所以令 $!B \in \Box^{-1}\Delta_1$，即
+  $\Box!B \in \Delta_1$。由 \Ax{4}，也有 $\Box\Box!B \in \Delta_1$，
+  由假设我们得到，首先 $\Box!B \in \Delta_2$，其次 $!B \in
+  \Delta_3$，正如所愿。
+
+  现在设 $\Sigma$ 包含 \Ax{5}，设 $R^\Sigma \Delta_1\Delta_2$ 且
+  $R^\Sigma \Delta_1\Delta_3$。我们需要证明 $R^\Sigma
+  \Delta_2\Delta_3$。第一个假设给出 $\Box^{-1}\Delta_1 \subseteq
+  \Delta_2$\iftag{prvBox}{}{，由 \olref[mod]{lem:box-iff-diamond}}，
+  第二个假设等价于 $\Diamond\Delta_3 \subseteq
+  \Delta_1$\iftag{prvBox}{，由 \olref[mod]{lem:box-iff-diamond}}{}。
+  要证明 $R^\Sigma \Delta_2\Delta_3$\iftag{prvBox}{，由
+    \olref[mod]{lem:box-iff-diamond}，只需}{我们不得不}
+  证明 $\Diamond\Delta_3 \subseteq \Delta_2$。所以令 $\Diamond!A \in
+  \Diamond\Delta_3$，即 $!A \in \Delta_3$。由第二个假设
+  $\Diamond!A \in \Delta_1$，并且由 \Ax{5}，还有 $\Box\Diamond!A \in
+  \Delta_1$。但现在第一个假设给出 $\Diamond!A \in \Delta_2$，正如所愿。
+  \end{proof}
+
+作为推论，我们得到若干系统的完全性结果。例如，我们知道 $\Log{S5}
+= \Log{KT5} = \Log{KTB4}$ 关于所有自反欧性模型的类是完全的，
+这个类正是所有自反、对称且传递的模型的类。
+
+\begin{thm}\ollabel{thm:generaldet}
+  令 $\mClass{C}_\Ax{D}$、$\mClass{C}_\Ax{T}$、$\mClass{C}_\Ax{B}$、
+  $\mClass{C}_\Ax{4}$ 和 $\mClass{C}_\Ax{5}$ 分别是所有持续的、自反
+  的、对称的、传递的和欧性的模型（分别相应）的类。那么对于
+  \Ax{D}、\Ax{T}、\Ax{B}、\Ax{4} 和 \Ax{5} 中任意一些模式
+  $!A_1$、\dots、$!A_n$，系统 $\Log{K}!A_1 \dots !A_n$ 由模型类
+  $\mClass{C} = \mClass{C}_{!A_1} \cap \dots \cap \mClass{C}_{!A_n}$
+  所决定。
+\end{thm}
+
+\begin{prop}
+  令 $\Sigma$ 是一个正规模态逻辑；则：
+  \begin{enumerate}
+  \item\ollabel{prop:anotherfive-a}%
+    如果 $\Sigma$ 包含模式 $\Diamond!A \lif \Box !A$，那么 $\Sigma$ 的
+    典范模型是部分函数的。
+  \item 如果 $\Sigma$ 包含模式 $\Diamond!A \liff \Box !A$，那么
+    $\Sigma$ 的典范模型是函数的。
+  \item 如果 $\Sigma$ 包含模式 $\Box\Box!A \lif \Box !A$，那么
+    $\Sigma$ 的典范模型是弱稠密的。
+  \end{enumerate}
+（这些框架性质的定义见 \olref[frd][acc]{tab:anotherfive}）。
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item 设 $\Sigma$ 包含模式 $\Diamond !A \lif \Box !A$，要证明
+    $R^\Sigma$ 是部分函数的，我们需要证明：对任意 $\Delta_1$、$\Delta_2$、
+    $\Delta_3 \in W^\Sigma$，如果 $R^\Sigma \Delta_1\Delta_2$ 且 $R^\Sigma
+    \Delta_1\Delta_3$，则 $\Delta_2=\Delta_3$。由于 $R^\Sigma
+    \Delta_1\Delta_2$，我们有 $\Box^{-1}\Delta_1 \subseteq
+    \Delta_2$，并且由于 $R^\Sigma \Delta_1\Delta_3$，也有
+    $\Box^{-1}\Delta_1 \subseteq
+    \Delta_3$\iftag{prvBox}{}{，两者都
+      由 \olref[mod]{lem:box-iff-diamond} 得出}。如果能确立两个包含
+    $\Delta_2 \subseteq \Delta_3$ 和 $\Delta_3 \subseteq \Delta_2$，
+    则同一性 $\Delta_2=\Delta_3$ 就会随之而来。对于第一个包含，令
+    $!A \in \Delta_2$；则 $\Diamond!A \in \Delta_1$，由该模式和
+    $\Delta_1$ 的演绎封闭性，还有 $\Box!A \in \Delta_1$，从而由假设
+    $R^\Sigma \Delta_1\Delta_3$，$!A \in \Delta_3$。第二个包含类似。
+
+  \item 这直接从部分~\olref{prop:anotherfive-a}和
+    \olref{thm:completeframeprops} 中的持续性证明得出。
+
+  \item 设 $\Sigma$ 包含模式 $\Box\Box!A \lif \Box!A$，并设 $R^\Sigma
+    \Delta_1\Delta_2$ 以证明 $R^\Sigma$ 是弱稠密的。我们需要证明存在
+    一个完全的 $\Sigma$-一致集 $\Delta_3$ 使得 $R^\Sigma
+    \Delta_1\Delta_3$ 且 $R^\Sigma \Delta_3\Delta_2$。令：
+    \[
+    \Gamma = \Box^{-1}\Delta_1 \cup \Diamond\Delta_2.
+    \]
+    只需证明 $\Gamma$ 是 $\Sigma$-一致的，因为那样的话，由 Lindenbaum
+    引理它可以被扩张为一个完全的 $\Sigma$-一致集~$\Delta_3$，使得
+    $\Box^{-1}\Delta_1 \subseteq \Delta_3$ 且 $\Diamond\Delta_2
+    \subseteq \Delta_3$，即 $R^\Sigma \Delta_1\Delta_3$\iftag{prvBox}{}{（由
+      \olref[mod]{lem:box-iff-diamond}）}且 $R^\Sigma
+    \Delta_3\Delta_2$\iftag{prvBox}{（由
+      \olref[mod]{lem:box-iff-diamond}）}{}。
+
+    反设 $\Gamma$ 不一致。那么存在!!{formula} $\Box!A_1$、\dots、
+    $\Box!A_n \in \Delta_1$ 和 $!B_1$、\dots、~$!B_m \in \Delta_2$ 使得
+    \[!A_1, \dots, !A_n, \Diamond!B_1, \dots, \Diamond!B_m \Proves[\Sigma]
+    \lfalse.\] 由于 $\Diamond (!B_1 \land \dots \land !B_m) \to
+    (\Diamond!B_1 \land \dots \land \Diamond!B_m)$ 在
+    每个正规模态逻辑中都!!{derivable}，我们论证如下，这与~$\Delta_2$
+    的一致性相矛盾：
+    \begin{align*}
+      !A_1, \dots, !A_n, & \Diamond!B_1, \dots,
+      \Diamond!B_m \Proves[\Sigma] \lfalse \\
+      !A_1, \dots,!A_n & \Proves[\Sigma] (\Diamond!B_1 \land
+      \dots \land \Diamond!B_m) \lif \lfalse\\
+      & \qquad\text{由演绎定理}\\
+      & \qquad\text{\olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-deduction}，以及 \Taut} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Diamond(!B_1 \land
+      \dots \land !B_m) \lif \lfalse\\
+      & \qquad \text{因为 $\Sigma$ 是正规的} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \lnot\Diamond (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{由 \PL} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{以 $\Box\lnot$ 代替 $\lnot\Diamond$} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma] \Box\Box \lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{由 \olref[mod]{lem:box1}} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{由模式 $\Box\Box!A \lif \Box!A$} \\
+      \Delta_1 & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{由单调性，\olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-monotonicity}} \\
+      & \Box\lnot (!B_1 \land \dots \land !B_m) \in \Delta_1\\
+      &\qquad\text{由演绎封闭性；}\\
+      & \lnot (!B_1 \land \dots \land !B_m) \in \Delta_2\\
+      &\qquad \text{因为 }
+      R^\Sigma \Delta_1\Delta_2.
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+基于这些例子的说服力，人们可能会认为每个模态逻辑系统~$\Sigma$ 都是
+\emph{完全的}，即它证明了每一个在所有使 $\Sigma$ 的每个定理都成立的
+框架上有效的公式。遗憾的是，有许多系统在这个意义上并不完全。
+
+\end{document}

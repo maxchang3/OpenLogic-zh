@@ -1,0 +1,41 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: possible-histories
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{aml}{tl}{poss}
+
+\olsection{可能历史}
+
+我们一直在使用的时态逻辑关系模型极为灵活，因为我们无需对可及关系施加任何限制。这意味着时态模型可以在过去和未来分支，但我们或许想考虑一种更「模态」的分支观念，在其中我们把事件序列视为可能历史。这并不必然要求我们改变语言，尽管我们也可以加入我们「通常的」模态算子 $\Box$ 和~$\Diamond$，而且我们还可以考虑加入认知可及关系，以表示主体随时间而发生的知识变化。
+
+\begin{defn}
+  时态语言的一个\emph{可能历史模型}是一个三元组
+  $\mModel{M} = \tuple{T, C, V}$，其中
+  \begin{enumerate}
+    \item $T$ 是一个非空集合，被理解为时间中的状态。
+    \item $C$ 是计算路径的集合，即一个系统的\emph{可能历史}。换言之，$C$~是状态 $s_1$、$s_2$、~$s_3$、\dots 的序列~$\sigma$ 的集合，其中每个 $s_i \in T$。
+    \item $V$ 是一个把每个!!{propositional variable}~$p$ 指派为时间中点的集合~$V(p)$ 的函数。
+  \end{enumerate}
+  为使事情更简单，我们还通常假定：当一个历史在~$C$ 中，其所有后缀也在~$C$ 中。例如，如果 $s_1$、$s_2$、~$s_3$ 是~$C$ 中的一条序列，那么 $s_2$、$s_3$ 与~$s_3$ 也是。此外，当两个状态 $s_i$ 与~$s_j$ 出现在一条序列~$\sigma$ 中时，我们称 $s_i \prec_\sigma s_j$ 成立的条件是 $i < j$。当 $t \in V(p)$ 时，我们说 $p$~在~$t$ 处\emph{为真}。
+\end{defn}
+
+唯一相关的改变是：当我们在模型~$\mModel M$ 中于时间点~$t$ 处求!!a{formula}的真假时，我们是相对于一条历史~$\sigma$ 来做的，而 $t$ 在其中作为一个状态出现。不过，我们不需要改变任何关于!!{propositional variable}或真值函项联结词 (truth-functional connective) 的语义。这些都与 \olref[sem]{defn:tmodels} 中的完全一致，因为它们都不会涉及~$\sigma$。然而，我们现在要相对于这些历史重新定义我们的未来算子~$\Ftemp$，并加入我们的~$\Diamond$ 算子。
+
+\begin{defn}\ollabel{defn:phmodels}
+  !!a{formula}~$!A$ 在~$\mModel M$ 中\emph{于 $t, \sigma$ 处的真}，记作：
+  $\mSat{M}{!A}[t, \sigma]$：
+  \begin{enumerate}
+  \item\ollabel{defn:sub:phmodels-f} \indcase{!A}{\Ftemp
+    !B}{$\mSat{M}{\indfrm}[t, \sigma]$ 当且仅当存在 $t' \in T$ 使得 $t \prec_\sigma t'$，且 $\mSat{M}{!B}[t', \sigma]$。}
+  \item\ollabel{defn:sub:phmodels-diamond} \indcase{!A}{\Diamond
+    !B}{$\mSat{M}{\indfrm}[t, \sigma]$ 当且仅当存在 $t$ 在其中出现的 $\sigma' \in C$，使得 $\mSat{M}{!B}[t, \sigma']$。}
+  \end{enumerate}
+\end{defn}
+
+其他时态和模态算子可以类似地定义。然而，我们现在可以表示把时态和模态结合在一起的断言。例如，我们可以用公式 $\lnot \Ftemp p \land \Diamond \Ftemp p$ 来使「$p$~将来不会发生，但它本可能已经发生」符号化。这会成立的点与历史是：$p$ 不在任何后继状态处变为真，但存在另一条历史，其中 $p$ 将来会变为真。
+
+\end{document}

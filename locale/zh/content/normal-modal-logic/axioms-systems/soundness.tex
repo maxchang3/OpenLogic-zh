@@ -1,0 +1,55 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{prf}{snd}
+
+\olsection{可靠性}
+
+一个!!^a{derivation}系统称为可靠的（sound），如果一切能!!{derive}出的事物都是有效的。在考虑模态系统时，即除
+\Ax{K} 之外我们还可以使用某些!!{formula} $!A_1$、\dots、~$!A_n$
+的特例的!!{derivation}，我们希望每一个!!{derivable}公式在使得
+$!A_1$、\dots、$!A_n$ 为真的任何模型中都为真。
+
+\begin{thm}[可靠性定理]\ollabel{thm:soundness}
+  如果 $!A_1$、\dots、$!A_n$ 的每一个特例分别都在模型类
+  $\mClass{C}_1$、\dots、$\mClass{C}_n$ 上有效，那么
+  $\Log{K}!A_1\dots !A_n
+  \Proves !B$ 蕴含 $!B$ 在模型类
+  $\mClass{C}_1 \cap \dots \cap \mClass{C}_n$ 上有效。
+\end{thm}
+
+\begin{proof}
+  对证明的长度作归纳。为简便起见，置 $\mClass{C} =
+  \mClass{C}_1 \cap \dots \cap \mClass{C}_n$。
+  \begin{enumerate}
+  \item 归纳基始：若 $!B$ 有一个长度为~$1$ 的证明，则它是
+    一个重言式特例、\Ax{K} 的一个
+    特例，\iftag{prvDiamond}{或者 \Dual{} 的一个特例，}{}或者是
+    $!A_1$、\dots、~$!A_n$ 之一的特例。在第一种情形中，$!B$ 在
+    $\mClass{C}$ 上有效，因为重言式特例在 \emph{任何}模型类上都是
+    有效的，这是由 \olref[syn][tau]{prop:valid-taut} 保证的。类似地，
+    在第二种情形中，由
+    \olref[syn][sch]{prop:Kvalid}\iftag{prvDiamond}{ 以及
+      \olref[syn][sch]{prop:Dual-valid}}{} 保证。最后在第三种情形中，
+    由于 $!B$ 在 $\mClass{C}_i$ 上有效且 $\mClass{C} \subseteq
+    \mClass{C}_i$，据 \olref[syn][val]{prop:subset-class}，$!B$ 也在
+    $\mClass{C}$ 上有效。
+  \item 归纳步：设 $!B$ 有一个长度为 $k>1$ 的证明。若
+    $!B$ 是一个重言式特例或 $!A_1$、
+    \dots、$!A_n$ 之一的特例，则按上一步骤处理。于是设 $!B$ 是
+    由 \MP{} 从先前的!!{formula} $!C \lif !B$ 和
+    $!C$ 得到的。那么 $!C \lif !B$ 和 $!C$ 都有长度 $<k$ 的证明，并且
+    据归纳假设它们在~$\mClass{C}$ 上有效。由
+    \olref[syn][sch]{prop:soundMP}，$!B$ 在 $\mClass{C}$ 上也有效。
+    最后设 $!B$ 是由 \Nec{} 从 $!C$ 得到的（于是
+    $!B = \Box!C$）。据归纳假设，$!C$ 在
+    $\mClass{C}$ 上有效，从而由 \olref[syn][val]{prop:Nec-rule}，$!B$ 也同样有效。
+  \end{enumerate}
+\end{proof}
+
+\end{document}

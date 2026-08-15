@@ -1,0 +1,109 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: relations-as-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{rel}{set}
+\olsection{作为集合的关系}
+
+\begin{explain}
+在 \olref[sfr][set][imp]{sec} 中，我们提到了一些重要的集合：
+$\Nat$、$\Int$、$\Rat$、$\Real$。你无疑还记得这些集合中某些集合的!!{element}之间的一些有趣关系。例如，这些集合中的每一个都带有一种完全标准的\emph{序关系}。
+还有\emph{恒等于}关系，即每个对象相对于自身而非任何其他事物所处的关系。
+我们还会遇到许多更有趣的关系，甚至更多可能的关系。不过，在回顾它们之前，
+我们首先要指出，我们可以把关系视为一种特殊的集合。
+
+为此，回顾 \olref[sfr][set][pai]{sec} 中的两件事。首先，
+回顾\emph{有序对}的概念：给定 $a$ 与 $b$，我们可以构成~$\tuple{a, b}$。
+重要的是，这里元素的顺序\emph{确实是}要紧的。所以若 $a \neq b$，
+则 $\tuple{a, b} \neq \tuple{b, a}$。（这与无序对，即 $2$-元素集合形成对照，
+其中 $\{a, b\}=\{b, a\}$。）其次，回顾\emph{卡氏积}的概念：若 $A$ 与 $B$ 是集合，
+则我们可以构成~$A \times B$，即所有满足 $x \in A$ 且 $y \in B$ 的对 $\tuple{x, y}$ 的集合。
+特别是，$A^{2}= A \times A$ 是从~$A$ 出发的所有有序对的集合。
+
+现在我们考虑一个集合上的特定关系：自然数集合~$\Nat$ 上的 $<$-关系。
+考虑所有满足 $n<m$ 的数对 $\tuple{n, m}$ 的集合，即，
+\[
+  R=\Setabs{\tuple{n, m}}{n, m \in \Nat \text{ 且 } n<m}.
+\]
+$n$ 小于 $m$ 与对 $\tuple{n, m}$ 是 $R$ 的一个成员之间有着密切的联系，即：
+\[
+      n<m\text{ 当且仅当 }\tuple{n, m} \in R.
+\]
+确实，在不丢失任何信息的情况下，我们可以把集合 $R$ 视为$\Nat$ 上的
+$<$-关系\emph{本身}。
+
+以同样的方式，我们可以为数之间的任何关系构造 $\Nat^{2}$ 的一个子集。
+反过来，给定数对的任何集合 $S \subseteq \Nat^{2}$，数之间都有一个相应的关系，
+即，当且仅当 $\tuple{n, m} \in S$ 时 $n$ 对 $m$ 所处的那种关系。
+这就证明了如下定义：
+\end{explain}
+
+\begin{defn}[二元关系]
+集合 $A$ 上的\emph{二元关系}是~$A^{2}$ 的一个子集。若 $R
+\subseteq A^{2}$ 是~$A$ 上的一个二元关系，且 $x, y \in A$，
+我们有时把 $\tuple{x, y} \in R$ 写作 $Rxy$（或 $xRy$）。
+\end{defn}
+
+\begin{ex}
+  \ollabel{relations}
+自然数对集合 $\Nat^{2}$ 可以像这样列在一个
+$2$-维矩阵中：
+\[
+  \begin{array}{ccccc}
+  \mathbf{\tuple{ 0,0 }} & \tuple{ 0,1 } &
+    \tuple{ 0,2 } & \tuple{ 0,3 } & \ldots\\
+  \tuple{ 1,0 } & \mathbf{\tuple{ 1,1 }} &
+    \tuple{ 1,2 } & \tuple{ 1,3 } & \ldots\\
+  \tuple{ 2,0 } & \tuple{ 2,1 } &
+    \mathbf{\tuple{ 2,2 }} & \tuple{ 2,3 } & \ldots\\
+  \tuple{ 3,0 } & \tuple{ 3,1 } & \tuple{ 3,2 } &
+    \mathbf{\tuple{ 3,3 }} & \ldots\\
+  \vdots & \vdots & \vdots & \vdots & \mathbf{\ddots}
+  \end{array}
+\]
+这里我们把对角线用粗体标出，因为 $\Nat^2$ 中由位于对角线上的对组成
+的子集，即，
+\[
+  \{\tuple{0,0 }, \tuple{ 1,1 }, \tuple{ 2,2 }, \dots\},
+  \]
+是~$\Nat$ 上的\emph{恒等关系}。（由于恒等关系很常用，我们定义 $\Id{A}=\Setabs{\tuple{ x,x }}{x \in
+A}$ 对任何集合 $A$。）所有位于对角线上方的对的子集，即，
+\[
+  L = \{\tuple{ 0,1 },\tuple{ 0,2 },\ldots,\tuple{ 1,2 },
+  \tuple{ 1,3 }, \dots, \tuple{ 2,3 }, \tuple{ 2,4 },\ldots\},
+\]
+是\emph{小于}关系，即，当且仅当 $n<m$ 时 $Lnm$。位于对角线下方的对的
+子集，即，
+\[
+  G=\{ \tuple{ 1,0 },\tuple{ 2,0 },\tuple{
+    2,1 }, \tuple{ 3,0 },\tuple{ 3,1 },\tuple{ 3,2 }, \dots\},
+\]
+是\emph{大于}关系，即，当且仅当 $n>m$ 时 $Gnm$。$L$ 与 $I$ 的并，
+我们可以称之为 $K=L\cup I$，是\emph{小于或等于}关系：当且仅当 $n \le m$
+时 $Knm$。类似地，$H=G \cup
+I$ 是\emph{大于或等于关系。}这些关系 $L$、$G$、$K$、$H$
+是称为\emph{序}的特殊种类的关系。$L$ 与 $G$ 具有这样的性质：没有数对自身
+处于 $L$ 或 $G$ 关系（即，对所有 $n$，既没有 $Lnn$ 也没有 $Gnn$）。
+具有这种性质的关系称为\emph{禁自反的}，并且，若它们恰好也是序，
+则称为\emph{严格序。}
+\end{ex}
+
+\begin{explain}
+虽然序与恒等是重要而自然的关系，但应强调，按照我们的定义，$A^{2}$ 的
+\emph{任何}子集都是~$A$ 上的一个关系，无论它看起来多么不自然或刻意。
+特别是，$\emptyset$ 是任何集合上的一个关系（即\emph{空关系}，
+元素的各种对都不处于其中），而 $A^{2}$~本身也是~$A$ 上的一个关系
+（每个对都处于其中），称为\emph{全域关系}。但像
+$E=\Setabs{\tuple{n, m}}{n>5 \text{ 或 } m \times n \ge 34}$ 这样的东西
+也算作一个关系。
+\end{explain}
+
+\begin{prob}
+  列出集合 $\Pow{\{a, b, c\}}$ 上关系 $\subseteq$ 的!!{element}。
+\end{prob}
+
+\end{document}

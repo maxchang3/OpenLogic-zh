@@ -1,0 +1,96 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: subsets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{set}{sub}
+\olsection{子集与幂集}
+
+\begin{explain}
+我们经常会想要比较集合。而一种显然的比较方式便是：\emph{一个集合中的每个对象也在另一个集合中}。这种情况足够重要，值得我们引入一些新记号。
+\end{explain}
+
+\begin{defn}[子集]
+若集合 $A$ 的每个!!{element}也是~$B$ 的!!a{element}，则我们说
+$A$ 是~$B$ 的\emph{子集}，记作 $A \subseteq B$。若
+$A$ 不是~$B$ 的子集，则记作 $A \not\subseteq B$。
+若 $A \subseteq B$ 但 $A \neq B$，则记作 $A \subsetneq B$，并称
+$A$ 是 $B$ 的\emph{真子集}。
+\end{defn}
+
+\begin{ex}
+每个集合都是它自身的子集，且 $\emptyset$ 是每个
+集合的子集。自然偶数集合是自然数集的子集。又比如，$\{ a, b \} \subseteq \{ a, b, c \}$。但 $\{ a, b, e
+\}$ 不是 $\{ a, b, c \}$ 的子集。
+\end{ex}
+
+\begin{ex}
+数 $2$ 是整数集的!!{element}，而
+偶数集是整数集的子集。然而，一个集合
+可能恰好\emph{既}是某个其他集合的!!a{element}，又是它的子集，
+例如，$\{0\} \in \{0, \{0\}\}$，且 $\{0\} \subseteq \{0,
+\{0\}\}$。
+\end{ex}
+
+外延性给出了集合的同一性判据：$A = B$ 当且仅当
+$A$ 的每个!!{element}也是~$B$ 的!!a{element}，反之
+亦然。「子集」的定义恰恰把 $A \subseteq B$ 界定为
+这一判据的前半部分：$A$ 的每个!!{element}也是
+~$B$ 的!!a{element}。当然，若我们对调
+$A$ 与 $B$，这一定义依然适用：即，$B \subseteq A$ 当且仅当 $B$ 的每个!!{element}也是~$A$ 的!!a{element}。而这，反过来，恰恰就是外延性的
+「反之亦然」部分。换言之，外延性
+蕴含集合相等当且仅当它们互为彼此的子集。
+
+\begin{prop}
+$A = B$ 当且仅当既 $A \subseteq B$，又 $B \subseteq A$。
+\end{prop}
+
+现在也是引入一些对记号大有裨益的时机。在界定 $A$ 何时是~$B$ 的子集时，我们曾说
+「$A$ 的每个!!{element}是 \dots，」并用
+「$B$ 的!!a{element}」来填充「$\dots$」。但这是如此常见的一种
+\emph{表达形式}，为此引入一些形式化记号将很有帮助。
+
+\begin{defn}\ollabel{forallxina}
+$(\forall x \in A)\phi$ 缩写为 $\forall x(x \in A \lif
+\phi)$。类似地，$(\exists x \in A)\phi$ 缩写为 $\exists x(x
+\in A \land \phi)$。
+\end{defn}
+
+借助这一记号，我们可以说 $A \subseteq B$ 当且仅当 $(\forall
+x \in A)x \in B$。
+
+接下来我们考虑一类特殊的集合：给定集合的所有
+子集的集合。
+
+\begin{defn}[幂集]
+由集合~$A$ 的所有子集构成的集合称为
+~$A$ 的\emph{幂集}，记作 $\Pow{A}$。
+  \[
+    \Pow{A} = \Setabs{B}{B \subseteq A}
+  \]
+\end{defn}
+
+\begin{ex}
+$\{ a, b, c \}$ 的所有可能的子集有哪些？它们是：
+$\emptyset$，$\{a \}$，$\{b\}$，$\{c\}$，$\{a, b\}$，$\{a, c\}$，$\{b,
+c\}$，$\{a, b, c\}$。所有这些子集的集合即
+$\Pow{\{a,b,c\}}$：
+\[
+\Pow{\{ a, b, c \}} = \{\emptyset, \{a \}, \{b\}, \{c\}, \{a, b\},
+\{b, c\}, \{a, c\}, \{a, b, c\}\}
+\]
+\end{ex}
+
+\begin{prob}
+列出 $\{a, b, c, d\}$ 的所有子集。
+\end{prob}
+
+\begin{prob}
+证明：若 $A$ 有 $n$ 个!!{element}，则 $\Pow{A}$ 有 $2^n$
+个!!{element}。
+\end{prob}
+
+\end{document}

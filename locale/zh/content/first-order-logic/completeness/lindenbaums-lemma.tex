@@ -1,0 +1,91 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: lindenbaums-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{com}{lin}}
+      {\olfileid[zh]{pl}{com}{lin}}
+
+\olsection{Lindenbaum 引理}
+
+\begin{explain}
+我们现在证明一个引理，它表明任一致的!!{sentence}集都包含于某个不仅是
+一致的、而且也是!!{complete}的语句集。该证明通过一次添加一个!!{sentence}来进行，并保证在每一步骤中所得集合仍然一致。我们这样做是为了
+对每个 $!A$，要么 $!A$ 要么 $\lnot !A$ 在某个阶段被添加进来。该构造中所有
+阶段的并集于是包含 $!A$ 或其否定~$\lnot !A$，因而是完全的。它也是一致的，
+因为我们确保在每个阶段都不引入不一致性。
+\end{explain}
+
+\begin{lem}[Lindenbaum 引理]
+\ollabel{lem:lindenbaum} 语言~$\Lang{L}$ 中的每个一致
+集合~$\Gamma$ 都可被扩张为!!a{complete}且一致的集合~$\Gamma^*$。
+\end{lem}
+
+\begin{proof}
+设 $\Gamma$ 一致。设 $!A_0$、$!A_1$、
+\dots{} 是~$\Lang L$ 的所有!!{sentence}的一个枚举。
+定义 $\Gamma_0 = \Gamma$，且
+\[
+\Gamma_{n+1} =
+\begin{cases}
+\Gamma_n \cup \{ !A_n \} & \textrm{若 $\Gamma_n \cup \{!A_n\}$
+  一致；} \\
+\Gamma_n \cup \{ \lnot !A_n \} & \textrm{否则。}
+\end{cases}
+\]
+设 $\Gamma^* = \bigcup_{n \geq 0} \Gamma_n$。
+
+每个 $\Gamma_n$ 都是一致的：$\Gamma_0$ 按定义一致。
+若 $\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$，这是因为后者
+一致。若它不一致，则 $\Gamma_{n+1} = \Gamma_n \cup \{\lnot
+!A_n\}$。我们必须验证 $\Gamma_n \cup \{\lnot !A_n\}$ 一致。设它不一致。
+那么 \emph{二者} $\Gamma_n \cup
+\{!A_n\}$ 与 $\Gamma_n \cup \{\lnot !A_n\}$ 都不一致。这意味着 $\Gamma_n$ 将
+因
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:prv:prop:provability-exhaustive},
+    prfSC/{fol:seq:prv:prop:provability-exhaustive},
+    prfND/{fol:ntd:prv:prop:provability-exhaustive},
+    prfTab/{fol:tab:prv:prop:provability-exhaustive}}}{%
+  \tagrefs{prfAX/{pl:axd:prv:prop:provability-exhaustive},
+    prfSC/{pl:seq:prv:prop:provability-exhaustive},
+    prfND/{pl:ntd:prv:prop:provability-exhaustive},
+    prfTab/{pl:tab:prv:prop:provability-exhaustive}}}而
+不一致，这与归纳假设相反。
+
+对每个~$n$ 及每个 $i < n$，$\Gamma_i \subseteq \Gamma_n$。这
+通过对~$n$ 的简单归纳得出。对于 $n=0$，不存在 $i < 0$，
+因此该结论自动成立。对于归纳步，设它对~$n$ 成立。我们证明若 $i < n+1$ 则
+$\Gamma_i \subseteq \Gamma_{n+1}$。由构造有 $\Gamma_{n+1} = \Gamma_n \cup
+\{!A_n\}$ 或 $= \Gamma_n \cup \{\lnot !A_n\}$。故 $\Gamma_n \subseteq
+\Gamma_{n+1}$。若 $i < n+1$，则由归纳假设（若 $i < n$）或显然的事实
+$\Gamma_n \subseteq \Gamma_n$（若 $i = n$）有 $\Gamma_i \subseteq
+\Gamma_n$。于是由~$\subseteq$ 的传递性得 $\Gamma_i \subseteq
+\Gamma_{n+1}$。
+
+由此可得 $\Gamma^*$ 一致。理由如下：设 $\Gamma' \subseteq \Gamma^*$
+有限。每个 $!B \in \Gamma'$ 也都在某个~$\Gamma_i$（对某个~$i$）中。设 $n$
+为其中最大的。由于若 $i \le n$ 则 $\Gamma_i \subseteq \Gamma_n$，所以每个
+$!B \in \Gamma'$ 也 $\in \Gamma_n$，即 $\Gamma' \subseteq \Gamma_n$，而
+$\Gamma_n$~一致。因此，每个有穷子集 $\Gamma' \subseteq \Gamma^*$ 都一致。
+因
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:ptn:prop:proves-compact},
+    prfSC/{fol:seq:ptn:prop:proves-compact},
+    prfND/{fol:ntd:ptn:prop:proves-compact},
+    prfTab/{fol:tab:ptn:prop:proves-compact}}}{%
+  \tagrefs{prfAX/{pl:axd:ptn:prop:proves-compact},
+    prfSC/{pl:seq:ptn:prop:proves-compact},
+    prfND/{pl:ntd:ptn:prop:proves-compact},
+    prfTab/{pl:tab:ptn:prop:proves-compact}}}，$\Gamma^*$ 一致。
+
+$\Frm[L]$ 的每个!!{sentence}都出现在用来定义~$\Gamma^*$ 的列表上。若
+$!A_n \notin \Gamma^*$，那是因为 $\Gamma_n \cup \{!A_n\}$ 不一致。但于是
+$\lnot !A_n \in \Gamma^*$，所以 $\Gamma^*$ 是!!{complete}的。
+\end{proof}
+
+\end{document}

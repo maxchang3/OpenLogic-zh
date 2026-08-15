@@ -1,0 +1,76 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: basics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{set}{bas}
+\olsection{外延性}
+
+一个\emph{集合}（set）是一批对象所构成的集合体，被视作一个单一
+对象。构成集合的那些对象称为该集合的\emph{元素}或
+\emph{成员}（member）。若 $x$ 是集合~$A$ 的!!a{element}，则我们
+记作 $x \in A$；若不然，则记作 $x \notin A$。不含任何!!{element}的集合称为\emph{空}（empty）集，记作~``$\emptyset$''。
+
+\begin{explain}
+我们如何\emph{指定}（specify）该集合、如何\emph{排列}（order）其!!{element}，乃至多少次\emph{计数}（count）其!!{element}，都无关紧要。
+要紧的只是其!!{element}到底是什么。我们将这一点落实到如下原则中。
+\end{explain}
+
+\begin{defn}[外延性]
+  若 $A$ 与 $B$ 是集合，则 $A = B$ 当且仅当
+  $A$ 的每个!!{element}也是 $B$ 的!!a{element}，反之
+  亦然。
+\end{defn}
+
+外延性（Extensionality）提供了若干记号。一般而言，当我们有一批
+对象 $a_{1}$, \dots, $a_{n}$ 时，$\{a_{1}, \dots, a_{n}\}$ 便是
+以 $a_1, \ldots, a_n$ 作为其!!{element}的\emph{那个}（the）集合。我们强调
+「\emph{那个}」这个词，因为外延性告诉我们只可能存在
+\emph{一个}这样的集合。事实上，外延性还提供了下面这一条：
+  \[
+    \{a, a, b\} = \{a, b\} = \{b,a\}.
+  \]
+这也印证了如下观点：当我们考察集合时，我们并不关心其!!{element}的顺序，也不关心它们被指定了多少次。
+
+\begin{tagblock}{novice}
+\begin{ex}
+每当你有一批对象时，你都可以把它们归拢到一个集合里。例如，Richard 的兄弟姐妹所成的集合，就是一个只含一个人的集合，我们可以把它记作 $S=\{\textrm{Ruth}\}$。小于 $4$ 的正整数所成的集合是 $\{1, 2, 3\}$，但也可以记作 $\{3, 2, 1\}$，甚至记作 $\{1, 2, 1, 2, 3\}$。依据外延性，这些都是同一个集合。因为 $\{1, 2, 3\}$ 的每个!!{element}也是 $\{3, 2, 1\}$（以及 $\{1,
+2, 1, 2, 3\}$）的!!a{element}，反之亦然。
+\end{ex}
+\end{tagblock}
+
+我们常常会借助其!!{element}所共有的某个性质来指定一个集合。为此，我们使用如下简写记号：
+$\Setabs{x}{\phi(x)}$，其中 $\phi(x)$ 表示~$x$
+为了被计入该集合的!!{element}之中所必须满足的性质。
+
+\begin{tagblock}{novice}
+\begin{ex}
+在我们的例子里，我们也本可以把 $S$ 指定为
+\[
+S = \Setabs{x}{x \text{ 是 Richard 的兄弟姐妹}}.
+\]
+\end{ex}
+\end{tagblock}
+
+\begin{tagblock}{math}
+\begin{ex}
+一个数称为\emph{完全数}（perfect），当且仅当它等于其真因子（即能整除它、且与该数自身不相同的那些数）之和。例如，$6$ 是完全数，因为它的真因子是 $1$、$2$ 与~$3$，而 $6 = 1 + 2 + 3$。事实上，$6$ 是小于 $10$ 的唯一一个完全正整数。于是，利用外延性，我们可以说：
+\[
+	\{6\} = \Setabs{x}{x\text{ 是完全数且 }0 \leq x \leq 10}
+\]
+我们将右侧的记号读作「使得 $x$ 为完全数且 $0 \leq x \leq 10$ 的一切 $x$ 所成的集合」。这里的同一性印证了：当我们考察集合时，我们并不关心它们是如何被指定的。更一般地，外延性保证：使得 $\phi(x)$ 成立的 $x$ 所成的集合至多只有一个。
+因此，外延性使得我们可以把 $\Setabs{x}{\phi(x)}$ 称为使得~$\phi(x)$ 成立的 $x$ 所成的\emph{那个}集合。
+\end{ex}
+\end{tagblock}
+
+外延性为我们提供了一种表明两个集合相同的方法：要表明 $A = B$，只需表明每当 $x \in A$ 时也有 $x \in B$，并且每当 $y \in B$ 时也有 $y \in A$。
+
+\begin{prob}
+证明至多只有一个空集，即证明：若 $A$ 与 $B$
+都是不含任何!!{element}的集合，则 $A = B$。
+\end{prob}
+
+\end{document}

@@ -1,0 +1,23 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{com}{int}
+
+\olsection{引言}
+
+如果 $\Sigma$ 是一个模态系统，那么可靠性定理确立：若 $\Sigma \Proves !A$，则 $!A$ 在任意一类模型（其中 $\Sigma$ 中所有!!{formula}的一切特例都有效）$\mClass{C}$ 中有效。特别地，这意味着若 $\Log{K} \Proves !A$，则 $!A$ 在所有模型中为真；若 $\Log{KT} \Proves !A$，则 $!A$ 在所有自反模型中为真；若 $\Log{KD} \Proves !A$，则 $!A$ 在所有持续模型中为真，等等。
+
+完全性是可靠性的逆命题：例如，\Log{K} 是完全的，意指若!!a{formula}~$!A$ 有效，则 $\Proves !A$。证明完全性远难于证明可靠性。首先，考虑逆否命题是有用的：\Log{K} 是完全的，当且仅当只要 $\Proves/ !A$，就存在一个反模型，即一个模型~$\mModel{M}$ 使得 $\mSat/{M}{!A}$。等价地（对 $!A$ 取否定），我们可以证明：只要 $\Proves/ \lnot !A$，就存在 $!A$ 的一个模型。在构造这样的模型时，我们可以利用 $!A$ 中所含的信息。当我们为特定的!!{formula}寻找模型时，我们也常常这么做：例如，若想为 $p \lif \Box q$ 找一个反模型，我们知道它必须包含一个世界，其中 $p$ 为真而 $\Box q$ 为假。而一个 $\Box q$ 为假的世界意味着，必须存在一个从它可及的世界，其中 $q$ 为假。而这就是我们需要知道的全部：哪些世界使!!{propositional variable}为真，以及哪些世界从哪些世界可及。
+
+然而，在证明完全性的情形中，我们并没有一个要为之构造模型的特定!!{formula}~$!A$。我们希望确立：对每个使得 $\Proves/[\Sigma] \lnot !A$ 的 $!A$，都存在一个模型。这是一个极小的要求，因为\emph{若} $\Proves[\Sigma] \lnot !A$，由可靠性，不存在 $!A$ 的模型（在使得 $\Sigma$ 为真的模型中的那种）。现在注意，$\Proves/[\Sigma] \lnot !A$ 当且仅当 $!A$ 是 $\Sigma$-一致的。（回顾，$\Sigma \Proves/[\Sigma] \lnot !A$ 与 $!A \Proves/[\Sigma] \lfalse$ 等价。）所以，我们的任务是：为每个 $\Sigma$-一致的!!{formula}构造一个模型。
+
+我们要用的诀窍是，找一个包含~$!A$ 的 $\Sigma$-一致的!!{formula}集合，其中也包含其他公式，它们告诉我们那个使 $!A$ 为真的世界必须是什么样的。这样的集合就是\emph{完全的} $\Sigma$-一致集。仅以单个世界构造一个模型来使~$!A$ 为真是不够的，它必须包含多个世界和一个可及关系。那个包含~$!A$ 的完全 $\Sigma$-一致集还将包含形如 $\Box !B$ 与~$\Diamond !C$ 的其他!!{formula}。在所有可及的世界中，$!B$ 必须为真；在至少一个世界中，$!C$ 必须为真。为完成这一点，我们只需把所有可能的完全 $\Sigma$-一致集作为世界类的基。一个棘手的部分将是弄清楚：在我们的模型中，一个完全的 $\Sigma$-一致集在何时应被视为从另一个可及。
+
+我们将证明，在上述方式定义的模型中，$!A$ 在一个世界（它同时也是一个完全的 $\Sigma$-一致集）处为真，当且仅当 $!A$ 是该集合的一个!!a{element}。若 $!A$ 是 $\Sigma$-一致的，它将至少是一个完全的 $\Sigma$-一致集的!!a{element}（这一事实我们将予以证明），于是将存在一个使 $!A$~为真的世界。这样我们将得到一个单一模型，其中每个 $\Sigma$-一致的!!{formula}~$!A$ 都在某个世界处为真。这个单一的模型就是 $\Sigma$ 的\emph{典范}模型。
+
+\end{document}

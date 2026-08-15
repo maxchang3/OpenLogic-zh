@@ -1,0 +1,37 @@
+% Part: normal-modal-logic
+% Chapter: frame-correspondence
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{frd}{int}
+
+\olsection{引言}
+
+令模态逻辑学家感兴趣的一个问题，是可及关系与某些!!{formula}在具有该可及关系的模型中的真之间的关系。例如，设可及关系是自反的，即对每个 $w
+\in W$，都有 $Rww$。换言之，每个世界都从自身可及。这意味着当 $\Box !A$ 在世界~$w$ 处为真时，$w$
+本身也在那些 $!A$ 因而必须为真的可及世界之中。所以，若~$\mModel{M}$ 的可及关系~$R$ 是自反的，那么无论我们取哪个世界 $w$ 与公式 $!A$，$\Box !A
+\lif !A$ 都将在此处为真（换言之，模式 $\Box p \lif
+p$ 及其所有代入特例都在~$\mModel{M}$ 中为真）。
+
+然而，其逆命题却是假的。例如，并不是某个 $\Box p \lif p$ 在~$\mModel{M}$ 中为真，则 $R$ 就是自反的。因为我们
+很容易找到一个非自反的模型~$\mModel{M}$，其中 $\Box p \lif
+p$ 在所有世界处都为真：取一个只有一个世界~$w$ 的模型，$w$ 不从自身可及，但 $w \in V(p)$。通过恰当地选取 $p$ 的
+真值，我们可以使 $\Box !A \lif !A$ 在一个非自反的模型中为真。
+
+解决的办法是把变元赋值~$V$ 从等式中去掉。如果我们要求 $\Box p \lif p$ 在~$\mModel{M}$ 的所有世界处为真，
+无论哪些世界属于~$V(p)$，那么 $R$ 必然是自反的。因为在任何非自反的模型中，至少存在一个世界~$w$，使得
+$Rww$ 不成立。若我们令 $V(p) =
+W \setminus \{w\}$，那么 $p$ 将在除~$w$ 之外的所有世界处为真，因而也在所有从~$w$ 可及的世界处为真（因为 $w$ 保证不从~$w$ 可及，且 $w$ 是~$p$ 为假的唯一世界）。另一方面，$p$ 在 $w$ 处为假，所以 $\Box
+p \lif p$ 在~$w$ 处为假。
+
+这提示我们应为不附带赋值的模型结构引入一种记号：我们把这些称为 \emph{框架}。一个框架 $\mModel{F}$
+就是一个二元组 $\tuple{W, R}$，它由一组世界及其上的一个可及关系构成。于是每一个模型 $\tuple{W, R, V}$ 都如我们所说的那样 \emph{基于}框架 $\tuple{W, R}$ 之上。反之，一个框架
+决定基于它的模型类；而一个框架类决定了以该类中任一框架为基础的全部模型类。我们可以把 $\mModel{F} \Entails !A$——即一个!!a{formula}在框架中 \emph{有效}的概念——定义为：对所有基于~$\mModel{F}$ 的 $\mModel{M}$，均有 $\mSat{M}{!A}$。
+
+借助这种记号，我们可以建立!!{formula}与框架类之间的对应关系：例如，$\mModel{F} \Entails \Box p \lif p$
+当且仅当 $\mModel{F}$ 是自反的。
+
+\end{document}

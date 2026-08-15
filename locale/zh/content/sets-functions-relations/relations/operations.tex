@@ -1,0 +1,67 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: operations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{rel}{ops}
+\olsection{关系上的运算}
+
+我们常常需要修改或组合关系。在
+\olref[sfr][rel][ord]{prop:stricttopartial} 中，我们考虑了关系的\emph{并}，它就是看作有序对之集合的两个关系的并。类似地，在 \olref[sfr][rel][ord]{prop:partialtostrict} 中，我们考虑了关系的差集。这里还有我们在关系上可以进行的其他一些运算。
+
+\begin{defn}\ollabel{relationoperations}
+设 $R$、$S$ 是关系，$A$ 是任意集合。
+
+$R$ 的\emph{逆}是 $R^{-1} = \Setabs{\tuple{y, x}}{\tuple{x,
+    y} \in R}$。
+
+$R$ 与 $S$ 的\emph{相对积}是 $(R \mid S) =
+\{\tuple{x, z} : \exists y(Rxy \land Syz)\}$。
+
+$R$ 对 $A$ 的\emph{限制}是 $\funrestrictionto{R}{A}= R
+\cap A^2$。
+
+$R$ 对 $A$ 的\emph{像}是 $\funimage{R}{A} = \{y :
+(\exists x \in A)Rxy\}$
+\end{defn}
+
+\begin{ex}
+设 $S \subseteq \Int^2$ 是 $\Int$ 上的后继关系，即
+$S = \Setabs{\tuple{x, y} \in \Int^2}{x + 1 = y}$，从而 $Sxy$ 当且仅当 $x + 1 = y$。
+
+$S^{-1}$ 是 $\Int$ 上的前驱关系，即
+$\Setabs{\tuple{x,y}\in\Int^2}{x -1 =y}$。
+
+$S\mid S$ 是
+$ \Setabs{\tuple{x,y}\in\Int^2}{x + 2 =y}$
+
+$\funrestrictionto{S}{\Nat}$ 是 $\Nat$ 上的后继关系。
+
+$\funimage{S}{\{1,2,3\}}$ 是 $\{2, 3, 4\}$。
+\end{ex}
+
+\begin{defn}[传递闭包]设 $R \subseteq A^2$ 是二元关系。
+
+$R$ 的\emph{传递闭包}是 $R^+ = \bigcup_{0 < n \in
+\Nat} R^n$，其中我们递归地定义 $R^1 = R$，且 $R^{n+1} = R^n
+\mid R$。
+
+$R$ 的\emph{自反传递闭包}是 $R^* = R^+ \cup
+\Id{A}$。
+\end{defn}
+
+\begin{ex}
+取后继关系 $S \subseteq \Int^2$。$S^2xy$ 当且仅当 $x + 2 =
+y$，$S^3xy$ 当且仅当 $x + 3 = y$，等等。因此对某个
+$n \geq 1$，$S^+xy$ 当且仅当 $x + n = y$。换言之，$S^+xy$ 当且仅当 $x < y$，而 $S^*xy$ 当且仅当 $x \le
+y$。
+\end{ex}
+
+\begin{prob}
+证明 $R$ 的传递闭包事实上是传递的。
+\end{prob}
+
+\end{document}

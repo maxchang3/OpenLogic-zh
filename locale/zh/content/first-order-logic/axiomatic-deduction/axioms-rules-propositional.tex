@@ -1,0 +1,42 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: axioms-rules-propositional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{prp}}
+      {\olfileid[zh]{pl}{axd}{prp}}
+
+\olsection{命题联结词的公理与规则}
+
+\begin{defn}[公理]
+命题联结词的 \emph{公理}集合 $\PAx$ 由如下形式的所有!!{formula}组成：
+\begin{align}
+  & (!A \land !B) \lif !A \ollabel{ax:land1}\\
+  & (!A \land !B) \lif !B \ollabel{ax:land2}\\
+  & !A \lif (!B \lif (!A \land !B)) \ollabel{ax:land3}\\
+  & !A \lif (!A \lor !B) \ollabel{ax:lor1}\\
+  & !A \lif (!B \lor !A) \ollabel{ax:lor2}\\
+  & (!A \lif !C) \lif ((!B \lif !C) \lif ((!A \lor !B) \lif !C)) \ollabel{ax:lor3}\\
+  & !A \lif (!B \lif !A) \ollabel{ax:lif1}\\
+  & (!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C)) \ollabel{ax:lif2}\\
+  & (!A \lif !B) \lif ((!A \lif \lnot !B) \lif \lnot !A) \ollabel{ax:lnot1}\\
+  & \lnot !A \lif (!A \lif !B) \ollabel{ax:lnot2}\\
+  & \ltrue \ollabel{ax:ltrue}\\
+  & \lfalse \lif !A \ollabel{ax:lfalse1}\\
+  & (!A \lif \lfalse) \lif \lnot !A \ollabel{ax:lfalse2}\\
+  & \lnot\lnot !A \lif !A \ollabel{ax:dne}
+\end{align}
+\end{defn}
+
+\begin{defn}[分离规则]
+  如果 $!B$ 和 $!B \lif !A$ 已出现在某个!!a{derivation}中，则 $!A$
+  是正确的推理步骤。
+\end{defn}
+
+我们将分离规则简记为 「\MP.」
+
+\end{document}

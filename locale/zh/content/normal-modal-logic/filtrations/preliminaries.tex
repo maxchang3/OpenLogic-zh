@@ -1,0 +1,46 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: preliminaries
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{fil}{pre}
+
+\olsection{预备知识}
+
+过滤使我们可以通过表明我们的模态逻辑系统具有\emph{有穷模型性}来确立它们的可判定性，即有穷模型性是指任何在某个模型中为真（假）的!!{formula}，在某个\emph{有穷}模型中也同样为真（假）。过滤是相对于对子公式封闭的!!{formula}集合来定义的。
+
+\begin{defn}\ollabel{defn:modallyclosed}
+  一个!!{formula}的集合 $\Gamma$ 若包含 $\Gamma$ 中每个!!a{formula}的每个子公式，则它是\emph{对子公式封闭}的。进而，若 $\Gamma$ 对子公式封闭，并且 $!A \in \Gamma$ 蕴含 $\Box!A,
+  \Diamond!A \in \Gamma$，则 $\Gamma$ 是\emph{模态封闭}的。
+\end{defn}
+
+例如，给定一个!!a{formula}~$!A$，其全部子!!{formula}的集合对子!!{formula}封闭。当我们通过~$!A$ 的子!!{formula}集合来定义一个模型的过滤时，它会具有我们想要的这一性质：它使 $!A$ 为真（假），当且仅当原模型也如此。
+
+通过~$\Gamma$ 对~$\mModel{M}$ 的过滤，其世界集合被定义为如下等价关系的全部等价类的集合。
+
+\begin{defn}
+设 $\mModel{M} =\tuple{W, R, V}$，并假设 $\Gamma$ 对子!!{formula}封闭。在 $W$ 上定义关系 $\equiv$，使得它对任何使来自 $\Gamma$ 的相同!!{formula}为真的两个世界成立，即：
+\[
+u \equiv v \quad \text{当且仅当 } \quad
+\forall !A \in \Gamma : \mSat{M}{!A}[u] \Leftrightarrow \mSat{M}{!A}[v].
+\]
+一个世界~$w$ 的等价类~$[w]_\equiv$，简记为 $[w]$，是与~$w$ $\equiv$-等价的全部世界的集合：
+\[
+[w] = \Setabs{v}{v \equiv w}.
+\]
+\end{defn}
+
+\begin{prop}
+  给定 $\mModel{M}$ 与 $\Gamma$，如上定义的 $\equiv$ 是一个等价关系，即它是自反的、对称的且传递的。
+\end{prop}
+
+\begin{proof}
+  关系 $\equiv$ 是自反的，因为 $w$ 使来自~$\Gamma$ 的!!{formula}与它自身完全相同地为真。它是对称的，因为若 $u$ 使来自~$\Gamma$ 的!!{formula}与 $v$ 相同地为真，则对 $v$ 与~$u$ 亦然。它也是传递的，因为若 $u$ 使来自~$\Gamma$ 的!!{formula}与~$v$ 相同地为真，且 $v$ 与 $w$ 亦然，则 $u$ 使来自~$\Gamma$ 的!!{formula}与~$w$ 相同地为真。
+\end{proof}
+
+关系 $\equiv$ 与任何等价关系一样，把~$W$ 划分为\emph{划分}，即两两不相交的~$W$ 的子集，并且它们共同覆盖整个~$W$。每个 $w \in W$ 都是其中一个划分的!!a{element}，即~$[w]$ 的成员，因为 $w \equiv w$。所以划分 $[w]$ 覆盖整个~$W$。它们两两不相交，因为若 $u \in [w]$ 且 $u \in [v]$，则 $u \equiv w$ 且 $u \equiv v$，由对称性与传递性，$w \equiv v$，从而 $[w] = [v]$。
+
+\end{document}

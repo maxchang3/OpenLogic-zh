@@ -1,0 +1,119 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{tab}{prv}}
+      {\olfileid[zh]{pl}{tab}{prv}}
+
+\olsection{\usetoken{S}{derivability}与一致性}
+
+我们现在要确立!!{derivability}关系的若干性质。它们本身彼此独立地具有意义，但它们每一个都将在完全性定理的证明中发挥作用。
+
+\begin{prop}\ollabel{prop:provability-contr}
+  如果 $\Gamma \Proves !A$ 且 $\Gamma \cup \{!A\}$ 是不一致的，则 $\Gamma$ 是不一致的。
+\end{prop}
+
+\begin{proof}
+存在有穷的 $\Gamma_0 = \{!B_1, \dots, !B_n\}$ 和 $\Gamma_1
+  =\{!C_1, \dots, !C_n\} \subseteq \Gamma$，使得
+  \begin{align*}
+    \{\sFmla{\False}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \\
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+  具有闭的!!{tableau}。利用作用在 $!A$ 上的\Cut{}规则，我们可以把这些组合成单一的闭!!{tableau}，它表明 $\Gamma_0
+  \cup \Gamma_1$ 是不一致的。由于 $\Gamma_0
+  \subseteq \Gamma$ 且 $\Gamma_1 \subseteq \Gamma$，故 $\Gamma_0 \cup
+  \Gamma_1 \subseteq \Gamma$，因此 $\Gamma$~是不一致的。
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ 当且仅当 $\Gamma \cup \{\lnot !A\}$ 是不一致的。
+\end{prop}
+
+\begin{proof}
+首先设 $\Gamma \Proves !A$，即存在
+\[
+\{\sFmla{\False}{!A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+的一个闭!!{tableau}。利用$\TRule{\True}{\lnot}$规则，这可以转变为
+\[
+\{\sFmla{\True}{\lnot !A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \text{。}
+\]
+的一个闭!!{tableau}。
+
+另一方面，如果后者的闭!!{tableau}存在，我们可以去掉每一个由\TRule{\True}{\lnot}作用于第一个假设~$\sFmla{\True}{\lnot !A}$而得到的公式以及该假设本身，并添加假设 $\sFmla{\False}{!A}$，从而把它转变为前者的闭!!{tableau}。因为如果某条支之前由于包含 \TRule{\True}{\lnot} 作用于 $\sFmla{\True}{\lnot !A}$ 的结论（即 $\sFmla{\False}{!A}$）而是闭的，那么新!!{tableau}中对应的支也是闭的。如果旧表列中的某条支由于同时包含假设 $\sFmla{\True}{\lnot !A}$ 与 $\sFmla{\False}{\lnot
+  !A}$ 而是闭的，我们可以通过把\TRule{\False}{\lnot} 应用于 $\sFmla{\False}{\lnot !A}$ 以得到
+$\sFmla{\True}{!A}$，从而把它转变为闭支。由于我们添加了
+$\sFmla{\False}{!A}$ 作为假设，这使该支闭合。
+\end{proof}
+
+\begin{prob}
+证明：$\Gamma \Proves \lnot !A$ 当且仅当 $\Gamma \cup \{!A\}$ 是不一致的。
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  如果 $\Gamma \Proves !A$ 且 $\lnot !A \in \Gamma$，则 $\Gamma$ 是
+  不一致的。
+\end{prop}
+
+\begin{proof}
+  设 $\Gamma \Proves !A$ 且 $\lnot !A \in \Gamma$。则存在
+  $!B_1$, \dots, $!B_n \in \Gamma$，使得 \
+  \[
+  \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+  \]
+  具有闭的表列。把假设 \sFmla{\False}{!A} 替换为
+  \sFmla{\True}{\lnot !A}，并把这些假设之后插入
+  \TRule{\True}{\lnot} 作用于 \sFmla{\False}{!A} 的结论。在!!{tableau}中通过诉诸旧!!{tableau}中的第~$1$ 行而得到辩护的任何!!{sentence}，现在都通过诉诸第~$n+1$ 行而得到辩护。因此，如果旧!!{tableau}是闭的，新表列也是闭的。它表明 $\Gamma$ 是不一致的，因为所有假设都在~$\Gamma$ 中。
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  如果 $\Gamma \cup \{!A\}$ 与 $\Gamma \cup \{\lnot !A\}$ 两者都是
+  不一致的，则 $\Gamma$ 是不一致的。
+\end{prop}
+
+\begin{proof}
+  如果存在 $!B_1$, \dots, $!B_n \in \Gamma$ 以及 $!C_1$, \dots,
+  $!C_m \in \Gamma$，使得
+  \begin{align*}
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \text{ 以及}\\
+    \{\sFmla{\True}{\lnot !A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+  两者都具有闭!!{tableau}，那么我们可以通过以下方式构造单一的、组合的!!{tableau}，它表明 $\Gamma$ 是不一致的：以
+  $\sFmla{\True}{!B_1}$, \dots, $\sFmla{\True}{!B_n}$
+  连同 $\sFmla{\True}{!C_1}$, \dots, $\sFmla{\True}{!C_m}$ 作为
+  假设，然后应用一次\Cut{}规则。这产生两条
+  支，一条以 $\sFmla{\True}{!A}$ 开头，另一条以
+  $\sFmla{\False}{!A}$ 开头。
+
+  在左侧，添加第一个!!{tableau}的假设以下的部分。在这里，每一种规则应用仍然
+  是正确的，因为第一个!!{tableau}的每一个假设（包括
+  $\sFmla{\True}{!A}$）都是可用的。因此，$\sFmla{\True}{!A}$ 之下的每一条支
+  都闭合。
+
+  在右侧，添加第二个!!{tableau}的假设以下的部分，去掉
+  把~$\TRule{\True}{\lnot}$ 应用于 $\sFmla{\True}{\lnot !A}$ 的任何应用结果。把 $\TRule{\True}{\lnot}$ 应用于 $\sFmla{\True}{\lnot !A}$ 的结论是
+  $\sFmla{\False}{!A}$，它毕竟仍是可用的，因为它是组合!!{tableau}右侧\Cut{}规则的结论。
+
+  如果第二个表列中的某条支由于包含
+  假设 $\sFmla{\True}{\lnot !A}$（它在组合!!{tableau}中不再作为
+  假设出现）以及
+  $\sFmla{\False}{\lnot !A}$ 而是闭的，我们可以把\TRule{\False}{\lnot}
+  应用于 $\sFmla{\False}{\lnot !A}$ 以得到 $\sFmla{\True}{!A}$。现在组合!!{tableau}中对应的支也闭合，
+  因为它包含\Cut{}规则的右侧结论
+  $\sFmla{\False}{!A}$。如果第二个!!{tableau}中的某条支由于任何其他原因闭合，那么组合!!{tableau}中对应的支也闭合，因为除 $\sFmla{\True}{\lnot !A}$ 之外在旧第二个!!{tableau}的该支上出现的任何!!{signed formula}也出现在组合!!{tableau}的对应支上。
+  \end{proof}
+
+\end{document}

@@ -1,0 +1,95 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: public-announcement-logic-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{aml}{el}{psm}
+
+\olsection{公开宣告逻辑的语义}
+
+公开宣告逻辑的关系模型与认知逻辑中的关系模型是相同的。然而，公开宣告算子的语义却是全新的。
+
+\begin{defn}\ollabel{defn:mmodels} \emph{!!a{formula}~$!A$ 在世界~$w$ 处的真}，在模型~$\mModel M = \tuple{W, R, V}$ 中，记作：
+  $\mSat{M}{!A}[w]$，按下述方式归纳定义：
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{从无 $\mSat{M}{\lfalse}[w]$。}{}}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{恒有 $\mSat{M}{\ltrue}[w]$。}{}}
+  \item $\mSat{M}{p}[w]$ 当且仅当 $w \in V(p)$
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat/{M}{!B}[w]$。}{}}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat{M}{!B}[w]$ 且 $\mSat{M}{!C}[w]$。}{}}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}（或两者兼有）。}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat/{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$。}{}}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 或者同时成立，或者
+    均不成立。}{}}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat{M}{!B}[w']$ 对所有满足 $R_a ww'$ 的 $w' \in W$ 成立}
+  \item\ollabel{defn:sub:mmodels-pal}
+    \indcase{!A}{[!B] !C}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat{M}{!B}[w]$ 蕴含 $\mSat{M \mid !B}{!C}[w]$}
+
+
+  其中 $\mModel M \mid !B = \tuple{W', R', V'}$ 定义如下：
+  \begin{enumerate}
+    \item $W' = \Setabs{ u \in W}{\mSat{M}{!B}[u]}$。于是 $\mModel M \mid !B$ 的世界就是 $\mModel M$ 中使得 $!B$
+      成立的那些世界。
+    \item $R'_a = R_a \cap (W' \times W')$。每个主体的可及关系即被简单限制在仍留在 $W'$ 中的那些世界上。
+    \item $V'(p) = \Setabs{ u \in W'}{u \in V(p) }$。类似地，各世界上的命题赋值保持不变，这体现了如下想法：信息性事件不会改变命题变元的真值。
+  \end{enumerate}
+
+  \end{enumerate}
+\end{defn}
+
+那么，公开宣告逻辑的特殊之处在于，!!a{formula}在 $\mModel M$ 处的真有时只能通过参见 $\mModel M$ 之外的某模型来判定。
+
+另请注意，我们的语义将宣告算子视为一个 $\Box$~算子，因此若!!a{formula}~$!A$ 无法在一个世界处被如实地宣告，则 $[!A]B$ 将空真地在该世界处成立，正如所有 $\Box$ !!{formula}在终点处成立一样。
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={below left:$p, \lnot q$}]{$w_1$};
+      \node[world] (w2) [left=of w1, label={left:$\lnot p, \lnot q$}]{$w_2$};
+      \node[world] (w3) [above=of w1, label={right:$p, q$}] {$w_3$};
+      \draw[<->] (w1) to [swap] node {$b$} (w2);
+      \draw[->,loop below] (w1) to node {$a, b$} (w1);
+      \draw[<->] (w1) to [swap] node {$a$} (w3);
+      \draw[->,loop above] (w2) to node {$a, b$} (w2) ;
+      \draw[->,loop above] (w3) to node {$a, b$} (w3) ;
+
+      \node[world](v1)[right of=w1, xshift=1.25in, label={right:$p, \lnot q$}]{$w'_1$};
+      \node[world](v3)[above of=v1,label={right:$p,q$}]{$w'_3$};
+      \draw[<->] (v1) to node {$a$} (v3);
+      \draw[->,loop below] (v1) to node {$a,b$} (v1);
+      \draw[->,loop above] (v3) to node {$a,b$} (v3) ;
+
+      \node(m)[below=of w1]{$\mModel M$};
+      \node(m')[below=of v1]{$\mModel M \mid p$};
+
+      \draw[-,dotted] (w1) to node {\footnotesize announcement of $p$}(v1) ;
+
+    \end{tikzpicture}
+  \end{center}
+  \caption{公开宣告 $p$ 之前与之后。}
+  \ollabel{fig:announcement-example}
+\end{figure}
+
+我们可以把!!a{formula}的公开宣告看作收缩一个模型，或者说将其限于那些使得该!!{formula}为真的世界。\olref{fig:announcement-example} 给出了公开宣告~$p$ 之效果的一个例子。该模型值得注意的一点是，主体~$b$ 因这次宣告而得知~$p$，而主体~$a$ 则并未如此（因为 $a$ 早已知道 $p$ 为真）。
+
+更形式地说，我们有 $\mSat{M}{\lnot \Knows_b p}[w_1]$，但 $\mSat{M
+\mid p}{\Knows_b p}[w'_1]$。由此推得 $\mSat{M}{[p] \Knows_b
+p}[w_1]$。不过，关于这次宣告的结果，我们还能作出一些更强的断言。事实上，$\mSat{M}{[p]\CKnows_{\{a,b\}} p}[w_1]$ 成立。换句话说，在 $p$ 被宣告后，它变成了 \emph{公共知识}。
+
+然而，我们可能会想，这在一般情况下是否也成立，以及对~$!A$ 的一次如实宣告是否 \emph{总是}会使 $!A$ 变成公共知识。或许令人惊讶的是，答案是：否。事实上，有可能如实地宣告一些!!{formula}，而这些公式在宣告之后便不再为真。例如，在 \olref{fig:announcement-example} 中考虑在世界~$w_1$ 处宣告 $p \land \lnot \Knows_b p$ 的效果。事实上，$\mModel M \mid p$ 与
+$\mModel M \mid (p \land \lnot \Knows_b p)$ 是同一个模型。然而，正如我们已经指出的，$\mSat{M \mid p}{\Knows_b
+p}[w'_1]$。因此，$\mSat{M \mid (p \land \lnot \Knows_b p)}{\lnot
+(p \land \lnot \Knows_b p)}[w'_1]$，所以一旦被宣告，这便是一个变假的!!a{formula}。
+
+\end{document}

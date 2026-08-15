@@ -136,3 +136,10 @@ sympy-plots-for-*.tex/
 # html etc. files
 *.html
 *.css
+## Local additions (zh fork)
+.DS_Store
+*.xdv
+*.xmpdata
+*.xmpi
+zh-toc*.txt
+cover-preview.png

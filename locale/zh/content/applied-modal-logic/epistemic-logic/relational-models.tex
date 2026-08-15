@@ -1,0 +1,30 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{aml}{el}{rel}
+
+\olsection{关系模型}
+
+认知逻辑的基本语义概念与普通模态逻辑的相同。关系模型仍是
+由一个世界集合构成，外加一个指派，它决定哪些!!{propositional variable}在哪些世界中算作真。而且如果我们只处理单个主体，那么我们就像往常一样只有单一的可及关系。然而，如果我们有一种多主体认知逻辑，那么我们单一的可及关系就变成一组可及关系，对我们的主体符号集~$G$ 中的每个~$a$ 各有一个。
+
+一个\emph{关系模型}由一个世界集合构成，这些世界由二元可及关系相联——每个主体一个——外加一个指派，它决定哪些!!{propositional variable}在哪些世界中为真。
+
+\begin{defn}
+  \emph{多主体认知语言}的\emph{模型}是一个三元组 $\mModel{M} = \tuple{W, R, V}$，其中
+  \begin{enumerate}
+  \item $W$ 是一个非空的「世界」集合，
+  \item 对每个 $a \in G$，${R}_a$ 是~$W$ 上的二元可及关系，且
+  \item $V$ 是一个函数，它把每组!!{propositional variable}~$p$ 指派给一个由可能世界构成的集合 $V(p)$。
+  \end{enumerate}
+  当 $R_a ww'$ 成立时，我们称 $w'$ 对~$w$ 而言是 $a$ \emph{可及的}。当 $w \in V(p)$ 时，我们称 $p$ 在~$w$ 处\emph{为真}。
+\end{defn}
+
+运作机制与正规模态逻辑的运作机制完全相同，只是加入了更多的可及关系。对某个给定的主体，我们通常将其可及关系解释为刻画了其信息状态的某些方面。例如，我们常常把 $R_a ww'$ 当作表达 $w'$ 与~$a$ 在~$w$ 处的信息是\emph{一致的}。或者换一种说法，在~$w$ 处，$a$ 无法区分世界 $w$ 与世界~$w'$。
+
+\end{document}

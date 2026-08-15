@@ -1,0 +1,105 @@
+% Part: conditional-logics
+% Chapter: minimal-change-semantics
+% Section: true-false
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{con}{min}{tf}
+
+\olsection{反事实条件句的真与假}
+
+若最接近的 $!A$ 世界都是 $!B$ 世界，则反事实条件句 $!A \cif !B$（非空真地）为真，如 \olref{fig:true} 所示。
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.6,-1)}]{90}{1}{30}{4}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{非空真地为真的反事实条件句}
+\ollabel{fig:true}
+\end{center}
+\end{figure}
+如果围绕 $w$ 的球面系统根本没有允许 $!A$ 的球面，那么反事实条件句在 $w$ 处也为真。在此情形下，它是\emph{空真地}为真的（参见 \olref{fig:vacuous}）。
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \proposition{0}{6.5}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.2,-1)}]{90}{1}{30}{4}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \spherepos{0}{7}{node {$\formula{A}$}}
+\end{tikzpicture}
+\caption{空真地为真的反事实条件句}
+\ollabel{fig:vacuous}
+\end{center}
+\end{figure}
+
+它可以以两种方式为假。一种方式是，最接近的 $!A$ 世界并非都是 $!B$ 世界，但其中有些是 $!B$ 世界。在此情形下，$!A \cif
+\lnot !B$ 也为假（参见 \olref{fig:false}）。
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.6,0)}]{90}{1}{30}{3}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{反事实条件句为假，其颠倒式亦为假}
+\ollabel{fig:false}
+\end{center}
+\end{figure}
+如果最接近的 $!A$ 世界与 $!B$ 世界完全不重叠，那么 $!A \cif !B$ 为假。但在这种情形下，所有最接近的 $!A$ 世界都是
+$\lnot !B$ 世界，因此 $!A \cif \lnot !B$ 为真（参见
+\olref{fig:false-opposite}）。
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(-1,0)}]{90}{1}{30}{3}}
+  \path (-1,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{反事实条件句为假，其颠倒式为真}
+\ollabel{fig:false-opposite}
+\end{center}
+\end{figure}
+
+与严格条件句相比，反事实条件句可能是偶然的。考虑 \olref{fig:contingent} 中的球面模型。最接近 $u$ 的 $!A$ 世界都是 $!B$ 世界，因此 $\mSat{M}{!A \cif
+  !B}[u]$。但最接近 $v$ 的 $!A$ 世界中有一些不是
+$!B$ 世界，因此 $\mSat/{M}{!A \cif !B}[v]$。
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.6]\small
+  \spheresystem{7}
+  \spheresystem[shift={(0:3.1)},dashed]{4}
+  \propositionintersect{45}{4}{40}{4.5}
+  \begin{scope}
+    \clip \propositionplot{45}{4}{40}{4.5} ;
+    \spherelayer[shift={(0:3.1)}]{3}
+  \end{scope}
+  \proposition[shift={(1.4,-.5)}]{90}{1}{35}{5}
+  \path (0,0) node {$u$};
+  \path (0:3.1) node {$v$};
+  \spherepos{35}{9}{node {$\formula{A}$}}
+  \spherepos{80}{9}{node {$\formula{B}$}}
+\end{tikzpicture}
+\end{center}
+\caption{偶然的反事实条件句}
+\ollabel{fig:contingent}
+\end{figure}
+\end{document}

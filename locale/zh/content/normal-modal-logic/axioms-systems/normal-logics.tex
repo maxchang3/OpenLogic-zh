@@ -1,0 +1,105 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: normal-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{prf}{nor}
+
+\olsection{正规模态逻辑}
+
+并非每一组模态公式都能被轻易刻画为从一组公理出发可推演出那些公式。我们希望模态逻辑是行为良好的。首先，我们在经典命题逻辑中能推演出的一切仍然应当是可推演的，当然要考虑到公式现在还可能包含
+\iftag{prvBox}{$\Box$\iftag{prvDiamond}{
+    和~}{}}{}\iftag{prvDiamond}{$\Diamond$}{}。为此，我们要求一个模态逻辑包含所有的重言式特例，并对分离规则封闭。
+
+\begin{defn}
+  \emph{模态逻辑}是一个模态公式集合~$\Sigma$，它
+  \begin{enumerate}
+  \item 包含所有重言式，并且
+  \item 对代入封闭，即，如果 $!A \in \Sigma$，并且
+    $!D_1$, \dots, $!D_n$ 是公式，则
+    \[
+    \SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \in \Sigma,
+    \]
+    \item 对\emph{分离规则}封闭，即，如果 $!A$ 且 $!A
+      \lif !B \in \Sigma$，则 $!B \in \Sigma$。
+  \end{enumerate}
+\end{defn}
+
+为了在模态逻辑上使用关系语义，我们还必须要求所有在所有模态模型中有效的公式都被包含进来。事实证明，只要 \Ax{K}\iftag{prvDiamond}{ 和~\Dual{}}{} 的所有特例都是可推演的，并且每当公式~$!A$ 可推演时，$\Box !A$ 也可推演，这一要求就得到满足。满足这些条件的模态逻辑称为
+\emph{正规模态逻辑}。（当然，也有非正规模态逻辑，但通常的关系模型对它们并不合适。）
+
+\begin{defn}
+  一个模态逻辑 $\Sigma$ 是\emph{正常的}，如果它包含
+  \begin{align*}
+    \tag{\Ax{K}} & \Box(p \lif q) \lif (\Box p \lif \Box q),
+    \iftag{prvDiamond}{\\
+      \tag{\Dual} & \Diamond p \liff \lnot\Box\lnot p}{}
+  \end{align*}
+  并对\emph{必然化}封闭，即，如果 $!A \in
+  \Sigma$，则 $\Box !A \in \Sigma$。
+\end{defn}
+
+注意，尽管重言式蕴含足以精细地保持\emph{在世界处为真}，规则 \Nec{} 却只能保持
+\emph{在模型中为真}（从而也保持在一个框架或一类框架上的有效性）。
+
+\begin{prop}\ollabel{prop:rk}
+  每个正规模态逻辑都对规则 \RK 封闭，
+  \begin{prooftree}
+    \AxiomC{$!A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots)$}
+    \RightLabel{\RK}
+    \UnaryInfC{$\Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+      \lif \Box!A_n)\cdots).$}
+  \end{prooftree}
+\end{prop}
+
+\begin{proof}
+  对~$n$ 归纳：如果 $n = 1$，则该规则就是 \Nec，而每个正规模态逻辑都对 \Nec 封闭。
+
+  现在假设结果对 $n-1$ 成立；我们证明它对~$n$ 成立。
+
+  假设
+  \begin{align*}
+  & !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots) \in \Sigma
+  \intertext{由归纳假设，我们有}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots \Box(!A_{n-1} \lif !A_n)\cdots)
+  \in \Sigma
+  \intertext{由于 $\Sigma$ 是正规模态逻辑，它包含~$\Ax{K}$ 的所有
+    特例，特别是}
+  & \Box(!A_{n-1} \lif !A_n) \lif (\Box!A_{n-1} \lif \Box!A_n) \in \Sigma
+  \intertext{利用分离规则和合适的重言式特例，我们得到}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+  \lif \Box!A_n)\cdots) \in \Sigma.
+  \end{align*}
+\end{proof}
+
+\begin{prop}\ollabel{prop:notDiamondBot}
+  每个正规模态逻辑 $\Sigma$ 都包含~$\lnot\Diamond\lfalse$。
+\end{prop}
+
+\begin{prob}
+  证明 \olref[nml][prf][nor]{prop:notDiamondBot}。
+\end{prob}
+
+\begin{prop}
+  设 $!A_1$, \dots, $!A_n$ 是公式。则存在一个
+  最小的模态逻辑 $\Sigma$，包含
+  $!A_1$, \dots, $!A_n$ 的所有特例。
+\end{prop}
+
+\begin{proof}
+  给定 $!A_1$, \dots, $!A_n$，把 $\Sigma$ 定义为所有
+  包含 $!A_1$, \dots, $!A_n$ 之全部特例的正规模态逻辑的交。
+  该交非空，因为 $\Frm[L]$，即所有公式的集合，
+  就是这样一个模态逻辑。
+\end{proof}
+
+\begin{defn}
+包含 $!A_1$, \dots, $!A_n$ 的最小正规模态逻辑
+称为\emph{模态系统}，记为 $\Log{K} !A_1 \dots
+!A_n$。最小的正规模态逻辑记为~\Log{K}。
+\end{defn}
+
+\end{document}

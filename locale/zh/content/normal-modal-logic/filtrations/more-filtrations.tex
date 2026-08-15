@@ -1,0 +1,108 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: more-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{fil}{acc}
+
+\olsection{过滤与可及性性质}
+
+如我们所见，全域的、持续的与自反的模型的过滤，也总是全域的、持续的或自反的。但对称的或传递的模型并非每种过滤都分别是对称的或传递的。不过，在某些情形下，仍有可能把过滤定义成使得这一性质成立。为此，我们照最粗过滤的定义进行，但在~$R^*$ 的定义上加上额外的条件。设 $\Gamma$ 对子!!{formula}封闭。考虑模型 $\mModel{M} =\tuple{W, R, V}$ 中世界 $u$、$v$ 在~\olref{tab:Cn-filtrations} 中的关系~$C_i(u,v)$。我们可以根据这些条件的组合来定义 $R^*[u][v]$。例如，若我们规定 $R^*[u][v]$ 当且仅当条件 $C_1(u,v)$ 成立，就正好得到最粗的过滤。若我们规定 $R^*[u][v]$ 当且仅当 $C_1(u,v)$ 与 $C_2(u, v)$ 都成立，就得到一种不同的过滤。它比最粗者「更细」，因为满足 $C_1(u,v)$ 与 $C_2(u,v)$ 的世界对少于单独满足 $C_1(u,v)$ 者。
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|ll|}
+    \hline
+    \multirow{2}{*}{$C_1(u,v)$:}
+    \iftag{prvBox}{&
+      if $\Box!A \in \Gamma$ and $\mSat{M}{\Box!A}[u]$
+      then $\mSat{M}{!A}[v]$;\iftag{prvDiamond}{ and}{}\\}{}
+    \iftag{prvDiamond}{&
+      if $\Diamond!A \in \Gamma$  and $\mSat{M}{!A}[v]$
+      then $\mSat{M}{\Diamond!A}[u]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_2(u,v)$:}
+    \iftag{prvBox}{&
+      if $\Box!A \in \Gamma$ and $\mSat{M}{\Box!A}[v]$
+      then $\mSat{M}{!A}[u]$;\iftag{prvDiamond}{ and}{}\\}{}
+    \iftag{prvDiamond}{&
+      if $\Diamond!A \in \Gamma$ and $\mSat{M}{!A}[u]$
+      then $\mSat{M}{\Diamond!A}[v]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_3(u,v)$:}
+    \iftag{prvBox}{&
+      if $\Box!A \in \Gamma$ and $\mSat{M}{\Box!A}[u]$
+      then $\mSat{M}{\Box!A}[v]$;\iftag{prvDiamond}{ and}{}\\}{}
+    \iftag{prvDiamond}{&
+      if $\Diamond!A \in \Gamma$ and $\mSat{M}{\Diamond!A}[v]$
+      then $\mSat{M}{\Diamond!A}[u]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_4(u,v)$:}
+    \iftag{prvBox}{&
+      if $\Box!A \in \Gamma$ and $\mSat{M}{\Box!A}[v]$
+      then $\mSat{M}{\Box!A}[u]$;\iftag{prvDiamond}{ and}{}\\}{}
+    \iftag{prvDiamond}{&
+      if $\Diamond!A \in \Gamma$ and $\mSat{M}{\Diamond!A}[u]$
+      then $\mSat{M}{\Diamond!A}[v]$; \\}{}
+    \hline
+    \end{tabular}
+  \caption{用于定义过滤的可能世界上的条件。}
+  \ollabel{tab:Cn-filtrations}
+\end{table}
+
+\begin{thm}\ollabel{thm:more-filtrations}
+  设 $\mModel{M} =\tuple{W,R,V}$ 是一个模型，$\Gamma$ 对子!!{formula}封闭。设 $W^*$ 与 $V^*$ 按~\olref[fil]{defn:filtration} 定义。则：
+  \begin{enumerate}
+  \item 设 $R^*[u][v]$ 当且仅当 $C_1(u, v) \land
+    C_2(u,v)$。则 $R^*$ 是对称的，且若 $\mModel{M}$ 是对称的，则 $\mModel{M^*} =
+    \tuple{W^*,R^*,V^*}$ 是过滤。
+  \item 设 $R^*[u][v]$ 当且仅当 $C_1(u, v)
+    \land C_3(u,v)$。则 $R^*$ 是传递的，且若 $\mModel{M}$
+    是传递的，则 $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ 是过滤。
+  \item 设 $R^*[u][v]$ 当且仅当 $C_1(u, v) \land C_2(u,v)
+    \land C_3(u,v) \land C_4(u,v)$。则 $R^*$ 是对称且传递的，且若 $\mModel{M}$ 是对称且传递的，则 $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ 是过滤。
+  \item 设 $R^*$ 定义为 $R^*[u][v]$ 当且仅当 $C_1(u,
+    v) \land C_3(u,v) \land C_4(u,v)$。则 $R^*$ 是传递且欧性的，且若 $\mModel{M}$ 是传递且欧性的，则 $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ 是过滤。
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item 由于 $C_1(u,v)
+      \Leftrightarrow C_2(v,u)$ 且 $C_2(u,v) \Leftrightarrow
+      C_1(v,u)$，可立即看出 $R^*$ 是对称的。因此只剩下证：若 $\mModel{M}$ 是
+      对称的，则 $\mModel{M^*}$ 是经过~$\Gamma$ 的过滤。条件 $C_1(u,v)$ 保证
+      \iftag{prvBox}{%
+        \iftag{prvDiamond}{%
+          \olref[fil]{defn:filtration} 的
+          \olref[fil]{defn:filtration-R2} 与
+          \olref[fil]{defn:filtration-R3} 满足}{%
+          \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R2} 满足}}{%
+        \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R3} 满足}
+      。因此我们只需验证~\olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R1}，即 $Ruv$ 蕴含 $R^*[u][v]$。
+
+      于是设 $Ruv$。为证 $R^*[u][v]$，我们需要确立
+      $C_1(u,v)$ 与 $C_2(u,v)$ 成立。对于 $C_1$：\iftag{prvBox}{若 $\Box!A
+        \in\Gamma$ 且 $\mSat{M}{\Box!A}[u]$，则也有
+        $\mSat{M}{!A}[v]$（因为 $Ruv$）。\iftag{prvDiamond}{ 类似地，
+        }{}}{}\iftag{prvDiamond}{若 $\Diamond!A \in \Gamma$ 且
+        $\mSat{M}{!A}[v]$，则 $\mSat{M}{\Diamond!A}[u]$，因为
+        $Ruv$。}{} 对于 $C_2$：\iftag{prvBox}{若 $\Box!A \in \Gamma$ 且
+        $\mSat{M}{\Box!A}[v]$，则由对称性 $Ruv$ 蕴含 $Rvu$，从而
+        $\mSat{M}{!A}[u]$。\iftag{prvDiamond}{ 类似地，
+        }{}}{}\iftag{prvDiamond}{若 $\Diamond!A \in\Gamma$ 且
+        $\mSat{M}{!A}[u]$，则 $\mSat{M}{\Diamond!A}[v]$（因为由对称性 $Rvu$）。}{}
+    \item 习题。
+    \item 习题。
+    \item 习题。
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  补全 \olref[nml][fil][acc]{thm:more-filtrations} 的证明。
+\end{prob}
+
+\end{document}

@@ -1,0 +1,86 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{pl}{syn}{sem}
+
+\olsection{语义概念}
+
+我们定义如下语义概念：
+
+\begin{defn}
+\begin{enumerate}
+\item !!^a{formula}~$!A$ 是\emph{可满足的}，如果对某个~$\pAssign{v}$ 有 $\pSat{v}{!A}$；它是\emph{不可满足的}，如果对任何 $\pAssign{v}$ 都没有 $\pSat{v}{!A}$；
+\item !!^a{formula}~$!A$ 是一个\emph{重言式}，如果对所有的!!{valuation}~$\pAssign{v}$ 都有 $\pSat{v}{!A}$；
+\item !!^a{formula}~$!A$ 是\emph{偶然的}，如果它是可满足的但并非重言式；
+\item 如果 $\Gamma$ 是!!{formula}的集合，则 $\Gamma \Entails !A$（「$\Gamma$ 衍推 $!A$」）当且仅当对使得 $\pSat{v}{\Gamma}$ 成立的每个!!{valuation}~$\pAssign{v}$ 都有 $\pSat{v}{!A}$。
+\item 如果 $\Gamma$ 是!!{formula}的集合，则 $\Gamma$ 是\emph{可满足的}，如果存在一个!!{valuation}~$\pAssign{v}$ 使得 $\pSat{v}{\Gamma}$ 成立，否则 $\Gamma$ 是\emph{不可满足的}。
+\end{enumerate}
+\end{defn}
+
+\begin{prob}
+ 对下列四个!!{formula}中的每一个，判定它是否为 (a)~可满足的、(b)~重言式 以及 (c)~偶然的。
+\begin{enumerate}
+  \item \( ( \Obj p_0 \lif ( \lnot \Obj p_1 \lif \lnot \Obj p_0 ) ) \).
+  \item \( ( ( \Obj p_0 \land \lnot \Obj p_1 ) \lif ( \lnot \Obj p_0 \land \Obj p_2 )) \liff ( ( \Obj p_2 \lif \Obj p_0 ) \lif ( \Obj p_0 \lif \Obj p_1 )) \).
+  \item \( ( \Obj p_0 \liff \Obj p_1 ) \lif ( \Obj p_2 \liff \lnot \Obj p_1 ) \).
+  \item \( (( \Obj p_0 \liff ( \lnot \Obj p_1 \land \Obj p_2 )) \lor ( \Obj p_2 \lif ( \Obj p_0 \liff \Obj p_1 ))) \).
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:semanticalfacts}
+\begin{enumerate}
+\item $!A$ 是重言式当且仅当
+  $\emptyset \Entails !A$；
+\item 如果 $\Gamma \Entails !A$ 且 $\Gamma \Entails !A \lif !B$，则
+  $\Gamma \Entails !B$；
+\item 如果 $\Gamma$ 是可满足的，则 $\Gamma$ 的每个有穷子集
+  也是可满足的；
+\item \ollabel{def:monotonicity} 单调性：如果 $\Gamma \subseteq \Delta$
+  且 $\Gamma \Entails !A$，则也有 $\Delta \Entails !A$；
+\item \ollabel{def:Cut} 传递性：如果 $\Gamma \Entails !A$ 且
+  $\Delta \cup \{ !A\} \Entails !B$，则 $\Gamma \cup \Delta \Entails
+  !B$。
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+习题。
+\end{proof}
+
+\begin{prob}
+证明 \olref[pl][syn][sem]{prop:semanticalfacts}
+\end{prob}
+
+\begin{prop}\ollabel{prop:entails-unsat}
+  $\Gamma \Entails !A$ 当且仅当 $\Gamma \cup \{\lnot !A\}$
+  是不可满足的。
+\end{prop}
+
+\begin{proof}
+习题。
+\end{proof}
+
+\begin{prob}
+证明 \olref[pl][syn][sem]{prop:entails-unsat}
+\end{prob}
+
+\begin{thm}[语义演绎定理]
+  \ollabel{thm:sem-deduction} $\Gamma \Entails !A \lif !B$ 当且仅当
+  $\Gamma \cup \{!A\} \Entails !B$。
+\end{thm}
+
+\begin{proof}
+习题。
+\end{proof}
+
+\begin{prob}
+证明 \olref[pl][syn][sem]{thm:sem-deduction}
+\end{prob}
+
+\end{document}

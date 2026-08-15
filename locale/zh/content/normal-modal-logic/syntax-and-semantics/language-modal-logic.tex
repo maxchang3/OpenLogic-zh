@@ -1,0 +1,102 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: language-modal-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{syn}{lan}
+
+\olsection{基本模态逻辑的语言}
+
+\begin{defn}
+模态逻辑的基本语言包含
+\begin{enumerate}
+  \tagitem{prvFalse}{表示!!{falsity}的命题常元~$\lfalse$。}{}
+  \tagitem{prvTrue}{表示!!{truth}的命题常元~$\ltrue$。}{}
+  \item 一个可数的!!{propositional variable}集合：$\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item 命题联结词：\startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$（否定）}{}%
+  \iftag{prvAnd}{\ycomma $\land$（合取）}{}%
+  \iftag{prvOr}{\ycomma $\lor$（析取）}{}%
+  \iftag{prvIf}{\ycomma $\lif$（!!{conditional}）}{}%
+  \iftag{prvIff}{\ycomma $\liff$（!!{biconditional}）}{}。
+  \tagitem{prvBox}{模态算子 $\Box$。}{}
+  \tagitem{prvDiamond}{模态算子 $\Diamond$。}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+基本模态语言的 \emph{!!^{formula}} 归纳定义如下：
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ 是一个原子!!{formula}。}{}
+
+\tagitem{prvTrue}{$\ltrue$ 是一个原子!!{formula}。}{}
+
+\item 每个!!{propositional variable} $\Obj p_i$ 都是（原子）!!{formula}。
+
+\tagitem{prvNot}{若 $!A$ 是!!a{formula}，则 $\lnot !A$ 是!!a{formula}。}{}
+
+\tagitem{prvAnd}{若 $!A$ 和 $!B$ 是!!{formula}，则 $(!A \land
+  !B)$ 是!!a{formula}。}{}
+
+\tagitem{prvOr}{若 $!A$ 和 $!B$ 是!!{formula}，则 $(!A \lor !B)$
+  是!!a{formula}。}{}
+
+\tagitem{prvIf}{若 $!A$ 和 $!B$ 是!!{formula}，则 $(!A \lif !B)$
+  是!!a{formula}。}{}
+
+\tagitem{prvIff}{若 $!A$ 和 $!B$ 是!!{formula}，则 $(!A \liff !B)$
+  是!!a{formula}。}{}
+
+\tagitem{prvBox}{若 $!A$ 是!!a{formula}，则 $\Box !A$ 是!!a{formula}。}{}
+
+\tagitem{prvDiamond}{若 $!A$ 是!!a{formula}，则 $\Diamond !A$ 是!!a{formula}。}{}
+
+\tagitem{limitClause}{除此之外，没有其他!!a{formula}。}{}
+\end{enumerate}
+\end{defn}
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defBox,defDiamond}
+\begin{defn}
+用已定义的算子构造的公式按如下方式理解：
+
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defBox,defDiamond}
+
+\tagitem{defTrue}{$\ltrue$ 缩写为
+  \iftag{prvFalse}{$\lnot\lfalse$}{$(!A \lor \lnot !A)$，其中 $!A$ 为
+    某个固定的原子!!{formula}~$!A$}。}{}
+
+\tagitem{defFalse}{$\lfalse$ 缩写为
+  \iftag{prvTrue}{$\lnot\ltrue$}{$(!A \land \lnot !A)$，其中 $!A$ 为
+    某个固定的原子!!{formula}~$!A$}。}{}
+
+\tagitem{defNot}{$\lnot !A$ 缩写为 $!A \lif \lfalse$。}{}
+
+\tagitem{defOr}{$!A \lor !B$ 缩写为
+  \iftag{prvAnd}{$\lnot(\lnot !A \land \lnot !B)$}{$\lnot !A \lif
+    !B$}。}{}
+
+\tagitem{defAnd}{$!A \land !B$ 缩写为
+  \iftag{prvOr}{$\lnot(\lnot !A \lor \lnot !B)$}{$\lnot (!A \lif
+    \lnot !B)$}。}{}
+
+\tagitem{defIf}{$!A \lif !B$ 缩写为
+  \iftag{prvOr}{$\lnot !A \lor !B)$}{$\lnot (!A \land \lnot !B)$}。}{}
+
+\tagitem{defIff}{$!A \liff !B$ 缩写为 $(!A \lif !B) \land (!B
+  \lif !A)$。}{}
+
+\tagitem{defBox}{$\Box !A$ 缩写为 $\lnot\Diamond\lnot !A$。}{}
+
+\tagitem{defDiamond}{$\Diamond !A$ 缩写为 $\lnot\Box\lnot !A$。}{}
+\end{tagenumerate}
+\end{defn}
+\end{tagblock}
+
+若!!a{formula}~$!A$ 不含 $\Box$ 或 $\Diamond$，我们称它为
+\emph{无模态的}。
+
+\end{document}

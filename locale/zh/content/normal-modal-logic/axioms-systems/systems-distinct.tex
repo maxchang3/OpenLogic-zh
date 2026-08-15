@@ -1,0 +1,145 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: systems-distinct
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{prf}{dis}
+
+\olsection{证明系统的相异性}
+
+在 \olref[prs]{sec} 中我们看到如何证明两个模态逻辑系统实际上是同一个系统。借助 \olref[snd]{thm:soundness}，我们可以通过找出一个公式~$!A$ 使 $\Sigma' \Proves !A$ 在~$\Sigma$ 的某一模型中失败，来证明两个模态系统 $\Sigma$ 与 $\Sigma'$ 是相异的。
+
+\begin{prop}
+  $\Log{KD} \subsetneq \Log{KT}$
+\end{prop}
+
+\begin{proof} 这是「所有自反关系都是持续的」这一语义事实的句法对应物。要证明 $\Log{KD} \subseteq
+  \Log{KT}$，我们需要看到 $\Log{KD} \Proves !B$ 蕴含
+  $\Log{KT} \Proves !B$，而这由 $\Log{KT} \Proves
+  \Log{D}$ 推出，如
+  \olref[prs]{prop:S5facts}\olref[prs]{prop:S5facts-KT-D} 所示。要证明
+  该包含是真包含，由可靠性
+  （\olref[snd]{thm:soundness}）知，只需在
+  \Log{KD} 中构造一个模型，使 \Ax{T}，即 $\Box p \lif p$，失败（这是一个
+  留作习题的容易任务），因为此时由可靠性知 $\Log{KD}
+  \Proves/ \Box p \lif p$。
+\end{proof}
+
+\begin{prop}
+  $\Log{KB} \neq \Log{K4}$。
+\end{prop}
+
+\begin{proof}
+  我们构造一个对称模型，使 \Ax{4} 的某个特例在其中失败；
+  由于显然该特例对 \Log{K4} 是可推演的而对 \Log{KB} 不
+  可推演，于是将推出 $\Log{K4} \nsubseteq \Log{KB}$。
+  考虑 \olref{fig:Bnot4} 中的对称模型 $\mModel{M}$。由于
+  该模型是对称的，\Ax{K} 与~\Ax{B} 在~$\mModel{M}$ 中为真
+  （分别依据 \olref[syn][sch]{prop:Kvalid} 与
+  \olref[frd][acc]{thm:soundschemas}）。然而，
+  $\mSat/{M}{\Box p \lif \Box\Box p}[w_1]$。
+\end{proof}
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1) [label=above:\mFalse{p},
+    label={below:$\mSat{{}}{\Box p}$\\ $\mSat/{{}}{\Box\Box p}$}] {$w_1$};
+    \node[world] (w2) [label=above:\mTrue{p},
+      label=below:$\mSat/{{}}{\Box p}$, right=of w1]{$w_2$};
+    \draw[->, bend left] (w1) to (w2);
+    \draw[->, bend left] (w2) to (w1);
+  \end{tikzpicture}
+  \caption{一个使 \Ax{4} 的某个特例为假的对称模型。}
+  \ollabel{fig:Bnot4}
+\end{figure}
+
+\begin{thm}\ollabel{thm:KTBnot45}
+  $\Log{KTB} \Proves/ \Log{4}$ 且 $\Log{KTB} \Proves/ \Log{5}$。
+\end{thm}
+
+\begin{proof}
+  由 \olref[frd][acc]{thm:soundschemas} 可知，\Ax{T} 与 \Ax{B} 的所有
+  特例在每个自反对称模型中分别为真。因此，由可靠性知，只需
+  找一个自反对称模型，其中含有一个世界使得~\Ax{4} 的某个特例
+  在其中失败，对~\Ax{5} 亦如此。我们对两个断言使用同一个模型。
+  考虑 \olref{fig:KTBnot45} 中的对称、自反模型。于是 $\mSat/{M}{\Box p \to \Box \Box
+    p}[w_1]$，所以 \Ax{4} 在 $w_1$ 处失败。类似地，$\mSat/{M}{\Diamond
+    \lnot p \lif \Box \Diamond \lnot p}[w_2]$，所以 $!A = \lnot p$ 时~\Ax{5}
+  的特例在~$w_2$ 处失败。
+\end{proof}
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1) [label={right:\mTrue{p}},
+      label={below: $\mSat{{}}{\Box p}$\\
+        $\mSat/{{}}{\Box\Box p}$\\
+        $\mSat/{{}}{\Diamond\lnot p}$}] {$w_1$};
+    \draw[reflexive above] (w1) to (w1);
+    \node[world] (w2) [label={right:\mTrue{p}}, label={below:
+        $\mSat{{}}{\Diamond\lnot p}$\\
+        $\mSat/{{}}{\Box\Diamond\lnot p}$}, right=of w1] {$w_2$} ;
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w3) [label={right:\mFalse{p}},right=of w2] {$w_3$};
+    \draw[reflexive above] (w3) to (w3);
+    \draw[->, bend left] (w1) to (w2);
+    \draw[->, bend left] (w2) to (w3);
+    \draw[->, bend left] (w3) to (w2);
+    \draw[->, bend left] (w2) to (w1);
+  \end{tikzpicture}
+  \caption{\olref{thm:KTBnot45} 的模型。}
+  \ollabel{fig:KTBnot45}
+\end{figure}
+
+\begin{thm}\ollabel{thm:KD5not4}
+  $\Log{KD5} \neq \Log{KT4} = \Log{S4}$。
+\end{thm}
+
+\begin{proof}
+  由 \olref[frd][acc]{thm:soundschemas} 可知，\Ax{D} 与~\Ax{5} 的所有
+  特例在所有持续欧性模型中为真。
+  因此，只需找一个持续欧性模型，其中含有一个世界
+  使得~\Ax{4} 的某个特例在其中失败。考虑
+  \olref{fig:KD5not4} 中的模型，并注意 $\mSat/{M}{\Box p
+  \lif \Box\Box p}[w_1]$。
+\end{proof}
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w2) [label=north west:\mTrue{p}]{$w_2$} ;
+    \draw[reflexive left] (w2) to (w2);
+    \node[world] (w1) [label=right:\mFalse{p},
+      label=below:{$\mSat{{}}{\Box p}, \mSat/{{}}{\Box\Box p}$},
+      below right=of w2]{$w_1$};
+    \node[world] (w3) [label=north east:\mTrue{p}, above right=of w1]{$w_3$} ;
+    \draw[reflexive right] (w3) to (w3);
+    \node[world] (w4) [label=right:\mFalse{p},above right=of w2]{$w_4$};
+    \draw[reflexive above] (w4) to (w4);
+    \draw[->] (w1) to (w2);
+    \draw[->] (w1) to (w3);
+    \draw[->, bend left=15] (w2) to (w3);
+    \draw[->, bend left=15] (w3) to (w2);
+    \draw[->, bend left=15] (w2) to (w4);
+    \draw[->, bend left=15] (w4) to (w2);
+    \draw[->, bend left=15] (w3) to (w4);
+    \draw[->, bend left=15] (w4) to (w3);
+  \end{tikzpicture}
+  \caption{\olref{thm:KD5not4} 的模型。}
+  \ollabel{fig:KD5not4}
+\end{figure}
+
+\begin{prob}
+  用含 $3$ 个世界的模型，给出 \olref[nml][prf][dis]{thm:KD5not4} 的另一证明。
+\end{prob}
+
+\begin{prob}
+  给出一个单一的自反传递模型，同时证明
+  $\Log{KT4} \Proves/ \Ax{B}$ 与 $\Log{KT4} \Proves/ \Ax{5}$。
+\end{prob}
+
+\end{document}

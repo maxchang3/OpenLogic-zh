@@ -1,0 +1,70 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{aml}{el}{pal}
+
+\olsection{公开宣告逻辑}
+
+动态认知逻辑使我们得以刻画主体知识随时间流逝、或随着新知获得而变化的方式。其中许多逻辑借助信息性的\emph{事件}或\emph{更新}来刻画这些变化。最基本的更新类型是公开宣告（public announcement），即某个公式被如实地宣告，且所有主体共同见证这一过程。为此，我们如下地扩张语言：
+
+\begin{defn}
+设 $G$ 是主体符号的集合。带公开宣告的多主体认知逻辑的基本语言包含
+\begin{enumerate}
+  \tagitem{prvFalse}{!!{falsity}的命题常元~$\lfalse$。}{}
+  \tagitem{prvTrue}{!!{truth}的命题常元~$\ltrue$。}{}
+  \item 一个可数的!!{propositional variable}集合：$\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item 命题联结词：\startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$（否定）}{}%
+  \iftag{prvAnd}{\ycomma $\land$（合取）}{}%
+  \iftag{prvOr}{\ycomma $\lor$（析取）}{}%
+  \iftag{prvIf}{\ycomma $\lif$（!!{conditional}）}{}%
+  \item 知识算子 $\Knows_a$，其中 $a \in G$。
+  \item 公开宣告算子 $[!B]$，其中 $!B$ 是公式。
+\end{enumerate}
+\end{defn}
+
+公开宣告算子的作用与盒子算子相似，因此我们对语言的归纳定义也随之给出：
+
+\begin{defn}
+  认知语言的\emph{公式}按如下方式归纳地定义：
+  \begin{enumerate}
+  \tagitem{prvFalse}{$\lfalse$ 是原子公式。}{}
+
+  \tagitem{prvTrue}{$\ltrue$ 是原子公式。}{}
+
+  \item 每个命题变元 $\Obj p_i$ 都是（原子的）
+  公式。
+
+  \tagitem{prvNot}{如果 $!A$ 是公式，则 $\lnot !A$ 是
+  公式。}{}
+
+  \tagitem{prvAnd}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \land
+  !B)$ 是公式。}{}
+
+  \tagitem{prvOr}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \lor !B)$
+  是公式。}{}
+
+  \tagitem{prvIf}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \lif !B)$
+  是公式。}{}
+
+  \tagitem{prvIff}{如果 $!A$ 和 $!B$ 都是公式，则 $(!A \liff !B)$
+  是公式。}{}
+
+  \item 如果 $!A$ 是公式且 $a \in G$，则 $\Knows_a !A$ 是
+  公式。
+
+  \item 如果 $!A$ 和 $!B$ 都是公式，则 $[!A] !B$ 是公式。
+
+  \tagitem{limitClause}{除此之外没有其他公式。}{}
+\end{enumerate}
+\end{defn}
+
+公式 $[!A] !B$ 的意思是「在 $!A$ 被如实宣告之后，$!B$~成立」。有时在公开宣告的语境下讨论公共知识也会很有用，因此语言还可以包含公共知识算子~$\CKnows_G !A$。
+
+\end{document}

@@ -1,0 +1,62 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: axiomatic-derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{int}{axd}
+
+\olsection{公理化的\usetoken{P}{derivation}}
+
+直觉主义命题逻辑的公理化!!{derivation}在概念上是最简单的，在历史上也是最早的!!{derivation}系统。它们的运作方式与经典命题逻辑完全一样。
+
+\begin{defn}[!!^{derivability}]
+若 $\Gamma$ 是 $\Lang L$ 的!!{formula}的一个集合，则从 $\Gamma$ 出发的一条
+\emph{!!{derivation}} 是一个有穷序列 $!A_1$、
+\dots,~$!A_n$（其中各项均为 $\Lang L$ 的!!{formula}），并且对每个 $i \le n$ 下列条件之一成立：
+\begin{enumerate}
+\item $!A_i \in \Gamma$；或
+\item $!A_i$ 是一条公理；或
+\item $!A_i$ 由某些 $!A_j$ 与 $!A_k$（其中 $j < i$，$k <
+  i$）通过分离规则推出，即 $!A_k \ident !A_j \lif !A_i$。
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[公理]
+直觉主义命题逻辑的 \emph{公理}的集合 $\PAx$，是所有下列形式的全部!!{formula}：
+\begin{align}
+  & (!A \land !B) \lif !A \ollabel{ax:land1}\\
+  & (!A \land !B) \lif !B \ollabel{ax:land2}\\
+  & !A \lif (!B \lif (!A \land !B)) \ollabel{ax:land3}\\
+  & !A \lif (!A \lor !B) \ollabel{ax:lor1}\\
+  & !A \lif (!B \lor !A) \ollabel{ax:lor2}\\
+  & (!A \lif !C) \lif ((!B \lif !C) \lif ((!A \lor !B) \lif !C)) \ollabel{ax:lor3}\\
+  & !A \lif (!B \lif !A) \ollabel{ax:lif1}\\
+  & (!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C)) \ollabel{ax:lif2}\\
+  & \lfalse \lif !A \ollabel{ax:lfalse1}
+\end{align}
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+把一条!!^a{formula}~$!A$ 称为从 $\Gamma$ \emph{!!{derivable}}，记为
+$\Gamma \Proves !A$，当且仅当存在一条从 $\Gamma$ 出发、以
+$!A$ 结尾的!!a{derivation}。
+\end{defn}
+
+\begin{defn}[定理]
+若存在一条从空集出发、得出~$!A$ 的!!a{derivation}，则把一条!!^a{formula}~$!A$ 称为一条 \emph{定理}。若 $!A$ 是定理，我们记 $\Proves !A$；若它不是定理，则记 $\Proves/ !A$。
+\end{defn}
+
+\begin{prop}
+  若在直觉主义逻辑的公理化!!{derivation}系统中有 $\Gamma \Proves !A$，则在
+  经典逻辑中也有 $\Gamma \Proves !A$。特别是，若 $!A$ 是直觉主义
+  定理，则它也是经典定理。
+\end{prop}
+
+\begin{proof}
+  每条直觉主义公理同时也是经典公理，因此直觉主义逻辑中的每条!!{derivation}也是经典逻辑中的一条!!a{derivation}。
+\end{proof}
+
+\end{document}

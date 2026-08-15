@@ -1,0 +1,51 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: properties-accessibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{aml}{el}{acc}
+
+\olsection{可及关系与认知原则}
+
+既然我们已知正规模态逻辑中关于框架对应的知识，我们或许想知道在认知解释下特征性的!!{formula}看起来是什么样的。我们已经说过，认知逻辑通常被解释在 S5 中。那么让我们看看各种认知原则是如何表示的，并考虑它们如何对应各种框架条件。
+
+回顾正规模态逻辑，不同的模态!!{formula}刻画了可及关系的不同性质。下表选出几个对应特定认知原则的表「达」。
+
+\begin{table}[t]
+    \begin{tabular}{| p{.48\textwidth} || p{.48\textwidth} |}
+      \hline
+      {\emph{如果 $R$ 是\dots}} & {\emph{那么在 $\mModel{M}$ 中，\dots 为真：}} \\
+      \hline \hline
+
+      & $\Knows (p \lif q) \lif (\Knows p \lif \Knows q)$
+      \hfill \newline{（闭合）} \\
+      \hline
+      \emph{自反的}: $\forall w Rww$
+      & $\Knows p \lif p$ \hfill \newline{（真实性）} \\
+      \hline
+      \emph{传递的}: \newline
+      $\forall u \forall v \forall w ((Ruv \land Rvw) \lif Ruw)$ &
+      $\Knows p \lif \Knows \Knows p$ \hfill
+           \newline{（正内省）} \\
+      \hline
+      \emph{欧性的}: \newline
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif Ruv)$ &
+      $\lnot \Knows p \lif \Knows \neg \Knows p$ \hfill
+        \newline{（负内省）} \\
+      \hline
+    \end{tabular}
+    \caption{四个认知原则。}
+    \ollabel{tab:four}
+  \end{table}
+
+与 $T$ 公理相对应的真实性，通常被视为这些原则中最无争议的，因为它代表了这样的主张：如果!!a{formula}是已知的，那么它必然为真。闭合、正内省与负内省则更具争议。
+
+与 $K$ 公理相对应的闭合，代表了这样的想法：一个主体的知识在蕴含下是封闭的。在某些情形下，这在我们看来或许是有道理的。例如，我可能知道如果我在维多利亚，那么我就在温哥华岛。除非出现奇特的怀疑论场景，我确实知道我在维多利亚，而这也应当提示我知道自己在温哥华岛。所以在这一情形下，我的知识的逻辑封闭或许显得相对直观。另一方面，我们并不总是能想通我们的知识的全部后果，因此在其他情形下这可能引出不那么直观的结果。
+
+有时被称为 KK 原则的正内省，有时被表述为一个论断：如果我知道某件事，那么我知道自己知道它。它是 4 公理的认知对应物。相应地，负内省被表述为一个论断：如果我\emph{不}知道某件事，那么我知道自己不知道它，它是 5 公理的对应物。这两种原则似乎都有些相当平常的反例，在这些反例中，我确实知道某件事，却又不确定自己是否知道它。
+
+
+\end{document}

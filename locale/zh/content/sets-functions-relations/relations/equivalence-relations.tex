@@ -1,0 +1,53 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: equivalence-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{rel}{eqv}
+
+\olsection{等价关系}
+
+集合上的恒等关系是自反的、对称的且传递的。同时具有这三条性质的关系~$R$ 非常常见。
+
+\begin{defn}[等价关系]
+如果关系 $R \subseteq A^2$ 是自反的、对称的且传递的，则称它为\emph{等价关系}。若~$Rxy$，则称~$A$ 的!!{element}$x$ 与~$y$ 是\emph{$R$-等价}的。
+\end{defn}
+
+等价关系引出\emph{等价类}这一概念。一个等价关系把论域「分割」成不同的划分。在每个划分内部，所有对象彼此相关；来自不同划分的对象则互不相关。有时，直接讨论这些划分\emph{本身}是很有用的。为此，我们引入如下定义：
+
+\begin{defn}\ollabel{def:equivalenceclass}
+设 $R \subseteq A^2$ 是等价关系。对于每个 $x \in A$，$x$ 在~$A$ 中的\emph{等价类}是指集合 $\equivrep{x}{R}
+= \Setabs{y \in A}{Rxy}$。$A$ 在~$R$ 下的\emph{商集}是指 $\equivclass{A}{R} = \Setabs{\equivrep{x}{R}}{x \in A}$，即这些等价类所组成的集合。
+\end{defn}
+
+下面的结果证明了等价类确实就是~$A$ 的划分，从而印证了等价类的定义：
+
+\begin{prop}
+如果 $R \subseteq A^2$ 是等价关系，那么 $Rxy$ 当且仅当
+$\equivrep{x}{R} = \equivrep{y}{R}$。
+\end{prop}
+
+\begin{proof}
+对于从左到右的方向，设 $Rxy$，并设 $z \in
+\equivrep{x}{R}$。那么由定义即得 $Rxz$。由于 $R$ 是等价关系，故 $Ryz$。（展开来说：由 $Rxy$ 且~$R$ 是对称的，我们得到 $Ryx$，又由 $Rxz$ 且~$R$ 是传递的，我们得到~$Ryz$。）因此 $z \in \equivrep{y}{R}$。推广之，$\equivrep{x}{R} \subseteq \equivrep{y}{R}$。但完全类似地，$\equivrep{y}{R} \subseteq \equivrep{x}{R}$。所以由外延性，$\equivrep{x}{R} =
+\equivrep{y}{R}$。
+
+对于从右到左的方向，设 $\equivrep{x}{R} =
+\equivrep{y}{R}$。由于 $R$ 是自反的，$Ryy$，所以 $y \in
+\equivrep{y}{R}$。因而由假设 $\equivrep{x}{R} = \equivrep{y}{R}$，也有 $y \in \equivrep{x}{R}$。所以 $Rxy$。
+\end{proof}
+
+\begin{ex}
+模算术提供了一个关于等价关系的好例子。对于任意 $a$、$b$ 以及 $n \in \PosInt$，称 $a \equiv_n b$ 当且仅当用~$n$ 除 $a$ 与用~$n$ 除 $b$ 所得的余数相同。（更符号化地说：$a \equiv_n b$ 当且仅当，对某个 $k \in
+\Int$，$a - b = kn$。）于是对任意~$n$，$\equiv_n$ 是等价关系。而且由~$\equiv_n$ 所产生的互不相同的等价类恰好有 $n$ 个；也就是说 $\equivclass{\Nat}{\equiv_n}$ 有 $n$ 个!!{element}。这些类是：无余数能被 $n$ 整除的数的集合，即 $\equivrep{0}{\equiv_n}$；被 $n$ 除余~$1$ 的数的集合，即 $\equivrep{1}{\equiv_n}$；\ldots；以及被~$n$ 除余~$n-1$ 的数的集合，即~$\equivrep{n-1}{\equiv_n}$。
+\end{ex}
+
+\begin{prob}
+证明对任意 $n \in
+\PosInt$，$\equiv_n$ 是等价关系，并且 $\equivclass{\Nat}{\equiv_n}$ 恰好有 $n$ 个成员。
+\end{prob}
+
+\end{document}

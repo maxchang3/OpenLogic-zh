@@ -1,0 +1,147 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{com}{tru}
+
+\olsection{真值引理}
+
+典范模型~$\mModel{M^\Sigma}$ 的定义方式使得
+$\mSat{M^\Sigma}{!A}[\Delta]$ 当且仅当 $!A \in \Delta$。对于 $\!!{propositional
+variable}$，$V^\Sigma$ 的定义直接给出此结论。然而，我们必须对所有
+$\!!{formula}$ 验证该等价关系成立。我们通过归纳来做这件事。归纳步骤涉及对
+涉及命题算子的 $\!!{formula}$（这里我们必须使用
+\olref[ccs]{prop:ccs-properties}）以及对模态算子（这里我们援引
+\olref[mod]{sec} 的结果）证明该等价关系。
+
+\begin{prop}[真值引理]
+  \ollabel{prop:truthlemma}
+  对于每一 $\!!{formula}$~$!A$，$\mSat{M^\Sigma}{!A}[\Delta]$ 当且仅当
+  $!A \in \Delta$。
+\end{prop}
+
+\begin{proof}
+  对~$!A$ 归纳。
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat/{M^\Sigma}{\lfalse}[\Delta]$
+        由 \olref[syn][trw]{defn:mmodels}，且 $\lfalse \notin \Delta$
+        由
+        \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lfalse}。}}{}
+
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M^\Sigma}{\ltrue}[\Delta]$
+        由 \olref[syn][trw]{defn:mmodels}，且 $\ltrue \in \Delta$ 由
+        \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-ltrue}。}}{}
+
+    \item \indcase{!A}{p}{$\mSat{M^\Sigma}{p}[\Delta]$ 当且仅当 $\Delta \in
+      V^\Sigma(p)$，由 \olref[syn][trw]{defn:mmodels}。而且，$\Delta
+      \in V^\Sigma(p)$ 当且仅当 $p \in \Delta$，由
+      ~$V^\Sigma$ 的定义。}
+
+    \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+        \iftag{probNot}{习题。}{$\mSat{M^\Sigma}{\lnot !B}[\Delta]$
+          当且仅当 $\mSat/{M^\Sigma}{!B}[\Delta]$
+          （\olref[syn][trw]{defn:mmodels}）当且仅当 $!B \notin \Delta$
+          （由归纳假设）当且仅当 $\lnot !B \in \Delta$（由
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot}）。}}}{}
+
+    \tagitem{prvAnd}{\indcase{!A}{!B \land !C}{%
+        \iftag{probAnd}{习题。}{$\mSat{M^\Sigma}{!B \land
+            !C}[\Delta]$ 当且仅当 $\mSat{M^\Sigma}{!B}[\Delta]$ 且
+          $\mSat{M^\Sigma}{!C}[\Delta]$（由
+          \olref[syn][trw]{defn:mmodels}）当且仅当 $!B \in \Delta$ 且 $!C
+          \in \Delta$（由归纳假设）当且仅当 $!B \land !C \in
+          \Delta$（由
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-land}）。}}}{}
+
+    \tagitem{prvOr}{\indcase{!A}{!B \lor !C}{%
+        \iftag{probOr}{习题。}{$\mSat{M^\Sigma}{!B \lor
+            !C}[\Delta]$ 当且仅当 $\mSat{M^\Sigma}{!B}[\Delta]$ 或
+          $\mSat{M^\Sigma}{!C}[\Delta]$（由
+          \olref[syn][trw]{defn:mmodels}）当且仅当 $!B \in \Delta$ 或 $!C
+          \in \Delta$（由归纳假设）当且仅当 $!B \lor !C \in
+          \Delta$（由
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lor}）。}}}{}
+
+    \tagitem{prvIf}{\indcase{!A}{!B \lif !C}{%
+        \iftag{probIf}{习题。}{$\mSat{M^\Sigma}{!B \lif
+            !C}[\Delta]$ 当且仅当 $\mSat/{M^\Sigma}{!B}[\Delta]$ 或
+          $\mSat{M^\Sigma}{!C}[\Delta]$（由
+          \olref[syn][trw]{defn:mmodels}）当且仅当 $!B \notin \Delta$ 或
+          $!C \in \Delta$（由归纳假设）当且仅当 $!B \lif !C
+          \in \Delta$（由
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lif}）。}}}{}
+
+    \tagitem{prvIff}{\indcase{!A}{!B \liff !C}{%
+        \iftag{probIff}{习题。}{$\mSat{M^\Sigma}{!B \liff
+            !C}[\Delta]$ 当且仅当 $\mSat{M^\Sigma}{!B}[\Delta]$ 且
+          $\mSat{M^\Sigma}{!C}[\Delta]$ 或
+          $\mSat/{M^\Sigma}{!B}[\Delta]$ 且
+          $\mSat/{M^\Sigma}{!C}[\Delta]$（由
+          \olref[syn][trw]{defn:mmodels}）当且仅当 $!B \in \Delta$
+          且 $!C \in \Delta$ 或 $!B \notin \Delta$ 且 $!C \notin
+          \Delta$（由归纳假设）当且仅当 $!B \liff !C \in
+          \Delta$（由
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-liff}）。}}}{}
+
+    \tagitem{prvBox}{\indcase{!A}{\Box !B}{%
+        \iftag{probBox}{习题。}{首先设
+          $\mSat{M^\Sigma}{\Box !B}[\Delta]$。由
+          \olref[syn][trw]{defn:mmodels}，对每一满足
+          $R^\Sigma \Delta\Delta'$ 的 $\Delta'$，有
+          $\mSat{M^\Sigma}{!B}[\Delta']$。由归纳假设，对每一满足 $R^\Sigma
+          \Delta\Delta'$ 的 $\Delta'$，有 $!B \in
+          \Delta'$。由 $R^\Sigma$ 的定义，对每一满足 $\Box^{-1} \Delta
+          \subseteq \Delta'$ 的 $\Delta'$，有 $!B \in
+          \Delta'$。由 \olref[mod]{prop:box}，$\Box !B \in
+          \Delta$。
+
+          现在设 $\Box !B \in \Delta$。令 $\Delta' \in W^\Sigma$ 满足
+          $R^\Sigma \Delta\Delta'$，即 $\Box^{-1}\Delta
+          \subseteq \Delta'$。由于 $\Box !B \in \Delta$，$!B \in
+          \Box^{-1} \Delta$。因此，$!B \in \Delta'$。由
+          归纳假设，$\mSat{M^\Sigma}{!B}[\Delta']$。由于满
+          足 $R^\Sigma \Delta\Delta'$ 的 $\Delta'$ 是任意的，故对所有满
+          足 $R^\Sigma
+          \Delta\Delta'$ 的 $\Delta' \in W^\Sigma$，有
+          $\mSat{M^\Sigma}{!B}[\Delta']$。由
+          \olref[syn][trw]{defn:mmodels}，$\mSat{M^\Sigma}{\Box
+            !B}[\Delta]$。}}}{}
+
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
+        \iftag{probDiamond}{习题。}{首先设
+          $\mSat{M^\Sigma}{\Diamond !B}[\Delta]$。由
+          \olref[syn][trw]{defn:mmodels}，对某满足
+          $R^\Sigma \Delta\Delta'$ 的 $\Delta'$，有 $\mSat{M^\Sigma}{!B}[\Delta']$。
+          由归纳假设，对某满足
+          $R^\Sigma \Delta\Delta'$ 的 $\Delta'$，有 $!B \in \Delta'$。由
+          $R^\Sigma$ 的定义，\iftag{prvBox}{对某满足
+            $\Box^{-1} \Delta \subseteq \Delta'$ 的 $\Delta'$，有 $!B \in
+            \Delta'$。由 \olref[mod]{prop:diamond}，}{} 对某满足
+          $\Diamond \Delta' \subseteq \Delta$ 的 $\Delta'$，有 $!B \in
+          \Delta'$。由于 $!B \in \Delta'$，$\Diamond !B \in \Diamond
+          \Delta'$，故 $\Diamond !B \in \Delta$。
+
+          现在设 $\Diamond !B \in \Delta$。由
+          \olref[mod]{prop:diamond}，存在一个完全的
+          $\Sigma$-一致的 $\Delta' \in W^\Sigma$ 满足
+          $\Diamond \Delta' \subseteq \Delta$ 且 $!B \in
+          \Delta'$。\iftag{prvBox}{由 \olref[mod]{lem:box-iff-diamond}，
+            存在一个 $\Delta' \in W^\Sigma$ 满足 $\Box^{-1}
+            \Delta \subseteq \Delta'$，且 $!B \in \Delta'$。}{} 由
+          $R^\Sigma$ 的定义，$R^\Sigma \Delta\Delta'$，故存
+          在一个 $\Delta' \in W^\Sigma$ 满足 $R^\Sigma
+          \Delta\Delta'$ 且 $!B \in \Delta'$。由
+          \olref[syn][trw]{defn:mmodels}，$\mSat{M^\Sigma}{\Diamond
+            !B}[\Delta]$。}}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probFalse,probTrue,probNot,proband,probOr,probIf,probIff,probBox,probDiamond}
+  完成 \olref[nml][com][tru]{prop:truthlemma} 的证明。
+\end{probtag}
+
+\end{document}

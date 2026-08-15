@@ -1,0 +1,86 @@
+% Part: counterfactuals
+% Chapter: introduction
+% Section: strict-conditional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{cnt}{int}{str}
+
+\olsection{严格条件句}
+
+Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条件句相对的是它——而非实质条件句——才对应蕴含。在真性模态逻辑中，$!A \strictif !B$ 可定义为 $\Box(!A \lif
+!B)$。因此，严格条件句（在世界处）为真当且仅当相应的实质条件句是必然的。
+
+严格条件句面对实质条件句的种种悖论表现如何？有着假前件的严格条件句和有着真后件的严格条件句，可能为真，也可能为假。此外，$(!A \strictif !B) \lor (!B \strictif !A)$ 并不有效。严格条件句 $!A \strictif !B$ 也不等价于 $\lnot !A \lor !B$，因此它不是真值函项的。
+
+我们有：
+\begin{align}
+  !A \strictif !B & \Entails \lnot !A \lor !B
+  \text{ 但：}\\
+  \lnot !A \lor !B & \Entails/ !A \strictif !B\\
+  !B & \Entails/ !A \strictif !B\\
+  \lnot !A & \Entails/ !A \strictif !B\\
+  \lnot(!A \lif !B) & \Entails/ !A \land \lnot !B
+  \text{ 但：}\\
+  !A \land \lnot !B & \Entails \lnot(!A \strictif !B)
+  \intertext{然而，严格条件句仍支持分离规则：}
+  !A, !A \strictif !B & \Entails !B
+  \intertext{严格条件句是合聚的：}
+  !A \strictif !B,  !A \strictif !C & \Entails !A \strictif (!B \land !C)
+  \intertext{前件强化对严格条件句成立：}
+  !A \strictif !B & \Entails (!A \land !C) \strictif !B
+  \intertext{严格条件句也是传递的：}
+  !A \strictif !B, !B \strictif !C & \Entails !A \strictif !C
+  \intertext{最后，严格条件句等价于其逆否形式：}
+  !A \strictif !B & \Entails \lnot !B \strictif \lnot !A\\
+  \lnot !B \strictif \lnot !A & \Entails !A \strictif !B
+\end{align}
+
+\begin{prob}
+  给出对严格条件句不成立的衍生关系的 \Log{S5}-反例，即对如下各项：
+  \begin{enumerate}
+  \item $\lnot p \Entails/ \Box(p \lif q)$
+  \item $q \Entails/ \Box(p \lif q)$
+  \item $\lnot\Box(p \lif q) \Entails/ p \land \lnot q$
+  \item $\Entails/ \Box(p \lif q) \lor \Box(q \lif p)$
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  通过给出如下各项的 \Log{S5}-证明来表明严格条件句成立的有效衍生关系：
+  \begin{enumerate}
+  \item  $\Box(!A \lif !B) \Entails \lnot !A \lor !B$
+  \item $!A \land \lnot !B \Entails \lnot\Box(!A \lif !B)$
+  \item $!A, \Box(!A \lif !B) \Entails !B$
+  \item $\Box(!A \lif !B), \Box(!A \lif !C) \Entails \Box(!A \lif (!B
+    \land !C))$
+  \item $\Box(!A \lif !B) \Entails \Box((!A \land !C) \lif !B)$
+  \item $\Box(!A \lif !B), \Box(!B \lif !C) \Entails \Box(!A
+    \lif !C)$
+  \item $\Box(!A \lif !B) \Entails \Box(\lnot !B \lif \lnot !A)$
+  \item $\Box(\lnot !B \lif \lnot !A) \Entails \Box(!A \lif !B)$
+  \end{enumerate}
+  \end{prob}
+
+然而，严格条件句仍有着它自己的「悖论」。正如有着假前件或真后件的实质条件句为真一样，有着\emph{必然}假前件或必然真后件的严格条件句也为真。此外，任何真的严格条件句都是必然真，任何假的严格条件句都是必然假。换言之，我们有
+\begin{align}
+  \Box \lnot !A & \Entails !A \strictif !B\\
+  \Box !B & \Entails !A \strictif !B\\
+  !A \strictif !B& \Entails \Box(!A \strictif !B)\\
+  \lnot(!A \strictif !B) & \Entails \Box\lnot(!A \strictif !B)
+\end{align}
+如果你把 $\strictif$ 想作「蕴含」，这些便不是问题。逻辑衍生关系终归是数学事实，因此不能是偶然的。但如果你想用 $\strictif$ 作为一个旨在刻画「如果……那么……」的逻辑联结词，它们确实会带来麻烦，尤其是最后两条。因为当然存在着偶然真或偶然假的「如果……那么……」语句——事实上，它们通常既非必然也非不可能。
+
+\begin{prob}
+  给出如下各项在 \Log{S5} 中的证明：
+  \begin{enumerate}
+    \item  $\Box \lnot !A \Entails !A \strictif !B$
+    \item $!A \strictif !B \Entails \Box(!A \strictif !B)$
+    \item $\lnot(!A \strictif !B)  \Entails \Box\lnot(!A \strictif !B)$
+  \end{enumerate}
+  利用 $\strictif$ 的定义来完成。
+\end{prob}
+
+\end{document}

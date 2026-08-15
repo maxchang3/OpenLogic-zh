@@ -1,0 +1,72 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sem}{sem}
+
+\olsection{语义概念}
+
+\begin{defn}
+  我们称 $!A$ 为\emph{在模型 $\mModel{M} = \tuple{W,R,V}$ 中为真}，$
+  \mSat{M}{!A}$，当且仅当对所有 $w \in W$ 都有 $\mSat{M}{!A}[w]$。
+  $!A$ 是\emph{有效的}，$\Entails !A$，当且仅当它在所有模型中为真。
+  我们说一组!!{formula}~$\Gamma$ \emph{衍推}~$!A$，$\Gamma
+  \Entails !A$，当且仅当对每个模型~$\mModel{M}$ 和每个~$w$，
+  只要 $\mSat{M}{\Gamma}[w]$，就有 $\mSat{M}{!A}[w]$。
+\end{defn}
+
+\begin{prop}\ollabel{prop:sat-entails}
+  \begin{enumerate}
+  \item\ollabel{prop:sat-entails1} 如果 $\mSat{M}{\Gamma}[w]$ 且
+    $\Gamma \Entails !A$，则 $\mSat{M}{!A}[w]$。
+  \item\ollabel{prop:sat-entails2} 如果 $\mSat{M}{\Gamma}$ 且 $\Gamma
+    \Entails !A$，则 $\mSat{M}{!A}$。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item 设 $\mSat{M}{\Gamma}$。由于 $\Gamma \Entails !A$，我们
+    知道如果 $\mSat{M}{\Gamma}[w]$，则 $\mSat{M}{!A}[w]$。又因为对所有
+    $u \in W$ 都有 $\mSat{M}{\Gamma}[u]$，故 $\mSat{M}{\Gamma}[w]$。
+    因此 $\mSat{M}{!A}[w]$。
+  \item 直接由 \olref{prop:sat-entails1} 得出。
+  \end{enumerate}
+\end{proof}
+
+
+\begin{defn}\ollabel{defn:restrict}
+  设 $\mModel{M}$ 是一个关系模型且 $w \in W$。$\mModel{M}$ 到~$w$ 的
+  \emph{限制} $\mModel{M}_w=\tuple{W_w, R_w, V_w}$ 由下式给出：
+  \begin{align*}
+    W_w & = \Setabs{u \in W}{Rwu},\\
+    R_w  & = R \cap (W_w)^2, \text{ 且}\\
+    V_w(p) & = V(p) \cap W_w.
+  \end{align*}
+\end{defn}
+
+\begin{prop}\ollabel{prop:restrict}
+  $\mSat{M}{!A}[w]$ 当且仅当 $\mSat{M_w}{!A}$。
+\end{prop}
+
+\begin{prob}
+  证明 \olref[int][sem][sem]{prop:restrict}。
+\end{prob}
+
+\begin{prop}
+  设对每个模型~$\mModel{M}$，只要 $\mSat{M}{\Gamma}$，就有
+  $\mSat{M}{!A}$。则 $\Gamma \Entails !A$。
+\end{prop}
+
+\begin{proof}
+  设 $\mSat{M}{\Gamma}[w]$。将 \olref{prop:restrict} 应用于每个
+  $!B \in \Gamma$，我们得到 $\mSat{M_w}{\Gamma}$。由假设，有
+  $\mSat{M_w}{!A}$。再次应用 \olref{prop:restrict}，得
+  $\mSat{M}{!A}[w]$。
+\end{proof}
+
+\end{document}

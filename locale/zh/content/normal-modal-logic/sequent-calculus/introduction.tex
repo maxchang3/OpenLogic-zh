@@ -1,0 +1,43 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{seq}{int}
+
+\olsection{引言}
+
+命题逻辑的矢列演算可以通过处理~\iftag{prvBox}{$\Box$\iftag{prvDiamond}{ 与~}{}}{}%
+\iftag{prvDiamond}{$\Diamond$}{} 的附加规则来扩充。例如，对~$\Log{K}$，我们
+有 \Log{LK} 再加上：
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+对~$\Log{K}$ 的扩张，还必须再添加附加规则。
+
+并非每种模态逻辑都有这样的矢列演算。甚至~$\Log{S5}$——它在语义上很简单（它完全可以不用可及关系来定义）——也不见得有由~$\Log{LK}$ 得到的、在没有~\Cut 规则的情况下就是完全的矢列演算。不过，它有一个无割的完全的 \emph{超矢列}演算。
+
+\end{document}

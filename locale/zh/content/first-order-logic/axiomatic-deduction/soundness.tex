@@ -1,0 +1,84 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{sou}}
+      {\olfileid[zh]{pl}{axd}{sou}}
+
+\olsection{可靠性}
+
+\begin{explain}
+!!a{derivation}系统，例如公理化推演，如果它不能!!{derive}那些实质上并不成立的东西，那么它就是\emph{可靠的}。因此，可靠性是一类对!!{derivation}系统而言有保证的安全性性质。取决于所讨论的是哪一证明论性质，我们希望知道，例如，
+\begin{enumerate}
+\item 每一个可推演的~$!A$ 都是有效的；
+\item 如果 $!A$ 可从某些其他公式~$\Gamma$ 推演，那么它也是它们的后承；
+\item 如果一组!!{formula}~$\Gamma$ 不一致，那么它不可满足。
+\end{enumerate}
+这些是!!a{derivation}系统的重要性质。若其中之一不成立，那么该!!{derivation}系统就有缺陷——它会!!{derive}得太多。因此，确立!!a{derivation}系统的可靠性至关重要。
+\end{explain}
+
+\begin{prop}
+  如果 $!A$ 是公理，那么
+  \iftag{FOL}
+    {对每个!!{structure}~$\Struct{M}$ 与赋值~$s$，有 $\Sat{M}{!A}[s]$。}
+    {对每个!!{valuation}~$\pAssign{v}$，有 $\pSat{v}{!A}$。}
+\end{prop}
+
+\begin{proof}
+\iftag{FOL}{我们必须验证所有公理都是有效的。例如，下面是 \olref[qua]{ax:q1} 的情形：设 $t$ 对 $x$ 在 $!A$ 中是!!{free for}的，并假设 $\Sat{M}{\lforall[x][!A]}[s]$。则由满足的定义，对每个 $\varAssign{s'}{s}{x}$，也有 $\Sat{M}{!A}[s']$，特别地，当 $s'(x) = \Value{t}{M}[s]$ 时这一点成立。由 \olref[syn][ext]{prop:ext-formulas}，$\Sat{M}{\Subst{!A}{t}{x}}[s]$。这表明 $\Sat{M}{(\lforall[x][!A] \lif \Subst{!A}{t}{x})}[s]$。}{对每个公理做真值表以验证它们都是重言式。}
+\end{proof}
+
+\begin{thm}[可靠性]
+\ollabel{thm:soundness}
+如果 $\Gamma \Proves !A$，则 $\Gamma \Entails !A$。
+\end{thm}
+
+\begin{proof}
+对从 $\Gamma$ 推出 $!A$ 的!!{derivation}的长度作归纳。若其中没有由推理判定的步骤，那么!!{derivation}中的所有!!{formula}或者是公理的特例，或者位于~$\Gamma$ 之中。由前一命题，所有公理都是
+\iftag{FOL}{有效的}{重言式}，因此如果 $!A$ 是公理，则 $\Gamma \Entails !A$。如果 $!A \in \Gamma$，则 $\Gamma \Entails !A$ 平凡成立。
+
+如果推演~$!A$ 的最后一步由分离规则判定，那么在!!{derivation}中有!!{formula} $!B$ 与 $!B \lif !A$，并且归纳假设适用于以那些!!{formula}结尾的那部分!!{derivation}（因为它们含有的由推理判定的步数至少少一步）。因此，由归纳假设，$\Gamma \Entails !B$ 且 $\Gamma \Entails !B \lif !A$。则由
+\iftag{FOL}
+      {\olref[syn][sem]{thm:sem-deduction}}
+      {\olref[pl][syn][sem]{thm:sem-deduction}}
+知 $\Gamma \Entails !A$。
+
+\iftag{FOL}{现在设最后一步由 \QR 判定。那么该步具有形式 $!C \lif \lforall[x][B(x)]$，并且有一先行步 $!C \lif !B(c)$，其中 $c$ 不在 $\Gamma$、$!C$ 或 $\lforall[x][B(x)]$ 中。由归纳假设，$\Gamma \Entails !C \lif !B(c)$。由 \olref[syn][sem]{thm:sem-deduction}，$\Gamma \cup \{!C\} \Entails !B(c)$。
+
+考虑某个结构~$\Struct{M}$，使得 $\Sat{M}{\Gamma \cup \{!C\}}$。我们需要证明 $\Sat{M}{\lforall[x][!B(x)]}$。由于 $\lforall[x][!B(x)]$ 是!!a{sentence}，这意味着我们必须证明对每个变元赋值~$s$，$\Sat{M}{!B(x)}[s]$（\olref[syn][ass]{prop:sat-quant}）。由于 $\Gamma \cup \{!C\}$ 完全由语句组成，由 \olref[syn][sat]{defn:satisfaction}，对所有 $!D \in \Gamma$ 有 $\Sat{M}{!D}[s]$。设 $\Struct{M'}$ 除 $\Assign{c}{M'} = s(x)$ 外与 $\Struct{M}$ 相同。由于 $c$ 不出现在~$\Gamma$ 或~$!C$ 中，由 \olref[syn][ext]{cor:extensionality-sent} 有 $\Sat{M'}{\Gamma \cup \{!C\}}$。由于 $\Gamma \cup \{!C\} \Entails !B(c)$，有 $\Sat{M'}{B(c)}$。因 $!B(c)$ 是!!a{sentence}，由 \olref[syn][ass]{prop:sentence-sat-true} 有 $\Sat{M'}{!B(c)}[s]$。由 \olref[syn][ext]{prop:ext-formulas}（回顾 $!B(c)$ 正是 $\Subst{!B(x)}{c}{x}$），$\Sat{M'}{!B(x)}[s]$ 当且仅当 $\Sat{M'}{!B(c)}[s]$。于是，$\Sat{M'}{!B(x)}[s]$。由于 $c$ 不出现在~$!B(x)$ 中，由 \olref[syn][ext]{prop:extensionality}，$\Sat{M}{!B(x)}[s]$。但 $s$ 是任意的变元赋值，所以 $\Sat{M}{\lforall[x][!B(x)]}$。因此 $\Gamma \cup \{!C\} \Entails \lforall[x][!B(x)]$。由 \olref[syn][sem]{thm:sem-deduction}，$\Gamma \Entails !C \lif \lforall[x][!B(x)]$。
+
+$!A$ 由 \QR{} 判定但形如 $\lexists[x][!B(x)] \lif !C$ 的情形留作习题。}{}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+  完成 \olref[fol][axd][sou]{thm:soundness} 的证明。
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+如果 $\Proves !A$，则 $!A$ 是 \iftag{FOL}{有效的}{重言式}。
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+如果 $\Gamma$ 可满足，则它是一致的。
+\end{cor}
+
+\begin{proof}
+我们证明其逆否命题。设 $\Gamma$ 不一致。则 $\Gamma \Proves \lfalse$，即存在从~$\Gamma$ 推出 $\lfalse$ 的!!a{derivation}。由 \olref{thm:soundness}，任何满足 $\Gamma$ 的
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+都必须满足~$\lfalse$。由于
+\iftag{FOL}{对每个!!{structure}~$\Struct{M}$ 都有 $\Sat/{M}{\lfalse}$}{对每个!!{valuation}~$\pAssign{v}$ 都有 $\pSat/{v}{\lfalse}$}，所以没有
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} 能满足 $\Gamma$，即
+$\Gamma$ 不可满足。
+\end{proof}
+
+
+\end{document}

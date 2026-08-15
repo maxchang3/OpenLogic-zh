@@ -1,0 +1,96 @@
+% Part: propositional-logic
+% Chapter: propositional-logic
+% Section: preliminaries
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{pl}{syn}{pre}
+
+\olsection{预备知识}
+
+\begin{thm}[\emph{关于!!{formula}的归纳原理}]
+  \ollabel{thm:induction}
+  若某个性质~$P$ 对所有原子!!{formula}成立，且满足：
+  \begin{enumerate}
+    \tagitem{prvNot}{每当它对~$!A$ 成立，它就对 $\lnot !A$ 成立；}{}
+    \tagitem{prvAnd}{每当它对 $!A$ 与~$!B$ 成立，它就对 $(!A \land !B)$ 成立；}{}
+    \tagitem{prvOr}{每当它对 $!A$ 与~$!B$ 成立，它就对 $(!A \lor !B)$ 成立；}{}
+    \tagitem{prvIf}{每当它对 $!A$ 与~$!B$ 成立，它就对 $(!A \lif !B)$ 成立；}{}
+    \tagitem{prvIff}{每当它对 $!A$ 与~$!B$ 成立，它就对 $(!A \liff !B)$ 成立；}{}
+  \end{enumerate}
+  则 $P$ 对所有!!{formula}成立。
+\end{thm}
+
+\begin{proof}
+  设 $S$ 为所有具有性质~$P$ 的!!{formula}之全体。显然 $S \subseteq \Frm[L_0]$。$S$~满足 \olref[fml]{defn:formulas} 的全部条件：它包含所有原子!!{formula}，并且对所有!!{operator}封闭。$\Frm[L_0]$ 是满足这些条件的最小类，因此 $\Frm[L_0] \subseteq S$。于是 $\Frm[L_0] = S$，即每个!!{formula}都具有性质~$P$。
+\end{proof}
+
+\begin{prop}\ollabel{prop:balanced}
+   在~$\Frm[L_0]$ 中任意一个!!{formula}是 \emph{平衡}的，即其左括号与右括号数目相同。
+\end{prop}
+
+\begin{prob}
+证明 \olref[pl][syn][pre]{prop:balanced}
+\end{prob}
+
+\begin{prop} \ollabel{prop:noinit}
+任意!!a{formula}的真初始段都不是!!a{formula}。
+\end{prop}
+
+\begin{prob}
+  证明 \olref[pl][syn][pre]{prop:noinit}
+\end{prob}
+
+\begin{prop}[唯一可读性]
+在 $ \Frm[L_0]$ 中任意一个!!{formula}~$!A$ 恰有如下一种解析：
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$。}{}
+
+\tagitem{prvTrue}{$\ltrue$。}{}
+
+\item 对于某个 $\Obj p_n \in  \PVar$，$\Obj p_n$。
+
+\tagitem{prvNot}{对于某个!!{formula}~$!B$，$\lnot !B$。}{}
+
+\tagitem{prvAnd}{对于某些!!{formula} $!B$ 与~$!C$，$(!B \land !C)$。}{}
+
+\tagitem{prvOr}{对于某些!!{formula} $!B$ 与~$!C$，$(!B \lor !C)$。}{}
+
+\tagitem{prvIf}{对于某些!!{formula} $!B$ 与~$!C$，$(!B \lif !C)$。}{}
+
+\tagitem{prvIff}{对于某些!!{formula} $!B$ 与~$!C$，$(!B \liff !C)$。}{}
+\end{enumerate}
+而且，这种解析是 \emph{唯一}的。
+\end{prop}
+
+\begin{proof}
+对 $!A$ 归纳。例如，设 $!A$ 分别以 $(!B \lif !C)$ 与 $(!B' \lif !C')$ 两种不同方式解析。则 $!B$ 与 $!B'$ 必相同（否则其中之一是另一个的真初始段）；因此若 $!A$ 的两种解析不同，则必是因为 $!C$ 与 $!C'$ 是同一种符号序列的两种不同的 $\lif$ 后件解析，而由归纳假设这是不可能的。
+\end{proof}
+
+
+\begin{defn}[统一代入]
+若 $!A$ 与 $!B$ 是!!{formula}，且 $\Obj p_i$ 是一个 !!{propositional
+variable}，则 $\Subst{!A}{!B}{\Obj p_i}$ 表示在 $!A$ 中把 $\Obj p_i$ 的每一处出现替换为 $!B$ 的一处出现所得的结果；类似地，把 $\Obj p_1$、\dots、~$\Obj p_n$ 同时替换为!!{formula} $!B_1$、\dots、~$!B_n$ 记为
+$\SSubst{!A}{\subst{!B_1}{\Obj p_1},\dots,\subst{!B_n}{\Obj p_n}}$。
+\end{defn}
+
+\begin{prob} 对下面五个!!{formula}中的每一个，判断该!!{formula}是否能表示为代入 \( \Subst{!A}{!B}{\Obj p_i} \),
+ 其中 \( !A \) 分别是 (i) \( \Obj p_0 \)；(ii) \( ( \lnot \Obj p_0 \land \Obj
+ p_1) \)；(iii) \( ( ( \lnot \Obj p_0 \lif \Obj p_1 ) \land \Obj
+ p_2 ) \)。在每种情形下指明相应的代入。
+  \begin{enumerate}
+    \item \( \Obj p_1 \)
+    \item \( ( \lnot \Obj p_0 \land \Obj p_0 ) \)
+    \item \( ( ( \Obj p_0 \lor \Obj p_1 ) \land \Obj p_2 )  \)
+    \item \( \lnot ( ( \Obj p_0 \lif \Obj p_1 ) \land \Obj p_2 ) \)
+    \item \( (( \lnot ( \Obj p_0 \lif \Obj p_1 ) \lif ( \Obj p_0 \lor \Obj p_1 )) \land \lnot ( \Obj p_0 \land \Obj p_1 )) \)
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+用归纳给出 $\Subst{!A}{!B}{p}$ 的一个数学上严格的定义。
+\end{prob}
+
+\end{document}

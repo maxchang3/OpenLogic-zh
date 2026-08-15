@@ -1,0 +1,70 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{rul}}
+      {\olfileid[zh]{pl}{axd}{rul}}
+
+\olsection{规则与\usetoken{P}{derivation}}
+
+\begin{explain}
+  公理化!!{derivation}或许是逻辑学中最简单的!!{derivation}系统。!!{derivation}就是一个!!{formula}序列。要算作!!{derivation}，序列中的每个!!{formula}要么是某条公理的一个特例，要么由推理规则从序列中它之前的一个或多个!!{formula}得出。!!{derivation}推演出它的最后一个!!{formula}。
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+  若 $\Gamma$ 是 $\Lang L$ 的一个!!{formula}集合，那么从~$\Gamma$ 出发的一个
+  \emph{!!{derivation}}就是!!{formula}的有限序列 $!A_1$，
+  \dots,~$!A_n$，其中对每个 $i \le n$，下列条件之一成立：
+\begin{enumerate}
+\item $!A_i \in \Gamma$；或
+\item $!A_i$ 是一条公理；或
+\item $!A_i$ 由推理规则从某个 $!A_j$（和 $!A_k$）推出，其中 $j < i$（以及
+  $k < i$）。
+\end{enumerate}
+\end{defn}
+
+  怎样的!!{derivation}才算正确，取决于我们允许哪些推理规则（当然还有我们视哪些为公理）。而推理规则是一种 if-then 陈述，它告诉我们：在特定条件下，!!{derivation}中的一步~$A_i$ 是一个正确的推理步骤。
+
+\begin{defn}[推理规则]
+  一条 \emph{推理规则}给出什么算作从~$\Gamma$ 出发的!!{derivation}中一个正确推理步骤的充分条件。
+\end{defn}
+
+  例如，由于任何满足 $!A \in \Gamma$ 的单元素序列 $!A$ 平凡地就算作!!{derivation}，下面可能就是一条非常简单的推理规则：
+\begin{quote}
+  若 $!A \in \Gamma$，则 $!A$ 在从~$\Gamma$ 出发的任何!!{derivation}中总是一个正确的推理步骤。
+\end{quote}
+  类似地，若 $!A$ 是某条公理，那么单独的 $!A$ 就是!!{derivation}，所以这也是一条推理规则：
+\begin{quote}
+  若 $!A$ 是一条公理，则 $!A$ 是一个正确的推理步骤。
+\end{quote}
+  若推理规则诉诸于出现在所考虑步骤之前的!!{formula}，情况就更有意思了。下面的规则叫做 \emph{分离规则：}
+\begin{quote}
+  若 $!B \lif !A$ 与 $!B$ 出现在!!{derivation}更靠前的位置，
+  则~$!A$ 是一个正确的推理步骤。
+\end{quote}
+  如果这是唯一的推理规则，那么我们上面关于!!{derivation}的定义就相当于：$!A_1$, \dots,~$!A_n$ 是!!a{derivation}，当且仅当对每个 $i \le n$，下列条件之一成立：
+\begin{enumerate}
+\item $!A_i \in \Gamma$；或
+\item $!A_i$ 是一条公理；或
+\item 对某个 $j < i$，$!A_j$ 是 $!B \lif !A_i$，且对某个 $k < i$，
+  $!A_k$ 是~$!B$。
+\end{enumerate}
+  最后一条说的是：$!A_i$ 由分离规则从~$!A_j$（$!B \lif !A_i$）和 $!A_k$
+  （$!B$）推出。若我们能从 $1$ 走到~$n$，且每走一步都找到!!a{formula}~$!A_i$，它要么在~$\Gamma$ 中、是一条公理，要么有一条推理规则告诉我们它是一个正确的推理步骤，那么整个序列就算作一个正确的!!{derivation}。
+
+\begin{defn}[!!^{derivability}]
+  若存在从 $\Gamma$ 出发、以 $!A$ 结尾的!!{derivation}，则!!{formula}~$!A$ 称为从 $\Gamma$ 出发\emph{可推演的}，记作
+  $\Gamma \Proves !A$。
+\end{defn}
+
+\begin{defn}[定理]
+  若存在从空集出发的!!{derivation}，则!!{formula}~$!A$ 是一条\emph{定理}。若 $!A$ 是定理，我们记作 $\Proves !A$；若不是则记作 $\Proves/ !A$。
+\end{defn}
+
+
+\end{document}

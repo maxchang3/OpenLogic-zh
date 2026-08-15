@@ -1,0 +1,151 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: tautological-instances
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{syn}{tau}
+
+\olsection{重言式特例}
+
+\begin{explain}
+一个无模态的公式，如果它在每个真值指派下都为真，就是重言式。显然，每个重言式在每个模型的每个世界处都为真。但对涉及 $\Box$
+和~$\Diamond$ 的!!{formula}来说，重言式的概念并未定义。例如，$\Box p \lor \lnot \Box p$——排中律的一个特例——是否有效？\emph{重言式特例}的概念对此有所帮助：它是某个（非模态）重言式的代入特例的!!{formula}。每个重言式特例都有效这一点并不出人意料，但仍需证明。
+\end{explain}
+
+\begin{defn}
+  一个模态!!{formula}~$!B$ 是\emph{重言式特例}，当且仅当存在一个无模态的重言式~$!A$，其 !!{propositional
+    variable} 为 $p_1$, \dots,~$p_n$，并且存在!!{formula} $!D_1$,
+  \dots,~$!D_n$，使得 $!B \ident \SSubst{!A}{\subst{!D_1}{p_1},
+    \dots, \subst{!D_n}{p_n}}$。
+\end{defn}
+
+\begin{lem}\ollabel{lem:valid-taut}
+  设 $!A$ 是一个无模态的!!{formula}，其 !!{propositional
+  variable} 为 $p_1$, \dots, $p_n$，并设 $!D_1$, \dots,
+  $!D_n$ 是模态!!{formula}。于是对任意指派 $\pAssign{v}$、
+  任意模型 $\mModel{M} = \tuple{W, R, V}$ 以及任意 $w \in W$，使得
+  $\pAssign{v}(p_i) = \True$ 当且仅当 $\mSat{M}{!D_i}[w]$，我们都有
+  $\pSat{v}{!A}$ 当且仅当
+  $\mSat{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+      \subst{!D_n}{p_n}}}[w]$。
+\end{lem}
+
+\begin{proof}
+  对 $!A$ 作归纳。
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\pSat/{v}{\lfalse}$
+      与 $\mSat/{M}{\lfalse}[w]$ 均不成立。}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\pSat{v}{\ltrue}$
+      与 $\mSat{M}{\ltrue}[w]$ 均成立。}}{}
+  \item \indcase{!A}{p_i}{%
+    \begin{align*}
+      \pSat{v}{p_i} \Leftrightarrow {} & \pAssign{v}(p_i) = \True \\
+      & \qquad \text{由 $\pSat{v}{p_i}$ 的定义}\\
+      \Leftrightarrow {} & \mSat{M}{!D_i}[w] \\
+      &\qquad \text{根据假设}\\
+      \Leftrightarrow {} & \mSat{M}{\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+      &\qquad \text{因为 $\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}} \ident !D_i$。}
+      \end{align*}}
+  \tagitem{prvFalse}{\indcase{!A}{\lnot !B}{%
+      \begin{align*}
+        \pSat{v}{\lnot !B} \Leftrightarrow {} & \pSat/{v}{!B}\\
+        &\qquad \text{由 $\pSat{v}{}$ 的定义；}\\
+        \Leftrightarrow {} & \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{根据归纳假设}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{\lnot !B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{由 $\pSat{v}{}$ 的定义。}
+      \end{align*}}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \land !C} \Leftrightarrow {} &
+        \pSat{v}{!B} \text{ 且 } \pSat{v}{!C}\\
+        &\qquad \text{由 $\pSat{v}{}$ 的定义}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ 且 } \\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{根据归纳假设}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \land !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{由 $\mSat{M}{}[w]$ 的定义。}
+      \end{align*}}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lor !C} \Leftrightarrow{} &
+        \pSat{v}{!B} \text{ 或 } \pSat{v}{!C}\\
+        &\qquad \text{由 $\pSat{v}{}$ 的定义；}\\
+        \Leftrightarrow{} & \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ 或 }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{根据归纳假设}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lor !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{由 $\mSat{M}{}[w]$ 的定义。}
+      \end{align*}}}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lif !C} \Leftrightarrow{} &
+        \pSat/{v}{!B} \text{ 或 } \pSat{v}{!C}\\
+        &\qquad \text{由 $\pSat{v}{}$ 的定义}\\
+        \Leftrightarrow{} &
+        \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ 或 }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{根据归纳假设}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lif !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{由 $\mSat{M}{}[w]$ 的定义。}
+      \end{align*}}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lif !C} \Leftrightarrow {} &
+        \text{要么 } \pSat{v}{!B} \text{ 且 } \pSat{v}{!C}\\
+        & \text{要么 } \pSat/{v}{!B} \text{ 且 } \pSat/{v}{!C}\\
+        &\qquad \text{由 $\pSat{v}{}$ 的定义}\\
+        \Leftrightarrow {} &
+        \text{要么 } \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ 且 }\\
+        & \qquad \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &  \text{要么 } \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ 且 }\\
+        & \qquad \mSat/{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad\text{根据归纳假设}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{(!B \liff !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{由 $\mSat{M}{}[w]$ 的定义。}
+      \end{align*}}}{}
+  \end{enumerate}
+  \end{proof}
+
+\begin{prop}\ollabel{prop:valid-taut}
+  所有重言式特例都是有效的。
+\end{prop}
+
+\begin{proof}
+  证其逆否命题：设 $!A$ 使得
+  $\mSat/{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+  \subst{!D_n}{p_n}}}[w]$，其中 $\mModel{M}$ 是某个模型、$w$ 是某个世界。
+  定义一个指派 $\pAssign{v}$，使得 $\pAssign{v}(p_i) =
+  \True$ 当且仅当 $\mSat{M}{!D_i}[w]$（并让 $\pAssign{v}$ 对 $q \notin \{p_1, \dots, p_n \}$ 指派
+  任意值）。于是根据
+  \olref{lem:valid-taut}，$\pSat/{v}{!A}$，因此 $!A$ 不是重言式。
+\end{proof}
+
+\end{document}

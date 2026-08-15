@@ -1,0 +1,139 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: unions-and-intersections
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{set}{uni}
+\olsection{并集与交集}
+
+\begin{explain}
+在 \olref[sfr][set][bas]{sec} 中，我们引入了借助概括原则（abstraction）给出的集合定义，即形如 $\Setabs{x}{\phi(x)}$ 的定义。这里，我们调用某个性质~$\phi$，而这个性质可以提及我们已经定义过的集合。所以例如，若 $A$ 和~$B$ 是集合，则集合 $\Setabs{x}{x \in A \lor x \in B}$ 由所有或是 $A$ 或是~$B$ 的!!{element}的对象组成，即它是把 $A$ 和~$B$ 的!!{element}合在一起的集合。我们可以像 \olref{fig:union} 那样直觉地来看这件事，其中高亮区域表示两个集合 $A$ 和~$B$ 的!!{element}放在一起。
+
+\begin{figure}
+  \olasset{assets/diagrams/union.tikz}
+  \caption{两个集合的并 $A \cup B$ 是 $A$ 的!!{element}连同~$B$ 的!!{element}所组成的集合。}
+  \ollabel{fig:union}
+\end{figure}
+
+这种对集合的运算——把它们合并起来——非常有用且常见，因此我们给它一个正式的名称和一个符号。
+\end{explain}
+
+\begin{defn}[并]
+两个集合 $A$ 和 $B$ 的 \emph{并}，记作 $A \cup B$，是 $A$、$B$ 或两者中所有那些对象的集合。
+\[
+A \cup B = \Setabs{x}{x \in A \lor x \in B}
+\]
+\end{defn}
+
+\begin{ex}
+由于!!{element}的重数并不重要，两个有一个共同的!!a{element}的集合的并，只包含该!!{element}一次，例如 $\{ a, b, c\} \cup \{ a, 0, 1\} = \{a, b, c, 0, 1\}$。
+
+一个集合与其某个子集的并就是那个较大的集合：$\{a,
+b, c \} \cup \{a \} = \{a, b, c\}$。
+
+一个集合与空集的并就是该集合本身：$\{a,
+b, c \} \cup \emptyset = \{a, b, c \}$。
+\end{ex}
+
+\begin{prob}
+证明：若 $A \subseteq B$，则 $A \cup B = B$。
+\end{prob}
+
+\begin{explain}
+我们还可以考虑一种与并相对偶的运算。这种运算形成所有那些既是~$A$ 的!!{element}又是~$B$ 的!!{element}的!!{element}的集合。此运算称为 \emph{交}，可以像 \olref{fig:intersection} 那样来描绘。
+\begin{figure}
+  \olasset{assets/diagrams/intersection.tikz}
+  \caption{两个集合的交 $A \cap B$ 是它们所共同的!!{element}的集合。}
+  \ollabel{fig:intersection}
+\end{figure}
+\end{explain}
+
+\begin{defn}[交]
+两个集合 $A$ 和 $B$ 的 \emph{交}，记作 $A \cap B$，是 $A$ 和~$B$ 两者的所有!!{element}组成的集合。
+\[
+A \cap B = \Setabs{x}{x \in A \land x \in B}
+\]
+若两个集合的交为空，则称它们 \emph{不相交}。这意味着它们没有任何共同的!!{element}。
+\end{defn}
+
+\begin{ex}
+若两个集合没有任何共同的!!{element}，则它们的交为空：
+$\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$。
+
+若两个集合确有共同!!{element}，则它们的交就是所有这些元素组成的集合：$\{a, b, c \} \cap \{a, b, d \} = \{a, b\}$。
+
+一个集合与其某一子集的交就是那个较小的集合：$\{a, b, c\} \cap \{a, b\} = \{a, b\}$。
+
+任一集合与空集的交为空：$\{a, b, c \}
+\cap \emptyset = \emptyset$。
+\end{ex}
+
+\begin{prob}
+严谨地证明：若 $A \subseteq B$，则 $A \cap B = A$。
+\end{prob}
+
+\begin{explain}
+我们还可以对两个以上的集合取并或交。一般来说，处理这件事的一个漂亮方式如下：假设你要把所有想要（对它们）取并（或交）的集合收集到单独一个集合中。那么我们就可以把所有原始集合的并定义为属于该集合的至少一个!!{element}的所有对象的集合，把交定义为属于该集合每一个!!{element}的所有对象的集合。
+\end{explain}
+
+\begin{defn}
+若 $A$ 是一个由集合组成的集合，则 $\bigcup A$ 是~$A$ 的!!{element}的!!{element}组成的集合：
+\begin{align*}
+\bigcup A & = \Setabs{x}{x \text{ 属于 } A \text{ 的某个!!{element}}},
+\text{ 即，}\\
+& = \Setabs{x}{\text{存在一个 } B \in A
+  \text{ 使得 } x \in B}
+\end{align*}
+\end{defn}
+
+\begin{defn}
+若 $A$ 是一个由集合组成的集合，则 $\bigcap A$ 是所有 $A$ 的元素都共同具有的对象的集合：
+\begin{align*}
+\bigcap A & = \Setabs{x}{x \text{ 属于 } A \text{ 的每个!!{element}}},
+\text{ 即，}\\
+ & = \Setabs{x}{\text{对所有 } B \in A, x \in B}
+\end{align*}
+\end{defn}
+
+\begin{ex}
+设 $A = \{ \{ a, b \}, \{ a, d, e \}, \{ a, d \} \}$。则 $\bigcup A = \{ a, b, d, e \}$，$\bigcap A = \{ a \}$。
+\end{ex}
+\begin{prob}
+	证明：若 $A$ 是集合且 $A \in B$，则 $A \subseteq \bigcup B$。
+\end{prob}
+
+我们也可以对一列集合 $A_1$、$A_2$、\dots 做同样的事：
+\begin{align*}
+\bigcup_i A_i & = \Setabs{x}{x \text{ 属于 } A_i \text{ 之一}}\\
+\bigcap_i A_i & = \Setabs{x}{x \text{ 属于每个 } A_i}.
+\end{align*}
+
+当我们有一个集合的 \emph{索引}，即存在某个集合 $I$ 使得我们对每个 $i \in I$ 考虑 $A_i$ 时，我们也可以使用这些缩写写法：
+\begin{align*}
+	\bigcup_{i \in I} A_i & = \bigcup \Setabs{A_i }{i \in I}\\
+	\bigcap_{i \in I} A_i & = \bigcap\Setabs{A_i}{i \in I}
+\end{align*}
+
+最后，我们可能想考虑~$A$ 中不属于~$B$ 的所有!!{element}的集合。我们可以像 \olref{difference} 那样来描绘它。
+
+\begin{figure}
+  \olasset{assets/diagrams/difference.tikz}
+  \caption{两个集合的差 $A \setminus B$ 是~$A$ 中那些不属于~$B$ 的!!{element}的集合。}
+  \ollabel{difference}
+\end{figure}
+
+\begin{defn}[差]
+\emph{差集}~$A \setminus B$ 是 $A$ 中所有不属于~$B$ 的!!{element}的集合，即
+\[
+A\setminus B = \Setabs{x}{x\in A \text{ 且 } x \notin B}.
+\]
+\end{defn}
+
+\begin{prob}
+	证明：若 $A \subsetneq B$，则 $B \setminus A \neq \emptyset$。
+\end{prob}
+
+\end{document}

@@ -1,0 +1,181 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{tab}{ptn}}
+      {\olfileid[zh]{pl}{tab}{ptn}}
+
+\olsection{证明论概念}
+
+\begin{editorial}
+本节汇集表列的可证性关系与一致性等定义。
+\end{editorial}
+
+\begin{explain}
+正如我们已定义了若干重要的语义概念（有效性、衍推、可满足性），现在我们来定义相应的
+\emph{证明论概念}。它们不是通过诉诸句子在结构中的满足来定义的，而是通过诉诸某些闭的表列的存在来定义的。
+这些概念彼此重合曾是一个重要的发现。它们重合这一事实正是
+\emph{可靠性定理}与\emph{完全性定理}的内容。
+\end{explain}
+
+
+\begin{defn}[定理]
+若存在一个闭的
+表列用于~$\sFmla{\False}{!A}$，则一个!!{sentence}~$!A$ 是一个\emph{定理}。
+若 $!A$
+是定理则写 $\Proves !A$，若$!A$ 不是定理则写 $\Proves/ !A$。
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+若存在一个
+有穷集 $\{!B_1, \dots, !B_n\} \subseteq \Gamma$
+及一个闭的表列用于如下的集合，则一个!!^a{sentence}~$!A$ 是\emph{!!{derivable}自一组~$\Gamma$}的，记作 $\Gamma \Proves !A$：
+\[
+\{
+  \sFmla{\False}{!A},
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}
+  \}.
+\]
+若 $!A$ 不能由 $\Gamma$ 推导出来，我们写作 $\Gamma \Proves/
+!A$。
+\end{defn}
+
+\begin{defn}[一致性]
+若存在一个
+有穷集 $\{!B_1, \dots, !B_n\} \subseteq \Gamma$ 及一个闭的表列用于如下的集合，则一个!!{sentence}集~$\Gamma$ 是\emph{不一致的}：
+\[
+\{
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}
+  \}.
+\]
+若 $\Gamma$ 不是不一致的，我们说它是\emph{一致的}。
+\end{defn}
+
+\begin{prop}[自反性]
+\ollabel{prop:reflexivity}
+若 $!A \in \Gamma$，则 $\Gamma \Proves !A$。
+\end{prop}
+
+\begin{proof}
+若 $!A \in \Gamma$，则 $\{!A\}$ 是~$\Gamma$ 的一个有穷子集，且如下表列是闭的：
+\begin{oltableau}
+  [\sFmla{\False}{\formula{A}}, just = \TAss
+    [\sFmla{\True}{\formula{A}}, just = \TAss,close]
+  ]
+\end{oltableau}
+\end{proof}
+
+
+\begin{prop}[单调性]
+\ollabel{prop:monotonicity}
+若 $\Gamma \subseteq \Delta$ 且 $\Gamma \Proves !A$，则 $\Delta
+\Proves !A$。
+\end{prop}
+
+\begin{proof}
+~$\Gamma$ 的任何有穷子集也是~$\Delta$ 的有穷子集。
+\end{proof}
+
+\begin{prop}[传递性]
+\ollabel{prop:transitivity}
+若 $\Gamma \Proves !A$ 且 $\{!A\} \cup
+\Delta \Proves !B$，则 $\Gamma \cup \Delta \Proves !B$。
+\end{prop}
+
+\begin{proof}
+若 $\{!A\} \cup \Delta \Proves !B$，则存在一个有穷子集 $\Delta_0 =
+\{!C_1, \dots, !C_n\} \subseteq \Delta$，使得
+\begin{align*}
+\{\sFmla{\False}{!B}, & \sFmla{\True}{!A}, \sFmla{\True}{!C_1},
+\dots, \sFmla{\True}{!C_n}\}
+\intertext{具有一个闭的表列。若 $\Gamma \Proves !A$，则存在
+  $!D_1$, \dots, $!D_m \subseteq \Gamma$，使得}
+\{\sFmla{\False}{!A}, & \sFmla{\True}{!D_1},
+\dots, \sFmla{\True}{!D_m}\}
+\end{align*}
+具有一个闭的表列。
+
+现在考虑以如下集合为前提的表列：
+\[
+\sFmla{\False}{!B},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n},
+\sFmla{\True}{!D_1}, \dots, \sFmla{\True}{!D_m}.
+\]
+在~$!A$ 上应用 \Cut{} 规则。这会生成两支，其一包含
+$\sFmla{\True}{!A}$，另一支包含 $\sFmla{\False}{!A}$。于是，
+在其中一支上，集合
+\[
+\{\sFmla{\False}{!B}, \sFmla{\True}{!A},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n}\}
+\]
+的所有成员都可用。由于这些前提存在一个闭的表列，我们可以将其附加到该支上；经由
+$\sFmla{\True}{!A}$ 的每一支都会闭合。在另一支上，集合
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!D_1}, \dots,
+\sFmla{\True}{!D_m}\}
+\]
+的所有成员都可用，所以我们也能完成另一侧以得到一个闭的表列。
+这表明 $\Gamma \cup \Delta \Proves !B$。
+\end{proof}
+
+注意，这特别意味着：若 $\Gamma \Proves !A$ 且 $!A
+\Proves !B$，则 $\Gamma \Proves !B$。由此也推出：若 $!A_1,
+\dots, !A_n \Proves !B$，且对每个~$i$ 都有 $\Gamma \Proves !A_i$，则
+$\Gamma \Proves !B$。
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ 是不一致的，当且仅当对每个!!{sentence}~$!A$ 都有 $\Gamma \Proves !A$。
+\end{prop}
+
+\begin{proof}
+习题。
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+证明 \olref[fol][tab][ptn]{prop:incons}
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+证明 \olref[pl][tab][ptn]{prop:incons}
+\end{prob}
+\tagendprob
+
+\begin{prop}[紧致性]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item 若 $\Gamma \Proves !A$，则存在一个有穷子集 $\Gamma_0
+    \subseteq \Gamma$ 使得 $\Gamma_0 \Proves !A$。
+  \item 若~$\Gamma$ 的每个有穷子集都是
+    一致的，则 $\Gamma$ 是一致的。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item 若 $\Gamma \Proves !A$，则存在一个有穷子集
+      $\Gamma_0 = \{!B_1, \dots, !B_n\}$ 及一个闭的表列用于
+      \[
+      \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      这个表列也表明 $\Gamma_0 \Proves !A$。
+    \item 若 $\Gamma$ 是不一致的，则对某个有穷子集
+      $\Gamma_0 = \{!B_1, \dots, !B_n\}$ 存在一个闭的表列用于
+      \[
+      \{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      这个闭的表列表明 $\Gamma_0$ 是不一致的。
+  \end{enumerate}
+\end{proof}
+
+\end{document}

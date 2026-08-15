@@ -1,0 +1,28 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: canonical-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{com}{cmd}
+
+\olsection{典范模型}
+
+模态系统~$\Sigma$ 的 \emph{典范模型}是一个特定的模型~$\mModel{M^\Sigma}$，其中所有世界都是完全的 $\Sigma$-一致集。它的可及关系~$R^\Sigma$ 与赋值 $V^\Sigma$ 是这样定义的，以保证在世界~$\Delta$ 处为真的!!{formula}恰好就是构成~$\Delta$ 的那些!!{formula}。
+
+\begin{defn}
+  设 $\Sigma$ 是一个正规模态逻辑。$\Sigma$ 的 \emph{典范模型}是 $\mModel{M}^\Sigma = \tuple{W^\Sigma, R^\Sigma, V^\Sigma}$，其中：
+  \begin{enumerate}
+  \item $W^\Sigma = \Setabs{ \Delta }{\Delta \text{
+      是完全的 $\Sigma$-一致集} }$。
+  \item $R^\Sigma \Delta\Delta'$ 成立当且仅当
+    \iftag{prvBox}{$\Box^{-1}\Delta \subseteq
+      \Delta'$}{$\Diamond\Delta' \subseteq \Delta$}。
+  \item $V^\Sigma(p) = \Setabs{\Delta}{p \in \Delta}$。
+  \end{enumerate}
+\end{defn}
+
+
+\end{document}

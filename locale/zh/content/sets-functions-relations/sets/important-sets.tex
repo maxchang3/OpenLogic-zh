@@ -1,0 +1,49 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: important-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{set}{imp}
+\olsection{几个重要集合}
+
+\begin{ex}
+我们主要处理的集合，其!!{element}多为数学对象。其中四个集合重要到
+有专门的名称：
+\begin{multline*}
+    \Nat = \{0, 1, 2, 3, \ldots\} \\
+    \shoveright{\text{自然数集合}}\\
+    \shoveleft{\Int = \{\ldots, -2, -1, 0, 1, 2, \ldots\}} \\
+    \shoveright{\text{整数集合}}\\
+    \shoveleft{\Rat = \Setabs{\nicefrac{m}{n}}{m, n \in \Int\text{ 且 }n \neq 0}}\\
+    \shoveright{\text{有理数集合}}\\
+    \shoveleft{\Real = (-\infty, \infty)}\\
+    \text{实数集合（连续统）}
+\end{multline*}
+它们都是 \emph{无穷}集合，也就是说，它们各自都含有无穷多个!!{element}。
+
+在依序遍历这些集合的过程中，我们是在往自己的库存里加入\emph{更多}的数。
+确实，显然有 $\Nat \subseteq \Int \subseteq \Rat \subseteq \Real$：毕竟，每个自然数都是整数；每个整数都是有理数；而每个有理数都是实数。同样，显然有 $\Nat \subsetneq \Int \subsetneq \Rat$，因为 $-1$ 是整数而非自然数，$\nicefrac{1}{2}$ 是有理数而非整数。$\Rat \subsetneq \Real$ 则不那么显然，也就是说，存在一些既非有理数、不在 $\Rat$ 中的实数\oliflabeldef{sfr:arith:real:realline}{，不过我们将在 \olref[arith][real]{realline} 回到这一点}{}。
+
+有时我们也会用到正整数集合 $\PosInt = \{1, 2, 3, \dots\}$，以及只含前两个自然数的集合 $\Bin = \{0, 1\}$。
+\end{ex}
+
+\begin{tagblock}{compsci}
+\begin{ex}[字符串]
+另一个有趣的例子，是字母表 $A$ 之上\emph{有穷字符串}的集合 $A^{*}$：$A$ 中元素的任何有穷序列都是 $A$ 上的一个字符串。对每个字母表～$A$，我们都把\emph{空字符串 $\Lambda$}算作 $A$ 上的字符串。例如，
+\begin{multline*}
+\Bin^*
+=\{\Lambda,0,1,00,01,10,11,\\
+000,001,010,011,100,101,110,111,0000,\ldots\}.
+\end{multline*}
+若 $x=x_{1}\ldots x_{n}\in A^{*}$ 是 $A$ 上由 $n$ 个「字母」构成的字符串，那么我们说该字符串的\emph{长度}为～$n$，并记作 $\len{x}=n$。
+\end{ex}
+\end{tagblock}
+
+\begin{ex}[无穷序列]
+对任何集合 $A$，我们也可以考虑 $A$ 的!!{element}所组成的无穷序列之集合～$A^\omega$。一个无穷序列 $a_1a_2a_3a_4\dots$ 由一列单方向无穷的对象组成，其中每一个都是～$A$ 的一个!!a{element}。
+\end{ex}
+
+\end{document}

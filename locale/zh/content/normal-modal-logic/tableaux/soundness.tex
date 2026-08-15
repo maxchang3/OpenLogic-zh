@@ -1,0 +1,120 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{tab}{sou}
+
+\olsection{K 的可靠性}
+
+\begin{editorial}
+  这个可靠性证明复用了经典命题逻辑的可靠性证明，即从头完整证明一遍。
+  若你想要一个自足的可靠性证明，这样是可以的。如果你已经见过普通
+  表列的可靠性证明，这会显得重复。计划是让它能够在自足版本和建立在
+  非模态情形之上的版本之间切换。
+\end{editorial}
+
+\begin{explain}
+  为要证明带前缀的!!{tableau}是可靠的，我们需要证明若
+  \[
+  \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1], \sFmla{\False}{!A}[1]
+  \]
+  有一个闭的!!{tableau}，则 $!B_1, \dots, !B_n \Entails !A$。证明逆否命题更容易：若对某个 $\mModel{M}$ 和世界~$w$，对所有 $i=1$, \dots,~$n$ 有 $\mSat{M}{!B_i}[w]$，但 $\mSat{M}{!A}[w]$，则没有!!{tableau}能闭合。这样的反模型表明!!{tableau}的初始假设是可满足的。证明的策略是证明：每当某个!!{tableau}支上的所有带前缀的!!{formula}都可满足时，规则的任意一次应用都会得到至少一个仍然可满足的扩展支。由于闭的支是不可满足的，任何关于可满足的带前缀的!!{formula}集的!!{tableau}都必须有至少一个开放的支。
+
+  为把这一策略应用到模态情形，我们必须把「可满足的」的定义扩展到模态模型与前缀上。不过，一旦做到这一点，证明就直截了当了。
+\end{explain}
+
+\begin{defn}
+  设 $P$ 是某一前缀集，即 $P \subseteq (\PosInt)^*
+  \setminus \{\emptyseq\}$，并设 $\mModel{M}$ 是一个模型。若只要 $\sigma$ 和 $\sigma.n$ 都在~$P$ 中，就有 $Rf(\sigma)f(\sigma.n)$，则函数~$f\colon P \to W$ 是~$P$ 在~$\mModel{M}$ 中的\emph{解释}。
+
+  相对于前缀~$P$ 的一个解释，我们可以定义：
+  \begin{enumerate}
+  \item $\mModel{M}$ 满足 $\sFmla{\True}{!A}[\sigma]$ 当且仅当 $\mSat{M}{!A}[f(\sigma)]$。
+  \item $\mModel{M}$ 满足 $\sFmla{\False}{!A}[\sigma]$ 当且仅当 $\mSat/{M}{!A}[f(\sigma)]$。
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}
+  设 $\Gamma$ 是一个带前缀的!!{formula}集，并设 $P(\Gamma)$ 是其中出现的前缀集。若 $f$ 是~$P(\Gamma)$ 在 $\mModel{M}$ 中的一个解释，则当 $\mModel{M}$ 关于~$f$ 地满足~$\Gamma$ 中的每个带前缀的!!{formula}时，我们就说 $\mModel{M}$ 关于~$f$ 地满足~$\Gamma$，记作 $\mSat{M}{\Gamma}[f]$。$\Gamma$ 是\emph{可满足的}当且仅当存在模型~$\mModel{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\mSat{M}{\Gamma}[f]$。
+\end{defn}
+
+\begin{prop}
+  若对某个!!{formula}~$!A$ 和前缀~$\sigma$，$\Gamma$ 既包含 $\sFmla{\True}{!A}[\sigma]$ 又包含 $\sFmla{\False}{!A}[\sigma]$，则 $\Gamma$ 是不可满足的。
+\end{prop}
+
+\begin{proof}
+  不可能同时存在模型~$\mModel{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\mSat{M}{!A}[f(\sigma)]$ 与 $\mSat/{M}{!A}[f(\sigma)]$ 二者都成立。
+\end{proof}
+
+\begin{thm}[可靠性]
+  \ollabel{thm:tableau-soundness}
+  若 $\Gamma$ 有一个闭的!!{tableau}，则 $\Gamma$ 是不可满足的。
+\end{thm}
+
+\begin{proof}
+我们把!!{tableau}的一条支称为可满足的，当且仅当它上面的!!{signed formula}集是可满足的；并且我们把!!{tableau}称为可满足的，若它含有至少一条可满足的支。
+
+我们证明如下：用一个推理规则去扩展一个可满足的!!{tableau}，总是得到一个可满足的!!{tableau}。这将证明定理：任何一个闭的!!{tableau}都是通过把推理规则应用于仅由~$\Gamma$ 中的假设构成的!!{tableau}而得出的。所以，若 $\Gamma$ 是可满足的，则它的任何!!{tableau}都将是可满足的。然而，一个闭的!!{tableau}显然不是可满足的，因为它的所有支都是闭的，而闭的支是不可满足的。
+
+设我们有一个可满足的!!{tableau}，即一个至少含有一条可满足的支的!!{tableau}。应用某条推理规则要么向一条支添加!!{signed formula}，要么把一条支一分为二。若该!!{tableau}有一条未被该规则应用所扩展的可满足的支，那么它在扩展后的!!{tableau}中仍然是可满足的支，所以扩展后的表列是可满足的。因此我们只需考虑把规则应用于一条可满足的支的情形。
+
+设 $\Gamma$ 是那条支上的!!{signed formula}集，并设 $\sFmla{S}{!A}[\sigma] \in \Gamma$ 是该规则所应用的!!{signed formula}。若该规则不产生分支分裂，我们要证明扩展后的支（即 $\Gamma$ 连同该规则的结论）仍然可满足。若该规则产生分支分裂，我们要证明所得到的两个支中至少有一个可满足。
+\tagfalse{prvDiamond}
+首先，我们考虑只有一个前提的可能的推理。
+\begin{enumerate}
+\item 通过对 $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\lnot}$ 来扩展该支。于是扩展后的支包含!!{signed formula}集 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma]\}$。设 $\mSat{M}{\Gamma}[f]$。特别地，$\mSat{M}{\lnot !B}[f(\sigma)]$。因此，$\mSat/{M}{!B}[f(\sigma)]$，即 $\mModel{M}$ 关于~$f$ 地满足 $\sFmla{\False}{!B}[\sigma]$。
+\item 通过对 $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\lnot}$ 来扩展该支：习题。
+\item 通过对 $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\land}$ 来扩展该支，结果在支上得到两个新的!!{signed formula}：$\sFmla{\True}{!B}[\sigma]$ 和 $\sFmla{\True}{!C}[\sigma]$。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{!B \land !C}[f(\sigma)]$。则 $\mSat{M}{!B}[f(\sigma)]$ 和 $\mSat{M}{!C}[f(\sigma)]$。这意味着 $\mModel{M}$ 关于~$f$ 地既满足 $\sFmla{\True}{!B}[\sigma]$ 又满足 $\sFmla{\True}{!C}[\sigma]$。
+\item 通过对 $\sFmla{\False}{!B \lor !C} \in \Gamma$ 应用 $\TRule{\False}{\lor}$ 来扩展该支：习题。
+\item 通过对 $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\lif}$ 来扩展该支：这会在支上得到两个新的!!{signed formula}：$\sFmla{\True}{!B}[\sigma]$ 和 $\sFmla{\False}{!C}[\sigma]$。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{!B \lif !C}[f(\sigma)]$。则 $\mSat{M}{!B}[f(\sigma)]$ 和 $\mSat/{M}{!C}[f(\sigma)]$。这意味着 $\mModel{M}, f$ 既满足 $\sFmla{\True}{!B}[\sigma]$ 又满足 $\sFmla{\False}{!C}[\sigma]$。
+
+\iftag{prvBox}{%
+\item 通过对 $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\Box}$ 来扩展该支：
+  \iftag{probBox}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\True}{!B}[\sigma.n]$，对某个 $\sigma.n \in P(\Gamma)$（因为 $\sigma.n$ 必须被使用）。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Box !B}[f(\sigma)]$。由于 $f$ 是前缀的一个解释且 $\sigma$、$\sigma.n \in P(\Gamma)$ 都成立，我们知道 $Rf(\sigma)f(\sigma.n)$。因此，$\mSat{M}{!B}[f(\sigma.n)]$，即 $\mModel{M}, f$ 满足 $\sFmla{\True}{!B}[\sigma.n]$。}
+
+\item 通过对 $\sFmla{\False}{\Box !B}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\Box}$ 来扩展该支：
+  \iftag{probBox}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\False}{!A}[\sigma.n]$，其中 $\sigma.n$ 是支上的一个新前缀，即 $\sigma.n \notin P(\Gamma)$。由于 $\Gamma$ 是可满足的，存在一个 $\Struct{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\Sat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Box !B}[f(\sigma)]$。我们要证明 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$ 是可满足的。为此，我们如下定义 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释：
+
+  由于 $\mSat/{M}{\Box !B}[f(\sigma)]$，存在一个 $w \in W$ 使得 $Rf(\sigma)w$ 且 $\mSat/{M}{!B}[w]$。设 $f'$ 除了 $f'(\sigma.n) = w$ 外与 $f$ 相同。由于 $f'(\sigma) = f(\sigma)$ 且 $Rf(\sigma)w$，我们有 $Rf'(\sigma)f'(\sigma.n)$，所以 $f'$ 是 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释。显然 $\mSat/{M}{!B}[f'(\sigma.n)]$。由于对所有前缀 $\sigma' \in P(\Gamma)$ 有 $f(\sigma') = f'(\sigma')$，故 $\mSat{M}{\Gamma}[f']$。因此，$\mModel{M}, f'$ 满足 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$。}
+  }{}
+
+\iftag{prvDiamond}{%
+\item 通过对 $\sFmla{\True}{\Diamond !B}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\Diamond}$ 来扩展该支：
+  \iftag{probDiamond}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\True}{!A}[\sigma.n]$，其中 $\sigma.n$ 是支上的一个新前缀，即 $\sigma.n \notin P(\Gamma)$。由于 $\Gamma$ 是可满足的，存在一个 $\Struct{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\Sat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Diamond !B}[f(\sigma)]$。我们要证明 $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$ 是可满足的。为此，我们如下定义 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释：
+
+  由于 $\mSat{M}{\Diamond !B}[f(\sigma)]$，存在一个 $w \in W$ 使得 $Rf(\sigma)w$ 且 $\mSat{M}{!B}[w]$。设 $f'$ 除了 $f'(\sigma.n) = w$ 外与 $f$ 相同。由于 $f'(\sigma) = f(\sigma)$ 且 $Rf(\sigma)w$，我们有 $Rf'(\sigma)f'(\sigma.n)$，所以 $f'$ 是 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释。显然 $\mSat{M}{!B}[f'(\sigma.n)]$。由于对所有前缀 $\sigma' \in P(\Gamma)$ 有 $f(\sigma') = f'(\sigma')$，故 $\mSat{M}{\Gamma}[f']$。因此，$\mModel{M}, f'$ 满足 $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$。}
+\item 通过对 $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\Diamond}$ 来扩展该支：
+  \iftag{probDiamond}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\False}{!B}[\sigma.n]$，对某个 $\sigma.n \in P(\Gamma)$（因为 $\sigma.n$ 必须被使用）。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Diamond !B}[f(\sigma)]$。由于 $f$ 是前缀的一个解释且 $\sigma$、$\sigma.n \in P(\Gamma)$ 都成立，我们知道 $Rf(\sigma)f(\sigma.n)$。因此，$\mSat/{M}{!B}[f(\sigma.n)]$，即 $\mModel{M}, f$ 满足 $\sFmla{\False}{!B}[\sigma.n]$。}
+  }{}
+\end{enumerate}
+现在来考虑有两个前提的可能的推理。
+\begin{enumerate}
+\item 通过对 $\sFmla{\False}{!B \land !C}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\land}$ 来扩展该支，结果得到两条支，左边一条经 $\sFmla{\False}{!B}[\sigma]$ 继续，右边一条经 $\sFmla{\False}{!C}[\sigma]$ 继续。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{!B \land !C}[f(\sigma)]$。则 $\mSat/{M}{!B}[f(\sigma)]$ 或 $\mSat/{M}{!C}[f(\sigma)]$。在前一种情形，$\mModel{M}, f$ 满足 $\sFmla{\False}{!B}[\sigma]$，即左边支是可满足的。在后一种情形，$\mModel{M}, f$ 满足 $\sFmla{\False}{!C}[\sigma]$，即右边支是可满足的。
+\item 通过对 $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\lor}$ 来扩展该支：习题。
+\item 通过对 $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\lif}$ 来扩展该支：习题。
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+完成 \olref[nml][tab][sou]{thm:tableau-soundness} 的证明。
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+若 $\Gamma \Proves !A$，则 $\Gamma \Entails !A$。
+\end{cor}
+
+\begin{proof}
+  若 $\Gamma \Proves !A$，则对某个 $!B_1$, \dots, $!B_n \in \Gamma$，$\Delta = \{\sFmla{\False}{!A}[1], \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1]\}$ 有一个闭的!!{tableau}。我们要证明 $\Gamma \Entails !A$。设不如此，则对某个 $\mModel{M}$ 和 $w$，对 $i=1$, \dots,~$n$ 有 $\mSat{M}{!B_i}[w]$，但 $\mSat/{M}{!A}[w]$。令 $f(1) = w$；则 $f$ 是~$P(\Delta)$ 到~$\mModel{M}$ 的一个解释，并且 $\mModel{M}$ 关于~$f$ 地满足~$\Delta$。但由 \olref{thm:tableau-soundness}，$\Delta$ 因有一个闭的!!{tableau}而是不可满足的，此为矛盾。所以我们必须要有 $\Gamma \Proves !A$。
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+若 $\Proves !A$，则 $!A$ 在所有模型中为真。
+\end{cor}
+
+\end{document}

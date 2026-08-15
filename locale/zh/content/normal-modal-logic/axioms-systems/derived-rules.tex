@@ -1,0 +1,131 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: derived-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{prf}{der}
+
+\olsection{导出规则}
+
+寻找并写出!!{derivation}显然是很困难、繁琐且重复的。例如，我们常常想从 $!A \lif !B$ 过渡到 $\Box !A \lif \Box !B$，即应用规则~\RK。这需要先应用一次 \Nec，再记录~\Ax{K} 的相应特例，然后应用~\MP。从 $!A \lif !B$ 与 $!B \lif !C$ 过渡到 $!A \lif !C$，需要记录（冗长的）重言式特例
+\[
+(!A \lif !B) \lif ((!B \lif !C) \lif (!A \lif !C))
+\]
+再应用两次 \MP{}。我们常常想用一个已知等价的公式来替换子-!!{formula}，例如 \iftag{prvDiamond}{用 $\lnot\Box\lnot !A$ 替换 $\Diamond !A$}{用 $\lnot\Diamond\lnot !A$ 替换 $\Box !A$}，或者用 $!A$ 替换 $\lnot\lnot !A$。因此，与其写出实际的!!{derivation}，更方便的做法是只记录为什么这些中间步骤是!!{derivable}。为此，我们收集一些关于!!{derivability}的事实。
+
+\begin{prop}
+  若 $\Log{K} \Proves !A_1$、\dots、$\Log{K} \Proves !A_n$，且 $!B$ 由 $!A_1$、\dots、$!A_n$ 依命题逻辑推出，则
+  $\Log{K} \Proves !B$。
+\end{prop}
+
+\begin{proof}
+  若 $!B$ 由 $!A_1$、\dots、~$!A_n$ 依命题逻辑推出，则
+  \[
+  !A_1 \lif (!A_2 \lif \cdots (!A_n \lif !B)\dots)
+  \]
+  是一个重言式特例。对 \MP{} 应用 $n$ 次便得到 $!B$ 的一个!!{derivation}。
+\end{proof}
+
+我们将用~\PL 来表明对该命题的使用。
+
+\begin{prop}
+  若 $\Log{K} \Proves !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif
+  !A_n)\dots)$，则 $\Log{K} \Proves \Box !A_1 \lif (\Box !A_2 \lif
+  \cdots (\Box !A_{n-1} \lif \Box !A_n)\dots)$。
+\end{prop}
+
+\begin{proof}
+  对 $n$ 归纳，正如在 \olref[nor]{prop:rk} 的证明中那样。
+\end{proof}
+
+我们将用~\RK 来表明对该命题的使用。让我们说明这些结果如何使建立!!{derivability}结果变得更容易。
+
+\begin{prop}
+  $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box (!A \land !B)$
+\end{prop}
+
+\begin{proof}
+  \begin{derivation}
+    1. & $\Log{K} \Proves !A \lif (!B \lif (!A \land !B))$ & \Taut \\
+    2. & $\Log{K} \Proves \Box!A \lif (\Box !B \lif \Box(!A \land !B)))$ & \RK, 1\\
+    3. & $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box(!A \land !B)$ & \PL, 2
+  \end{derivation}
+\end{proof}
+
+\begin{prop}\ollabel{prop:rewriting}
+  若 $\Log{K} \Proves !A \liff !B$ 且 $\Log{K} \Proves
+  \Subst{!C}{!A}{q}$，则 $\Log{K} \Proves \Subst{!C}{B}{q}$
+\end{prop}
+
+\begin{proof}
+  习题。
+\end{proof}
+
+\begin{prob}
+  通过对~$!C$ 的复杂度归纳证明：若 $\Log{K} \Proves !A \liff !B$，则 $\Log{K} \Proves \Subst{!C}{!A}{q} \liff \Subst{!C}{!B}{q}$，从而证明 \olref[nml][prf][der]{prop:rewriting}。
+\end{prob}
+
+该命题在我们想把 $\Diamond$ 换成 $\Box$（或反之），或消去!!a{formula}内部的双重否定时尤其好用。在下面的内容中，每当我们把!!a{formula}~$!C(!A)$ 改写为~$!C(!B)$ 时，我们就用「$!A$ 换成 $!B$」来标记对 \olref{prop:rewriting} 的应用。换言之，「$!A$ 换成 $!B$」缩写为：
+  \begin{derivation}
+    & $\Proves !C(!A)$ \\
+    & $\Proves !A \liff !B$\\
+    & $\Proves !C(!B)$ & 依 \olref{prop:rewriting}
+  \end{derivation}
+例如：
+
+\begin{prop}
+  $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$
+\end{prop}
+
+\begin{proof}
+  \iftag{prvDiamond}{% Diamond is primitive
+  \begin{derivation}
+    1. & $\Log{K} \Proves \Diamond \lnot p \liff \lnot\Box\lnot\lnot p$ &
+    \Dual\\
+    2. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \PL, 1\\
+    3. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $p$ 换成 $\lnot\lnot p$\\
+  \end{derivation}
+  }{% Diamond is defined
+  \begin{derivation}
+    1. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \Taut\\
+    2. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $p$ 换成 $\lnot\lnot p$\\
+  \end{derivation}
+  第~$1$ 行的公式是 $\lnot q \lif \lnot q$ 的一个特例，把~$\Box\lnot\lnot p$ 代入~$q$。$\Diamond\lnot p$ 与
+  $\lnot\Box\lnot\lnot p$ 相同，因为 $\Diamond$ 被定义为~$\lnot\Box\lnot$。}
+\end{proof}
+
+在上面的!!{derivation}中，最后的步骤「$p$ 换成 $\lnot\lnot p$」
+是下面的缩写
+  \begin{derivation}
+    & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot
+    p$\\
+    & $\Log{K} \Proves \lnot\lnot p \liff p$ & \Taut\\
+    & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & 依 \olref{prop:rewriting}
+  \end{derivation}
+在 \olref{prop:rewriting} 中 $!C(q)$、$!A$、$!B$ 的角色在此分别由 $\lnot \Box q \lif \Diamond \lnot p$、
+$\lnot\lnot p$ 与~$p$ 扮演。
+
+当!!a{formula}含有一个子-!!{formula} $\lnot\Diamond !A$ 时，
+我们可以用 \olref{prop:rewriting} 把它替换为 $\Box\lnot !A$，因为
+$\Log{K} \Proves \lnot\Diamond !A \liff \Box\lnot !A$。我们只简单地用「$\Box\lnot$ 换成
+$\lnot\Diamond$」来表示这种以及类似的替换。
+
+如下命题说明我们可以以模式方式建立!!{derivability}结果。例如，前一命题不仅建立了 $\Log{K} \Proves \lnot\Box p \lif
+\Diamond \lnot p$，而是一切~$!A$ 下 $\Log{K} \Proves \lnot\Box !A \lif \Diamond
+\lnot !A$。
+
+\begin{prop}
+  若 $!A$ 是 $!B$ 的一个代入特例且 $\Log{K} \Proves !B$，
+  则 $\Log{K} \Proves !A$。
+\end{prop}
+
+\begin{proof}
+  要验证（对~$!B$ 的!!{derivation}的长度归纳）对一个整个!!{derivation}应用代入仍会产生一个正确的!!{derivation}，是繁琐但常规的。具体而言，重言式特例的代入特例本身仍是重言式特例，\iftag{prvDiamond}{\Dual{} 与~}{}\Ax{K} 的特例的代入特例本身仍是~\iftag{prvDiamond}{\Dual{}
+    与~}{}\Ax{K} 的特例，而在前提与结论中把!!{formula}代入!!{propositional variable}时，\MP{} 与~\Nec{} 的应用仍保持正确。
+\end{proof}
+
+
+\end{document}

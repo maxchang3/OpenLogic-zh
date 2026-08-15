@@ -77,7 +77,7 @@
 
 % Load ntheorem as theorem backend thmmarks, amsmath options necessary
 % for proper placement of proof end markers. amsthm option provides
-% standard theorem styles. 
+% standard theorem styles.
 \RequirePackage[thmmarks,amsmath,amsthm,hyperref]{ntheorem}
 
 % Load thmtools for nice formatting of theorem environments
@@ -87,10 +87,12 @@
 % references
 % cleveref must be loaded after hyperref
 
+% cleveref 不识别 chinese 选项，语言名统一由 locale 文件里的
+% \Crefname/\crefformat 显式设置，这里不再把 \ollanguage 传给 cleveref
 \ifdefined\ollanguage
-  \RequirePackage[capitalize,nameinlink,english,\ollanguage]{cleveref}
+  \RequirePackage[capitalize,nameinlink,english]{cleveref}
 \else
-  \RequirePackage[capitalize,nameinlink]{cleveref} 
+  \RequirePackage[capitalize,nameinlink]{cleveref}
 \fi
 
 % Load localization file for English

@@ -1,0 +1,128 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{ptn}}
+      {\olfileid[zh]{pl}{axd}{ptn}}
+
+\olsection{证明论诸概念}
+
+\begin{explain}
+正如我们定义了若干重要的语义概念
+(\iftag{FOL}{有效性}{重言式}、衍推、可满足性)，我们现在
+定义相应的\emph{证明论概念}。这些概念并不是
+通过诉诸!!{sentence}在!!{structure}中的满足来定义的，
+而是通过诉诸某些公式的!!{derivability}或!!{nonderivability}来定义的。
+这些概念相一致乃是一项重要发现。
+它们相一致正是\emph{可靠性}定理与\emph{完全性}定理的内容。
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+若存在从~$\Gamma$ 出发并终于~$!A$ 的!!a{derivation}，则!!^a{formula}~$!A$ 由 $\Gamma$ 是 \emph{!!{derivable}}，
+记为 $\Gamma \Proves !A$。
+\end{defn}
+
+\begin{defn}[定理]
+若存在从空集出发的对 $!A$ 的!!a{derivation}，则!!^a{formula}~$!A$ 是\emph{定理}。若 $!A$ 是定理，我们记
+$\Proves !A$；若不是则记 $\Proves/ !A$。
+\end{defn}
+
+\begin{defn}[一致性]
+由!!{formula}组成的集合 $\Gamma$ 是\emph{一致的}，当且仅当
+$\Gamma\Proves/ \lfalse$；否则它是\emph{不一致的}。
+\end{defn}
+
+\begin{prop}[自反性]
+\ollabel{prop:reflexivity}
+若 $!A \in \Gamma$，则 $\Gamma \Proves !A$。
+\end{prop}
+
+\begin{proof}
+  !!{formula}~$!A$ 本身即是从~$\Gamma$ 出发对~$!A$ 的!!a{derivation}。
+\end{proof}
+
+\begin{prop}[单调性]
+\ollabel{prop:monotonicity}
+若 $\Gamma \subseteq \Delta$ 且 $\Gamma \Proves !A$，则 $\Delta
+\Proves !A$。
+\end{prop}
+
+\begin{proof}
+从 $\Gamma$ 出发对 $!A$ 的任何!!{derivation}也是从~$\Delta$ 出发对
+$!A$ 的!!a{derivation}。
+\end{proof}
+
+\begin{prop}[传递性]
+\ollabel{prop:transitivity}
+若 $\Gamma \Proves !A$ 且 $\{!A\} \cup \Delta \Proves
+!B$，则 $\Gamma \cup \Delta \Proves !B$。
+\end{prop}
+
+\begin{proof}
+  设 $\{!A\} \cup \Delta \Proves !B$。则存在从~$\{!A\} \cup
+  \Delta$ 出发的!!a{derivation} $!B_1$, \dots, $!B_l = !B$。该!!{derivation}中的
+  某些步骤之所以正确，是因为所用的规则引用了先前的一行~$!B_i = !A$。由
+  假设，存在从~$\Gamma$ 出发对~$!A$ 的!!a{derivation}，即!!a{derivation}~$!A_1$, \dots, $!A_k = !A$，其中每个 $!A_i$ 或是一条公理，
+  或是~$\Gamma$ 的!!a{element}，或由某条推理规则正确得出。现在考虑如下序列
+  \[
+  !A_1, \dots, !A_k = !A, !B_1, \dots, !B_l = !B.
+  \]
+  这是从 $\Gamma \cup \Delta$ 出发对~$!B$ 的一个正确的!!{derivation}，
+  因为每个 $B_i = !A$ 现在都由同一规则证成，即证成~$!A_k = !A$ 的那条规则。
+\end{proof}
+
+注意，这表明特别地，若 $\Gamma \Proves !A$ 且 $!A
+\Proves !B$，则 $\Gamma \Proves !B$。由此亦可得，若 $!A_1,
+\dots, !A_n \Proves !B$ 且对每个~$i$ 有 $\Gamma \Proves !A_i$，则
+$\Gamma \Proves !B$。
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ 是不一致的当且仅当对每个~$!A$ 有 $\Gamma \Proves !A$。
+\end{prop}
+
+\begin{proof}
+习题。
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+证明 \olref[fol][axd][ptn]{prop:incons}。
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+证明 \olref[pl][axd][ptn]{prop:incons}。
+\end{prob}
+\tagendprob
+
+\begin{prop}[紧致性]
+\ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item 若 $\Gamma \Proves !A$，则存在有穷子集 $\Gamma_0
+    \subseteq \Gamma$ 使得 $\Gamma_0 \Proves !A$。
+  \item 若~$\Gamma$ 的每个有穷子集都
+    一致，则 $\Gamma$ 一致。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item 若 $\Gamma \Proves !A$，则存在!!{formula}的一个有穷序列
+      $!A_1$, \dots,~$!A_n$ 使得 $!A \ident !A_n$，并且
+      每个 $!A_i$ 或是一条逻辑公理，或是~$\Gamma$ 的!!a{element}，
+      或由分离规则从先前的!!{formula}推出。取
+      $\Gamma_0$ 为那些属于~$\Gamma$ 的 $!A_i$。则此!!{derivation}同样是从~$\Gamma_0$ 出发的!!a{derivation}，
+      故 $\Gamma_0 \Proves !A$。
+    \item 这是~(1) 在特殊情形 $!A
+      \ident \lfalse$ 下的逆否命题。
+\end{enumerate}
+\end{proof}
+
+\end{document}

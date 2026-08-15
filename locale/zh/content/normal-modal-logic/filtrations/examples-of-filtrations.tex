@@ -1,0 +1,209 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: examples-of-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{fil}{exf}
+
+\olsection{过滤的若干例子}
+
+我们还没有说明是否存在任何过滤。但事实上，对于任何模型 $\mModel{M}$，通过 $\Gamma$ 的 $\mModel{M}$ 的过滤有很多。我们特别指出两个：最细的与最粗的过滤。同一模型的过滤会在其可及关系上有所不同（正如 \olref[fil]{defn:filtration} 直接规定了 $W^*$ 和~$V^*$ 应该是什么）。最细的过滤会有尽可能少的相互联系的世界，而最粗的过滤则会有尽可能多的相互联系的世界。
+
+\begin{defn}
+  当 $\Gamma$ 对子公式封闭时，模型 $\mModel{M}$ 的 \emph{最细的}过滤 $\mModel{M^*}$ 由如下方式定义：
+  \[
+  R^*[u][v] \quad \text{当且仅当} \quad \exists u'\in [u] \;
+  \exists v' \in [v] : Ru'v'.
+  \]
+\end{defn}
+
+\begin{prop}\ollabel{prop:finest}
+  最细的过滤 $\mModel{M^*}$ 确实是一个过滤。
+\end{prop}
+
+\begin{proof}
+  我们需要检验如此定义的 $R^*$ 满足
+  \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R}。我们依次检验三个条件。
+
+  如果 $Ruv$，那么由于 $u \in [u]$ 且 $v \in [v]$，也有 $R^*[u][v]$，
+  所以 \olref[fil]{defn:filtration-R1} 得以满足。
+
+  \iftag{prvBox}{\iftag{probBox}{我们把
+      \olref[fil]{defn:filtration-R2} 的验证留作习题。}{对于
+        \olref[fil]{defn:filtration-R2}，设 $\Box!A \in \Gamma$，
+        $R^*[u][v]$ 且 $\mSat{M}{\Box!A}[u]$。由
+        $R^*$ 的定义，存在 $u' \equiv u$ 和 $v' \equiv v$ 使得
+        $Ru'v'$。由于 $u$ 和 $u'$ 在 $\Gamma$ 上一致，也有
+        $\mSat{M}{\Box!A}[u']$，从而 $\mSat{M}{!A}[v']$。由 $\Gamma$
+        对子!!{formula}封闭，$v$ 和 $v'$ 在
+        $!A$ 上一致，所以 $\mSat{M}{!A}[v]$，正如所求。}}{}
+
+  \iftag{prvDiamond}{\iftag{probDiamond}{我们把
+      \olref[fil]{defn:filtration-R3} 的验证留作习题。}{为验证
+        \olref[fil]{defn:filtration-R3}，设 $\Diamond!A \in
+        \Gamma$，$R^*[u][v]$ 且 $\mSat{M}{!A}[v]$。由
+        $R^*$ 的定义，存在 $u' \equiv u$ 和 $v' \equiv v$ 使得
+        $Ru'v'$。由于 $v$ 和 $v'$ 在~$\Gamma$ 上一致，且 $\Gamma$ 对
+        子!!{formula}封闭，也有 $\mSat{M}{!A}[v']$，
+        从而 $\mSat{M}{\Diamond !A}[u']$。由于 $u$ 和 $u'$ 也
+        在 $\Gamma$ 上一致，$\mSat{M}{\Diamond !A}[u]$。}}{}
+\end{proof}
+
+\begin{probtag}{probBox,probDiamond}
+  完成 \olref[nml][fil][exf]{prop:finest} 的证明。
+\end{probtag}
+
+\begin{defn}
+  当 $\Gamma$ 对子公式封闭时，模型~$\mModel{M}$ 的 \emph{最粗的}过滤~$\mModel{M^*}$ 由如下方式定义：令 $R^*[u][v]$ 当且仅当
+  \iftag{notprvBox,notprvDiamond}{如下条件得以满足：}{\emph{以下两个}条件都得以满足：}
+  \begin{tagenumerate}{prvBox,prvDiamond}
+  \tagitem{prvBox}{\ollabel{defn:coarsest-Box}如果 $\Box!A \in \Gamma$
+    且 $\mSat{M}{\Box!A}[u]$，那么
+    $\mSat{M}{!A}[v]$\iftag{prvDiamond}{；}{。}}{}
+  \tagitem{prvDiamond}{\ollabel{defn:coarsest-Diamond}如果 $\Diamond!A
+    \in \Gamma$ 且 $\mSat{M}{!A}[v]$，那么
+    $\mSat{M}{\Diamond!A}[u]$。}{}
+  \end{tagenumerate}
+\end{defn}
+
+\begin{prop}
+  最粗的过滤 $\mModel{M^*}$ 确实是一个过滤。
+\end{prop}
+
+\begin{proof}
+  根据 $R^*$ 的定义，唯一还需验证的条件是从 $Ruv$ 到 $R^*[u][v]$ 的蕴含。所以设
+  $Ruv$。\iftag{prvBox}{设 $\Box!A \in \Gamma$ 且
+    $\mSat{M}{\Box!A}[u]$；那么显然
+    $\mSat{M}{!A}[v]$\iftag{prvDiamond}{，且
+      \olref{defn:coarsest-Box} 得以
+      满足。}{。}}{}\iftag{prvDiamond}{设 $\Diamond!A \in
+    \Gamma$ 且 $\mSat{M}{!A}[v]$。那么 $\mSat{M}{\Diamond!A}[u]$
+    因为~$Ruv$\iftag{prvBox}{，且 \olref{defn:coarsest-Diamond} 得以
+      满足}{}。}{}
+\end{proof}
+
+\begin{ex}
+  令 $W = \PosInt$，$Rnm$ 当且仅当 $m = n + 1$，且 $V(p) = \Setabs{2n}{n \in
+    \Nat}$。模型 $\mModel{M} = \tuple{W, R, V}$ 描绘在
+  \olref{fig:ex-filtration} 中。世界为 $1$、$2$ 等等；每个
+  世界恰好可以及一个其他世界——即它的后继——且 $p$ 在所有偶数处且仅在
+  偶数处为真。
+
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[modal]
+      \node[world] (1) [label=below:\mFalse{p}] {$1$};
+      \node[world] (2) [label=below:\mTrue{p}, right=of 1] {$2$};
+      \node[world] (3) [label=below:\mFalse{p}, right=of 2] {$3$};
+      \node[world] (4) [label=below:\mTrue{p}, right=of 3] {$4$};
+      \node[phantom] (5) [right=of 4] {};
+      \draw[->] (1) to (2);
+      \draw[->] (2) to (3);
+      \draw[->] (3) to (4);
+      \draw[dotted] (4) to (5);
+    \end{tikzpicture}
+
+    \begin{tikzpicture}[modal]
+      \node[world] (1) [label=below:\mFalse{p}] {$[1]$};
+      \node[world] (2) [label=below:\mTrue{p}, right=of 1] {$[2]$};
+      \draw[->,bend left] (1) to (2);
+      \draw[->,bend left] (2) to (1);
+
+      \node[world] (3) [label=below:\mFalse{p},right=of 2] {$[1]$};
+      \node[world] (4) [label=below:\mTrue{p}, right=of 3] {$[2]$};
+      \draw[->,bend left] (3) to (4);
+      \draw[->,bend left] (4) to (3);
+      \draw[->,reflexive above] (4) to (4);
+    \end{tikzpicture}
+    \caption{一个无穷模型及其过滤。}
+    \ollabel{fig:ex-filtration}
+  \end{figure}
+
+  现在令 $\Gamma$ 为~$\Box p \lif p$ 的子!!{formula}的集合，
+  即 $\{p, \Box p, \Box p \lif p\}$。$p$ 在所有偶数处且仅在
+  偶数处为真，$\Box p$ 在所有奇数处且仅在
+  奇数处为真，所以 $\Box p \lif p$ 在所有偶数处且仅在偶数处为真。换句话说，
+  每个奇数使 $\Box p$ 为真，但使 $p$ 和 $\Box
+  p \lif p$ 为假；每个偶数使 $p$ 和 $\Box p \lif p$
+  为真，但使 $\Box p$ 为假。所以 $W^* = \{ [1], [2] \}$，其中 $[1] =
+  \{1, 3, 5, \dots\}$ 且 $[2] = \{2, 4, 6, \dots\}$。由于 $2 \in
+  V(p)$，所以 $[2] \in V^*(p)$；由于 $1 \notin V(p)$，所以 $[1] \notin
+  V^*(p)$。因此 $V^*(p) = \{[2]\}$。
+
+  任何基于 $W^*$ 的过滤都必须有包含 $\tuple{[1], [2]}, \tuple{[2],[1]}$ 的可及关系：由于 $R12$，我们
+  必须有 $R^*[1][2]$（由
+  \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R1}），并且
+  由于 $R23$ 我们必须有 $R^*[2][3]$，而 $[3]=[1]$。它不能
+  包含 $\tuple{[1],[1]}$：如果包含，就会有 $R^*[1][1]$、
+  $\mSat{M}{\Box p}[1]$ 但 $\mSat/{M}{p}[1]$，这与
+  \olref[fil]{defn:filtration-R2} 矛盾。没有任何东西要求或排除
+  $R^*[2][2]$。因此，~$\mModel{M}$ 有两个可能的过滤，
+  对应两个可及关系
+  \[
+  \{\tuple{[1],[2]}, \tuple{[2],[1]}\} \text{ 和 }
+  \{\tuple{[1],[2]}, \tuple{[2],[1]}, \tuple{[2],[2]}\}.
+  \]
+  在两种情况下，$p$ 和 $\Box p \lif p$ 在~$[1]$ 处为假，而 $\Box p$ 在~$[1]$ 处为真；$p$ 和 $\Box p \lif p$ 在~$[2]$ 处为真，而 $\Box p$ 在~$[2]$ 处为假。
+\end{ex}
+
+
+\begin{prob}
+  考虑如下模型 $\mModel{M} = \tuple{W, R, V}$，其中 $W
+  = \Setabs{0\sigma}{\sigma \in \Bin^*}$，即以~$0$ 开头的 $0$
+  和~$1$ 的序列的集合，$R\sigma\sigma'$ 当且仅当 $\sigma' =
+  \sigma 0$ 或 $\sigma' = \sigma 1$，且 $V(p) = \Setabs{\sigma
+    0}{\sigma \in \Bin^*}$，$V(q) = \Setabs{\sigma 1}{\sigma \in
+    \Bin^* \setminus \{1\}}$。图如下：
+  \begin{center}
+    \begin{tikzpicture}[modal,
+        node distance=2cm
+      ]
+
+      \node[world] (0) [label={below:\mTrue{p}\\\mFalse{q}},font=\tiny] {$0$};
+      \node[world] (00) [label={below:\mTrue{p}\\\mFalse{q}},
+        above right=of 0,font=\tiny] {$00$};
+      \node[world] (000) [label={below:\mTrue{p}\\\mFalse{q}},
+        right=of 00, yshift=.8cm, font=\tiny] {$000$};
+      \node[phantom] (0000) [right=of 000, yshift=.5cm] {};
+      \node[phantom] (0001) [right=of 000, yshift=-.5cm] {};
+      \node[world] (001) [label={below:\mFalse{p}\\\mTrue{q}},
+        right=of 00, yshift=-.8cm, font=\tiny] {$001$};
+      \node[phantom](0010) [right=of 001, yshift=.5cm] {};
+      \node[phantom](0011) [right=of 001, yshift=-.5cm] {};
+      \node[world] (01) [label={below:\mFalse{p}\\\mTrue{q}},
+        below right=of 0,font=\tiny] {$01$};
+      \node[world] (010) [label={below:\mTrue{p}\\\mFalse{q}},
+        right=of 01, yshift=.8cm,font=\tiny] {$010$};
+      \node[phantom] (0100) [right=of 010, yshift=.5cm] {};
+      \node[phantom] (0101) [right=of 010, yshift=-.5cm] {};
+      \node[world] (011) [label={below:\mFalse{p}\\\mTrue{q}},
+        right=of 01, yshift=-.8cm,font=\tiny] {$011$};
+      \node[phantom] (0110) [right=of 011, yshift=.5cm] {};
+      \node[phantom] (0111) [right=of 011, yshift=-.5cm] {};
+
+      \draw[->] (0) to (00);
+      \draw[->] (0) to (01);
+      \draw[->] (00) to (000);
+      \draw[dotted] (000) to (0000);
+      \draw[dotted] (000) to (0001);
+      \draw[->] (00) to (001);
+      \draw[dotted] (001) to (0010);
+      \draw[dotted] (001) to (0011);
+      \draw[->] (01) to (010);
+      \draw[dotted] (010) to (0100);
+      \draw[dotted] (010) to (0101);
+      \draw[->] (01) to (011);
+      \draw[dotted] (011) to (0110);
+      \draw[dotted] (011) to (0111);
+    \end{tikzpicture}
+  \end{center}
+  对每个~$w$，我们有 $\mSat/{M}{\Box(p \lor q) \lif (\Box p \lor \Box q)}[w]$。
+
+  令 $\Gamma$ 为~$\Box(p \lor q) \lif
+  (\Box p \lor \Box q)$ 的子!!{formula}的集合。$W^*$ 和~$V^*$ 是什么？~$\mModel{M}$ 的最细过滤的可及关系是什么？最粗的过滤呢？
+\end{prob}
+
+\end{document}

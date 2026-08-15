@@ -1,0 +1,41 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: completeness-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{com}{cmk}
+
+\olsection{\Log{K} 的确定与完全性}
+
+我们现在准备利用典范模型来建立完全性。完全性源于如下事实：在 $\Sigma$ 的典范模型中为真的!!{formula}恰是 $\Sigma$-可推演的那些。具有此性质的模型被称为 \emph{确定}~$\Sigma$。
+
+\begin{defn}
+  一个模型 $\mModel{M}$ 恰好当对一切!!{formula}~$!A$，$\mSat{M}{!A}$ 当且仅当 $\Sigma \Proves !A$ 时，\emph{确定}一个正规模态逻辑~$\Sigma$。
+\end{defn}
+
+\begin{thm}[确定]\ollabel{thm:determination}
+   $\mSat{M^\Sigma}{!A}$ 当且仅当 $\Sigma \Proves !A$。
+\end{thm}
+
+\begin{proof}
+  若 $\mSat{M^\Sigma}{!A}$，则对每一个完全的 $\Sigma$-一致 $\Delta$，我们有 $\mSat{M^\Sigma}{!A}[\Delta]$。因此，由真值引理，$!A \in \Delta$，对每一个完全的 $\Sigma$-一致 $\Delta$ 成立，从而由 \olref[lin]{cor:provability-characterization}（取 $\Gamma = \emptyset$），得 $\Sigma \Proves !A$。
+
+  反之，若 $\Sigma \Proves !A$，则由 \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-closed}，每一个完全的 $\Sigma$-一致 $\Delta$ 含~$!A$，且由真值引理，对每一个~$\Delta \in W^\Sigma$ 均有 $\mSat{M^\Sigma}{!A}[\Delta]$，即 $\mSat{M^\Sigma}{!A}$。
+\end{proof}
+
+由于 \Log{K} 的典范模型确定~\Log{K}，我们立即得到~\Log{K} 的完全性作为推论：
+
+\begin{cor}\ollabel{cor:Kcomplete}
+  基础模态逻辑 \Log{K} 对全体模型类是完全的，即若 $\Entails !A$，则 $\Log{K} \Proves !A$。
+\end{cor}
+
+\begin{proof}
+  反言之，若 $\Log{K} \Proves/ !A$，则由确定性质，$\mSat/{M^{\Log{K}}}{!A}$，故 $!A$ 不是有效的。
+\end{proof}
+
+对一个系统 $\Sigma$ 相对于一类模型的一般完全性情形，例如相对于自反、对称、传递模型类的 \Log{KTB4}，单靠确定性质并不够。我们还必须证明系统 $\Sigma$ 的典范模型是该类的一个成员，这一点并非典范模型构造所能显然推出——而且它甚至并不总是成立！
+
+\end{document}

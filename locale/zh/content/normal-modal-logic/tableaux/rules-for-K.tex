@@ -1,0 +1,261 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: rules-for-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{tab}{rul}
+
+\olsection{K 的规则}
+
+普通命题联结词的规则与普通命题带符号!!{tableau}的规则相同，只是
+加上了前缀。在每种情形中，应用于带符号!!{formula} $\sFmla{S}{!A}[\sigma]$
+的规则会产生同样以~$\sigma$ 为前缀的新!!{formula}。这在直觉上是清楚
+的：例如，若 $!A \land !B$ 在（以~$\sigma$ 命名的）世界处为真，则
+$!A$ 与 $!B$ 在~$\sigma$ 处为真（而不在任何其他世界处为真）。我们把
+命题规则汇总在 \olref{tab:prop-rules}。
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\True}{\lnot}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\False}{\lnot}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \DisplayProof
+    \\[1ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\land}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\True}{!B}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\land}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\False}{!B}[\sigma]$}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lor}}
+    \UnaryInfC{$\sFmla{\True}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lor}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lif}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid
+      \quad \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lif}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+  \end{array}\]
+  \caption{命题联结词的带前缀!!{tableau}规则}
+  \ollabel{tab:prop-rules}
+\end{table}
+
+闭合条件与普通!!{tableau}相同，只是我们要求不仅!!{formula}而且
+前缀也必须相匹配。因此，若一个支同时包含
+\[
+\sFmla{\True}{!A}[\sigma] \quad\text{且}\quad \sFmla{\False}{!A}[\sigma]
+\]
+且前缀 $\sigma$ 与!!{formula}~$!A$ 为某个值，则该支是闭合的。
+
+建立假设的规则也与普通!!{tableau}相同，只是对于假设我们总使用前缀
+~$1$。（只要我们使用的前缀对所有假设都相同，那么使用哪个前缀无关紧
+要。）所以，例如我们说
+\[
+!B_1, \dots, !B_n \Proves !A
+\]
+当且仅当存在一个关于假设
+\[
+\sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
+\sFmla{\False}{!A}[1].
+\]
+的闭的表列。
+
+对于模态算子\iftag{prvBox}{\iftag{prvDiamond}{~$\Box$ 和}{~$\Box$}}{}\iftag{prvDiamond}{~$\Diamond$}{}，应用于前缀为
+~$\sigma$ 的!!a{formula}的规则，其结论的前缀为 $\sigma.n$。然而，哪种
+$n$ 被允许取决于符号是~$\True$ 还是~$\False$。
+
+\iftag{prvBox}{$\TRule{\True}{\Box}$ 规则把包含 $\sFmla{\True}{\Box !A}[\sigma]$
+  的支扩展为 $\sFmla{\True}{!A}[\sigma.n]$。\iftag{prvDiamond}{ 类似地，
+    $\TRule{\False}{\Diamond}$ 规则把包含}{}}{}\iftag{prvDiamond}{$\sFmla{\False}{\Diamond !A}[\sigma]$ 的支扩展为
+  $\sFmla{\False}{!A}[\sigma.n]$。}{}
+\iftag{notprvBox,notprvDiamond}{该规则}{这些规则}只能应用于这样的前缀
+~$\sigma.n$：它\emph{已经}出现在应用它的那一支上。我们把这样的前缀称
+为「已使用的」（在该支上）。
+
+\iftag{prvBox}{$\TRule{\False}{\Box}$ 规则把包含 $\sFmla{\False}{\Box !A}[\sigma]$
+  的支扩展为 $\sFmla{\False}{!A}[\sigma.n]$。\iftag{prvDiamond}{ 类似地，
+    $\TRule{\True}{\Diamond}$ 规则把包含}{}}{}\iftag{prvDiamond}{$\sFmla{\True}{\Diamond !A}[\sigma]$ 的支扩展为
+  $\sFmla{\True}{!A}[\sigma.n]$。}{}
+\iftag{notprvBox,notprvDiamond}{该规则}{这些规则}却只能应用于这样的前缀
+~$\sigma.n$：它\emph{并不}已经出现在应用它的那一支上。我们把这样的前缀
+称为「新的」（对该支而言）。
+
+这些规则列于 \olref{tab:rules-K}。
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \begin{tabular}{|c|c|}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma]}
+      \RightLabel{\TRule{\True}{\Box}}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Box !A}[\sigma]}
+      \RightLabel{\TRule{\False}{\Box}}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma.n]}
+      \DisplayProof\\
+      $\sigma.n$ 是已使用的 & $\sigma.n$ 是新的
+      \\[1ex]
+      \hline}{}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\True}{\Diamond !A}[\sigma]}
+      \RightLabel{\TRule{\True}{\Diamond}}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma]}
+      \RightLabel{\TRule{\False}{\Diamond}}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma.n]}
+      \DisplayProof\\
+      $\sigma.n$ 是新的 & $\sigma.n$ 是已使用的
+      \\[1ex]
+      \hline}{}
+    \end{tabular}
+  \end{center}
+  \caption{\Ax{K} 的模态规则。}
+  \ollabel{tab:rules-K}
+\end{table}
+
+要求\iftag{prvBox}{\TRule{\True}{\Box}}{\TRule{\False}{\Diamond}}前缀必须是
+已出现的这一限制是必要的，因为否则我们就会把下面这个算作闭合的!!{tableau}：
+\iftag{notprvBox,notprvDiamond}{%
+  \iftag{prvBox}{%
+  \begin{oltableau}
+    [\pFmla{\True}{\Box \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\lnot\Box\lnot \formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[1]}
+          [\pFmla{\True}{\Box\lnot\formula{A}}{1},
+            just ={\TRule{\False}{\lnot}[2]}
+            [\pFmla{\True}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\True}{\Box}[4]}
+              [\pFmla{\False}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  }{
+  \begin{oltableau}
+    [\pFmla{\True}{\lnot\Diamond\lnot \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Diamond\formula{A}}{1}, just = \TAss
+        [\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\False}{\Diamond}[2]}
+          [\pFmla{\False}{\Diamond\lnot\formula{A}}{1},
+            just ={\TRule{\True}{\lnot}[1]}
+            [\pFmla{\False}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\False}{\Diamond}[4]}
+              [\pFmla{\True}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+}}{
+  \begin{oltableau}
+    [\pFmla{\True}{\Box \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Diamond \formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[1]}
+          [\pFmla{\False}{\formula{A}}{1.1},
+            just = {\TRule{\False}{\Diamond}[2]}, close]
+        ]
+      ]
+    ]
+\end{oltableau}}
+
+但 $\Box \formula{A} \Entails/ \Diamond \formula{A}$，因此我们的证明系
+统将是不可靠的。同理，$\Diamond \formula{A} \Entails/
+\Box \formula{A}$，而若没有
+\iftag{prvBox}{\TRule{\False}{\Box}}{\TRule{\True}{\Diamond}}的前缀必须
+是新的这一限制，下面这个就会是闭合的表列：
+\iftag{notprvBox,notprvDiamond}{%
+  \iftag{prvBox}{%
+  \begin{oltableau}
+    [\pFmla{\True}{\lnot\Box\lnot \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Box \formula{A}}{1}, just = \TAss
+        [\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[2]}
+          [\pFmla{\False}{\Box\lnot\formula{A}}{1},
+            just ={\TRule{\True}{\lnot}[1]}
+            [\pFmla{\False}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\False}{\Box}[4]}
+              [\pFmla{\True}{\formula{A}}{1.1},
+                  just ={\TRule{\False}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  }{
+  \begin{oltableau}
+    [\pFmla{\True}{\Diamond \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\lnot\Diamond\lnot\formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Diamond}[1]}
+          [\pFmla{\True}{\Diamond\lnot\formula{A}}{1},
+            just ={\TRule{\False}{\lnot}[2]}
+            [\pFmla{\True}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\True}{\Diamond}[4]}
+              [\pFmla{\False}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+}}{
+  \begin{oltableau}
+    [\pFmla{\True}{\Diamond \formula{A}}{1}, just = \TAss,name=one
+      [\pFmla{\False}{\Box \formula{A}}{1}, just = \TAss, name=two
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Diamond}[1]}
+          [\pFmla{\False}{\formula{A}}{1.1},
+            just = {\TRule{\False}{\Box}[2]}, close]
+        ]
+      ]
+    ]
+  \end{oltableau}}
+
+\end{document}

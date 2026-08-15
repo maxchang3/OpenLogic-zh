@@ -1,0 +1,46 @@
+% Part: counterfactuals
+% Chapter: introduction
+% Section: material-conditional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{cnt}{int}{mat}
+
+\olsection{实质条件句}
+
+在英语中最简单的形式中，条件句是形如「if \dots then \dots」的语句，其中\dots{}本身是语句，例如「如果管家做了这件事，那么园丁是无辜的。」在入门逻辑课程中，我们学会用 $\lif$ 联结词来符号化条件句：符号化由 \dots 指示的部分，例如用!!{formula} $!A$ 和~$!B$，而整个条件句则符号化为 $!A \lif !B$。
+
+联结词 $\lif$ 是 \emph{真值函项的}（truth-functional），即 $!A \lif !B$ 的真值——$\True$ 或 $\False$——由 $!A$ 和~$!B$ 的真值决定：当 $!A$ 为假或 $!B$ 为真时，$!A \lif !B$ 为真，否则为假。相对于真值指派~$\pAssign v$，我们定义 $\pSat{v}{!A \lif !B}$ 当且仅当 $\pSat/{v}{!A}$ 或 $\pSat{v}{!B}$。具有这种语义的联结词 $\lif$ 被称为 \emph{实质条件句}（material conditional）。
+
+这个定义产生了一系列初等逻辑事实。首先，演绎定理对实质条件句成立：
+\begin{align}
+  \text{如果 } \Gamma, !A \Entails !B \text{ 则 } \Gamma \Entails !A \lif !B
+\end{align}
+它是真值函项的：$!A \lif !B$ 与 $\lnot !A \lor !B$ 等价：
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{实质条件句由其后件，以及由对其前件的否定所衍推：}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{一个为假的实质条件句等价于其前件与其后件的否定的合取：}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{实质条件句支持分离规则：}
+  !A, !A \lif !B & \Entails !B
+  \intertext{实质条件句可聚合：}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{我们总能加强前件，即该条件句是 \emph{单调的}（monotonic）：}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{实质条件句是传递的，即链规则是有效的：}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{实质条件句等价于其逆否命题：}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
+
+这些都是数学推理中有用而无争议的推理。然而，哲学与语言学文献中满是针对非数学语境下相应推理的所谓反例。这些表明，在符号化英语「if \dots then \dots」语句时，实质条件句~$\lif$ 不是——或至少不总是——合适的联结词。
+
+\end{document}

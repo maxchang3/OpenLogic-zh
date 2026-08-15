@@ -1,0 +1,35 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sc}{tru}
+
+\olsection{真值引理}
+
+如下引理把典范模型中的满足与哪些!!{formula}是素集 $\Delta$ 的!!{element}联系起来。
+
+\begin{lem}\ollabel{lem:truth}
+  若 $\Delta$ 是素的，则 $\mSat{M(\Delta)}{!A}[\sigma]$ 当且仅当 $\Delta(\sigma) \Proves !A$。
+\end{lem}
+
+\begin{proof}
+  对~$!A$ 归纳。
+  \begin{enumerate}
+    \item \indcase{!A}{\lfalse}{因 $\Delta(\sigma)$ 是素的，它是一致的，故 $\Delta(\sigma) \Proves/ \indfrm$。按定义，$\mSat/{M(\Delta)}{\indfrm}[\sigma]$。}
+      \item \indcase{!A}{p}{按 $\mSat{{}}{}$ 的定义，$\mSat{M(\Delta)}{\indfrm}[\sigma]$ 当且仅当 $\sigma \in V(p)$，即 $\Delta(\sigma) \Proves \indfrm$。}
+      \item \indcase!{!A}{\lnot !B}{}
+      \item \indcase{!A}{!B \land
+        !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ 当且仅当 $\mSat{M(\Delta)}{!B}[\sigma]$ 且 $\mSat{M(\Delta)}{!C}[\sigma]$。由归纳假设，$\mSat{M(\Delta)}{!B}[\sigma]$ 当且仅当 $\Delta(\sigma) \Proves !B$，对~$!C$ 亦同。但 $\Delta(\sigma) \Proves !B$ 且 $\Delta(\sigma) \Proves !C$ 当且仅当 $\Delta(\sigma) \Proves \indfrm$。}
+      \item \indcase{!A}{!B \lor
+        !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ 当且仅当 $\mSat{M(\Delta)}{!B}[\sigma]$ 或 $\mSat{M(\Delta)}{!C}[\sigma]$。由归纳假设，这成立当且仅当 $\Delta(\sigma) \Proves !B$ 或 $\Delta(\sigma) \Proves !C$。我们必须证明其次成立当且仅当 $\Delta(\sigma) \Proves \indfrm$。从左到右的方向是显然的。从右到左的方向因 $\Delta(\sigma)$ 是素的而成立。}
+      \item \indcase{!A}{!B \lif !C}{先证从左到右方向的逆否命题：设 $\Delta(\sigma) \Proves/ !B \lif !C$。则亦有 $\Delta(\sigma) \cup \{!B\} \Proves/ !C$。因 $\tuple{!B, !C}$ 对某个~$n$ 恰为 $\tuple{!B_n, !C_n}$，我们有 $\Delta(\sigma.n) = (\Delta(\sigma) \cup \{!B\})^*$，且 $\Delta(\sigma.n) \Proves !B$ 但 $\Delta(\sigma.n) \Proves/ !C$。由归纳假设，$\mSat{M(\Delta)}{!B}[\sigma.n]$ 且 $\mSat/{M(\Delta)}{!C}[\sigma.n]$。由于 $R\sigma(\sigma.n)$，这意味着 $\mSat/{M(\Delta)}{\indfrm}[\sigma]$。
+
+        现在设 $\Delta(\sigma) \Proves !B \lif !C$，并令 $R\sigma\sigma'$。由于 $\Delta(\sigma) \subseteq \Delta(\sigma')$，我们有：若 $\Delta(\sigma') \Proves !B$，则 $\Delta(\sigma') \Proves !C$。换言之，对每个满足 $R\sigma\sigma'$ 的 $\sigma'$，要么 $\Delta(\sigma') \Proves/ !B$，要么 $\Delta(\sigma') \Proves !C$。由归纳假设，这意味着当 $R\sigma\sigma'$ 时，要么 $\mSat/{M(\Delta)}{!B}[\sigma']$，要么 $\mSat{M(\Delta)}{!C}[\sigma']$，即 $\mSat{M(\Delta)}{\indfrm}[\sigma]$。}
+  \end{enumerate}
+\end{proof}
+
+\end{document}

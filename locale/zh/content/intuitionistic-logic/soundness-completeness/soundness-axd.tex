@@ -1,0 +1,36 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-axd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sc}{sax}
+
+\olsection{公理推演的可靠性}
+
+\begin{editorial}
+  可靠性证明依赖于所有公理都是直觉主义地有效的这一事实；这一点仍需证明，例如在语义章中进行。
+\end{editorial}
+
+\begin{thm}[可靠性]
+  \ollabel{thm:soundness}
+  如果 $\Gamma \Proves !A$，则 $\Gamma \Entails !A$。
+\end{thm}
+
+\begin{proof}
+  我们证明如果 $\Gamma \Proves !A$，则 $\Gamma \Entails !A$。此证明是对取自 $\Gamma$ 的 $!A$ 之!!{derivation}中的!!{formula}数~$n$ 进行归纳。我们证明：如果 $!A_1$、\dots、$!A_n = !A$ 是取自 $\Gamma$ 的!!a{derivation}，则 $\Gamma \Entails !A_n$。注意，如果 $!A_1$、\dots、$!A_n$ 是!!a{derivation}，那么对于任意 $k<n$，$!A_1$、\dots、$!A_k$ 亦然。
+
+  不存在长度为~$0$ 的!!{derivation}，因此对于 $n=0$，该论断空真地成立。于是该论断对长度~$<n$ 的所有!!{derivation}成立。我们根据 $!A_n$ 的理由来区分情形。
+
+  \begin{enumerate}
+  \item $!A_n$ 是公理。所有公理都是有效的，因此对任意~$\Gamma$，$\Gamma \Entails !A_n$。
+  \item $!A_n \in \Gamma$。则对于任意 $\mModel{M}$ 与 $w$，如果 $\mSat{M}{\Gamma}[w]$，那么显然 $\mSat{M}{\Gamma}{!A_n}[w]$，即 $\Gamma \Entails !A$。
+  \item $!A_n$ 由 \MP{} 从 $!A_i$ 与 $!A_j \ident !A_i \lif !A_n$ 推出。$!A_1$、\dots、$!A_i$ 与 $!A_1$、\dots、$!A_j$ 都是取自 $\Gamma$ 的!!{derivation}，因此由归纳假设，$\Gamma \Entails !A_i$ 且 $\Gamma \Entails !A_i \lif !A_n$。
+
+    设 $\mSat{M}{\Gamma}[w]$。由于 $\mSat{M}{\Gamma}[w]$ 且 $\Gamma \Entails !A_i \lif !A_n$，故 $\mSat{M}{!A_i \lif !A_n}[w]$。根据定义，这意味着对于所有满足 $Rww'$ 的 $w'$，如果 $\mSat{M}{!A_i}[w']$，则 $\mSat{M}{!A_n}[w']$。由于 $R$ 是自反的，$w$ 属于满足 $Rww'$ 的 $w'$ 之列，即我们得到：如果 $\mSat{M}{!A_i}[w]$，则 $\mSat{M}{!A_n}[w]$。由于 $\Gamma \Entails !A_i$，故 $\mSat{M}{!A_i}[w]$。因此，$\mSat{M}{!A_n}[w]$，正如我们欲证的那样。
+  \end{enumerate}
+\end{proof}
+
+\end{document}

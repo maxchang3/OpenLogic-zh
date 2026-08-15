@@ -1,0 +1,83 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-propositional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{axd}{ppr}}
+      {\olfileid[zh]{pl}{axd}{ppr}}
+
+\olsection{\usetoken{S}{derivability}与命题联结词}
+
+\begin{explain}
+  我们要确立公理化推演的!!{derivability}关系~$\Proves$ 足以确立
+  一些涉及命题联结词的基本事实，例如 $!A \land !B
+  \Proves !A$ 以及 $!A, !A \lif !B \Proves !B$（分离规则）。这些
+  事实是证明完全性定理所必需的。
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} $!A \land !B \Proves
+    !A$ 与 $!A \land !B \Proves !B$ 都成立。
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land !B$。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item 由 \olref[prp]{ax:land1} 和 \olref[prp]{ax:land1} 通过分离
+      规则可得。
+  \item 由 \olref[prp]{ax:land3} 经过分离规则的两次运用
+    可得。
+  \end{enumerate}
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B$ 是不一致的。
+  \item $!A \Proves !A \lor !B$ 与 $!B \Proves !A \lor !B$ 都成立。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item 由 \olref[prp]{ax:lnot1} 我们得到 $\Proves \lnot !A \lif (!A
+    \lif \lfalse)$ 和 $\Proves \lnot !B \lif (!B \lif \lfalse)$。于是
+    由演绎定理，我们有 $\{\lnot !A\} \Proves !A \lif
+    \lfalse$ 和 $\{\lnot !B\} \Proves !B \lif \lfalse$。由
+    \olref[prp]{ax:lor3} 我们得到 $\{\lnot !A, \lnot !B\} \Proves (!A
+    \lor !B) \lif \lfalse$。由演绎定理，$\{!A \lor !B,
+    \lnot !A, \lnot !B\} \Proves \lfalse$。
+  \item 由 \olref[prp]{ax:lor1} 和 \olref[prp]{ax:lor2} 通过分离
+    规则可得。
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left}  $!A, !A \lif !B \Proves !B$。
+  \item \ollabel{prop:provability-lif-right}
+    $\lnot !A \Proves !A \lif !B$ 与 $!B \Proves !A \lif !B$ 都成立。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item 我们可以!!{derive}：
+    \begin{derivation}
+      1. & $!A$ & \Hyp\\
+      2. & $!A \lif !B$ & \Hyp\\
+      3. & $!B$ & 1, 2, \MP
+    \end{derivation}
+
+  \item 分别由 \olref[prp]{ax:lnot2}、\olref[prp]{ax:lif1} 和
+    演绎定理可得。
+  \end{enumerate}
+\end{proof}
+
+\end{document}

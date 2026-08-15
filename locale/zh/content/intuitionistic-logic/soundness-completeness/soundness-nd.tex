@@ -1,0 +1,140 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-nd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sc}{snd}
+
+\olsection{自然演绎的可靠性}
+
+现在我们针对关系语义证明自然演绎的可靠性，即证明：若!!a{formula}可从一组假设中!!{derivable}，则这组假设衍推该!!{formula}。
+
+\begin{thm}[可靠性]
+  \ollabel{thm:soundness}
+  若 $\Gamma \Proves !A$，则 $\Gamma \Entails !A$。
+\end{thm}
+
+\begin{proof}
+  我们证明若 $\Gamma \Proves !A$，则 $\Gamma \Entails !A$。
+  证明对~$!A$ 从~$\Gamma$
+  出发的!!{derivation}作归纳。
+
+  \begin{enumerate}
+  \item 若该!!{derivation}仅由假设~$!A$ 构成，则我们
+    有 $!A \Proves !A$，并要证明 $!A \Entails !A$。
+    设 $\mSat{M}{!A}[w]$。则平凡地 $\mSat{M}{!A}[w]$。
+
+  \item 该!!{derivation}以 $\Intro{\land}$ 结束：
+    \iftag{probAnd}{习题。}{各前提 $!B$ 从!!{undischarged}假设~$\Gamma$ 出发的!!{derivation}以及 $!C$ 从!!{undischarged}假设~$\Delta$ 出发的推演表明 $\Gamma \Proves
+      !B$ 且 $\Delta \Proves !C$。由归纳假设我们得到
+      $\Gamma \Entails !B$ 且 $\Delta \Entails !C$。我们需要
+      证明 $\Gamma \cup \Delta \Entails !A \land !B$，因为整个!!{derivation}的!!{undischarged}假设是
+      $\Gamma$ 与 $\Delta$ 合在一起。所以设 $\mSat{M}{\Gamma
+        \cup \Delta}[w]$。则也有 $\mSat{M}{\Gamma}[w]$。由于 $\Gamma
+      \Entails !B$，故 $\mSat{M}{!B}[w]$。类似地，$\mSat{M}{!C}[w]$。所以
+      $\mSat{M}{!B \land !C}[w]$。}
+
+  \item 该!!{derivation}以 $\Elim{\land}$ 结束：
+    \iftag{probAnd}{习题。}{前提 $!B
+        \land !C$ 从!!{undischarged}假设 $\Gamma$ 出发的!!{derivation}表明 $\Gamma \Proves !B \land !C$。由归纳假设，
+        $\Gamma \Entails !B \land !C$。我们需要证明 $\Gamma
+        \Entails !B$。所以设 $\mSat{M}{\Gamma}[w]$。由于 $\Gamma
+        \Entails !B \land !C$，故 $\mSat{M}{!B \land !C}[w]$。则也有
+        $\mSat{M}{!B}[w]$。类似地，若 $\Elim\land$ 以~$!C$ 结束，则
+        $\Gamma \Entails !C$。}
+
+  \item 该!!{derivation}以 $\Intro{\lor}$ 结束:
+    \iftag{probOr}{习题。}{设前提是 $!B$，且以
+      ~$!B$ 结尾的!!{derivation}的!!{undischarged}假设
+      是 $\Gamma$。于是我们得到 $\Gamma \Proves !B$ 并且由
+      归纳假设，$\Gamma \Entails !B$。我们需要证明
+      $\Gamma \Entails !B \lor !C$。设 $\mSat{M}{\Gamma}[w]$。由于
+      $\Gamma \Entails !B$，故 $\mSat{M}{!B}[w]$。但那么也有 $\mSat{M}{!B
+        \lor !C}[w]$。类似地，若前提是~$!C$，则我们有
+      $\Gamma \Entails !C$。}
+
+  \item 该!!{derivation}以~$\Elim{\lor}$ 结束：
+    \iftag{probOr}{习题。}{以各前提结尾的!!{derivation}分别是 $!B \lor !C$ 从!!{undischarged}假设~$\Gamma$ 出发、$!D$ 从!!{undischarged}假设
+      $\Delta_1 \cup \{!B\}$ 出发，以及 $!D$ 从!!{undischarged}假设
+      ~$\Delta_2 \cup \{!C\}$ 出发。因此我们有 $\Gamma \Proves
+      !B \lor !C$、$\Delta_1 \cup \{!B\} \Proves !D$ 以及 $\Delta_2
+      \cup \{!C\} \Proves !D$。由归纳假设，$\Gamma
+      \Entails !B \lor !C$、$\Delta_1 \cup \{!B\} \Entails !D$ 以及
+      $\Delta_2 \cup \{!C\} \Entails !D$。我们需要证明
+      $\Gamma \cup \Delta_1 \cup \Delta_2 \Entails !D$。
+
+    设 $\mSat{M}{\Gamma \cup \Delta_1 \cup \Delta_2}[w]$。则
+    $\mSat{M}{\Gamma}[w]$，并且由于 $\Gamma \Entails !B \lor !C$，
+    有 $\mSat{M}{!B \lor !C}[w]$。根据 $\mSat{M}{}$ 的定义，要么
+    $\mSat{M}{!B}[w]$ 要么 $\mSat{M}{!C}[w]$。因此我们分情形讨论：
+    (a)~$\mSat{M}{!B}$[w]。则 $\mSat{M}{\Delta_1 \cup \{!B\}}[w]$。
+    因为 $\Delta_1 \cup !B \Entails !D$，我们有 $\mSat{M}{!D}[w]$。
+    (b)~$\mSat{M}{!C}[w]$。则 $\mSat{M}{\Delta_2 \cup \{!C\}}[w]$。
+    因为 $\Delta_2 \cup !C \Entails !D$，我们有 $\mSat{M}{!D}[w]$。因此
+    在任一种情形下都有 $\mSat{M}{!D}[w]$，正如我们要证明的。}
+
+  \item 该!!{derivation}以 $\Intro{\lif}$ 结束，得出结论~$!B\lif
+    !C$。则前提是~$!C$，并且以该前提结尾的!!{derivation}具有!!{undischarged}假设~$\Gamma \cup
+    \{!B\}$。于是我们有 $\Gamma \cup \{!B\} \Proves !C$，并且由
+    归纳假设可得 $\Gamma \cup \{!B\} \Entails !C$。我们
+    需要证明 $\Gamma \Entails !B \lif !C$。
+
+    设 $\mSat{M}{\Gamma}[w]$。我们要证明对一切
+    满足 $Rww'$ 的 $w'$，若 $\mSat{M}{!B}[w']$，则
+    $\mSat{M}{!C}[w']$。所以假设 $Rww'$ 且
+    $\mSat{M}{!B}[w']$。由 \olref[sem][rel]{prop:true-monotonic}，
+    $\mSat{M}{\Gamma}[w']$。由于 $\Gamma \cup \{!B\} \Entails !C$，
+    有 $\mSat{M}{!C}[w']$，这正是我们要证明的。
+
+  \item 该!!{derivation}以 $\Elim{\lif}$ 结束，结论
+    是~$!C$。前提是 $!B \lif !C$ 与 $!B$，它们分别有从!!{undischarged}假设 $\Gamma$、
+    $\Delta$ 出发的!!{derivation}。因此我们有 $\Gamma \Proves !B \lif !C$ 且 $\Delta
+    \Proves !B$。由归纳假设，$\Gamma \Entails !B \lif !C$
+    且 $\Delta \Entails !B$。我们需要证明 $\Gamma \cup \Delta
+    \Entails !C$。
+
+    设 $\mSat{M}{\Gamma \cup \Delta}[w]$。由于
+    $\mSat{M}{\Gamma}[w]$ 且 $\Gamma \Entails !B \lif !C$，
+    有 $\mSat{M}{!B \lif !C}[w]$。根据定义，这意味着对一切
+    满足 $Rww'$ 的 $w'$，若 $\mSat{M}{!B}[w']$ 则
+    $\mSat{M}{!C}[w']$。由于 $R$ 是自反的，$w$ 属于满足 $Rww'$ 的 $w'$
+    之中，即我们有：若 $\mSat{M}{!B}[w]$ 则
+    $\mSat{M}{!C}[w]$。由于 $\mSat{M}{\Delta}[w]$ 且 $\Delta
+    \Entails !B$，故 $\mSat{M}{!B}[w]$。于是 $\mSat{M}{!C}[w]$，正如我们
+    所要证明的。
+
+  \item 该!!{derivation}以 $\FalseInt$ 结束，结论是~$!A$。
+    前提是 $\lfalse$，且该前提的!!{derivation}的!!{undischarged}假设是~$\Gamma$。于是 $\Gamma \Proves
+    \lfalse$。由归纳假设，$\Gamma \Entails \lfalse$。我们
+    需要证明 $\Gamma \Entails !A$。
+
+    我们用反证法。若 $\Gamma \Entails/ !A$，则存在一个
+    模型~$\mModel{M}$ 与世界~$w$ 使得 $\mSat{M}{\Gamma}[w]$
+    且 $\mSat/{M}{!A}[w]$。由于 $\Gamma \Entails \lfalse$，
+    有 $\mSat{M}{\lfalse}[w]$。但这是不可能的，因为根据
+    定义，$\mSat/{M}{\lfalse}[w]$。所以 $\Gamma \Entails !A$。
+  \item 该!!{derivation}以 $\Intro\lnot$ 结束：习题。
+  \item 该!!{derivation}以 $\Elim\lnot$ 结束：习题。
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  完成 \olref[int][sc][snd]{thm:soundness} 的证明。对于
+  $\Intro\lnot$ 与 $\Elim\lnot$ 的情形，使用
+  \olref[int][sem][rel]{defn:true-at-w} 中 $\mSat{M}{\lnot !A}[w]$ 的定义，
+  即不要把 $\lnot !A$ 当作由 $!A \lif \lfalse$ 定义的。
+\end{prob}
+
+\begin{prob}
+  证明下列!!{formula}在直觉主义逻辑中不可!!{derivable}：
+  \begin{enumerate}
+    \item $(!A \lif !B) \lor (!B \lif !A)$
+    \item $(\lnot\lnot !A \lif !A) \lif (!A \lor \lnot !A)$
+    \item $(!A \lif !B \lor !C) \lif \bigl((!A \lif !B)\lor(!A \lif !C)\bigr)$
+  \end{enumerate}
+\end{prob}
+
+\end{document}

@@ -1,0 +1,71 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{aml}{el}{lan}
+
+\olsection{认知逻辑的语言}
+
+\begin{defn}
+设 $G$ 是一组主体符号。多主体认知逻辑的基本语言包含
+\begin{enumerate}
+  \tagitem{prvFalse}{!!{falsity}的命题常元~$\lfalse$。}{}
+  \tagitem{prvTrue}{!!{truth}的命题常元~$\ltrue$。}{}
+  \item 一组可数的!!{propositional variable}：$\Obj
+    p_0$，$\Obj p_1$，$\Obj p_2$，\dots
+  \item 命题联结词：\startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$（否定）}{}%
+  \iftag{prvAnd}{\ycomma $\land$（合取）}{}%
+  \iftag{prvOr}{\ycomma $\lor$（析取）}{}%
+  \iftag{prvIf}{\ycomma $\lif$（!!{conditional}）}{}%
+  \iftag{prvIff}{\ycomma $\liff$（!!{biconditional}）}{}。
+  \item 知识算子 $\Knows_a$，其中 $a \in G$。
+\end{enumerate}
+\end{defn}
+
+如果我们系统中只关心单一主体的知识，就可以省略对集合~$G$ 以及对各主体的提及。此时，我们只有基本算子~$\Knows$。
+
+\begin{defn}
+  认知语言的 \emph{!!^{formula}s} 归纳地定义如下：
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ 是原子!!{formula}。}{}
+
+\tagitem{prvTrue}{$\ltrue$ 是原子!!{formula}。}{}
+
+\item 每个命题变元 $\Obj p_i$ 都是（原子的）!!{formula}。
+
+\tagitem{prvNot}{若 $!A$ 是!!a{formula}，则 $\lnot !A$ 是!!a{formula}。}{}
+
+\tagitem{prvAnd}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \land
+  !B)$ 是!!a{formula}。}{}
+
+\tagitem{prvOr}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lor !B)$
+  是!!a{formula}。}{}
+
+\tagitem{prvIf}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lif !B)$
+  是!!a{formula}。}{}
+
+\tagitem{prvIff}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \liff !B)$
+  是!!a{formula}。}{}
+
+\item 若 $!A$ 是!!a{formula}且 $a \in G$，则 $\Knows_a !A$ 是!!a{formula}。
+
+\tagitem{limitClause}{没有其他!!a{formula}。}{}
+\end{enumerate}
+\end{defn}
+
+若!!a{formula}~$!A$ 不包含 $\Knows_a$，则称它是\emph{无模态的}。
+
+\begin{defn}
+  $\Knows$ 算子旨在符号化个体知识，而 $\EKnows$（常读作「人人知道」）符号化群体知识。当 $G' \subseteq G$ 时，我们把 $\EKnows_{G'} !A$
+ 定义为如下合取的缩写：\[\bigwedge_{b \in G'} \Knows_b !A.\]
+\end{defn}
+
+我们还可以定义一种更强的知识观念，即一组主体~$G$ 之间的
+\emph{公共知识}。当一条信息是一组主体之间的公共知识时，它意味着对于该群体中主体的每一种组合，他们都彼此知道对方彼此知道……如此无限延伸。这显著强于群体知识，而且很容易构造出一些关系模型，在其中!!a{formula}是群体知识，却不是公共知识。我们将用 $\CKnows_G !A$ 来符号化「$!A$ 在~$G$ 中是公共知识」。
+
+\end{document}

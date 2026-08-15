@@ -1,0 +1,41 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: axiomatic-deduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{prf}{axd}}
+      {\olfileid[zh]{pl}{prf}{axd}}
+
+\olsection{公理化\usetoken{P}{derivation}}
+
+公理化!!{derivation}是最古老也最简朴的逻辑!!{derivation}系统。它的!!{derivation}就是!!{sentence}的序列。若一个!!{sentence}序列中的每个!!{sentence}~$!A$ 都满足下列条件之一，则它算作一个正确的!!{derivation}：
+\begin{enumerate}
+\item $!A$ 是一个公理，或
+\item $!A$ 是给定!!{sentence}集~$\Gamma$ 的!!a{element}，或
+\item $!A$ 由某条推理规则来证成。
+\end{enumerate}
+要成为公理，$!A$ 必须具有若干固定!!{sentence}模式之一的形式。有许多公理模式集都为一阶逻辑提供了令人满意的（可靠且完全的）!!{derivation}系统。有些按它们所管辖的联结词来组织，例如，模式
+\[
+!A \lif (!B \lif !A) \qquad !B \lif (!B \lor !C) \qquad (!B \land !C) \lif !B
+\]
+就是分别管辖 $\lif$、$\lor$ 和~$\land$ 的常见公理。有些公理系统以公理数目最少为目标。视被当作初始对象的联结词而定，甚至可能找到只含一个公理的公理系统。
+
+推理规则是一个条件陈述，它给出!!a{derivation}中!!a{sentence}得以证成的充分条件。分离规则就是一条非常常见的这类规则：它说若 $!A$ 和 $!A \lif !B$ 已被证成，则 $!B$ 亦被证成。这意味着只要 $!A$ 和 $!A \lif !B$（对某个!!{sentence}~$!A$）都出现在!!{derivation}中~$!B$ 之前，则其中含!!{sentence}~$!B$ 的那一行就被证成。
+
+基于公理化!!{derivation}的 $\Proves$ 关系定义如下：$\Gamma \Proves !A$，当且仅当存在一个以!!{sentence}~$!A$ 为末行的!!{derivation}（并将 $\Gamma$ 视为该!!{derivation}中由上述 (2) 所证成的!!{sentence}之集合）。$!A$ 是定理，若~$!A$ 有一个其中~$\Gamma$ 为空的!!{derivation}，即!!{derivation}中每个!!{sentence}要么由 (1) 要么由~(3) 证成。例如，下面是证明 $\Proves !A \lif (!B \lif (!B \lor !A))$ 的一个!!{derivation}：
+\begin{derivation}
+  1. & $!B \lif (!B \lor !A)$ \\
+  2. & $(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))$\\
+  3. & $!A  \lif (!B \lif (!B \lor !A))$
+\end{derivation}
+第~1 行的!!{sentence}具有公理 $!A \lif (!A \lor !B)$ 的形式（只是 $!A$ 与 $!B$ 的角色对调了）。第~2 行的语句具有公理 $!A \lif (!B \lif !A)$ 的形式。因此，这两行都被证成。第~3 行由分离规则证成：若我们将它缩写成 $!D$，则第~2 行具有 $!C \lif !D$ 的形式，其中 $!C$ 即 $!B \lif (!B \lor !A)$，也就是第~1 行。
+
+集合 $\Gamma$ 是不一致的，若 $\Gamma \Proves \lfalse$。完全的公理系统还会证明对任意~$!A$ 有 $\lfalse \lif !A$，因此若 $\Gamma$ 是不一致的，则对任意~$!A$ 有 $\Gamma \Proves !A$。
+
+逻辑的公理化!!{derivation}系统最早由戈特洛布·弗雷格在他 1879 年的 \emph{Begriffsschrift}（《概念文字》）中给出，正因如此，该书常被视为现代逻辑的开山之作。这些系统在阿尔弗雷德·诺斯·怀特海与伯特兰·罗素的 \emph{Principia Mathematica}（《数学原理》）中，以及 1920 年代大卫·希尔伯特及其学生们那里得到了完善。它们因此常被称作「Frege 系统」或「Hilbert 系统」。它们之所以非常通用，是因为往往很容易为一种逻辑找到公理系统。由于!!{derivation}的结构非常简单且只有一两条推理规则，所以也相对容易证明关于它们的结论。然而，它们实践起来很难用，即难以找出并写出证明。
+
+\end{document}

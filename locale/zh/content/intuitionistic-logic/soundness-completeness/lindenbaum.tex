@@ -1,0 +1,135 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: lindenbaum
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sc}{lin}
+
+\olsection{Lindenbaum 引理}
+
+直觉主义逻辑的完全性定理是通过假设 $\Gamma \Proves/ !A$
+并构造一个模型 $\mSat{M}{\Gamma}$ 且 $\mSat/{M}{!A}$ 来证明的。
+
+在经典逻辑中，!!{derivability}关系可以归结为一致性概念，因为!!a{formula}~$!A$ 从一组!!{formula}推演得出，当且仅当这组公式连同~$!A$
+的否定是不一致的。这在直觉主义逻辑中是不可能成立的。
+在直觉主义逻辑中，如果 $\lnot!A$ 不一致，我们只能得到
+$\Proves \lnot\lnot !A$。由于 $\lnot\lnot!A \lif !A$ 在直觉主义意义下一般来说并不
+成立，我们不能由此推出~$\Proves !A$。
+
+因此，在构造模型~$\mModel{M}$ 时，我们需要追踪!!{formula}~$!A$
+的不可!!{derivability}，因而无法使用一个完全的集合
+$\Gamma^* \supseteq \Gamma$ 来构造模型 $\mModel{M}$，因为在每个完全的集合
+$\Gamma^*$ 中，我们都
+有 $\Gamma^* \Proves !A \lor \lnot !A$。
+
+我们不用完全的集合~$\Gamma^*$，而是使用公式的素集合这一概念：
+
+\begin{defn}\ollabel{defn:prime}
+  一组!!{formula}~$\Gamma$ 是 \emph{素的}，当且仅当
+  \begin{enumerate}
+  \item\ollabel{defn:prime1} $\Gamma$ 是一致的，即 $\Gamma \Proves/ \lfalse$；
+  \item\ollabel{defn:prime2} 若 $\Gamma \Proves !A$，则 $!A \in \Gamma$；且
+  \item\ollabel{defn:prime3} 若 $!A \lor !B \in \Gamma$，则 $!A \in
+    \Gamma$ 或 $!B \in \Gamma$。
+  \end{enumerate}
+\end{defn}
+
+\begin{lem}[Lindenbaum 引理]
+  \ollabel{lem:lindenbaum} 若 $\Gamma \Proves/ !A$，则存在一个
+  $\Gamma^* \supseteq \Gamma$，使得 $\Gamma^*$ 是素的且
+  $\Gamma^* \Proves/ !A$。
+\end{lem}
+
+\begin{proof}
+  设 $!B_1 \lor !C_1$、$!B_2 \lor !C_2$、\dots 是
+  所有形如~$!B \lor !C$ 的!!{formula}的一个枚举。我们将定义一组
+  递增的!!{formula}集合序列~$\Gamma_n$，其中每个 $\Gamma_{n+1}$
+  定义为 $\Gamma_n$ 加上一个新的!!{formula}。$\Gamma^*$ 将是所有~$\Gamma_n$
+  的并。新的!!{formula}的选择要确保 $\Gamma^*$ 是素的且仍然有
+  $\Gamma^* \Proves/ !A$。这意味着在每一步我们
+  都应找到第一个这样的析取式~$!B_i \lor !C_i$：
+  \begin{enumerate}
+  \item\ollabel{gamma-1} $\Gamma_n \Proves !B_i \lor !C_i$
+  \item\ollabel{gamma-2} $!B_i \notin \Gamma_n$ 且 $!C_i \notin \Gamma_n$
+  \end{enumerate}
+  我们向 $\Gamma_n$ 添加 $!B_i$（若 $\Gamma_n \cup \{!B_i\}
+  \Proves/ !A$），否则添加 $!C_i$。我们将需证明这是可行的。眼下，我们定义
+  $i(n)$ 为使 \olref{gamma-1} 与~\olref{gamma-2}
+  成立的最小 $i$。
+
+  定义 $\Gamma_0 = \Gamma$，且
+  \[
+  \Gamma_{n+1} = \begin{cases}
+    \Gamma_n \cup \{!B_{i(n)}\} &
+    \text{如果 $\Gamma_n \cup \{!B_{i(n)}\} \Proves/ !A$} \\
+    \Gamma_n \cup \{!C_{i(n)}\} & \text{否则}
+    \end{cases}
+  \]
+  若 $i(n)$ 无定义，即每当 $\Gamma_n \Proves !B \lor !C$ 时，
+  总归 $!B \in \Gamma_n$ 或 $!C \in \Gamma_n$，我们就令 $\Gamma_{n+1}
+  = \Gamma_n$。现在设 $\Gamma^* = \bigcup_{n=0}^\infty \Gamma_n$
+
+  首先我们证明对所有 $n$，都有 $\Gamma_n \Proves/ !A$。我们对~$n$
+  进行归纳。对于 $n = 0$，该断言由定理的假设成立，即 $\Gamma \Proves/ !A$。
+  若 $n>0$，我们必须证明若 $\Gamma_n \Proves/ !A$，则 $\Gamma_{n+1} \Proves/ !A$。若
+  $i(n)$ 无定义，则 $\Gamma_{n+1} = \Gamma_n$，没有要
+  证明的东西。所以设 $i(n)$ 有定义。为简便起见，令 $i =
+  i(n)$。
+
+  我们将证明该断言的逆否命题。设 $\Gamma_{n+1}
+  \Proves !A$。由构造，若 $\Gamma_n \cup \{!B_i\} \Proves/ !A$，则
+  $\Gamma_{n+1} = \Gamma_n \cup \{!B_i\}$，否则 $\Gamma_{n+1} =
+  \Gamma_n \cup \{!C_i\}$。显然不可能是第一种情形，
+  因为那样就有 $\Gamma_{n+1} \Proves/ !A$。于是，$\Gamma_n \cup
+  \{!B_i\} \Proves !A$ 且 $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\}$。
+  由 $i(n)$ 的定义可得 $\Gamma _n \Proves !B_i \lor
+  !C_i$。我们有 $\Gamma_n \cup \{!B_i\} \Proves !A$，也有
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\} \Proves !A$。因此，$\Gamma_n
+  \Proves !A$，这正是我们要证明的。
+
+  若 $\Gamma^* \Proves !A$，则存在某个有穷子集 $\Gamma'
+  \subseteq \Gamma^*$，使得 $\Gamma' \Proves !A$。每个 $!D \in
+  \Gamma'$ 必属于某个~$i$ 的 $\Gamma_i$。令 $n$ 为其中最大者。
+  由于若 $i \le n$ 则 $\Gamma_i \subseteq \Gamma_n$，故 $\Gamma'
+  \subseteq \Gamma_n$。但那样就有 $\Gamma_n \Proves !A$，这与我们
+  上面已证 $\Gamma_n \Proves/ !A$ 相矛盾。
+
+  最后，我们证明 $\Gamma^*$ 是素的，即满足 \olref{defn:prime}
+  的 \olref{defn:prime1}、\olref{defn:prime2} 与~\olref{defn:prime3} 这些条件。
+
+  首先，$\Gamma^* \Proves/ !A$，所以 $\Gamma^*$ 是
+  一致的，故 \olref{defn:prime1} 成立。
+
+  我们现在证明：若 $\Gamma^* \Proves !B \lor !C$，则 $!B
+  \in \Gamma^*$ 或 $!C \in \Gamma^*$。这证明了 \olref{defn:prime3}，
+  因为若 $!B \lor !C \in \Gamma^*$，那么也有 $\Gamma^* \Proves !B
+  \lor !C$。所以假设 $\Gamma^* \Proves !B \lor !C$，但 $!B
+  \notin \Gamma^*$ 且 $!C \notin \Gamma^*$。由于 $\Gamma^* \Proves
+  !B \lor !C$，对某个~$n$ 有 $\Gamma_n \Proves !B \lor !C$。$!B \lor
+  !C$ 出现在所有析取式的枚举中，不妨记为 $!B_j
+  \lor !C_j$。$!B_j \lor !C_j$ 满足 $i(n)$ 定义中的性质，即我们有
+  $\Gamma_n \Proves !B_j \lor !C_j$，而 $!B_j \notin \Gamma_n$ 且
+  $!C_j \notin \Gamma_n$。在
+  每一步，满足这些条件的析取式 $!B_i \lor !C_i$
+  至少少一个（因为在每一步我们要么添加 $!B_i$
+  要么添加 $!C_i$），所以在某个阶段~$m$ 我们将有 $j = i(m)$。但
+  那样就有 $!B \in \Gamma_{m+1}$ 或 $!C \in \Gamma_{m+1}$，这与
+  $!B \notin \Gamma^*$ 且 $!C \notin \Gamma^*$
+  的假设矛盾。
+
+  现在假设 $\Gamma^* \Proves !B$。于是 $\Gamma^* \Proves !B \lor
+  !B$。而我们已经证明，若 $\Gamma^* \Proves !B \lor !B$，
+  则 $!B \in \Gamma^*$。因此，$\Gamma^*$
+  满足~\olref{defn:prime} 的~\olref{defn:prime2}。
+\end{proof}
+
+\begin{prob}
+证明：若 $\Gamma \Proves/ \bot$，则 $\Gamma$ 在
+经典逻辑中是一致的，即存在一个赋值使所有 $\Gamma$ 中的公式
+为真。
+\end{prob}
+
+\end{document}

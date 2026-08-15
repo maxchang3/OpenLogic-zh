@@ -1,0 +1,64 @@
+% Section: truth-in-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{syn}{tru}
+
+\olsection{在模型中为真}
+
+有时我们关心在给定模型中的每个世界处为真的!!{formula}有哪些。让我们为此引入一个记号。
+
+\begin{defn}
+  !!^a{formula}~$!A$ 在模型 $M = \tuple{W, R,
+    V}$ 中为 \emph{真}（记为 $\mSat{M}{!A}$），当且仅当对每个 $w \in W$，都有 $\mSat{M}{!A}[w]$。
+\end{defn}
+
+\begin{prop}\ollabel{prop:truthfacts}
+  \begin{enumerate}
+  \item 若 $\mSat{M}{!A}$，则 $\mSat/{M}{\lnot !A}$，但\emph{反之不然}。
+  \item 若 $\mSat{M}{!A \lif !B}$，则 $\mSat{M}{!A}$ 仅当 $\mSat{M}{!B}$，但\emph{反之不然}。
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item 若 $\mSat{M}{!A}$，则 $!A$ 在 $W$ 中的所有世界处为真；由于 $W \neq \emptyset$，不可能有 $\mSat{M}{\lnot!A}$，否则 $!A$ 就得在某个世界处既真又假。
+
+    另一方面，若 $\mSat/{M}{\lnot !A}$，则 $!A$ 在某个世界 $w \in W$ 处为真。这并不蕴含对\emph{每个}~$w \in W$ 都有 $\mSat{M}{!A}[w]$。例如，在 \olref[rel]{fig:simple} 的模型中，$\mSat/{M}{\lnot p}$，同时也有 $\mSat/{M}{p}$。
+  \item 假设 $\mSat{M}{!A \lif !B}$ 且 $\mSat{M}{!A}$；为证明 $\mSat{M}{!B}$，令 $w \in W$ 是任意世界。则 $\mSat{M}{!A \lif !B}[w]$ 且 $\mSat{M}{!A}[w]$，于是 $\mSat{M}{!B}[w]$，由于 $w$ 是任意的，故 $\mSat{M}{!B}$。
+
+    为证明反向不成立，我们需要找到一个模型 $\mModel{M}$，使得 $\mSat{M}{!A}$ 仅当 $\mSat{M}{!B}$，但 $\mSat/{M}{!A \lif !B}$。再考虑 \olref[rel]{fig:simple} 的模型：$\mSat/{M}{p}$，因此（空真地）$\mSat{M}{p}$ 仅当 $\mSat{M}{q}$。然而，$\mSat/{M}{p \lif
+      q}$，因为在~$w_1$ 处 $p$ 为真而 $q$ 为假。
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  考虑下列语言 $\mModel{M}$ 的模型，该语言只包含 $p_1$、$p_2$、$p_3$ 作为!!{propositional variable}：
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]left:\mTrue{p_1}\\\mFalse{p_2}\\\mFalse{p_3}}]
+            {$w_1$} ;
+      \node[world] (w2) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mFalse{p_3}},
+        below right=of w1]  {$w_2$};
+      \node[world] (w3) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mTrue{p_3}},
+        above right=of w2] {$w_3$};
+      \draw[reflexive above] (w3) to (w3);
+      \draw[->] (w1) to (w2);
+      \draw[->] (w2) to (w3);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  下列!!{formula}和模式在模型 $\mModel{M}$ 中为真吗，即在 $\mModel{M}$ 中的每个世界处都为真吗？请解释。
+  \begin{enumerate}
+  \item $p\lif \Diamond p$（$p$ 为原子）；
+  \item $!A\lif \Diamond !A$（$!A$ 任意）；
+  \item $\Box p \lif p$（$p$ 为原子）；
+  \item $\lnot p \lif \Diamond \Box p$（$p$ 为原子）；
+  \item $\Diamond \Box !A$（$!A$ 任意）；
+  \item $\Box \Diamond p$（$p$ 为原子）。
+  \end{enumerate}
+\end{prob}
+
+\end{document}

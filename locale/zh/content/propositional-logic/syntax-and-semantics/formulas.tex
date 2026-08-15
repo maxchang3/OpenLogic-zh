@@ -1,0 +1,147 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{pl}{syn}{fml}
+
+\olsection{命题逻辑的\usetoken{P}{formula}}
+
+命题逻辑的 !!^{formula} 由
+\emph{!!{propositional
+    variable}}\iftag{prvFalse}{\iftag{prvTrue}{，}{和}命题常元~$\lfalse$}{}\iftag{prvTrue}{\iftag{prvFalse}{
+    和}{}命题常元~$\ltrue$}{} 借助\emph{逻辑联结词}构成。
+
+\begin{enumerate}
+\item !!^a{denumerable}命题变元集~$\PVar$，即 $\Obj p_0$、
+  $\Obj p_1$、\dots 等!!{propositional variable}。
+\tagitem{prvFalse}{用于\ !!{falsity}的命题常元~$\lfalse$。}{}
+\tagitem{prvTrue}{用于\ !!{truth}的命题常元~$\ltrue$。}{}
+\item 逻辑联结词：
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$（否定）}{}%
+  \iftag{prvAnd}{\ycomma $\land$（合取）}{}%
+  \iftag{prvOr}{\ycomma $\lor$（析取）}{}%
+  \iftag{prvIf}{\ycomma $\lif$（!!{conditional}）}{}%
+  \iftag{prvIff}{\ycomma $\liff$（!!{biconditional}）}{}%
+\item 标点符号：(、) 以及逗号。
+\end{enumerate}
+
+我们用 $\Lang L_0$ 表示这个命题逻辑语言。
+
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+除上面引入的初始联结词外，我们还使用下列\emph{定义的}符号：
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$（否定）}{}%
+  \iftag{defAnd}{\ycomma $\land$（合取）}{}%
+  \iftag{defOr}{\ycomma $\lor$（析取）}{}%
+  \iftag{defIf}{\ycomma $\lif$（!!{conditional}）}{}%
+  \iftag{defIff}{\ycomma $\liff$（!!{biconditional}）}{}%
+  \iftag{defFalse}{\ycomma $\lfalse$（!!{falsity}）}{}%
+  \iftag{defTrue}{\ycomma $\ltrue$（!!{truth}）}}{}。
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{explain}
+定义的符号并不是正式属于该语言的符号，而是作为一种非正式缩写引入的：它使我们得以缩写那些若只用初始符号就会变得相当长的公式。这显然是一种好处。然而更大的好处在于，证明会变得更短。如果一个符号是初始的，那么它在证明中就必须单独处理。因此，初始符号越多，我们的证明就越长。
+\end{explain}
+\end{tagblock}
+
+% Alternate symbols
+
+\begin{intro}
+你可能熟悉与我们上面所用不同的术语和符号。逻辑教科书（和老师们）通常使用 $\sim$、$\neg$ 以及~$!$ 来表示「negation」，用 $\wedge$、$\cdot$ 和~$\&$ 来表示「conjunction」。「conditional」或「implication」常用的符号是 $\rightarrow$、$\Rightarrow$ 和~$\supset$。
+\iftag{prvIff,defIff}{「biconditional」「bi-implication」或「(material) equivalence」的符号是 $\leftrightarrow$、
+  $\Leftrightarrow$ 和~$\equiv$。}{}
+\iftag{prvFalse,defFalse}{$\lfalse$ 符号有不同的叫法：
+  「falsity」「falsum」「absurdity」或「bottom」。}{}
+\iftag{prvTrue,defTrue}{$\ltrue$ 符号有不同的叫法：
+  「truth」「verum」或「top」。}{}
+\end{intro}
+
+\begin{defn}[公式]
+\ollabel{defn:formulas}
+命题逻辑的 \emph{!!{formula}} 的集合~$\Frm[L_0]$ 归纳定义如下：
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ 是一个原子!!{formula}。}{}
+
+\tagitem{prvTrue}{$\ltrue$ 是一个原子!!{formula}。}{}
+
+\item 每个命题变元~$\Obj p_i$ 都是一个原子!!{formula}。
+
+\tagitem{prvNot}{若 $!A$ 是一个!!{formula}，则 $\lnot !A$ 是一个!!{formula}。}{}
+
+\tagitem{prvAnd}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \land
+  !B)$ 是一个!!{formula}。}{}
+
+\tagitem{prvOr}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lor !B)$
+  是一个!!{formula}。}{}
+
+\tagitem{prvIf}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lif !B)$
+  是一个!!{formula}。}{}
+
+\tagitem{prvIff}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \liff !B)$
+  是一个!!{formula}。}{}
+
+\tagitem{limitClause}{除此之外没有别的!!{formula}。}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+!!{formula}的定义是一个
+\emph{归纳定义}。本质上，我们是在无穷多个阶段中构造!!{formula}的集合的。在初始阶段，我们判定所有原子公式都是公式；这对应于定义中的最初几个情形，即
+\iftag{prvTrue}{$\ltrue$， }{}%
+\iftag{prvFalse}{$\lfalse$， }{}%
+$\Obj p_i$ 的情形。「原子!!{formula}」
+因此意指任何这种形式的!!{formula}。
+
+定义中的其他情形给出了由已经构造出的!!{formula}构造新的!!{formula}的规则。在第二阶段，我们可以用它们由原子!!{formula}构造!!{formula}。在第三阶段，我们由原子公式以及在第二阶段得到的那些公式构造新的公式，如此等等。一个!!{formula}就是在某一这样的阶段最终构造出的任何东西，此外没有别的。
+\end{explain}
+
+当我们用二元联结词~$\ast$ 由 $!B$、$!C$
+构造公式 $(!B \ast !C)$ 时，我们常常省去最外面的一对括号，只简单地写成~$!B \ast !C$。
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{defn}
+使用定义的算子构造的公式应按如下方式理解：
+
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defEx,defAll}
+
+\tagitem{defTrue}{$\ltrue$ 缩写为
+  \iftag{prvFalse}{$\lnot\lfalse$}{$(!A \lor \lnot !A)$，其中 $!A$ 是某个
+    固定的原子!!{formula}}。}{}
+
+\tagitem{defFalse}{$\lfalse$ 缩写为
+  \iftag{prvTrue}{$\lnot\ltrue$}{$(!A \land \lnot !A)$，其中 $!A$ 是某个
+    固定的原子!!{formula}}。}{}
+
+\tagitem{defNot}{$\lnot !A$ 缩写为 $!A \lif \lfalse$。}{}
+
+\tagitem{defOr}{$!A \lor !B$ 缩写为
+  \iftag{prvAnd}{$\lnot(\lnot !A \land \lnot !B)$}{$\lnot !A \lif
+    !B$}。}{}
+
+\tagitem{defAnd}{$!A \land !B$ 缩写为
+  \iftag{prvOr}{$\lnot(\lnot !A \lor \lnot !B)$}{$\lnot (!A \lif
+    \lnot !B)$}。}{}
+
+\tagitem{defIf}{$!A \lif !B$ 缩写为
+  \iftag{prvOr}{$\lnot !A \lor !B)$}{$\lnot (!A \land \lnot !B)$}。}{}
+
+\tagitem{defIff}{$!A \liff !B$ 缩写为 $(!A \lif !B) \land (!B
+  \lif !A)$。}{}
+\end{tagenumerate}
+\end{defn}
+\end{tagblock}
+
+\begin{defn}[句法等同]
+符号 $\ident$ 表示符号串之间的句法等同，即 $!A \ident !B$ 当且仅当 $!A$ 和 $!B$ 是长度相同且在每一位上含有相同符号的符号串。
+\end{defn}
+
+$\ident$ 符号两侧可由通过
+连接而得到的字符串组成，例如 $!A \ident (!B \lor !C)$ 的意思是：符号串~$!A$ 与把左括号、字符串 $!B$、$\lor$ 符号、字符串~$!C$ 以及右括号依次连接而得到的那个字符串是同一个字符串。若如此，
+那么我们就会知道 $!A$ 的第一个符号是左括号，$!A$ 含有 $!B$ 作为其一个子字符串（从第二个符号开始），该子字符串之后是~$\lor$，等等。
+
+\end{document}

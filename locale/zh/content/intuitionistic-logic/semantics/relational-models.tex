@@ -1,0 +1,67 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{int}{sem}{rel}
+
+\olsection{\usetoken{P}{relational model}}
+
+为了给出直觉主义命题逻辑的精确语义，我们需要定义一个相对其可以评价!!{formula}的模型，什么样的东西才算作模型。在这样的定义基础上，随后也可以定义有效性、衍推等语义概念。关系模型就给出了这样一种语义。
+
+\begin{defn}
+  直觉主义命题逻辑的!!^a{relational model}是一个三元组
+  $\mModel{M} = \tuple{W, R, V}$，其中
+  \begin{enumerate}
+  \item $W$ 是非空集合，
+  \item $R$ 是~$W$ 上的偏序（即自反、反对称且传递的二元关系），且
+  \item $V$ 是给每个 !!{propositional
+    variable}~$p$ 指定~$W$ 的一个子集的函数，使得
+  \item $V$ 关于 $R$ 是单调的，即若 $w
+    \in V(p)$ 且 $Rww'$，则 $w' \in V(p)$。
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}\ollabel{defn:true-at-w}
+  我们把 $!A$ \emph{在 $w$ 处于
+    $\mModel{M}$ 中为真}、即 $\mSat{M}{!A}[w]$ 的概念归纳定义如下：
+  \begin{enumerate}
+  \item \indcase{!A}{p}{$\mSat{M}{\indfrm}[w]$ 当且仅当 $w \in V(p)$。}
+  \item \indcase{!A}{\lfalse}{$\mSat{M}{\indfrm}[w]$ 为假}。
+  \item \indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当不存在
+    $w'$ 使得 $Rww'$ 且 $\mSat{M}{!B}[w']$}。
+  \item \indcase{!A}{!B \land !C}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat{M}{!B}[w]$ 且 $\mSat{M}{!C}[w]$}。
+  \item \indcase{!A}{!B \lor !C}{$\mSat{M}{\indfrm}[w]$ 当且仅当
+    $\mSat{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$（或二者兼有）}。
+  \item \indcase{!A}{!B \lif !C}{$\mSat{M}{\indfrm}[w]$ 当且仅当对每个
+    $w'$，若 $Rww'$，则并非 $\mSat{M}{!B}[w']$ 或
+    $\mSat{M}{!C}[w']$}（或二者兼有）。
+  \end{enumerate}
+  若 $\mSat{M}{!A}[w]$ 不为真，我们记 $\mSat/{M}{!A}[w]$。若 $\Gamma$ 是
+  一个!!{formula}的集合，则 $\mSat{M}{\Gamma}[w]$ 表示对一切 $!B \in \Gamma$
+  皆有 $\mSat{M}{!B}[w]$。
+\end{defn}
+
+\begin{prob}
+  证明按 \olref[int][sem][rel]{defn:true-at-w}，
+  $\mSat{M}{\lnot !A}[w]$ 当且仅当 $\mSat{M}{!A \lif \lfalse}[w]$。
+\end{prob}
+
+\begin{prop}\ollabel{prop:true-monotonic}
+  在世界处的真关于~$R$ 是单调的，即若
+  $\mSat{M}{!A}[w]$ 且 $Rww'$，则 $\mSat{M}{!A}[w']$。
+\end{prop}
+
+\begin{proof}
+  习题。
+\end{proof}
+
+\begin{prob}
+  证明 \olref[int][sem][rel]{prop:true-monotonic}。
+\end{prob}
+
+\end{document}

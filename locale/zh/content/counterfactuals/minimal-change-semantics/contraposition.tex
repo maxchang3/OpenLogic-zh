@@ -1,0 +1,56 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: transitivity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{cnt}{min}{cpo}
+
+\olsection{逆否命题}
+
+实质条件句和严格条件句都等价于其逆否命题。反事实条件句则不然。下面这个例子来自 Kratzer：
+\begin{quote}
+  如果歌德不是在 1832 年去世的，那么他（现在依然）已经死了。
+
+  如果歌德现在还没有死，那么他就是在 1832 年去世的。
+\end{quote}
+第一句为真：人活不了几百年。第二句显然为假：如果歌德现在还没有死，那么他仍然在世，因此他不可能是在 1832 年去世的。
+
+\begin{ex}\ollabel{ex:contraposition-counterex}
+  球面语义使得逆否命题无效，即我们有 $p
+  \cif q \Entails/ \lnot q \cif \lnot p$。把 $p$ 想作「歌德
+  不是在 1832 年去世的」，把 $q$ 想作「歌德现在就死了」。我们可以在模型 $\mModel{M_1} = \tuple{W, O, V}$ 中刻画这一点，其中 $W =
+  \{w, w_1, w_2\}$，$O = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$，
+  $V(p) = \{w_1, w_2\}$ 且 $V(q) = \{w, w_1\}$。因此 $w$ 是歌德在 1832 年去世并且至今仍死的现实世界；$w_1$ 是歌德在（比如说）1833 年去世并且至今仍死的（近）世界；而 $w_2$ 是歌德至今仍在世的（远）世界。
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.6,layerwidth=1.5]\tiny
+  \spheresystem{3}
+  \begin{scope}
+    \clip \propositionplot{0}{.8}{50}{4.5} -- (4.5,-4.5) -- (-4.5,-4.5) -- (-4.5,4.5) -- (4.5,4.5);
+    \spherelayer{3}
+  \end{scope}
+  \propositionintersect{0}{2}{110}{5.5}
+  \proposition{0}{.8}{50}{4.5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{0}{2}{node[world] {$w_1$}}
+  \spherepos{-50}{3}{node[world] {$w_2$}}
+  \spherepos{28}{3}{node {$q$}}
+  \spherepos{42}{3}{node {$\lnot q$}}
+  \spherepos{-55}{4}{node {$p$}}
+  \spherepos{-67}{4}{node {$\lnot p$}}
+\end{tikzpicture}
+\caption{逆否命题的反例}
+\ollabel{fig:contraposition}
+\end{center}
+\end{figure}
+存在一个允许 $p$ 的球面 $S =
+\{w, w_1\}$，并且 $p \lif q$ 在其中所有世界处都为真，因此 $\mSat{M}{p
+  \cif q}[w]$。然而，允许 $\lnot q$ 的球面 $\{w, w_1,
+w_2\}$ 含有一个世界，即~$w_2$，在其中 $q$ 为假而 $p$ 为
+真，因此 $\mSat/{M}{\lnot q \lif \lnot p}[w_2]$。
+\end{ex}
+
+\end{document}

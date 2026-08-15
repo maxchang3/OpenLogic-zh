@@ -1,0 +1,135 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: formation-sequences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{pl}{syn}{fseq}
+
+\olsection{形成序列}
+
+通过归纳定义来定义!!{formula}，并利用归纳来证明!!{formula}之性质的互补技巧，是一种优雅而高效的方法。不过，考虑一种更自底向上、逐步构造!!{formula}的方法也可能是有用的，这里我们便使用\emph{形成序列}这一概念来做这件事。
+
+\begin{defn}[公式的形成序列]
+\ollabel{defn:fseq-frm}
+语言~$\Lang L_0$中符号串的有穷序列
+$\tuple{!A_0,\dotsc,!A_n}$是$!A$的一个\emph{形成序列}，当且仅当
+$!A \ident !A_n$，且对所有$i \leq n$，
+要么$!A_i$是原子公式，要么存在$j,k < i$
+使得下列情形之一成立：
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_i \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A_i \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A_i \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A_i \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A_i \ident (!A_j \liff !A_k)$.}{}%
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    (\Obj p_1 \land \Obj p_0),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}
+\]
+是$\lnot (\Obj p_1 \land \Obj p_0)$的形成序列，
+同样，
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    \Obj p_0,
+    (\Obj p_1 \land \Obj p_0),
+    (\Obj p_0 \lif \Obj p_1),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}.
+\]
+%
+从第二个例子可以看出，形成序列可能含有「无用内容」：即那些冗余的、对构造并无贡献的公式。
+\end{ex}
+
+\begin{prop}
+\ollabel{prop:formed}
+$\Frm[L_0]$中的每一个!!{formula}~$!A$都有一个形成序列。
+\end{prop}
+
+\begin{proof}
+设$!A$是原子的。则序列~$\tuple{!A}$是~$!A$的一个形成序列。
+%
+现在设$!B$和~$!C$分别有形成序列
+$\tuple{!B_0,\dotsc,!B_n}$和$\tuple{!C_0,\dotsc,!C_m}$。
+%
+\begin{enumerate}
+  \tagitem{prvNot}{如果$!A \ident \lnot !B$，
+      则$\tuple{!B_0,\dotsc,!B_n,\lnot !B_n}$
+      是~$!A$的一个形成序列。}{}
+  \tagitem{prvAnd}{如果$!A \ident (!B \land !C)$，
+      则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \land !C_m)}$
+      是~$!A$的一个形成序列。}{}
+  \tagitem{prvOr}{如果$!A \ident (!B \lor !C)$，
+      则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lor !C_m)}$
+      是~$!A$的一个形成序列。}{}
+  \tagitem{prvIf}{如果$!A \ident (!B \lif !C)$，
+      则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lif !C_m)}$
+      是~$!A$的一个形成序列。}{}
+  \tagitem{prvIff}{如果$!A \ident (!B \liff !C)$，
+      则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
+      是~$!A$的一个形成序列。}{}
+\end{enumerate}
+由对!!{formula}的归纳原则，
+每一个!!{formula}都有一个形成序列。
+\end{proof}
+
+我们也可以证明其逆命题。这很重要，因为它表明我们定义公式的两种方式是等价的：它们给出相同的结果。这也意味着，我们可以在形成序列的长度上使用普通归纳来证明关于公式的定理。
+
+\begin{lem}
+\ollabel{lem:fseq-init}
+设$\tuple{!A_0,\dotsc,!A_n}$是~$!A_n$的一个形成序列，
+且$k \leq n$。则$\tuple{!A_0,\dotsc,!A_k}$
+是~$!A_k$的一个形成序列。
+\end{lem}
+
+\begin{proof}
+习题。
+\end{proof}
+
+\begin{thm}
+\ollabel{thm:fseq-frm-equiv}
+$\Frm[L_0]$是在语言~$\Lang L_0$中具有形成序列的所有符号串的集合。
+\end{thm}
+
+\begin{proof}
+设$F$是语言~$\Lang L_0$中所有具有形成序列的符号串的集合。
+我们已在 \olref[pl][syn][fseq]{prop:formed} 中看到
+$\Frm[L_0] \subseteq F$，所以现在我们来证明其逆。
+
+设$!A$有一个形成序列$\tuple{!A_0,\dotsc,!A_n}$。
+我们通过对~$n$作强归纳来证明$!A \in \Frm[L_0]$。
+我们的归纳假设是，每一个具有长度$m < n$的形成序列的符号串都在~$\Frm[L_0]$中。
+由形成序列的定义，要么$!A_n$是
+原子的，要么必定存在$j,k < n$使得下列
+情形之一成立：
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_n \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A_n \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A_n \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A_n \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A_n \ident (!A_j \liff !A_k)$.}{}%
+\end{enumerate}
+现在我们分情形推理。如果$!A_n$是原子的，则
+$!A_n \in \Frm[L_0]$。反之，设$!A \equiv
+(!A_j \land !A_k)$。由 \olref[pl][syn][fseq]{lem:fseq-init}，
+$\tuple{!A_0,\dotsc,!A_j}$和$\tuple{!A_0,\dotsc,!A_k}$分别是
+$!A_j$和~$!A_k$的形成序列。由于
+这些是~$!A$的形成序列的真初始子序列，它们的长度都小于~$n$。因此由
+归纳假设，$!A_j$和~$!A_k$都在~$\Frm[L_0]$中，
+于是由!!a{formula}的定义，$(!A_j \land !A_k)$也在其中。
+其余情形可通过平行的推理得到。
+\end{proof}
+
+\end{document}

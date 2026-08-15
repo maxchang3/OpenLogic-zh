@@ -1,0 +1,125 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: euclidean-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{fil}{euc}
+
+\olsection{欧性模型的过滤}
+
+\olref[acc]{sec} 的做法不适用于欧性的，或既是持续的又是欧性的模型的情形。考虑
+\olref{fig:ser-eucl} 顶部的模型，它既是欧性的又是持续的。设 $\Gamma = \{p, \Box
+p \}$。当取一个通过 $\Gamma$ 的过滤时，$[w_1] = [w_3]$，因为 $w_1$ 与 $w_3$
+是在~$\Gamma$ 上一致的仅有的两个世界。任何过滤也都将具有继承自 $\mModel{M}$
+的箭头，如 \olref{fig:ser-eucl2} 所示。该模型不是欧性的。而且，我们不能通过给
+那个模型添加箭头来使它成为欧性的。我们将不得不在 $[w_2]$ 与 $[w_4]$ 之间，然后
+也在 $w_2$ 与~$w_5$ 之间添加双向箭头。但 $\Box p$ 被认定在~$w_2$ 处为真，而 $p$
+在~$w_5$ 处为假。
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$}] {$w_1$};
+    \node[world] (w2)
+          [label={right: \mTrue{p}},
+            label = {below: $\mSat{{}}{\Box p}$},
+            right=of w1] {$w_2$};
+    \draw[->] (w1) to (w2);
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w3)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$},
+            below=of w1] {$w_3$};
+    \node[world] (w4)
+          [label={right:\mTrue{p}},
+            label={below: $\mSat/{{}}{\Box p}$},
+            right=of w3] {$w_4$};
+    \draw[->] (w3) to (w4);
+    \draw[reflexive above] (w4) to (w4);
+    \node[world] (w5)
+          [label={right: \mFalse{p}},
+            label=below:$\mSat/{{}}{\Box p}$,
+            right=of w4] {$w_5$};
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);
+  \end{tikzpicture}
+  \caption{一个持续的且欧性的模型。}
+  \ollabel{fig:ser-eucl}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[modal,every text node part/.style={align=center}]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={right:$[w_1]=[w_3]$},
+            label={below: $\mSat{{}}{\Box p}$}] {$[w_1]$};
+    \node[world] (w2)
+         [label={right: \mTrue{p}},
+           label = {below: $\mSat{{}}{\Box p}$},
+           right=of w1, yshift=1.5cm] {$[w_2]$};
+    \draw[->] (w1) to (w2);
+    \node[world] (w4)
+         [label={right:\mTrue{p}},
+           label={below: $\mSat/{{}}{\Box p}$},
+           right=of w1,yshift=-1.5cm] {$[w_4]$};
+    \draw[->] (w1) to (w4);
+    \draw[reflexive above] (w4) to (w4);
+    \node[world] (w5)
+         [label={right: \mFalse{p}},
+             label=below:$\mSat/{{}}{\Box p}$,
+             right=of w4] {$[w_5]$};
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);
+  \end{tikzpicture}
+  \caption{\olref{fig:ser-eucl} 中的模型的过滤。}
+  \ollabel{fig:ser-eucl2}
+\end{figure}
+
+特别地，要得到欧性的过滤，仅考虑通过对子!!{formula}封闭的任意 $\Gamma$ 的过滤
+是不够的。相反，我们需要考虑\emph{模态封闭}的集合 $\Gamma$（见
+\olref[pre]{defn:modallyclosed}）。这样的语句集合是无穷的，因而并不立即产生对
+应系统的有穷模型性或其可判定性。
+
+\begin{thm}\ollabel{thm:modal-closed-filt}
+  设 $\Gamma$ 是模态封闭的，$\mModel{M}=\tuple{W,R,V}$，且
+  $\mModel{M^*} = \tuple{W^*,R^*,V^*}$ 是 $\mModel{M}$ 的最粗过滤。
+  \begin{enumerate}
+  \item 若 $\mModel{M}$ 是对称的，则 $\mModel{M^*}$ 也是对称的。
+  \item 若 $\mModel{M}$ 是传递的，则 $\mModel{M^*}$ 也是传递的。
+  \item 若 $\mModel{M}$ 是欧性的，则 $\mModel{M^*}$ 也是欧性的。
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+\begin{enumerate}
+  \item 习题。利用 \Ax{B} 与 $\Ax{B_\Diamond}$ 在所有对称模型中都有效这一事实。
+  \item 若 $\mModel{M^*}$ 是最粗过滤，那么按定义 $R^*[u][v]$ 成立当且仅当
+    $C_1(u,v)$。对于传递性，设 $C_1(u,v)$ 且 $C_1(v,w)$；我们须证明
+    $C_1(u,w)$。\iftag{prvBox}{设 $\mSat{M}{\Box !A}[u]$；则
+      $\mSat{M}{\Box\Box!A}[u]$，因为 \Ax{4} 在所有传递模型中都有效；由于
+      $\Box\Box!A \in \Gamma$（由封闭性），又由 $C_1(u,v)$，
+      $\mSat{M}{\Box!A}[v]$，且由 $C_1(v,w)$，亦有
+      $\mSat{M}{!A}[w]$。}{}\iftag{prvDiamond}{设
+      $\mSat{M}{!A}[w]$；则 $\mSat{M}{\Diamond !A}[v]$（由
+      $C_1(v,w)$），因为 $\Diamond !A \in \Gamma$（由模态封闭性）。由
+      $C_1(u,v)$，我们得到 $\mSat{M}{\Diamond\Diamond !A}[u]$，因为
+      $\Diamond\Diamond!A \in \Gamma$（由模态封闭性）。由于
+      $\Ax{4}_\Diamond$ 在所有传递模型中都有效，
+      $\mSat{M}{\Diamond!A}[u]$。}{}
+  \item 习题。利用 \Ax{5} 与 $\Ax{5_\Diamond}$ 都在所有欧性模型中都有效这一事实。
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+  完成 \olref[nml][fil][euc]{thm:modal-closed-filt} 的证明。
+\end{prob}
+
+\end{document}

@@ -1,0 +1,176 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: schemas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{syn}{sch}
+
+\olsection{模式与有效性}
+
+\begin{defn}
+  一个 \emph{模式}（schema）是某个模态!!{formula}~$!C$ 的全部代入特例
+  组成的集合，且仅包含这些特例，即
+  \[
+  \Setabs{!B}{\lexists[!D_1], \dots, \lexists[!D_n] \left(!B =
+  \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \right) }.
+  \]
+  该!!{formula}~$!C$ 称为这个模式的 \emph{特征}公式（characteristic
+  !!{formula}），它在对!!{propositional variable}的重命名下是唯一的。
+  若!!^a{formula}~$!A$ 是该集合的一个成员，则它是这一模式的一个
+  \emph{特例}（instance）。
+\end{defn}
+
+用把 `$!A$'、`$!B$'、\dots 代入~$!C$ 的原子成分所得的无语言表达式来表示
+一个模式是很方便的。例如，下面这些都表示一个模式：
+`$!A$'、`$!A \lif \Box!A$'、`$!A \lif (!B \lif !A)$'。它们分别对应于
+特征公式 $p$、$p \lif \Box p$、$p \lif (q
+\lif p)$。模式 `$!A$' 表示 \emph{所有} !!{formula}组成的集合。
+
+\begin{defn}
+  一个模式在一个模型中为 \emph{真}，当且仅当它的所有特例都为真；一个
+  模式为 \emph{有效}，当且仅当它在每个模型中为真。
+\end{defn}
+
+\begin{prop}\ollabel{prop:Kvalid}
+  如下模式 \Ax{K} 是有效的
+  \begin{equation*}
+  \Box(!A \lif !B) \lif (\Box !A \lif \Box !B). \tag{\Ax{K}}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  我们需要证明该模式的所有特例在每个模型的每个世界里都为真。因此设
+  $\mModel{M} = \tuple{W,R,V}$ 与 $w \in
+  W$ 是任意的。要证明一个条件句在世界处为真，我们要假定
+  前件为真以证明后件也为真。在本例中，设
+  $\mSat{M}{\Box(!A \lif !B)}[w]$ 且
+  $\mSat{M}{\Box !A}[w]$。我们需要证明 $\mSat{M}{\Box !B}[w]$。因此设
+  $w'$ 是任意满足 $Rww'$ 的。则由第一个假设得
+  $\mSat{M}{!A \lif !B}[w']$，由第二个假设得
+  $\mSat{M}{!A}[w']$。由此得 $\mSat{M}{!B}[w']$。由于 $w'$
+  是任意的，故 $\mSat{M}{\Box !B}[w]$。
+\end{proof}
+
+\begin{prop}\ollabel{prop:Dual-valid}
+  如下模式 \Dual{} 是有效的
+  \begin{equation*}
+  \Diamond !A \liff \lnot\Box\lnot !A. \tag{\Dual}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  习题。
+\end{proof}
+
+\begin{prob}
+  证明 \olref[nml][syn][sch]{prop:Dual-valid}。
+\end{prob}
+
+\begin{prop}\ollabel{prop:soundMP}
+  若 $!A$ 与 $!A \lif !B$ 在模型中的一个世界里为真，
+  则 $!B$ 也为真。因此，有效!!{formula}在
+  分离规则（modus ponens）下是封闭的。
+\end{prop}
+
+\begin{prop}\ollabel{prop:valid-instances}
+  !!^a{formula}~$!A$ 是有效的，当且仅当它的所有代入特例
+  都有效。换言之，一个模式是有效的，
+  当且仅当它的特征!!{formula}是有效的。
+\end{prop}
+
+\begin{proof}
+  「如果」方向是显然的，因为 $!A$ 是它自身的代入
+  特例。
+
+  为了证明「仅当」方向，我们证明如下论断：设
+  $\mModel{M} = \tuple{W, R, V}$ 是一个模态模型，且 $!B \ident
+  \SSubst{!A}{\subst{!D_1}{p_1},\dots,\subst{!D_n}{p_n}}$ 是
+  $!A$~的一个代入特例。定义 $\mModel{M'} = \tuple{W, R,
+    V'}$ 为 $V'(p_i) = \Setabs{w}{\mSat{M}{!D_i}[w]}$。则
+  对任意~$w \in W$，$\mSat{M}{!B}[w]$ 当且仅当 $\mSat{M'}{!A}[w]$。
+  （我们把该证明留作一项习题。）现在假设 $!A$ 是有效的，
+  但 $!A$~的某个代入特例 $!B$ 不是有效的。则对
+  某个 $\mModel{M} = \tuple{W, R, V}$ 与某个 $w \in W$，有
+  $\mSat/{M}{!B}[w]$。但由上述论断得 $\mSat/{M'}{!A}[w]$，从而
+  $!A$ 不是有效的，矛盾。
+\end{proof}
+
+\begin{prob}
+  证明
+  \olref[nml][syn][sch]{prop:valid-instances} 的证明中「仅当」部分里
+  的论断。（提示：对~$!A$ 使用归纳）
+\end{prob}
+
+注意，一个模式在模型中为真与其特征公式在模型中为真并不等价。当然，
+「仅当」方向成立：若 $!A$ 的每个特例都在~$\mModel{M}$ 中为真，
+则 $!A$~本身也在~$\mModel{M}$ 中为真。但可能出现 $!A$ 在~$\mModel{M}$
+中为真而 $!A$~的某个特例在~$\mModel{M}$ 中的某个世界处为假的情形。举个
+非常简单的反例，考虑一个只有一个世界~$w$ 的模型中的~$p$，且 $V(p) =
+\{w\}$，这样 $p$ 在~$w$ 处为真。但 $\lfalse$ 是~$p$ 的一个特例，且它在~$w$
+处不为真。
+
+\begin{prob}
+  证明下列!!{formula}中没有一个是有效的：
+  \begin{enumerate}
+    \item[\Ax{D}:] \quad $\Box p \lif \Diamond p$;
+    \item[\Ax{T}:] \quad $\Box p \lif p$;
+    \item[\Ax{B}:] \quad $p \lif \Box\Diamond p$;
+    \item[\Ax{4}:] \quad $\Box p \lif \Box \Box p$;
+    \item[\Ax{5}:] \quad $\Diamond p \lif \Box \Diamond
+      p$.
+  \end{enumerate}
+\end{prob}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      {\emph{有效模式}} & {\emph{无效模式}} \\
+      \hline\hline
+      $\Box(!A \lif !B) \lif (\Diamond !A \lif \Diamond !B)$
+      & $\Box (!A \lor !B) \lif (\Box !A \lor \Box !B)$ \\
+      $\Diamond (!A \lif !B) \lif (\Box !A \lif \Diamond
+      !B)$
+      & $(\Diamond !A \land \Diamond !B) \lif \Diamond (!A
+      \land !B)$\\
+      $\Box (!A \land !B) \liff (\Box !A \land \Box !B)$
+      & $!A \lif \Box !A$ \\
+      $\Box !A \lif \Box (!B \lif !A)$
+      & $\Box \Diamond !A \lif !B$ \\
+      $\lnot \Diamond !A \lif \Box (!A \lif !B)$
+      & $\Box \Box !A \lif \Box !A$ \\
+      $\Diamond (!A \lor !B) \liff (\Diamond !A \lor
+      \Diamond !B)$
+      & $\Box \Diamond !A \lif \Diamond \Box !A$. \\
+      \hline
+    \end{tabular}
+    \caption{有效与（或？）无效的模式。}
+    \ollabel{tab:valid-invalidSchemas}
+\end{table}
+
+\begin{prob}%\ollabel{ex:in/validSchemas}
+  证明 \olref[nml][syn][sch]{tab:valid-invalidSchemas} 第一列中的模式
+  是有效的，第二列中的模式不是有效的。
+\end{prob}
+
+\begin{prob}
+  判断下列模式是有效的还是无效的：
+  \begin{enumerate}
+  \item $(\Diamond !A \lif \Box !B) \lif (\Box !A \lif \Box
+    !B)$;
+  \item $\Diamond(!A \lif !B) \lor \Box(!B \lif !A)$.
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  对下列每个模式，找一个模型 $\mModel{M}$ 使得该!!{formula}的每个特例都在 $\mModel{M}$ 中为真：
+  \begin{enumerate}
+  \item $p \lif \Diamond\Diamond p$;
+  \item $\Diamond p \lif \Box p$.
+  \end{enumerate}
+\end{prob}
+
+\end{document}

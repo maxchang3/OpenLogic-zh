@@ -1,0 +1,103 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: orders
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{sfr}{rel}{ord}
+\olsection{序}
+
+\begin{explain}
+我们的许多比较都涉及在某个方面把一些对象描述为比其他对象「小」、「相等」或「大」。这些涉及的都是序关系。但序关系有不同的种类。例如，有些要求任何两个对象都可比较，另一些则不要求。有些包含同一性（如~$\le$），有些排除同一性（如~$<$）。在这里建立一个分类体系对我们会有帮助。
+\end{explain}
+
+\begin{defn}[预序]
+既自反又传递的关系被称为\emph{预序}。
+\end{defn}
+
+\begin{defn}[偏序]
+也是禁对称的预序被称为\emph{偏序}。
+\end{defn}
+
+\begin{defn}[线性序]\ollabel{def:linearorder}
+也是连通的偏序被称为\emph{全序}或\emph{线性序}。
+\end{defn}
+
+\begin{ex}
+每个线性序也都是偏序，每个偏序也都是预序，但反过来不成立。~$A$ 上的全域关系是预序，因为它是自反且传递的。但是，如果 $A$ 有多个!!{element}，则全域关系不是禁对称的，因而也不是偏序。
+\end{ex}
+
+\begin{ex}
+考虑~$\Bin^*$ 上的\emph{不长于}关系 $\preccurlyeq$：$x \preccurlyeq y$ 当且仅当 $\len{x} \le \len{y}$。这是一个预序（自反且传递的），甚至是连通的，但不是偏序，因为它不是禁对称的。例如，$01 \preccurlyeq 10$ 且 $10 \preccurlyeq 01$，但 $01 \neq 10$。
+\end{ex}
+
+\begin{ex}
+一个重要的偏序是集合之集上的关系 $\subseteq$。这通常不是线性序，因为若 $a \neq b$，考虑 $\Pow{\{a, b\}} = \{\emptyset, \{a\}, \{b\}, \{a,b\}\}$，我们看到 $\{a\} \nsubseteq \{b\}$、$\{a\} \neq \{b\}$ 且 $\{b\} \nsubseteq \{a\}$。
+\end{ex}
+
+\begin{ex}
+\emph{无余数的整除}关系给出的偏序不是线性序。对于整数 $n$ 和~$m$，记 $n \mid m$ 表示 $n$（完全地）整除 $m$，即当且仅当存在某个整数~$k$ 使得 $m = kn$。在~$\Nat$ 上，这是一个偏序，但不是线性序：例如，$2 \nmid 3$ 且 $3 \nmid 2$。当作 $\Int$ 上的关系来考虑时，整除只是一个预序，因为它不是禁对称的：$1 \mid -1$ 且 $-1 \mid 1$，但 $1 \neq -1$。
+\end{ex}
+
+\begin{ex}
+序列之集~$A^*$ 上的\emph{扩展}关系如下：$s \sqsubseteq s'$ 当且仅当 $s = \emptyseq$（空序列）、$s = s'$，或 $s = \tuple{s_1, \dots, s_n}$ 且 $s' = \tuple{s_1, \dots, s_n, s_{n+1}, \dots, s_m}$。若 $s \sqsubseteq s'$，我们也可以说 $s$ 是~$s'$ 的一个\emph{初始段}。$A^*$ 上的扩展关系是偏序但不是线性序，例如，若 $a \neq b$，则 $ab \not\sqsubseteq ba$ 且 $ba \not\sqsubseteq ab$。
+\end{ex}
+
+\begin{defn}[严格序]
+\emph{严格序}是禁自反的、禁对称的且传递的关系。
+\end{defn}
+
+\begin{defn}[严格线性序]\ollabel{def:strictlinearorder}
+也是连通的严格序被称为\emph{严格全序}或\emph{严格线性序}。
+\end{defn}
+
+\begin{ex}
+$\le$ 是对应于严格线性序~$<$ 的线性序。$\subseteq$ 是对应于严格序~$\subsetneq$ 的偏序。
+\end{ex}
+
+~$A$ 上的任何严格序 $R$ 都可以通过添加对角线 $\Id{A}$ 变成偏序，即添加所有的对~$\tuple{x, x}$。（这被称为~$R$ 的\emph{自反闭包}。）反过来，从一个偏序出发，可以通过移除~$\Id{A}$ 得到一个严格序。下面两个结果使这一点精确化。
+
+\begin{prop}\ollabel{prop:stricttopartial}
+若 $R$ 是~$A$ 上的严格序，则 $R^+ = R \cup \Id{A}$ 是偏序。而且，若 $R$ 是严格线性序，则 $R^+$ 是线性序。
+\end{prop}
+
+\begin{proof}
+设 $R$ 是严格序，即 $R \subseteq A^2$ 且 $R$ 是禁自反的、禁对称的且传递的。令 $R^+ = R \cup \Id{A}$。我们必须证明 $R^+$ 是自反的、禁对称的且传递的。
+
+$R^+$ 显然是自反的，因为对于所有 $x \in A$ 有 $\tuple{x, x} \in \Id{A} \subseteq R^+$。
+
+为证明 $R^+$ 是禁对称的，反设 $R^+xy$ 且 $R^+yx$ 但 $x \neq y$。由于 $\tuple{x,y} \in R \cup \Id{A}$，但 $\tuple{x, y} \notin \Id{A}$，我们必有 $\tuple{x, y} \in R$，即 $Rxy$。同样，~$Ryx$。但这与 $R$ 是禁对称的这一假设相矛盾。
+
+为建立传递性，设 $R^+xy$ 且 $R^+yz$。若 $\tuple{x, y} \in R$ 且 $\tuple{y,z} \in R$，则由 $R$~是传递的，得 $\tuple{x, z} \in R$。否则，要么 $\tuple{x, y} \in \Id{A}$，即 $x = y$，要么 $\tuple{y, z} \in \Id{A}$，即 $y = z$。在第一种情形下，由假设 $R^+yz$，且 $x = y$，故 $R^+xz$。第二种情形类似。无论哪种情形，$R^+xz$，因此 $R^+$ 也是传递的。
+
+关于「再者」条款，设 $R$ 也是连通的。于是对于所有 $x \neq y$，要么 $Rxy$，要么~$Ryx$，即要么 $\tuple{x, y} \in R$，要么 $\tuple{y, x} \in R$。由于 $R \subseteq R^+$，这对 $R^+$ 依旧成立，所以 $R^+$ 也是连通的。
+\end{proof}
+
+\begin{prop}\ollabel{prop:partialtostrict}
+若 $R$ 是~$A$ 上的偏序，则 $R^- = R \setminus \Id{A}$ 是严格序。而且，若 $R$ 是线性序，则 $R^-$ 是严格线性序。
+\end{prop}
+
+\begin{proof}
+留作习题。
+\end{proof}
+
+\begin{prob}
+给出 \olref[sfr][rel][ord]{prop:partialtostrict} 的一个证明。
+\end{prob}
+
+下面这个简单结果确定严格线性序满足一个类似外延性的性质：
+
+\begin{prop}\ollabel{prop:extensionality-strictlinearorders}
+若 $<$ 是 $A$ 上的严格线性序，则：
+\[
+  (\forall a, b \in A)((\forall x \in A)(x < a \liff x < b) \lif a = b).
+\]
+\end{prop}
+
+\begin{proof}
+设 $(\forall x \in A)(x < a \liff x < b)$。若 $a < b$，则 $a < a$，这与 $<$ 是禁自反的这一事实矛盾；所以 $a \nless b$。完全类似地，$b \nless a$。因此 $a = b$，因为 $<$ 是连通的。
+\end{proof}
+
+\end{document}

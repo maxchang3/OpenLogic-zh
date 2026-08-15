@@ -1,0 +1,32 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{prf}{int}}
+      {\olfileid[zh]{pl}{prf}{int}}
+
+\olsection{引言}
+
+逻辑通常既有语义又有!!a{derivation}系统。语义涉及真、可满足性、有效性和衍推等概念。!!{derivation}系统的目的是提供一种纯粹句法的、确立衍推与有效性的方法。它们是纯粹句法的：因为这样的系统中的!!{derivation}是一个有穷的句法对象，通常是!!{sentence}或!!{formula}的一个序列（或其他有穷排列）。好的!!{derivation}系统具有这样的性质：任何给定的!!{sentence}或!!{formula}序列或排列都能被机械地验证为「正确」。
+
+一阶逻辑最简单的（也是历史上最早的）!!{derivation}系统是\emph{公理化的}。在这样的系统中，一个!!{formula}序列被视为!!a{derivation}，当且仅当其中每个单独的!!{formula}要么属于一个固定的「公理」集合，要么由序列中位于它之前的!!{formula}依照若干固定的「推理规则」之一推出——并且可以机械地验证某个!!a{formula}是否为公理，以及它是否依照某条推理规则正确地由其他!!{formula}推出。公理化的!!{derivation}系统容易描述——也容易在元理论层面处理——但其中的!!{derivation}难以阅读和理解，也难以构造。
+
+人们也已发展出其他!!{derivation}系统，目的在于使构造!!{derivation}更容易，或使完备后的!!{derivation}更容易理解。例如自然演绎、真值树（亦称表列证明）和矢列演算。有些!!{derivation}系统尤其以机械化作为设计目标，例如消解法很容易在软件中实现（但其!!{derivation}本质上无法理解）。这些其他!!{derivation}系统大多把!!{derivation}表示为!!{formula}的树而非序列。这更容易看清!!a{derivation}的哪些部分依赖于其他哪些部分。
+
+所以，对于给定的逻辑（如一阶逻辑），不同的!!{derivation}系统会对「一个!!a{sentence}成为\emph{定理}意味着什么」以及「一个!!a{sentence}从其他语句成为!!{derivable}意味着什么」给出不同的解释。无论这如何做到（通过公理化的!!{derivation}、自然演绎、矢列!!{derivation}、真值树、消解反驳），我们都希望这些关系能与有效性和衍推的语义概念相匹配。我们把 $\Proves !A$ 写作「$!A$~是定理」，把 $\Gamma \Proves !A$ 写作「$!A$~由~$\Gamma$~!!{derivable}」。无论 $\Proves$~如何定义，我们都希望它与 $\Entails$ 一致，即：
+\begin{enumerate}
+\item $\Proves !A$ 当且仅当 $\Entails !A$
+\item $\Gamma \Proves !A$ 当且仅当 $\Gamma \Entails !A$
+\end{enumerate}
+上式的「仅当」方向称为\emph{可靠性}。这样一个!!^a{derivation}系统是可靠的，若!!{derivability}保证了衍推（或有效性）。每个像样的!!{derivation}系统都必须可靠；不可靠的!!{derivation}系统根本无用。毕竟，!!a{derivation}的全部目的就是提供对有效性或衍推的句法保证。我们将为我们介绍的!!{derivation}系统证明其可靠性。
+
+其逆「若」方向也很重要：它称为\emph{完全性}。一个完全的!!{derivation}系统要足够强：每当 $!A$~有效时，$!A$~就是定理；每当 $\Gamma \Entails !A$ 时，就有 $\Gamma \Proves !A$。确立完全性更难，有些逻辑没有完全的!!{derivation}系统。一阶逻辑有。Kurt G\"odel 是最早在 1929 年的博士论文中为一阶逻辑的某个!!a{derivation}系统证明完全性的人。
+
+另一个与!!{derivation}系统相关的概念是\emph{一致性}。一个!!{sentence}集合被称为不一致的，若从其可以推出任何东西，否则被称为一致的。不一致性是不可满足性的句法对应物：如同不可满足的集合，!!{sentence}的不一致集合不能充当好的理论，它们在根本上是有缺陷的。一致的!!{sentence}集合或许不真、没有用处，但至少它们通过了逻辑有用性的那一极低门槛。对于不同的!!{derivation}系统，!!{sentence}集合的一致性的具体定义可能不同，但与~$\Proves$~一样，我们希望一致性与其语义对应物——可满足性——相吻合。我们希望总是如此：$\Gamma$ 是一致的当且仅当它是可满足的。在此，「仅当」方向相当于完全性（一致性保证可满足性），「若」方向相当于可靠性（可满足性保证一致性）。事实上，对于经典一阶逻辑，这两个版本的可靠性和完全性是等价的。
+
+\end{document}

@@ -1,0 +1,39 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: duals
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{nml}{prf}{dua}
+
+\olsection{对偶\usetoken{P}{formula}}
+
+\begin{defn}\ollabel{def:duals}
+  \Ax{T}、\Ax{B}、\Ax{4} 和 \Ax{5} 的每个!!{formula}都有一个
+  \emph{对偶}，用带下标的一个菱形表示，如下：
+  \begin{align}
+    \tag{\Ax{T_\Diamond}} p & \lif \Diamond p\\
+    \tag{\Ax{B_\Diamond}} \Diamond\Box p & \lif p\\
+    \tag{\Ax{4_\Diamond}} \Diamond\Diamond p & \lif \Diamond p\\
+    \tag{\Ax{5_\Diamond}} \Diamond\Box p & \lif \Box p
+    \end{align}
+\end{defn}
+
+上面的每一个对偶!!{formula}都由相应的!!{formula}将 $p$ 替换为
+$\lnot p$、取逆否、把 $\lnot\Box\lnot$ 换成 $\Diamond$、再把
+$\lnot\Diamond\lnot$ 换成 $\Box$ 而得到。\Ax{D}，即
+$\Box!A \lif \Diamond!A$，在那个意义上是它自己的对偶。
+
+\begin{prop}\ollabel{prop:dualsys}
+  对 \olref[nml][prf][dua]{def:duals} 中的每个!!{formula}~$!A$：$\Log{K}!A = \Log{K}!A_{\Diamond}$。
+\end{prop}
+\begin{proof}
+  习题。
+\end{proof}
+\begin{prob}
+  证明 \olref[nml][prf][dua]{prop:dualsys}。
+\end{prob}
+
+\end{document}

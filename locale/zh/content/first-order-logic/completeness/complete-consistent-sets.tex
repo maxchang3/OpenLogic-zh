@@ -1,0 +1,205 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: complete-sets
+
+% Definition of complete consistent sets. Properties of complete sets required
+% for completeness proved are in provability.tex in the
+% chapter on the proof system used.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid[zh]{fol}{com}{ccs}}
+      {\olfileid[zh]{pl}{com}{ccs}}
+
+\olsection{!!{complete}一致的!!{sentence}集}
+
+\begin{defn}[完全集]
+\ollabel{def:complete-set}
+一个!!{sentence}集~$\Gamma$ 是 \emph{!!{complete}}的，当且仅当对任意!!{sentence}~$!A$，要么 $!A \in \Gamma$，要么 $\lnot !A \in \Gamma$。
+\end{defn}
+
+\begin{explain}
+!!^{complete}的!!{sentence}集不留下任何未回答的问题。对任意!!{sentence}~$!A$，$\Gamma$「说出」了 $!A$ 是真的还是假的。!!{complete}的集
+的重要性不止于完全性定理的证明。例如，一个既!!{complete}又可公理化的
+理论总是可判定的。
+\end{explain}
+
+\begin{explain}
+!!^{complete}一致集在完全性证明中很重要，因为我们能够保证，每个一致的!!{sentence}集~$\Gamma$ 都包含在!!a{complete}一致集~$\Gamma^*$ 中。!!^a{complete}一致集对每个!!{sentence}~$!A$ 都要么包含 $!A$，要么包含
+其否定 $\lnot !A$，但不会同时包含两者。这尤其适用于
+\iftag{FOL}{原子!!{sentence}}{命题变元}，所以从!!a{complete}一致集\iftag{FOL}{（在一个适当扩充了!!{constant}的
+语言中）}{}构造出的
+\iftag{FOL}{!!{structure}}{!!{valuation}}中，
+\iftag{FOL}{!!{predicate}的解释}{指派给命题变元的真值}由哪些
+\iftag{FOL}{原子!!{sentence}}{!!{propositional variable}}在~$\Gamma^*$ 中
+来决定。这样的 \iftag{FOL}{!!{structure}}{!!{valuation}}随后可被证明使得
+~$\Gamma^*$（因而也使得~$\Gamma$）中的全部!!{sentence}为真。后一事实
+的证明需要 $\lnot !A \in \Gamma^*$ 当且仅当 $!A \notin \Gamma^*$，
+$(!A \lor !B) \in \Gamma^*$ 当且仅当 $!A \in \Gamma^*$ 或 $!B \in
+\Gamma^*$，等等。
+\end{explain}
+
+在下文中，我们将经常默认使用 $\Proves$ 的自反性、单调性和传递性（见
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ptn:sec},prfND/{fol:ntd:ptn:sec},prfAX/{fol:axd:ptn:sec},prfTab/{fol:tab:ptn:sec}}}{%
+  \tagrefs{prfSC/{pl:seq:ptn:sec},prfND/{pl:ntd:ptn:sec},prfAX/{pl:axd:ptn:sec},prfTab/{pl:tab:ptn:sec}}}).
+
+\begin{prop}
+\ollabel{prop:ccs}
+设 $\Gamma$ 是!!{complete}且一致的。则：
+\begin{enumerate}
+\item \ollabel{prop:ccs-prov-in} 如果 $\Gamma \Proves !A$，则 $!A \in
+  \Gamma$。
+
+\tagitem{prvAnd}{\ollabel{prop:ccs-and} 当且仅当 $!A \in \Gamma$ 且
+  $!B \in \Gamma$ 时，$!A \land !B \in \Gamma$。}{}
+
+\tagitem{prvOr}{\ollabel{prop:ccs-or} 当且仅当 $!A \in \Gamma$ 或
+  $!B \in \Gamma$ 时，$!A \lor !B \in \Gamma$。}{}
+
+\tagitem{prvIf}{\ollabel{prop:ccs-if} 当且仅当 $!A \notin \Gamma$ 或
+  $!B \in \Gamma$ 时，$!A \lif !B \in \Gamma$。}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+设对下文的全部内容，$\Gamma$ 都是!!{complete}且一致的。
+\begin{enumerate}
+\item 如果 $\Gamma \Proves !A$，则 $!A \in \Gamma$。
+
+设 $\Gamma \Proves !A$。反设 $!A \notin \Gamma$。由于 $\Gamma$ 是!!{complete}的，$\lnot !A \in \Gamma$。由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:prv:prop:explicit-inc},
+    prfND/{fol:ntd:prv:prop:explicit-inc},
+    prfAX/{fol:axd:prv:prop:explicit-inc},
+    prfTab/{fol:tab:prv:prop:explicit-inc}}}{%
+  \tagrefs{prfSC/{pl:seq:prv:prop:explicit-inc},
+    prfND/{pl:ntd:prv:prop:explicit-inc},
+    prfAX/{pl:axd:prv:prop:explicit-inc},
+    prfTab/{pl:tab:prv:prop:explicit-inc}}},
+$\Gamma$ 是不一致的。这与 $\Gamma$ 一致的假定矛盾。因此 $!A \notin
+\Gamma$ 不可能成立，所以 $!A \in \Gamma$。
+
+\tagitem{defAnd}{}{%
+\iftag{probAnd}{习题。}{%
+当且仅当 $!A \in \Gamma$ 且 $!B \in \Gamma$ 时，$!A \land !B \in
+\Gamma$：
+
+对于正向，设 $!A \land !B \in \Gamma$。则由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}},
+第~(1)项，$\Gamma \Proves !A$ 且 $\Gamma \Proves !B$。由
+\olref{prop:ccs-prov-in}，$!A \in \Gamma$ 且 $!B \in \Gamma$，正如所求。
+
+对于反向，设 $!A \in \Gamma$ 且 $!B \in \Gamma$。由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}},
+第~(2)项，$\Gamma \Proves !A \land !B$。由 \olref{prop:ccs-prov-in}，
+$!A \land !B \in \Gamma$。}}
+
+\tagitem{defOr}{}{%
+\iftag{probOr}{习题。}{%
+首先证明，如果 $!A \lor !B \in \Gamma$，则 $!A \in \Gamma$ 或 $!B \in
+\Gamma$。设 $!A \lor !B \in \Gamma$ 但 $!A \notin \Gamma$ 且 $!B \notin
+\Gamma$。由于 $\Gamma$ 是!!{complete}的，$\lnot !A \in \Gamma$ 且
+$\lnot !B \in \Gamma$。由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}},
+第 (1) 项，$\Gamma$ 是不一致的，矛盾。因此 $!A \in \Gamma$ 或 $!B \in
+\Gamma$。
+
+对于反向，设 $!A \in \Gamma$ 或 $!B \in \Gamma$。由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}}, 第 (2) 项，
+$\Gamma \Proves !A \lor !B$。由 \olref{prop:ccs-prov-in}，$!A \lor !B
+\in \Gamma$，正如所求。}}
+
+\tagitem{defIf}{}{%
+\iftag{probIf}{习题。}{%
+对于正向，设 $!A \lif !B \in \Gamma$，并反设 $!A \in \Gamma$ 且 $!B
+\notin \Gamma$。在这些假设下，$!A \lif !B \in \Gamma$ 且 $!A \in
+\Gamma$。由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}},
+第 (1) 项，$\Gamma \Proves !B$。但于是由 \olref{prop:ccs-prov-in}，$!B
+\in \Gamma$，与 $!B \notin \Gamma$ 的假定矛盾。
+
+对于反向，首先考虑 $!A \notin \Gamma$ 的情形。由于 $\Gamma$ 是!!{complete}的，$\lnot !A \in \Gamma$。由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}}, 第 (2) 项，
+$\Gamma \Proves !A \lif !B$。再次由 \olref{prop:ccs-prov-in}，我们得到
+$!A \lif !B \in \Gamma$，正如所求。
+
+现在考虑 $!B \in \Gamma$ 的情形。由
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif}}},
+再次第 (2) 项，$\Gamma \Proves !A \lif !B$。由
+\olref{prop:ccs-prov-in}，$!A \lif !B \in \Gamma$。}}
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+完成 \olref[fol][com][ccs]{prop:ccs} 的证明。
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+完成 \olref[pl][com][ccs]{prop:ccs} 的证明。
+\end{prob}
+\tagendprob
+
+\end{document}

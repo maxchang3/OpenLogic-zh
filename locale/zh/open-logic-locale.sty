@@ -1,0 +1,71 @@
+% 中文本地化文件（v2；对照 open-logic-locale.sty 翻译，babel 语言键为 chinese；不手动折行）
+\setlocalecaption{chinese}{photocredits}{图片来源}
+\setlocalecaption{chinese}{history}{历史注记}
+\setlocalecaption{chinese}{reading}{延伸阅读}
+\setlocalecaption{chinese}{appendix}{附录}
+\setlocalecaption{chinese}{appendices}{附录}
+\setlocalecaption{chinese}{theorem}{定理}
+\setlocalecaption{chinese}{example}{例}
+\setlocalecaption{chinese}{definition}{定义}
+\setlocalecaption{chinese}{lemma}{引理}
+\setlocalecaption{chinese}{proposition}{命题}
+\setlocalecaption{chinese}{corollary}{推论}
+\setlocalecaption{chinese}{problem}{习题}
+\setlocalecaption{chinese}{problems}{习题}
+\setlocalecaption{chinese}{remark}{注}
+\setlocalecaption{chinese}{axiom}{公理}
+\setlocalecaption{chinese}{note}{注记}
+\setlocalecaption{chinese}{case}{情形}
+\setlocalecaption{chinese}{convention}{约定}
+\setlocalecaption{chinese}{OLP}{Open Logic Project}
+\setlocalecaption{chinese}{OLT}{《开放逻辑读本》}
+\setlocalecaption{chinese}{OLTlink}{https://github.com/OpenLogicProject/OpenLogic}
+\setlocalecaption{chinese}{license}{知识共享署名 4.0 国际许可协议}
+\setlocalecaption{chinese}{instigator}{发起人}
+\setlocalecaption{chinese}{editorialboard}{编委会}
+\setlocalecaption{chinese}{contributors}{贡献者}
+% cleveref 交叉引用名称
+\addto\extraschinese{%
+\Crefname{page}{页}{页}%
+\Crefname{thm}{定理}{定理}%
+\Crefname{ex}{例}{例}%
+\Crefname{defn}{定义}{定义}%
+\Crefname{lem}{引理}{引理}%
+\Crefname{prop}{命题}{命题}%
+\Crefname{prob}{习题}{习题}%
+\Crefname{rem}{注}{注}%
+\Crefname{cor}{推论}{推论}%
+\Crefname{axiom}{公理}{公理}%
+\Crefname{note}{注记}{注记}%
+\Crefname{case}{情形}{情形}%
+\Crefname{conv}{约定}{约定}%
+\Crefname{figure}{图}{图}%
+\Crefname{table}{表}{表}%
+% 章/节/部分：中文习惯为「第 N 章」
+\crefformat{part}{第~#1~部分}%
+\Crefformat{part}{第~#1~部分}%
+\crefformat{chapter}{第~#1~章}%
+\Crefformat{chapter}{第~#1~章}%
+\crefformat{section}{第~#1~节}%
+\Crefformat{section}{第~#1~节}%
+}
+% 许可证等样板文字
+\renewcommand*{\ollicensetext}[3]{\textit{#1} 由 #2 以 #3 许可发布。}
+% babel 26（TeXLive 2026）的 \setlocalecaption 把 caption 宏定义为 \bbl@ensure@<lang>{...} 包装器；当这类宏出现在 \href 的 URL 参数里时，hyperref 的 \hyper@normalise 用 \edef 扫描 URL，与该包装器交互导致无限递归（input stack size）；英文版恰好展开为纯文本所以不触发；因此这里把所有会进入 \href（尤其 URL 位置）的名字宏显式覆盖为纯文本。
+% 覆盖必须在 \selectlanguage{chinese}（\AtBeginDocument）之后执行，否则 \captionschinese 会把名字宏重新定义为 \bbl@ensure@chinese 包装
+\AtBeginDocument{%
+  \def\OLTlinkname{https://github.com/OpenLogicProject/OpenLogic}%
+  \def\OLTname{《开放逻辑读本》}%
+  \def\OLPname{Open Logic Project}%
+  \def\licensename{知识共享署名 4.0 国际许可协议}%
+}
+% 样板宏：不再引用 babel caption 宏（纯文本，避免上述递归）
+\renewcommand*{\oluselicensetext}{本书基于 \textit{\href{\OLTlinkname}{\OLTname}} 中由 \href{http://openlogicproject.org/}{\OLPname} 编写的材料，并在 \href{http://creativecommons.org/licenses/by/4.0/}{\licensename} 下使用。}
+\renewcommand*{\olshortlicensetext}[1]{\textit{\href{\OLTlinkname}{\jobname}} 由 #1 编纂，以 \href{http://creativecommons.org/licenses/by/4.0/}{CC--BY} 许可发布。}
+\renewcommand*{\olshortuselicensetext}[2]{\textit{#1} 由 #2 基于 \href{http://openlogicproject.org/}{OLP} / \href{http://creativecommons.org/licenses/by/4.0/}{CC--BY} 编纂。}
+% 版权页（第 5 页）其他段落的中文版：致谢/插图/排版说明/版本说明（机构名保留英文，用户 2026-08-15 定案；\olbookrevision 不用 gitinfo2 的 \gitAbbrevHash/\gitAuthorDate——缺 gitHeadInfo.gin 会输出 None）
+\renewcommand*{\olacknowledgements}{Open Logic Project 谨此感谢卡尔加里大学教学与学习研究所（Taylor Institute of Teaching and Learning）与阿尔伯塔省开放教育资源计划（ABOER Initiative）的慷慨支持，该计划得益于阿尔伯塔省政府（Alberta government）的投入。}
+\renewcommand*{\olillustrations}{封面插图由 \href{http://mattleadbeater.com}{Matthew Leadbeater} 绘制，依据知识共享署名-非商业性使用 4.0 国际许可协议（Creative Commons Attribution-NonCommercial 4.0 International License）使用。}
+\renewcommand*{\olcolophon}{由 \LaTeX{} 以 Baskervald X 与 Nimbus Sans 字体排版；本中译本由 DeepSeek V4 Flash 翻译（使用 DeepSeek Harness）。}
+\renewcommand*{\olbookrevision}{本中译本基于《\OLPbooktitle》英文版（\OLPbookversion）翻译，原文对应 Open Logic 上游修订 \OLPrevision，翻译完成于 2026 年 8 月 15 日。免费下载：\\[.5ex]
+  \url{\OLPsourcelink}}

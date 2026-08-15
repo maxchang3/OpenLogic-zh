@@ -1,0 +1,59 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: antecedent-strengthening
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[zh]{cnt}{min}{agg}
+
+\olsection{前件强化}
+
+「强化前件」指的是推理 $!A \lif !C \Entails (!A \land !B) \lif !C$。它对于实质条件句是有效的，但对于反事实条件句则是无效的。设它是真的：如果我擦划这盒火柴，它就会点燃。（这意味着火柴或火柴盒表面没有问题，我不会折断火柴，等等。）但如果若我在外太空点燃这盒火柴它就会点燃，则并非如此。所以如下推理是无效的：
+\begin{quote}
+  如果火柴被擦划，它就会点燃。
+
+  因此，如果火柴在外太空被擦划，它就会点燃。
+\end{quote}
+
+Lewis——Stalnaker 的条件句理论解释了这一点：我点燃火柴且是在外太空点燃它的最近世界，比仅点燃火柴的最近世界离现实世界远得多。所以尽管火柴在后者中点燃是真的，但前者中并非如此。而这正是应当如此的样子。
+
+\begin{ex}
+  球面语义使该推理无效，即我们有 $p
+  \cif r \Entails/ (p \land q) \cif r$。考虑模型 $\mModel{M}
+  = \tuple{W, O, V}$，其中 $W = \{w, w_1, w_2\}$，$O_w = \{\{w\}, \{w,
+  w_1\}, \{w, w_1, w_2\}\}$，$V(p) = \{w_1, w_2\}$，$V(q) = \{w_2\}$，
+  且 $V(r) = \{w_1\}$。存在一个可容纳 $p$ 的球面 $S = \{w,
+  w_1\}$，且 $p \lif r$ 在其中所有世界处为真，所以 $\mSat{M}{p
+    \cif r}[w]$。还存在一个可容纳 $(p \land q)$ 的球面 $S' =
+  \{w, w_1, w_2\}$，但 $\mSat/{M}{(p \land q) \lif r}[w_2]$，所以
+  $\mSat/{M}{(p \land q) \cif r}[w]$（见 \olref{fig:antecedent-strengthening}）。
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[layerwidth=1.5,scale=.6]\tiny
+  \spheresystem{3}
+  \propositionintersect{-10}{3}{30}{5}
+  \begin{scope}
+    \clip plot[smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} -- (4.5,4.5) ;
+    \spherefill{2}
+  \end{scope}
+  \draw[proposition] plot[dashed,smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} ;
+  \proposition{30}{2}{30}{5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{30}{2}{node[world] {$w_1$}}
+  \spherepos{-10}{3}{node[world] {$w_2$}}
+  \spherepos{-10}{4}{node {$q$}}
+  \spherepos{30}{4}{node {$r$}}
+  \draw (1,4.5) node[below] {$p$};
+\end{tikzpicture}
+\caption{前件强化的反例}
+\ollabel{fig:antecedent-strengthening}
+\end{center}
+\end{figure}
+\end{ex}
+
+\end{document}
