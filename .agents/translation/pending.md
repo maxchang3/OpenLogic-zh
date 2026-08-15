@@ -11,7 +11,6 @@
 - `prime set` →「素的集合」；书无「素滤子/素理想」。
 - `absurdity` →「荒谬」；书无「荒谬」，「矛盾」79 次；⊥ 的读法待定。
 - `Polish notation` →「波兰表示法」；书无。
-- `truth tree` →「真值树」；书无（表列语境用「表列」）。
 - `condensed derivation` →「简略的推演」；书无（「形式推演」1093 行可参考）。
 - `model existence result` →「模型存在性结果」；书无（完全性证明语境「反模型存在」6777 行）。
 - `exhaustive listing` →「穷尽性列出」；书无「穷尽」（用「极大一致」表述）。

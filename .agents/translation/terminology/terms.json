@@ -2713,6 +2713,13 @@
    "module": "core",
    "source": "confirmed",
    "note": "与 image 同译（文学锋《模态逻辑导论》「值域或像集」487 行）；指 $R$ 对 $A$ 的像 $R[A]$"
+  },
+  {
+   "en": "truth tree",
+   "zh": "真值树",
+   "module": "core",
+   "source": "confirmed",
+   "note": "用户确认；OLP 表列旧称（文学锋《模态逻辑导论》表列语境用「表列」）"
   }
  ]
 }
