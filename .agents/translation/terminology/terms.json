@@ -2848,6 +2848,142 @@
    "kind": "word",
    "source": "confirmed",
    "note": "用户确认；epistemic closure→认知封闭；与传递闭包等数学 closure 区分"
+  },
+  {
+   "en": "Kripke",
+   "zh": "克里普克",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Lewis",
+   "zh": "刘易斯",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Stalnaker",
+   "zh": "斯达内克",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Arthur Prior",
+   "zh": "亚瑟·普莱尔",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Prior",
+   "zh": "普莱尔",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Brouwer",
+   "zh": "布劳威尔",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Heyting",
+   "zh": "海廷",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Kolmogorov",
+   "zh": "柯尔莫哥洛夫",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Brouwer--Heyting--Kolmogorov",
+   "zh": "布劳威尔–海廷–柯尔莫哥洛夫",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Russell",
+   "zh": "罗素",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Hilbert",
+   "zh": "希尔伯特",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Frege",
+   "zh": "弗雷格",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Lindenbaum",
+   "zh": "林登鲍姆",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Carnap",
+   "zh": "卡尔纳普",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Hintikka",
+   "zh": "欣蒂卡",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Skolem",
+   "zh": "斯科伦",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Dana",
+   "zh": "达娜",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
   }
  ]
 }

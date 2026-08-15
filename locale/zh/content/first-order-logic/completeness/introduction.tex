@@ -14,16 +14,16 @@
 
 完全性定理是关于逻辑的最基本结果之一。它有两种表述，我们将证明二者的等价性。在第一种表述中，它说出了关于语义后承与我们的!!{derivation}系统之间的关系的基本事实：如果!!a{sentence}~$!A$ 从一些!!{sentence}~$\Gamma$ 推出，那么也存在一个确立 $\Gamma \Proves !A$ 的!!a{derivation}。于是，!!{derivation}系统在不证明那些实际上推不出来的命题的前提下，已达到它所能达到的强度。
 
-在第二种表述中，它可以陈述为一个模型存在性结果：每一个一致的!!{sentence}集都是可满足的。一致性是一个证明论概念：它说的是，我们的!!{derivation}系统无法产生某些!!{derivation}。但谁能断定，仅仅因为没有从~$\Gamma$ 出发的某类!!{derivation}，就保证存在\iftag{FOL}{一个!!a{structure}~$\Struct{M}$}{一个!!{valuation}~$\pAssign{v}$}，使得\iftag{FOL}{$\Sat{M}{\Gamma}$}{$\pSat{v}{\Gamma}$}？在完全性定理第一次得到证明之前——事实上早在我们现在所拥有的!!{derivation}系统出现之前——伟大的德国数学家 David Hilbert 就持这样的观点：数学理论的一致性保证了它们所谈论对象的实存性。他在一封致 Gottlob Frege 的信中如此表述：
+在第二种表述中，它可以陈述为一个模型存在性结果：每一个一致的!!{sentence}集都是可满足的。一致性是一个证明论概念：它说的是，我们的!!{derivation}系统无法产生某些!!{derivation}。但谁能断定，仅仅因为没有从~$\Gamma$ 出发的某类!!{derivation}，就保证存在\iftag{FOL}{一个!!a{structure}~$\Struct{M}$}{一个!!{valuation}~$\pAssign{v}$}，使得\iftag{FOL}{$\Sat{M}{\Gamma}$}{$\pSat{v}{\Gamma}$}？在完全性定理第一次得到证明之前——事实上早在我们现在所拥有的!!{derivation}系统出现之前——伟大的德国数学家 David \zhFirst{Hilbert}{希尔伯特} 就持这样的观点：数学理论的一致性保证了它们所谈论对象的实存性。他在一封致 Gottlob \zhFirst{Frege}{弗雷格} 的信中如此表述：
 
 \begin{quote}
   如果任意给定的公理连同它们的全部后承彼此不相矛盾，那么它们就是真的，并且那些由公理所定义的对象就实存。对我来说，这就是真与实存的判准。
 \end{quote}
 
-Frege 强烈反对这一看法。完全性定理的第二种表述表明，Hilbert 至少在如下意义上是对的：如果这些公理是一致的，那么便存在某个\iftag{FOL}{!!{structure}}{!!{valuation}}\emph{使}它们全都为真。
+\zhFirst{Frege}{弗雷格} 强烈反对这一看法。完全性定理的第二种表述表明，\zhFirst{Hilbert}{希尔伯特} 至少在如下意义上是对的：如果这些公理是一致的，那么便存在某个\iftag{FOL}{!!{structure}}{!!{valuation}}\emph{使}它们全都为真。
 
 这些并不是完全性定理——或者毋宁说，它的证明——重要的唯一理由。它还有许多重要的后承，其中一些我们将分别讨论。例如，既然任何证明 $\Gamma \Proves !A$ 的!!{derivation}都是有穷的，因此只能用到~$\Gamma$ 中的有穷多个!!{sentence}，那么根据完全性定理即可推出：如果 $!A$ 是~$\Gamma$ 的一个后承，则它已经是~$\Gamma$ 的某个有穷子集的后承。这被称为\emph{紧致性}。等价地，如果 $\Gamma$ 的每一个有穷子集都是一致的，那么 $\Gamma$ 自身也必然是一致的。
 
-虽然紧致性定理是通过绕道!!{derivation}从完全性定理推出的，但也可以利用完全性定理的\emph{证明}本身来直接确立它。因为该证明所做的工作是：取一个具有某种性质——一致性——的!!{sentence}集，从这集合中构造出一个具有某些性质（在此情形下，即满足该集合）的!!a{structure}。几乎同样的构造稍加改动，就能用来直接确立紧致性：只需从「有穷可满足的」!!{sentence}集出发，而不是从一致的集出发。\iftag{FOL}{这一构造还产生其他后承，例如，任何可满足的!!{sentence}集都有一个有穷或!!{denumerable}模型。（这个结果称为 L\"owenheim--Skolem 定理。）一般而言，从!!{sentence}集构造!!{structure}的做法在逻辑学中经常被使用，有时甚至出现在哲学中。}{}
+虽然紧致性定理是通过绕道!!{derivation}从完全性定理推出的，但也可以利用完全性定理的\emph{证明}本身来直接确立它。因为该证明所做的工作是：取一个具有某种性质——一致性——的!!{sentence}集，从这集合中构造出一个具有某些性质（在此情形下，即满足该集合）的!!a{structure}。几乎同样的构造稍加改动，就能用来直接确立紧致性：只需从「有穷可满足的」!!{sentence}集出发，而不是从一致的集出发。\iftag{FOL}{这一构造还产生其他后承，例如，任何可满足的!!{sentence}集都有一个有穷或!!{denumerable}模型。（这个结果称为 L\"owenheim--\zhFirst{Skolem}{斯科伦} 定理。）一般而言，从!!{sentence}集构造!!{structure}的做法在逻辑学中经常被使用，有时甚至出现在哲学中。}{}
 
 \end{document}
