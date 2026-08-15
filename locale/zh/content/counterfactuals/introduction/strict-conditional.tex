@@ -10,7 +10,7 @@
 
 \olsection{严格条件句}
 
-Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条件句相对的是它——而非实质条件句——才对应蕴含。在真性模态逻辑中，$!A \strictif !B$ 可定义为 $\Box(!A \lif
+Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，对应蕴含的是它——而非实质条件句。在真性模态逻辑中，$!A \strictif !B$ 可定义为 $\Box(!A \lif
 !B)$。因此，严格条件句（在世界处）为真当且仅当相应的实质条件句是必然的。
 
 严格条件句面对实质条件句的种种悖论表现如何？有着假前件的严格条件句和有着真后件的严格条件句，可能为真，也可能为假。此外，$(!A \strictif !B) \lor (!B \strictif !A)$ 并不有效。严格条件句 $!A \strictif !B$ 也不等价于 $\lnot !A \lor !B$，因此它不是真值函项的。
@@ -33,7 +33,7 @@ Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条�
   !A \strictif !B & \Entails (!A \land !C) \strictif !B
   \intertext{严格条件句也是传递的：}
   !A \strictif !B, !B \strictif !C & \Entails !A \strictif !C
-  \intertext{最后，严格条件句等价于其逆否形式：}
+  \intertext{最后，严格条件句等价于其逆否命题：}
   !A \strictif !B & \Entails \lnot !B \strictif \lnot !A\\
   \lnot !B \strictif \lnot !A & \Entails !A \strictif !B
 \end{align}
@@ -49,7 +49,7 @@ Lewis 引入了\emph{严格条件句}~$\strictif$，并论证说，与实质条�
 \end{prob}
 
 \begin{prob}
-  通过给出如下各项的 \Log{S5}-证明来表明严格条件句成立的有效衍推关系：
+  通过给出如下各项的 \Log{S5}-证明，表明这些有效的衍推关系对严格条件句成立：
   \begin{enumerate}
   \item  $\Box(!A \lif !B) \Entails \lnot !A \lor !B$
   \item $!A \land \lnot !B \Entails \lnot\Box(!A \lif !B)$

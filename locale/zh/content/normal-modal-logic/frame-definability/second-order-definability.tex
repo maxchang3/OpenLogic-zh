@@ -82,7 +82,7 @@
 \lforall[X][\lforall[x][(\lforall[y][(\Atom{Q}{x,y} \lif \Atom{X}{y})]
     \lif \Atom{X}{x})]].
 \]
-这当然意味着这两个语句等价。以下是你可以直接说服自己的方法：首先设这个二阶语句在!!a{structure}~$\Struct{M}$ 中为真。由于 $x$ 和 $X$ 普遍量化了，余下的部分必须对任何 $x \in W$ 和集合~$X \subseteq W$ 都成立，例如集合 $\Setabs{z}{Rxz}$，其中 $R = \Assign{Q}{M}$。于是，对任何满足 $s(x) \in W$ 且 $s(X) = \Setabs{z}{Rxz}$ 的~$s$，我们有 $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+这当然意味着这两个语句等价。以下是你可以直接说服自己的方法：首先设这个二阶语句在!!a{structure}~$\Struct{M}$ 中为真。由于 $x$ 和 $X$ 是全称量化的，余下的部分必须对任何 $x \in W$ 和集合~$X \subseteq W$ 都成立，例如集合 $\Setabs{z}{Rxz}$，其中 $R = \Assign{Q}{M}$。于是，对任何满足 $s(x) \in W$ 且 $s(X) = \Setabs{z}{Rxz}$ 的~$s$，我们有 $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
     \Atom{X}{y})] \lif \Atom{X}{x}}$。但根据我们选取 $s(X)$ 的方式，那意味着 $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
     \Atom{Q}{x,y})] \lif \Atom{Q}{x,x}}[s]$，由于前件是有效的，这等价于 $\Atom{Q}{x,x}$。由于 $s(x)$ 是任意的，我们有 $\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$。
 

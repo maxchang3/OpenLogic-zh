@@ -12,11 +12,11 @@
 
 \olsection{\usetoken{P}{tableau}}
 
-雖然許多!!{derivation}系统处理的是!!{sentence}的排列，!!{tableau}处理的却是!!{signed formula}。!!^a{signed formula}是由一个真值符号（$\True$ 或 $\False$）和一个!!a{sentence}构成的二元组
+虽然许多!!{derivation}系统处理的是!!{sentence}的排列，!!{tableau}处理的却是!!{signed formula}。!!^a{signed formula}是由一个真值符号（$\True$ 或 $\False$）和一个!!a{sentence}构成的二元组
 \[
 \sFmla{\True}{!A} \text{ 或 } \sFmla{\False}{!A}.
 \]
-!!^a{tableau}由排列在向下分支的树中的!!{signed formula}组成。它以若干 \emph{assumptions}开始，接着通过应用某条推理规则，从其上方的某个!!{signed formula}得到新的!!{signed formula}。每条规则允许我们在一个支的末端添加一个或多个!!{signed formula}，或者并排添加两个!!{signed formula}——此时支一分为二，两个新建的!!{signed formula}构成两支的末端。
+!!^a{tableau}由排列在向下分支的树中的!!{signed formula}组成。它以若干 \emph{假设}开始，接着通过应用某条推理规则，从其上方的某个!!{signed formula}得到新的!!{signed formula}。每条规则允许我们在一个支的末端添加一个或多个!!{signed formula}，或者并排添加两个!!{signed formula}——此时支一分为二，两个新建的!!{signed formula}构成两支的末端。
 
 对某个复合!!{signed formula}应用一条规则，会添加其若干直接子!!{formula}对应的!!{signed formula}。它们成对出现，对两个符号各有一条规则。例如，$\TRule{\True}{\land}$ 规则作用于 $\sFmla{\True}{!A \land !B}$，允许在含 $\sFmla{\True}{!A \land !B}$ 的任意支的末端同时添加!!{signed formula} $\sFmla{\True}{!A}$ 和~$\sFmla{\True}{!B}$，而规则 $\TRule{\False}{!A \land !B}$ 则允许通过并排添加 $\sFmla{\False}{!A}$ 和 $\sFmla{\False}{!B}$ 来使支分裂。!!^a{tableau}是闭的，如果它的每一条支都含有匹配的一对!!{signed formula} $\sFmla{\True}{!A}$ 与 $\sFmla{\False}{!A}$。
 
@@ -43,6 +43,6 @@
 \]
 的闭!!{tableau}。
 
-!!^{tableau}s 于 1950 年代由 Evert Beth 和 Jaakko Hintikka 各自独立发明，并由 Raymond Smullyan 加以简化和推广。它们用起来非常容易，因为构造!!a{tableau}是一个非常系统的程序。由于!!{tableau}的系统性，它们也很适合用计算机实现。不过，!!a{tableau}往往难以阅读，它们与证明的联系有时也不易看出。这一方法也相当一般化，许多不同的逻辑都有!!{tableau}系统。!!^{tableau}s 还帮助我们找到满足给定（之集）的!!{sentence}的!!{structure}：如果该集合是可满足的，它就不会有闭的!!{tableau}，即任何!!{tableau}都会有一条开放的支。满足条件的!!{structure}可以被从开放的支「读取」，只要该支上所有可能应用的规则都已经应用。表列演算与矢列演算之间也有非常密切的联系：本质上，一个闭的!!{tableau}是矢列演算中的一个简略的!!{derivation}，只是倒过来书写。
+!!^{tableau}s 于 1950 年代由 Evert Beth 和 Jaakko Hintikka 各自独立发明，并由 Raymond Smullyan 加以简化和推广。它们用起来非常容易，因为构造!!a{tableau}是一个非常系统的过程。由于!!{tableau}的系统性，它们也很适合用计算机实现。不过，!!a{tableau}往往难以阅读，它们与证明的联系有时也不易看出。这一方法也相当一般化，许多不同的逻辑都有!!{tableau}系统。!!^{tableau}s 还帮助我们找到满足给定（之集）的!!{sentence}的!!{structure}：如果该集合是可满足的，它就不会有闭的!!{tableau}，即任何!!{tableau}都会有一条开放的支。满足条件的!!{structure}可以被从开放的支「读取」，只要该支上所有可能应用的规则都已经应用。表列演算与矢列演算之间也有非常密切的联系：本质上，一个闭的!!{tableau}是矢列演算中的一个简略的!!{derivation}，只是倒过来书写。
 
 \end{document}

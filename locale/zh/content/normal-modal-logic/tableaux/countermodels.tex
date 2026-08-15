@@ -17,7 +17,7 @@
   \iftag{notprvBox,notprvDiamond}{规则}{规则}生成，而且也只需应用一次（并产生一个新的前缀）。
   \iftag{prvBox}{$\TRule{\True}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
     和 }\iftag{prvDiamond}{$\TRule{\False}{\Diamond}$}{}
-  \iftag{notprvBox,notprvDiamond}{has}{have}需要可能多次应用，但每个前缀只应用一次，而且只生成有穷多个新的前缀。因此，这一构造在有限多个阶段之后要么产生一个闭的支，要么产生一个完全的支。
+  \iftag{notprvBox,notprvDiamond}{}{}需要可能多次应用，但每个前缀只应用一次，而且只生成有穷多个新的前缀。因此，这一构造在有限多个阶段之后要么产生一个闭的支，要么产生一个完全的支。
 
   一旦构造出具有开放完全的支的表列，\olref[cpl]{thm:tableau-completeness} 的证明就给出一个满足原始带前缀!!{formula}集合的显式模型。因此不仅成立：若 $\Gamma \Entails !A$，则存在闭的!!{tableau}且 $\Gamma \Proves !A$；如果以正确的方式寻找闭的!!{tableau}，最终得到一个「完全」的!!{tableau}，那么我们不仅会知道 $\Gamma \Entails/ !A$，而且实际上能够构造一个反模型。
 \end{explain}

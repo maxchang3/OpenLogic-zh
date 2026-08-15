@@ -10,9 +10,9 @@
 
 \olsection{实质条件句}
 
-在英语中最简单的形式中，条件句是形如「if \dots then \dots」的语句，其中\dots{}本身是语句，例如「如果管家做了这件事，那么园丁是无辜的。」在入门逻辑课程中，我们学会用 $\lif$ 联结词来符号化条件句：符号化由 \dots 指示的部分，例如用!!{formula} $!A$ 和~$!B$，而整个条件句则符号化为 $!A \lif !B$。
+就英语中最简单的形式而言，条件句是形如「if \dots then \dots」的语句，其中\dots{}本身是语句，例如「如果管家做了这件事，那么园丁是无辜的。」在入门逻辑课程中，我们学会用 $\lif$ 联结词来符号化条件句：符号化由 \dots 指示的部分，例如用!!{formula} $!A$ 和~$!B$，而整个条件句则符号化为 $!A \lif !B$。
 
-联结词 $\lif$ 是 \emph{真值函项的}（truth-functional），即 $!A \lif !B$ 的真值——$\True$ 或 $\False$——由 $!A$ 和~$!B$ 的真值决定：当 $!A$ 为假或 $!B$ 为真时，$!A \lif !B$ 为真，否则为假。相对于真值指派~$\pAssign v$，我们定义 $\pSat{v}{!A \lif !B}$ 当且仅当 $\pSat/{v}{!A}$ 或 $\pSat{v}{!B}$。具有这种语义的联结词 $\lif$ 被称为 \emph{实质条件句}（material conditional）。
+联结词 $\lif$ 是 \emph{真值函项的}，即 $!A \lif !B$ 的真值——$\True$ 或 $\False$——由 $!A$ 和~$!B$ 的真值决定：当 $!A$ 为假或 $!B$ 为真时，$!A \lif !B$ 为真，否则为假。相对于真值指派~$\pAssign v$，我们定义 $\pSat{v}{!A \lif !B}$ 当且仅当 $\pSat/{v}{!A}$ 或 $\pSat{v}{!B}$。具有这种语义的联结词 $\lif$ 被称为 \emph{实质条件句}。
 
 这个定义产生了一系列初等逻辑事实。首先，演绎定理对实质条件句成立：
 \begin{align}
@@ -32,7 +32,7 @@
   !A, !A \lif !B & \Entails !B
   \intertext{实质条件句可聚合：}
   !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
-  \intertext{我们总能加强前件，即该条件句是 \emph{单调的}（monotonic）：}
+  \intertext{我们总能加强前件，即该条件句是 \emph{单调的}：}
   !A \lif !B & \Entails (!A \land !C) \lif !B
   \intertext{实质条件句是传递的，即链规则是有效的：}
   !A \lif !B, !B \lif !C & \Entails !A \lif !C

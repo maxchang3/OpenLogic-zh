@@ -35,21 +35,21 @@
 一棵\emph{树}是一个二元组 $T = \tuple{A, \le}$，其中 $A$ 是集合，$\le$ 是~$A$ 上的偏序，且具有唯一的最小元 $r \in A$（称为\emph{根}），使得对所有 $x \in A$，集合 $\Setabs{y}{y \le x}$ 都由~$\le$ 良序。
 \end{defn}
 
-\begin{defn}[后继]
+\begin{defn}[后继点]
 设 $T = \tuple{A, \le}$ 是一棵树。
 如果 $x,y \in A$，$x < y$，且不存在 $z \in A$ 使 $x < z < y$，那么我们说 $y$ 是~$x$ 的一个\emph{后继}。
 \end{defn}
 
-$x \in A$ 的后继也称为它的\emph{子节点}。如果 $y$ 是~$x$ 的一个后继，那么我们称 $x$ 是~$y$ 的\emph{前驱}或\emph{父节点}。
+$x \in A$ 的后继也称为它的\emph{子节点}。如果 $y$ 是~$x$ 的一个后继，那么我们称 $x$ 是~$y$ 的\emph{前驱点}或\emph{父节点}。
 
 \begin{prop}
-如果 $\tuple{A,\le}$ 是一棵树，那么除根之外的每个 $x \in A$ 至多有一个前驱。
+如果 $\tuple{A,\le}$ 是一棵树，那么除根之外的每个 $x \in A$ 至多有一个前驱点。
 \end{prop}
 
 \begin{proof}
   设 $y_1 < x$ 且 $y_2 < x$ 且 $y_1 \neq y_2$。则 $\{y_1,
   y_2\} \subseteq \Setabs{z}{z<x}$。由于 $\Setabs{z}{z<x}$ 由~$\le$ 良序，其子集 $\{y_1, y_2\}$ 有一个最小元，显然它必须是 $y_1$ 或~$y_2$。所以要么 $y_1 \le y_2$，要么 $y_2 \le y_1$。我们假设了 $y_1 \neq y_2$，因此实际上要么 $y_1 < y_2$，要么 $y_2 < y_1$。由于我们假设了 $y_1 < x$ 和 $y_2 < x$，我们进而有要么 $y_1 < y_2
-  < x$，要么 $y_2 < y_1 < x$。所以 $y_1$ 和 $y_2$ 不可能都是~$x$ 的前驱。
+  < x$，要么 $y_2 < y_1 < x$。所以 $y_1$ 和 $y_2$ 不可能都是~$x$ 的前驱点。
 \end{proof}
 
 \begin{defn}

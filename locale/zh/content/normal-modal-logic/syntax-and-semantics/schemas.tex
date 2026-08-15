@@ -11,19 +11,18 @@
 \olsection{模式与有效性}
 
 \begin{defn}
-  一个 \emph{模式}（schema）是某个模态!!{formula}~$!C$ 的全部代入特例
+  一个 \emph{模式}是某个模态!!{formula}~$!C$ 的全部代入特例
   所组成的!!{formula}集合，且仅包含这些特例，即
   \[
   \Setabs{!B}{\lexists[!D_1], \dots, \lexists[!D_n] \left(!B =
   \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \right) }.
   \]
-  该!!{formula}~$!C$ 称为这个模式的 \emph{特征}公式（characteristic
-  !!{formula}），它在对!!{propositional variable}的重命名下是唯一的。
+  该!!{formula}~$!C$ 称为这个模式的 \emph{特征}!!{formula}，它在对!!{propositional variable}的重命名下是唯一的。
   若!!^a{formula}~$!A$ 是该集合的一个成员，则它是这一模式的一个
-  \emph{特例}（instance）。
+  \emph{特例}。
 \end{defn}
 
-用把 `$!A$'、`$!B$'、\dots 代入~$!C$ 的原子成分所得的无语言表达式来表示
+用把 `$!A$'、`$!B$'、\dots 代入~$!C$ 的原子成分所得的元语言表达式来表示
 一个模式是很方便的。例如，下面这些都表示一个模式：
 `$!A$'、`$!A \lif \Box!A$'、`$!A \lif (!B \lif !A)$'。它们分别对应于
 特征!!{formula} $p$、$p \lif \Box p$、$p \lif (q
@@ -72,7 +71,7 @@
 \begin{prop}\ollabel{prop:soundMP}
   若 $!A$ 与 $!A \lif !B$ 在模型中的一个世界里为真，
   则 $!B$ 也为真。因此，有效!!{formula}在
-  分离规则（modus ponens）下是封闭的。
+  分离规则下是封闭的。
 \end{prop}
 
 \begin{prop}\ollabel{prop:valid-instances}

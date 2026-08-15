@@ -63,7 +63,7 @@ $Rf(\sigma)f(\sigma.{*})$。
   $\sFmla{\True}{\lfalse}$ 的 $\Gamma$ 是不可满足的。
 
   也不可能存在模型~$\mModel{M}$ 和对
-  $P(\Gamma)$ 的解释~$f$，使得两者兼具。若 $\mSat{M}{!A}[f(\sigma)]$，则根据
+  $P(\Gamma)$ 的解释~$f$，使得两者同时成立。若 $\mSat{M}{!A}[f(\sigma)]$，则根据
   \olref[sem][rel]{prop:true-monotonic}，由于
   $Rf(\sigma)(\sigma.{*})$，有 $\mSat{M}{!A}[f(\sigma)]$。所以我们不能同时有
   $\mSat{M}{!A}[f(\sigma)]$ 和
@@ -90,9 +90,9 @@ $Rf(\sigma)f(\sigma.{*})$。
 只需考虑对一条可满足的支应用规则的情形。
 
 设 $\Gamma$ 是那条支上的!!{signed formula}集合，并设
-被应用规则的!!{signed formula}为 $\sFmla{S}{!A}[\sigma] \in \Gamma$。若该规则不会产生分的
+被应用规则的!!{signed formula}为 $\sFmla{S}{!A}[\sigma] \in \Gamma$。若该规则不会产生分歧的
 支，我们必须证明扩展后的支，即 $\Gamma$ 连同该规则的
-结论，仍是可满足的。若该规则产生分的支，我们必须证明所得两条支中
+结论，仍是可满足的。若该规则产生分歧的支，我们必须证明所得两条支中
 至少有一条是可满足的。
 \begin{enumerate}
 \item 把 $\TRule{\True}{\lnot}$ 应用于

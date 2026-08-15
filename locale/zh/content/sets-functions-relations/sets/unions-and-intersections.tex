@@ -10,7 +10,7 @@
 \olsection{并集与交集}
 
 \begin{explain}
-在 \olref[sfr][set][bas]{sec} 中，我们引入了借助概括原则（abstraction）给出的集合定义，即形如 $\Setabs{x}{\phi(x)}$ 的定义。这里，我们调用某个性质~$\phi$，而这个性质可以提及我们已经定义过的集合。所以例如，若 $A$ 和~$B$ 是集合，则集合 $\Setabs{x}{x \in A \lor x \in B}$ 由所有或是 $A$ 或是~$B$ 的!!{element}的对象组成，即它是把 $A$ 和~$B$ 的!!{element}合在一起的集合。我们可以像 \olref{fig:union} 那样直觉地来看这件事，其中高亮区域表示两个集合 $A$ 和~$B$ 的!!{element}放在一起。
+在 \olref[sfr][set][bas]{sec} 中，我们引入了借助抽象给出的集合定义，即形如 $\Setabs{x}{\phi(x)}$ 的定义。这里，我们调用某个性质~$\phi$，而这个性质可以提及我们已经定义过的集合。所以例如，若 $A$ 和~$B$ 是集合，则集合 $\Setabs{x}{x \in A \lor x \in B}$ 由所有或是 $A$ 或是~$B$ 的!!{element}的对象组成，即它是把 $A$ 和~$B$ 的!!{element}合在一起的集合。我们可以像 \olref{fig:union} 那样直观地表示这件事，其中高亮区域表示两个集合 $A$ 和~$B$ 的!!{element}放在一起。
 
 \begin{figure}
   \olasset{assets/diagrams/union.tikz}
@@ -43,7 +43,7 @@ b, c \} \cup \emptyset = \{a, b, c \}$。
 \end{prob}
 
 \begin{explain}
-我们还可以考虑一种与并相对偶的运算。这种运算形成所有那些既是~$A$ 的!!{element}又是~$B$ 的!!{element}的!!{element}的集合。此运算称为 \emph{交}，可以像 \olref{fig:intersection} 那样来描绘。
+我们还可以考虑一种与并相对偶的运算。这种运算形成由所有那些既是~$A$ 的!!{element}又是~$B$ 的!!{element}的!!{element}组成的集合。此运算称为 \emph{交}，可以像 \olref{fig:intersection} 那样来描绘。
 \begin{figure}
   \olasset{assets/diagrams/intersection.tikz}
   \caption{两个集合的交 $A \cap B$ 是它们所共同的!!{element}的集合。}
@@ -76,7 +76,7 @@ $\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$。
 \end{prob}
 
 \begin{explain}
-我们还可以对两个以上的集合取并或交。一般来说，处理这件事的一个漂亮方式如下：假设你要把所有想要（对它们）取并（或交）的集合收集到单独一个集合中。那么我们就可以把所有原始集合的并定义为属于该集合的至少一个!!{element}的所有对象的集合，把交定义为属于该集合每一个!!{element}的所有对象的集合。
+我们还可以对两个以上的集合取并或交。一般来说，处理这件事的一个漂亮方式如下：假设你要把所有想对它们取并（或交）的集合收集到一个集合中。那么我们就可以把所有原始集合的并定义为属于该集合的至少一个!!{element}的所有对象的集合，把交定义为属于该集合每一个!!{element}的所有对象的集合。
 \end{explain}
 
 \begin{defn}

@@ -10,7 +10,7 @@
 
 \olsection{直觉主义逻辑的规则}
 
-联结词 $\land$ 与 $\lor$ 的规则与正则命题带符号!!{tableau}相同，只是加上了前缀。在每种情形中，应用于带符号!!{formula} $\sFmla{S}{!A}[\sigma]$ 的规则会产生新的也用~$\sigma$ 加前缀的!!{formula}。这在直觉上应当很清楚：例如，若 $!A \land !B$ 在（由一个世界命名的）~$\sigma$ 处为真，则 $!A$ 与 $!B$ 也在~$\sigma$ 处为真（而不在任何其他世界处为真）。我们把 $\land$ 与 $\lor$ 的规则收集在 \olref{tab:prop-rules} 中。
+联结词 $\land$ 与 $\lor$ 的规则与通常的命题带符号!!{tableau}相同，只是加上了前缀。在每种情形中，应用于带符号!!{formula} $\sFmla{S}{!A}[\sigma]$ 的规则会产生新的也用~$\sigma$ 加前缀的!!{formula}。这在直觉上应当很清楚：例如，若 $!A \land !B$ 在（由一个世界命名的）~$\sigma$ 处为真，则 $!A$ 与 $!B$ 也在~$\sigma$ 处为真（而不在任何其他世界处为真）。我们把 $\land$ 与 $\lor$ 的规则收集在 \olref{tab:prop-rules} 中。
 
 \begin{table}
   \[\def\arraystretch{3}\begin{array}{|c|c|}
@@ -71,7 +71,7 @@
 \]
 存在一个闭的表列。
 
-对于条件句~$\lif$，规则与经典情形和模态情形不同。$\TRule{\lif}{\True}$ 规则把包含 $\sFmla{\True}{!A \lif !B}[\sigma]$ 的支在两条不同的支上分别扩展为 $\sFmla{\True}{!A}[\sigma.{*}]$ 与 $\sFmla{\False}{!B}[\sigma.{*}]$。它只能应用于在应用它的那支上\emph{已经}出现的前缀~$\sigma.{*}$。我们称这样的前缀（在该支上）为「已使用」。$($由于 $\sigma.{*}$ 包含 $\sigma$ 本身，该规则总可通过在分开的支上添上带前缀的带符号公式 $\sFmla{\True}{!A}[\sigma]$ 与 $\sFmla{\False}{!B}[\sigma]$ 来应用$)$。
+对于蕴涵联结词~$\lif$，规则与经典情形和模态情形不同。$\TRule{\lif}{\True}$ 规则把包含 $\sFmla{\True}{!A \lif !B}[\sigma]$ 的支在两条不同的支上分别扩展为 $\sFmla{\True}{!A}[\sigma.{*}]$ 与 $\sFmla{\False}{!B}[\sigma.{*}]$。它只能应用于在应用它的那支上\emph{已经}出现的前缀~$\sigma.{*}$。我们称这样的前缀（在该支上）为「已使用」。$($由于 $\sigma.{*}$ 包含 $\sigma$ 本身，该规则总可通过在分开的支上添上带前缀的带符号公式 $\sFmla{\True}{!A}[\sigma]$ 与 $\sFmla{\False}{!B}[\sigma]$ 来应用$)$。
 
 $\TRule{\lif}{\False}$ 规则把包含 $\sFmla{\False}{!A \lif !B}[\sigma]$ 的支在同一支上同时扩展为 $\sFmla{\True}{!A}[\sigma.n]$ 与 $\sFmla{\False}{!B}[\sigma.n]$，其中 $\sigma.n$ 是对该支新的前缀。
 

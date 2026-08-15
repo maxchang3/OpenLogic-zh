@@ -11,7 +11,7 @@
 \olsection{\usetoken{P}{valuation}与满足}
 
 \begin{defn}[!!^{valuation}s]
-设 $\{\True, \False\}$ 是「真」（「true」）与「假」（「false」）这两个真值构成的集合。$\Lang{L_0}$ 的一个 \emph{!!{valuation}} 是把 $\True$ 或 $\False$ 指派给语言中每个!!{propositional variable}的函数~$\pAssign{v}$，即 $\pAssign{v} \colon
+设 $\{\True, \False\}$ 是「真」与「假」这两个真值构成的集合。$\Lang{L_0}$ 的一个 \emph{!!{valuation}} 是把 $\True$ 或 $\False$ 指派给语言中每个!!{propositional variable}的函数~$\pAssign{v}$，即 $\pAssign{v} \colon
 \PVar \to \{\True, \False \}$。
 \end{defn}
 
@@ -161,16 +161,16 @@ variable}s 上取值一致，即只要 $\Obj p_n$ 出现在某个!!{formula}~$!A
 
 \tagitem{prvOr}{%
   \indcase{!A}{(!B \lor !C)}{$\pSat{v}{\indfrm}$ iff
-    $\pSat{v}{!B}$ 或 $\pSat{v}{!C}$ (or both).}}{}
+    $\pSat{v}{!B}$ 或 $\pSat{v}{!C}$（或两者皆是）。}}{}
 
 \tagitem{prvIf}{%
   \indcase{!A}{(!B \lif !C)}{$\pSat{v}{\indfrm}$ iff $\pSat/{v}{!B}$
-    or $\pSat{v}{!C}$ (or both).}}{}
+    或 $\pSat{v}{!C}$（或两者皆是）。}}{}
 
 \tagitem{prvIff}{%
-  \indcase{!A}{(!B \liff !C)}{$\pSat{v}{\indfrm}$ iff either both
-    $\pSat{v}{!B}$ 且 $\pSat{v}{!C}$, or neither $\pSat{v}{!B}$
-    nor $\pSat{v}{!C}$.}}{}
+  \indcase{!A}{(!B \liff !C)}{$\pSat{v}{\indfrm}$ iff 要么
+    $\pSat{v}{!B}$ 与 $\pSat{v}{!C}$ 同时成立，要么 $\pSat{v}{!B}$ 与
+    $\pSat{v}{!C}$ 都不成立。}}{}
 \end{enumerate}
 若 $\Gamma$ 是!!{formula}的集合，则 $\pSat{v}{\Gamma}$ 当且仅当对每个~$!A \in \Gamma$ 都有
 $\pSat{v}{!A}$。

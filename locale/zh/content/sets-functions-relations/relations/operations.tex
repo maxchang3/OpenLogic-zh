@@ -10,12 +10,12 @@
 \olsection{关系上的运算}
 
 我们常常需要修改或组合关系。在
-\olref[sfr][rel][ord]{prop:stricttopartial} 中，我们考虑了关系的\emph{并}，它就是看作有序对之集合的两个关系的并。类似地，在 \olref[sfr][rel][ord]{prop:partialtostrict} 中，我们考虑了关系的差集。这里还有我们在关系上可以进行的其他一些运算。
+\olref[sfr][rel][ord]{prop:stricttopartial} 中，我们考虑了关系的\emph{并}，它就是看作有序对之集合的两个关系的并。类似地，在 \olref[sfr][rel][ord]{prop:partialtostrict} 中，我们考虑了关系的相对差集。这里还有我们在关系上可以进行的其他一些运算。
 
 \begin{defn}\ollabel{relationoperations}
 设 $R$、$S$ 是关系，$A$ 是任意集合。
 
-$R$ 的\emph{逆}是 $R^{-1} = \Setabs{\tuple{y, x}}{\tuple{x,
+$R$ 的\emph{逆关系}是 $R^{-1} = \Setabs{\tuple{y, x}}{\tuple{x,
     y} \in R}$。
 
 $R$ 与 $S$ 的\emph{相对积}是 $(R \mid S) =
@@ -24,7 +24,7 @@ $R$ 与 $S$ 的\emph{相对积}是 $(R \mid S) =
 $R$ 对 $A$ 的\emph{限制}是 $\funrestrictionto{R}{A}= R
 \cap A^2$。
 
-$R$ 对 $A$ 的\emph{像}是 $\funimage{R}{A} = \{y :
+$R$ 对 $A$ 的\emph{像集}是 $\funimage{R}{A} = \{y :
 (\exists x \in A)Rxy\}$
 \end{defn}
 
