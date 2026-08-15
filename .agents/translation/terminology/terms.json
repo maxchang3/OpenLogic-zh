@@ -3296,6 +3296,30 @@
    "kind": "word",
    "source": "confirmed",
    "note": "上游 EN 拼写错误（正确为 Jaakko Hintikka）；译文宏键统一用 Jaakko Hintikka"
+  },
+  {
+   "en": "vertex",
+   "zh": "顶点",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "图论术语；vertices 为复数，条目 vertices → 顶点 已存在"
+  },
+  {
+   "en": "edge",
+   "zh": "边",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "图论术语；modal-logic 语境中 relation 的边"
+  },
+  {
+   "en": "isolated vertex",
+   "zh": "孤立顶点",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "图论术语"
   }
  ]
 }
