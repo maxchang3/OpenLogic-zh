@@ -10,9 +10,9 @@
       {\olfileid[zh]{fol}{tab}{rul}}
       {\olfileid[zh]{pl}{tab}{rul}}
 
-\olsection{表列规则}
+\olsection{\usetoken{P}{tableau}规则}
 
-!!^a{tableau}是对!!a{sentence}在!!a{structure}中可以为真或为假的种种可能方式所做的一种系统性考察。!!{tableau}的构件是!!{signed formula}：即!!{sentence}再加上一个真值「符号」，要么是 $\True$，要么是~$\False$。这些带符号的!!{formula}被排成一棵（向下生长的）树。
+!!^a{tableau}是对!!a{sentence}在!!a{structure}中可以为真或为假的种种可能方式所做的一种系统性考察。表列的构件是!!{signed formula}：即!!{sentence}再加上一个真值「符号」，要么是 $\True$，要么是~$\False$。这些带符号的!!{formula}被排成一棵（向下生长的）树。
 
 \begin{defn}
   一个 \emph{!!{signed formula}} 是这样一个二元组，它由一个真值与!!a{sentence}构成，即要么是：
@@ -25,7 +25,7 @@
 真」，把 $\sFmla{\False}{!A}$ 读作「$!A$ 可能为假」（在某个!!{structure}中）。
 
 树中的每个!!{signed formula}要么是一个 \emph{假设}（它们列在树的最顶端），要么是由其上方的一个!!a{signed formula}通过若干推理规则之一得到的。
-每个可能的!!{main operator}都有两条规则，一条用于符号为~$\True$ 的情形，
+前一个!!{formula}的每个可能的!!{main operator}都有两条规则，一条用于符号为~$\True$ 的情形，
 另一条用于符号为~$\False$ 的情形。有些规则允许树
 分叉，有些规则则只向该支添加!!{signed formula}。
 一条规则可以（而且往往必须）不是应用于紧接着其上面的!!{signed formula}，而是应用于

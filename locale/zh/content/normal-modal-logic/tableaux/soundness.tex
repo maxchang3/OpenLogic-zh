@@ -8,7 +8,7 @@
 
 \olfileid[zh]{nml}{tab}{sou}
 
-\olsection{K 的可靠性}
+\olsection{\Log{K} 的可靠性}
 
 \begin{editorial}
   这个可靠性证明复用了经典命题逻辑的可靠性证明，即从头完整证明一遍。
@@ -74,21 +74,21 @@
 
 \iftag{prvBox}{%
 \item 通过对 $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\Box}$ 来扩展该支：
-  \iftag{probBox}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\True}{!B}[\sigma.n]$，对某个 $\sigma.n \in P(\Gamma)$（因为 $\sigma.n$ 必须被使用）。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Box !B}[f(\sigma)]$。由于 $f$ 是前缀的一个解释且 $\sigma$、$\sigma.n \in P(\Gamma)$ 都成立，我们知道 $Rf(\sigma)f(\sigma.n)$。因此，$\mSat{M}{!B}[f(\sigma.n)]$，即 $\mModel{M}, f$ 满足 $\sFmla{\True}{!B}[\sigma.n]$。}
+  \iftag{probBox}{习题。}{这会在支上得到一个新的!!{signed formula}~$\sFmla{\True}{!B}[\sigma.n]$，对某个 $\sigma.n \in P(\Gamma)$（因为 $\sigma.n$ 必须被使用）。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Box !B}[f(\sigma)]$。由于 $f$ 是前缀的一个解释且 $\sigma$、$\sigma.n \in P(\Gamma)$ 都成立，我们知道 $Rf(\sigma)f(\sigma.n)$。因此，$\mSat{M}{!B}[f(\sigma.n)]$，即 $\mModel{M}, f$ 满足 $\sFmla{\True}{!B}[\sigma.n]$。}
 
 \item 通过对 $\sFmla{\False}{\Box !B}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\Box}$ 来扩展该支：
-  \iftag{probBox}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\False}{!A}[\sigma.n]$，其中 $\sigma.n$ 是支上的一个新前缀，即 $\sigma.n \notin P(\Gamma)$。由于 $\Gamma$ 是可满足的，存在一个 $\Struct{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\Sat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Box !B}[f(\sigma)]$。我们要证明 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$ 是可满足的。为此，我们如下定义 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释：
+  \iftag{probBox}{习题。}{这会在支上得到一个新的!!{signed formula}~$\sFmla{\False}{!A}[\sigma.n]$，其中 $\sigma.n$ 是支上的一个新前缀，即 $\sigma.n \notin P(\Gamma)$。由于 $\Gamma$ 是可满足的，存在一个 $\Struct{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\Sat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Box !B}[f(\sigma)]$。我们要证明 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$ 是可满足的。为此，我们如下定义 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释：
 
   由于 $\mSat/{M}{\Box !B}[f(\sigma)]$，存在一个 $w \in W$ 使得 $Rf(\sigma)w$ 且 $\mSat/{M}{!B}[w]$。设 $f'$ 除了 $f'(\sigma.n) = w$ 外与 $f$ 相同。由于 $f'(\sigma) = f(\sigma)$ 且 $Rf(\sigma)w$，我们有 $Rf'(\sigma)f'(\sigma.n)$，所以 $f'$ 是 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释。显然 $\mSat/{M}{!B}[f'(\sigma.n)]$。由于对所有前缀 $\sigma' \in P(\Gamma)$ 有 $f(\sigma') = f'(\sigma')$，故 $\mSat{M}{\Gamma}[f']$。因此，$\mModel{M}, f'$ 满足 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$。}
   }{}
 
 \iftag{prvDiamond}{%
 \item 通过对 $\sFmla{\True}{\Diamond !B}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\Diamond}$ 来扩展该支：
-  \iftag{probDiamond}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\True}{!A}[\sigma.n]$，其中 $\sigma.n$ 是支上的一个新前缀，即 $\sigma.n \notin P(\Gamma)$。由于 $\Gamma$ 是可满足的，存在一个 $\Struct{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\Sat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Diamond !B}[f(\sigma)]$。我们要证明 $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$ 是可满足的。为此，我们如下定义 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释：
+  \iftag{probDiamond}{习题。}{这会在支上得到一个新的!!{signed formula}~$\sFmla{\True}{!A}[\sigma.n]$，其中 $\sigma.n$ 是支上的一个新前缀，即 $\sigma.n \notin P(\Gamma)$。由于 $\Gamma$ 是可满足的，存在一个 $\Struct{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\Sat{M}{\Gamma}[f]$，特别地，$\mSat{M}{\Diamond !B}[f(\sigma)]$。我们要证明 $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$ 是可满足的。为此，我们如下定义 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释：
 
   由于 $\mSat{M}{\Diamond !B}[f(\sigma)]$，存在一个 $w \in W$ 使得 $Rf(\sigma)w$ 且 $\mSat{M}{!B}[w]$。设 $f'$ 除了 $f'(\sigma.n) = w$ 外与 $f$ 相同。由于 $f'(\sigma) = f(\sigma)$ 且 $Rf(\sigma)w$，我们有 $Rf'(\sigma)f'(\sigma.n)$，所以 $f'$ 是 $P(\Gamma) \cup \{\sigma.n\}$ 的一个解释。显然 $\mSat{M}{!B}[f'(\sigma.n)]$。由于对所有前缀 $\sigma' \in P(\Gamma)$ 有 $f(\sigma') = f'(\sigma')$，故 $\mSat{M}{\Gamma}[f']$。因此，$\mModel{M}, f'$ 满足 $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$。}
 \item 通过对 $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\Diamond}$ 来扩展该支：
-  \iftag{probDiamond}{习题。}{这会在支上得到一个新的带符号公式~$\sFmla{\False}{!B}[\sigma.n]$，对某个 $\sigma.n \in P(\Gamma)$（因为 $\sigma.n$ 必须被使用）。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Diamond !B}[f(\sigma)]$。由于 $f$ 是前缀的一个解释且 $\sigma$、$\sigma.n \in P(\Gamma)$ 都成立，我们知道 $Rf(\sigma)f(\sigma.n)$。因此，$\mSat/{M}{!B}[f(\sigma.n)]$，即 $\mModel{M}, f$ 满足 $\sFmla{\False}{!B}[\sigma.n]$。}
+  \iftag{probDiamond}{习题。}{这会在支上得到一个新的!!{signed formula}~$\sFmla{\False}{!B}[\sigma.n]$，对某个 $\sigma.n \in P(\Gamma)$（因为 $\sigma.n$ 必须被使用）。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{\Diamond !B}[f(\sigma)]$。由于 $f$ 是前缀的一个解释且 $\sigma$、$\sigma.n \in P(\Gamma)$ 都成立，我们知道 $Rf(\sigma)f(\sigma.n)$。因此，$\mSat/{M}{!B}[f(\sigma.n)]$，即 $\mModel{M}, f$ 满足 $\sFmla{\False}{!B}[\sigma.n]$。}
   }{}
 \end{enumerate}
 现在来考虑有两个前提的可能的推理。

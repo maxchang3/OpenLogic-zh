@@ -8,7 +8,7 @@
 
 \olfileid[zh]{int}{tab}{sou}
 
-\olsection{直觉主义!!{tableau}的可靠性}
+\olsection{直觉主义\usetoken{P}{tableau}的可靠性}
 
 \begin{explain}
   为证明直觉主义!!{tableau}是可靠的，我们必须证明：如果
@@ -77,7 +77,7 @@ $Rf(\sigma)f(\sigma.{*})$。
 
 \begin{proof}
 我们把!!a{tableau}的一条支称为可满足的，当且仅当其上的
-带符号!!{formula}集合是可满足的；并称!!a{tableau}是可满足的，若它至少包含一条可满足的支。
+!!{signed formula}集合是可满足的；并称!!a{tableau}是可满足的，若它至少包含一条可满足的支。
 
 我们证明如下命题：把一条可满足的!!{tableau}用某条
 推理规则扩展，总是得到一条可满足的!!{tableau}。
@@ -85,19 +85,19 @@ $Rf(\sigma)f(\sigma.{*})$。
 所有支都是闭的，而闭的支是不可满足的。
 
 设我们有一条可满足的!!{tableau}，即至少有一条可满足的支的!!a{tableau}。应用一条推理规则要么
-在支上添加带符号!!{formula}，要么把一条支分成两条。若该!!{tableau}有一条可满足的支未被本次规则
+在支上添加!!{signed formula}，要么把一条支分成两条。若该!!{tableau}有一条可满足的支未被本次规则
 应用扩展，那么它在该扩展的!!{tableau}中仍是一条可满足的支，所以扩展后的表列是可满足的。因此我们
 只需考虑对一条可满足的支应用规则的情形。
 
-设 $\Gamma$ 是那条支上的带符号!!{formula}集合，并设
-被应用规则的带符号!!{formula}为 $\sFmla{S}{!A}[\sigma] \in \Gamma$。若该规则不会产生分的
+设 $\Gamma$ 是那条支上的!!{signed formula}集合，并设
+被应用规则的!!{signed formula}为 $\sFmla{S}{!A}[\sigma] \in \Gamma$。若该规则不会产生分的
 支，我们必须证明扩展后的支，即 $\Gamma$ 连同该规则的
 结论，仍是可满足的。若该规则产生分的支，我们必须证明所得两条支中
 至少有一条是可满足的。
 \begin{enumerate}
 \item 把 $\TRule{\True}{\lnot}$ 应用于
   $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$ 来扩展该支。于是扩展后的
-  支包含带符号!!{formula} $\Gamma \cup
+  支包含!!{signed formula} $\Gamma \cup
   \{\sFmla{\False}{!B}[\sigma.{*}]\}$。设 $\mSat{M}{\Gamma}[f]$。
   特别地，有 $\mSat{M}{\lnot !B}[f(\sigma)]$。因此，
   对使得 $Rf(\sigma)w$ 的任意 $w$ 都有 $\mSat/{M}{!B}[w]$，而
@@ -107,7 +107,7 @@ $Rf(\sigma)f(\sigma.{*})$。
   $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$ 来扩展该支：习题。
 \item 把 $\TRule{\True}{\land}$ 应用于
   $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$ 来扩展该支，这会在支上
-  得到两个新的带符号!!{formula}：
+  得到两个新的!!{signed formula}：
   $\sFmla{\True}{!B}[\sigma]$ 与 $\sFmla{\True}{!C}[\sigma]$。设
   $\mSat{M}{\Gamma}[f]$，特别地 $\mSat{M}{!B \land
     !C}[f(\sigma)]$。则 $\mSat{M}{!B}[f(\sigma)]$ 且
@@ -117,7 +117,7 @@ $Rf(\sigma)f(\sigma.{*})$。
   $\sFmla{\False}{!B \lor !C} \in \Gamma$ 来扩展该支：习题。
 \item 把 $\TRule{\False}{\lif}$ 应用于
   $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$ 来扩展该支：这在支上
-  得到两个新的带符号!!{formula}：$\sFmla{\True}{!B}[\sigma.n]$ 与
+  得到两个新的!!{signed formula}：$\sFmla{\True}{!B}[\sigma.n]$ 与
   $\sFmla{\False}{!C}[\sigma.n]$，其中 $\sigma.n$ 是
   支上的一个新前缀，即 $\sigma.n \notin P(\Gamma)$。
 
