@@ -13,7 +13,7 @@
 设 $\Sigma$ 是一组模态!!{formula}的集合——可将它们看作某一正规模态逻辑的公理或定义原则。一个集合 $\Gamma$ 是 $\Sigma$-一致的，当且仅当 $\Gamma \Proves/[\Sigma] \lfalse$，即不存在从 $\Sigma$ 出发、形如 $!A_1 \lif (!A_2 \lif \cdots (!A_n \lif \lfalse)\dots)$ 的!!{derivation}，其中每个 $!A_i \in \Gamma$。我们将构造一个「典范」模型，其中每个世界都被视为一种特殊的 $\Sigma$-一致集：它不只是 $\Sigma$-一致的，而是极大一致的，即在它决定每个模态!!{formula}的真值这一意义上：对每个 $!A$，要么 $!A \in \Gamma$，要么 $\lnot !A \in \Gamma$：
 
 \begin{defn}
-  一个集合 $\Gamma$ 是\emph{完全 $\Sigma$-一致的（complete $\Sigma$-consistent）}，当且仅当它是 $\Sigma$-一致的，且对每个~$!A$，要么 $!A \in \Gamma$，要么 $\lnot !A \in \Gamma$。
+  一个集合 $\Gamma$ 是\emph{完全 $\Sigma$-一致的}，当且仅当它是 $\Sigma$-一致的，且对每个~$!A$，要么 $!A \in \Gamma$，要么 $\lnot !A \in \Gamma$。
 \end{defn}
 
 完全 $\Sigma$-一致集 $\Gamma$ 具有若干有用的性质。首先，它们是演绎封闭的，即若 $\Gamma \Proves[\Sigma] !A$ 则 $!A \in \Gamma$。这尤其意味着，!!a{formula}~$!A \in \Sigma$ 的每个特例亦 $\in \Gamma$。再者，$\Gamma$ 中的成员关系镜像了命题联结词的真值条件。这在我们定义「典范模型」时将十分重要。
@@ -22,7 +22,7 @@
   设 $\Gamma$ 是完全 $\Sigma$-一致的。则：
   \begin{enumerate}
   \item \ollabel{prop:ccs-closed}%
-    $\Gamma$ 在~$\Sigma$ 中是演绎封闭的（deductively closed）。
+    $\Gamma$ 在~$\Sigma$ 中是演绎封闭的。
   \item \ollabel{prop:ccs-sigma}%
     $\Sigma \subseteq \Gamma$。
   \tagitem{prvFalse}{\ollabel{prop:ccs-lfalse}%

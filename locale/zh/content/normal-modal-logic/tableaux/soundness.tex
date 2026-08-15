@@ -39,7 +39,7 @@
 \end{defn}
 
 \begin{defn}
-  设 $\Gamma$ 是一个带前缀的!!{formula}集，并设 $P(\Gamma)$ 是其中出现的前缀集。若 $f$ 是~$P(\Gamma)$ 在 $\mModel{M}$ 中的一个解释，则当 $\mModel{M}$ 关于~$f$ 地满足~$\Gamma$ 中的每个带前缀的!!{formula}时，我们就说 $\mModel{M}$ 关于~$f$ 地满足~$\Gamma$，记作 $\mSat{M}{\Gamma}[f]$。$\Gamma$ 是\emph{可满足的}当且仅当存在模型~$\mModel{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\mSat{M}{\Gamma}[f]$。
+  设 $\Gamma$ 是一个带前缀的!!{formula}集，并设 $P(\Gamma)$ 是其中出现的前缀集。若 $f$ 是~$P(\Gamma)$ 在 $\mModel{M}$ 中的一个解释，则当 $\mModel{M}$ 相对于~$f$ 满足~$\Gamma$ 中的每个带前缀的!!{formula}时，我们就说 $\mModel{M}$ 相对于~$f$ 满足~$\Gamma$，记作 $\mSat{M}{\Gamma}[f]$。$\Gamma$ 是\emph{可满足的}当且仅当存在模型~$\mModel{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\mSat{M}{\Gamma}[f]$。
 \end{defn}
 
 \begin{prop}
@@ -66,9 +66,9 @@
 \tagfalse{prvDiamond}
 首先，我们考虑只有一个前提的可能的推理。
 \begin{enumerate}
-\item 通过对 $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\lnot}$ 来扩展该支。于是扩展后的支包含!!{signed formula}集 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma]\}$。设 $\mSat{M}{\Gamma}[f]$。特别地，$\mSat{M}{\lnot !B}[f(\sigma)]$。因此，$\mSat/{M}{!B}[f(\sigma)]$，即 $\mModel{M}$ 关于~$f$ 地满足 $\sFmla{\False}{!B}[\sigma]$。
+\item 通过对 $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\lnot}$ 来扩展该支。于是扩展后的支包含!!{signed formula}集 $\Gamma \cup \{\sFmla{\False}{!B}[\sigma]\}$。设 $\mSat{M}{\Gamma}[f]$。特别地，$\mSat{M}{\lnot !B}[f(\sigma)]$。因此，$\mSat/{M}{!B}[f(\sigma)]$，即 $\mModel{M}$ 相对于~$f$ 满足 $\sFmla{\False}{!B}[\sigma]$。
 \item 通过对 $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\lnot}$ 来扩展该支：习题。
-\item 通过对 $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\land}$ 来扩展该支，结果在支上得到两个新的!!{signed formula}：$\sFmla{\True}{!B}[\sigma]$ 和 $\sFmla{\True}{!C}[\sigma]$。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{!B \land !C}[f(\sigma)]$。则 $\mSat{M}{!B}[f(\sigma)]$ 和 $\mSat{M}{!C}[f(\sigma)]$。这意味着 $\mModel{M}$ 关于~$f$ 地既满足 $\sFmla{\True}{!B}[\sigma]$ 又满足 $\sFmla{\True}{!C}[\sigma]$。
+\item 通过对 $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$ 应用 $\TRule{\True}{\land}$ 来扩展该支，结果在支上得到两个新的!!{signed formula}：$\sFmla{\True}{!B}[\sigma]$ 和 $\sFmla{\True}{!C}[\sigma]$。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat{M}{!B \land !C}[f(\sigma)]$。则 $\mSat{M}{!B}[f(\sigma)]$ 和 $\mSat{M}{!C}[f(\sigma)]$。这意味着 $\mModel{M}$ 相对于~$f$ 既满足 $\sFmla{\True}{!B}[\sigma]$ 又满足 $\sFmla{\True}{!C}[\sigma]$。
 \item 通过对 $\sFmla{\False}{!B \lor !C} \in \Gamma$ 应用 $\TRule{\False}{\lor}$ 来扩展该支：习题。
 \item 通过对 $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$ 应用 $\TRule{\False}{\lif}$ 来扩展该支：这会在支上得到两个新的!!{signed formula}：$\sFmla{\True}{!B}[\sigma]$ 和 $\sFmla{\False}{!C}[\sigma]$。设 $\mSat{M}{\Gamma}[f]$，特别地，$\mSat/{M}{!B \lif !C}[f(\sigma)]$。则 $\mSat{M}{!B}[f(\sigma)]$ 和 $\mSat/{M}{!C}[f(\sigma)]$。这意味着 $\mModel{M}, f$ 既满足 $\sFmla{\True}{!B}[\sigma]$ 又满足 $\sFmla{\False}{!C}[\sigma]$。
 
@@ -109,7 +109,7 @@
 \end{cor}
 
 \begin{proof}
-  若 $\Gamma \Proves !A$，则对某个 $!B_1$, \dots, $!B_n \in \Gamma$，$\Delta = \{\sFmla{\False}{!A}[1], \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1]\}$ 有一个闭的!!{tableau}。我们要证明 $\Gamma \Entails !A$。设不如此，则对某个 $\mModel{M}$ 和 $w$，对 $i=1$, \dots,~$n$ 有 $\mSat{M}{!B_i}[w]$，但 $\mSat/{M}{!A}[w]$。令 $f(1) = w$；则 $f$ 是~$P(\Delta)$ 到~$\mModel{M}$ 的一个解释，并且 $\mModel{M}$ 关于~$f$ 地满足~$\Delta$。但由 \olref{thm:tableau-soundness}，$\Delta$ 因有一个闭的!!{tableau}而是不可满足的，此为矛盾。所以我们必须要有 $\Gamma \Proves !A$。
+  若 $\Gamma \Proves !A$，则对某个 $!B_1$, \dots, $!B_n \in \Gamma$，$\Delta = \{\sFmla{\False}{!A}[1], \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1]\}$ 有一个闭的!!{tableau}。我们要证明 $\Gamma \Entails !A$。设不如此，则对某个 $\mModel{M}$ 和 $w$，对 $i=1$, \dots,~$n$ 有 $\mSat{M}{!B_i}[w]$，但 $\mSat/{M}{!A}[w]$。令 $f(1) = w$；则 $f$ 是~$P(\Delta)$ 到~$\mModel{M}$ 的一个解释，并且 $\mModel{M}$ 相对于~$f$ 满足~$\Delta$。但由 \olref{thm:tableau-soundness}，$\Delta$ 因有一个闭的!!{tableau}而是不可满足的，此为矛盾。所以我们必须要有 $\Gamma \Proves !A$。
 \end{proof}
 
 \begin{cor}

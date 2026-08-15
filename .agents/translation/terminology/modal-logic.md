@@ -22,6 +22,7 @@
 | Kripke semantics | Kripke 语义 | | |
 | canonical / canonical model | 典范的 / 典范模型 | filtration | 过滤 |
 | bisimulation | 双模拟 | maximal consistent | 极大一致的 |
+| forth condition / back condition | forth 条件 / back 条件 | bisimilar | 双模拟等价的 |
 | valid on a frame | 在框架上有效 | | |
 | true in a model | 在模型中为真 | truth at a world | 在世界处为真 |
 | correspondence theory | 对应理论 | standard translation | 标准翻译 |

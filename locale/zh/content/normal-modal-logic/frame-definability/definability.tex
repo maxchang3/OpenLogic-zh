@@ -10,7 +10,7 @@
 
 \olsection{框架可定义性}
 
-尽管 \olref[acc]{thm:soundschemas} 的逆蕴含不成立，但若我们把「模型」换成「框架」，则它们成立：对于 \olref[acc]{thm:soundschemas} 中所考察的性质，如果某个!!a{formula}在某个\emph{框架}上有效，则它确实是该框架的可及关系具有相应性质。于是，所考察的这些!!{formula}定义了具有相应性质的框架类。
+尽管 \olref[acc]{thm:soundschemas} 的逆蕴含不成立，但若我们把「模型」换成「框架」，则它们成立：对于 \olref[acc]{thm:soundschemas} 中所考察的性质，如果某个!!a{formula}在某个\emph{框架}上有效，则该框架的可及关系确实具有相应性质。于是，所考察的这些!!{formula}定义了具有相应性质的框架类。
 
 \begin{defn}
   若 $\mClass{F}$ 是一个框架类，则我们说 $!A$ \emph{定义}~$\mClass{F}$，当且仅当对恰好在 $\mClass{F}$ 中的所有框架且仅对这些框架~$\mModel{F}$，都有 $\mModel{F} \Entails !A$。
@@ -25,10 +25,10 @@
 \begin{proof}
   \begin{enumerate}
   \item 设 \Ax{D} 在 $\mModel{F} = \tuple{W, R}$ 上有效，即 $\mModel{F} \Entails \Box p \lif \Diamond p$。设 $\mModel{M} = \tuple{W, R, V}$ 是一个基于~$\mModel{F}$ 的模型，且 $w \in W$。我们必须证明存在某个 $v$ 使得~$Rwv$。设不然：则对任意~$!A$（包括~$p$），$\mSat{M}{\Box !A}$ 与 $\mSat/{M}{\Diamond !A}[w]$ 都成立。但此时 $\mSat/{M}{\Box p \lif \Diamond p}[w]$，这与 $\mModel{F} \Entails \Box p \lif \Diamond p$ 的假设相矛盾。
-  \item 设 \Ax{T} 在 $\mModel{F}$ 上有效，即 $\mModel{F} \Entails \Box p \lif p$。设 $w \in W$ 是任意世界；我们需要证明 $Rww$。若 $u \in V(p)$，当且仅当 $Rwu$ 成立（当 $q$ 不同于 $p$ 时，$V(q)$ 任意，例如取 $V(q) = \emptyset)$。设 $\mModel{M} = \tuple{W, R, V}$。根据构作，对所有满足 $Rwu$ 的 $u$：$\mSat{M}{p}[u]$，从而 $\mSat{M}{\Box p}[w]$。但根据假设 $\Box p \lif p$ 在世界~$w$ 处为真，所以 $\mSat{M}{p}[w]$，而根据 $V$ 的定义，这只有在 $Rww$ 时才可能。
+  \item 设 \Ax{T} 在 $\mModel{F}$ 上有效，即 $\mModel{F} \Entails \Box p \lif p$。设 $w \in W$ 是任意世界；我们需要证明 $Rww$。令 $u \in V(p)$ 当且仅当 $Rwu$（当 $q$ 不同于 $p$ 时，$V(q)$ 任意，例如取 $V(q) = \emptyset)$。设 $\mModel{M} = \tuple{W, R, V}$。根据构作，对所有满足 $Rwu$ 的 $u$：$\mSat{M}{p}[u]$，从而 $\mSat{M}{\Box p}[w]$。但根据假设 $\Box p \lif p$ 在世界~$w$ 处为真，所以 $\mSat{M}{p}[w]$，而根据 $V$ 的定义，这只有在 $Rww$ 时才可能。
   \item 我们证明其逆否命题：设 $\mModel{F}$ 不是对称的，我们证明 \Ax{B}，即 $p \lif \Box\Diamond p$ 在 $\mModel{F}= \tuple{W, R}$ 上不是有效的。若 $\mModel{F}$ 不是对称的，则存在 $u$、$v \in W$ 使得 $Ruv$ 但不 $Rvu$。定义 $V$：当且仅当不 $Rvw$ 时 $w \in V(p)$（其余情形 $V$ 任意）。设 $\mModel{M} =\tuple{W, R, V}$。现在，根据 $V$ 的定义，对所有满足不 $Rvw$ 的 $w$，$\mSat{M}{p}[w]$；特别地，由于不~$Rvu$，$\mSat{M}{p}[u]$。又由于 $Rvw$，当且仅当 $w \notin V(p)$，故不存在 $w$ 使得 $Rvw$ 且 $\mSat{M}{p}[w]$，从而 $\mSat/{M}{\Diamond p}[v]$。由于~$Ruv$，也有 $\mSat/{M}{\Box\Diamond p}[u]$。由此得 $\mSat/{M}{p \lif \Box\Diamond p}[u]$，因此 \Ax{B} 在~$\mModel{F}$ 上不是有效的。
   \item 设 \Ax{4} 在 $\mModel{F} = \tuple{W,R}$ 上有效，即 $\mModel{F} \Entails \Box p \lif \Box\Box p$，并设 $u$、$v$、$w \in W$ 是任意世界，使得 $Ruv$ 且 $Rvw$；我们需要证明 $Ruw$。定义 $V$：当且仅当 $Ruz$ 时 $z \in V(p)$（其余情形 $V$ 任意）。设 $\mModel{M} =\tuple{W, R, V}$。根据 $V$ 的定义，对所有满足 $Ruz$ 的 $z$，$\mSat{M}{p}[z]$，从而 $\mSat{M}{\Box p}[u]$。但根据假设 \Ax{4}，$\Box p \lif \Box \Box p$ 在 $u$ 处为真，所以 $\mSat{M}{\Box \Box p}[u]$。由于 $Ruv$ 且 $Rvw$，我们有 $\mSat{M}{p}[w]$，但根据~$V$ 的定义，这只有在 $Ruw$ 时才可能，正如所愿。
-  \item 我们逆否式地进行：设框架 $\mModel{F} = \tuple{W, R}$ 不是欧性的，并证明它令~\Ax{5} 为假，即 $\mModel{F} \Entails/ \Diamond p \lif \Box\Diamond p$。设存在世界 $u$、$v$、$w \in W$，使得 $Rwu$ 且 $Rwv$ 但不~$Ruv$。定义 $V$：对所有世界 $z$，当且仅当\emph{不}是 $Ruz$ 成立时 $z \in V(p)$。设 $\mModel{M} =\tuple{W, R, V}$。则根据假设 $\mSat{M}{p}[v]$，并且由于 $Rwv$ 也有 $\mSat{M}{\Diamond p}[w]$。然而，不存在满足 $Ruy$ 且 $\mSat{M}{p}[y]$ 的世界 $y$，所以 $\mSat/{M}{\Diamond p}[u]$。由于 $Rwu$，由此得 $\mSat/{M}{\Box\Diamond p}[w]$，因此 \Ax{5}，即 $\Diamond p \lif \Box\Diamond p$，在世界~$w$ 处失效。
+  \item 我们逆否式地进行：设框架 $\mModel{F} = \tuple{W, R}$ 不是欧性的，并证明它令~\Ax{5} 为假，即 $\mModel{F} \Entails/ \Diamond p \lif \Box\Diamond p$。设存在世界 $u$、$v$、$w \in W$，使得 $Rwu$ 且 $Rwv$ 但不~$Ruv$。定义 $V$：对所有世界 $z$，$z \in V(p)$ 当且仅当不 $Ruz$。设 $\mModel{M} =\tuple{W, R, V}$。则根据假设 $\mSat{M}{p}[v]$，并且由于 $Rwv$ 也有 $\mSat{M}{\Diamond p}[w]$。然而，不存在满足 $Ruy$ 且 $\mSat{M}{p}[y]$ 的世界 $y$，所以 $\mSat/{M}{\Diamond p}[u]$。由于 $Rwu$，由此得 $\mSat/{M}{\Box\Diamond p}[w]$，因此 \Ax{5}，即 $\Diamond p \lif \Box\Diamond p$，在世界~$w$ 处失效。
   \end{enumerate}
 \end{proof}
 
@@ -61,7 +61,7 @@ $R$ 的性质之间的逻辑关系一般对应于相应的定义性!!{formula}�
   \item 若 $R$ 是对称的，则它是传递的当且仅当它是欧性的。
   \item 若 $R$ 是对称的或欧性的，则它是弱有向的（它具有「菱形性质」）。
   \item 若 $R$ 是欧性的，则它是弱连通的。
-  \item 若 $R$ 是部分函数的，则它是持续的。
+  \item 若 $R$ 是函数的，则它是持续的。
   \end{enumerate}
 \end{prop}
 
