@@ -3127,7 +3127,7 @@
    "module": "core",
    "kind": "word",
    "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+   "note": "例句虚构人名，直接译出，不使用 \\zhFirst 括号机制"
   },
   {
    "en": "Audrey",
@@ -3135,7 +3135,7 @@
    "module": "core",
    "kind": "word",
    "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+   "note": "例句虚构 agent 名（与真实人物 Audrey Yap 区分），直接译出，不使用 \\zhFirst 括号机制"
   },
   {
    "en": "Wiener",
@@ -3280,6 +3280,22 @@
    "kind": "word",
    "source": "confirmed",
    "note": "无通行译名，保留原文"
+  },
+  {
+   "en": "Ruth",
+   "zh": "露丝",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "例句虚构人名（Richard 的姐妹），直接译出，不使用 \\zhFirst 括号机制"
+  },
+  {
+   "en": "Jaako Hintikka",
+   "zh": "亚科·欣蒂卡",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "上游 EN 拼写错误（正确为 Jaakko Hintikka）；译文宏键统一用 Jaakko Hintikka"
   }
  ]
 }

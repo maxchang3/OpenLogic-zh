@@ -54,7 +54,7 @@ WHITELIST = {
     'Lindenbaum','Carnap','Hintikka','Skolem','Dana','Langford','Dummett','Whitehead','Leibniz',
     'Turing','Church','Gentzen','Gödel','Godel','Kurt','Tarski','Cantor','Dedekind','Kleene',
     'Post','Zermelo','Fraenkel','Peano','Bernays','Wiener','Kuratowski','Bishop','Beth',
-    'Smullyan','Evert','Raymond','Jaakko','Jaako','Alfred','North','Bertrand','Michael',
+    'Smullyan','Evert','Raymond','Jaakko','Alfred','North','Bertrand','Michael',
     'Robert','David','Rudolf','Saul','Arthur','Richard','Audrey','Edgar','Harvey','John','Lee',
     'C.','I.','K.','L.','E.','J.','F.','A.','P.','R.','M.','N.','O.','S.','H.',
     # 书名/机构/许可/项目名等非人名短语的组成词
