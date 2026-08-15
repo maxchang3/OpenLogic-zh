@@ -24,6 +24,19 @@
 \setlocalecaption{chinese}{instigator}{发起人}
 \setlocalecaption{chinese}{editorialboard}{编委会}
 \setlocalecaption{chinese}{contributors}{贡献者}
+% 中文版的篇章层级与英文版共用 memoir 样式，但结构标签与中文标题字号需要单独覆盖。
+% Part 页使用中文序数；六字标题在 300pt 版心内以 40pt 单行排下，并保留上游的颜色与字重。
+\renewcommand*{\thepart}{\zhnum{part}}
+\renewcommand*{\parttitlefont}{\normalfont\fontsize{40pt}{48pt}\selectfont\bfseries\color{OLPcolor}}
+\renewcommand*{\printpartname}{\partnamefont 第\thepart 部分}
+\renewcommand*{\partnamenum}{}
+\renewcommand*{\printpartnum}{}
+% 章首按中文语序显示「第 1 章」；进入附录后仍显示「附录 A」。
+\renewcommand*{\printchaptername}{%
+  \chapnamefont
+  \ifanappendix\appendixname\space\thechapter\else 第\thechapter 章\fi}
+\renewcommand*{\chapternamenum}{}
+\renewcommand*{\printchapternum}{}
 % cleveref 交叉引用名称
 \addto\extraschinese{%
 \Crefname{page}{页}{页}%
@@ -54,10 +67,19 @@
 % babel 26（TeXLive 2026）的 \setlocalecaption 把 caption 宏定义为 \bbl@ensure@<lang>{...} 包装器；当这类宏出现在 \href 的 URL 参数里时，hyperref 的 \hyper@normalise 用 \edef 扫描 URL，与该包装器交互导致无限递归（input stack size）；英文版恰好展开为纯文本所以不触发；因此这里把所有会进入 \href（尤其 URL 位置）的名字宏显式覆盖为纯文本。
 % 覆盖必须在 \selectlanguage{chinese}（\AtBeginDocument）之后执行，否则 \captionschinese 会把名字宏重新定义为 \bbl@ensure@chinese 包装
 \AtBeginDocument{%
+  \def\partname{部分}%
+  \def\chaptername{章}%
+  \def\sectionname{节}%
   \def\OLTlinkname{https://github.com/OpenLogicProject/OpenLogic}%
   \def\OLTname{《开放逻辑读本》}%
   \def\OLPname{Open Logic Project}%
   \def\licensename{知识共享署名 4.0 国际许可协议}%
+  % 页眉沿用上游 OLPpage，只把 chapter mark 改为中文语序；section mark 保留「1.1 标题」。
+  \addtopsmarks{OLPpage}{}{%
+    \createmark{chapter}{both}{shownumber}%
+      {\ifanappendix\appendixname\space\else 第\fi}%
+      {\ifanappendix\quad\else 章\quad\fi}%
+  }%
 }
 % 样板宏：不再引用 babel caption 宏（纯文本，避免上述递归）
 \renewcommand*{\oluselicensetext}{本书基于 \textit{\href{\OLTlinkname}{\OLTname}} 中由 \href{http://openlogicproject.org/}{\OLPname} 编写的材料，并在 \href{http://creativecommons.org/licenses/by/4.0/}{\licensename} 下使用。}
