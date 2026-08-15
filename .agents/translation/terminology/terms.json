@@ -2992,6 +2992,70 @@
    "kind": "word",
    "source": "confirmed",
    "note": "全名音译；见 Kripke 条目（zhFullName 同键）"
+  },
+  {
+   "en": "Langford",
+   "zh": "兰福德",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "Michael Dummett",
+   "zh": "迈克尔·达米特",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "Robert Stalnaker",
+   "zh": "罗伯特·斯达内克",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "David K. Lewis",
+   "zh": "大卫·刘易斯",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "Rudolf Carnap",
+   "zh": "鲁道夫·卡尔纳普",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "David Hilbert",
+   "zh": "大卫·希尔伯特",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "Gottlob Frege",
+   "zh": "戈特洛布·弗雷格",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "L. E. J. Brouwer",
+   "zh": "L. E. J. 布劳威尔",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
   }
  ]
 }
