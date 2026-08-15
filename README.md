@@ -6,7 +6,7 @@
 
 **现阶段的译文全部由 AI 生成**，使用 DeepSeek Harness（DeepSeek V4 Flash 0731，思考强度 Max），并经过术语统一、TeX 结构检查和 PDF 审校；尚未进行大规模人工校验。
 
-`TERMINOLOGY.md` 是术语与翻译规范的权威来源，`TRANSLATION-POLICY.md` 登记已定决策。
+翻译规范入口位于 `.agents/translation/`：先读 `README.md`、`POLICY.md` 和 `terminology/core.md`，再按模块读取术语包；可执行的令牌映射仍在 `locale/zh/open-logic-config.sty`。
 
 ## 构建
 
