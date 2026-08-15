@@ -3056,6 +3056,150 @@
    "kind": "word",
    "source": "confirmed",
    "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+  },
+  {
+   "en": "Leibniz",
+   "zh": "莱布尼茨",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Alfred North Whitehead",
+   "zh": "阿尔弗雷德·诺斯·怀特海",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Bertrand Russell",
+   "zh": "伯特兰·罗素",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Kurt Gödel",
+   "zh": "库尔特·哥德尔",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "J. Edgar Hoover",
+   "zh": "J. 埃德加·胡佛",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Lee Harvey Oswald",
+   "zh": "李·哈维·奥斯瓦尔德",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "John F. Kennedy",
+   "zh": "约翰·F. 肯尼迪",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Warren",
+   "zh": "沃伦",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Richard",
+   "zh": "理查德",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Audrey",
+   "zh": "奥黛丽",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Wiener",
+   "zh": "维纳",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Kuratowski",
+   "zh": "库拉托夫斯基",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Bishop",
+   "zh": "毕晓普",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Evert Beth",
+   "zh": "埃弗特·贝特",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Raymond Smullyan",
+   "zh": "雷蒙德·斯穆里安",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Jaakko Hintikka",
+   "zh": "亚科·欣蒂卡",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Gödel",
+   "zh": "哥德尔",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Godel",
+   "zh": "哥德尔",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
   }
  ]
 }
