@@ -6,7 +6,7 @@ worker 必须保留宏、数学、token、标签和 `\olfileid[zh]` 规则；返
 
 未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个文件中采用互相冲突的译法。确认后的术语必须回填术语包，并检查可执行 locale 映射是否一致。
 
-每批完成后在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`；失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。
+每批完成后先在 `OpenLogic-Zh/` 运行 `python3 scripts/check-tokens.py` 做令牌计数机械校验（缺/多均需修到 0），再在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`；失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。
 
 OpenLogic-Zh 自身的 `make`/`make all` 仍构建上游英文文档；中文排版验证由 B&D 组装器完成。同步上游前先检查差异，只合并必要提交，不改写上游源文件或远程配置。
 
