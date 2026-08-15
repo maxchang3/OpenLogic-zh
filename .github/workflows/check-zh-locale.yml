@@ -1,0 +1,14 @@
+name: Check Chinese locale
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-locale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check locale paths and file-id markers
+        run: make check-zh

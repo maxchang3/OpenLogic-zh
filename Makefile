@@ -9,10 +9,13 @@
 # The PDF of the open-logic-config documentation also requires
 # pandoc http://pandoc.org/
 
-.PHONY : FORCE_MAKE
+.PHONY : FORCE_MAKE check-zh
+
+check-zh:
+	sh scripts/check-zh-locale.sh
 
 ALLTEXFILES = open-logic-debug.tex open-logic-complete.tex \
-	$(shell grep 'INPUT content/.*/.*\.tex' open-logic-debug.fls | uniq | sed 's/INPUT //g' )
+	$(shell test -f open-logic-debug.fls && grep 'INPUT content/.*/.*\.tex' open-logic-debug.fls | uniq | sed 's/INPUT //g' || true)
 
 ALLPDFFILES = $(ALLTEXFILES:.tex=.pdf)
 
