@@ -3200,6 +3200,86 @@
    "kind": "word",
    "source": "confirmed",
    "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+  },
+  {
+   "en": "Goethe",
+   "zh": "歌德",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+  },
+  {
+   "en": "Riemann",
+   "zh": "黎曼",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+  },
+  {
+   "en": "Riemann hypothesis",
+   "zh": "黎曼猜想",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+  },
+  {
+   "en": "Adams",
+   "zh": "亚当斯",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+  },
+  {
+   "en": "SuperSoaker",
+   "zh": "超级水枪",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+  },
+  {
+   "en": "C. I. Lewis",
+   "zh": "C. I. 刘易斯",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "人名音译（\\zhFullName 机制）；即 Clarence Irving Lewis，注意与 David K. Lewis 区分"
+  },
+  {
+   "en": "Kratzer",
+   "zh": "Kratzer",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "无通行译名，保留原文"
+  },
+  {
+   "en": "Aldo Antonelli",
+   "zh": "Aldo Antonelli",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "无通行译名，保留原文"
+  },
+  {
+   "en": "Beezie",
+   "zh": "Beezie",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "虚构角色名（狗），保留原文"
+  },
+  {
+   "en": "Audrey Yap",
+   "zh": "Audrey Yap",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "无通行译名，保留原文"
   }
  ]
 }
