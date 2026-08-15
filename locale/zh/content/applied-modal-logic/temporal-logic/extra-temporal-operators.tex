@@ -26,12 +26,12 @@ $\Since $和~$\Until$，用来符号化「自从」和「直到」的意义。�
   \emph{在~$\mModel M$ 中，!!a{formula}~$!A$ 在~$t$ 处为真}：
   \begin{enumerate}
   \item\ollabel{defn:sub:mmodels-since} \indcase{!A}{\Since  !B
-    !C}{$\mSat{M}{\indfrm}[t]$ iff $\mSat{M}{!B}[t']$ for some $t' \in
-    T$ with $t' \prec t$, and for all $s$ with $t' \prec s \prec t$,
+    !C}{$\mSat{M}{\indfrm}[t]$ 当且仅当 $\mSat{M}{!B}[t']$ 对某个 $t' \in
+    T$ 且 $t' \prec t$，且对所有 $s$ 且 $t' \prec s \prec t$，
     $\mSat{M}{!C}[s]$}
    \item\ollabel{defn:sub:mmodels-until} \indcase{!A}{\Until !B
-    !C}{$\mSat{M}{\indfrm}[t]$ iff $\mSat{M}{!B}[t']$ for some $t' \in
-    T$ with $t \prec t'$, and for all $s$ with $t \prec s \prec t'$,
+    !C}{$\mSat{M}{\indfrm}[t]$ 当且仅当 $\mSat{M}{!B}[t']$ 对某个 $t' \in
+    T$ 且 $t \prec t'$，且对所有 $s$ 且 $t \prec s \prec t'$，
     $\mSat{M}{!C}[s]$}
   \end{enumerate}
 \end{defn}

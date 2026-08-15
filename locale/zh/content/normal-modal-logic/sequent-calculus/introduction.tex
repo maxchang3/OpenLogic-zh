@@ -14,7 +14,7 @@
 \iftag{prvDiamond}{$\Diamond$}{} 的附加规则来扩充。例如，对~$\Log{K}$，我们
 有 \Log{LK} 再加上：
 \[
-  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+  \iftag{prvBox}{\iftag{prvDiamond}{% ◇ 与 □ 都是原始符号
     \Axiom$\Gamma \fCenter \Delta, !A$
     \RightLabel{$\Box$}
     \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
@@ -24,12 +24,12 @@
     \RightLabel{$\Diamond$}
     \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
     \DisplayProof
-}{% only Box primitive
+}{% 只有 □ 是原始符号
 \Axiom$\Gamma \fCenter !A$
 \RightLabel{$\Box$}
 \UnaryInf$\Box\Gamma \fCenter \Box!A$
 \DisplayProof
-}}{% only <> primitive
+}}{% 只有 ◇ 是原始符号
   \Axiom$!A \fCenter \Delta$
   \RightLabel{$\Diamond$}
   \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$

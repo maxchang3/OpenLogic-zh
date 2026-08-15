@@ -15,7 +15,7 @@
 对于模态算子\iftag{prvBox}{\iftag{prvDiamond}{s~$\Box$
 和}{~$\Box$}}{}\iftag{prvDiamond}{~$\Diamond$}{}，我们还有如下额外的\iftag{notprvBox,notprvDiamond}{规则}{规则}：
 \[
-  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+  \iftag{prvBox}{\iftag{prvDiamond}{% □ 与 ◇ 都是原始符号
     \Axiom$\Gamma \fCenter \Delta, !A$
     \RightLabel{$\Box$}
     \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
@@ -25,12 +25,12 @@
     \RightLabel{$\Diamond$}
     \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
     \DisplayProof
-}{% only Box primitive
+}{% 仅 □ 为原始符号
 \Axiom$\Gamma \fCenter !A$
 \RightLabel{$\Box$}
 \UnaryInf$\Box\Gamma \fCenter \Box!A$
 \DisplayProof
-}}{% only <> primitive
+}}{% 仅 ◇ 为原始符号
   \Axiom$!A \fCenter \Delta$
   \RightLabel{$\Diamond$}
   \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$

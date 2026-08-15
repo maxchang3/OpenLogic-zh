@@ -149,26 +149,26 @@ variable}s 上取值一致，即只要 $\Obj p_n$ 出现在某个!!{formula}~$!A
   \indcase{!A}{\ltrue}{$\pSat{v}{\indfrm}$.}}{}
 
 \item \indcase{!A}{\Obj p_i}{$\pSat{v}{\indfrm}$
-  iff $\pAssign{v}(\Obj p_i) = \True$.}
+  当且仅当 $\pAssign{v}(\Obj p_i) = \True$.}
 
 \tagitem{prvNot}{%
-  \indcase{!A}{\lnot !B}{$\pSat{v}{\indfrm}$ iff
+  \indcase{!A}{\lnot !B}{$\pSat{v}{\indfrm}$ 当且仅当
     $\pSat/{v}{!B}$.}}{}
 
 \tagitem{prvAnd}{%
-  \indcase{!A}{(!B \land !C)}{$\pSat{v}{\indfrm}$ iff $\pSat{v}{!B}$
-    and $\pSat{v}{!C}$.}}{}
+  \indcase{!A}{(!B \land !C)}{$\pSat{v}{\indfrm}$ 当且仅当 $\pSat{v}{!B}$
+    且 $\pSat{v}{!C}$.}}{}
 
 \tagitem{prvOr}{%
-  \indcase{!A}{(!B \lor !C)}{$\pSat{v}{\indfrm}$ iff
+  \indcase{!A}{(!B \lor !C)}{$\pSat{v}{\indfrm}$ 当且仅当
     $\pSat{v}{!B}$ 或 $\pSat{v}{!C}$（或两者皆是）。}}{}
 
 \tagitem{prvIf}{%
-  \indcase{!A}{(!B \lif !C)}{$\pSat{v}{\indfrm}$ iff $\pSat/{v}{!B}$
+  \indcase{!A}{(!B \lif !C)}{$\pSat{v}{\indfrm}$ 当且仅当 $\pSat/{v}{!B}$
     或 $\pSat{v}{!C}$（或两者皆是）。}}{}
 
 \tagitem{prvIff}{%
-  \indcase{!A}{(!B \liff !C)}{$\pSat{v}{\indfrm}$ iff 要么
+  \indcase{!A}{(!B \liff !C)}{$\pSat{v}{\indfrm}$ 当且仅当 要么
     $\pSat{v}{!B}$ 与 $\pSat{v}{!C}$ 同时成立，要么 $\pSat{v}{!B}$ 与
     $\pSat{v}{!C}$ 都不成立。}}{}
 \end{enumerate}

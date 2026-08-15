@@ -18,20 +18,20 @@
   \begin{enumerate}
   \tagitem{prvFalse}{\indcase{!A}{\lfalse}{绝非 $\mSat{M}{\lfalse}[w]$}.}{}
   \tagitem{prvTrue}{\indcase{!A}{\ltrue}{恒有 $\mSat{M}{\ltrue}[w]$}.}{}
-  \item $\mSat{M}{p}[w]$ iff $w \in V(p)$
-  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ iff
+  \item $\mSat{M}{p}[w]$ 当且仅当 $w \in V(p)$
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
     $\mSat/{M}{!B}[w]$}.}{}
-  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ iff
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
     $\mSat{M}{!B}[w]$ 且 $\mSat{M}{!C}[w]$}.}{}
-  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ iff
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
     $\mSat{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}（或二者同时成立）.}{}
-  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ iff
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
     $\mSat/{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}.}{}
-  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ iff
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
     或者 $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 同时成立，或者
     $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 均不成立}.}{}
   \item\ollabel{defn:sub:mmodels-box}
-    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ iff
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
     $\mSat{M}{!B}[w']$ 对一切满足 $R_a ww'$ 的 $w' \in W$ 成立}
   \end{enumerate}
 \end{defn}
