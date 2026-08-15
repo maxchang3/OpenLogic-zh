@@ -25,3 +25,6 @@
 - `functional`＝函数的（从每个世界恰好一个可及），`partially functional`＝部分函数的（至多一个）；functional 蕴含 serial。
 - `p-admitting sphere`＝$p$-容纳球面（不要写成「容许/允许/可容纳 $p$ 的球面」）。
 - 中文术语后不要手工补英文括注（首次出现由 token 机制自动呈现原文）。
+
+- 术语定案/改名后必须立即同步全部译文：曾发生定案「逆良基的/全称量化/原子公式/逆否律」后，`first-order-definability.tex` 仍残留 5 处「反良基」、「bhk-interpretation.tex」仍用「原子命题」；定案即 grep 全文替换。
+- 修复/审计类 LLM worker 会把普通词加成 `!!{token}`、把 token 改回普通词或改键（6 文件案例）；任何批量修改后跑 `scripts/check-tokens.py` 兜底，比对 EN/ZH 的 token 序列定位（勿信行号）。
