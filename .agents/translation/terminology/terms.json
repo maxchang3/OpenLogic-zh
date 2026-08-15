@@ -2,7 +2,7 @@
  "schema": "1",
  "context": {
   "core": "`!!{complete}` 的可执行映射刻意使用「完全」：源文中的 `!!{complete}的` 组合为「完全的」，避免 token 自带「的」后重复渲染。\n定义中的 `iff` 句型统一写作「`!A ∈ Γ` 当且仅当……」。数学或宏参数内的变量、标签和控制序列不随中文句式改变。\nOpen Logic Project 保留英文；Open Logic Text 在中文散文中写作《开放逻辑读本》。项目链接、GitHub 链接、DOI、逻辑系统名（K、T、B、D、S4、S5、GL、K4、KB、K45 等）、公理模式名、文献引用和人名保留原文；其他书名若有通行中文译名，可保留原名并附中文名。\n`operator`（逻辑算子）与 `connective`（命题联结词）是两个独立概念，分别译「算子」与「联结词」；`syntax/syntactic` 在逻辑学语境译「句法/句法的」，自然语言或程序语言的 `grammar` 才译「语法」。",
-  "modal-logic": "本表覆盖正规模态逻辑、关系语义、反事实条件句、时态逻辑和认知逻辑。它建立在 `terminology/core.md` 之上；核心术语不在此重复，除非需要明确模态语境。没有模态语境时，优先使用核心术语。\n这些词在模态框架或可及关系语境中使用；若出现在一般集合论或序理论语境，仍按核心术语和具体定义处理。\n`modality` 在理论层译「模态」，□◇ 作为算子译「模态算子」，自然语言中的必然、可能、知道、相信等副词称「模态词」；不要把三者不加说明地互换。`agent` 在认知逻辑中译「主体」，知识或信念的持有者是「认知主体」，不采用 AI 领域的「智能体」。\n`normal` 在 `normal modal logic` 或模态 axiom system 等模态语境中译「正规」；普通英语中的 `normal` 不自动套用该译法。`model` 是核心通用词「模型」，只有 `Kripke model`、`modal model` 等条目明确添加模态限定。\n逻辑系统名保留裸字母（K、T、B、D、S4、S5 等）；需要在散文中称呼系统时写「K 系统」等，不写「系统 K」。\n文学锋《模态逻辑教程》的参考范围和采用理由见 `../references/wenxuefeng-modal-logic.md`；未定条目见 `../pending.md`，pending 中的候选不得被 worker 当作最终规范。"
+  "modal-logic": "本表覆盖正规模态逻辑、关系语义、反事实条件句、时态逻辑和认知逻辑。它建立在 `terminology/core.md` 之上；核心术语不在此重复，除非需要明确模态语境。没有模态语境时，优先使用核心术语。\n这些词在模态框架或可及关系语境中使用；若出现在一般集合论或序理论语境，仍按核心术语和具体定义处理。\n`modality` 在理论层译「模态」，□◇ 作为算子译「模态算子」，自然语言中的必然、可能、知道、相信等副词称「模态词」；不要把三者不加说明地互换。`agent` 在认知逻辑中译「主体」，知识或信念的持有者是「认知主体」，不采用 AI 领域的「智能体」。\n`normal` 在 `normal modal logic` 或模态 axiom system 等模态语境中译「正规」；普通英语中的 `normal` 不自动套用该译法。`model` 是核心通用词「模型」，只有 `Kripke model`、`modal model` 等条目明确添加模态限定。\n逻辑系统名保留裸字母（K、T、B、D、S4、S5 等）；需要在散文中称呼系统时写「K 系统」等，不写「系统 K」。\n文学锋《模态逻辑导论》的参考范围和采用理由见 `../references/wenxuefeng-modal-logic.md`；未定条目见 `../pending.md`，pending 中的候选不得被 worker 当作最终规范。"
  },
  "terms": [
   {
@@ -148,7 +148,7 @@
    "zh": "蕴含",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋书索引作「蕴含式」（33 页），正文多用「蕴含」"
+   "note": "文学锋《模态逻辑导论》中索引作「蕴含式」（33 页），正文多用「蕴含」"
   },
   {
    "en": "subformula",
@@ -281,7 +281,7 @@
    "zh": "论域",
    "module": "core",
    "source": "confirmed",
-   "note": "一阶逻辑/模型语境；函数语境见 domain→定义域。文学锋书「定义域」（5 页）指函数定义域"
+   "note": "一阶逻辑/模型语境；函数语境见 domain→定义域。文学锋《模态逻辑导论》中「定义域」（5 页）指函数定义域"
   },
   {
    "en": "element",
@@ -500,7 +500,7 @@
    "zh": "可定义的",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋书「可定义」（3、42 页）"
+   "note": "文学锋《模态逻辑导论》中「可定义」（3、42 页）"
   },
   {
    "en": "generalized",
@@ -663,14 +663,14 @@
    "zh": "开放的支",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋书作「开的枝」（165 页），待定案"
+   "note": "文学锋《模态逻辑导论》中作「开的枝」（165 页），待定案"
   },
   {
    "en": "branch",
    "zh": "支",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋书混用「枝/支」（闭的支 160 页、开的枝 165 页），待定案"
+   "note": "文学锋《模态逻辑导论》中混用「枝/支」（闭的支 160 页、开的枝 165 页），待定案"
   },
   {
    "en": "closure",
@@ -683,7 +683,7 @@
    "zh": "分离规则（肯定前件）",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋书作「分离规则」（44 页）"
+   "note": "文学锋《模态逻辑导论》中作「分离规则」（44 页）"
   },
   {
    "en": "rule of necessitation",
@@ -1425,7 +1425,7 @@
    "zh": "闭的",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋书「封闭」（5 页）用于集合在运算下封闭；表列语境「闭的」与书一致（闭的支 160 页）"
+   "note": "文学锋《模态逻辑导论》中「封闭」（5 页）用于集合在运算下封闭；表列语境「闭的」与书一致（闭的支 160 页）"
   },
   {
    "en": "open",
@@ -1492,7 +1492,7 @@
    "zh": "扩张",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋书「扩张」（23 页）"
+   "note": "文学锋《模态逻辑导论》中「扩张」（23 页）"
   },
   {
    "en": "Lindenbaum lemma",
@@ -1679,7 +1679,7 @@
    "zh": "可及关系",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋书作「通达关系」（95 页），待定案"
+   "note": "文学锋《模态逻辑导论》中作「通达关系」（95 页），待定案"
   },
   {
    "en": "frame",
@@ -1722,7 +1722,7 @@
    "zh": "双模拟",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋书作「双仿」（192、231 页），待定案"
+   "note": "文学锋《模态逻辑导论》中作「双仿」（192、231 页），待定案"
   },
   {
    "en": "maximal consistent",
@@ -1747,7 +1747,7 @@
    "zh": "双模拟等价的",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋书作「双仿」（192 页），待定案"
+   "note": "文学锋《模态逻辑导论》中作「双仿」（192 页），待定案"
   },
   {
    "en": "valid on a frame",
@@ -2354,7 +2354,7 @@
    "zh": "叠置的（叠加模态）",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋书「叠加模态」（83 页）"
+   "note": "文学锋《模态逻辑导论》中「叠加模态」（83 页）"
   },
   {
    "en": "regular (modal context)",
@@ -2433,6 +2433,279 @@
    "zh": "负内省",
    "module": "modal-logic",
    "source": "confirmed"
+  },
+  {
+   "en": "well-founded",
+   "zh": "良基的",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「良基的」12 页"
+  },
+  {
+   "en": "well-foundedness",
+   "zh": "良基性",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「良基性」"
+  },
+  {
+   "en": "converse well-founded",
+   "zh": "逆良基的",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「逆良基的」8、125 页；另有「弱逆良基的」"
+  },
+  {
+   "en": "converse well-foundedness",
+   "zh": "逆良基性",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「逆良基性」（构词同「逆良基的」）"
+  },
+  {
+   "en": "monotonicity",
+   "zh": "单调性",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「单调性」53、194 页"
+  },
+  {
+   "en": "reflexivity",
+   "zh": "自反性",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「自反性」53、98 页"
+  },
+  {
+   "en": "semantic consequence",
+   "zh": "语义后承",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「语义后承」18、195 页"
+  },
+  {
+   "en": "truth condition",
+   "zh": "真值条件",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「真值条件」36 页"
+  },
+  {
+   "en": "proper inclusion",
+   "zh": "真包含",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「真包含（于）」416 行"
+  },
+  {
+   "en": "restriction",
+   "zh": "限制",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「f 在 C 上的限制」489 行"
+  },
+  {
+   "en": "axiomatization",
+   "zh": "公理化",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「公理化」7.1.24 定义"
+  },
+  {
+   "en": "equivalent axiomatization",
+   "zh": "等价的公理化",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「公理化」构词"
+  },
+  {
+   "en": "maximality",
+   "zh": "极大性",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「极大性」"
+  },
+  {
+   "en": "construction",
+   "zh": "构造",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「构造」"
+  },
+  {
+   "en": "closed term",
+   "zh": "闭项",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「闭项」14967 行"
+  },
+  {
+   "en": "variable assignment",
+   "zh": "指派",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「指派」62、280 页（含「变体指派」）"
+  },
+  {
+   "en": "image",
+   "zh": "像集",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「值域或像集」487 行；与 application 语境区分待定"
+  },
+  {
+   "en": "falsify",
+   "zh": "使……为假",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「使得……为假」9383 行"
+  },
+  {
+   "en": "inductive step",
+   "zh": "归纳步",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「归纳步」734 行"
+  },
+  {
+   "en": "Hilbert-type system",
+   "zh": "希尔伯特式公理系统",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「希尔伯特式公理系统」1067、2052 行"
+  },
+  {
+   "en": "atomic statement",
+   "zh": "原子公式",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「原子公式」16、58 页；与 atomic formula 同译"
+  },
+  {
+   "en": "set variable",
+   "zh": "谓词变元",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「一元谓词变元」9261 行"
+  },
+  {
+   "en": "universally quantified",
+   "zh": "全称量化",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「全称分配/例示/概括公理」"
+  },
+  {
+   "en": "y-variant",
+   "zh": "y-变体",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「x-变体」（变体指派，2822 行）"
+  },
+  {
+   "en": "monadic second-order",
+   "zh": "一元二阶的",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「一元谓词变元」+「二阶逻辑」构词"
+  },
+  {
+   "en": "contraposition",
+   "zh": "逆否",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「逆否律」39 页与「假言易位」53 页并用，索引均对应 contrapositive law；与 contrapositive→逆否命题 一致"
+  },
+  {
+   "en": "Cut",
+   "zh": "切割",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中直接保留英文 cut（999 行）"
+  },
+  {
+   "en": "metaphysical",
+   "zh": "形而上学的",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「形而上学」118 行"
+  },
+  {
+   "en": "logical",
+   "zh": "逻辑的",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "模态分类形容词"
+  },
+  {
+   "en": "physical",
+   "zh": "物理的",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "模态分类形容词"
+  },
+  {
+   "en": "saturated",
+   "zh": "饱和的",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「饱和的/饱和集/模态饱和/φ-饱和的」"
+  },
+  {
+   "en": "saturated set",
+   "zh": "饱和集",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「饱和集 saturated set, 26」"
+  },
+  {
+   "en": "modal saturation",
+   "zh": "模态饱和",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「模态饱和 modally saturated, 204」"
+  },
+  {
+   "en": "state of knowledge",
+   "zh": "信息状态",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「信息状态」178 页（7631 行「主体认为可能的所有世界」）"
+  },
+  {
+   "en": "complete Σ-consistent set",
+   "zh": "完全 Σ-一致集",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中用「极大一致」与「否定完全」表述（2283 行）"
+  },
+  {
+   "en": "cardinality",
+   "zh": "基数",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「基数」6、19 页"
+  },
+  {
+   "en": "seriality",
+   "zh": "持续性",
+   "module": "modal-logic",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「持续性」（1.2.5 定义，588 行）"
+  },
+  {
+   "en": "disjunct",
+   "zh": "析取支",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「合取支/析取支」1587 行；与 conjunct→合取支 配套"
+  },
+  {
+   "en": "conjunct",
+   "zh": "合取支",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》中「合取支/析取支」1587 行"
   }
  ]
 }

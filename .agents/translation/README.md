@@ -8,6 +8,6 @@
 
 `locale/zh/open-logic-config.sty` 是可执行的术语映射，必须与 `terms.json` 保持一致；若实现与文档冲突，应报告并同步修正，不应在 worker 中自行创造隐式覆盖。术语条目之间没有默认覆盖关系，语境不同的同形英文词必须在条目中明确语境（`note` 字段）。
 
-`references/` 记录术语来源和适用范围；文学锋《模态逻辑教程》是模态逻辑术语的重要参考，不是整个 OpenLogic-Zh 的唯一来源或自动覆盖规则。
+`references/` 记录术语来源和适用范围；文学锋《模态逻辑导论》是模态逻辑术语的重要参考，不是整个 OpenLogic-Zh 的唯一来源或自动覆盖规则。
 
-翻译执行细节见 `WORKFLOW.md`；改动 TeX 或 locale 机制前先读 `../notes/tex-traps.md`。未决术语按 `pending.md` 流程登记，确认后移入 `terms.json` 并从 pending 删除。文学锋书的完整中英索引见 `references/wenxuefeng-index.json`（jq 可查，如 `jq -r '.entries[] | select(.zh|contains("良基"))' references/wenxuefeng-index.json`）。
+翻译执行细节见 `WORKFLOW.md`；改动 TeX 或 locale 机制前先读 `../notes/tex-traps.md`。未决术语按 `pending.md` 流程登记，确认后移入 `terms.json` 并从 pending 删除。文学锋《模态逻辑导论》的完整中英索引见 `references/wenxuefeng-index.json`（jq 可查，如 `jq -r '.entries[] | select(.zh|contains("良基"))' references/wenxuefeng-index.json`）。

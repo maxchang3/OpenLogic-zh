@@ -1,22 +1,26 @@
 # 尚未定案的术语与风格问题
 
-本文件只保留仍需用户或协调者确认的项目；已确认、已补入术语包或仅记录历史的条目不应留在这里。每项应带英文、候选译法、出现语境和来源；确认后移入对应术语包并删除本文件中的条目。
+本文件只保留仍需用户或协调者确认的项目；已确认、已补入 `terminology/terms.json` 或仅记录历史的条目不应留在这里。每项应带英文、候选译法、出现语境和来源；确认后移入 `terms.json` 并删除本文件中的条目。下文「书」指文学锋《模态逻辑导论》。
 
 ## 术语候选
 
-- `well-founded / converse well-founded / converse well-foundedness` →「良基的/反良基的/反良基性」；需核对 frame 定义语境。
-- `universality / universal frame / universal model` →「全域性/全域框架/全域模型」；需与 `universal relation` →「全域关系」保持一致。
-- `monadic second-order / set variable / y-variant / universally quantified` →「一元二阶的/集合变元/y-变体/普遍量化」；需核对二阶逻辑术语风格。
-- `well-behaved / monotonicity / reflexivity / Cut / proper inclusion / falsify` →「行为良好的/单调性/自反性/切割/真包含/使……为假」；需结合证明系统上下文确认。
-- `semantic consequence / truth condition / proper inclusion / restriction` →「语义后承/真值条件/真包含/限制」；需核对各模块的定义语境。
-- `syntactic counterpart / Induction Basis / Inductive step / Hilbert-type system` →「句法的对应物/归纳基始/归纳步/Hilbert 型系统」；需确认术语形态。
-- `provability result / equivalent axiomatization / complete Σ-consistent set / truth condition / exhaustive listing / maximality` →「可证明性结果/等价的公理化/完全 Σ-一致集/真值条件/穷尽性列出/极大性」；需检查各章节的固定称呼。
-- `closure` 在演绎封闭、知识封闭和表列闭合语境中的译法需分别确认；不能用一个全局替换覆盖三种含义。
-- `effective procedure / cardinality / seriality / epistemic alternative / state of knowledge / restriction / prime set / construction / disjunct / absurdity / atomic statement` →「能行程序/基数/持续性/认知选项/知识状态/限制/素的集合/构造/析取项/荒谬/原子命题」；待统一确认。
-- `Polish notation / truth tree / condensed derivation / contraposition / saturated / closed term / variable assignment / semantic consequence / model existence result` →「波兰表示法/真值树/简略的推演/换质位/饱和的/闭项/变元指派/语义后承/模型存在性结果」；待统一确认。
-- `application` 在函数像集语境中候选译为「像」或「像集」；需确定与 `image` 的区分。
+- `universality / universal frame / universal model` →「全域性/全域框架/全域模型」；书无「全域」（仅「全称」量化语境），与 `universal relation` →「全域关系」（core）保持风格一致。
+- `well-behaved` →「行为良好的」；书无对应词。
+- `effective procedure` →「能行程序」；书无「能行」（通行译法，待确认）。
+- `epistemic alternative` →「认知选项」；书无「选项」，认知语境书用「认为可能」（3653 行）。
+- `prime set` →「素的集合」；书无「素滤子/素理想」。
+- `absurdity` →「荒谬」；书无「荒谬」，「矛盾」79 次；⊥ 的读法待定。
+- `Polish notation` →「波兰表示法」；书无。
+- `truth tree` →「真值树」；书无（表列语境用「表列」）。
+- `condensed derivation` →「简略的推演」；书无（「形式推演」1093 行可参考）。
+- `model existence result` →「模型存在性结果」；书无（完全性证明语境「反模型存在」6777 行）。
+- `exhaustive listing` →「穷尽性列出」；书无「穷尽」（用「极大一致」表述）。
+- `syntactic counterpart` →「句法的对应物」；书无（有「句法后承」1122 行）。
+- `provability result` →「可证明性结果」；书无「可证明性」。
+- `application` →「像集」候选；`image` 已定「像集」（487 行「值域或像集」），二者在 OLP 函数语境中的区分仍待确认。
+- `Induction Basis` →「归纳基始」；书无（归纳定义用「基础步/封闭步」表述，734 行）。
+- `knowledge closure`（知识封闭）→ 待定；书无「知识封闭」，关系/演绎语境已由 core 的「闭包/演绎封闭的/闭合」覆盖。
 
-## 风格
+## 已定案备忘（已入 terms.json，勿重复登记）
 
-- `we show / we prove / we define` 是否统一采用无主句，仍需用户确认；目前允许按句法自然度处理。
-- `metaphysical / logical / physical` 作为模态分类形容词的译法候选为「形而上学的/逻辑的/物理的」，需结合出现章节确认。
+`well-founded/逆良基的`、`monotonicity`、`reflexivity`、`semantic consequence`、`truth condition`、`proper inclusion`、`restriction`、`axiomatization`、`maximality`、`construction`、`closed term`、`variable assignment→指派`、`falsify`、`inductive step`、`Hilbert-type system→希尔伯特式公理系统`、`atomic statement→原子公式`、`set variable→谓词变元`、`universally quantified→全称量化`、`y-variant`、`monadic second-order`、`contraposition→逆否`、`Cut→切割`（书保留英文 cut）、`seriality→持续性`、`disjunct→析取支`、`conjunct→合取支`、`saturated`、`state of knowledge→信息状态`、`complete Σ-consistent set`、`cardinality→基数`、`metaphysical/logical/physical`。风格：无主句已入 POLICY。

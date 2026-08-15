@@ -1,4 +1,4 @@
-% 中文术语配置 — 术语表（v3，以《模态逻辑教程》(文学锋, SYSU) 为参考；不手动折行）
+% 中文术语配置 — 术语表（v3，以《模态逻辑导论》(文学锋, SYSU) 为参考；不手动折行）
 % 用法：\zhToken[English]{key}{中文}；提供 English 时该术语在全书首次出现处自动输出"中文（English）"（仿文学锋教材括号原文风格），之后无痕；不提供 English 时始终只输出"中文"；冠词形态（!!a{...}）自动置空。
 % 机制：以 \def 直接定义令牌宏为 \zhFirst{English}{中文}（不经过 \settexttoken/\definetoken，它们是 \edef 存储，会把 \zhFirst 在定义时展开掉）。
 % 首次标记：\zhFirst 为 \protected 宏（\write/\edef 中不展开、原样写入 .toc，读回时在正文上下文执行，无展开残留）；\ifcsname 无副作用（e-TeX 设计）故首次标记用 \global\expandafter\def 显式全局定义（正文令牌常出现在 \begin{defn} 等环境组内）；\ifzhInTOC 保证目录读回不消耗标记；\pdfstringdefDisableCommands 保证书签无括号。

@@ -36,3 +36,4 @@
 - `sound/soundness` →「可靠的/可靠性」；`complete/completeness` →「完全的/完全性」；`well-formed formula` →「合式公式」；`sequent calculus` →「矢列演算」。
 - `uniform substitution` →「统一代入」；`syntactic`（逻辑学语境）→「句法的」，自然语言或程序语言的 `grammar` 才译为「语法」。
 - `iff` →「当且仅当」；`i.e.` →「即」；`e.g.` →「例如」；`viz.` →「亦即」。
+- 散文叙述采用无主句风格：`we show / we prove / we define` 等不逐字译出主语，按「证明。」「下证……」「往证……」处理（文学锋《模态逻辑导论》通篇此风格）；句法自然度优先，不强求机械一致。
