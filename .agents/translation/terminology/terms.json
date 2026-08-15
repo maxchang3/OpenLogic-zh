@@ -148,7 +148,7 @@
    "zh": "蕴含",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中索引作「蕴含式」（33 页），正文多用「蕴含」"
+   "note": "文学锋《模态逻辑导论》正文用「蕴含」，索引条目作「蕴含式」（33 页）"
   },
   {
    "en": "subformula",
@@ -500,7 +500,7 @@
    "zh": "可定义的",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「可定义」（3、42 页）"
+   "note": "文学锋《模态逻辑导论》「可定义」（3、42 页）"
   },
   {
    "en": "generalized",
@@ -663,14 +663,14 @@
    "zh": "开放的支",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中作「开的枝」（165 页），待定案"
+   "note": "文学锋《模态逻辑导论》索引作「开的枝」（165 页），正文用「支」"
   },
   {
    "en": "branch",
    "zh": "支",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中混用「枝/支」（闭的支 160 页、开的枝 165 页），待定案"
+   "note": "文学锋《模态逻辑导论》正文用「支」（57 次），索引个别条目作「枝」；保持「支」"
   },
   {
    "en": "closure",
@@ -683,7 +683,7 @@
    "zh": "分离规则（肯定前件）",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中作「分离规则」（44 页）"
+   "note": "文学锋《模态逻辑导论》作「分离规则」（44 页）；「（肯定前件）」为解释性括注，保留"
   },
   {
    "en": "rule of necessitation",
@@ -1492,7 +1492,7 @@
    "zh": "扩张",
    "module": "core",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「扩张」（23 页）"
+   "note": "文学锋《模态逻辑导论》「扩张」（23 页），一致"
   },
   {
    "en": "Lindenbaum lemma",
@@ -1679,7 +1679,7 @@
    "zh": "可及关系",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中作「通达关系」（95 页），待定案"
+   "note": "文学锋《模态逻辑导论》中「通达关系」与「可及关系」并用（关系定义处明示同义）；保持「可及关系」"
   },
   {
    "en": "frame",
@@ -1722,7 +1722,7 @@
    "zh": "双模拟",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中作「双仿」（192、231 页），待定案"
+   "note": "文学锋《模态逻辑导论》10.1.15 定义标题并列「双模拟，双仿」；bisimulation→双模拟、bisimilar→双仿的"
   },
   {
    "en": "maximal consistent",
@@ -1747,7 +1747,7 @@
    "zh": "双模拟等价的",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中作「双仿」（192 页），待定案"
+   "note": "文学锋《模态逻辑导论》作「双仿的」（10.1.15）；本条目保持「双模拟等价的」"
   },
   {
    "en": "valid on a frame",
@@ -2351,10 +2351,10 @@
   },
   {
    "en": "iterated (modality)",
-   "zh": "叠置的（叠加模态）",
+   "zh": "叠加模态",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「叠加模态」（83 页）"
+   "note": "文学锋《模态逻辑导论》「叠加模态」（83 页）"
   },
   {
    "en": "regular (modal context)",
