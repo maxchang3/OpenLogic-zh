@@ -1,24 +1,37 @@
-The Open Logic Project
-======================
+# OpenLogic-Zh
 
-[![Build
-Status](https://github.com/OpenLogicProject/OpenLogic/actions/workflows/build.yml/badge.svg)](https://github.com/OpenLogicProject/OpenLogic/actions/workflows/build.yml)
+本仓库旨在完整翻译 [OpenLogicProject/OpenLogic](https://github.com/OpenLogicProject/OpenLogic)。
 
-The Open Logic Project is an open source, open access collection of
-materials on advanced logic, aimed mainly at philosophers, but also
-suitable for computer scientists and mathematicians. The text can be
-rearranged and remixed. You can produce custom textbooks from it, so
-they take the aim of the course and the preferences of the instructor
-into account. It is written in LaTeX.
+中文内容放在 `locale/zh/`，目前仅按需翻译了部分内容。
 
-For more information, see the <a
-href="https://openlogicproject.org/">project website</a> and <a
-href="https://github.com/OpenLogicProject/OpenLogic/wiki">Open Logic
-wiki</a>.
+**现阶段的译文全部由 AI 生成**，使用 DeepSeek Harness（DeepSeek V4 Flash 0731，思考强度 Max），并经过术语统一、TeX 结构检查和 PDF 审校；尚未进行大规模人工校验。
 
-This repository contains LaTeX source files only. Head to the <a
-href="https://builds.openlogicproject.org/">builds site to download PDFs</a>.
+`TERMINOLOGY.md` 是术语与翻译规范的权威来源，`TRANSLATION-POLICY.md` 登记已定决策。
+
+## 构建
+
+由于译文尚未覆盖完整上游内容，本仓库的 `make` 和 `make all` 继续构建上游英文文档；已经本地化的组件供下游项目按需使用。
+
+## 基于本项目的相关项目
+
+[_Boxes and Diamonds_ 中文版](https://github.com/maxchang3/boxes-and-diamonds-zh) 使用本仓库已经本地化的 Open Logic 内容组装模态逻辑教材。
+
+## 同步上游
+
+```sh
+git remote add upstream https://github.com/OpenLogicProject/OpenLogic.git
+git fetch upstream
+git log --oneline HEAD..upstream/master
+```
+
+Actions 分别运行上游英文构建和中文 locale 结构检查。
+
+## Upstream project
+
+The Open Logic Project is an open source, open access collection of materials on advanced logic, aimed mainly at philosophers, but also suitable for computer scientists and mathematicians. The text can be rearranged and remixed into custom textbooks. It is written in LaTeX.
+
+For more information, see the [project website](https://openlogicproject.org/), the [Open Logic wiki](https://github.com/OpenLogicProject/OpenLogic/wiki), and the [official PDF builds](https://builds.openlogicproject.org/).
 
 Author(s): The Open Logic Project
 
-<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">The Open Logic Text</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://openlogicproject.org/people/" property="cc:attributionName" rel="cc:attributionURL">The Open Logic Project</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="https://creativecommons.org/ns#" href="https://openlogicproject.org/" rel="cc:morePermissions">https://openlogicproject.org/</a>.
+The Open Logic Text is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
