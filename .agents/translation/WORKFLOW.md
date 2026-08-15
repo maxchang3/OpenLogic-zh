@@ -1,10 +1,10 @@
 # OpenLogic-Zh 翻译与校验工作流
 
-每个文件由一个 worker 负责；批次控制在 3–5 个。worker 开始前读 `README.md`、`POLICY.md`、`terminology/core.md` 和适用的模块术语包，再读 `content/<相对路径>`，把完整译文写入 `locale/zh/content/<同路径>`。
+每个文件由一个 worker 负责；批次控制在 3–5 个。worker 开始前读 `README.md`、`POLICY.md`、`terminology/terms.json`（按需用 jq 过滤 `module`），再读 `content/<相对路径>`，把完整译文写入 `locale/zh/content/<同路径>`。
 
 worker 必须保留宏、数学、token、标签和 `\olfileid[zh]` 规则；返回空值视为失败，必须检查目标文件真实存在且不是未经翻译的英文副本，不能只依据返回消息判断成功。
 
-未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个文件中采用互相冲突的译法。确认后的术语必须回填术语包，并检查可执行 locale 映射是否一致。
+未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个文件中采用互相冲突的译法。确认后的术语必须回填 `terminology/terms.json`，并检查可执行 locale 映射是否一致。
 
 每批完成后先在 `OpenLogic-Zh/` 运行 `python3 scripts/check-tokens.py` 做令牌计数机械校验（缺/多均需修到 0），再在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`；失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。
 

@@ -1,0 +1,11612 @@
+{
+ "source": "文学锋《模态逻辑教程》主题索引（原书 381–397 页）",
+ "method": "LLM 分块解析 + 规则校验兜底",
+ "entries": [
+  {
+   "line": 1,
+   "col": "L",
+   "sub": false,
+   "zh": "U -等价",
+   "en": "U -equivalent",
+   "pages": "198"
+  },
+  {
+   "line": 1,
+   "col": "R",
+   "sub": false,
+   "zh": "命题逻辑规则",
+   "en": "",
+   "pages": "158"
+  },
+  {
+   "line": 2,
+   "col": "L",
+   "sub": false,
+   "zh": "n 元序列",
+   "en": "n-ary sequence",
+   "pages": "4"
+  },
+  {
+   "line": 2,
+   "col": "R",
+   "sub": false,
+   "zh": "特殊模态规则",
+   "en": "",
+   "pages": "158"
+  },
+  {
+   "line": 3,
+   "col": "L",
+   "sub": false,
+   "zh": "n 元运算",
+   "en": "n-ary operation",
+   "pages": "5"
+  },
+  {
+   "line": 3,
+   "col": "R",
+   "sub": false,
+   "zh": "表列规则",
+   "en": "tableau rule",
+   "pages": "158"
+  },
+  {
+   "line": 4,
+   "col": "L",
+   "sub": false,
+   "zh": "15 个常⻅模态表列系统",
+   "en": "",
+   "pages": "160"
+  },
+  {
+   "line": 4,
+   "col": "R",
+   "sub": false,
+   "zh": "比较可能性",
+   "en": "comparative possibility",
+   "pages": "185"
+  },
+  {
+   "line": 5,
+   "col": "R",
+   "sub": false,
+   "zh": "并",
+   "en": "union",
+   "pages": "4"
+  },
+  {
+   "line": 6,
+   "col": "L",
+   "sub": false,
+   "zh": "半欧性的",
+   "en": "semi-Euclidean",
+   "pages": "7"
+  },
+  {
+   "line": 6,
+   "col": "R",
+   "sub": false,
+   "zh": "濒死点",
+   "en": "",
+   "pages": "102"
+  },
+  {
+   "line": 7,
+   "col": "L",
+   "sub": false,
+   "zh": "爆炸律",
+   "en": "explosion law",
+   "pages": "39"
+  },
+  {
+   "line": 7,
+   "col": "R",
+   "sub": false,
+   "zh": "必然化规则",
+   "en": "rule of necessity",
+   "pages": "109"
+  },
+  {
+   "line": 8,
+   "col": "L",
+   "sub": false,
+   "zh": "爆炸规则",
+   "en": "rule of explosion",
+   "pages": "48, 53"
+  },
+  {
+   "line": 8,
+   "col": "R",
+   "sub": false,
+   "zh": "Birkhoff 定理",
+   "en": "",
+   "pages": "281"
+  },
+  {
+   "line": 9,
+   "col": "L",
+   "sub": false,
+   "zh": "饱和的",
+   "en": "saturated",
+   "pages": ""
+  },
+  {
+   "line": 9,
+   "col": "R",
+   "sub": false,
+   "zh": "BNF 形式",
+   "en": "Backus-Naur-formalism",
+   "pages": "33"
+  },
+  {
+   "line": 10,
+   "col": "L",
+   "sub": true,
+   "zh": "3D",
+   "en": "",
+   "pages": "231"
+  },
+  {
+   "line": 10,
+   "col": "R",
+   "sub": false,
+   "zh": "不交并",
+   "en": "disjoint union",
+   "pages": "190"
+  },
+  {
+   "line": 11,
+   "col": "L",
+   "sub": true,
+   "zh": "DL",
+   "en": "",
+   "pages": "234"
+  },
+  {
+   "line": 11,
+   "col": "R",
+   "sub": true,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "270"
+  },
+  {
+   "line": 12,
+   "col": "L",
+   "sub": false,
+   "zh": "饱和集",
+   "en": "saturated set",
+   "pages": "26"
+  },
+  {
+   "line": 12,
+   "col": "R",
+   "sub": false,
+   "zh": "不可判定的",
+   "en": "undecidable",
+   "pages": "251"
+  },
+  {
+   "line": 13,
+   "col": "L",
+   "sub": false,
+   "zh": "Barcan 公式",
+   "en": "Barcan formula",
+   "pages": "306, 311"
+  },
+  {
+   "line": 13,
+   "col": "R",
+   "sub": false,
+   "zh": "不可数的",
+   "en": "uncountable",
+   "pages": "6"
+  },
+  {
+   "line": 14,
+   "col": "L",
+   "sub": true,
+   "zh": "对偶",
+   "en": "",
+   "pages": "313"
+  },
+  {
+   "line": 14,
+   "col": "R",
+   "sub": false,
+   "zh": "不完全的",
+   "en": "incomplete",
+   "pages": "238"
+  },
+  {
+   "line": 15,
+   "col": "L",
+   "sub": false,
+   "zh": "闭公式",
+   "en": "closed formula",
+   "pages": "59"
+  },
+  {
+   "line": 15,
+   "col": "R",
+   "sub": false,
+   "zh": "补集",
+   "en": "complement",
+   "pages": "4"
+  },
+  {
+   "line": 16,
+   "col": "L",
+   "sub": false,
+   "zh": "闭的支",
+   "en": "closed branch",
+   "pages": "160"
+  },
+  {
+   "line": 16,
+   "col": "R",
+   "sub": false,
+   "zh": "布尔代数",
+   "en": "Boolean algebra",
+   "pages": "283"
+  },
+  {
+   "line": 17,
+   "col": "L",
+   "sub": false,
+   "zh": "闭的表列",
+   "en": "closed tableau",
+   "pages": "160"
+  },
+  {
+   "line": 17,
+   "col": "R",
+   "sub": false,
+   "zh": "布尔公式",
+   "en": "Boolean formulas",
+   "pages": "82"
+  },
+  {
+   "line": 18,
+   "col": "L",
+   "sub": false,
+   "zh": "变体",
+   "en": "variant",
+   "pages": "250"
+  },
+  {
+   "line": 18,
+   "col": "R",
+   "sub": false,
+   "zh": "布尔同态",
+   "en": "Boolean homomorphism",
+   "pages": "291"
+  },
+  {
+   "line": 19,
+   "col": "L",
+   "sub": false,
+   "zh": "变体存在定理",
+   "en": "",
+   "pages": "72"
+  },
+  {
+   "line": 19,
+   "col": "R",
+   "sub": false,
+   "zh": "布尔型",
+   "en": "Boolean type",
+   "pages": "281"
+  },
+  {
+   "line": 20,
+   "col": "L",
+   "sub": false,
+   "zh": "变元",
+   "en": "variable",
+   "pages": "31"
+  },
+  {
+   "line": 20,
+   "col": "R",
+   "sub": false,
+   "zh": "不分叉规则",
+   "en": "",
+   "pages": "158"
+  },
+  {
+   "line": 21,
+   "col": "L",
+   "sub": false,
+   "zh": "变域模型",
+   "en": "model of variying domain",
+   "pages": "301"
+  },
+  {
+   "line": 21,
+   "col": "R",
+   "sub": false,
+   "zh": "布尔公式",
+   "en": "Boolean formula",
+   "pages": "58"
+  },
+  {
+   "line": 22,
+   "col": "L",
+   "sub": false,
+   "zh": "变域模型",
+   "en": "model of varying domain",
+   "pages": "307"
+  },
+  {
+   "line": 22,
+   "col": "R",
+   "sub": false,
+   "zh": "不一致的",
+   "en": "inconsistenty",
+   "pages": "26"
+  },
+  {
+   "line": 23,
+   "col": "L",
+   "sub": false,
+   "zh": "变域⻣架",
+   "en": "skeleton of varying domain",
+   "pages": "307"
+  },
+  {
+   "line": 24,
+   "col": "L",
+   "sub": false,
+   "zh": "可满足性",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 24,
+   "col": "R",
+   "sub": false,
+   "zh": "参变元",
+   "en": "parameter variable",
+   "pages": "336"
+  },
+  {
+   "line": 25,
+   "col": "L",
+   "sub": true,
+   "zh": "枝",
+   "en": "",
+   "pages": "162"
+  },
+  {
+   "line": 25,
+   "col": "R",
+   "sub": false,
+   "zh": "参变元",
+   "en": "parameter varible",
+   "pages": "337"
+  },
+  {
+   "line": 26,
+   "col": "L",
+   "sub": true,
+   "zh": "表列",
+   "en": "",
+   "pages": "162"
+  },
+  {
+   "line": 26,
+   "col": "R",
+   "sub": false,
+   "zh": "差",
+   "en": "set difference",
+   "pages": "4"
+  },
+  {
+   "line": 27,
+   "col": "L",
+   "sub": false,
+   "zh": "标准翻译",
+   "en": "standard translation",
+   "pages": "209"
+  },
+  {
+   "line": 27,
+   "col": "R",
+   "sub": false,
+   "zh": "差异模态算子",
+   "en": "difference modality",
+   "pages": "202"
+  },
+  {
+   "line": 28,
+   "col": "L",
+   "sub": true,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "274"
+  },
+  {
+   "line": 28,
+   "col": "R",
+   "sub": false,
+   "zh": "常假式",
+   "en": "",
+   "pages": "37"
+  },
+  {
+   "line": 29,
+   "col": "L",
+   "sub": false,
+   "zh": "标准翻译定理",
+   "en": "",
+   "pages": "210"
+  },
+  {
+   "line": 29,
+   "col": "R",
+   "sub": false,
+   "zh": "常公式",
+   "en": "",
+   "pages": "37, 82"
+  },
+  {
+   "line": 30,
+   "col": "L",
+   "sub": false,
+   "zh": "标准翻译模型",
+   "en": "",
+   "pages": "274"
+  },
+  {
+   "line": 30,
+   "col": "R",
+   "sub": false,
+   "zh": "常域模型",
+   "en": "model of constant domain",
+   "pages": "301"
+  },
+  {
+   "line": 31,
+   "col": "L",
+   "sub": false,
+   "zh": "表列的解释函数",
+   "en": "",
+   "pages": "162"
+  },
+  {
+   "line": 31,
+   "col": "R",
+   "sub": false,
+   "zh": "常域⻣架",
+   "en": "skeleton of constant domain",
+   "pages": "302"
+  },
+  {
+   "line": 32,
+   "col": "L",
+   "sub": false,
+   "zh": "表列系统",
+   "en": "tableau system",
+   "pages": "158"
+  },
+  {
+   "line": 32,
+   "col": "R",
+   "sub": false,
+   "zh": "常真式",
+   "en": "",
+   "pages": "37"
+  },
+  {
+   "line": 33,
+   "col": "L",
+   "sub": false,
+   "zh": "表列规则",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 33,
+   "col": "R",
+   "sub": false,
+   "zh": "超幂",
+   "en": "ultrapower",
+   "pages": ""
+  },
+  {
+   "line": 34,
+   "col": "L",
+   "sub": true,
+   "zh": "一般模态规则",
+   "en": "",
+   "pages": "158"
+  },
+  {
+   "line": 34,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶逻辑模型",
+   "en": "",
+   "pages": "198"
+  },
+  {
+   "line": 35,
+   "col": "L",
+   "sub": true,
+   "zh": "模态逻辑模型",
+   "en": "",
+   "pages": "200"
+  },
+  {
+   "line": 35,
+   "col": "R",
+   "sub": false,
+   "zh": "子代数",
+   "en": "subalgebra",
+   "pages": "278"
+  },
+  {
+   "line": 36,
+   "col": "L",
+   "sub": true,
+   "zh": "集合",
+   "en": "",
+   "pages": "198"
+  },
+  {
+   "line": 36,
+   "col": "R",
+   "sub": false,
+   "zh": "幂代数",
+   "en": "power",
+   "pages": "278"
+  },
+  {
+   "line": 37,
+   "col": "L",
+   "sub": false,
+   "zh": "超滤",
+   "en": "ultrafilter",
+   "pages": "194, 284"
+  },
+  {
+   "line": 37,
+   "col": "R",
+   "sub": false,
+   "zh": "积代数",
+   "en": "product",
+   "pages": "278"
+  },
+  {
+   "line": 38,
+   "col": "L",
+   "sub": true,
+   "zh": "主超滤",
+   "en": "principal ultrafilter",
+   "pages": "195"
+  },
+  {
+   "line": 38,
+   "col": "R",
+   "sub": false,
+   "zh": "项代数",
+   "en": "term algebra",
+   "pages": "280"
+  },
+  {
+   "line": 39,
+   "col": "L",
+   "sub": false,
+   "zh": "超滤定理",
+   "en": "",
+   "pages": "285"
+  },
+  {
+   "line": 39,
+   "col": "R",
+   "sub": false,
+   "zh": "代数相似型",
+   "en": "algebraic similarity type",
+   "pages": "277"
+  },
+  {
+   "line": 40,
+   "col": "L",
+   "sub": false,
+   "zh": "超滤引理",
+   "en": "",
+   "pages": "196, 285"
+  },
+  {
+   "line": 40,
+   "col": "R",
+   "sub": false,
+   "zh": "单反点",
+   "en": "",
+   "pages": "102"
+  },
+  {
+   "line": 41,
+   "col": "L",
+   "sub": false,
+   "zh": "超滤扩张",
+   "en": "ultrafilter extension",
+   "pages": "196"
+  },
+  {
+   "line": 41,
+   "col": "R",
+   "sub": false,
+   "zh": "单调化",
+   "en": "",
+   "pages": "257, 265"
+  },
+  {
+   "line": 42,
+   "col": "L",
+   "sub": false,
+   "zh": "超滤扩张上的双仿定理",
+   "en": "",
+   "pages": "206"
+  },
+  {
+   "line": 42,
+   "col": "R",
+   "sub": false,
+   "zh": "单调性",
+   "en": "monotonicity",
+   "pages": "53, 194"
+  },
+  {
+   "line": 43,
+   "col": "L",
+   "sub": false,
+   "zh": "超滤框架",
+   "en": "ultrafilter frame",
+   "pages": "289"
+  },
+  {
+   "line": 43,
+   "col": "R",
+   "sub": false,
+   "zh": "单调的",
+   "en": "monotonic",
+   "pages": "257"
+  },
+  {
+   "line": 44,
+   "col": "L",
+   "sub": false,
+   "zh": "超积",
+   "en": "ultraproduct",
+   "pages": ""
+  },
+  {
+   "line": 44,
+   "col": "R",
+   "sub": false,
+   "zh": "单调规则",
+   "en": "rule of monotonicity",
+   "pages": "109"
+  },
+  {
+   "line": 45,
+   "col": "L",
+   "sub": true,
+   "zh": "一阶逻辑模型",
+   "en": "",
+   "pages": "198"
+  },
+  {
+   "line": 45,
+   "col": "R",
+   "sub": false,
+   "zh": "导入导出律",
+   "en": "import-export law",
+   "pages": "39"
+  },
+  {
+   "line": 46,
+   "col": "L",
+   "sub": true,
+   "zh": "模态逻辑模型",
+   "en": "",
+   "pages": "200"
+  },
+  {
+   "line": 46,
+   "col": "R",
+   "sub": false,
+   "zh": "道义模态",
+   "en": "deontic modality",
+   "pages": "84, 184"
+  },
+  {
+   "line": 47,
+   "col": "L",
+   "sub": true,
+   "zh": "集合",
+   "en": "",
+   "pages": "198"
+  },
+  {
+   "line": 47,
+   "col": "R",
+   "sub": false,
+   "zh": "德摩根律",
+   "en": "De Morgan’s laws",
+   "pages": "39"
+  },
+  {
+   "line": 48,
+   "col": "L",
+   "sub": false,
+   "zh": "超积上的双仿定理",
+   "en": "",
+   "pages": "207"
+  },
+  {
+   "line": 48,
+   "col": "R",
+   "sub": false,
+   "zh": "等价关系",
+   "en": "equivalence relation",
+   "pages": "8"
+  },
+  {
+   "line": 49,
+   "col": "L",
+   "sub": false,
+   "zh": "持续的",
+   "en": "serial",
+   "pages": "7"
+  },
+  {
+   "line": 49,
+   "col": "R",
+   "sub": false,
+   "zh": "等价替换规则",
+   "en": "replacement of equivalents",
+   "pages": "47,"
+  },
+  {
+   "line": 50,
+   "col": "L",
+   "sub": false,
+   "zh": "重言式",
+   "en": "tautology",
+   "pages": "38"
+  },
+  {
+   "line": 50,
+   "col": "R",
+   "sub": true,
+   "zh": "",
+   "en": "",
+   "pages": "109"
+  },
+  {
+   "line": 51,
+   "col": "L",
+   "sub": false,
+   "zh": "稠密的",
+   "en": "dense",
+   "pages": "7"
+  },
+  {
+   "line": 51,
+   "col": "R",
+   "sub": false,
+   "zh": "等价类",
+   "en": "equivalence class",
+   "pages": "9, 74"
+  },
+  {
+   "line": 52,
+   "col": "L",
+   "sub": false,
+   "zh": "传递的",
+   "en": "transitive",
+   "pages": "7"
+  },
+  {
+   "line": 52,
+   "col": "R",
+   "sub": false,
+   "zh": "等式",
+   "en": "equation",
+   "pages": "280"
+  },
+  {
+   "line": 53,
+   "col": "L",
+   "sub": false,
+   "zh": "初等嵌入",
+   "en": "elementary embedding",
+   "pages": "199"
+  },
+  {
+   "line": 53,
+   "col": "R",
+   "sub": false,
+   "zh": "等式可定义的",
+   "en": "equationally definable",
+   "pages": "281"
+  },
+  {
+   "line": 54,
+   "col": "L",
+   "sub": false,
+   "zh": "初等模型类",
+   "en": "elementary class of models",
+   "pages": "200"
+  },
+  {
+   "line": 54,
+   "col": "R",
+   "sub": false,
+   "zh": "等式理论",
+   "en": "equational theory",
+   "pages": "281"
+  },
+  {
+   "line": 55,
+   "col": "L",
+   "sub": false,
+   "zh": "次终结的",
+   "en": "second final",
+   "pages": "8"
+  },
+  {
+   "line": 55,
+   "col": "R",
+   "sub": false,
+   "zh": "等式类",
+   "en": "equational class",
+   "pages": "281"
+  },
+  {
+   "line": 56,
+   "col": "L",
+   "sub": false,
+   "zh": "词项",
+   "en": "term",
+   "pages": "31"
+  },
+  {
+   "line": 56,
+   "col": "R",
+   "sub": false,
+   "zh": "等词",
+   "en": "identity",
+   "pages": "58"
+  },
+  {
+   "line": 57,
+   "col": "L",
+   "sub": false,
+   "zh": "从物必然性",
+   "en": "necessity de re",
+   "pages": "300"
+  },
+  {
+   "line": 57,
+   "col": "R",
+   "sub": false,
+   "zh": "典型模态",
+   "en": "stereotypical modality",
+   "pages": "184"
+  },
+  {
+   "line": 58,
+   "col": "L",
+   "sub": false,
+   "zh": "从物模态公式",
+   "en": "modal formula de re",
+   "pages": "333"
+  },
+  {
+   "line": 58,
+   "col": "R",
+   "sub": false,
+   "zh": "典范一般框架",
+   "en": "canonical general frame",
+   "pages": "236"
+  },
+  {
+   "line": 59,
+   "col": "L",
+   "sub": false,
+   "zh": "从言必然性",
+   "en": "necessity dicto",
+   "pages": "300"
+  },
+  {
+   "line": 59,
+   "col": "R",
+   "sub": false,
+   "zh": "典范一般模型",
+   "en": "canonical general model",
+   "pages": "236"
+  },
+  {
+   "line": 60,
+   "col": "L",
+   "sub": false,
+   "zh": "从言模态公式",
+   "en": "modal formula de decto",
+   "pages": "333"
+  },
+  {
+   "line": 60,
+   "col": "R",
+   "sub": false,
+   "zh": "典范公式",
+   "en": "canonical formula",
+   "pages": "149"
+  },
+  {
+   "line": 61,
+   "col": "L",
+   "sub": false,
+   "zh": "簇",
+   "en": "variety",
+   "pages": "278"
+  },
+  {
+   "line": 61,
+   "col": "R",
+   "sub": false,
+   "zh": "典范关系",
+   "en": "canonical relation",
+   "pages": "147"
+  },
+  {
+   "line": 62,
+   "col": "L",
+   "sub": false,
+   "zh": "存在单调规则",
+   "en": "",
+   "pages": "69"
+  },
+  {
+   "line": 62,
+   "col": "R",
+   "sub": false,
+   "zh": "典范指派",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 63,
+   "col": "L",
+   "sub": false,
+   "zh": "存在引理",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 63,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 64,
+   "col": "L",
+   "sub": true,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 64,
+   "col": "R",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "329"
+  },
+  {
+   "line": 65,
+   "col": "L",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "329"
+  },
+  {
+   "line": 65,
+   "col": "R",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "321"
+  },
+  {
+   "line": 66,
+   "col": "L",
+   "sub": false,
+   "zh": "存在引理",
+   "en": "existence lemma",
+   "pages": ""
+  },
+  {
+   "line": 66,
+   "col": "R",
+   "sub": false,
+   "zh": "典范指派",
+   "en": "canonical assignment",
+   "pages": "74"
+  },
+  {
+   "line": 67,
+   "col": "L",
+   "sub": true,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 67,
+   "col": "R",
+   "sub": false,
+   "zh": "典范框架",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 68,
+   "col": "L",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "322"
+  },
+  {
+   "line": 68,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 69,
+   "col": "L",
+   "sub": true,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": "148"
+  },
+  {
+   "line": 69,
+   "col": "R",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "329"
+  },
+  {
+   "line": 70,
+   "col": "L",
+   "sub": false,
+   "zh": "存在概括公理",
+   "en": "existence generalization",
+   "pages": "68"
+  },
+  {
+   "line": 70,
+   "col": "R",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "321"
+  },
+  {
+   "line": 71,
+   "col": "R",
+   "sub": false,
+   "zh": "典范框架",
+   "en": "canonical frame",
+   "pages": "147"
+  },
+  {
+   "line": 72,
+   "col": "L",
+   "sub": false,
+   "zh": "代入",
+   "en": "substitution",
+   "pages": "16, 35, 82, 280"
+  },
+  {
+   "line": 72,
+   "col": "R",
+   "sub": false,
+   "zh": "典范模型",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 73,
+   "col": "L",
+   "sub": false,
+   "zh": "代入特例",
+   "en": "substitution instance",
+   "pages": "68"
+  },
+  {
+   "line": 73,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 74,
+   "col": "L",
+   "sub": false,
+   "zh": "代入自由",
+   "en": "substitution free",
+   "pages": "60"
+  },
+  {
+   "line": 74,
+   "col": "R",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "329"
+  },
+  {
+   "line": 75,
+   "col": "L",
+   "sub": false,
+   "zh": "代入规则",
+   "en": "rule of uniform substitution",
+   "pages": "44"
+  },
+  {
+   "line": 75,
+   "col": "R",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "321"
+  },
+  {
+   "line": 76,
+   "col": "L",
+   "sub": false,
+   "zh": "代表元",
+   "en": "representative element",
+   "pages": "9"
+  },
+  {
+   "line": 76,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "74"
+  },
+  {
+   "line": 77,
+   "col": "L",
+   "sub": false,
+   "zh": "带等词的一阶公式",
+   "en": "first-order formulas with",
+   "pages": ""
+  },
+  {
+   "line": 77,
+   "col": "R",
+   "sub": true,
+   "zh": "模态逻辑",
+   "en": "",
+   "pages": "147"
+  },
+  {
+   "line": 78,
+   "col": "L",
+   "sub": true,
+   "zh": "",
+   "en": "identity",
+   "pages": "58"
+  },
+  {
+   "line": 78,
+   "col": "R",
+   "sub": false,
+   "zh": "典范模型",
+   "en": "canonical model",
+   "pages": "25"
+  },
+  {
+   "line": 79,
+   "col": "L",
+   "sub": false,
+   "zh": "代数",
+   "en": "algebra",
+   "pages": "277"
+  },
+  {
+   "line": 79,
+   "col": "R",
+   "sub": false,
+   "zh": "典范模型定理",
+   "en": "",
+   "pages": "149"
+  },
+  {
+   "line": 80,
+   "col": "L",
+   "sub": true,
+   "zh": "商代数",
+   "en": "quotient algebra",
+   "pages": "279"
+  },
+  {
+   "line": 80,
+   "col": "R",
+   "sub": false,
+   "zh": "典范的",
+   "en": "canonical",
+   "pages": "291"
+  },
+  {
+   "line": 81,
+   "col": "L",
+   "sub": false,
+   "zh": "典范赋值",
+   "en": "canonical valuation",
+   "pages": "147"
+  },
+  {
+   "line": 81,
+   "col": "R",
+   "sub": false,
+   "zh": "分离规则",
+   "en": "modus ponens",
+   "pages": "44"
+  },
+  {
+   "line": 82,
+   "col": "L",
+   "sub": false,
+   "zh": "典范逻辑",
+   "en": "canonical logic",
+   "pages": "149"
+  },
+  {
+   "line": 82,
+   "col": "R",
+   "sub": false,
+   "zh": "分配律",
+   "en": "distribution law",
+   "pages": "39"
+  },
+  {
+   "line": 83,
+   "col": "L",
+   "sub": false,
+   "zh": "典范邻域函数",
+   "en": "",
+   "pages": "263"
+  },
+  {
+   "line": 83,
+   "col": "R",
+   "sub": false,
+   "zh": "封闭",
+   "en": "closed",
+   "pages": "5"
+  },
+  {
+   "line": 84,
+   "col": "L",
+   "sub": true,
+   "zh": "最大典范邻域函数",
+   "en": "",
+   "pages": "263"
+  },
+  {
+   "line": 84,
+   "col": "R",
+   "sub": false,
+   "zh": "否定",
+   "en": "negation",
+   "pages": "32"
+  },
+  {
+   "line": 85,
+   "col": "L",
+   "sub": true,
+   "zh": "最小典范邻域函数",
+   "en": "",
+   "pages": "263"
+  },
+  {
+   "line": 85,
+   "col": "R",
+   "sub": false,
+   "zh": "否定完全的",
+   "en": "negation complete",
+   "pages": "49"
+  },
+  {
+   "line": 86,
+   "col": "L",
+   "sub": false,
+   "zh": "典范邻域框架",
+   "en": "",
+   "pages": "263"
+  },
+  {
+   "line": 86,
+   "col": "R",
+   "sub": false,
+   "zh": "否定引入",
+   "en": "negation introduction",
+   "pages": "53"
+  },
+  {
+   "line": 87,
+   "col": "L",
+   "sub": false,
+   "zh": "典范邻域模型",
+   "en": "",
+   "pages": "262"
+  },
+  {
+   "line": 87,
+   "col": "R",
+   "sub": false,
+   "zh": "否定消去",
+   "en": "negation elimination",
+   "pages": "53"
+  },
+  {
+   "line": 88,
+   "col": "L",
+   "sub": true,
+   "zh": "最大典范邻域模型",
+   "en": "",
+   "pages": "263"
+  },
+  {
+   "line": 88,
+   "col": "R",
+   "sub": false,
+   "zh": "负公式",
+   "en": "negative formula",
+   "pages": "218"
+  },
+  {
+   "line": 89,
+   "col": "L",
+   "sub": true,
+   "zh": "最小典范邻域模型",
+   "en": "",
+   "pages": "263"
+  },
+  {
+   "line": 89,
+   "col": "R",
+   "sub": false,
+   "zh": "复合公式",
+   "en": "compound formula",
+   "pages": "58"
+  },
+  {
+   "line": 90,
+   "col": "L",
+   "sub": false,
+   "zh": "点模型类的基本模态可定义性定理",
+   "en": "",
+   "pages": "212"
+  },
+  {
+   "line": 90,
+   "col": "R",
+   "sub": false,
+   "zh": "赋值",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 91,
+   "col": "L",
+   "sub": false,
+   "zh": "点模型类的模态可定义性定理",
+   "en": "",
+   "pages": "212"
+  },
+  {
+   "line": 91,
+   "col": "R",
+   "sub": true,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 92,
+   "col": "L",
+   "sub": false,
+   "zh": "点生成子框架",
+   "en": "point generated submodel",
+   "pages": "190"
+  },
+  {
+   "line": 92,
+   "col": "R",
+   "sub": true,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "95"
+  },
+  {
+   "line": 93,
+   "col": "L",
+   "sub": false,
+   "zh": "点生成子模型",
+   "en": "point generated subframe",
+   "pages": "190"
+  },
+  {
+   "line": 93,
+   "col": "R",
+   "sub": true,
+   "zh": "常域模型",
+   "en": "",
+   "pages": "302"
+  },
+  {
+   "line": 94,
+   "col": "L",
+   "sub": false,
+   "zh": "叠加模态",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 94,
+   "col": "R",
+   "sub": false,
+   "zh": "赋值",
+   "en": "valuation",
+   "pages": ""
+  },
+  {
+   "line": 95,
+   "col": "L",
+   "sub": true,
+   "zh": "的对偶",
+   "en": "dual",
+   "pages": "83"
+  },
+  {
+   "line": 95,
+   "col": "R",
+   "sub": true,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 96,
+   "col": "L",
+   "sub": false,
+   "zh": "叠加模态",
+   "en": "iterated modality",
+   "pages": "83"
+  },
+  {
+   "line": 96,
+   "col": "R",
+   "sub": true,
+   "zh": "素朴语义",
+   "en": "",
+   "pages": "89"
+  },
+  {
+   "line": 97,
+   "col": "L",
+   "sub": false,
+   "zh": "递归定义",
+   "en": "resursive definition",
+   "pages": "14"
+  },
+  {
+   "line": 97,
+   "col": "R",
+   "sub": true,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "36"
+  },
+  {
+   "line": 98,
+   "col": "L",
+   "sub": false,
+   "zh": "递归定义唯一存在定理",
+   "en": "",
+   "pages": "14"
+  },
+  {
+   "line": 98,
+   "col": "R",
+   "sub": false,
+   "zh": "赋值函数",
+   "en": "valuation function",
+   "pages": "37"
+  },
+  {
+   "line": 99,
+   "col": "L",
+   "sub": false,
+   "zh": "定义域",
+   "en": "domain",
+   "pages": "5"
+  },
+  {
+   "line": 100,
+   "col": "L",
+   "sub": false,
+   "zh": "动态合取",
+   "en": "dynamic conjunction",
+   "pages": "180"
+  },
+  {
+   "line": 100,
+   "col": "R",
+   "sub": false,
+   "zh": "概念解释",
+   "en": "conceptual interpretation",
+   "pages": "359"
+  },
+  {
+   "line": 101,
+   "col": "L",
+   "sub": false,
+   "zh": "对 ¬ 是经典的",
+   "en": "classical for ¬",
+   "pages": "47"
+  },
+  {
+   "line": 101,
+   "col": "R",
+   "sub": false,
+   "zh": "概括原则",
+   "en": "",
+   "pages": "125"
+  },
+  {
+   "line": 102,
+   "col": "L",
+   "sub": false,
+   "zh": "对 → 是经典的",
+   "en": "classical for →",
+   "pages": "47"
+  },
+  {
+   "line": 102,
+   "col": "R",
+   "sub": false,
+   "zh": "概括定理",
+   "en": "",
+   "pages": "70"
+  },
+  {
+   "line": 103,
+   "col": "L",
+   "sub": false,
+   "zh": "对偶",
+   "en": "dual",
+   "pages": "110, 291"
+  },
+  {
+   "line": 103,
+   "col": "R",
+   "sub": false,
+   "zh": "更新函数",
+   "en": "update function",
+   "pages": "179"
+  },
+  {
+   "line": 104,
+   "col": "L",
+   "sub": false,
+   "zh": "对偶定理",
+   "en": "duality theorem",
+   "pages": "293"
+  },
+  {
+   "line": 104,
+   "col": "R",
+   "sub": false,
+   "zh": "个体变元",
+   "en": "individual variable",
+   "pages": "57"
+  },
+  {
+   "line": 105,
+   "col": "L",
+   "sub": false,
+   "zh": "对称的",
+   "en": "symmetric",
+   "pages": "7"
+  },
+  {
+   "line": 105,
+   "col": "R",
+   "sub": false,
+   "zh": "个体常元",
+   "en": "individual constant",
+   "pages": "57"
+  },
+  {
+   "line": 106,
+   "col": "L",
+   "sub": false,
+   "zh": "对⻆线映射",
+   "en": "diagonal map",
+   "pages": "198"
+  },
+  {
+   "line": 106,
+   "col": "R",
+   "sub": false,
+   "zh": "Goldblatt-Thomason 定理",
+   "en": "",
+   "pages": "214, 294"
+  },
+  {
+   "line": 107,
+   "col": "L",
+   "sub": false,
+   "zh": "对象域",
+   "en": "",
+   "pages": "302"
+  },
+  {
+   "line": 107,
+   "col": "R",
+   "sub": false,
+   "zh": "公式模式",
+   "en": "formula schema",
+   "pages": "40"
+  },
+  {
+   "line": 108,
+   "col": "L",
+   "sub": false,
+   "zh": "对象解释",
+   "en": "object interpretation",
+   "pages": "356"
+  },
+  {
+   "line": 108,
+   "col": "R",
+   "sub": false,
+   "zh": "公式的复杂度",
+   "en": "complexity of formulas",
+   "pages": "73, 300"
+  },
+  {
+   "line": 109,
+   "col": "L",
+   "sub": false,
+   "zh": "对象语言",
+   "en": "object language",
+   "pages": "59"
+  },
+  {
+   "line": 109,
+   "col": "R",
+   "sub": false,
+   "zh": "公理",
+   "en": "axiom",
+   "pages": "19"
+  },
+  {
+   "line": 110,
+   "col": "R",
+   "sub": false,
+   "zh": "公理化",
+   "en": "",
+   "pages": "130"
+  },
+  {
+   "line": 111,
+   "col": "L",
+   "sub": false,
+   "zh": "二元后承",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 111,
+   "col": "R",
+   "sub": true,
+   "zh": "有穷公理化",
+   "en": "finitely axiomatizable",
+   "pages": "130"
+  },
+  {
+   "line": 112,
+   "col": "L",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 112,
+   "col": "R",
+   "sub": true,
+   "zh": "递归公理化",
+   "en": "recursively axiomatizable,",
+   "pages": ""
+  },
+  {
+   "line": 113,
+   "col": "L",
+   "sub": true,
+   "zh": "框架类",
+   "en": "",
+   "pages": "309"
+  },
+  {
+   "line": 113,
+   "col": "R",
+   "sub": true,
+   "zh": "",
+   "en": "",
+   "pages": "130"
+  },
+  {
+   "line": 114,
+   "col": "L",
+   "sub": true,
+   "zh": "⻣架类",
+   "en": "",
+   "pages": "309"
+  },
+  {
+   "line": 114,
+   "col": "R",
+   "sub": true,
+   "zh": "递归可枚举公理化",
+   "en": "recursively",
+   "pages": ""
+  },
+  {
+   "line": 115,
+   "col": "L",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "305"
+  },
+  {
+   "line": 115,
+   "col": "R",
+   "sub": true,
+   "zh": "",
+   "en": "enumerable axiomatizable",
+   "pages": "130"
+  },
+  {
+   "line": 116,
+   "col": "L",
+   "sub": false,
+   "zh": "二阶语言",
+   "en": "second-order language",
+   "pages": "217"
+  },
+  {
+   "line": 116,
+   "col": "R",
+   "sub": false,
+   "zh": "公理系统",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 117,
+   "col": "L",
+   "sub": false,
+   "zh": "二难推理",
+   "en": "dilemma",
+   "pages": "53"
+  },
+  {
+   "line": 117,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶内涵逻辑",
+   "en": "",
+   "pages": "354"
+  },
+  {
+   "line": 118,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "68"
+  },
+  {
+   "line": 119,
+   "col": "L",
+   "sub": false,
+   "zh": "反向模态算子",
+   "en": "",
+   "pages": "202"
+  },
+  {
+   "line": 119,
+   "col": "R",
+   "sub": true,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "44"
+  },
+  {
+   "line": 120,
+   "col": "L",
+   "sub": false,
+   "zh": "反对称的",
+   "en": "antisymmetric",
+   "pages": "7"
+  },
+  {
+   "line": 120,
+   "col": "R",
+   "sub": true,
+   "zh": "子系统",
+   "en": "subsystem",
+   "pages": "23"
+  },
+  {
+   "line": 121,
+   "col": "L",
+   "sub": false,
+   "zh": "反框架",
+   "en": "counter-frame",
+   "pages": "97"
+  },
+  {
+   "line": 121,
+   "col": "R",
+   "sub": true,
+   "zh": "的公理扩张",
+   "en": "axiomatic extension",
+   "pages": "23"
+  },
+  {
+   "line": 122,
+   "col": "L",
+   "sub": false,
+   "zh": "反模型",
+   "en": "countermodel",
+   "pages": "90, 97"
+  },
+  {
+   "line": 122,
+   "col": "R",
+   "sub": true,
+   "zh": "的扩张",
+   "en": "extension",
+   "pages": "23"
+  },
+  {
+   "line": 123,
+   "col": "L",
+   "sub": false,
+   "zh": "反证法",
+   "en": "proof by contradiction",
+   "pages": "39, 46, 53"
+  },
+  {
+   "line": 123,
+   "col": "R",
+   "sub": true,
+   "zh": "的真公理扩张",
+   "en": "proper axiomatic",
+   "pages": ""
+  },
+  {
+   "line": 124,
+   "col": "L",
+   "sub": false,
+   "zh": "非单调核",
+   "en": "non-monotonic core",
+   "pages": "257"
+  },
+  {
+   "line": 124,
+   "col": "R",
+   "sub": true,
+   "zh": "",
+   "en": "extension",
+   "pages": "23"
+  },
+  {
+   "line": 125,
+   "col": "L",
+   "sub": false,
+   "zh": "分叉规则",
+   "en": "",
+   "pages": "158"
+  },
+  {
+   "line": 125,
+   "col": "R",
+   "sub": true,
+   "zh": "的真扩张",
+   "en": "proper extension",
+   "pages": "23"
+  },
+  {
+   "line": 126,
+   "col": "L",
+   "sub": false,
+   "zh": "分析的",
+   "en": "analytic",
+   "pages": "83"
+  },
+  {
+   "line": 126,
+   "col": "R",
+   "sub": true,
+   "zh": "真子系统",
+   "en": "proper subsystem",
+   "pages": "23"
+  },
+  {
+   "line": 127,
+   "col": "L",
+   "sub": true,
+   "zh": "等价系统",
+   "en": "equivalent systems",
+   "pages": "23"
+  },
+  {
+   "line": 127,
+   "col": "R",
+   "sub": false,
+   "zh": "函数符号",
+   "en": "function symbol",
+   "pages": "57"
+  },
+  {
+   "line": 128,
+   "col": "L",
+   "sub": false,
+   "zh": "公理系统",
+   "en": "axiomatic system",
+   "pages": "19"
+  },
+  {
+   "line": 128,
+   "col": "R",
+   "sub": false,
+   "zh": "函项完全的",
+   "en": "functionally complete",
+   "pages": "42"
+  },
+  {
+   "line": 129,
+   "col": "L",
+   "sub": false,
+   "zh": "孤点",
+   "en": "isolated point",
+   "pages": "102"
+  },
+  {
+   "line": 129,
+   "col": "R",
+   "sub": false,
+   "zh": "含例示",
+   "en": "",
+   "pages": "328"
+  },
+  {
+   "line": 130,
+   "col": "L",
+   "sub": false,
+   "zh": "⻣干",
+   "en": "skeleton",
+   "pages": "10"
+  },
+  {
+   "line": 130,
+   "col": "R",
+   "sub": false,
+   "zh": "含例证",
+   "en": "contain witness",
+   "pages": "75, 328"
+  },
+  {
+   "line": 131,
+   "col": "L",
+   "sub": false,
+   "zh": "关于 φ 的 L-极大一致集",
+   "en": "",
+   "pages": "247"
+  },
+  {
+   "line": 131,
+   "col": "R",
+   "sub": false,
+   "zh": "含单位元",
+   "en": "contain unit",
+   "pages": "194, 257"
+  },
+  {
+   "line": 132,
+   "col": "L",
+   "sub": false,
+   "zh": "关系",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 132,
+   "col": "R",
+   "sub": false,
+   "zh": "含核",
+   "en": "contain core",
+   "pages": "257"
+  },
+  {
+   "line": 133,
+   "col": "L",
+   "sub": true,
+   "zh": "n 元关系",
+   "en": "n-ary relation",
+   "pages": "5"
+  },
+  {
+   "line": 133,
+   "col": "R",
+   "sub": false,
+   "zh": "含零元",
+   "en": "",
+   "pages": "257"
+  },
+  {
+   "line": 134,
+   "col": "L",
+   "sub": true,
+   "zh": "二元关系",
+   "en": "binary relation",
+   "pages": "5"
+  },
+  {
+   "line": 134,
+   "col": "R",
+   "sub": false,
+   "zh": "核双模拟",
+   "en": "core bisimulation",
+   "pages": "268"
+  },
+  {
+   "line": 135,
+   "col": "L",
+   "sub": true,
+   "zh": "的传递闭包",
+   "en": "transitive closure",
+   "pages": "6"
+  },
+  {
+   "line": 135,
+   "col": "R",
+   "sub": false,
+   "zh": "核完全的",
+   "en": "core complete",
+   "pages": "258"
+  },
+  {
+   "line": 136,
+   "col": "L",
+   "sub": true,
+   "zh": "的自反传递闭包",
+   "en": "reflexive and transitive",
+   "pages": ""
+  },
+  {
+   "line": 136,
+   "col": "R",
+   "sub": false,
+   "zh": "Henkin 集",
+   "en": "Henkin set",
+   "pages": "75"
+  },
+  {
+   "line": 137,
+   "col": "L",
+   "sub": true,
+   "zh": "",
+   "en": "closure",
+   "pages": "6"
+  },
+  {
+   "line": 137,
+   "col": "R",
+   "sub": false,
+   "zh": "Henkin 集的存在引理",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 138,
+   "col": "L",
+   "sub": true,
+   "zh": "的自反闭包",
+   "en": "reflexive closure",
+   "pages": "6"
+  },
+  {
+   "line": 138,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "76"
+  },
+  {
+   "line": 139,
+   "col": "L",
+   "sub": true,
+   "zh": "的逆",
+   "en": "converse",
+   "pages": "6"
+  },
+  {
+   "line": 139,
+   "col": "R",
+   "sub": false,
+   "zh": "Henkin 集",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 140,
+   "col": "L",
+   "sub": false,
+   "zh": "关系-邻域模型",
+   "en": "",
+   "pages": "273"
+  },
+  {
+   "line": 140,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 141,
+   "col": "L",
+   "sub": false,
+   "zh": "关系语义",
+   "en": "relational semantics",
+   "pages": "94"
+  },
+  {
+   "line": 141,
+   "col": "R",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "328"
+  },
+  {
+   "line": 142,
+   "col": "L",
+   "sub": false,
+   "zh": "广义 Lindenbaum 引理",
+   "en": "",
+   "pages": "27"
+  },
+  {
+   "line": 142,
+   "col": "R",
+   "sub": false,
+   "zh": "合取",
+   "en": "conjunction",
+   "pages": "32"
+  },
+  {
+   "line": 143,
+   "col": "L",
+   "sub": false,
+   "zh": "归约",
+   "en": "reduced",
+   "pages": "164"
+  },
+  {
+   "line": 143,
+   "col": "R",
+   "sub": false,
+   "zh": "合取引入",
+   "en": "conjunction introduction",
+   "pages": "53"
+  },
+  {
+   "line": 144,
+   "col": "L",
+   "sub": false,
+   "zh": "归纳证明法",
+   "en": "inductive proof",
+   "pages": "12"
+  },
+  {
+   "line": 144,
+   "col": "R",
+   "sub": false,
+   "zh": "合取支",
+   "en": "conjunct",
+   "pages": "33"
+  },
+  {
+   "line": 145,
+   "col": "L",
+   "sub": false,
+   "zh": "归纳闭包",
+   "en": "inductive closure",
+   "pages": "11"
+  },
+  {
+   "line": 145,
+   "col": "R",
+   "sub": false,
+   "zh": "合取消去",
+   "en": "conjunction elimination",
+   "pages": "39, 53"
+  },
+  {
+   "line": 146,
+   "col": "L",
+   "sub": false,
+   "zh": "归谬法",
+   "en": "reduction to absurdity",
+   "pages": "39"
+  },
+  {
+   "line": 146,
+   "col": "R",
+   "sub": false,
+   "zh": "合式公式",
+   "en": "well-formed formulas",
+   "pages": "15"
+  },
+  {
+   "line": 147,
+   "col": "L",
+   "sub": false,
+   "zh": "规则",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 147,
+   "col": "R",
+   "sub": false,
+   "zh": "后件必然",
+   "en": "necessity of consequent",
+   "pages": "87"
+  },
+  {
+   "line": 148,
+   "col": "L",
+   "sub": true,
+   "zh": "保真规则",
+   "en": "truth preserving rule",
+   "pages": "24"
+  },
+  {
+   "line": 148,
+   "col": "R",
+   "sub": false,
+   "zh": "后承关系",
+   "en": "consequence relation",
+   "pages": "17"
+  },
+  {
+   "line": 149,
+   "col": "L",
+   "sub": true,
+   "zh": "可允规则",
+   "en": "admissible rule",
+   "pages": "22"
+  },
+  {
+   "line": 149,
+   "col": "R",
+   "sub": false,
+   "zh": "后承必然",
+   "en": "necessity of consequence",
+   "pages": "87"
+  },
+  {
+   "line": 150,
+   "col": "L",
+   "sub": true,
+   "zh": "导出规则",
+   "en": "derivable rule",
+   "pages": "22"
+  },
+  {
+   "line": 150,
+   "col": "R",
+   "sub": false,
+   "zh": "后继点",
+   "en": "successor",
+   "pages": "95"
+  },
+  {
+   "line": 151,
+   "col": "L",
+   "sub": true,
+   "zh": "推导规则",
+   "en": "rule of derivation",
+   "pages": "19"
+  },
+  {
+   "line": 151,
+   "col": "R",
+   "sub": false,
+   "zh": "汇聚的",
+   "en": "convergent",
+   "pages": "8"
+  },
+  {
+   "line": 152,
+   "col": "L",
+   "sub": true,
+   "zh": "有效",
+   "en": "valid",
+   "pages": "108"
+  },
+  {
+   "line": 153,
+   "col": "L",
+   "sub": true,
+   "zh": "有效规则",
+   "en": "valid rule",
+   "pages": "24"
+  },
+  {
+   "line": 153,
+   "col": "R",
+   "sub": false,
+   "zh": "Jankov-Fine 公式",
+   "en": "",
+   "pages": "224"
+  },
+  {
+   "line": 154,
+   "col": "L",
+   "sub": true,
+   "zh": "有穷的",
+   "en": "finite",
+   "pages": "19"
+  },
+  {
+   "line": 154,
+   "col": "R",
+   "sub": false,
+   "zh": "基数",
+   "en": "cardinality",
+   "pages": "6"
+  },
+  {
+   "line": 155,
+   "col": "L",
+   "sub": true,
+   "zh": "证明规则",
+   "en": "rule of proof",
+   "pages": "19"
+  },
+  {
+   "line": 155,
+   "col": "R",
+   "sub": false,
+   "zh": "极大元",
+   "en": "maximal element",
+   "pages": "9"
+  },
+  {
+   "line": 156,
+   "col": "L",
+   "sub": false,
+   "zh": "规则",
+   "en": "rule",
+   "pages": "19"
+  },
+  {
+   "line": 156,
+   "col": "R",
+   "sub": false,
+   "zh": "极小元",
+   "en": "minimal element",
+   "pages": "12"
+  },
+  {
+   "line": 157,
+   "col": "L",
+   "sub": false,
+   "zh": "⻣架",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 157,
+   "col": "R",
+   "sub": false,
+   "zh": "假言三段论",
+   "en": "hypothetical syllogism",
+   "pages": "53"
+  },
+  {
+   "line": 158,
+   "col": "L",
+   "sub": true,
+   "zh": "减域",
+   "en": "decreasing domain",
+   "pages": "312"
+  },
+  {
+   "line": 158,
+   "col": "R",
+   "sub": false,
+   "zh": "假言易位",
+   "en": "contrapositive law",
+   "pages": "53"
+  },
+  {
+   "line": 159,
+   "col": "L",
+   "sub": true,
+   "zh": "增域",
+   "en": "increasing domain",
+   "pages": "312"
+  },
+  {
+   "line": 159,
+   "col": "R",
+   "sub": false,
+   "zh": "简化框架",
+   "en": "simplified frame",
+   "pages": "114"
+  },
+  {
+   "line": 160,
+   "col": "L",
+   "sub": true,
+   "zh": "局部常域",
+   "en": "locally constant domain",
+   "pages": "312"
+  },
+  {
+   "line": 160,
+   "col": "R",
+   "sub": false,
+   "zh": "简单可能性",
+   "en": "simple possibility",
+   "pages": "184"
+  },
+  {
+   "line": 161,
+   "col": "L",
+   "sub": true,
+   "zh": "常域",
+   "en": "constaint domain",
+   "pages": "312"
+  },
+  {
+   "line": 161,
+   "col": "R",
+   "sub": false,
+   "zh": "简单必然性",
+   "en": "simple necessity",
+   "pages": "184"
+  },
+  {
+   "line": 162,
+   "col": "L",
+   "sub": false,
+   "zh": "⻣架有效",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 162,
+   "col": "R",
+   "sub": false,
+   "zh": "交",
+   "en": "intersection",
+   "pages": "4"
+  },
+  {
+   "line": 163,
+   "col": "L",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "309"
+  },
+  {
+   "line": 163,
+   "col": "R",
+   "sub": false,
+   "zh": "交换律",
+   "en": "exchange law",
+   "pages": "39"
+  },
+  {
+   "line": 164,
+   "col": "L",
+   "sub": false,
+   "zh": "⻣架类上有效",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 164,
+   "col": "R",
+   "sub": false,
+   "zh": "交闭性",
+   "en": "closed under intersection",
+   "pages": "194"
+  },
+  {
+   "line": 165,
+   "col": "L",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "309"
+  },
+  {
+   "line": 165,
+   "col": "R",
+   "sub": false,
+   "zh": "交闭的",
+   "en": "closed under intersection",
+   "pages": "257"
+  },
+  {
+   "line": 166,
+   "col": "L",
+   "sub": false,
+   "zh": "⻣架有效",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 166,
+   "col": "R",
+   "sub": false,
+   "zh": "较大可能性",
+   "en": "good possibility",
+   "pages": "185"
+  },
+  {
+   "line": 167,
+   "col": "L",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "305"
+  },
+  {
+   "line": 167,
+   "col": "R",
+   "sub": false,
+   "zh": "极大一致的",
+   "en": "maximal consistent",
+   "pages": "26"
+  },
+  {
+   "line": 168,
+   "col": "L",
+   "sub": false,
+   "zh": "过滤",
+   "en": "filtration",
+   "pages": "242"
+  },
+  {
+   "line": 168,
+   "col": "R",
+   "sub": false,
+   "zh": "结合律",
+   "en": "association law",
+   "pages": "39"
+  },
+  {
+   "line": 169,
+   "col": "R",
+   "sub": false,
+   "zh": "结构完全性",
+   "en": "structural complete",
+   "pages": "55"
+  },
+  {
+   "line": 170,
+   "col": "L",
+   "sub": false,
+   "zh": "函数",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 170,
+   "col": "R",
+   "sub": false,
+   "zh": "结构归纳法",
+   "en": "structural induction",
+   "pages": "12"
+  },
+  {
+   "line": 171,
+   "col": "L",
+   "sub": true,
+   "zh": "部分函数",
+   "en": "partial function",
+   "pages": "5"
+  },
+  {
+   "line": 171,
+   "col": "R",
+   "sub": false,
+   "zh": "结论",
+   "en": "conclusion",
+   "pages": "16"
+  },
+  {
+   "line": 172,
+   "col": "L",
+   "sub": false,
+   "zh": "函数",
+   "en": "function",
+   "pages": "5"
+  },
+  {
+   "line": 172,
+   "col": "R",
+   "sub": false,
+   "zh": "解释函数",
+   "en": "interpretation function",
+   "pages": "61"
+  },
+  {
+   "line": 173,
+   "col": "L",
+   "sub": false,
+   "zh": "集合",
+   "en": "set",
+   "pages": "3"
+  },
+  {
+   "line": 173,
+   "col": "R",
+   "sub": false,
+   "zh": "R",
+   "en": "",
+   "pages": "266"
+  },
+  {
+   "line": 174,
+   "col": "L",
+   "sub": false,
+   "zh": "集合代数",
+   "en": "set algebra",
+   "pages": "282"
+  },
+  {
+   "line": 174,
+   "col": "R",
+   "sub": false,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 175,
+   "col": "L",
+   "sub": false,
+   "zh": "禁对称的",
+   "en": "asymmetric",
+   "pages": "7"
+  },
+  {
+   "line": 175,
+   "col": "R",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "331"
+  },
+  {
+   "line": 176,
+   "col": "L",
+   "sub": false,
+   "zh": "禁循环的",
+   "en": "acyclic",
+   "pages": "8"
+  },
+  {
+   "line": 176,
+   "col": "R",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "324"
+  },
+  {
+   "line": 177,
+   "col": "L",
+   "sub": false,
+   "zh": "禁自反点",
+   "en": "irreflexive point",
+   "pages": "102"
+  },
+  {
+   "line": 177,
+   "col": "R",
+   "sub": false,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "73"
+  },
+  {
+   "line": 178,
+   "col": "L",
+   "sub": false,
+   "zh": "禁自反的",
+   "en": "irreflexive",
+   "pages": "7"
+  },
+  {
+   "line": 178,
+   "col": "R",
+   "sub": false,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "54"
+  },
+  {
+   "line": 179,
+   "col": "L",
+   "sub": false,
+   "zh": "紧致性定理",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 179,
+   "col": "R",
+   "sub": false,
+   "zh": "常⻅模态系统",
+   "en": "",
+   "pages": "151"
+  },
+  {
+   "line": 180,
+   "col": "L",
+   "sub": true,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "77"
+  },
+  {
+   "line": 180,
+   "col": "R",
+   "sub": false,
+   "zh": "模态表列系统",
+   "en": "",
+   "pages": "164"
+  },
+  {
+   "line": 181,
+   "col": "L",
+   "sub": true,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "55"
+  },
+  {
+   "line": 181,
+   "col": "R",
+   "sub": false,
+   "zh": "模态逻辑 K 系统",
+   "en": "",
+   "pages": "150"
+  },
+  {
+   "line": 182,
+   "col": "L",
+   "sub": false,
+   "zh": "紧致的",
+   "en": "compact",
+   "pages": "19"
+  },
+  {
+   "line": 182,
+   "col": "R",
+   "sub": false,
+   "zh": "模态逻辑其他系统",
+   "en": "",
+   "pages": "153"
+  },
+  {
+   "line": 183,
+   "col": "L",
+   "sub": false,
+   "zh": "经典逻辑",
+   "en": "classical logic",
+   "pages": "47"
+  },
+  {
+   "line": 183,
+   "col": "R",
+   "sub": false,
+   "zh": "可靠性的证明引理",
+   "en": "",
+   "pages": "25"
+  },
+  {
+   "line": 184,
+   "col": "L",
+   "sub": false,
+   "zh": "极限假设",
+   "en": "limit assumption",
+   "pages": "185"
+  },
+  {
+   "line": 184,
+   "col": "R",
+   "sub": false,
+   "zh": "可靠的",
+   "en": "sound",
+   "pages": "24"
+  },
+  {
+   "line": 185,
+   "col": "L",
+   "sub": false,
+   "zh": "基于 F 的模型",
+   "en": "",
+   "pages": "95"
+  },
+  {
+   "line": 185,
+   "col": "R",
+   "sub": false,
+   "zh": "可满足关系",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 186,
+   "col": "L",
+   "sub": false,
+   "zh": "基于 F 的模型",
+   "en": "",
+   "pages": "96"
+  },
+  {
+   "line": 186,
+   "col": "R",
+   "sub": true,
+   "zh": "L3",
+   "en": "",
+   "pages": "273"
+  },
+  {
+   "line": 187,
+   "col": "L",
+   "sub": false,
+   "zh": "基于 F 的点模型",
+   "en": "",
+   "pages": "96"
+  },
+  {
+   "line": 187,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶内涵逻辑",
+   "en": "first-order intensional",
+   "pages": ""
+  },
+  {
+   "line": 188,
+   "col": "L",
+   "sub": false,
+   "zh": "Jósson-Tarski 定理",
+   "en": "",
+   "pages": "290"
+  },
+  {
+   "line": 188,
+   "col": "R",
+   "sub": true,
+   "zh": "",
+   "en": "logic",
+   "pages": "354"
+  },
+  {
+   "line": 189,
+   "col": "L",
+   "sub": false,
+   "zh": "局部核有穷",
+   "en": "local core-finite",
+   "pages": "268"
+  },
+  {
+   "line": 189,
+   "col": "R",
+   "sub": true,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "62"
+  },
+  {
+   "line": 190,
+   "col": "L",
+   "sub": false,
+   "zh": "局部框架对应",
+   "en": "local frame correspondence,",
+   "pages": ""
+  },
+  {
+   "line": 190,
+   "col": "R",
+   "sub": true,
+   "zh": "二维语义",
+   "en": "two-dimensional semantics,",
+   "pages": ""
+  },
+  {
+   "line": 191,
+   "col": "L",
+   "sub": false,
+   "zh": "句法后承",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 191,
+   "col": "R",
+   "sub": true,
+   "zh": "变域语义",
+   "en": "varying domain semantics,",
+   "pages": ""
+  },
+  {
+   "line": 192,
+   "col": "L",
+   "sub": true,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "69"
+  },
+  {
+   "line": 192,
+   "col": "R",
+   "sub": true,
+   "zh": "",
+   "en": "",
+   "pages": "308"
+  },
+  {
+   "line": 193,
+   "col": "L",
+   "sub": true,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "44"
+  },
+  {
+   "line": 193,
+   "col": "R",
+   "sub": true,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 194,
+   "col": "L",
+   "sub": false,
+   "zh": "句法后承",
+   "en": "syntactic consequence",
+   "pages": "18, 20"
+  },
+  {
+   "line": 194,
+   "col": "R",
+   "sub": true,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "96"
+  },
+  {
+   "line": 195,
+   "col": "R",
+   "sub": true,
+   "zh": "素朴语义",
+   "en": "",
+   "pages": "90"
+  },
+  {
+   "line": 196,
+   "col": "L",
+   "sub": false,
+   "zh": "卡氏积",
+   "en": "",
+   "pages": ""
+  },
+  {
+   "line": 196,
+   "col": "R",
+   "sub": true,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "36"
+  },
+  {
+   "line": 197,
+   "col": "L",
+   "sub": true,
+   "zh": "n 元卡氏积",
+   "en": "",
+   "pages": "4"
+  },
+  {
+   "line": 197,
+   "col": "R",
+   "sub": true,
+   "zh": "常域语义",
+   "en": "constant domain semantics,",
+   "pages": ""
+  },
+  {
+   "line": 198,
+   "col": "L",
+   "sub": true,
+   "zh": "n 次幂",
+   "en": "nth power",
+   "pages": "4"
+  },
+  {
+   "line": 198,
+   "col": "R",
+   "sub": true,
+   "zh": "",
+   "en": "",
+   "pages": "303"
+  },
+  {
+   "line": 199,
+   "col": "L",
+   "sub": false,
+   "zh": "卡氏积",
+   "en": "Cartesian product",
+   "pages": "4"
+  },
+  {
+   "line": 199,
+   "col": "R",
+   "sub": true,
+   "zh": "更新语义",
+   "en": "update semantics",
+   "pages": "180"
+  },
+  {
+   "line": 200,
+   "col": "L",
+   "sub": false,
+   "zh": "开公式",
+   "en": "open formula",
+   "pages": "59"
+  },
+  {
+   "line": 200,
+   "col": "R",
+   "sub": true,
+   "zh": "论域语义",
+   "en": "",
+   "pages": "178"
+  },
+  {
+   "line": 201,
+   "col": "L",
+   "sub": false,
+   "zh": "开的枝",
+   "en": "open branch",
+   "pages": "165"
+  },
+  {
+   "line": 201,
+   "col": "R",
+   "sub": true,
+   "zh": "谓词抽象逻辑",
+   "en": "",
+   "pages": "343"
+  },
+  {
+   "line": 202,
+   "col": "L",
+   "sub": false,
+   "zh": "开的表列",
+   "en": "open tablelau",
+   "pages": "165"
+  },
+  {
+   "line": 202,
+   "col": "R",
+   "sub": true,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "259"
+  },
+  {
+   "line": 203,
+   "col": "L",
+   "sub": false,
+   "zh": "康托定理",
+   "en": "Kantor’s theorem",
+   "pages": "6"
+  },
+  {
+   "line": 203,
+   "col": "R",
+   "sub": false,
+   "zh": "可满足关系",
+   "en": "satisfiability relation",
+   "pages": "18"
+  },
+  {
+   "line": 204,
+   "col": "L",
+   "sub": false,
+   "zh": "可及关系",
+   "en": "accessibility relation",
+   "pages": "95"
+  },
+  {
+   "line": 204,
+   "col": "R",
+   "sub": false,
+   "zh": "可满足的",
+   "en": "satisfiable",
+   "pages": "18"
+  },
+  {
+   "line": 205,
+   "zh": "可嵌入",
+   "en": "embeddable",
+   "pages": "278",
+   "sub": false
+  },
+  {
+   "line": 205,
+   "zh": "可能世界",
+   "en": "possible world",
+   "pages": "89",
+   "sub": false
+  },
+  {
+   "line": 206,
+   "zh": "可数无穷",
+   "en": "countably infinite",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 206,
+   "zh": "可能主义",
+   "en": "possibilist",
+   "pages": "301",
+   "sub": false
+  },
+  {
+   "line": 207,
+   "zh": "可数的",
+   "en": "countable",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 207,
+   "zh": "可数不完全",
+   "en": "countably incomplete",
+   "pages": "196",
+   "sub": false
+  },
+  {
+   "line": 208,
+   "zh": "可靠性",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 208,
+   "zh": "可数饱和的",
+   "en": "countably saturated",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 209,
+   "zh": "模态逻辑",
+   "en": "",
+   "pages": "147",
+   "sub": true
+  },
+  {
+   "line": 209,
+   "zh": "可推演的",
+   "en": "derivable",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 210,
+   "zh": "可靠性定理",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 210,
+   "zh": "可允赋值",
+   "en": "admissible valuation",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 211,
+   "zh": "ECN",
+   "en": "",
+   "pages": "265",
+   "sub": true
+  },
+  {
+   "line": 211,
+   "zh": "可允集",
+   "en": "admissible set",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 212,
+   "zh": "EC",
+   "en": "",
+   "pages": "264",
+   "sub": true
+  },
+  {
+   "line": 212,
+   "zh": "空概括公理",
+   "en": "empty generalization",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 213,
+   "zh": "EMN",
+   "en": "",
+   "pages": "265",
+   "sub": true
+  },
+  {
+   "line": 213,
+   "zh": "框架",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 214,
+   "zh": "EM",
+   "en": "",
+   "pages": "265",
+   "sub": true
+  },
+  {
+   "line": 214,
+   "zh": "Kripke 框架",
+   "en": "Kripke frame",
+   "pages": "173",
+   "sub": false
+  },
+  {
+   "line": 215,
+   "zh": "EN",
+   "en": "",
+   "pages": "264",
+   "sub": true
+  },
+  {
+   "line": 215,
+   "zh": "点框架",
+   "en": "point frame",
+   "pages": "96",
+   "sub": false
+  },
+  {
+   "line": 216,
+   "zh": "E",
+   "en": "",
+   "pages": "264",
+   "sub": true
+  },
+  {
+   "line": 216,
+   "zh": "框架",
+   "en": "frame",
+   "pages": "95",
+   "sub": false
+  },
+  {
+   "line": 217,
+   "zh": "K",
+   "en": "",
+   "pages": "266",
+   "sub": true
+  },
+  {
+   "line": 217,
+   "zh": "有穷的",
+   "en": "finite",
+   "pages": "95",
+   "sub": false
+  },
+  {
+   "line": 218,
+   "zh": "框架对应",
+   "en": "frame correspondence",
+   "pages": "114, 213",
+   "sub": false
+  },
+  {
+   "line": 218,
+   "zh": "的形式性",
+   "en": "formality",
+   "pages": "17",
+   "sub": false
+  },
+  {
+   "line": 219,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "270",
+   "sub": true
+  },
+  {
+   "line": 219,
+   "zh": "的扩张",
+   "en": "extension",
+   "pages": "17",
+   "sub": false
+  },
+  {
+   "line": 220,
+   "zh": "框架有效",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 220,
+   "zh": "的真扩张",
+   "en": "proper extension",
+   "pages": "17",
+   "sub": false
+  },
+  {
+   "line": 221,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "309",
+   "sub": true
+  },
+  {
+   "line": 221,
+   "zh": "的紧致性",
+   "en": "compactness",
+   "pages": "17",
+   "sub": false
+  },
+  {
+   "line": 222,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "305",
+   "sub": true
+  },
+  {
+   "line": 222,
+   "zh": "的结构性",
+   "en": "structurality",
+   "pages": "17",
+   "sub": false
+  },
+  {
+   "line": 223,
+   "zh": "框架类上有效",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 223,
+   "zh": "的自反性",
+   "en": "reflexivity",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 224,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "309",
+   "sub": true
+  },
+  {
+   "line": 224,
+   "zh": "真子逻辑",
+   "en": "proper sublogic",
+   "pages": "17",
+   "sub": false
+  },
+  {
+   "line": 225,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "305",
+   "sub": true
+  },
+  {
+   "line": 225,
+   "zh": "逻辑",
+   "en": "logic",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 226,
+   "zh": "逻辑算子",
+   "en": "logic operators",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 227,
+   "zh": "Łoś 定理",
+   "en": "",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 227,
+   "zh": "逻辑联结词",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 228,
+   "zh": "类",
+   "en": "class",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 228,
+   "zh": "可定义",
+   "en": "definable",
+   "pages": "42",
+   "sub": false
+  },
+  {
+   "line": 229,
+   "zh": "真类",
+   "en": "proper class",
+   "pages": "3",
+   "sub": true
+  },
+  {
+   "line": 229,
+   "zh": "逻辑联结词",
+   "en": "logical connectives",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 230,
+   "zh": "Lemmon 过滤",
+   "en": "",
+   "pages": "244",
+   "sub": false
+  },
+  {
+   "line": 230,
+   "zh": "滤子",
+   "en": "filter",
+   "pages": "194, 284",
+   "sub": false
+  },
+  {
+   "line": 231,
+   "zh": "连通的",
+   "en": "connected",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 231,
+   "zh": "生成滤子",
+   "en": "generated filter",
+   "pages": "195",
+   "sub": false
+  },
+  {
+   "line": 232,
+   "zh": "链",
+   "en": "chain",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 232,
+   "zh": "真的",
+   "en": "proper",
+   "pages": "284",
+   "sub": false
+  },
+  {
+   "line": 233,
+   "zh": "良基的",
+   "en": "well-founded",
+   "pages": "12",
+   "sub": false
+  },
+  {
+   "line": 233,
+   "zh": "滤子",
+   "en": "filter",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 234,
+   "zh": "良构公式",
+   "en": "well-formed formulas",
+   "pages": "15",
+   "sub": false
+  },
+  {
+   "line": 234,
+   "zh": "真的",
+   "en": "proper",
+   "pages": "194",
+   "sub": false
+  },
+  {
+   "line": 235,
+   "zh": "量化公式",
+   "en": "quantified formula",
+   "pages": "58",
+   "sub": false
+  },
+  {
+   "line": 235,
+   "zh": "Löwenheim-Skolem 定理",
+   "en": "",
+   "pages": "77",
+   "sub": false
+  },
+  {
+   "line": 236,
+   "zh": "量化参数域",
+   "en": "",
+   "pages": "356",
+   "sub": false
+  },
+  {
+   "line": 237,
+   "zh": "量化模态逻辑",
+   "en": "quantified modal logic",
+   "pages": "299",
+   "sub": false
+  },
+  {
+   "line": 237,
+   "zh": "Makinson 定理",
+   "en": "",
+   "pages": "145, 289",
+   "sub": false
+  },
+  {
+   "line": 238,
+   "zh": "量词",
+   "en": "quantifier",
+   "pages": "58",
+   "sub": false
+  },
+  {
+   "line": 238,
+   "zh": "满足",
+   "en": "satisfy",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 239,
+   "zh": "理论",
+   "en": "theory",
+   "pages": "26",
+   "sub": false
+  },
+  {
+   "line": 239,
+   "zh": "矛盾式",
+   "en": "contradiction",
+   "pages": "38",
+   "sub": false
+  },
+  {
+   "line": 240,
+   "zh": "Lindenbaum-Tarski 代数",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 240,
+   "zh": "矛盾律",
+   "en": "law of non-contradiction",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 241,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "283",
+   "sub": true
+  },
+  {
+   "line": 241,
+   "zh": "L-一致性问题",
+   "en": "",
+   "pages": "251",
+   "sub": false
+  },
+  {
+   "line": 242,
+   "zh": "模态逻辑",
+   "en": "",
+   "pages": "288",
+   "sub": true
+  },
+  {
+   "line": 242,
+   "zh": "S5 的简化表列规则",
+   "en": "",
+   "pages": "170",
+   "sub": false
+  },
+  {
+   "line": 243,
+   "zh": "Lindenbaum-Tarski 引理",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 243,
+   "zh": "K45 的模态归约定理",
+   "en": "",
+   "pages": "122",
+   "sub": false
+  },
+  {
+   "line": 244,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "284",
+   "sub": true
+  },
+  {
+   "line": 244,
+   "zh": "K45 的模态范式存在定理",
+   "en": "",
+   "pages": "123",
+   "sub": false
+  },
+  {
+   "line": 245,
+   "zh": "模态逻辑",
+   "en": "",
+   "pages": "288",
+   "sub": true
+  },
+  {
+   "line": 245,
+   "zh": "M 可满足性问题",
+   "en": "",
+   "pages": "251",
+   "sub": false
+  },
+  {
+   "line": 246,
+   "zh": "Lindenbaum 引理",
+   "en": "",
+   "pages": "50",
+   "sub": false
+  },
+  {
+   "line": 246,
+   "zh": "M 有效性问题",
+   "en": "",
+   "pages": "251",
+   "sub": false
+  },
+  {
+   "line": 247,
+   "zh": "邻域",
+   "en": "neighborhood",
+   "pages": "258",
+   "sub": false
+  },
+  {
+   "line": 247,
+   "zh": "McKinsey 公理",
+   "en": "",
+   "pages": "118",
+   "sub": false
+  },
+  {
+   "line": 248,
+   "zh": "邻域关系",
+   "en": "",
+   "pages": "258",
+   "sub": false
+  },
+  {
+   "line": 248,
+   "zh": "幂等律",
+   "en": "idempotent law",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 249,
+   "zh": "邻域函数",
+   "en": "neighborhood function",
+   "pages": "258",
+   "sub": false
+  },
+  {
+   "line": 249,
+   "zh": "幂集",
+   "en": "power set",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 250,
+   "zh": "邻域框架",
+   "en": "neighborhood frame",
+   "pages": "258",
+   "sub": false
+  },
+  {
+   "line": 250,
+   "zh": "幂集代数",
+   "en": "power set algebra",
+   "pages": "282",
+   "sub": false
+  },
+  {
+   "line": 251,
+   "zh": "邻域模型",
+   "en": "neighborhood model",
+   "pages": "258",
+   "sub": false
+  },
+  {
+   "line": 251,
+   "zh": "命题",
+   "en": "proposition",
+   "pages": "31",
+   "sub": false
+  },
+  {
+   "line": 252,
+   "zh": "邻域点模型",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 252,
+   "zh": "命题变元",
+   "en": "propositional variables",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 253,
+   "zh": "论元数",
+   "en": "arity",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 253,
+   "zh": "命题模态逻辑的存在引理",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 254,
+   "zh": "论域",
+   "en": "domain",
+   "pages": "61, 89, 95",
+   "sub": false
+  },
+  {
+   "line": 254,
+   "zh": "代数语义",
+   "en": "",
+   "pages": "290",
+   "sub": false
+  },
+  {
+   "line": 255,
+   "zh": "论证",
+   "en": "argument",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 255,
+   "zh": "命题逻辑",
+   "en": "propositional logic",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 256,
+   "zh": "可判定的",
+   "en": "decidable",
+   "pages": "251",
+   "sub": false
+  },
+  {
+   "line": 256,
+   "zh": "命题逻辑常⻅重言式",
+   "en": "",
+   "pages": "38",
+   "sub": false
+  },
+  {
+   "line": 257,
+   "zh": "逻辑",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 257,
+   "zh": "命题逻辑的 Post 完全性",
+   "en": "",
+   "pages": "55",
+   "sub": false
+  },
+  {
+   "line": 258,
+   "zh": "子逻辑",
+   "en": "sublogic",
+   "pages": "17",
+   "sub": true
+  },
+  {
+   "line": 258,
+   "zh": "命题逻辑的代入定理",
+   "en": "",
+   "pages": "46",
+   "sub": false
+  },
+  {
+   "line": 259,
+   "zh": "的一致性",
+   "en": "consistency",
+   "pages": "21",
+   "sub": true
+  },
+  {
+   "line": 259,
+   "zh": "命题逻辑的结构完全性",
+   "en": "",
+   "pages": "55",
+   "sub": false
+  },
+  {
+   "line": 260,
+   "zh": "的传递性",
+   "en": "transitivity",
+   "pages": "17",
+   "sub": true
+  },
+  {
+   "line": 260,
+   "zh": "模态可定义",
+   "en": "modally definable",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 261,
+   "zh": "的单调性",
+   "en": "monotonicity",
+   "pages": "16",
+   "sub": true
+  },
+  {
+   "line": 261,
+   "zh": "一阶公式",
+   "en": "",
+   "pages": "213",
+   "sub": false
+  },
+  {
+   "line": 262,
+   "zh": "的强传递性",
+   "en": "strong transitivity",
+   "pages": "17",
+   "sub": true
+  },
+  {
+   "line": 262,
+   "zh": "框架类",
+   "en": "",
+   "pages": "213",
+   "sub": false
+  },
+  {
+   "line": 263,
+   "zh": "的强自反性",
+   "en": "strong reflexivity",
+   "pages": "17",
+   "sub": true
+  },
+  {
+   "line": 263,
+   "zh": "相对",
+   "en": "",
+   "pages": "225",
+   "sub": false
+  },
+  {
+   "line": 264,
+   "zh": "点模型类",
+   "en": "",
+   "pages": "212",
+   "sub": true
+  },
+  {
+   "line": 264,
+   "zh": "模型对应",
+   "en": "model correspondence",
+   "pages": "209",
+   "sub": false
+  },
+  {
+   "line": 265,
+   "zh": "基本模态可定义",
+   "en": "",
+   "pages": "212",
+   "sub": true
+  },
+  {
+   "line": 265,
+   "zh": "模型真",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 266,
+   "zh": "模态合取范式",
+   "en": "modal conjunctive normal",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 266,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 267,
+   "zh": "form",
+   "en": "",
+   "pages": "121",
+   "sub": true
+  },
+  {
+   "line": 267,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "309",
+   "sub": false
+  },
+  {
+   "line": 268,
+   "zh": "模态基",
+   "en": "modal base",
+   "pages": "183",
+   "sub": false
+  },
+  {
+   "line": 268,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "304",
+   "sub": false
+  },
+  {
+   "line": 269,
+   "zh": "模态布尔代数",
+   "en": "",
+   "pages": "287",
+   "sub": false
+  },
+  {
+   "line": 269,
+   "zh": "素朴语义",
+   "en": "",
+   "pages": "91",
+   "sub": false
+  },
+  {
+   "line": 270,
+   "zh": "单调的",
+   "en": "monotonic",
+   "pages": "287",
+   "sub": true
+  },
+  {
+   "line": 270,
+   "zh": "模型论后承",
+   "en": "model-theoretic consequence",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 271,
+   "zh": "正则的",
+   "en": "regular",
+   "pages": "287",
+   "sub": true
+  },
+  {
+   "line": 271,
+   "zh": "模型论逻辑",
+   "en": "model-theoretic logic",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 272,
+   "zh": "正规的",
+   "en": "nomal",
+   "pages": "287",
+   "sub": true
+  },
+  {
+   "line": 272,
+   "zh": "目标域",
+   "en": "codomain",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 273,
+   "zh": "模态幂集代数",
+   "en": "",
+   "pages": "286",
+   "sub": false
+  },
+  {
+   "line": 273,
+   "zh": "目的模态",
+   "en": "telegical modality",
+   "pages": "184",
+   "sub": false
+  },
+  {
+   "line": 274,
+   "zh": "模态度",
+   "en": "modal degree",
+   "pages": "83",
+   "sub": false
+  },
+  {
+   "line": 275,
+   "zh": "模态版本的 Łoś 定理",
+   "en": "",
+   "pages": "206",
+   "sub": false
+  },
+  {
+   "line": 275,
+   "zh": "内定理",
+   "en": "theorem",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 276,
+   "zh": "模态等价",
+   "en": "modally equivalent",
+   "pages": "189",
+   "sub": false
+  },
+  {
+   "line": 276,
+   "zh": "内部方块",
+   "en": "",
+   "pages": "86",
+   "sub": false
+  },
+  {
+   "line": 277,
+   "zh": "模态谓词逻辑",
+   "en": "modal predicate logic",
+   "pages": "299",
+   "sub": false
+  },
+  {
+   "line": 277,
+   "zh": "逆 Barcan 公式",
+   "en": "converse Barcan formula",
+   "pages": "311",
+   "sub": false
+  },
+  {
+   "line": 278,
+   "zh": "模态赋值博弈",
+   "en": "modal evaluation game",
+   "pages": "104",
+   "sub": false
+  },
+  {
+   "line": 278,
+   "zh": "对偶",
+   "en": "",
+   "pages": "313",
+   "sub": false
+  },
+  {
+   "line": 279,
+   "zh": "模态逻辑",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 279,
+   "zh": "逆 Barcan 公式",
+   "en": "converse Barcan formula",
+   "pages": "306",
+   "sub": false
+  },
+  {
+   "line": 280,
+   "zh": "全等的",
+   "en": "congruent",
+   "pages": "125",
+   "sub": true
+  },
+  {
+   "line": 280,
+   "zh": "逆良基的",
+   "en": "converse well-founded",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 281,
+   "zh": "单调的",
+   "en": "monotonic",
+   "pages": "125",
+   "sub": true
+  },
+  {
+   "line": 281,
+   "zh": "逆否律",
+   "en": "contrapositive law",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 282,
+   "zh": "正则的",
+   "en": "regular",
+   "pages": "125",
+   "sub": true
+  },
+  {
+   "line": 283,
+   "zh": "偶然的",
+   "en": "contingent",
+   "pages": "83",
+   "sub": false
+  },
+  {
+   "line": 284,
+   "zh": "正规的",
+   "en": "normal",
+   "pages": "125",
+   "sub": true
+  },
+  {
+   "line": 285,
+   "zh": "欧性的",
+   "en": "Euclidean",
+   "pages": "7",
+   "sub": false
+  },
+  {
+   "line": 286,
+   "zh": "模态逻辑的二阶对应定理",
+   "en": "",
+   "pages": "217",
+   "sub": false
+  },
+  {
+   "line": 287,
+   "zh": "模态逻辑的代数完全性定理",
+   "en": "",
+   "pages": "288",
+   "sub": false
+  },
+  {
+   "line": 288,
+   "zh": "排中律",
+   "en": "laow of excluded middle",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 289,
+   "zh": "模态饱和",
+   "en": "modally saturated",
+   "pages": "204",
+   "sub": false
+  },
+  {
+   "line": 289,
+   "zh": "膨胀模型",
+   "en": "expanded model",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 290,
+   "zh": "模型",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 290,
+   "zh": "膨胀语言",
+   "en": "expanded language",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 291,
+   "zh": "Kratzer 模型",
+   "en": "",
+   "pages": "183",
+   "sub": true
+  },
+  {
+   "line": 291,
+   "zh": "皮尔士律",
+   "en": "Peirce’s law",
+   "pages": "54",
+   "sub": false
+  },
+  {
+   "line": 292,
+   "zh": "Kripke 模型",
+   "en": "",
+   "pages": "173",
+   "sub": true
+  },
+  {
+   "line": 292,
+   "zh": "偏序",
+   "en": "partial order",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 293,
+   "zh": "Kripke 点模型",
+   "en": "",
+   "pages": "173",
+   "sub": true
+  },
+  {
+   "line": 293,
+   "zh": "Post 完全性",
+   "en": "Post completeness",
+   "pages": "55",
+   "sub": false
+  },
+  {
+   "line": 294,
+   "zh": "L12",
+   "en": "",
+   "pages": "274",
+   "sub": true
+  },
+  {
+   "line": 295,
+   "zh": "一阶内涵逻辑",
+   "en": "",
+   "pages": "353",
+   "sub": true
+  },
+  {
+   "line": 295,
+   "zh": "Q-模型",
+   "en": "",
+   "pages": "356",
+   "sub": false
+  },
+  {
+   "line": 296,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "61",
+   "sub": true
+  },
+  {
+   "line": 296,
+   "zh": "前提",
+   "en": "premise",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 297,
+   "zh": "变域模型",
+   "en": "",
+   "pages": "",
+   "sub": true
+  },
+  {
+   "line": 297,
+   "zh": "前提引入",
+   "en": "premise introduction",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 298,
+   "zh": "指派点模型",
+   "en": "",
+   "pages": "307",
+   "sub": true
+  },
+  {
+   "line": 298,
+   "zh": "前驱点",
+   "en": "predecessor",
+   "pages": "95",
+   "sub": false
+  },
+  {
+   "line": 299,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": "",
+   "sub": true
+  },
+  {
+   "line": 299,
+   "zh": "嵌入代数",
+   "en": "embedding algebra",
+   "pages": "290",
+   "sub": false
+  },
+  {
+   "line": 300,
+   "zh": "关系模型",
+   "en": "",
+   "pages": "95",
+   "sub": true
+  },
+  {
+   "line": 300,
+   "zh": "强可靠的",
+   "en": "strongly sound",
+   "pages": "24",
+   "sub": false
+  },
+  {
+   "line": 301,
+   "zh": "素朴模型",
+   "en": "",
+   "pages": "89",
+   "sub": true
+  },
+  {
+   "line": 301,
+   "zh": "强完全的",
+   "en": "strongly complete",
+   "pages": "24",
+   "sub": false
+  },
+  {
+   "line": 302,
+   "zh": "素朴点模型",
+   "en": "",
+   "pages": "89",
+   "sub": true
+  },
+  {
+   "line": 302,
+   "zh": "强有穷模型性",
+   "en": "strong finite model property,",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 303,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "36",
+   "sub": true
+  },
+  {
+   "line": 303,
+   "zh": "252",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 304,
+   "zh": "带摹状词的谓词抽象逻辑",
+   "en": "",
+   "pages": "351",
+   "sub": true
+  },
+  {
+   "line": 304,
+   "zh": "全局模态算子",
+   "en": "universal modality",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 305,
+   "zh": "常域模型",
+   "en": "constant domain",
+   "pages": "302",
+   "sub": true
+  },
+  {
+   "line": 305,
+   "zh": "全局系统",
+   "en": "",
+   "pages": "146",
+   "sub": false
+  },
+  {
+   "line": 306,
+   "zh": "指派点模型",
+   "en": "",
+   "pages": "302",
+   "sub": true
+  },
+  {
+   "line": 306,
+   "zh": "全局语义后承",
+   "en": "global semantic consequence,",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 307,
+   "zh": "指派模型",
+   "en": "",
+   "pages": "62",
+   "sub": true
+  },
+  {
+   "line": 307,
+   "zh": "63",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 308,
+   "zh": "有穷的",
+   "en": "finite",
+   "pages": "96",
+   "sub": true
+  },
+  {
+   "line": 308,
+   "zh": "全现实模态",
+   "en": "totally realistic modality",
+   "pages": "184",
+   "sub": false
+  },
+  {
+   "line": 309,
+   "zh": "点模型",
+   "en": "point model",
+   "pages": "96",
+   "sub": true
+  },
+  {
+   "line": 309,
+   "zh": "全称例示公理",
+   "en": "universal instantiation",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 310,
+   "zh": "论域模型",
+   "en": "domain model",
+   "pages": "178",
+   "sub": true
+  },
+  {
+   "line": 310,
+   "zh": "全称分配公理",
+   "en": "universal distribution",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 311,
+   "zh": "谓词抽象逻辑",
+   "en": "",
+   "pages": "343",
+   "sub": true
+  },
+  {
+   "line": 311,
+   "zh": "全称单调规则",
+   "en": "",
+   "pages": "69",
+   "sub": false
+  },
+  {
+   "line": 312,
+   "zh": "模型",
+   "en": "model",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 312,
+   "zh": "全称概括规则",
+   "en": "universal generalization",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 313,
+   "zh": "全等",
+   "en": "congruence",
+   "pages": "279",
+   "sub": false
+  },
+  {
+   "line": 313,
+   "zh": "适当的",
+   "en": "proper",
+   "pages": "257",
+   "sub": false
+  },
+  {
+   "line": 314,
+   "zh": "全等规则",
+   "en": "rule of congruence",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 314,
+   "zh": "受限射",
+   "en": "bounded morphism",
+   "pages": "191",
+   "sub": false
+  },
+  {
+   "line": 315,
+   "zh": "全通的",
+   "en": "universal",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 315,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "269",
+   "sub": false
+  },
+  {
+   "line": 316,
+   "zh": "缺陷",
+   "en": "defect",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 316,
+   "zh": "受限射像",
+   "en": "bounded morphic image",
+   "pages": "191",
+   "sub": false
+  },
+  {
+   "line": 317,
+   "zh": "3D",
+   "en": "",
+   "pages": "232",
+   "sub": true
+  },
+  {
+   "line": 317,
+   "zh": "束",
+   "en": "cluster",
+   "pages": "10",
+   "sub": false
+  },
+  {
+   "line": 318,
+   "zh": "DL",
+   "en": "",
+   "pages": "234",
+   "sub": true
+  },
+  {
+   "line": 318,
+   "zh": "树",
+   "en": "tree",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 319,
+   "zh": "树生成的",
+   "en": "tree generated",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 320,
+   "zh": "人类可能性",
+   "en": "human possibility",
+   "pages": "184",
+   "sub": false
+  },
+  {
+   "line": 320,
+   "zh": "双仿",
+   "en": "bisimilar",
+   "pages": "192",
+   "sub": false
+  },
+  {
+   "line": 321,
+   "zh": "人类必然性",
+   "en": "human necessity",
+   "pages": "184",
+   "sub": false
+  },
+  {
+   "line": 321,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "267",
+   "sub": false
+  },
+  {
+   "line": 322,
+   "zh": "任意交",
+   "en": "arbitrary intersection",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 322,
+   "zh": "双条件",
+   "en": "biconditional",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 323,
+   "zh": "任意并",
+   "en": "arbitrary union",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 323,
+   "zh": "双条件引入",
+   "en": "biconditional introduction",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 324,
+   "zh": "认知模态",
+   "en": "epistemic modality",
+   "pages": "84, 184",
+   "sub": false
+  },
+  {
+   "line": 324,
+   "zh": "双条件消去",
+   "en": "biconditional elimination",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 325,
+   "zh": "融贯的",
+   "en": "coherent",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 325,
+   "zh": "双模拟",
+   "en": "bisimulation",
+   "pages": "192",
+   "sub": false
+  },
+  {
+   "line": 326,
+   "zh": "3D",
+   "en": "",
+   "pages": "231",
+   "sub": true
+  },
+  {
+   "line": 326,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "267",
+   "sub": false
+  },
+  {
+   "line": 327,
+   "zh": "DL",
+   "en": "",
+   "pages": "233",
+   "sub": true
+  },
+  {
+   "line": 327,
+   "zh": "双重否定",
+   "en": "doubel negation",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 328,
+   "zh": "弱全序",
+   "en": "weak total order",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 328,
+   "zh": "双重否定",
+   "en": "double negation",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 329,
+   "zh": "弱可靠的",
+   "en": "weakly sound",
+   "pages": "24",
+   "sub": false
+  },
+  {
+   "line": 329,
+   "zh": "死点",
+   "en": "dead end",
+   "pages": "102",
+   "sub": false
+  },
+  {
+   "line": 330,
+   "zh": "弱完全的",
+   "en": "weakly complete",
+   "pages": "24",
+   "sub": false
+  },
+  {
+   "line": 330,
+   "zh": "Stone 表达定理",
+   "en": "Stone’s representation",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 331,
+   "zh": "弱序",
+   "en": "weak order",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 331,
+   "zh": "theorem",
+   "en": "",
+   "pages": "285",
+   "sub": false
+  },
+  {
+   "line": 332,
+   "zh": "弱必然性",
+   "en": "weak necessity",
+   "pages": "185",
+   "sub": false
+  },
+  {
+   "line": 332,
+   "zh": "算子的可定义性",
+   "en": "",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 333,
+   "zh": "弱线序",
+   "en": "weak linear order",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 333,
+   "zh": "宿命论论证",
+   "en": "arument for fatalism",
+   "pages": "87",
+   "sub": false
+  },
+  {
+   "line": 334,
+   "zh": "弱逆良基的",
+   "en": "weakly converse well-founded",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 334,
+   "zh": "素朴有效的",
+   "en": "",
+   "pages": "93",
+   "sub": false
+  },
+  {
+   "line": 335,
+   "zh": "同一替换公理",
+   "en": "substitution of identity",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 336,
+   "zh": "Sahlqvist 公式",
+   "en": "Sahlqvist formula",
+   "pages": "224",
+   "sub": false
+  },
+  {
+   "line": 337,
+   "zh": "同态",
+   "en": "homomorphism",
+   "pages": "189, 277",
+   "sub": false
+  },
+  {
+   "line": 338,
+   "zh": "Sahlqvist 典范性定理",
+   "en": "",
+   "pages": "240",
+   "sub": false
+  },
+  {
+   "line": 339,
+   "zh": "的核",
+   "en": "kernel",
+   "pages": "277",
+   "sub": false
+  },
+  {
+   "line": 340,
+   "zh": "Sahlqvist 前件",
+   "en": "Sahlqvist antecedent",
+   "pages": "221",
+   "sub": false
+  },
+  {
+   "line": 341,
+   "zh": "同态像",
+   "en": "homomorphic image",
+   "pages": "277",
+   "sub": false
+  },
+  {
+   "line": 342,
+   "zh": "Sahlqvist 对应定理",
+   "en": "",
+   "pages": "224",
+   "sub": false
+  },
+  {
+   "line": 343,
+   "zh": "同构",
+   "en": "isomorphism",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 344,
+   "zh": "Sahlqvist 蕴含式",
+   "en": "Sahlqvist implication",
+   "pages": "221",
+   "sub": false
+  },
+  {
+   "line": 345,
+   "zh": "同构",
+   "en": "isomorphism, isomorphic",
+   "pages": "278",
+   "sub": false
+  },
+  {
+   "line": 346,
+   "zh": "三元句法后承",
+   "en": "",
+   "pages": "160",
+   "sub": false
+  },
+  {
+   "line": 347,
+   "zh": "同构的",
+   "en": "isomorphic",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 348,
+   "zh": "三元可满足性",
+   "en": "",
+   "pages": "157",
+   "sub": false
+  },
+  {
+   "line": 349,
+   "zh": "强同态",
+   "en": "strong homomorphism",
+   "pages": "189",
+   "sub": false
+  },
+  {
+   "line": 350,
+   "zh": "三元后承",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 351,
+   "zh": "通达关系",
+   "en": "accessibility relation",
+   "pages": "95",
+   "sub": false
+  },
+  {
+   "line": 352,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "",
+   "sub": true
+  },
+  {
+   "line": 353,
+   "zh": "推平",
+   "en": "bulldozing",
+   "pages": "229",
+   "sub": false
+  },
+  {
+   "line": 354,
+   "zh": "框架类",
+   "en": "",
+   "pages": "309",
+   "sub": true
+  },
+  {
+   "line": 355,
+   "zh": "推演定理",
+   "en": "",
+   "pages": "52",
+   "sub": false
+  },
+  {
+   "line": 356,
+   "zh": "⻣架类",
+   "en": "",
+   "pages": "309",
+   "sub": true
+  },
+  {
+   "line": 357,
+   "zh": "推理",
+   "en": "inference",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 358,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "305",
+   "sub": true
+  },
+  {
+   "line": 359,
+   "zh": "退化系统",
+   "en": "",
+   "pages": "143",
+   "sub": false
+  },
+  {
+   "line": 360,
+   "zh": "三元语义后承",
+   "en": "",
+   "pages": "157",
+   "sub": false
+  },
+  {
+   "line": 361,
+   "zh": "三歧的",
+   "en": "trichotomous",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 361,
+   "zh": "van Benthem 刻画定理",
+   "en": "van Benthem’s",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 362,
+   "zh": "散点",
+   "en": "",
+   "pages": "102",
+   "sub": false
+  },
+  {
+   "line": 362,
+   "zh": "characterization theorem",
+   "en": "",
+   "pages": "211",
+   "sub": false
+  },
+  {
+   "line": 363,
+   "zh": "删模态法",
+   "en": "",
+   "pages": "139",
+   "sub": false
+  },
+  {
+   "line": 363,
+   "zh": "φ-饱和的",
+   "en": "φ-saturated",
+   "pages": "26",
+   "sub": false
+  },
+  {
+   "line": 364,
+   "zh": "上界",
+   "en": "upper bound",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 364,
+   "zh": "φ 定义了 P",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 365,
+   "zh": "射点",
+   "en": "",
+   "pages": "102",
+   "sub": false
+  },
+  {
+   "line": 365,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "270",
+   "sub": false
+  },
+  {
+   "line": 366,
+   "zh": "生成子框架",
+   "en": "generated subframe",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 366,
+   "zh": "φ 定义了 P",
+   "en": "φ defines P",
+   "pages": "114",
+   "sub": false
+  },
+  {
+   "line": 367,
+   "zh": "生成子模型",
+   "en": "generated submodel",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 367,
+   "zh": "φ 对 P 是典范的",
+   "en": "φ is canonical for P",
+   "pages": "150",
+   "sub": false
+  },
+  {
+   "line": 368,
+   "zh": "生成滤子",
+   "en": "generated filter",
+   "pages": "285",
+   "sub": false
+  },
+  {
+   "line": 369,
+   "zh": "实现",
+   "en": "realize",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 369,
+   "zh": "外延",
+   "en": "entension",
+   "pages": "356",
+   "sub": false
+  },
+  {
+   "line": 370,
+   "zh": "时间模态",
+   "en": "temporal modality",
+   "pages": "84",
+   "sub": false
+  },
+  {
+   "line": 370,
+   "zh": "外部方块",
+   "en": "",
+   "pages": "86",
+   "sub": false
+  },
+  {
+   "line": 371,
+   "zh": "完全性",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 371,
+   "zh": "相容的",
+   "en": "consistent",
+   "pages": "83",
+   "sub": false
+  },
+  {
+   "line": 372,
+   "zh": "模态逻辑",
+   "en": "",
+   "pages": "147",
+   "sub": true
+  },
+  {
+   "line": 372,
+   "zh": "项",
+   "en": "term",
+   "pages": "58, 280",
+   "sub": false
+  },
+  {
+   "line": 373,
+   "zh": "完全性定理",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 373,
+   "zh": "严格的",
+   "en": "rigid",
+   "pages": "348",
+   "sub": false
+  },
+  {
+   "line": 374,
+   "zh": "ECN",
+   "en": "",
+   "pages": "265",
+   "sub": true
+  },
+  {
+   "line": 374,
+   "zh": "谓词抽象逻辑",
+   "en": "",
+   "pages": "342",
+   "sub": false
+  },
+  {
+   "line": 375,
+   "zh": "EC",
+   "en": "",
+   "pages": "264",
+   "sub": true
+  },
+  {
+   "line": 375,
+   "zh": "项对公式中变元的代入",
+   "en": "",
+   "pages": "60, 345",
+   "sub": false
+  },
+  {
+   "line": 376,
+   "zh": "EMN",
+   "en": "",
+   "pages": "265",
+   "sub": true
+  },
+  {
+   "line": 376,
+   "zh": "项对项中变元的代入",
+   "en": "",
+   "pages": "60",
+   "sub": false
+  },
+  {
+   "line": 377,
+   "zh": "EM",
+   "en": "",
+   "pages": "265",
+   "sub": true
+  },
+  {
+   "line": 377,
+   "zh": "项的解释",
+   "en": "interpretation of terms",
+   "pages": "62",
+   "sub": false
+  },
+  {
+   "line": 378,
+   "zh": "EN",
+   "en": "",
+   "pages": "264",
+   "sub": true
+  },
+  {
+   "line": 378,
+   "zh": "谢弗竖",
+   "en": "Sheffer stroke",
+   "pages": "41",
+   "sub": false
+  },
+  {
+   "line": 379,
+   "zh": "E",
+   "en": "",
+   "pages": "264",
+   "sub": true
+  },
+  {
+   "line": 379,
+   "zh": "形式推演",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 380,
+   "zh": "K",
+   "en": "",
+   "pages": "266",
+   "sub": true
+  },
+  {
+   "line": 380,
+   "zh": "的推导部",
+   "en": "derivation part",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 381,
+   "zh": "R",
+   "en": "",
+   "pages": "266",
+   "sub": true
+  },
+  {
+   "line": 381,
+   "zh": "的证明部",
+   "en": "proof part",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 382,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": "",
+   "sub": true
+  },
+  {
+   "line": 382,
+   "zh": "的⻓度",
+   "en": "length of derivation",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 383,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "331",
+   "sub": true
+  },
+  {
+   "line": 383,
+   "zh": "形式推演",
+   "en": "formal derivation",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 384,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "324",
+   "sub": true
+  },
+  {
+   "line": 384,
+   "zh": "形式证明",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 385,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "76",
+   "sub": true
+  },
+  {
+   "line": 385,
+   "zh": "的⻓度",
+   "en": "length of proof",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 386,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "54",
+   "sub": true
+  },
+  {
+   "line": 386,
+   "zh": "形式证明",
+   "en": "formal proof",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 387,
+   "zh": "常⻅模态系统",
+   "en": "",
+   "pages": "151",
+   "sub": true
+  },
+  {
+   "line": 387,
+   "zh": "形式语言",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 388,
+   "zh": "模态表列系统",
+   "en": "",
+   "pages": "170",
+   "sub": true
+  },
+  {
+   "line": 388,
+   "zh": "一阶内涵逻辑",
+   "en": "",
+   "pages": "353",
+   "sub": false
+  },
+  {
+   "line": 389,
+   "zh": "模态逻辑 K 系统",
+   "en": "",
+   "pages": "150",
+   "sub": true
+  },
+  {
+   "line": 389,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "57",
+   "sub": false
+  },
+  {
+   "line": 390,
+   "zh": "模态逻辑其他系统",
+   "en": "",
+   "pages": "153",
+   "sub": true
+  },
+  {
+   "line": 390,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 391,
+   "zh": "完全性的证明引理",
+   "en": "",
+   "pages": "25",
+   "sub": false
+  },
+  {
+   "line": 391,
+   "zh": "基本模态",
+   "en": "basic modal language",
+   "pages": "81",
+   "sub": false
+  },
+  {
+   "line": 392,
+   "zh": "完全的",
+   "en": "complete",
+   "pages": "8, 24",
+   "sub": false
+  },
+  {
+   "line": 392,
+   "zh": "多元模态",
+   "en": "polyadic modal language",
+   "pages": "85",
+   "sub": false
+  },
+  {
+   "line": 393,
+   "zh": "完全的簇",
+   "en": "complete",
+   "pages": "288",
+   "sub": false
+  },
+  {
+   "line": 393,
+   "zh": "多模态",
+   "en": "multi-modal language",
+   "pages": "85",
+   "sub": false
+  },
+  {
+   "line": 394,
+   "zh": "完成的枝",
+   "en": "complete branch",
+   "pages": "165",
+   "sub": false
+  },
+  {
+   "line": 394,
+   "zh": "带摹状词的谓词抽象逻辑",
+   "en": "",
+   "pages": "350",
+   "sub": false
+  },
+  {
+   "line": 395,
+   "zh": "完美的",
+   "en": "perfect",
+   "pages": "231",
+   "sub": false
+  },
+  {
+   "line": 395,
+   "zh": "谓词抽象逻辑",
+   "en": "",
+   "pages": "342",
+   "sub": false
+  },
+  {
+   "line": 396,
+   "zh": "微弱可能性",
+   "en": "slight possibility",
+   "pages": "184",
+   "sub": false
+  },
+  {
+   "line": 396,
+   "zh": "形式语言",
+   "en": "formal language",
+   "pages": "15",
+   "sub": false
+  },
+  {
+   "line": 397,
+   "zh": "未定义的",
+   "en": "undefined",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 397,
+   "zh": "行为等价",
+   "en": "behaviorally equivalent",
+   "pages": "270",
+   "sub": false
+  },
+  {
+   "line": 398,
+   "zh": "谓词变元",
+   "en": "predicate variable",
+   "pages": "217",
+   "sub": false
+  },
+  {
+   "line": 398,
+   "zh": "信息状态",
+   "en": "information state",
+   "pages": "178",
+   "sub": false
+  },
+  {
+   "line": 399,
+   "zh": "谓词变元指派",
+   "en": "assignment for predicate",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 399,
+   "zh": "析取",
+   "en": "disjunction",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 400,
+   "zh": "variables",
+   "en": "",
+   "pages": "217",
+   "sub": true
+  },
+  {
+   "line": 400,
+   "zh": "析取三段论",
+   "en": "disjunctive syllogism",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 401,
+   "zh": "谓词抽象",
+   "en": "predicate abstraction",
+   "pages": "341",
+   "sub": false
+  },
+  {
+   "line": 401,
+   "zh": "析取引入",
+   "en": "disjunction introduction",
+   "pages": "39, 53",
+   "sub": false
+  },
+  {
+   "line": 402,
+   "zh": "谓词符号",
+   "en": "predicate symbol",
+   "pages": "57",
+   "sub": false
+  },
+  {
+   "line": 402,
+   "zh": "析取支",
+   "en": "disjunct",
+   "pages": "33",
+   "sub": false
+  },
+  {
+   "line": 403,
+   "zh": "谓词逻辑",
+   "en": "predicate logic",
+   "pages": "57",
+   "sub": false
+  },
+  {
+   "line": 403,
+   "zh": "析取消去",
+   "en": "disjunction elimination",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 404,
+   "zh": "无穷升链",
+   "en": "infinite upward sequence",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 404,
+   "zh": "吸收律",
+   "en": "absorbtion law",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 405,
+   "zh": "无穷真扩充语言",
+   "en": "",
+   "pages": "328",
+   "sub": false
+  },
+  {
+   "line": 405,
+   "zh": "修补引理",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 406,
+   "zh": "无穷降链",
+   "en": "infinite downward sequence",
+   "pages": "12",
+   "sub": false
+  },
+  {
+   "line": 406,
+   "zh": "3D",
+   "en": "",
+   "pages": "232",
+   "sub": false
+  },
+  {
+   "line": 407,
+   "zh": "DL",
+   "en": "",
+   "pages": "234",
+   "sub": false
+  },
+  {
+   "line": 408,
+   "zh": "辖域",
+   "en": "scope",
+   "pages": "58, 342",
+   "sub": false
+  },
+  {
+   "line": 408,
+   "zh": "序源",
+   "en": "ordering souce",
+   "pages": "183",
+   "sub": false
+  },
+  {
+   "line": 409,
+   "zh": "现实世界",
+   "en": "actual world",
+   "pages": "173",
+   "sub": false
+  },
+  {
+   "line": 410,
+   "zh": "现实主义",
+   "en": "actualist",
+   "pages": "301",
+   "sub": false
+  },
+  {
+   "line": 410,
+   "zh": "严格偏序",
+   "en": "strict partial order",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 411,
+   "zh": "现实模态",
+   "en": "realistic modality",
+   "pages": "184",
+   "sub": false
+  },
+  {
+   "line": 411,
+   "zh": "严格全序",
+   "en": "strict total order",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 412,
+   "zh": "线序",
+   "en": "linear order",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 412,
+   "zh": "严格指示子",
+   "en": "rigid designator",
+   "pages": "341",
+   "sub": false
+  },
+  {
+   "line": 413,
+   "zh": "像有穷",
+   "en": "image-finite",
+   "pages": "205",
+   "sub": false
+  },
+  {
+   "line": 413,
+   "zh": "演绎定理",
+   "en": "deduction theorem",
+   "pages": "45, 70",
+   "sub": false
+  },
+  {
+   "line": 414,
+   "zh": "像集",
+   "en": "image set",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 414,
+   "zh": "演绎定理的逆",
+   "en": "",
+   "pages": "46",
+   "sub": false
+  },
+  {
+   "line": 415,
+   "zh": "向上单调",
+   "en": "upward monotonic",
+   "pages": "218",
+   "sub": false
+  },
+  {
+   "line": 415,
+   "zh": "衍推",
+   "en": "entail",
+   "pages": "83",
+   "sub": false
+  },
+  {
+   "line": 416,
+   "zh": "向下单调",
+   "en": "downward monotonic",
+   "pages": "218",
+   "sub": false
+  },
+  {
+   "line": 416,
+   "zh": "移位传递的",
+   "en": "shift transitive",
+   "pages": "7",
+   "sub": false
+  },
+  {
+   "line": 417,
+   "zh": "移位对称的",
+   "en": "shi",
+   "pages": "7",
+   "sub": false
+  },
+  {
+   "line": 417,
+   "zh": "DL",
+   "en": "",
+   "pages": "233",
+   "sub": false
+  },
+  {
+   "line": 418,
+   "zh": "移位自反的",
+   "en": "shift reflexive",
+   "pages": "7",
+   "sub": false
+  },
+  {
+   "line": 418,
+   "zh": "元规则",
+   "en": "meta-rule",
+   "pages": "52",
+   "sub": false
+  },
+  {
+   "line": 419,
+   "zh": "一般框架",
+   "en": "general frame",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 419,
+   "zh": "元语言",
+   "en": "meta-language",
+   "pages": "59",
+   "sub": false
+  },
+  {
+   "line": 420,
+   "zh": "一般模型",
+   "en": "general model",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 420,
+   "zh": "原子公式",
+   "en": "atomic formula",
+   "pages": "16, 58",
+   "sub": false
+  },
+  {
+   "line": 421,
+   "zh": "一般存在概括规则",
+   "en": "",
+   "pages": "71",
+   "sub": false
+  },
+  {
+   "line": 421,
+   "zh": "愿望模态",
+   "en": "buletic modality",
+   "pages": "184",
+   "sub": false
+  },
+  {
+   "line": 422,
+   "zh": "一般全称概括规则",
+   "en": "",
+   "pages": "71",
+   "sub": false
+  },
+  {
+   "line": 422,
+   "zh": "约束出现",
+   "en": "bound occurence",
+   "pages": "59",
+   "sub": false
+  },
+  {
+   "line": 423,
+   "zh": "一阶模态逻辑",
+   "en": "first-order modal logic",
+   "pages": "299",
+   "sub": false
+  },
+  {
+   "line": 423,
+   "zh": "约束变元",
+   "en": "bound variable",
+   "pages": "59",
+   "sub": false
+  },
+  {
+   "line": 424,
+   "zh": "一阶逻辑",
+   "en": "first-order logic",
+   "pages": "57",
+   "sub": false
+  },
+  {
+   "line": 424,
+   "zh": "约束变元改名定理",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 425,
+   "zh": "一阶逻辑常⻅有效式",
+   "en": "",
+   "pages": "67",
+   "sub": false
+  },
+  {
+   "line": 425,
+   "zh": "自由逻辑",
+   "en": "",
+   "pages": "326",
+   "sub": false
+  },
+  {
+   "line": 426,
+   "zh": "一阶逻辑的代入引理",
+   "en": "",
+   "pages": "67",
+   "sub": false
+  },
+  {
+   "line": 426,
+   "zh": "约束变元改名定理",
+   "en": "renaming bound variables",
+   "pages": "71",
+   "sub": false
+  },
+  {
+   "line": 427,
+   "zh": "映射",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 428,
+   "zh": "单射",
+   "en": "injection",
+   "pages": "5",
+   "sub": true
+  },
+  {
+   "line": 428,
+   "zh": "语境",
+   "en": "context",
+   "pages": "178",
+   "sub": false
+  },
+  {
+   "line": 429,
+   "zh": "双射",
+   "en": "bijection",
+   "pages": "5",
+   "sub": true
+  },
+  {
+   "line": 429,
+   "zh": "语句",
+   "en": "sentence",
+   "pages": "59",
+   "sub": false
+  },
+  {
+   "line": 430,
+   "zh": "复合映射",
+   "en": "compound map",
+   "pages": "5",
+   "sub": true
+  },
+  {
+   "line": 430,
+   "zh": "蕴含",
+   "en": "implication",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 431,
+   "zh": "满射",
+   "en": "surjection",
+   "pages": "5",
+   "sub": true
+  },
+  {
+   "line": 431,
+   "zh": "蕴含式",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 432,
+   "zh": "的限制",
+   "en": "restriction",
+   "pages": "5",
+   "sub": true
+  },
+  {
+   "line": 432,
+   "zh": "的前件",
+   "en": "antecedent",
+   "pages": "33",
+   "sub": true
+  },
+  {
+   "line": 433,
+   "zh": "映射",
+   "en": "map",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 433,
+   "zh": "的后件",
+   "en": "consequent",
+   "pages": "33",
+   "sub": true
+  },
+  {
+   "line": 434,
+   "zh": "一致的",
+   "en": "consistent",
+   "pages": "26",
+   "sub": false
+  },
+  {
+   "line": 434,
+   "zh": "蕴含式",
+   "en": "implication",
+   "pages": "33",
+   "sub": false
+  },
+  {
+   "line": 435,
+   "zh": "右三歧的",
+   "en": "non-right-branching",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 435,
+   "zh": "蕴含引入",
+   "en": "implication introduction",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 436,
+   "zh": "右蕴含分配",
+   "en": "distribution of right implication",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 436,
+   "zh": "蕴含消去",
+   "en": "implication elimination",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 437,
+   "zh": "语义后承",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 438,
+   "zh": "右连通的",
+   "en": "right-connected",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 438,
+   "zh": "F 的全局语义后承",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 439,
+   "zh": "有区分模型",
+   "en": "distinguishing model",
+   "pages": "250",
+   "sub": false
+  },
+  {
+   "line": 439,
+   "zh": "F 的局部语义后承",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 440,
+   "zh": "有序对",
+   "en": "ordered pair",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 440,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "63",
+   "sub": true
+  },
+  {
+   "line": 441,
+   "zh": "有指称",
+   "en": "",
+   "pages": "354",
+   "sub": false
+  },
+  {
+   "line": 441,
+   "zh": "二维语义",
+   "en": "",
+   "pages": "176",
+   "sub": false
+  },
+  {
+   "line": 442,
+   "zh": "有效",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 442,
+   "zh": "2D 有效",
+   "en": "",
+   "pages": "176",
+   "sub": true
+  },
+  {
+   "line": 443,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "",
+   "sub": true
+  },
+  {
+   "line": 443,
+   "zh": "一般 2D 有效",
+   "en": "",
+   "pages": "176",
+   "sub": true
+  },
+  {
+   "line": 444,
+   "zh": "全局有效",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 444,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 445,
+   "zh": "局部有效",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 445,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 446,
+   "zh": "框架上",
+   "en": "",
+   "pages": "99",
+   "sub": true
+  },
+  {
+   "line": 446,
+   "zh": "素朴全部语义后承",
+   "en": "",
+   "pages": "92",
+   "sub": true
+  },
+  {
+   "line": 447,
+   "zh": "框架类上",
+   "en": "",
+   "pages": "99",
+   "sub": true
+  },
+  {
+   "line": 447,
+   "zh": "素朴局部语义后承",
+   "en": "",
+   "pages": "91",
+   "sub": true
+  },
+  {
+   "line": 448,
+   "zh": "点框架上",
+   "en": "",
+   "pages": "99",
+   "sub": true
+  },
+  {
+   "line": 448,
+   "zh": "素朴语义",
+   "en": "",
+   "pages": "91",
+   "sub": true
+  },
+  {
+   "line": 449,
+   "zh": "有效的",
+   "en": "valid",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 449,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "38",
+   "sub": false
+  },
+  {
+   "line": 450,
+   "zh": "代数语义",
+   "en": "",
+   "pages": "280",
+   "sub": true
+  },
+  {
+   "line": 450,
+   "zh": "更新语义",
+   "en": "",
+   "pages": "180",
+   "sub": true
+  },
+  {
+   "line": 451,
+   "zh": "有穷交性质",
+   "en": "finite intersection property (f.i.p.)",
+   "pages": "195",
+   "sub": false
+  },
+  {
+   "line": 451,
+   "zh": "语义后承",
+   "en": "semantic consequence",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 452,
+   "zh": "语义系统",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 453,
+   "zh": "有穷交性质",
+   "en": "finite meet property",
+   "pages": "285",
+   "sub": false
+  },
+  {
+   "line": 453,
+   "zh": "Kripke 语义系统",
+   "en": "",
+   "pages": "174",
+   "sub": true
+  },
+  {
+   "line": 454,
+   "zh": "有穷传递框架内的模态可定义性定理",
+   "en": "",
+   "pages": "225",
+   "sub": false
+  },
+  {
+   "line": 454,
+   "zh": "全局语义系统",
+   "en": "",
+   "pages": "174",
+   "sub": true
+  },
+  {
+   "line": 455,
+   "zh": "有穷基",
+   "en": "finite base",
+   "pages": "246",
+   "sub": false
+  },
+  {
+   "line": 455,
+   "zh": "局部语义系统",
+   "en": "",
+   "pages": "174",
+   "sub": true
+  },
+  {
+   "line": 456,
+   "zh": "有穷框架性",
+   "en": "finite frame property",
+   "pages": "249",
+   "sub": false
+  },
+  {
+   "line": 456,
+   "zh": "F 的全局语义系统",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 457,
+   "zh": "有穷模型性",
+   "en": "finite model property",
+   "pages": "243",
+   "sub": false
+  },
+  {
+   "line": 457,
+   "zh": "F 的局部语义系统",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 458,
+   "zh": "有穷集",
+   "en": "finite set",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 458,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 459,
+   "zh": "诱导模型",
+   "en": "induced model",
+   "pages": "231",
+   "sub": false
+  },
+  {
+   "line": 459,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "309",
+   "sub": true
+  },
+  {
+   "line": 460,
+   "zh": "预序",
+   "en": "preorder",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 460,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "305",
+   "sub": true
+  },
+  {
+   "line": 461,
+   "zh": "预模型",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 461,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "63",
+   "sub": true
+  },
+  {
+   "line": 462,
+   "zh": "3D",
+   "en": "",
+   "pages": "231",
+   "sub": true
+  },
+  {
+   "line": 462,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 463,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "106",
+   "sub": true
+  },
+  {
+   "line": 463,
+   "zh": "正规集",
+   "en": "",
+   "pages": "128",
+   "sub": false
+  },
+  {
+   "line": 464,
+   "zh": "素朴全部语义系统",
+   "en": "",
+   "pages": "91",
+   "sub": true
+  },
+  {
+   "line": 464,
+   "zh": "证明论后承",
+   "en": "proof-theoretic consequence",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 465,
+   "zh": "素朴局部语义系统",
+   "en": "",
+   "pages": "91",
+   "sub": true
+  },
+  {
+   "line": 465,
+   "zh": "证明论逻辑",
+   "en": "proof-theoretic logic",
+   "pages": "19",
+   "sub": false
+  },
+  {
+   "line": 466,
+   "zh": "素朴语义",
+   "en": "",
+   "pages": "91",
+   "sub": true
+  },
+  {
+   "line": 466,
+   "zh": "证明集",
+   "en": "proof set",
+   "pages": "50",
+   "sub": false
+  },
+  {
+   "line": 467,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "38",
+   "sub": true
+  },
+  {
+   "line": 467,
+   "zh": "值域",
+   "en": "range",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 468,
+   "zh": "论域语义",
+   "en": "",
+   "pages": "178",
+   "sub": true
+  },
+  {
+   "line": 468,
+   "zh": "指派",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 469,
+   "zh": "语义系统",
+   "en": "semantic system",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 469,
+   "zh": "一阶内涵逻辑",
+   "en": "",
+   "pages": "354",
+   "sub": true
+  },
+  {
+   "line": 470,
+   "zh": "变体指派",
+   "en": "x-variant",
+   "pages": "62",
+   "sub": true
+  },
+  {
+   "line": 471,
+   "zh": "展开",
+   "en": "unraveling",
+   "pages": "228",
+   "sub": false
+  },
+  {
+   "line": 472,
+   "zh": "指派",
+   "en": "assignment",
+   "pages": "62, 280",
+   "sub": false
+  },
+  {
+   "line": 473,
+   "zh": "真",
+   "en": "true",
+   "pages": "36",
+   "sub": false
+  },
+  {
+   "line": 474,
+   "zh": "变体模型",
+   "en": "",
+   "pages": "",
+   "sub": true
+  },
+  {
+   "line": 475,
+   "zh": "真值代数",
+   "en": "truth algebra",
+   "pages": "282",
+   "sub": false
+  },
+  {
+   "line": 476,
+   "zh": "变体",
+   "en": "",
+   "pages": "307",
+   "sub": true
+  },
+  {
+   "line": 477,
+   "zh": "真值函数",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 478,
+   "zh": "变域模型",
+   "en": "",
+   "pages": "307",
+   "sub": true
+  },
+  {
+   "line": 479,
+   "zh": "可定义",
+   "en": "definable",
+   "pages": "42",
+   "sub": true
+  },
+  {
+   "line": 480,
+   "zh": "常域模型",
+   "en": "",
+   "pages": "302",
+   "sub": true
+  },
+  {
+   "line": 481,
+   "zh": "真值函数",
+   "en": "truth function",
+   "pages": "41",
+   "sub": false
+  },
+  {
+   "line": 482,
+   "zh": "变体",
+   "en": "variant",
+   "pages": "302",
+   "sub": true
+  },
+  {
+   "line": 483,
+   "zh": "真值函项的",
+   "en": "truth functional",
+   "pages": "41",
+   "sub": false
+  },
+  {
+   "line": 484,
+   "zh": "直积",
+   "en": "product",
+   "pages": "198",
+   "sub": false
+  },
+  {
+   "line": 485,
+   "zh": "真值引理",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 486,
+   "zh": "终点",
+   "en": "final point",
+   "pages": "102",
+   "sub": false
+  },
+  {
+   "line": 487,
+   "zh": "一阶模态逻辑",
+   "en": "",
+   "pages": "",
+   "sub": true
+  },
+  {
+   "line": 488,
+   "zh": "终结的",
+   "en": "final",
+   "pages": "8",
+   "sub": false
+  },
+  {
+   "line": 489,
+   "zh": "变域语义",
+   "en": "",
+   "pages": "330",
+   "sub": true
+  },
+  {
+   "line": 490,
+   "zh": "主子公式",
+   "en": "main subformula",
+   "pages": "34",
+   "sub": false
+  },
+  {
+   "line": 491,
+   "zh": "常域语义",
+   "en": "",
+   "pages": "324",
+   "sub": true
+  },
+  {
+   "line": 492,
+   "zh": "主联结词",
+   "en": "main connective",
+   "pages": "34",
+   "sub": false
+  },
+  {
+   "line": 493,
+   "zh": "一阶逻辑",
+   "en": "",
+   "pages": "75",
+   "sub": true
+  },
+  {
+   "line": 494,
+   "zh": "逐框架有效",
+   "en": "",
+   "pages": "108",
+   "sub": false
+  },
+  {
+   "line": 495,
+   "zh": "典范一般模型",
+   "en": "",
+   "pages": "237",
+   "sub": true
+  },
+  {
+   "line": 496,
+   "zh": "逐模型有效",
+   "en": "",
+   "pages": "108",
+   "sub": false
+  },
+  {
+   "line": 497,
+   "zh": "命题模态逻辑",
+   "en": "",
+   "pages": "148",
+   "sub": true
+  },
+  {
+   "line": 498,
+   "zh": "逐点有效",
+   "en": "",
+   "pages": "108",
+   "sub": false
+  },
+  {
+   "line": 499,
+   "zh": "命题逻辑",
+   "en": "",
+   "pages": "54",
+   "sub": true
+  },
+  {
+   "line": 500,
+   "zh": "子公式",
+   "en": "subformula",
+   "pages": "34",
+   "sub": false
+  },
+  {
+   "line": 501,
+   "zh": "超滤扩张",
+   "en": "",
+   "pages": "203",
+   "sub": true
+  },
+  {
+   "line": 502,
+   "zh": "邻域语义",
+   "en": "",
+   "pages": "263",
+   "sub": true
+  },
+  {
+   "line": 502,
+   "zh": "子公式封闭",
+   "en": "subformula closed",
+   "pages": "241",
+   "sub": false
+  },
+  {
+   "line": 503,
+   "zh": "真值引理",
+   "en": "truth lemma",
+   "pages": "28",
+   "sub": false
+  },
+  {
+   "line": 503,
+   "zh": "子框架",
+   "en": "subframe",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 504,
+   "zh": "真值条件",
+   "en": "truth condition",
+   "pages": "36",
+   "sub": false
+  },
+  {
+   "line": 504,
+   "zh": "子模型",
+   "en": "submodel",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 505,
+   "zh": "真值表",
+   "en": "truth table",
+   "pages": "37",
+   "sub": false
+  },
+  {
+   "line": 505,
+   "zh": "子集",
+   "en": "subset",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 506,
+   "zh": "真值集",
+   "en": "truth set",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 506,
+   "zh": "自反性",
+   "en": "reflexivity",
+   "pages": "53",
+   "sub": false
+  },
+  {
+   "line": 507,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "98",
+   "sub": true
+  },
+  {
+   "line": 507,
+   "zh": "自反的",
+   "en": "reflexive",
+   "pages": "7",
+   "sub": false
+  },
+  {
+   "line": 508,
+   "zh": "素朴语义",
+   "en": "",
+   "pages": "90",
+   "sub": true
+  },
+  {
+   "line": 508,
+   "zh": "自然演绎系统",
+   "en": "natural deduction system",
+   "pages": "52",
+   "sub": false
+  },
+  {
+   "line": 509,
+   "zh": "真值集函数",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 509,
+   "zh": "自反公理",
+   "en": "",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 510,
+   "zh": "关系语义",
+   "en": "",
+   "pages": "97",
+   "sub": true
+  },
+  {
+   "line": 510,
+   "zh": "自反点",
+   "en": "reflexive point",
+   "pages": "102",
+   "sub": false
+  },
+  {
+   "line": 511,
+   "zh": "素朴语义",
+   "en": "",
+   "pages": "90",
+   "sub": true
+  },
+  {
+   "line": 511,
+   "zh": "字⺟表",
+   "en": "alphbet",
+   "pages": "58",
+   "sub": false
+  },
+  {
+   "line": 512,
+   "zh": "真子集",
+   "en": "proper subset",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 512,
+   "zh": "自然映射",
+   "en": "natural map",
+   "pages": "279",
+   "sub": false
+  },
+  {
+   "line": 513,
+   "zh": "真性模态",
+   "en": "alethic modality",
+   "pages": "84",
+   "sub": false
+  },
+  {
+   "line": 513,
+   "zh": "自由出现",
+   "en": "free occurence",
+   "pages": "59",
+   "sub": false
+  },
+  {
+   "line": 514,
+   "zh": "正公式",
+   "en": "positive formula",
+   "pages": "217",
+   "sub": false
+  },
+  {
+   "line": 514,
+   "zh": "自由变元",
+   "en": "free variable",
+   "pages": "59",
+   "sub": false
+  },
+  {
+   "line": 515,
+   "zh": "正则化",
+   "en": "",
+   "pages": "257, 265",
+   "sub": false
+  },
+  {
+   "line": 515,
+   "zh": "自由生成集",
+   "en": "freely generated set",
+   "pages": "14",
+   "sub": false
+  },
+  {
+   "line": 516,
+   "zh": "正则的",
+   "en": "regular",
+   "pages": "257",
+   "sub": false
+  },
+  {
+   "line": 516,
+   "zh": "自由逻辑",
+   "en": "free logic",
+   "pages": "325",
+   "sub": false
+  },
+  {
+   "line": 517,
+   "zh": "正则规则",
+   "en": "rule of regularity",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 517,
+   "zh": "Zorn 引理",
+   "en": "Zorn’s lemma",
+   "pages": "196",
+   "sub": false
+  },
+  {
+   "line": 518,
+   "zh": "正规的",
+   "en": "normal",
+   "pages": "257",
+   "sub": false
+  },
+  {
+   "line": 518,
+   "zh": "最大过滤",
+   "en": "greatest filtration",
+   "pages": "242",
+   "sub": false
+  },
+  {
+   "line": 519,
+   "zh": "正规翻译",
+   "en": "normal translation",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 519,
+   "zh": "最小过滤",
+   "en": "smallest filtration",
+   "pages": "242",
+   "sub": false
+  },
+  {
+   "line": 520,
+   "zh": "正规翻译模型",
+   "en": "",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 520,
+   "zh": "左蕴含分配",
+   "en": "distribution of left implication",
+   "pages": "39",
+   "sub": false
+  },
+  {
+   "line": 523,
+   "zh": "(δ p , δ d )",
+   "en": "",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 523,
+   "zh": "2N",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 523,
+   "zh": "∪",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 524,
+   "zh": "(δ p , δ d , φ)",
+   "en": "",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 524,
+   "zh": "2R",
+   "en": "",
+   "pages": "97",
+   "sub": false
+  },
+  {
+   "line": 524,
+   "zh": "δ",
+   "en": "",
+   "pages": "83",
+   "sub": false
+  },
+  {
+   "line": 525,
+   "zh": "(φ1 , . . . , φn , m)",
+   "en": "",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 525,
+   "zh": "2i",
+   "en": "",
+   "pages": "85",
+   "sub": false
+  },
+  {
+   "line": 525,
+   "zh": "δ d",
+   "en": "",
+   "pages": "83",
+   "sub": false
+  },
+  {
+   "line": 526,
+   "zh": "φ/φσ",
+   "en": "",
+   "pages": "44",
+   "sub": false
+  },
+  {
+   "line": 527,
+   "zh": "(a1 , . . . , an )",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 527,
+   "zh": "∆ ⊨vF φ",
+   "en": "",
+   "pages": "310",
+   "sub": false
+  },
+  {
+   "line": 529,
+   "zh": "+",
+   "en": "",
+   "pages": "281",
+   "sub": false
+  },
+  {
+   "line": 529,
+   "zh": "3a",
+   "en": "",
+   "pages": "287",
+   "sub": false
+  },
+  {
+   "line": 529,
+   "zh": "↓",
+   "en": "",
+   "pages": "41",
+   "sub": false
+  },
+  {
+   "line": 530,
+   "zh": ".1",
+   "en": "",
+   "pages": "118",
+   "sub": false
+  },
+  {
+   "line": 530,
+   "zh": "3",
+   "en": "",
+   "pages": "82, 159",
+   "sub": false
+  },
+  {
+   "line": 530,
+   "zh": "∅",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 531,
+   "zh": ".3+",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  },
+  {
+   "line": 531,
+   "zh": "3−1",
+   "en": "",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 531,
+   "zh": "ϵ",
+   "en": "",
+   "pages": "139, 317",
+   "sub": false
+  },
+  {
+   "line": 532,
+   "zh": "0",
+   "en": "",
+   "pages": "281",
+   "sub": false
+  },
+  {
+   "line": 532,
+   "zh": "3n",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 533,
+   "zh": "≡L",
+   "en": "",
+   "pages": "287",
+   "sub": false
+  },
+  {
+   "line": 534,
+   "zh": "<g(w)",
+   "en": "",
+   "pages": "183",
+   "sub": false
+  },
+  {
+   "line": 534,
+   "zh": "3N",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 535,
+   "zh": "≡PC",
+   "en": "",
+   "pages": "283",
+   "sub": false
+  },
+  {
+   "line": 536,
+   "zh": "=",
+   "en": "",
+   "pages": "58",
+   "sub": false
+  },
+  {
+   "line": 536,
+   "zh": "3R",
+   "en": "",
+   "pages": "97",
+   "sub": false
+  },
+  {
+   "line": 537,
+   "zh": "η+",
+   "en": "",
+   "pages": "291",
+   "sub": false
+  },
+  {
+   "line": 538,
+   "zh": "@",
+   "en": "",
+   "pages": "174",
+   "sub": false
+  },
+  {
+   "line": 538,
+   "zh": "Γ, Σ ⊢ φ",
+   "en": "",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 539,
+   "zh": "∃",
+   "en": "",
+   "pages": "59, 336, 338",
+   "sub": false
+  },
+  {
+   "line": 540,
+   "zh": "@Γ",
+   "en": "",
+   "pages": "175",
+   "sub": false
+  },
+  {
+   "line": 540,
+   "zh": "Γ, φ ⊢ ψ",
+   "en": "",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 541,
+   "zh": "∀xΓ",
+   "en": "",
+   "pages": "71",
+   "sub": false
+  },
+  {
+   "line": 542,
+   "zh": "[D)",
+   "en": "",
+   "pages": "285",
+   "sub": false
+  },
+  {
+   "line": 542,
+   "zh": "Γ ⊢ Σ",
+   "en": "",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 543,
+   "zh": "∀",
+   "en": "",
+   "pages": "58, 336, 338",
+   "sub": false
+  },
+  {
+   "line": 544,
+   "zh": "[ ⟩",
+   "en": "",
+   "pages": "261",
+   "sub": false
+  },
+  {
+   "line": 544,
+   "zh": "Γϵ",
+   "en": "",
+   "pages": "317",
+   "sub": false
+  },
+  {
+   "line": 545,
+   "zh": "∈",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 546,
+   "zh": "[ ]",
+   "en": "",
+   "pages": "261",
+   "sub": false
+  },
+  {
+   "line": 546,
+   "zh": "Γσ",
+   "en": "",
+   "pages": "16, 83",
+   "sub": false
+  },
+  {
+   "line": 547,
+   "zh": "ιx.φ",
+   "en": "",
+   "pages": "350",
+   "sub": false
+  },
+  {
+   "line": 548,
+   "zh": "[Γ]∆ ⊨F φ",
+   "en": "",
+   "pages": "157",
+   "sub": false
+  },
+  {
+   "line": 548,
+   "zh": "Λ⊢",
+   "en": "",
+   "pages": "128",
+   "sub": false
+  },
+  {
+   "line": 549,
+   "zh": "λB",
+   "en": "",
+   "pages": "355",
+   "sub": false
+  },
+  {
+   "line": 550,
+   "zh": "[Γ]∆ ⊨cF φ",
+   "en": "",
+   "pages": "305",
+   "sub": false
+  },
+  {
+   "line": 550,
+   "zh": "ΛF",
+   "en": "",
+   "pages": "128",
+   "sub": false
+  },
+  {
+   "line": 551,
+   "zh": "λI",
+   "en": "",
+   "pages": "355",
+   "sub": false
+  },
+  {
+   "line": 552,
+   "zh": "[Γ] ⊨vF φ",
+   "en": "",
+   "pages": "310",
+   "sub": false
+  },
+  {
+   "line": 552,
+   "zh": "ΛG",
+   "en": "",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 553,
+   "zh": "λK",
+   "en": "",
+   "pages": "355",
+   "sub": false
+  },
+  {
+   "line": 554,
+   "zh": "[X )",
+   "en": "",
+   "pages": "195",
+   "sub": false
+  },
+  {
+   "line": 554,
+   "zh": "ΛM",
+   "en": "",
+   "pages": "251",
+   "sub": false
+  },
+  {
+   "line": 555,
+   "zh": "λS",
+   "en": "",
+   "pages": "355",
+   "sub": false
+  },
+  {
+   "line": 556,
+   "zh": "[φ1 , . . . , φn ] → φ",
+   "en": "",
+   "pages": "52",
+   "sub": false
+  },
+  {
+   "line": 556,
+   "zh": "Π(β)",
+   "en": "",
+   "pages": "158",
+   "sub": false
+  },
+  {
+   "line": 557,
+   "zh": "∧",
+   "en": "",
+   "pages": "32, 159",
+   "sub": false
+  },
+  {
+   "line": 558,
+   "zh": "[t]",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 558,
+   "zh": "Σ≈",
+   "en": "",
+   "pages": "288",
+   "sub": false
+  },
+  {
+   "line": 559,
+   "zh": "[t]Γ",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 559,
+   "zh": "⊩",
+   "en": "",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 559,
+   "zh": "⟨ ⟩",
+   "en": "",
+   "pages": "261",
+   "sub": false
+  },
+  {
+   "line": 560,
+   "zh": "[w]",
+   "en": "",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 560,
+   "zh": "⊩n",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 560,
+   "zh": "⟨ ]",
+   "en": "",
+   "pages": "261",
+   "sub": false
+  },
+  {
+   "line": 561,
+   "zh": "[w]R",
+   "en": "",
+   "pages": "9",
+   "sub": false
+  },
+  {
+   "line": 561,
+   "zh": "⊩r",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 561,
+   "zh": "⟨λx.φ⟩",
+   "en": "",
+   "pages": "341",
+   "sub": false
+  },
+  {
+   "line": 562,
+   "zh": "[w]Σ",
+   "en": "",
+   "pages": "241",
+   "sub": false
+  },
+  {
+   "line": 562,
+   "zh": "α(x′ //x)",
+   "en": "",
+   "pages": "67",
+   "sub": false
+  },
+  {
+   "line": 562,
+   "zh": "≤g(w)",
+   "en": "",
+   "pages": "183",
+   "sub": false
+  },
+  {
+   "line": 563,
+   "zh": "∩ X",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 563,
+   "zh": "↔",
+   "en": "",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 564,
+   "zh": "[x]",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 565,
+   "zh": "∩ Xi",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 565,
+   "zh": "JφKV",
+   "en": "",
+   "pages": "37",
+   "sub": false
+  },
+  {
+   "line": 566,
+   "zh": "[x]Γ",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 567,
+   "zh": "∪i∈I X",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 568,
+   "zh": "2",
+   "en": "",
+   "pages": "82, 159",
+   "sub": false
+  },
+  {
+   "line": 568,
+   "zh": "JφKM",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 569,
+   "zh": "∪ Xi",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 570,
+   "zh": "2Γ",
+   "en": "",
+   "pages": "92",
+   "sub": false
+  },
+  {
+   "line": 570,
+   "zh": "JφKM",
+   "en": "",
+   "pages": "90, 97",
+   "sub": false
+  },
+  {
+   "line": 571,
+   "zh": "⊎i∈I Fi",
+   "en": "",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 572,
+   "zh": "2+ φ",
+   "en": "",
+   "pages": "146",
+   "sub": false
+  },
+  {
+   "line": 572,
+   "zh": "∨",
+   "en": "",
+   "pages": "32, 159",
+   "sub": false
+  },
+  {
+   "line": 573,
+   "zh": "⊎i∈I Mi",
+   "en": "",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 574,
+   "zh": "2−1",
+   "en": "",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 575,
+   "zh": "∇",
+   "en": "",
+   "pages": "85",
+   "sub": false
+  },
+  {
+   "line": 576,
+   "zh": "2ω Γ",
+   "en": "",
+   "pages": "107",
+   "sub": false
+  },
+  {
+   "line": 576,
+   "zh": "⊥",
+   "en": "",
+   "pages": "37, 41",
+   "sub": false
+  },
+  {
+   "line": 576,
+   "zh": "¬Rxy",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 577,
+   "zh": "2ω φ∗",
+   "en": "",
+   "pages": "129",
+   "sub": false
+  },
+  {
+   "line": 577,
+   "zh": "∩",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 577,
+   "zh": "¬",
+   "en": "",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 578,
+   "zh": "2n",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 578,
+   "zh": "χ(ψ//φ)",
+   "en": "",
+   "pages": "47",
+   "sub": false
+  },
+  {
+   "line": 578,
+   "zh": "¬2",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 580,
+   "zh": "¬3",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 580,
+   "zh": "⊨F Γ",
+   "en": "",
+   "pages": "108",
+   "sub": false
+  },
+  {
+   "line": 580,
+   "zh": "2",
+   "en": "",
+   "pages": "282",
+   "sub": false
+  },
+  {
+   "line": 581,
+   "zh": "¬∃",
+   "en": "",
+   "pages": "336, 338",
+   "sub": false
+  },
+  {
+   "line": 581,
+   "zh": "⊨F φ",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 581,
+   "zh": "4",
+   "en": "",
+   "pages": "111, 115",
+   "sub": false
+  },
+  {
+   "line": 582,
+   "zh": "⊨2D F",
+   "en": "",
+   "pages": "176",
+   "sub": false
+  },
+  {
+   "line": 582,
+   "zh": "¬∀",
+   "en": "",
+   "pages": "336, 338",
+   "sub": false
+  },
+  {
+   "line": 583,
+   "zh": "4d",
+   "en": "",
+   "pages": "115",
+   "sub": false
+  },
+  {
+   "line": 584,
+   "zh": "⊨G2D F",
+   "en": "",
+   "pages": "176",
+   "sub": false
+  },
+  {
+   "line": 584,
+   "zh": "¬∧",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 585,
+   "zh": "4c",
+   "en": "",
+   "pages": "115",
+   "sub": false
+  },
+  {
+   "line": 586,
+   "zh": "4dc",
+   "en": "",
+   "pages": "115",
+   "sub": false
+  },
+  {
+   "line": 586,
+   "zh": "¬∨",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 586,
+   "zh": "⊨cF φ",
+   "en": "",
+   "pages": "305",
+   "sub": false
+  },
+  {
+   "line": 588,
+   "zh": "¬¬",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 588,
+   "zh": "⊨nF",
+   "en": "",
+   "pages": "260",
+   "sub": false
+  },
+  {
+   "line": 589,
+   "zh": "4d",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 590,
+   "zh": "¬ →",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 590,
+   "zh": "⊨vF φ",
+   "en": "",
+   "pages": "309",
+   "sub": false
+  },
+  {
+   "line": 590,
+   "zh": "4r",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 591,
+   "zh": "∈",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 592,
+   "zh": "/",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 592,
+   "zh": "⊨N",
+   "en": "",
+   "pages": "91",
+   "sub": false
+  },
+  {
+   "line": 592,
+   "zh": "4",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 593,
+   "zh": "ν",
+   "en": "",
+   "pages": "279",
+   "sub": false
+  },
+  {
+   "line": 593,
+   "zh": "⊨PC",
+   "en": "",
+   "pages": "38",
+   "sub": false
+  },
+  {
+   "line": 593,
+   "zh": "5",
+   "en": "",
+   "pages": "111, 115",
+   "sub": false
+  },
+  {
+   "line": 594,
+   "zh": "π : φ",
+   "en": "",
+   "pages": "158",
+   "sub": false
+  },
+  {
+   "line": 594,
+   "zh": "⊨QC",
+   "en": "",
+   "pages": "63",
+   "sub": false
+  },
+  {
+   "line": 594,
+   "zh": "5d",
+   "en": "",
+   "pages": "115",
+   "sub": false
+  },
+  {
+   "line": 595,
+   "zh": "π : φ ∈ β",
+   "en": "",
+   "pages": "158",
+   "sub": false
+  },
+  {
+   "line": 595,
+   "zh": "⊨SU",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 596,
+   "zh": "πw",
+   "en": "",
+   "pages": "195",
+   "sub": false
+  },
+  {
+   "line": 596,
+   "zh": "⊨S",
+   "en": "",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 596,
+   "zh": "A − B",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 597,
+   "zh": "≼",
+   "en": "",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 597,
+   "zh": "⊨S Γ",
+   "en": "",
+   "pages": "19",
+   "sub": false
+  },
+  {
+   "line": 597,
+   "zh": "A × B",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 598,
+   "zh": "∏U",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 598,
+   "zh": "Aφ",
+   "en": "",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 599,
+   "zh": "A",
+   "en": "",
+   "pages": "199",
+   "sub": true
+  },
+  {
+   "line": 599,
+   "zh": "⊨vS φ",
+   "en": "",
+   "pages": "309",
+   "sub": false
+  },
+  {
+   "line": 600,
+   "zh": "∏U",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 600,
+   "zh": "An",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 601,
+   "zh": "Ai",
+   "en": "",
+   "pages": "199",
+   "sub": true
+  },
+  {
+   "line": 601,
+   "zh": "⊨gF",
+   "en": "",
+   "pages": "174",
+   "sub": false
+  },
+  {
+   "line": 602,
+   "zh": "∏U",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 602,
+   "zh": "A1 × · · · × An",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 603,
+   "zh": "M",
+   "en": "",
+   "pages": "200",
+   "sub": true
+  },
+  {
+   "line": 603,
+   "zh": "⊨gF",
+   "en": "",
+   "pages": "106",
+   "sub": false
+  },
+  {
+   "line": 604,
+   "zh": "∏U",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 604,
+   "zh": "AL",
+   "en": "",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 605,
+   "zh": "Mi",
+   "en": "",
+   "pages": "200",
+   "sub": true
+  },
+  {
+   "line": 605,
+   "zh": "⊨gN",
+   "en": "",
+   "pages": "92",
+   "sub": false
+  },
+  {
+   "line": 606,
+   "zh": "∏U",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 606,
+   "zh": "A/ ≡",
+   "en": "",
+   "pages": "279",
+   "sub": false
+  },
+  {
+   "line": 607,
+   "zh": "I W",
+   "en": "",
+   "pages": "198",
+   "sub": true
+  },
+  {
+   "line": 607,
+   "zh": "⊨kF",
+   "en": "",
+   "pages": "174",
+   "sub": false
+  },
+  {
+   "line": 608,
+   "zh": "∏U",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 608,
+   "zh": "A ↠ B",
+   "en": "",
+   "pages": "277",
+   "sub": false
+  },
+  {
+   "line": 609,
+   "zh": "Wi",
+   "en": "",
+   "pages": "198",
+   "sub": true
+  },
+  {
+   "line": 609,
+   "zh": "φ(x′ //x)",
+   "en": "",
+   "pages": "66",
+   "sub": false
+  },
+  {
+   "line": 610,
+   "zh": "∏IU",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 610,
+   "zh": "A+",
+   "en": "",
+   "pages": "289",
+   "sub": false
+  },
+  {
+   "line": 611,
+   "zh": "A",
+   "en": "",
+   "pages": "198",
+   "sub": true
+  },
+  {
+   "line": 611,
+   "zh": "φ(x1 , . . . , xn )",
+   "en": "",
+   "pages": "60",
+   "sub": false
+  },
+  {
+   "line": 612,
+   "zh": "∏IU",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 613,
+   "zh": "Ai",
+   "en": "",
+   "pages": "198",
+   "sub": true
+  },
+  {
+   "line": 613,
+   "zh": "φ, φ → ψ/ψ",
+   "en": "",
+   "pages": "44",
+   "sub": false
+  },
+  {
+   "line": 614,
+   "zh": "∏IU",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 614,
+   "zh": "B",
+   "en": "",
+   "pages": "111, 115",
+   "sub": false
+  },
+  {
+   "line": 615,
+   "zh": "M",
+   "en": "",
+   "pages": "200",
+   "sub": true
+  },
+  {
+   "line": 615,
+   "zh": "φ; ψ",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 616,
+   "zh": "∏IU",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 616,
+   "zh": "BA",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 617,
+   "zh": "Mi",
+   "en": "",
+   "pages": "200",
+   "sub": true
+  },
+  {
+   "line": 617,
+   "zh": "φ[t/x]",
+   "en": "",
+   "pages": "60, 345",
+   "sub": false
+  },
+  {
+   "line": 618,
+   "zh": "∏I",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 618,
+   "zh": "B",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 619,
+   "zh": "Wi",
+   "en": "",
+   "pages": "198",
+   "sub": true
+  },
+  {
+   "line": 619,
+   "zh": "φ _ ψ",
+   "en": "",
+   "pages": "181",
+   "sub": false
+  },
+  {
+   "line": 620,
+   "zh": "∏i∈I",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 620,
+   "zh": "Bd",
+   "en": "",
+   "pages": "115",
+   "sub": false
+  },
+  {
+   "line": 621,
+   "zh": "i∈N Ai",
+   "en": "",
+   "pages": "4",
+   "sub": true
+  },
+  {
+   "line": 621,
+   "zh": "φ ⊢ ψ",
+   "en": "",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 622,
+   "zh": "B",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 623,
+   "zh": "ψ +",
+   "en": "",
+   "pages": "221",
+   "sub": false
+  },
+  {
+   "line": 623,
+   "zh": "φ∗",
+   "en": "",
+   "pages": "237",
+   "sub": false
+  },
+  {
+   "line": 624,
+   "zh": "B",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 625,
+   "zh": "ψ −",
+   "en": "",
+   "pages": "221",
+   "sub": false
+  },
+  {
+   "line": 625,
+   "zh": "φσ",
+   "en": "",
+   "pages": "16, 35, 82",
+   "sub": false
+  },
+  {
+   "line": 626,
+   "zh": "B",
+   "en": "",
+   "pages": "4",
+   "sub": false
+  },
+  {
+   "line": 627,
+   "zh": "ρ(f )",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 627,
+   "zh": "φ1 , . . . , φn ⊢ φ",
+   "en": "",
+   "pages": "16",
+   "sub": false
+  },
+  {
+   "line": 628,
+   "zh": "B1",
+   "en": "",
+   "pages": "360",
+   "sub": false
+  },
+  {
+   "line": 629,
+   "zh": "⇄n",
+   "en": "",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 629,
+   "zh": "φF,w",
+   "en": "",
+   "pages": "224",
+   "sub": false
+  },
+  {
+   "line": 630,
+   "zh": "BA",
+   "en": "",
+   "pages": "283",
+   "sub": false
+  },
+  {
+   "line": 631,
+   "zh": "∼U",
+   "en": "",
+   "pages": "198",
+   "sub": false
+  },
+  {
+   "line": 631,
+   "zh": "⊢",
+   "en": "",
+   "pages": "16–18",
+   "sub": false
+  },
+  {
+   "line": 632,
+   "zh": "BestRf (w)",
+   "en": "",
+   "pages": "185",
+   "sub": false
+  },
+  {
+   "line": 633,
+   "zh": "∼Γ",
+   "en": "",
+   "pages": "74, 321",
+   "sub": false
+  },
+  {
+   "line": 633,
+   "zh": "⊢Λ",
+   "en": "",
+   "pages": "128",
+   "sub": false
+  },
+  {
+   "line": 634,
+   "zh": "BF",
+   "en": "",
+   "pages": "311",
+   "sub": false
+  },
+  {
+   "line": 635,
+   "zh": "J",
+   "en": "",
+   "pages": "88, 320",
+   "sub": false
+  },
+  {
+   "line": 635,
+   "zh": "⊢PC",
+   "en": "",
+   "pages": "44",
+   "sub": false
+  },
+  {
+   "line": 636,
+   "zh": "⊂",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 636,
+   "zh": "⊢QC",
+   "en": "",
+   "pages": "69",
+   "sub": false
+  },
+  {
+   "line": 636,
+   "zh": "C",
+   "en": "",
+   "pages": "110",
+   "sub": false
+  },
+  {
+   "line": 637,
+   "zh": "⊆",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 637,
+   "zh": "⊢S",
+   "en": "",
+   "pages": "20",
+   "sub": false
+  },
+  {
+   "line": 637,
+   "zh": "C ↣ A",
+   "en": "",
+   "pages": "278",
+   "sub": false
+  },
+  {
+   "line": 638,
+   "zh": "⊇",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 638,
+   "zh": "⊢S Γ",
+   "en": "",
+   "pages": "21",
+   "sub": false
+  },
+  {
+   "line": 638,
+   "zh": "Cd",
+   "en": "",
+   "pages": "110",
+   "sub": false
+  },
+  {
+   "line": 639,
+   "zh": "τ",
+   "en": "",
+   "pages": "139",
+   "sub": false
+  },
+  {
+   "line": 639,
+   "zh": "℘(A)",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 639,
+   "zh": "CBF",
+   "en": "",
+   "pages": "311",
+   "sub": false
+  },
+  {
+   "line": 640,
+   "zh": "θ+",
+   "en": "",
+   "pages": "291",
+   "sub": false
+  },
+  {
+   "line": 640,
+   "zh": "℘+ (L)",
+   "en": "",
+   "pages": "19",
+   "sub": false
+  },
+  {
+   "line": 640,
+   "zh": "cF",
+   "en": "",
+   "pages": "305",
+   "sub": false
+  },
+  {
+   "line": 641,
+   "zh": "→",
+   "en": "",
+   "pages": "32, 159",
+   "sub": false
+  },
+  {
+   "line": 641,
+   "zh": "{x | P x}",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 641,
+   "zh": "Com",
+   "en": "",
+   "pages": "143",
+   "sub": false
+  },
+  {
+   "line": 642,
+   "zh": "⊤",
+   "en": "",
+   "pages": "37, 41",
+   "sub": false
+  },
+  {
+   "line": 642,
+   "zh": "|A|",
+   "en": "",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 642,
+   "zh": "Com",
+   "en": "",
+   "pages": "143",
+   "sub": false
+  },
+  {
+   "line": 643,
+   "zh": "▷S",
+   "en": "",
+   "pages": "165",
+   "sub": false
+  },
+  {
+   "line": 643,
+   "zh": "|π|",
+   "en": "",
+   "pages": "158",
+   "sub": false
+  },
+  {
+   "line": 643,
+   "zh": "Con",
+   "en": "",
+   "pages": "57",
+   "sub": false
+  },
+  {
+   "line": 644,
+   "zh": "↑",
+   "en": "",
+   "pages": "41",
+   "sub": false
+  },
+  {
+   "line": 644,
+   "zh": "|φ|L",
+   "en": "",
+   "pages": "50",
+   "sub": false
+  },
+  {
+   "line": 644,
+   "zh": "cSK",
+   "en": "",
+   "pages": "313",
+   "sub": false
+  },
+  {
+   "line": 645,
+   "zh": "⊨",
+   "en": "",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 645,
+   "zh": ".2",
+   "en": "",
+   "pages": "115",
+   "sub": false
+  },
+  {
+   "line": 645,
+   "zh": "Cxt0",
+   "en": "",
+   "pages": "170",
+   "sub": false
+  },
+  {
+   "line": 646,
+   "zh": "⊨F",
+   "en": "",
+   "pages": "174",
+   "sub": false
+  },
+  {
+   "line": 646,
+   "zh": ".3",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  },
+  {
+   "line": 646,
+   "zh": "Cxt",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 647,
+   "zh": "⊨DS",
+   "en": "",
+   "pages": "178",
+   "sub": false
+  },
+  {
+   "line": 647,
+   "zh": ".4",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  },
+  {
+   "line": 648,
+   "zh": "⊨DU",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 648,
+   "zh": "3D",
+   "en": "",
+   "pages": "230",
+   "sub": false
+  },
+  {
+   "line": 648,
+   "zh": "D",
+   "en": "",
+   "pages": "111, 115",
+   "sub": false
+  },
+  {
+   "line": 649,
+   "zh": "⊨F",
+   "en": "",
+   "pages": "106",
+   "sub": false
+  },
+  {
+   "line": 649,
+   "zh": "3D",
+   "en": "",
+   "pages": "230",
+   "sub": false
+  },
+  {
+   "line": 649,
+   "zh": "D",
+   "en": "",
+   "pages": "307",
+   "sub": false
+  },
+  {
+   "line": 651,
+   "zh": "Dφ",
+   "en": "",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 651,
+   "zh": "FQ◦S",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 651,
+   "zh": "GL",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  },
+  {
+   "line": 653,
+   "zh": "DΓ",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 653,
+   "zh": "FQ◦S",
+   "en": "",
+   "pages": "329",
+   "sub": false
+  },
+  {
+   "line": 653,
+   "zh": "GL",
+   "en": "",
+   "pages": "141",
+   "sub": false
+  },
+  {
+   "line": 654,
+   "zh": "DQS",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 654,
+   "zh": "Fue",
+   "en": "",
+   "pages": "196",
+   "sub": false
+  },
+  {
+   "line": 654,
+   "zh": "gN",
+   "en": "",
+   "pages": "91",
+   "sub": false
+  },
+  {
+   "line": 655,
+   "zh": "Dom(f )",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 655,
+   "zh": "Fw",
+   "en": "",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 655,
+   "zh": "Grz",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  },
+  {
+   "line": 656,
+   "zh": "D",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 656,
+   "zh": "F",
+   "en": "",
+   "pages": "106",
+   "sub": false
+  },
+  {
+   "line": 656,
+   "zh": "Grz",
+   "en": "",
+   "pages": "141",
+   "sub": false
+  },
+  {
+   "line": 657,
+   "zh": "Dt",
+   "en": "",
+   "pages": "352",
+   "sub": false
+  },
+  {
+   "line": 657,
+   "zh": "F(F )",
+   "en": "",
+   "pages": "174",
+   "sub": false
+  },
+  {
+   "line": 657,
+   "zh": "gS",
+   "en": "",
+   "pages": "146",
+   "sub": false
+  },
+  {
+   "line": 658,
+   "zh": "D ⊩ Γ",
+   "en": "",
+   "pages": "178",
+   "sub": false
+  },
+  {
+   "line": 658,
+   "zh": "f (a)",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 658,
+   "zh": "GUG",
+   "en": "",
+   "pages": "71",
+   "sub": false
+  },
+  {
+   "line": 659,
+   "zh": "D ⊩w φ",
+   "en": "",
+   "pages": "178",
+   "sub": false
+  },
+  {
+   "line": 659,
+   "zh": "f : A ,→ B",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 660,
+   "zh": "D",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 660,
+   "zh": "f : A → B",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 660,
+   "zh": "H",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  },
+  {
+   "line": 661,
+   "zh": "Di",
+   "en": "",
+   "pages": "354",
+   "sub": false
+  },
+  {
+   "line": 661,
+   "zh": "f : a 7→ b",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 661,
+   "zh": "HQ◦S",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 663,
+   "zh": "f [A]",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 663,
+   "zh": "HQ◦S",
+   "en": "",
+   "pages": "328",
+   "sub": false
+  },
+  {
+   "line": 664,
+   "zh": "Dix",
+   "en": "",
+   "pages": "354",
+   "sub": false
+  },
+  {
+   "line": 665,
+   "zh": "H+",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  },
+  {
+   "line": 666,
+   "zh": "D",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 666,
+   "zh": "f ↾C",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 667,
+   "zh": "HC",
+   "en": "",
+   "pages": "278",
+   "sub": false
+  },
+  {
+   "line": 668,
+   "zh": "d(φ)",
+   "en": "",
+   "pages": "83",
+   "sub": false
+  },
+  {
+   "line": 668,
+   "zh": "f Γ",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 669,
+   "zh": "DL",
+   "en": "",
+   "pages": "233",
+   "sub": false
+  },
+  {
+   "line": 669,
+   "zh": "fU",
+   "en": "",
+   "pages": "198",
+   "sub": false
+  },
+  {
+   "line": 670,
+   "zh": "I Γ",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 671,
+   "zh": "DL",
+   "en": "",
+   "pages": "233",
+   "sub": false
+  },
+  {
+   "line": 671,
+   "zh": "f↓",
+   "en": "",
+   "pages": "41",
+   "sub": false
+  },
+  {
+   "line": 672,
+   "zh": "I",
+   "en": "",
+   "pages": "288",
+   "sub": false
+  },
+  {
+   "line": 673,
+   "zh": "Dual",
+   "en": "",
+   "pages": "110",
+   "sub": false
+  },
+  {
+   "line": 673,
+   "zh": "f∧",
+   "en": "",
+   "pages": "37",
+   "sub": false
+  },
+  {
+   "line": 674,
+   "zh": "id",
+   "en": "",
+   "pages": "68, 314, 325, 355",
+   "sub": false
+  },
+  {
+   "line": 675,
+   "zh": "dual",
+   "en": "",
+   "pages": "110",
+   "sub": false
+  },
+  {
+   "line": 675,
+   "zh": "f↔",
+   "en": "",
+   "pages": "37",
+   "sub": false
+  },
+  {
+   "line": 676,
+   "zh": "id",
+   "en": "",
+   "pages": "337",
+   "sub": false
+  },
+  {
+   "line": 677,
+   "zh": "f∨",
+   "en": "",
+   "pages": "37",
+   "sub": false
+  },
+  {
+   "line": 678,
+   "zh": "iid",
+   "en": "",
+   "pages": "355",
+   "sub": false
+  },
+  {
+   "line": 679,
+   "zh": "E",
+   "en": "",
+   "pages": "317, 353",
+   "sub": false
+  },
+  {
+   "line": 679,
+   "zh": "f¬",
+   "en": "",
+   "pages": "37",
+   "sub": false
+  },
+  {
+   "line": 680,
+   "zh": "Int",
+   "en": "",
+   "pages": "258",
+   "sub": false
+  },
+  {
+   "line": 681,
+   "zh": "Eφ",
+   "en": "",
+   "pages": "202",
+   "sub": false
+  },
+  {
+   "line": 681,
+   "zh": "f→",
+   "en": "",
+   "pages": "37",
+   "sub": false
+  },
+  {
+   "line": 682,
+   "zh": "Ipre",
+   "en": "",
+   "pages": "353",
+   "sub": false
+  },
+  {
+   "line": 683,
+   "zh": "E",
+   "en": "",
+   "pages": "262",
+   "sub": false
+  },
+  {
+   "line": 683,
+   "zh": "f↑",
+   "en": "",
+   "pages": "41",
+   "sub": false
+  },
+  {
+   "line": 684,
+   "zh": "is",
+   "en": "",
+   "pages": "355",
+   "sub": false
+  },
+  {
+   "line": 685,
+   "zh": "Et",
+   "en": "",
+   "pages": "349",
+   "sub": false
+  },
+  {
+   "line": 685,
+   "zh": "fa",
+   "en": "",
+   "pages": "198",
+   "sub": false
+  },
+  {
+   "line": 686,
+   "zh": "Es",
+   "en": "",
+   "pages": "360",
+   "sub": false
+  },
+  {
+   "line": 686,
+   "zh": "Fal",
+   "en": "",
+   "pages": "143",
+   "sub": false
+  },
+  {
+   "line": 686,
+   "zh": "K",
+   "en": "",
+   "pages": "110, 355",
+   "sub": false
+  },
+  {
+   "line": 687,
+   "zh": "E2",
+   "en": "",
+   "pages": "358",
+   "sub": false
+  },
+  {
+   "line": 687,
+   "zh": "Fal",
+   "en": "",
+   "pages": "143",
+   "sub": false
+  },
+  {
+   "line": 687,
+   "zh": "K",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 688,
+   "zh": "E",
+   "en": "",
+   "pages": "258, 314",
+   "sub": false
+  },
+  {
+   "line": 688,
+   "zh": "Fil",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 688,
+   "zh": "K~",
+   "en": "",
+   "pages": "132",
+   "sub": false
+  },
+  {
+   "line": 689,
+   "zh": "K",
+   "en": "",
+   "pages": "",
+   "sub": false
+  },
+  {
+   "line": 690,
+   "zh": "EC",
+   "en": "",
+   "pages": "262",
+   "sub": false
+  },
+  {
+   "line": 690,
+   "zh": "FOIL.K",
+   "en": "",
+   "pages": "354",
+   "sub": false
+  },
+  {
+   "line": 690,
+   "zh": "K",
+   "en": "",
+   "pages": "173",
+   "sub": false
+  },
+  {
+   "line": 691,
+   "zh": "ECN",
+   "en": "",
+   "pages": "262",
+   "sub": false
+  },
+  {
+   "line": 691,
+   "zh": "FOIL0",
+   "en": "",
+   "pages": "354",
+   "sub": false
+  },
+  {
+   "line": 691,
+   "zh": "K",
+   "en": "",
+   "pages": "106",
+   "sub": false
+  },
+  {
+   "line": 692,
+   "zh": "EG",
+   "en": "",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 692,
+   "zh": "Fr(Γ)",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 692,
+   "zh": "K4",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 693,
+   "zh": "EM",
+   "en": "",
+   "pages": "69",
+   "sub": false
+  },
+  {
+   "line": 693,
+   "zh": "FUI",
+   "en": "",
+   "pages": "325",
+   "sub": false
+  },
+  {
+   "line": 693,
+   "zh": "K4",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 694,
+   "zh": "EM",
+   "en": "",
+   "pages": "262",
+   "sub": false
+  },
+  {
+   "line": 694,
+   "zh": "F un",
+   "en": "",
+   "pages": "57",
+   "sub": false
+  },
+  {
+   "line": 694,
+   "zh": "K4.1",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 695,
+   "zh": "EMN",
+   "en": "",
+   "pages": "262",
+   "sub": false
+  },
+  {
+   "line": 695,
+   "zh": "F v(Γ)",
+   "en": "",
+   "pages": "60",
+   "sub": false
+  },
+  {
+   "line": 695,
+   "zh": "K4.1",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 696,
+   "zh": "EN",
+   "en": "",
+   "pages": "262",
+   "sub": false
+  },
+  {
+   "line": 696,
+   "zh": "F v(φ)",
+   "en": "",
+   "pages": "59, 300, 342",
+   "sub": false
+  },
+  {
+   "line": 696,
+   "zh": "K4.2",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 697,
+   "zh": "EQ",
+   "en": "",
+   "pages": "314",
+   "sub": false
+  },
+  {
+   "line": 697,
+   "zh": "K4.2",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 698,
+   "zh": "G(M, w, φ)",
+   "en": "",
+   "pages": "104",
+   "sub": false
+  },
+  {
+   "line": 698,
+   "zh": "K4.3",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 699,
+   "zh": "F φtx",
+   "en": "",
+   "pages": "60",
+   "sub": false
+  },
+  {
+   "line": 699,
+   "zh": "G(L)",
+   "en": "",
+   "pages": "237",
+   "sub": false
+  },
+  {
+   "line": 699,
+   "zh": "K4.3",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 700,
+   "zh": "F + (X)",
+   "en": "",
+   "pages": "11",
+   "sub": false
+  },
+  {
+   "line": 700,
+   "zh": "g ′ ∼x g",
+   "en": "",
+   "pages": "62, 302",
+   "sub": false
+  },
+  {
+   "line": 700,
+   "zh": "K4.4",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 701,
+   "zh": "F+ (X)",
+   "en": "",
+   "pages": "11",
+   "sub": false
+  },
+  {
+   "line": 701,
+   "zh": "g ◦ f",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 701,
+   "zh": "K4.4",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 702,
+   "zh": "F L",
+   "en": "",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 702,
+   "zh": "g Γ",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 702,
+   "zh": "K45",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 704,
+   "zh": "F′ ↣ F",
+   "en": "",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 704,
+   "zh": "gΣQS",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 704,
+   "zh": "K45",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 707,
+   "zh": "F, w ⊩ φ",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 707,
+   "zh": "gΣ◦QS",
+   "en": "",
+   "pages": "329",
+   "sub": false
+  },
+  {
+   "line": 707,
+   "zh": "K5",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 708,
+   "zh": "F ⊩ Γ",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 708,
+   "zh": "Ga",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 708,
+   "zh": "K5",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 709,
+   "zh": "F ⊩ φ",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 709,
+   "zh": "GEG",
+   "en": "",
+   "pages": "71",
+   "sub": false
+  },
+  {
+   "line": 709,
+   "zh": "KB",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 710,
+   "zh": "F ⊩c φ",
+   "en": "",
+   "pages": "305",
+   "sub": false
+  },
+  {
+   "line": 710,
+   "zh": "gF",
+   "en": "",
+   "pages": "174",
+   "sub": false
+  },
+  {
+   "line": 710,
+   "zh": "KB",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 711,
+   "zh": "F ⊩v φ",
+   "en": "",
+   "pages": "309",
+   "sub": false
+  },
+  {
+   "line": 711,
+   "zh": "gF",
+   "en": "",
+   "pages": "106",
+   "sub": false
+  },
+  {
+   "line": 711,
+   "zh": "KB4",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 712,
+   "zh": "F ↠ F′",
+   "en": "",
+   "pages": "191",
+   "sub": false
+  },
+  {
+   "line": 712,
+   "zh": "GKc",
+   "en": "",
+   "pages": "358",
+   "sub": false
+  },
+  {
+   "line": 712,
+   "zh": "KB4",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 713,
+   "zh": "F+",
+   "en": "",
+   "pages": "286",
+   "sub": false
+  },
+  {
+   "line": 713,
+   "zh": "GKs",
+   "en": "",
+   "pages": "358",
+   "sub": false
+  },
+  {
+   "line": 713,
+   "zh": "KD4",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 715,
+   "zh": "KD4",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 715,
+   "zh": "LΣ",
+   "en": "",
+   "pages": "328",
+   "sub": false
+  },
+  {
+   "line": 715,
+   "zh": "MQS",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 716,
+   "zh": "KD45",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 716,
+   "zh": "Lm",
+   "en": "",
+   "pages": "269",
+   "sub": false
+  },
+  {
+   "line": 716,
+   "zh": "Mf",
+   "en": "",
+   "pages": "242",
+   "sub": false
+  },
+  {
+   "line": 717,
+   "zh": "KD45",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 717,
+   "zh": "L1s (τ)",
+   "en": "",
+   "pages": "213",
+   "sub": false
+  },
+  {
+   "line": 717,
+   "zh": "Mue",
+   "en": "",
+   "pages": "196",
+   "sub": false
+  },
+  {
+   "line": 718,
+   "zh": "KD5",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 718,
+   "zh": "L1x (σ)",
+   "en": "",
+   "pages": "209",
+   "sub": false
+  },
+  {
+   "line": 718,
+   "zh": "Mv",
+   "en": "",
+   "pages": "318",
+   "sub": false
+  },
+  {
+   "line": 719,
+   "zh": "KD5",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 719,
+   "zh": "L1x (τ)",
+   "en": "",
+   "pages": "213",
+   "sub": false
+  },
+  {
+   "line": 719,
+   "zh": "MB",
+   "en": "",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 720,
+   "zh": "KDB",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 720,
+   "zh": "L(P V)",
+   "en": "",
+   "pages": "282",
+   "sub": false
+  },
+  {
+   "line": 720,
+   "zh": "Mw",
+   "en": "",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 721,
+   "zh": "KDB",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 721,
+   "zh": "L2 (P V)",
+   "en": "",
+   "pages": "286",
+   "sub": false
+  },
+  {
+   "line": 721,
+   "zh": "Md",
+   "en": "",
+   "pages": "110",
+   "sub": false
+  },
+  {
+   "line": 722,
+   "zh": "kerh",
+   "en": "",
+   "pages": "277",
+   "sub": false
+  },
+  {
+   "line": 722,
+   "zh": "LPC (P V)",
+   "en": "",
+   "pages": "283",
+   "sub": false
+  },
+  {
+   "line": 722,
+   "zh": "Mod(Γ)",
+   "en": "",
+   "pages": "97",
+   "sub": false
+  },
+  {
+   "line": 723,
+   "zh": "kF",
+   "en": "",
+   "pages": "174",
+   "sub": false
+  },
+  {
+   "line": 723,
+   "zh": "La",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 723,
+   "zh": "M ⊩ Γ",
+   "en": "",
+   "pages": "99",
+   "sub": false
+  },
+  {
+   "line": 726,
+   "zh": "KvB",
+   "en": "",
+   "pages": "239",
+   "sub": false
+  },
+  {
+   "line": 726,
+   "zh": "lSK",
+   "en": "",
+   "pages": "313",
+   "sub": false
+  },
+  {
+   "line": 726,
+   "zh": "M⊸w",
+   "en": "",
+   "pages": "228",
+   "sub": false
+  },
+  {
+   "line": 727,
+   "zh": "MF",
+   "en": "",
+   "pages": "286",
+   "sub": false
+  },
+  {
+   "line": 728,
+   "zh": "L",
+   "en": "",
+   "pages": "358",
+   "sub": false
+  },
+  {
+   "line": 728,
+   "zh": "M",
+   "en": "",
+   "pages": "110",
+   "sub": false
+  },
+  {
+   "line": 728,
+   "zh": "Mon",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 729,
+   "zh": "L[B]",
+   "en": "",
+   "pages": "199",
+   "sub": false
+  },
+  {
+   "line": 729,
+   "zh": "M ⊩ Γ",
+   "en": "",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 729,
+   "zh": "MP",
+   "en": "",
+   "pages": "44, 109",
+   "sub": false
+  },
+  {
+   "line": 730,
+   "zh": "L0",
+   "en": "",
+   "pages": "43",
+   "sub": false
+  },
+  {
+   "line": 730,
+   "zh": "M ⊩ φ",
+   "en": "",
+   "pages": "18",
+   "sub": false
+  },
+  {
+   "line": 730,
+   "zh": "mt",
+   "en": "",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 731,
+   "zh": "L0 (P V)",
+   "en": "",
+   "pages": "43",
+   "sub": false
+  },
+  {
+   "line": 731,
+   "zh": "M L",
+   "en": "",
+   "pages": "50, 147",
+   "sub": false
+  },
+  {
+   "line": 731,
+   "zh": "MV",
+   "en": "",
+   "pages": "239",
+   "sub": false
+  },
+  {
+   "line": 732,
+   "zh": "L1",
+   "en": "",
+   "pages": "58",
+   "sub": false
+  },
+  {
+   "line": 732,
+   "zh": "M•",
+   "en": "",
+   "pages": "275",
+   "sub": false
+  },
+  {
+   "line": 733,
+   "zh": "L1 (V ar, Con, F un, P re)",
+   "en": "",
+   "pages": "58",
+   "sub": false
+  },
+  {
+   "line": 734,
+   "zh": "MφL",
+   "en": "",
+   "pages": "247",
+   "sub": false
+  },
+  {
+   "line": 734,
+   "zh": "N",
+   "en": "",
+   "pages": "110",
+   "sub": false
+  },
+  {
+   "line": 735,
+   "zh": "M•",
+   "en": "",
+   "pages": "274",
+   "sub": false
+  },
+  {
+   "line": 735,
+   "zh": "N [W]",
+   "en": "",
+   "pages": "274",
+   "sub": false
+  },
+  {
+   "line": 736,
+   "zh": "L1 (V)",
+   "en": "",
+   "pages": "73",
+   "sub": false
+  },
+  {
+   "line": 736,
+   "zh": "M◦",
+   "en": "",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 737,
+   "zh": "NmaxL",
+   "en": "",
+   "pages": "263",
+   "sub": false
+  },
+  {
+   "line": 738,
+   "zh": "L1 (σ)",
+   "en": "",
+   "pages": "200",
+   "sub": false
+  },
+  {
+   "line": 738,
+   "zh": "ML",
+   "en": "",
+   "pages": "236",
+   "sub": false
+  },
+  {
+   "line": 739,
+   "zh": "NminL",
+   "en": "",
+   "pages": "263",
+   "sub": false
+  },
+  {
+   "line": 740,
+   "zh": "L1 (τ)",
+   "en": "",
+   "pages": "212",
+   "sub": false
+  },
+  {
+   "line": 740,
+   "zh": "M′ ↣ M",
+   "en": "",
+   "pages": "190",
+   "sub": false
+  },
+  {
+   "line": 740,
+   "zh": "N",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 741,
+   "zh": "L2 (τ)",
+   "en": "",
+   "pages": "217",
+   "sub": false
+  },
+  {
+   "line": 741,
+   "zh": "M, g, w ⊩c ∆",
+   "en": "",
+   "pages": "303",
+   "sub": false
+  },
+  {
+   "line": 741,
+   "zh": "N",
+   "en": "",
+   "pages": "91",
+   "sub": false
+  },
+  {
+   "line": 742,
+   "zh": "L12",
+   "en": "",
+   "pages": "274",
+   "sub": false
+  },
+  {
+   "line": 742,
+   "zh": "M, g, w ⊩c φ",
+   "en": "",
+   "pages": "303",
+   "sub": false
+  },
+  {
+   "line": 742,
+   "zh": "NAX",
+   "en": "",
+   "pages": "274",
+   "sub": false
+  },
+  {
+   "line": 743,
+   "zh": "L3",
+   "en": "",
+   "pages": "272",
+   "sub": false
+  },
+  {
+   "line": 743,
+   "zh": "M, g, w ⊩v φ",
+   "en": "",
+   "pages": "308",
+   "sub": false
+  },
+  {
+   "line": 743,
+   "zh": "Nax",
+   "en": "",
+   "pages": "275",
+   "sub": false
+  },
+  {
+   "line": 744,
+   "zh": "LF IOL",
+   "en": "",
+   "pages": "353",
+   "sub": false
+  },
+  {
+   "line": 744,
+   "zh": "M, g ⊩ Γ",
+   "en": "",
+   "pages": "62",
+   "sub": false
+  },
+  {
+   "line": 744,
+   "zh": "Naxmon",
+   "en": "",
+   "pages": "275",
+   "sub": false
+  },
+  {
+   "line": 745,
+   "zh": "LF OIL (V arO , V arI , IP re)",
+   "en": "",
+   "pages": "353",
+   "sub": false
+  },
+  {
+   "line": 745,
+   "zh": "M, g ⊩ φ",
+   "en": "",
+   "pages": "62",
+   "sub": false
+  },
+  {
+   "line": 745,
+   "zh": "nd",
+   "en": "",
+   "pages": "314, 355",
+   "sub": false
+  },
+  {
+   "line": 746,
+   "zh": "M, s ⊩ Γ",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 746,
+   "zh": "ni",
+   "en": "",
+   "pages": "314, 355",
+   "sub": false
+  },
+  {
+   "line": 747,
+   "zh": "LP",
+   "en": "",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 747,
+   "zh": "M, s ⊩ φ",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 747,
+   "zh": "Nor",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 748,
+   "zh": "LP (P V)",
+   "en": "",
+   "pages": "32",
+   "sub": false
+  },
+  {
+   "line": 748,
+   "zh": "M, u, w ⊩ Γ",
+   "en": "",
+   "pages": "176",
+   "sub": false
+  },
+  {
+   "line": 748,
+   "zh": "nt",
+   "en": "",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 749,
+   "zh": "L2I (P V)",
+   "en": "",
+   "pages": "85",
+   "sub": false
+  },
+  {
+   "line": 749,
+   "zh": "M, u, w ⊩ φ",
+   "en": "",
+   "pages": "176",
+   "sub": false
+  },
+  {
+   "line": 750,
+   "zh": "L2;",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 750,
+   "zh": "M, w ⊩ Γ",
+   "en": "",
+   "pages": "90, 97",
+   "sub": false
+  },
+  {
+   "line": 750,
+   "zh": "P ΓQS",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 752,
+   "zh": "L123",
+   "en": "",
+   "pages": "336",
+   "sub": false
+  },
+  {
+   "line": 752,
+   "zh": "M, w ⊩ φ",
+   "en": "",
+   "pages": "97",
+   "sub": false
+  },
+  {
+   "line": 752,
+   "zh": "PΣQS",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 753,
+   "zh": "L12λι",
+   "en": "",
+   "pages": "351",
+   "sub": false
+  },
+  {
+   "line": 753,
+   "zh": "M, w ≡ M′ , w′",
+   "en": "",
+   "pages": "189",
+   "sub": false
+  },
+  {
+   "line": 753,
+   "zh": "PL",
+   "en": "",
+   "pages": "263",
+   "sub": false
+  },
+  {
+   "line": 754,
+   "zh": "L12λι (V ar, Con, F un, P re)",
+   "en": "",
+   "pages": "350",
+   "sub": false
+  },
+  {
+   "line": 754,
+   "zh": "M, w ⇄ M′ , w′",
+   "en": "",
+   "pages": "192",
+   "sub": false
+  },
+  {
+   "line": 754,
+   "zh": "pA",
+   "en": "",
+   "pages": "215",
+   "sub": false
+  },
+  {
+   "line": 755,
+   "zh": "M ⊩ Γ",
+   "en": "",
+   "pages": "62, 90, 91, 97, 99",
+   "sub": false
+  },
+  {
+   "line": 756,
+   "zh": "pklij",
+   "en": "",
+   "pages": "114",
+   "sub": false
+  },
+  {
+   "line": 757,
+   "zh": "L12λ",
+   "en": "",
+   "pages": "342",
+   "sub": false
+  },
+  {
+   "line": 757,
+   "zh": "M ⊩ φ",
+   "en": "",
+   "pages": "62, 91, 97, 99",
+   "sub": false
+  },
+  {
+   "line": 757,
+   "zh": "P ar",
+   "en": "",
+   "pages": "336",
+   "sub": false
+  },
+  {
+   "line": 758,
+   "zh": "L12λ (P re, V ar, Con, F un)",
+   "en": "",
+   "pages": "342",
+   "sub": false
+  },
+  {
+   "line": 758,
+   "zh": "M ⊩ φ[d1 , . . . , dn ]",
+   "en": "",
+   "pages": "63",
+   "sub": false
+  },
+  {
+   "line": 758,
+   "zh": "P arπ",
+   "en": "",
+   "pages": "337",
+   "sub": false
+  },
+  {
+   "line": 759,
+   "zh": "M ⊩ φ[d1 /x1 , . . . , dn /xn ]",
+   "en": "",
+   "pages": "63",
+   "sub": false
+  },
+  {
+   "line": 759,
+   "zh": "PC",
+   "en": "",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 760,
+   "zh": "L2",
+   "en": "",
+   "pages": "82",
+   "sub": false
+  },
+  {
+   "line": 760,
+   "zh": "PC",
+   "en": "",
+   "pages": "44",
+   "sub": false
+  },
+  {
+   "line": 761,
+   "zh": "L2 (P V)",
+   "en": "",
+   "pages": "81",
+   "sub": false
+  },
+  {
+   "line": 761,
+   "zh": "M ⊩c Γ",
+   "en": "",
+   "pages": "305",
+   "sub": false
+  },
+  {
+   "line": 761,
+   "zh": "PC",
+   "en": "",
+   "pages": "278",
+   "sub": false
+  },
+  {
+   "line": 762,
+   "zh": "L12",
+   "en": "",
+   "pages": "299",
+   "sub": false
+  },
+  {
+   "line": 762,
+   "zh": "M ⊩c φ",
+   "en": "",
+   "pages": "304",
+   "sub": false
+  },
+  {
+   "line": 762,
+   "zh": "PC",
+   "en": "",
+   "pages": "38, 43",
+   "sub": false
+  },
+  {
+   "line": 763,
+   "zh": "L12 (E)",
+   "en": "",
+   "pages": "317",
+   "sub": false
+  },
+  {
+   "line": 763,
+   "zh": "M ⊩v φ",
+   "en": "",
+   "pages": "309",
+   "sub": false
+  },
+  {
+   "line": 763,
+   "zh": "PC1",
+   "en": "",
+   "pages": "44",
+   "sub": false
+  },
+  {
+   "line": 764,
+   "zh": "L12 (P re ∪ {E}, V ar)",
+   "en": "",
+   "pages": "317",
+   "sub": false
+  },
+  {
+   "line": 764,
+   "zh": "M ↠ M′",
+   "en": "",
+   "pages": "191",
+   "sub": false
+  },
+  {
+   "line": 764,
+   "zh": "PC2",
+   "en": "",
+   "pages": "44",
+   "sub": false
+  },
+  {
+   "line": 765,
+   "zh": "L12 (V ar, P re)",
+   "en": "",
+   "pages": "299",
+   "sub": false
+  },
+  {
+   "line": 765,
+   "zh": "MB",
+   "en": "",
+   "pages": "229",
+   "sub": false
+  },
+  {
+   "line": 765,
+   "zh": "PC3",
+   "en": "",
+   "pages": "44",
+   "sub": false
+  },
+  {
+   "line": 766,
+   "zh": "L12 (V)",
+   "en": "",
+   "pages": "300",
+   "sub": false
+  },
+  {
+   "line": 766,
+   "zh": "MΓ",
+   "en": "",
+   "pages": "74",
+   "sub": false
+  },
+  {
+   "line": 766,
+   "zh": "PM",
+   "en": "",
+   "pages": "325",
+   "sub": false
+  },
+  {
+   "line": 767,
+   "zh": "L12 (V +)",
+   "en": "",
+   "pages": "328",
+   "sub": false
+  },
+  {
+   "line": 767,
+   "zh": "ML",
+   "en": "",
+   "pages": "147",
+   "sub": false
+  },
+  {
+   "line": 767,
+   "zh": "P re",
+   "en": "",
+   "pages": "57",
+   "sub": false
+  },
+  {
+   "line": 769,
+   "zh": "P t1 . . . tn",
+   "en": "",
+   "pages": "344",
+   "sub": false
+  },
+  {
+   "line": 769,
+   "zh": "R̸∋",
+   "en": "",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 769,
+   "zh": "S4.3",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 770,
+   "zh": "P V",
+   "en": "",
+   "pages": "32, 81",
+   "sub": false
+  },
+  {
+   "line": 770,
+   "zh": "Rf",
+   "en": "",
+   "pages": "183",
+   "sub": false
+  },
+  {
+   "line": 770,
+   "zh": "S4.3",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 771,
+   "zh": "P V (Γ)",
+   "en": "",
+   "pages": "82",
+   "sub": false
+  },
+  {
+   "line": 771,
+   "zh": "Rf (w)",
+   "en": "",
+   "pages": "183",
+   "sub": false
+  },
+  {
+   "line": 771,
+   "zh": "S4.4",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 772,
+   "zh": "P V (φ)",
+   "en": "",
+   "pages": "34, 82",
+   "sub": false
+  },
+  {
+   "line": 772,
+   "zh": "Rjlik",
+   "en": "",
+   "pages": "114",
+   "sub": false
+  },
+  {
+   "line": 773,
+   "zh": "S4.4",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 774,
+   "zh": "Rx1 . . . xn",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 774,
+   "zh": "S5",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 775,
+   "zh": "QS",
+   "en": "",
+   "pages": "336",
+   "sub": false
+  },
+  {
+   "line": 775,
+   "zh": "Rxy",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 775,
+   "zh": "S5",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 776,
+   "zh": "Q◦ S",
+   "en": "",
+   "pages": "325, 336",
+   "sub": false
+  },
+  {
+   "line": 776,
+   "zh": "R",
+   "en": "",
+   "pages": "3",
+   "sub": false
+  },
+  {
+   "line": 776,
+   "zh": "S52",
+   "en": "",
+   "pages": "170",
+   "sub": false
+  },
+  {
+   "line": 777,
+   "zh": "Q◦",
+   "en": "",
+   "pages": "325",
+   "sub": false
+  },
+  {
+   "line": 777,
+   "zh": "R",
+   "en": "",
+   "pages": "262",
+   "sub": false
+  },
+  {
+   "line": 777,
+   "zh": "S53",
+   "en": "",
+   "pages": "170",
+   "sub": false
+  },
+  {
+   "line": 778,
+   "zh": "Q1",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 778,
+   "zh": "Rd",
+   "en": "",
+   "pages": "19",
+   "sub": false
+  },
+  {
+   "line": 778,
+   "zh": "SC",
+   "en": "",
+   "pages": "278",
+   "sub": false
+  },
+  {
+   "line": 779,
+   "zh": "Q1",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 779,
+   "zh": "Rp",
+   "en": "",
+   "pages": "19",
+   "sub": false
+  },
+  {
+   "line": 779,
+   "zh": "Sc",
+   "en": "",
+   "pages": "333",
+   "sub": false
+  },
+  {
+   "line": 780,
+   "zh": "Q1R",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 780,
+   "zh": "RN",
+   "en": "",
+   "pages": "258",
+   "sub": false
+  },
+  {
+   "line": 780,
+   "zh": "Sd",
+   "en": "",
+   "pages": "333",
+   "sub": false
+  },
+  {
+   "line": 781,
+   "zh": "Q1R",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 781,
+   "zh": "Rλ",
+   "en": "",
+   "pages": "355",
+   "sub": false
+  },
+  {
+   "line": 781,
+   "zh": "Set",
+   "en": "",
+   "pages": "282",
+   "sub": false
+  },
+  {
+   "line": 782,
+   "zh": "Q1RS",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 782,
+   "zh": "r(φ)",
+   "en": "",
+   "pages": "73, 300",
+   "sub": false
+  },
+  {
+   "line": 782,
+   "zh": "SF",
+   "en": "",
+   "pages": "114",
+   "sub": false
+  },
+  {
+   "line": 783,
+   "zh": "Q1S",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 783,
+   "zh": "ran(f )",
+   "en": "",
+   "pages": "5",
+   "sub": false
+  },
+  {
+   "line": 783,
+   "zh": "Si",
+   "en": "",
+   "pages": "332",
+   "sub": false
+  },
+  {
+   "line": 784,
+   "zh": "Q2",
+   "en": "",
+   "pages": "359",
+   "sub": false
+  },
+  {
+   "line": 784,
+   "zh": "RE",
+   "en": "",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 784,
+   "zh": "si",
+   "en": "",
+   "pages": "68, 314, 325",
+   "sub": false
+  },
+  {
+   "line": 785,
+   "zh": "Q2",
+   "en": "",
+   "pages": "359",
+   "sub": false
+  },
+  {
+   "line": 785,
+   "zh": "RE3",
+   "en": "",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 785,
+   "zh": "si",
+   "en": "",
+   "pages": "337",
+   "sub": false
+  },
+  {
+   "line": 786,
+   "zh": "Q3",
+   "en": "",
+   "pages": "358",
+   "sub": false
+  },
+  {
+   "line": 786,
+   "zh": "Reg",
+   "en": "",
+   "pages": "259",
+   "sub": false
+  },
+  {
+   "line": 786,
+   "zh": "STx (φ)",
+   "en": "",
+   "pages": "209",
+   "sub": false
+  },
+  {
+   "line": 787,
+   "zh": "Q3L",
+   "en": "",
+   "pages": "358",
+   "sub": false
+  },
+  {
+   "line": 787,
+   "zh": "REP",
+   "en": "",
+   "pages": "47, 109",
+   "sub": false
+  },
+  {
+   "line": 787,
+   "zh": "stx",
+   "en": "",
+   "pages": "274",
+   "sub": false
+  },
+  {
+   "line": 788,
+   "zh": "QaC",
+   "en": "",
+   "pages": "359",
+   "sub": false
+  },
+  {
+   "line": 788,
+   "zh": "RK",
+   "en": "",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 788,
+   "zh": "SU",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 789,
+   "zh": "QC",
+   "en": "",
+   "pages": "68",
+   "sub": false
+  },
+  {
+   "line": 789,
+   "zh": "RM",
+   "en": "",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 789,
+   "zh": "Sub(φ)",
+   "en": "",
+   "pages": "34, 82",
+   "sub": false
+  },
+  {
+   "line": 790,
+   "zh": "QC",
+   "en": "",
+   "pages": "63",
+   "sub": false
+  },
+  {
+   "line": 790,
+   "zh": "RM3",
+   "en": "",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 790,
+   "zh": "SubΓ",
+   "en": "",
+   "pages": "34, 82",
+   "sub": false
+  },
+  {
+   "line": 791,
+   "zh": "Qcf",
+   "en": "",
+   "pages": "359",
+   "sub": false
+  },
+  {
+   "line": 791,
+   "zh": "RN",
+   "en": "",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 791,
+   "zh": "Sub+ (φ)",
+   "en": "",
+   "pages": "247",
+   "sub": false
+  },
+  {
+   "line": 792,
+   "zh": "Qf",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 792,
+   "zh": "RR",
+   "en": "",
+   "pages": "109",
+   "sub": false
+  },
+  {
+   "line": 792,
+   "zh": "Sub− (φ)",
+   "en": "",
+   "pages": "247",
+   "sub": false
+  },
+  {
+   "line": 793,
+   "zh": "QK",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 793,
+   "zh": "rt",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 794,
+   "zh": "QPL",
+   "en": "",
+   "pages": "358",
+   "sub": false
+  },
+  {
+   "line": 794,
+   "zh": "T",
+   "en": "",
+   "pages": "111, 115",
+   "sub": false
+  },
+  {
+   "line": 795,
+   "zh": "Qr",
+   "en": "",
+   "pages": "357",
+   "sub": false
+  },
+  {
+   "line": 795,
+   "zh": "S(Γ, ∆)",
+   "en": "",
+   "pages": "158",
+   "sub": false
+  },
+  {
+   "line": 795,
+   "zh": "T",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 796,
+   "zh": "QS",
+   "en": "",
+   "pages": "318",
+   "sub": false
+  },
+  {
+   "line": 796,
+   "zh": "S ≡ S′",
+   "en": "",
+   "pages": "23",
+   "sub": false
+  },
+  {
+   "line": 796,
+   "zh": "T",
+   "en": "",
+   "pages": "58, 342",
+   "sub": false
+  },
+  {
+   "line": 797,
+   "zh": "QsC",
+   "en": "",
+   "pages": "359",
+   "sub": false
+  },
+  {
+   "line": 797,
+   "zh": "S ⊕ R",
+   "en": "",
+   "pages": "23",
+   "sub": false
+  },
+  {
+   "line": 797,
+   "zh": "T (V ar, Con, F un)",
+   "en": "",
+   "pages": "58, 342",
+   "sub": false
+  },
+  {
+   "line": 798,
+   "zh": "QsC",
+   "en": "",
+   "pages": "359",
+   "sub": false
+  },
+  {
+   "line": 798,
+   "zh": "S ⊕ Γ",
+   "en": "",
+   "pages": "23",
+   "sub": false
+  },
+  {
+   "line": 798,
+   "zh": "T (V)",
+   "en": "",
+   "pages": "73",
+   "sub": false
+  },
+  {
+   "line": 799,
+   "zh": "Qsr",
+   "en": "",
+   "pages": "359",
+   "sub": false
+  },
+  {
+   "line": 799,
+   "zh": "S ⊕ R",
+   "en": "",
+   "pages": "23",
+   "sub": false
+  },
+  {
+   "line": 799,
+   "zh": "T ι",
+   "en": "",
+   "pages": "351",
+   "sub": false
+  },
+  {
+   "line": 800,
+   "zh": "S ⊕ φ",
+   "en": "",
+   "pages": "23",
+   "sub": false
+  },
+  {
+   "line": 800,
+   "zh": "T ι (V ar, Con, F un)",
+   "en": "",
+   "pages": "350",
+   "sub": false
+  },
+  {
+   "line": 801,
+   "zh": "R(w)",
+   "en": "",
+   "pages": "95",
+   "sub": false
+  },
+  {
+   "line": 801,
+   "zh": "S ⊗ R",
+   "en": "",
+   "pages": "23",
+   "sub": false
+  },
+  {
+   "line": 801,
+   "zh": "Td",
+   "en": "",
+   "pages": "115",
+   "sub": false
+  },
+  {
+   "line": 802,
+   "zh": "R∗",
+   "en": "",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 802,
+   "zh": "S ⊗ R",
+   "en": "",
+   "pages": "23",
+   "sub": false
+  },
+  {
+   "line": 802,
+   "zh": "T",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 803,
+   "zh": "R+",
+   "en": "",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 803,
+   "zh": "S ⊩c Γ",
+   "en": "",
+   "pages": "305",
+   "sub": false
+  },
+  {
+   "line": 803,
+   "zh": "T",
+   "en": "",
+   "pages": "159",
+   "sub": false
+  },
+  {
+   "line": 804,
+   "zh": "R−1",
+   "en": "",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 804,
+   "zh": "S ⊩c φ",
+   "en": "",
+   "pages": "305",
+   "sub": false
+  },
+  {
+   "line": 804,
+   "zh": "t(x1 , . . . , xn )",
+   "en": "",
+   "pages": "60",
+   "sub": false
+  },
+  {
+   "line": 805,
+   "zh": "R−1 (w)",
+   "en": "",
+   "pages": "95",
+   "sub": false
+  },
+  {
+   "line": 805,
+   "zh": "S ⊩v φ",
+   "en": "",
+   "pages": "309",
+   "sub": false
+  },
+  {
+   "line": 805,
+   "zh": "t ≈ t′",
+   "en": "",
+   "pages": "345",
+   "sub": false
+  },
+  {
+   "line": 806,
+   "zh": "R=",
+   "en": "",
+   "pages": "6",
+   "sub": false
+  },
+  {
+   "line": 806,
+   "zh": "s[φ]",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 806,
+   "zh": "t ̸= t′",
+   "en": "",
+   "pages": "58",
+   "sub": false
+  },
+  {
+   "line": 807,
+   "zh": "R2",
+   "en": "",
+   "pages": "289",
+   "sub": false
+  },
+  {
+   "line": 807,
+   "zh": "s[φ]M",
+   "en": "",
+   "pages": "179",
+   "sub": false
+  },
+  {
+   "line": 807,
+   "zh": "tM,g,w",
+   "en": "",
+   "pages": "343, 351",
+   "sub": false
+  },
+  {
+   "line": 808,
+   "zh": "RQS",
+   "en": "",
+   "pages": "321",
+   "sub": false
+  },
+  {
+   "line": 808,
+   "zh": "s ⊩ φ",
+   "en": "",
+   "pages": "180",
+   "sub": false
+  },
+  {
+   "line": 808,
+   "zh": "tM,g",
+   "en": "",
+   "pages": "62",
+   "sub": false
+  },
+  {
+   "line": 809,
+   "zh": "Rl",
+   "en": "",
+   "pages": "242",
+   "sub": false
+  },
+  {
+   "line": 809,
+   "zh": "s ≈ t",
+   "en": "",
+   "pages": "280",
+   "sub": false
+  },
+  {
+   "line": 809,
+   "zh": "tM [d1 , . . . , dn ]",
+   "en": "",
+   "pages": "63",
+   "sub": false
+  },
+  {
+   "line": 810,
+   "zh": "Rn",
+   "en": "",
+   "pages": "7",
+   "sub": false
+  },
+  {
+   "line": 810,
+   "zh": "S4",
+   "en": "",
+   "pages": "130",
+   "sub": false
+  },
+  {
+   "line": 810,
+   "zh": "tM [d1 /x1 , . . . , dn /xn ]",
+   "en": "",
+   "pages": "63",
+   "sub": false
+  },
+  {
+   "line": 811,
+   "zh": "Rs",
+   "en": "",
+   "pages": "242",
+   "sub": false
+  },
+  {
+   "line": 811,
+   "zh": "S4",
+   "en": "",
+   "pages": "112",
+   "sub": false
+  },
+  {
+   "line": 811,
+   "zh": "tθ",
+   "en": "",
+   "pages": "280",
+   "sub": false
+  },
+  {
+   "line": 812,
+   "zh": "Rt",
+   "en": "",
+   "pages": "244",
+   "sub": false
+  },
+  {
+   "line": 812,
+   "zh": "S4.1",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 812,
+   "zh": "T erF (X)",
+   "en": "",
+   "pages": "280",
+   "sub": false
+  },
+  {
+   "line": 813,
+   "zh": "Rue",
+   "en": "",
+   "pages": "196",
+   "sub": false
+  },
+  {
+   "line": 813,
+   "zh": "S4.1",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 813,
+   "zh": "Tr",
+   "en": "",
+   "pages": "117, 143",
+   "sub": false
+  },
+  {
+   "line": 814,
+   "zh": "RN",
+   "en": "",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 814,
+   "zh": "S4.2",
+   "en": "",
+   "pages": "140",
+   "sub": false
+  },
+  {
+   "line": 814,
+   "zh": "Tr",
+   "en": "",
+   "pages": "143",
+   "sub": false
+  },
+  {
+   "line": 815,
+   "zh": "R∋",
+   "en": "",
+   "pages": "273",
+   "sub": false
+  },
+  {
+   "line": 815,
+   "zh": "S4.2",
+   "en": "",
+   "pages": "153",
+   "sub": false
+  },
+  {
+   "line": 815,
+   "zh": "Trd",
+   "en": "",
+   "pages": "117",
+   "sub": false
+  }
+ ]
+}
