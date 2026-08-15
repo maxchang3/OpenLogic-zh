@@ -23,6 +23,19 @@
       #2（#1）%
     \fi
   \fi}
+% 人名全名/单姓共用键：首次输出「全名（原名）」，之后统一输出单姓译名；
+% 同一人的全名处与单姓处用同一键，避免重复括注且不依赖渲染顺序
+\protected\def\zhFullName#1#2#3{%
+  \ifzhInTOC
+    #3%
+  \else
+    \ifcsname zhSeen@#1\endcsname
+      #3%
+    \else
+      \global\expandafter\def\csname zhSeen@#1\endcsname{}%
+      #2（#1）%
+    \fi
+  \fi}
 % hyperref 书签（PDF outline）不支持 \ifcsname/\csname：书签里一律只输出中文，不做首次检测、不加括号、不产生副作用
 % !!{token} 经 xparse 的 \@printtoken（robust 宏）解析，书签的 \edef 展开不了它（hyperref 会删宏留参数 → 书签显示英文键名），
 % 故在书签上下文把 \@printtoken 重定义为可展开版本（标题中的形式为 !!{token}，直接输出 \csname TOK@s@#1\endcsname）。
@@ -32,6 +45,7 @@
   \csname TOK@s@#3\endcsname}%
 \pdfstringdefDisableCommands{%
   \def\zhFirst#1#2{#2}%
+  \def\zhFullName#1#2#3{#3}%
   \long\def\@printtoken#1{\csname TOK@s@#1\endcsname}}%
 \newcommand{\zhToken}[3][]{%
   \expandafter\def\csname TOK@s@#2\endcsname{\zhFirst{#1}{#3}}%

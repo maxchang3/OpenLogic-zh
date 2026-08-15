@@ -2855,7 +2855,7 @@
    "module": "core",
    "kind": "word",
    "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+   "note": "人名音译；全名 Saul Kripke→索尔·克里普克。译文用 \\zhFullName{Kripke}{索尔·克里普克}{克里普克}：首次输出「索尔·克里普克（Saul Kripke）」，之后输出「克里普克」"
   },
   {
    "en": "Lewis",
@@ -2879,7 +2879,7 @@
    "module": "core",
    "kind": "word",
    "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+   "note": "人名音译；译文用 \\zhFullName{Prior}{亚瑟·普莱尔}{普莱尔}：首次输出「亚瑟·普莱尔（Arthur Prior）」，之后输出「普莱尔」"
   },
   {
    "en": "Prior",
@@ -2984,6 +2984,14 @@
    "kind": "word",
    "source": "confirmed",
    "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+  },
+  {
+   "en": "Saul Kripke",
+   "zh": "索尔·克里普克",
+   "module": "core",
+   "kind": "word",
+   "source": "confirmed",
+   "note": "全名音译；见 Kripke 条目（zhFullName 同键）"
   }
  ]
 }
