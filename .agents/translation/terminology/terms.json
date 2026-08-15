@@ -2706,6 +2706,13 @@
    "module": "core",
    "source": "confirmed",
    "note": "文学锋《模态逻辑导论》中「合取支/析取支」1587 行"
+  },
+  {
+   "en": "application",
+   "zh": "像集",
+   "module": "core",
+   "source": "confirmed",
+   "note": "与 image 同译（文学锋《模态逻辑导论》「值域或像集」487 行）；指 $R$ 对 $A$ 的像 $R[A]$"
   }
  ]
 }
