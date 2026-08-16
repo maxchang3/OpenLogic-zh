@@ -12,7 +12,7 @@
 
 为了处理由特殊的可及关系所决定的逻辑，我们考虑 \olref{tab:more-rules} 中的额外规则。
 
-\iftag{prvBox}{\iftag{prvDiamond}{% □ 与 ◇ 都是原始符号
+\iftag{prvBox}{\iftag{prvDiamond}{% □ 与 ◇ 都是初始符号
 \begin{table}
   \begin{center}
     \def\arraystretch{3}
@@ -76,7 +76,7 @@
   \caption{更多模态规则。}
   \ollabel{tab:more-rules}
 \end{table}
-}{ % 只有 □ 是原始符号
+}{ % 只有 □ 是初始符号
 \begin{table}
   \begin{center}
     \def\arraystretch{3}
@@ -117,7 +117,7 @@
   \caption{更多模态规则。}
   \ollabel{tab:more-rules}
 \end{table}
-}}{% 只有 ◇ 是原始符号
+}}{% 只有 ◇ 是初始符号
 \begin{table}
   \begin{center}
     \def\arraystretch{3}
@@ -241,7 +241,7 @@
 \end{ex}
 }{}}
 
-\iftag{prvBox}{\iftag{prvDiamond}{% □ 与 ◇ 都是原始符号
+\iftag{prvBox}{\iftag{prvDiamond}{% □ 与 ◇ 都是初始符号
 \begin{ex}
   我们给出一个矢列!!{derivation}，表明 $\Log{S5} \Proves \Ax{5}$，即 $\Diamond!A \lif \Box\Diamond!A$。
   \begin{prooftree}
@@ -252,7 +252,7 @@
     \UnaryInf$\fCenter \Diamond!A \lif \Box\Diamond!A$
   \end{prooftree}
 \end{ex}
-}{% 只有 □ 是原始符号
+}{% 只有 □ 是初始符号
 \begin{ex}
   我们给出一个矢列!!{derivation}，表明 $\Log{S5} \Proves \Ax{5}$，即 $\Diamond!A \lif \Box\Diamond!A$。
   \begin{prooftree}
@@ -267,7 +267,7 @@
     \UnaryInf$\fCenter \lnot\Box\lnot!A \lif \Box\lnot\Box\lnot!A$
   \end{prooftree}
 \end{ex}
-}}{% 只有 ◇ 是原始符号
+}}{% 只有 ◇ 是初始符号
 \begin{ex}
   我们给出一个矢列!!{derivation}，表明 $\Log{S5} \Proves \Ax{5}$，即 $\Diamond!A \lif \Box\Diamond!A$。
   \begin{prooftree}
@@ -286,7 +286,7 @@
 \begin{ex}
   \Log{S5} 的矢列演算若没有 \Cut{} 规则便不是完全的：例如，\iftag{prvBox}{$\Diamond\Box !A \lif !A$}{$!A \lif \Box\Diamond !A$} 在~$\Log{S5}$ 中有效，但在没有~\Cut 的情况下没有证明。下面是使用~\Cut 的一个!!a{derivation}：
 \begin{prooftree}
-\iftag{prvBox}{\iftag{prvDiamond}{% □ 与 ◇ 都是原始符号
+\iftag{prvBox}{\iftag{prvDiamond}{% □ 与 ◇ 都是初始符号
 \Axiom$\Box !A \fCenter \Box!A$
 \RightLabel{5$\Diamond$}
 \UnaryInf$\Diamond\Box!A \fCenter \Box!A$
@@ -298,7 +298,7 @@
 \BinaryInf$\Diamond\Box!A \fCenter !A$
 \RightLabel{\RightR{\lif}}
 \UnaryInf$\fCenter \Diamond\Box!A \lif !A$
-}{% 只有 □ 是原始符号
+}{% 只有 □ 是初始符号
 \Axiom$\Box !A \fCenter \Box!A$
 \RightLabel{\RightR{\lnot}}
 \UnaryInf$\fCenter \Box!A, \lnot\Box!A$
@@ -316,7 +316,7 @@
 \UnaryInf$\lnot\Box\lnot\Box!A \fCenter !A$
 \RightLabel{\RightR{\lif}}
 \UnaryInf$\fCenter \lnot\Box\lnot\Box!A \lif !A$
-}}{% 只有 ◇ 是原始符号
+}}{% 只有 ◇ 是初始符号
 \Axiom$!A \fCenter !A$
 \RightLabel{T$\Diamond$}
 \UnaryInf$!A \fCenter \Diamond!A$

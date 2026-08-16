@@ -3324,6 +3324,20 @@
    "kind": "word",
    "source": "confirmed",
    "note": "图论术语"
+  },
+  {
+   "en": "primitive symbol",
+   "zh": "初始符号",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》作「初始联结词」（同词根「初始」）；不用「原始符号」"
+  },
+  {
+   "en": "primitive connective",
+   "zh": "初始联结词",
+   "module": "core",
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑导论》：「设命题逻辑的初始联结词为 ¬ 和 ∧」"
   }
  ]
 }
