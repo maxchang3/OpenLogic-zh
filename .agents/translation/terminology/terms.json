@@ -39,7 +39,8 @@
    "en": "sentence",
    "zh": "语句",
    "module": "core",
-   "source": "confirmed"
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑教程》：「推理关系都是在语句层面上发生的」；不用「句子」"
   },
   {
    "en": "language",
@@ -57,13 +58,15 @@
    "en": "variable",
    "zh": "变元",
    "module": "core",
-   "source": "confirmed"
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑教程》：「引入了变元，又称作变量」；「语句变元，又称命题变元」；不用「变项」"
   },
   {
    "en": "constant",
    "zh": "常元",
    "module": "core",
-   "source": "confirmed"
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑教程》：「若 t 是个体常元」；不用「常项」"
   },
   {
    "en": "individual constant",
@@ -1722,7 +1725,7 @@
    "zh": "双模拟",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》10.1.15 定义标题并列「双模拟，双仿」；bisimulation→双模拟、bisimilar→双仿的"
+   "note": "文学锋《模态逻辑导论》10.1.15 定义标题并列「双模拟，双仿」；bisimulation→双模拟、bisimilar→双仿的；国内文献亦常见「互模拟」（SEP 中译即用此），保持「双模拟」"
   },
   {
    "en": "maximal consistent",
@@ -1927,7 +1930,8 @@
    "en": "material conditional",
    "zh": "实质条件句",
    "module": "modal-logic",
-   "source": "confirmed"
+   "source": "confirmed",
+   "note": "文学锋《模态逻辑教程》作「实质蕴含联结词」；SEP 中译作「实质蕴涵」。B&D 中与「反事实条件句」对举（counterfactuals 章），保持「实质条件句」"
   },
   {
    "en": "strict conditional",
