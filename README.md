@@ -6,7 +6,7 @@
 > 
 > AI 翻译工作流可见 `.agents/translation/`。
 
-本仓库旨在完整翻译 [OpenLogicProject/OpenLogic](https://github.com/OpenLogicProject/OpenLogic)。
+本仓库旨在完整翻译 [OpenLogicProject/OpenLogic](https://github.com/OpenLogicProject/OpenLogic)，目前翻译**仍在进行中**，译文维护在 `locale/zh/` 中。
 
 目前，基于本项目的相关项目有：
 
