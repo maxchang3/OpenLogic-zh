@@ -2987,7 +2987,7 @@
    "module": "core",
    "kind": "word",
    "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+   "note": "例句虚构人名，直接译出，不使用 \\zhFirst 括号机制"
   },
   {
    "en": "Saul Kripke",
