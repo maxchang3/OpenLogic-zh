@@ -14,7 +14,7 @@
 
 ## 基于本项目的相关项目
 
-[_Boxes and Diamonds_ 中文版](https://github.com/maxchang3/boxes-and-diamonds-zh) 使用本仓库已经本地化的 Open Logic 内容组装模态逻辑教材。
+[_Boxes and Diamonds_ 中文版](https://github.com/maxchang3/boxes-and-diamonds-zh)
 
 ## 同步上游
 
