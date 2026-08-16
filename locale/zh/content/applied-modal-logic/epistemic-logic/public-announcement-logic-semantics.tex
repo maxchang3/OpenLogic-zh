@@ -85,9 +85,9 @@
 
 更形式地说，我们有 $\mSat{M}{\lnot \Knows_b p}[w_1]$，但 $\mSat{M
 \mid p}{\Knows_b p}[w'_1]$。由此推得 $\mSat{M}{[p] \Knows_b
-p}[w_1]$。不过，关于这次宣告的结果，我们还能作出一些更强的断言。事实上，$\mSat{M}{[p]\CKnows_{\{a,b\}} p}[w_1]$ 成立。换句话说，在 $p$ 被宣告后，它变成了 \emph{公共知识}。
+p}[w_1]$。不过，关于这次宣告的结果，我们还能作出一些更强的断言。事实上，$\mSat{M}{[p]\CKnows_{\{a,b\}} p}[w_1]$ 成立。换句话说，在 $p$ 被宣告后，它变成了\emph{公共知识}。
 
-然而，我们可能会想，这在一般情况下是否也成立，以及对~$!A$ 的一次如实宣告是否 \emph{总是}会使 $!A$ 变成公共知识。或许令人惊讶的是，答案是：否。事实上，有可能如实地宣告一些!!{formula}，而这些公式在宣告之后便不再为真。例如，在 \olref{fig:announcement-example} 中考虑在世界~$w_1$ 处宣告 $p \land \lnot \Knows_b p$ 的效果。事实上，$\mModel M \mid p$ 与
+然而，我们可能会想，这在一般情况下是否也成立，以及对~$!A$ 的一次如实宣告是否\emph{总是}会使 $!A$ 变成公共知识。或许令人惊讶的是，答案是：否。事实上，有可能如实地宣告一些!!{formula}，而这些公式在宣告之后便不再为真。例如，在 \olref{fig:announcement-example} 中考虑在世界~$w_1$ 处宣告 $p \land \lnot \Knows_b p$ 的效果。事实上，$\mModel M \mid p$ 与
 $\mModel M \mid (p \land \lnot \Knows_b p)$ 是同一个模型。然而，正如我们已经指出的，$\mSat{M \mid p}{\Knows_b
 p}[w'_1]$。因此，$\mSat{M \mid (p \land \lnot \Knows_b p)}{\lnot
 (p \land \lnot \Knows_b p)}[w'_1]$，所以一旦被宣告，这便是一个变假的!!a{formula}。

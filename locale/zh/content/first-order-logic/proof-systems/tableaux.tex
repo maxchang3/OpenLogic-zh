@@ -16,7 +16,7 @@
 \[
 \sFmla{\True}{!A} \text{ 或 } \sFmla{\False}{!A}.
 \]
-!!^a{tableau}由排列在向下分支的树中的!!{signed formula}组成。它以若干 \emph{假设}开始，接着通过应用某条推理规则，从其上方的某个!!{signed formula}得到新的!!{signed formula}。每条规则允许我们在一个支的末端添加一个或多个!!{signed formula}，或者并排添加两个!!{signed formula}——此时支一分为二，两个新建的!!{signed formula}构成两支的末端。
+!!^a{tableau}由排列在向下分支的树中的!!{signed formula}组成。它以若干\emph{假设}开始，接着通过应用某条推理规则，从其上方的某个!!{signed formula}得到新的!!{signed formula}。每条规则允许我们在一个支的末端添加一个或多个!!{signed formula}，或者并排添加两个!!{signed formula}——此时支一分为二，两个新建的!!{signed formula}构成两支的末端。
 
 对某个复合!!{signed formula}应用一条规则，会添加其若干直接子!!{formula}对应的!!{signed formula}。它们成对出现，对两个符号各有一条规则。例如，$\TRule{\True}{\land}$ 规则作用于 $\sFmla{\True}{!A \land !B}$，允许在含 $\sFmla{\True}{!A \land !B}$ 的任意支的末端同时添加!!{signed formula} $\sFmla{\True}{!A}$ 和~$\sFmla{\True}{!B}$，而规则 $\TRule{\False}{!A \land !B}$ 则允许通过并排添加 $\sFmla{\False}{!A}$ 和 $\sFmla{\False}{!B}$ 来使支分裂。!!^a{tableau}是闭的，如果它的每一条支都含有匹配的一对!!{signed formula} $\sFmla{\True}{!A}$ 与 $\sFmla{\False}{!A}$。
 

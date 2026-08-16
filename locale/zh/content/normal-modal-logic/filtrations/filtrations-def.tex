@@ -14,7 +14,7 @@
 $\mSat{M}{!A}[w]$ 当且仅当 $\mSat{M^*}{!A}[{[w]}]$。
 
 \begin{defn}\ollabel{defn:filtration}
-  设 $\Gamma$ 对子公式封闭，且 $\mModel{M} = \tuple{W, R, V}$。$\mModel{M}$ 经过 $\Gamma$ 的 \emph{过滤}是任何模型 $\mModel{M^*} = \tuple{W^*,R^*,V^*}$，其中：
+  设 $\Gamma$ 对子公式封闭，且 $\mModel{M} = \tuple{W, R, V}$。$\mModel{M}$ 经过 $\Gamma$ 的\emph{过滤}是任何模型 $\mModel{M^*} = \tuple{W^*,R^*,V^*}$，其中：
   \begin{enumerate}
   \item $W^* = \Setabs{[w]}{w \in W}$；
   \item \ollabel{defn:filtration-R}%
@@ -33,7 +33,7 @@ $\mSat{M}{!A}[w]$ 当且仅当 $\mSat{M^*}{!A}[{[w]}]$。
   \end{enumerate}
 \end{defn}
 
-值得想一想 $V^*(p)$ 是什么：它是由~$\mModel{M}$ 中 $p$ 为真之所有世界~$w$ 的等价类~$[w]$ 组成的集合。一方面，若 $w \in V(p)$，则该定义保证 $[w] \in V^*(p)$。然而，若 $[w] \in V^*(p)$，则并不必然有 $w \in V(p)$。若 $[w] \in V^*(p)$，我们只能保证 $[w] = [u]$ 对于 \emph{某个}~$u \in V(p)$ 成立。当然，$[w] = [u]$ 意味着 $w \equiv u$。因此，当 $[w] \in V^*(p)$ 时，我们（只能）推出，对某个 $u \in V(p)$ 有 $w \equiv u$。
+值得想一想 $V^*(p)$ 是什么：它是由~$\mModel{M}$ 中 $p$ 为真之所有世界~$w$ 的等价类~$[w]$ 组成的集合。一方面，若 $w \in V(p)$，则该定义保证 $[w] \in V^*(p)$。然而，若 $[w] \in V^*(p)$，则并不必然有 $w \in V(p)$。若 $[w] \in V^*(p)$，我们只能保证 $[w] = [u]$ 对于\emph{某个}~$u \in V(p)$ 成立。当然，$[w] = [u]$ 意味着 $w \equiv u$。因此，当 $[w] \in V^*(p)$ 时，我们（只能）推出，对某个 $u \in V(p)$ 有 $w \equiv u$。
 
 \begin{thm}\ollabel{thm:filtrations}
   若 $\mModel{M^*}$ 是 $\mModel{M}$ 经过 $\Gamma$ 的一个过滤，则对每个 $!A \in \Gamma$ 和 $w \in W$，有 $\mSat{M}{!A}[w]$ 当且仅当 $\mSat{M^*}{!A}[{[w]}]$。
