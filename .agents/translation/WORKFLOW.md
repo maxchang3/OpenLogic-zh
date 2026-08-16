@@ -6,7 +6,7 @@ worker 必须保留宏、数学、token、标签和 `\olfileid[zh]` 规则；返
 
 未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个文件中采用互相冲突的译法。确认后的术语必须回填 `terminology/terms.json`，并检查可执行 locale 映射是否一致。**术语定案或修改后立即 grep 全部译文同步替换旧译名**（曾发生定案「逆良基的/全称量化/原子公式」后译文仍残留旧译名「反良基/普遍量化/原子命题」多处的案例）。
 
-每批完成后先在 `OpenLogic-Zh/` 运行 `python3 scripts/check-tokens.py` 做令牌计数机械校验（缺/多均需修到 0），再在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`；失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。**任何 LLM 批量修改（翻译、审计修复、重构）后都必须重跑 `check-tokens.py` 并清零**——修复类 worker 曾把普通词加成 `!!{token}`、把 token 改回普通词、改动 token 键，只有机械校验能兜底。
+每批完成后先在 `OpenLogic-Zh/` 运行 `python3 scripts/check-tokens.py` 做令牌计数机械校验、`python3 scripts/check-names.py` 做人名覆盖校验、`python3 scripts/check-name-refs.py` 做同姓人名指代校验（如 C. I. Lewis 与 David K. Lewis 的张冠李戴），再（缺/多均需修到 0），再在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`；失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。**任何 LLM 批量修改（翻译、审计修复、重构）后都必须重跑 `check-tokens.py` 并清零**——修复类 worker 曾把普通词加成 `!!{token}`、把 token 改回普通词、改动 token 键，只有机械校验能兜底。
 
 审计与修复 worker 的要求：
 - 提示词必须包含：`!!{...}` 原样保留、不得改动 token 键、不得把普通词改写为 token（或反之）、每处修改用最小 diff；
