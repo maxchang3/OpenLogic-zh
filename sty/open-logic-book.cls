@@ -332,6 +332,11 @@
 \newcommand{\setOLBdversion}[1]{
     \newcommand{\olbdversion}{#1}}
 
+% 中译本项目地址（colophon 用）。翻译层默认指向本仓库（openlogic-zh）；
+% 组装层（如 boxes-and-diamonds-zh）可在自己的 metadata 中覆盖为组装仓库地址。
+\providecommand{\OLPzhlink}{https://github.com/maxchang3/openlogic-zh}
+\newcommand{\setOLPzhlink}[1]{\renewcommand{\OLPzhlink}{#1}}
+
 \IfFileExists{olprevision.tex}{\input{olprevision.tex}}
   {\setOLPrevision{unknown (\today)}}
 
