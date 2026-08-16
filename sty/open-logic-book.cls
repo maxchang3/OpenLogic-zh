@@ -96,7 +96,18 @@
     % Helvetica for sans-serif
     \usepackage[scaled=.92]{helvet}
     % Baskervald X for roman, with oldstyle figure
-    \usepackage[osf]{Baskervaldx}
+    % XeLaTeX (Chinese edition): Type1 NFSS declarations break under
+    % fontspec/xeCJK (italic shape lost), so load the OpenType fonts
+    % directly; pdfLaTeX keeps the classic Type1 package.
+    \ifdefined\XeTeXrevision
+      \RequirePackage{fontspec}
+      \setmainfont{Baskervaldx-Reg.otf}[
+        ItalicFont=Baskervaldx-Ita.otf,
+        BoldFont=Baskervaldx-Bol.otf,
+        BoldItalicFont=Baskervaldx-BolIta.otf]
+    \else
+      \usepackage[osf]{Baskervaldx}
+    \fi
     % load amssymb before newtxmath to avoid problem with \Bbbk
     \usepackage{amssymb}
     % Nice math calligraphic font 
