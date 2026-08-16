@@ -28,3 +28,8 @@
 
 - 术语定案/改名后必须立即同步全部译文：曾发生定案「逆良基的/全称量化/原子公式/逆否律」后，`first-order-definability.tex` 仍残留 5 处「反良基」、「bhk-interpretation.tex」仍用「原子命题」；定案即 grep 全文替换。
 - 修复/审计类 LLM worker 会把普通词加成 `!!{token}`、把 token 改回普通词或改键（6 文件案例）；任何批量修改后跑 `scripts/check-tokens.py` 兜底，比对 EN/ZH 的 token 序列定位（勿信行号）。
+
+## 上游笔误（zh 照搬保留，待上游修复；勿在 zh 侧订正）
+- content/intuitionistic-logic/tableaux/soundness.tex:22-23：`$\mSat{M}{!A}[w]$` 应为 `$\mSat/{M}{!A}[w]$`（反模型要求 !A 在 w 不成立）。
+- content/normal-modal-logic/filtrations/introduction.tex:13：句子末尾缺右括号（`2^{n^2}。`）。
+- content/counterfactuals/introduction/paradoxes-material.tex 等：EN "C.~I. Lewis"（人名），勿与 David K. Lewis 混淆。

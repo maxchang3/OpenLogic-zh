@@ -18,20 +18,20 @@
 \end{editorial}
 
 \begin{explain}
-  为要证明带前缀的!!{tableau}是可靠的，我们需要证明若
+  要证明带前缀的!!{tableau}是可靠的，我们需要证明若
   \[
   \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1], \sFmla{\False}{!A}[1]
   \]
-  有一个闭的!!{tableau}，则 $!B_1, \dots, !B_n \Entails !A$。证明逆否命题更容易：若对某个 $\mModel{M}$ 和世界~$w$，对所有 $i=1$, \dots,~$n$ 有 $\mSat{M}{!B_i}[w]$，但 $\mSat{M}{!A}[w]$，则没有!!{tableau}能闭合。这样的反模型表明!!{tableau}的初始假设是可满足的。证明的策略是证明：每当某个!!{tableau}支上的所有带前缀的!!{formula}都可满足时，规则的任意一次应用都会得到至少一个仍然可满足的扩展支。由于闭的支是不可满足的，任何关于可满足的带前缀的!!{formula}集的!!{tableau}都必须有至少一个开放的支。
+  有一个闭的!!{tableau}，则 $!B_1, \dots, !B_n \Entails !A$。证明逆否命题更容易：若对某个 $\mModel{M}$ 和世界~$w$，对所有 $i=1$, \dots,~$n$ 有 $\mSat{M}{!B_i}[w]$，但 $\mSat{M}{!A}[w]$，则没有!!{tableau}能闭合。这样的反模型表明!!{tableau}的初始假设是可满足的。证明的策略在于表明：每当某个!!{tableau}支上的所有带前缀的!!{formula}都可满足时，规则的任意一次应用都会得到至少一个仍然可满足的扩展支。由于闭的支是不可满足的，任何关于可满足的带前缀的!!{formula}集的!!{tableau}都必须有至少一个开放的支。
 
-  为把这一策略应用到模态情形，我们必须把「可满足的」的定义扩展到模态模型与前缀上。不过，一旦做到这一点，证明就直截了当了。
+  为把这一策略应用到模态情形，我们必须把「可满足的」的定义扩展到模态模型与前缀上。不过，一旦做到这一点，证明就很直接了。
 \end{explain}
 
 \begin{defn}
   设 $P$ 是某一前缀集，即 $P \subseteq (\PosInt)^*
   \setminus \{\emptyseq\}$，并设 $\mModel{M}$ 是一个模型。若只要 $\sigma$ 和 $\sigma.n$ 都在~$P$ 中，就有 $Rf(\sigma)f(\sigma.n)$，则函数~$f\colon P \to W$ 是~$P$ 在~$\mModel{M}$ 中的\emph{解释}。
 
-  相对于前缀~$P$ 的一个解释，我们可以定义：
+  给定前缀~$P$ 的一个解释，我们可以定义：
   \begin{enumerate}
   \item $\mModel{M}$ 满足 $\sFmla{\True}{!A}[\sigma]$ 当且仅当 $\mSat{M}{!A}[f(\sigma)]$。
   \item $\mModel{M}$ 满足 $\sFmla{\False}{!A}[\sigma]$ 当且仅当 $\mSat/{M}{!A}[f(\sigma)]$。

@@ -35,7 +35,7 @@
 \end{defn}
 
 例如，$\ST_x(\Box p \lif p)$ 就是 $\lforall[y][(\Atom{Q}{x,y}
-  \lif \Atom{P}{y})] \lif \Atom{P}{x}$。任何用于~$\ST_x(!A)$ 之语言的!!{structure}都要求一个论域、一个指派给~$Q$ 的二元关系，以及指派给一元!!{predicate}~$P_i$ 的论域子集。换句话说，这样的!!a{structure}的诸成分恰是 ~$!A$ 的一个模型的那几类成分：论域是世界之集合，指派给~$Q$ 的二元关系就是可及关系，指派给~$P_i$ 的子集就是赋值~$V(\Obj p_i)$。模态模型中 $!A$ 的可满足性与相应!!{structure}中 $\ST_x(!A)$ 的可满足性一致，这一点不令人意外：
+  \lif \Atom{P}{y})] \lif \Atom{P}{x}$。任何用于~$\ST_x(!A)$ 之语言的!!{structure}都要求一个论域、一个指派给~$Q$ 的二元关系，以及指派给一元!!{predicate}~$P_i$ 的论域子集。换句话说，这样的!!a{structure}的诸成分恰是 ~$!A$ 的一个模型的各组成成分：论域是世界之集合，指派给~$Q$ 的二元关系就是可及关系，指派给~$P_i$ 的子集就是赋值~$V(\Obj p_i)$。模态模型中 $!A$ 的可满足性与相应!!{structure}中 $\ST_x(!A)$ 的可满足性一致，这一点不令人意外：
 
 \begin{prop}\ollabel{prop:st}
   设 $\mModel{M} = \tuple{W, R, V}$，$\Struct{M'}$ 是以 $\Domain{M'} = W$、$\Assign{Q}{M'} = R$、$\Assign{P_i}{M'} = V(\Obj p_i)$ 的一阶!!{structure}，且 $s(x) = w$。则
@@ -62,7 +62,7 @@
 \end{prop}
 
 \begin{proof}
-  $\Sat{F'}{!A'}$ 当且仅当对每个满足 $i = 1$, \dots,~$n$ 时 $\Assign{P_i}{M'} \subseteq W$ 的!!{structure}~$\mModel{M'}$，以及对每个满足 $s(x) \in W$ 的 $s$，都有 $\Sat{M'}{\ST_x(!A)}[s]$。根据 \olref{prop:st}，这当且仅当对所有基于~$\mModel{F}$ 的模型~$\mModel{M}$ 和每个世界~$w \in W$，都有 $\mSat{M}{!A}[w]$，即 $\mModel{F} \Entails !A$。
+  $\Sat{F'}{!A'}$ 当且仅当对每个 $i = 1$, \dots,~$n$ 均满足 $\Assign{P_i}{M'} \subseteq W$ 的!!{structure}~$\mModel{M'}$，以及对每个满足 $s(x) \in W$ 的 $s$，都有 $\Sat{M'}{\ST_x(!A)}[s]$。根据 \olref{prop:st}，这当且仅当对所有基于~$\mModel{F}$ 的模型~$\mModel{M}$ 和每个世界~$w \in W$，都有 $\mSat{M}{!A}[w]$，即 $\mModel{F} \Entails !A$。
 \end{proof}
 
 \begin{defn}

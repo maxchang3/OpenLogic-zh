@@ -21,7 +21,7 @@
     just = \TAss]
 \end{oltableau}
 
-只有一个假设，所以只有一个!!{signed formula}我们可以对它应用规则。（对每个!!{signed formula}，总是至多有一条可以应用的规则：它是对应于该!!{sentence}的相应符号与!!{main operator}的规则。）在这种情况下，这意味着我们必须应用 $\TRule{\False}{\lif}$。
+只有一个假设，所以我们只能对一个!!{signed formula}应用规则。（对每个!!{signed formula}，总是至多有一条可以应用的规则：它是对应于该!!{sentence}的相应符号与!!{main operator}的规则。）在这种情况下，这意味着我们必须应用 $\TRule{\False}{\lif}$。
 \begin{oltableau}
   [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}},
     checked, just = \TAss
@@ -31,9 +31,9 @@
     ]
   ]
 \end{oltableau}
-为了记录哪些!!{signed formula}我们已经应用了它们相应的规则，我们在语句旁边写一个对勾。但是，\emph{只有}当规则已被应用到所有开放的支时，才写对勾。一旦!!a{signed formula}的相应规则已在每个开放的支中被应用，我们就不必再回到它并再次应用规则。在这种情况下，只有一个支，所以规则只需被应用一次。（注意，对勾只是为了构造表列的方便，并不正式属于表列的句法的一部分。）
+为了记录我们已经对其应用了相应规则的!!{signed formula}，我们在语句旁边写一个对勾。但是，\emph{只有}当规则已被应用到所有开放的支时，才写对勾。一旦!!a{signed formula}的相应规则已在每个开放的支中被应用，我们就不必再回到它并再次应用规则。在这种情况下，只有一个支，所以规则只需被应用一次。（注意，对勾只是为了构造表列的方便，并不正式属于表列的句法的一部分。）
 
-有一个新的!!{signed formula}我们可以对它应用规则：第~$2$ 行上的 $\sFmla{\True}{!A \land !B}$。应用 $\TRule{\True}{\land}$ 规则得到：
+有一个新的可以对其应用规则的!!{signed formula}：第~$2$ 行上的 $\sFmla{\True}{!A \land !B}$。应用 $\TRule{\True}{\land}$ 规则得到：
 \begin{oltableau}
   [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}},
     checked, just = \TAss
@@ -74,7 +74,7 @@
     ]
   ]
 \end{oltableau}
-我们现在可以自行选择是把~$\TRule{\True}{\lor}$ 应用在第~$2$ 行，还是把 $\TRule{\False}{\lif}$ 应用在第~$3$ 行。事实上，只要每个!!{signed formula}的相应规则已在每个支中被应用，先选哪个顺序并不重要。所以让我们选第一个。$\TRule{\True}{\lor}$ 规则允许!!{tableau}分支，该规则的两个结论将是添加到两个新支的新的!!{signed formula}。这得到：
+我们现在可以自行选择是把~$\TRule{\True}{\lor}$ 应用在第~$2$ 行，还是把 $\TRule{\False}{\lif}$ 应用在第~$3$ 行。事实上，无论先选哪个顺序都不要紧，只要每个!!{signed formula}的相应规则已在每个支中被应用。所以让我们选第一个。$\TRule{\True}{\lor}$ 规则允许!!{tableau}分支，该规则的两个结论将是添加到两个新支的新的!!{signed formula}。这得到：
 \begin{oltableau}
   [\sFmla{\False}{(\lnot \formula{A} \lor \formula{B}) \lif
       (\formula{A} \lif \formula{B})}, just=\TAss, checked
@@ -88,7 +88,7 @@
     ]
   ]
 \end{oltableau}
-我们还没有把 $\TRule{\False}{\lif}$ 规则应用在第~$3$ 行上：让我们现在就做。为了节省时间，我们把它应用到两个支上。回顾一下，只有当我们在每个开放的支中应用了相应规则时，我们才在!!a{signed formula}旁边写对勾。所以一个好的做法是，在包含该规则所适用的!!{signed formula}的每个支的末尾应用该规则。这样我们就不用再回到各个支下方的那~个!!{signed formula}。
+我们还没有把 $\TRule{\False}{\lif}$ 规则应用在第~$3$ 行上：让我们现在就做。为了节省时间，我们把它应用到两个支上。回顾一下，只有当我们在每个开放的支中应用了相应规则时，我们才在!!a{signed formula}旁边写对勾。所以一个好的做法是，在包含该规则所适用的!!{signed formula}的每个支的末尾应用该规则。这样我们就无需再回到各支下方的那~个!!{signed formula}。
 \begin{oltableau}
   [\sFmla{\False}{(\lnot \formula{A} \lor \formula{B}) \lif
       (\formula{A} \lif \formula{B})}, just=\TAss, checked

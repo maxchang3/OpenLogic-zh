@@ -11,7 +11,7 @@
 \olsection{\zhFirst{Lindenbaum}{林登鲍姆}引理}
 
 直觉主义逻辑的完全性定理是通过假设 $\Gamma \Proves/ !A$
-并构造一个模型 $\mSat{M}{\Gamma}$ 且 $\mSat/{M}{!A}$ 来证明的。
+并构造一个模型 $\mModel{M}$，使 $\mSat{M}{\Gamma}$ 且 $\mSat/{M}{!A}$ 来证明的。
 
 在经典逻辑中，!!{derivability}关系可以归结为一致性概念，因为!!a{formula}~$!A$ 从一组!!{formula}是!!{derivable}的，当且仅当这组公式连同~$!A$
 的否定是不一致的。这在直觉主义逻辑中是不可能成立的。
@@ -56,7 +56,7 @@ $\Gamma^*$ 中，我们都
   \item\ollabel{gamma-2} $!B_i \notin \Gamma_n$ 且 $!C_i \notin \Gamma_n$
   \end{enumerate}
   我们向 $\Gamma_n$ 添加 $!B_i$（若 $\Gamma_n \cup \{!B_i\}
-  \Proves/ !A$），否则添加 $!C_i$。我们将需证明这是可行的。眼下，我们定义
+  \Proves/ !A$），否则添加 $!C_i$。我们稍后将证明这是可行的。眼下，我们定义
   $i(n)$ 为使 \olref{gamma-1} 与~\olref{gamma-2}
   成立的最小 $i$。
 
@@ -92,7 +92,7 @@ $\Gamma^*$ 中，我们都
 
   若 $\Gamma^* \Proves !A$，则存在某个有穷子集 $\Gamma'
   \subseteq \Gamma^*$，使得 $\Gamma' \Proves !A$。每个 $!D \in
-  \Gamma'$ 必属于某个~$i$ 的 $\Gamma_i$。令 $n$ 为其中最大者。
+  \Gamma'$ 必属于某个 $\Gamma_i$。令 $n$ 为其中最大者。
   由于若 $i \le n$ 则 $\Gamma_i \subseteq \Gamma_n$，故 $\Gamma'
   \subseteq \Gamma_n$。但那样就有 $\Gamma_n \Proves !A$，这与我们
   上面已证 $\Gamma_n \Proves/ !A$ 相矛盾。

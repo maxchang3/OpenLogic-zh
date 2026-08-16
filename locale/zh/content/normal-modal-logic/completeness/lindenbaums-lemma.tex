@@ -21,9 +21,9 @@ $\Sigma$-一致的集合中。我们对典范模型的构造将表明，对每�
 \end{thm}
 
 \begin{proof}
-设 $!A_0$、$!A_1$、\dots{} 是该语言所有公式的一个穷尽性列出（允许重复）。例如，
-先列出 $\Obj p_0$，并在每个阶段 $n \ge 1$ 列出仅使用取自 $\Obj p_0$、\dots,~$\Obj p_n$
-之中的变元的长度为~$n$ 的有穷多个公式。我们通过关于~$n$ 的归纳来定义!!{formula}的集合
+设 $!A_0$、$!A_1$、\dots{} 是该语言所有公式的一个穷尽列出（允许重复）。例如，
+先列出 $\Obj p_0$，并在每个阶段 $n \ge 1$ 列出长度恰为~$n$、且仅使用 $\Obj p_0$、\dots、$\Obj p_n$
+中变元的有穷多个公式。我们通过关于~$n$ 的归纳来定义!!{formula}的集合
 $\Delta_n$，然后置 $\Delta = \bigcup_n \Delta_n$。我们先令 $\Delta_0 = \Gamma$。
 假设 $\Delta_n$ 已被定义，我们如下定义 $\Delta_{n+1}$：
 \[
@@ -69,7 +69,7 @@ $\Delta_n \cup \{!A_n\}$ 或 $\Delta_n \cup \{\lnot!A_n\}$ 之一是
 \end{proof}
 
 \begin{cor}\ollabel{cor:provability-characterization}
-  $\Gamma \Proves[\Sigma] !A$ 当且仅当对每个 扩张 $\Gamma$ 的完全 $\Sigma$-一致的集合
+  $\Gamma \Proves[\Sigma] !A$ 当且仅当对每个扩张 $\Gamma$ 的完全 $\Sigma$-一致的集合
   $\Delta$，有 $!A \in \Delta$
   （包括 $\Gamma = \emptyset$ 的情形，此时我们得到模态系统 $\Sigma$ 的另一种刻画。）
 \end{cor}

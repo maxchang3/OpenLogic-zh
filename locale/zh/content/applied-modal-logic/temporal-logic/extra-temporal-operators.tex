@@ -27,11 +27,11 @@ $\Since $和~$\Until$，用来符号化「自从」和「直到」的意义。�
   \begin{enumerate}
   \item\ollabel{defn:sub:mmodels-since} \indcase{!A}{\Since  !B
     !C}{$\mSat{M}{\indfrm}[t]$ 当且仅当 $\mSat{M}{!B}[t']$ 对某个 $t' \in
-    T$ 且 $t' \prec t$，且对所有 $s$ 且 $t' \prec s \prec t$，
+    T$ 且 $t' \prec t$，且对所有满足 $t' \prec s \prec t$ 的 $s$，
     $\mSat{M}{!C}[s]$}
    \item\ollabel{defn:sub:mmodels-until} \indcase{!A}{\Until !B
     !C}{$\mSat{M}{\indfrm}[t]$ 当且仅当 $\mSat{M}{!B}[t']$ 对某个 $t' \in
-    T$ 且 $t \prec t'$，且对所有 $s$ 且 $t \prec s \prec t'$，
+    T$ 且 $t \prec t'$，且对所有满足 $t \prec s \prec t'$ 的 $s$，
     $\mSat{M}{!C}[s]$}
   \end{enumerate}
 \end{defn}
