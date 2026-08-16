@@ -1931,7 +1931,7 @@
    "zh": "实质条件句",
    "module": "modal-logic",
    "source": "confirmed",
-   "note": "文学锋《模态逻辑教程》作「实质蕴含联结词」；SEP 中译作「实质蕴涵」。B&D 中与「反事实条件句」对举（counterfactuals 章），保持「实质条件句」"
+   "note": "文学锋《模态逻辑导论》作「实质蕴含联结词」；SEP 中译作「实质蕴涵」。B&D 原文将 material conditional 定义为联结词（"A connective with this semantics is called the material conditional"），与「反事实条件句」对举；保持「实质条件句」"
   },
   {
    "en": "strict conditional",
