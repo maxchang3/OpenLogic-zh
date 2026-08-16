@@ -318,8 +318,14 @@
 \newcommand{\setOLPrevision}[1]{
     \newcommand{\OLPrevision}{#1}}
 
+\newcommand{\setOLBdversion}[1]{
+    \newcommand{\olbdversion}{#1}}
+
 \IfFileExists{olprevision.tex}{\input{olprevision.tex}}
   {\setOLPrevision{unknown (\today)}}
+
+\IfFileExists{bdversion.tex}{\input{bdversion.tex}}
+  {\setOLBdversion{dev}}
 
 % \OLPprintcover -- make a Quarto size cover PDF for KDP
 
