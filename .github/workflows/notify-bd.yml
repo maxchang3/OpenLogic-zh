@@ -13,7 +13,9 @@ jobs:
         env:
           BD_TOKEN: ${{ secrets.BD_DISPATCH_TOKEN }}
         run: |
-          curl -sS -X POST \
+          # -f: fail on HTTP errors, so a 403 here marks the run failed
+          # instead of silently reporting success
+          curl -fsS -X POST \
             -H "Authorization: Bearer $BD_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             https://api.github.com/repos/maxchang3/boxes-and-diamonds-zh/dispatches \
