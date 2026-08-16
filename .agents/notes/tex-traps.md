@@ -8,6 +8,7 @@
 - 书签环境不支持正文中的首次检测逻辑；在 `\pdfstringdefDisableCommands` 中让 token 只展开为中文，避免书签显示英文键名或消耗正文首次标记。
 - 中文令牌不区分英语冠词形态；`!!a{token}`、`!!^a{token}` 的输出不能保留原英文实现中的 tie 空格，否则会在 CJK 与令牌之间产生多余空隙。
 - 令牌键必须保持英文原样，不能把 `!!{formula}` 等键翻译成中文或在令牌后手工保留英文复数 `s`。
+- XeLaTeX（中文版）下不要用 Type1 字体包（如 `\usepackage[osf]{Baskervaldx}`）：其 T1 .fd 声明在 fontspec/xeCJK 环境失效，整个西文字体族退化、斜体丢失。中文版必须走 `open-logic-book.cls` 的 XeLaTeX 分支（fontspec 加载 Baskervaldx OpenType）；pdfLaTeX（英文版）才用 Type1 包。`\emph{英文}` 在 ctex 下是中文强调（楷体），西文斜体要用 `\textit{}`。
 - 数学宏必须留在数学模式内；`\text{...}` 中的普通文字可按 POLICY 翻译，但不能移动变量、关系符号或数学命令。
 - `\iftag{FOL}` 等门控内容是否出现由上游 tag 配置决定；缺少某段输出不应直接判断为翻译遗漏。
 
