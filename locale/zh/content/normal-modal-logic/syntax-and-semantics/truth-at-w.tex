@@ -13,28 +13,29 @@
 每个模态模型都决定其中的哪些模态!!{formula}在哪些世界中为真。关系「模型 $\mModel{M}$ 使!!{formula}~$!A$ 在世界~$w$ 处为真」是关系语义的基本概念。该关系按归纳方式定义，并与非模态算子常用的真值表刻画一致。
 
 \begin{defn}\ollabel{defn:mmodels}
-  !!a{formula}~$!A$ 在~$w$ 处的真，在模型~$\mModel M$ 中（符号记作 $\mSat{M}{!A}[w]$），按如下方式归纳定义：
+  在模型~$\mModel M$ 中，\emph{!!a{formula}~$!A$ 在~$w$ 处为真}，记作
+  $\mSat{M}{!A}[w]$，归纳定义如下：
   \begin{enumerate}
-  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ 永不成立。}}{}
-  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ 恒成立。}}{}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ 绝不成立}。}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ 恒成立}。}{}
   \item $\mSat{M}{p}[w]$ 当且仅当 $w \in V(p)$。
   \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat/{M}{!B}[w]$。}}{}
+    $\mSat/{M}{!B}[w]$}。}{}
   \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat{M}{!B}[w]$ 且 $\mSat{M}{!C}[w]$。}}{}
+    $\mSat{M}{!B}[w]$ 且 $\mSat{M}{!C}[w]$}。}{}
   \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$（或两者兼有）。}}{}
+    $\mSat{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}（或二者均成立）。}{}
   \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat/{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$。}}{}
+    $\mSat/{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}。}{}
   \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 两者都成立，或者
-    两者都不成立。}}{}
+    $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 均成立，或
+    $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 均不成立}。}{}
   \item\ollabel{defn:sub:mmodels-box}
     \indcase{!A}{\Box !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    对所有满足 $Rww'$ 的 $w' \in W$，$\mSat{M}{!B}[w']$。}
+    对所有满足 $Rww'$ 的 $w' \in W$，都有 $\mSat{M}{!B}[w']$。}
   \item\ollabel{defn:sub:mmodels-diamond}
     \indcase{!A}{\Diamond !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    对至少一个满足 $Rww'$ 的 $w' \in W$，$\mSat{M}{!B}[w']$。}
+    至少存在一个满足 $Rww'$ 的 $w' \in W$，使得 $\mSat{M}{!B}[w']$。}
   \end{enumerate}
 \end{defn}
 
