@@ -10,14 +10,10 @@
 
 \olsection{同时代入}
 
-!!a{formula}~$!A$ 的一个\emph{特例}是用某个其他的!!{formula}替换~$!A$ 中所有出现的!!a{propositional variable}所得的结果	\text{。}我们在讨论有效性和讨论!!{derivability}时都会
-频繁地引用!!{formula}的特例	\text{。}因此精确地定义这一概念是有用的	\text{。}
+!!a{formula}~$!A$ 的一个\emph{特例}，是将~$!A$ 中某个!!a{propositional variable}的所有出现都用另一个!!{formula}替换后所得的结果。无论讨论有效性还是!!{derivability}，我们都会经常涉及!!{formula}的特例。因此，有必要对这一概念作出精确定义。
 
 \begin{defn}\ollabel{def:subst-inst}
-  设 $!A$ 是一个模态!!{formula}，其所有!!{propositional variable}都在 $p_1$、\dots、$p_n$
-  之中，且 $!D_1$、\dots、$!D_n$ 也是模态!!{formula}，我们定义
-  $\SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ 为将每个 $!D_i$ 同时替换~$!A$
-  中的 $p_i$ 所得的结果	\text{。}形式地，这是对~$!A$ 的归纳定义：
+  设 $!A$ 是一个模态!!{formula}，其中所有!!{propositional variable}均为 $p_1$、\dots、$p_n$ 之一，并设 $!D_1$、\dots、$!D_n$ 也是模态!!{formula}。我们将 $\SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ 定义为在~$!A$ 中同时用每个 $!D_i$ 代入 $p_i$ 所得的结果。形式地，这一代入关于~$!A$ 归纳定义如下：
   \begin{enumerate}
     \tagitem{prvFalse}{\indcase{!A}{\lfalse}{%
         $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,

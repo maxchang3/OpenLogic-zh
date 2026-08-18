@@ -11,13 +11,17 @@
 \olsection{重言式特例}
 
 \begin{explain}
-一个无模态的公式，如果它在每个真值指派下都为真，就是重言式。显然，每个重言式在每个模型的每个世界处都为真。但对涉及 $\Box$
-和~$\Diamond$ 的!!{formula}来说，重言式的概念并未定义。例如，$\Box p \lor \lnot \Box p$——排中律的一个特例——是否有效？\emph{重言式特例}的概念对此有所帮助：它是某个（非模态）重言式的代入特例的!!a{formula}。每个重言式特例都有效这一点并不出人意料，但仍需证明。
+一个无模态的公式若在每个真值指派下都为真，就是重言式。
+显然，每个重言式在每个模型的每个世界处都为真。
+但对于涉及 $\Box$ 和~$\Diamond$ 的!!{formula}，重言式的概念并未定义。
+例如，$\Box p \lor \lnot \Box p$——排中律的一个特例——是否有效？
+\emph{重言式特例}的概念对此有所帮助：所谓重言式特例，就是!!a{formula}，它是某个（非模态）重言式的代入特例。
+每个重言式特例都有效并不令人意外，但这一点仍需证明。
 \end{explain}
 
 \begin{defn}
-  一个模态!!{formula}~$!B$ 是\emph{重言式特例}，当且仅当存在一个无模态的重言式~$!A$，其 !!{propositional
-    variable} 为 $p_1$, \dots,~$p_n$，并且存在!!{formula} $!D_1$,
+  一个模态!!{formula}~$!B$ 是\emph{重言式特例}，当且仅当存在一个无模态的重言式~$!A$，其!!{propositional variable}
+  为 $p_1$, \dots,~$p_n$，并且存在!!{formula} $!D_1$,
   \dots,~$!D_n$，使得 $!B \ident \SSubst{!A}{\subst{!D_1}{p_1},
     \dots, \subst{!D_n}{p_n}}$。
 \end{defn}
@@ -25,9 +29,9 @@
 \begin{lem}\ollabel{lem:valid-taut}
   设 $!A$ 是一个无模态的!!{formula}，其 !!{propositional
   variable} 为 $p_1$, \dots, $p_n$，并设 $!D_1$, \dots,
-  $!D_n$ 是模态!!{formula}。于是对任意指派 $\pAssign{v}$、
-  任意模型 $\mModel{M} = \tuple{W, R, V}$ 以及任意 $w \in W$，使得
-  $\pAssign{v}(p_i) = \True$ 当且仅当 $\mSat{M}{!D_i}[w]$，我们都有
+  $!D_n$ 是模态!!{formula}。则对任意指派 $\pAssign{v}$、
+  任意模型 $\mModel{M} = \tuple{W, R, V}$ 以及任意 $w \in W$，若
+  $\pAssign{v}(p_i) = \True$ 当且仅当 $\mSat{M}{!D_i}[w]$，则
   $\pSat{v}{!A}$ 当且仅当
   $\mSat{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
       \subst{!D_n}{p_n}}}[w]$。
@@ -139,13 +143,11 @@
 \end{prop}
 
 \begin{proof}
-  证其逆否命题：设 $!A$ 使得
+  证其逆否命题。设存在某个模型 $\mModel{M}$ 及世界~$w$，使得
   $\mSat/{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
-  \subst{!D_n}{p_n}}}[w]$，其中 $\mModel{M}$ 是某个模型、$w$ 是某个世界。
-  定义一个指派 $\pAssign{v}$，使得 $\pAssign{v}(p_i) =
-  \True$ 当且仅当 $\mSat{M}{!D_i}[w]$（并让 $\pAssign{v}$ 对 $q \notin \{p_1, \dots, p_n \}$ 指派
-  任意值）。于是根据
-  \olref{lem:valid-taut}，$\pSat/{v}{!A}$，因此 $!A$ 不是重言式。
+  \subst{!D_n}{p_n}}}[w]$。定义指派 $\pAssign{v}$，使得 $\pAssign{v}(p_i) =
+  \True$ 当且仅当 $\mSat{M}{!D_i}[w]$（并令 $\pAssign{v}$ 对 $q \notin \{p_1, \dots, p_n \}$ 任意赋值）。于是由
+  \olref{lem:valid-taut}，$\pSat/{v}{!A}$，故 $!A$ 不是重言式。
 \end{proof}
 
 \end{document}

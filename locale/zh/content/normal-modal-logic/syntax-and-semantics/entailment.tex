@@ -11,9 +11,8 @@
 \olsection{衍推}
 
 \begin{explain}
-  借助在世界处为真的定义，我们可以定义!!{formula}之间的衍推关系。!!^a{formula}~$!B$ 衍推~$!A$，当且仅当无论 $!B$ 何时为真，$!A$
-  也为真。这里，「无论何时」既指「无论我们考虑哪个模型」，也指
-  「无论我们考虑该模型中的哪个世界」。
+  借助在世界处为真的定义，可以定义!!{formula}之间的衍推关系。!!^a{formula}~$!B$ 衍推~$!A$，当且仅当只要 $!B$ 为真，$!A$ 也为真。
+  这里，「只要」同时意味着「无论考虑哪个模型」以及「无论考虑该模型中的哪个世界」。
 \end{explain}
 
 \begin{defn}
@@ -25,26 +24,19 @@
 \end{defn}
 
 \begin{ex}
-  为了说明!!a{formula}衍推另一个公式，我们必须借助 $\mSat{M}{}[w]$
-  的定义对所有模型进行推理。例如，要说明 $p \lif \Diamond p \Entails
-  \Box\lnot p \lif \lnot p$，我们或许可以如下论证：考虑一个模型
-  $\mModel{M} = \tuple{W, R, V}$ 及 $w \in W$，并设 $\mSat{M}{p \lif
-  \Diamond p}[w]$。我们必须说明 $\mSat{M}{\Box\lnot p \lif \lnot
-  p}[w]$。设并非如此。则 $\mSat{M}{\Box\lnot p}[w]$ 且
-  $\mSat/{M}{\lnot p}[w]$。由于 $\mSat/{M}{\lnot p}[w]$，故
-  $\mSat{M}{p}[w]$。根据假设，$\mSat{M}{p \lif \Diamond p}[w]$，于是
-  $\mSat{M}{\Diamond p}[w]$。根据 $\mSat{M}{\Diamond p}[w]$ 的定义，
-  存在某个 $w'$ 使 $Rww'$，且 $\mSat{M}{p}[w']$。又因
+  要说明!!a{formula}衍推另一个公式，需要借助 $\mSat{M}{}[w]$
+  的定义，对所有模型进行推理。例如，为说明 $p \lif \Diamond p \Entails \Box\lnot p \lif \lnot p$，可以如下论证：
+  考虑任意模型 $\mModel{M} = \tuple{W, R, V}$ 及 $w \in W$，并设 $\mSat{M}{p \lif \Diamond p}[w]$。
+  需证 $\mSat{M}{\Box\lnot p \lif \lnot p}[w]$。反设不然。
+  则 $\mSat{M}{\Box\lnot p}[w]$ 且 $\mSat/{M}{\lnot p}[w]$。
+  由于 $\mSat/{M}{\lnot p}[w]$，故 $\mSat{M}{p}[w]$。
+  根据假设，$\mSat{M}{p \lif \Diamond p}[w]$，于是 $\mSat{M}{\Diamond p}[w]$。
+  根据 $\mSat{M}{\Diamond p}[w]$ 的定义，存在某个 $w'$ 使 $Rww'$，且 $\mSat{M}{p}[w']$。又因
   $\mSat{M}{\Box \lnot p}[w]$，故 $\mSat{M}{\lnot p}[w']$，矛盾。
 
-  为了说明!!a{formula}~$!B$ 不衍推另一个公式~$!A$，我们必须给出一个
-  反例，即一个模型 $\mModel{M} = \tuple{W, R, V}$，在其中我们说明在某
-  个世界~$w \in W$ 处有 $\mSat{M}{!B}[w]$ 但 $\mSat/{M}{!A}[w]$。
-  我们来说明 $p \lif \Diamond p \Entails/ \Box p \lif p$。考虑
-  \olref{fig:counterex} 中的模型。我们有 $\mSat{M}{\Diamond p}[w_1]$，
-  从而 $\mSat{M}{p \lif \Diamond p}[w_1]$。然而，由于
-  $\mSat{M}{\Box p}[w_1]$ 但 $\mSat/{M}{p}[w_1]$，我们有
-  $\mSat/{M}{\Box p \lif p}[w_1]$。
+  要说明!!a{formula}~$!B$ 不衍推另一个公式~$!A$，只需给出一个反例，即给出模型 $\mModel{M} = \tuple{W, R, V}$ 及其中某个世界~$w \in W$，使得 $\mSat{M}{!B}[w]$ 但 $\mSat/{M}{!A}[w]$。
+  下面说明 $p \lif \Diamond p \Entails/ \Box p \lif p$。考虑 \olref{fig:counterex} 中的模型。我们有 $\mSat{M}{\Diamond p}[w_1]$，从而 $\mSat{M}{p \lif \Diamond p}[w_1]$。
+  然而，由于 $\mSat{M}{\Box p}[w_1]$ 但 $\mSat/{M}{p}[w_1]$，故 $\mSat/{M}{\Box p \lif p}[w_1]$。
   \begin{figure}
   \begin{center}
     \begin{tikzpicture}[modal]
@@ -59,11 +51,11 @@
   \ollabel{fig:counterex}
   \end{figure}
 
-  往往非常简单的一类反例就足够了。模型 $\mModel{M'} = \{W', R', V'\}$
-  其中 $W' = \{w\}$，$R' = \emptyset$，$V'(p) = \emptyset$ 也是一个反
-  例：由于 $\mSat/{M'}{p}[w]$，故 $\mSat{M'}{p \lif \Diamond p}[w]$。
-  因为从~$w$ 出发没有任何可及世界，我们有 $\mSat{M'}{\Box p}[w]$，从
-  而有 $\mSat/{M'}{\Box p \lif p}[w]$。
+  往往非常简单的反例就足够了。模型 $\mModel{M'} = \{W', R', V'\}$，
+  其中 $W' = \{w\}$、$R' = \emptyset$ 且 $V'(p) = \emptyset$，也是一个反例：
+  由于 $\mSat/{M'}{p}[w]$，故 $\mSat{M'}{p \lif \Diamond p}[w]$。
+  由于从~$w$ 出发没有任何可及世界，$\mSat{M'}{\Box p}[w]$，
+  从而 $\mSat/{M'}{\Box p \lif p}[w]$。
 \end{ex}
 
 \begin{prob}

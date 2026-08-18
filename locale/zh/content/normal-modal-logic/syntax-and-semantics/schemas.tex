@@ -11,22 +11,19 @@
 \olsection{模式与有效性}
 
 \begin{defn}
-  一个\emph{模式}是某个模态!!{formula}~$!C$ 的全部代入特例
-  所组成的!!{formula}集合，且仅包含这些特例，即
+  一个\emph{模式}是这样一个!!{formula}集合：它恰好由某个模态!!{formula}~$!C$ 的全部代入特例组成，即
   \[
   \Setabs{!B}{\lexists[!D_1], \dots, \lexists[!D_n] \left(!B =
   \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \right) }.
   \]
-  该!!{formula}~$!C$ 称为这个模式的\emph{特征}!!{formula}，它在对!!{propositional variable}的重命名下是唯一的。
-  若!!^a{formula}~$!A$ 是该集合的一个成员，则它是这一模式的一个
-  \emph{特例}。
+  !!{formula}~$!C$ 称为该模式的\emph{特征}!!{formula}，它在对!!{propositional variable}重命名的意义下是唯一的。
+  若!!^a{formula}~$!A$ 是该集合的成员，则称它为这一模式的一个\emph{特例}。
 \end{defn}
 
-把「$!A$」、「$!B$」、\dots 代入~$!C$ 的原子成分所得的元语言表达式来表示
-一个模式是很方便的。例如，下面这些都表示一个模式：
-「$!A$」、「$!A \lif \Box!A$」、「$!A \lif (!B \lif !A)$」。它们分别对应于
-特征!!{formula} $p$、$p \lif \Box p$、$p \lif (q
-\lif p)$。模式「$!A$」表示\emph{所有}!!{formula}组成的集合。
+用将「$!A$」、「$!B$」、\dots 代入~$!C$ 的原子成分后所得的元语言表达式来表示模式是很方便的。
+例如，以下表达式都表示模式：「$!A$」、「$!A \lif \Box!A$」、「$!A \lif (!B \lif !A)$」。
+它们分别对应特征!!{formula} $p$、$p \lif \Box p$ 与 $p \lif (q \lif p)$。
+模式「$!A$」表示由\emph{所有}!!{formula}组成的集合。
 
 \begin{defn}
   一个模式在一个模型中为\emph{真}，当且仅当它的所有特例都为真；一个
@@ -41,16 +38,13 @@
 \end{prop}
 
 \begin{proof}
-  我们需要证明该模式的所有特例在每个模型的每个世界里都为真。因此设
-  $\mModel{M} = \tuple{W,R,V}$ 与 $w \in
-  W$ 是任意的。要证明一个条件句在世界处为真，我们要假定
-  前件为真以证明后件也为真。在本例中，设
-  $\mSat{M}{\Box(!A \lif !B)}[w]$ 且
-  $\mSat{M}{\Box !A}[w]$。我们需要证明 $\mSat{M}{\Box !B}[w]$。因此设
-  $w'$ 是任意满足 $Rww'$ 的。则由第一个假设得
-  $\mSat{M}{!A \lif !B}[w']$，由第二个假设得
-  $\mSat{M}{!A}[w']$。由此得 $\mSat{M}{!B}[w']$。由于 $w'$
-  是任意的，故 $\mSat{M}{\Box !B}[w]$。
+  需证该模式的所有特例在每个模型的每个世界处都为真。
+  任取 $\mModel{M} = \tuple{W,R,V}$ 及 $w \in W$。
+  要证明一个条件句在世界处为真，可以假设其前件为真，并证明后件也为真。
+  在本例中，设 $\mSat{M}{\Box(!A \lif !B)}[w]$ 且 $\mSat{M}{\Box !A}[w]$。
+  需证 $\mSat{M}{\Box !B}[w]$。任取满足 $Rww'$ 的~$w'$。
+  由第一个假设得 $\mSat{M}{!A \lif !B}[w']$，由第二个假设得 $\mSat{M}{!A}[w']$，从而 $\mSat{M}{!B}[w']$。
+  由于 $w'$ 是任意的，故 $\mSat{M}{\Box !B}[w]$。
 \end{proof}
 
 \begin{prop}\ollabel{prop:Dual-valid}
@@ -81,22 +75,16 @@
 \end{prop}
 
 \begin{proof}
-  「如果」方向是显然的，因为 $!A$ 是它自身的代入
-  特例。
+  「如果」方向显然成立，因为 $!A$ 是它自身的代入特例。
 
-  为了证明「仅当」方向，我们证明如下论断：设
-  $\mModel{M} = \tuple{W, R, V}$ 是一个模态模型，且 $!B \ident
-  \SSubst{!A}{\subst{!D_1}{p_1},\dots,\subst{!D_n}{p_n}}$ 是
-  $!A$~的一个代入特例。定义 $\mModel{M'} = \tuple{W, R,
-    V'}$ 为 $V'(p_i) = \Setabs{w}{\mSat{M}{!D_i}[w]}$。则
-  对任意~$w \in W$，$\mSat{M}{!B}[w]$ 当且仅当 $\mSat{M'}{!A}[w]$。
-  （我们把该证明留作一项习题。）现在假设 $!A$ 是有效的，
-  但 $!A$~的某个代入特例 $!B$ 不是有效的。则对
-  某个 $\mModel{M} = \tuple{W, R, V}$ 与某个 $w \in W$，有
-  $\mSat/{M}{!B}[w]$。但由上述论断得 $\mSat/{M'}{!A}[w]$，从而
-  $!A$ 不是有效的，矛盾。
+  对于「仅当」方向，先证明如下论断：
+  设 $\mModel{M} = \tuple{W, R, V}$ 是一个模态模型，且 $!B \ident \SSubst{!A}{\subst{!D_1}{p_1},\dots,\subst{!D_n}{p_n}}$ 是 $!A$~的一个代入特例。
+  定义 $\mModel{M'} = \tuple{W, R, V'}$，其中 $V'(p_i) = \Setabs{w}{\mSat{M}{!D_i}[w]}$。
+  则对任意~$w \in W$，$\mSat{M}{!B}[w]$ 当且仅当 $\mSat{M'}{!A}[w]$。（该论断的证明留作习题。）
+  现设 $!A$ 有效，但 $!A$~的某个代入特例 $!B$ 无效。
+  于是存在某个 $\mModel{M} = \tuple{W, R, V}$ 及某个 $w \in W$，使得 $\mSat/{M}{!B}[w]$。
+  由上述论断，$\mSat/{M'}{!A}[w]$，从而 $!A$ 无效，矛盾。
 \end{proof}
-
 \begin{prob}
   证明
   \olref[nml][syn][sch]{prop:valid-instances} 的证明中「仅当」部分里

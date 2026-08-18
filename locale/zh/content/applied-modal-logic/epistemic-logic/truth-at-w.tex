@@ -10,35 +10,35 @@
 
 \olsection{在世界处为真}
 
-正如在正规模态逻辑中一样，每个认知模型都决定哪些!!{formula}在其哪些世界中为真。我们使用同样的记号「模型 $\mModel{M}$ 使!!{formula}~$!A$ 在世界~$w$ 处为真」作为关系语义的基本概念。这个关系归纳地定义，并且对所有非模态算子而言与正规模态情形完全相同。
+与正规模态逻辑一样，每个认知模型都决定哪些!!{formula}在其中哪些世界处为真。我们仍以「模型 $\mModel{M}$ 使!!{formula}~$!A$ 在世界~$w$ 处为真」这一关系作为关系语义的基本概念。该关系按归纳方式定义；对于所有非模态算子，其定义与正规模态逻辑中的情形完全相同。
 
 \begin{defn}\ollabel{defn:mmodels}
-  \emph{!!a{formula}~$!A$ 在~$w$ 处为真}，在~$\mModel M$ 中，用符号表示为：
+  在模型~$\mModel M$ 中，\emph{!!a{formula}~$!A$ 在~$w$ 处为真}，记作
   $\mSat{M}{!A}[w]$，归纳定义如下：
   \begin{enumerate}
-  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{绝非 $\mSat{M}{\lfalse}[w]$}.}{}
-  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{恒有 $\mSat{M}{\ltrue}[w]$}.}{}
-  \item $\mSat{M}{p}[w]$ 当且仅当 $w \in V(p)$
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ 绝不成立}。}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ 恒成立}。}{}
+  \item $\mSat{M}{p}[w]$ 当且仅当 $w \in V(p)$。
   \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat/{M}{!B}[w]$}.}{}
+    $\mSat/{M}{!B}[w]$}。}{}
   \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat{M}{!B}[w]$ 且 $\mSat{M}{!C}[w]$}.}{}
+    $\mSat{M}{!B}[w]$ 且 $\mSat{M}{!C}[w]$}。}{}
   \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}（或二者同时成立）.}{}
+    $\mSat{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}（或二者均成立）。}{}
   \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat/{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}.}{}
+    $\mSat/{M}{!B}[w]$ 或 $\mSat{M}{!C}[w]$}。}{}
   \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    或者 $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 同时成立，或者
-    $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 均不成立}.}{}
+    $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 均成立，或
+    $\mSat{M}{!B}[w]$ 与 $\mSat{M}{!C}[w]$ 均不成立}。}{}
   \item\ollabel{defn:sub:mmodels-box}
     \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ 当且仅当
-    $\mSat{M}{!B}[w']$ 对一切满足 $R_a ww'$ 的 $w' \in W$ 成立}
+    对所有满足 $R_a ww'$ 的 $w' \in W$，都有 $\mSat{M}{!B}[w']$。}
   \end{enumerate}
 \end{defn}
 
-不过，这里正是我们需要考虑对我们的可及关系加以限制的地方。毕竟，按条款~\olref{defn:sub:mmodels-box}，当没有任何满足 $R_a ww'$ 的~$w'$ 时，!!a{formula}~$\Knows_a !B$ 就在~$w$ 处为真。这与正规模态逻辑中的条款相同；当一个世界没有后继点时，所有 $\Box$-公式在那里都空真地成立。如果我们把 $\Knows$ 视为表示\emph{知识}，这就显得极其反直觉。毕竟，我们倾向于认为，在任何情形下，一个主体都不可能同时知道 $!A$ 与 $\lnot !A$。
+不过，在这里需要考虑对可及关系施加限制。毕竟，按条款~\olref{defn:sub:mmodels-box}，如果不存在满足 $R_a ww'$ 的~$w'$，!!a{formula}~$\Knows_a !B$ 就在~$w$ 处为真。这一条款与正规模态逻辑中的相同：当一个世界没有后继点时，所有 $\Box$-公式在那里都空真地成立。如果把 $\Knows$ 理解为表示\emph{知识}，这一结果就显得极其反直觉。毕竟，我们倾向于认为，在任何情形下，一个主体都不可能同时知道 $!A$ 与 $\lnot !A$。
 
-一种解决办法是确保我们在认知逻辑中的可及关系总是\emph{自反的}。这大致对应于如下观念：现实世界与主体所掌握的信息是一致的。事实上，认知逻辑通常使用 S5，但其他认知逻辑也可能使用较弱的系统，具体取决于他们想让 $\Knows_a$ 关系表示什么。
+一种解决办法是要求认知逻辑中的可及关系始终是\emph{自反的}。这大致对应于如下观念：现实世界与主体所掌握的信息是一致的。事实上，认知逻辑通常使用 S5；不过，也有认知逻辑采用较弱的系统，具体取决于希望 $\Knows_a$ 关系表示什么。
 
 \begin{figure}
   \begin{center}
@@ -72,7 +72,7 @@
     \end{enumerate}
 \end{prob}
 
-在我们给出世界处为真的基本定义之后，正规模态逻辑中的其他语义概念，如模态有效性与衍推，只需照搬过来，应用于这种关于模态算子解释的新思考方式即可。
+给出世界处为真的基本定义后，正规模态逻辑中的其他语义概念，如模态有效性与衍推，也可直接沿用到这种新的模态算子解释方式中。
 
 我们现在也能够给出公共知识算子~$\CKnows_G$ 的真值条件。回顾 \olref[sfr][rel][ops]{sec}，关系~$R$ 的\emph{传递闭包}~$R^+$ 定义为
 \begin{align*}
