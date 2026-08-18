@@ -32,34 +32,34 @@
 公开宣告算子的作用与盒子算子相似，因此我们对语言的归纳定义也随之给出：
 
 \begin{defn}
-  认知语言的\emph{!!^{formula}}按如下方式归纳地定义：
+  认知语言的\emph{!!^{formula}}归纳定义如下：
   \begin{enumerate}
   \tagitem{prvFalse}{$\lfalse$ 是原子!!{formula}。}{}
 
   \tagitem{prvTrue}{$\ltrue$ 是原子!!{formula}。}{}
 
-  \item 每个命题变元 $\Obj p_i$ 都是（原子的）
+  \item 每个命题变元 $\Obj p_i$ 都是（原子）
   !!{formula}。
 
-  \tagitem{prvNot}{如果 $!A$ 是!!a{formula}，则 $\lnot !A$ 是
+  \tagitem{prvNot}{若 $!A$ 是!!a{formula}，则 $\lnot !A$ 是
   !!a{formula}。}{}
 
-  \tagitem{prvAnd}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \land
+  \tagitem{prvAnd}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \land
   !B)$ 是!!a{formula}。}{}
 
-  \tagitem{prvOr}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lor !B)$
+  \tagitem{prvOr}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lor !B)$
   是!!a{formula}。}{}
 
-  \tagitem{prvIf}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lif !B)$
+  \tagitem{prvIf}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \lif !B)$
   是!!a{formula}。}{}
 
-  \tagitem{prvIff}{如果 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \liff !B)$
+  \tagitem{prvIff}{若 $!A$ 和 $!B$ 都是!!{formula}，则 $(!A \liff !B)$
   是!!a{formula}。}{}
 
-  \item 如果 $!A$ 是!!a{formula}且 $a \in G$，则 $\Knows_a !A$ 是
+  \item 若 $!A$ 是!!a{formula}且 $a \in G$，则 $\Knows_a !A$ 是
   !!a{formula}。
 
-  \item 如果 $!A$ 和 $!B$ 都是!!{formula}，则 $[!A] !B$ 是!!a{formula}。
+  \item 若 $!A$ 和 $!B$ 都是!!{formula}，则 $[!A] !B$ 是!!a{formula}。
 
   \tagitem{limitClause}{除此之外没有其他!!a{formula}。}{}
 \end{enumerate}
