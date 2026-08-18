@@ -11,12 +11,12 @@
 \olsection{自然演绎}
 
 不含 $\FalseCl$ 规则的自然演绎是一个标准的用于直觉主义逻辑的!!{derivation}系统。我们在此复述这些规则，并用 BHK 解释来指明其动机。在
-每种情形下，我们都可以把某条规则设想为允许我们断言：如果前提有构造，那么
+每种情形下，我们都可以把某条规则设想为允许我们断言：若前提有构造，则
 结论也有构造。
 
 由于自然演绎中的!!{derivation}都带有未消去的假设，我们应当把这样的!!a{derivation}，例如从!!{undischarged}假设~$\Gamma$ 推出的~$!A$，看作
-把 $\Gamma$ 中所有 $!B \in \Gamma$ 的构造变为~$!A$ 的一个构造的函数。如果
-存在从无!!{undischarged}假设推出的~$!A$ 的!!a{derivation}，那么在 BHK
+把 $\Gamma$ 中所有 $!B \in \Gamma$ 的构造变为~$!A$ 的一个构造的函数。若
+存在从无!!{undischarged}假设推出的~$!A$ 的!!a{derivation}，则在 BHK
 解释的意义下就存在~$!A$ 的一个构造。不过，为了讨论方便，非必要时我们将
 省去~$\Gamma$。
 
@@ -68,7 +68,7 @@ $\tuple{N_1, N_2}$。于是设我们有这样的一个有序对。那么我们�
   \DisplayProof
 \end{defish}
 
-如果我们有从!!{undischarged}假设~$!A$ 推出~$!B$ 的!!a{derivation}，那么
+若我们有从!!{undischarged}假设~$!A$ 推出~$!B$ 的!!a{derivation}，则
 就有一个函数~$f$ 把~$!A$ 的构造变为~$!B$ 的构造。这同一个函数就是 $!A
 \lif !B$ 的一个构造。因此，若 $\Intro\lif$ 的前提建立在~$!A$ 的一个构造之上而具有构造，
 则结论 $!A \lif !B$ 也有构造。
@@ -102,7 +102,7 @@ $\tuple{N_1, N_2}$。于是设我们有这样的一个有序对。那么我们�
 \DisplayProof
 \end{defish}
 
-如果我们有~$!A_i$ 的一个构造~$N_i$，就可以把它变为~$!A_1 \lor !A_2$ 的一个
+若我们有~$!A_i$ 的一个构造~$N_i$，就可以把它变为~$!A_1 \lor !A_2$ 的一个
 构造~$\tuple{i, N_i}$。另一方面，设我们有~$!A_1 \lor !A_2$ 的一个构造，即一个
 有序对 $\tuple{i, N_i}$，其中 $N_i$ 是~$!A_i$ 的一个构造，并且有函数 $f_1$、
 $f_2$，它们分别把 $!A_1$、$!A_2$ 的构造变为~$!C$ 的构造。那么 $f_i(N_i)$ 就是
@@ -117,17 +117,17 @@ $f_2$，它们分别把 $!A_1$、$!A_2$ 的构造变为~$!C$ 的构造。那么 
   \DisplayProof
 \end{defish}
 
-如果我们有从!!{undischarged}假设~$!B_1$、\dots、$!B_n$
-推出~$\lfalse$ 的!!a{derivation}，那么就有一个函数~$f(M_1, \dots, M_n)$ 把
+若我们有从!!{undischarged}假设~$!B_1$、\dots、$!B_n$
+推出~$\lfalse$ 的!!a{derivation}，则就有一个函数~$f(M_1, \dots, M_n)$ 把
 $!B_1$、\dots、$!B_n$ 的构造变为~$\lfalse$ 的一个构造。由于 $\lfalse$ 没有构造，
 $!B_1$、\dots、$!B_n$ 全部同时有构造也不可能。因此，$f$ 也具有如下性质：
-\emph{如果} $M_1$、\dots、$M_n$ 分别是 $!B_1$、\dots、$!B_n$ 的构造，
+\emph{若} $M_1$、\dots、$M_n$ 分别是 $!B_1$、\dots、$!B_n$ 的构造，
 \emph{那么} $f(M_1, \dots, M_n)$ 就是~$!A$ 的一个构造。
 
 \subsection{$\lnot$ 的规则}
 
 由于 $\lnot !A$ 定义为 $!A \lif \lfalse$，严格说来我们并不需要~$\lnot$ 的规则。
-但如果需要，看起来就是这样的：
+但若需要，看起来就是这样的：
 
 \begin{defish}
 \AxiomC{$\Discharge{!A}{n}$}
@@ -216,8 +216,8 @@ $!B_1$、\dots、$!B_n$ 全部同时有构造也不可能。因此，$f$ 也具�
 \end{enumerate}
 
 \begin{prop}
-  如果 $\Gamma \Proves !A$ 在直觉主义逻辑的自然演绎中成立，那么 $\Gamma
-  \Proves !A$ 在经典逻辑中也成立。特别是，如果 $!A$ 是直觉主义定理，那么
+  若 $\Gamma \Proves !A$ 在直觉主义逻辑的自然演绎中成立，则 $\Gamma
+  \Proves !A$ 在经典逻辑中也成立。特别是，若 $!A$ 是直觉主义定理，则
   $!A$ 也是经典定理。
 \end{prop}
 

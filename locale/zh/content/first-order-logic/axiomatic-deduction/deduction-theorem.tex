@@ -18,13 +18,13 @@
 正如我们所看到的，在公理系统中给出!!{derivation}颇为繁琐，而且!!{derivation}可能难以找到。与其真正写出长串的!!{formula}，通常更简单的做法是利用少数几个简单结果来论证这样的!!{derivation}存在。我们已经确立了三个这样的结果：
 \olref[ptn]{prop:reflexivity}说，当我们知道 $!A \in
 \Gamma$ 时，总可以断言 $\Gamma
-\Proves !A$。\olref[ptn]{prop:monotonicity}说，如果 $\Gamma \Proves !A$，则亦有 $\Gamma \cup \{!B\} \Proves !A$。而
-\olref[ptn]{prop:transitivity}蕴含：如果 $\Gamma \Proves !A$ 且
+\Proves !A$。\olref[ptn]{prop:monotonicity}说，若 $\Gamma \Proves !A$，则亦有 $\Gamma \cup \{!B\} \Proves !A$。而
+\olref[ptn]{prop:transitivity}蕴含：若 $\Gamma \Proves !A$ 且
 $!A \Proves !B$，则 $\Gamma \Proves !B$。这里还有另一个简单
 结果，即分离规则的一个「元」版本：
 
 \begin{prop}
-  \ollabel{prop:mp} 如果 $\Gamma \Proves !A$ 且 $\Gamma \Proves !A \lif
+  \ollabel{prop:mp} 若 $\Gamma \Proves !A$ 且 $\Gamma \Proves !A \lif
   !B$，则 $\Gamma \Proves !B$。
 \end{prop}
 
@@ -45,22 +45,22 @@ $!A \Proves !B$，则 $\Gamma \Proves !B$。这里还有另一个简单
 \end{thm}
 
 \begin{proof}
-「若」方向是直接的。如果 $\Gamma \Proves !A \lif !B$，则由
+「若」方向是直接的。若 $\Gamma \Proves !A \lif !B$，则由
 \olref[ptn]{prop:monotonicity} 亦有 $\Gamma \cup \{!A\} \Proves !A \lif !B$。再由
 \olref[ptn]{prop:reflexivity}，$\Gamma \cup \{!A\} \Proves !A$。于是，由 \olref{prop:mp}，$\Gamma \cup
 \{!A\} \Proves !B$。
 
 对于「仅当」方向，我们以 $!B$ 从 $\Gamma \cup \{!A\}$ 出发的!!{derivation}的长度进行归纳。
 
-对于归纳基始，我们证明该断言对所有长度为 $1$ 的!!{derivation}成立。$!B$ 从 $\Gamma \cup \{!A\}$ 出发的长度为 $1$ 的!!^a{derivation}恰由 $!B$ 本身构成；若它是正确的，则 $!B$ 要么 $\in \Gamma \cup \{!A\}$，要么是一条公理。如果 $!B \in \Gamma$ 或者是公理，则 $\Gamma \Proves !B$。我们亦有 $\Gamma
+对于归纳基始，我们证明该断言对所有长度为 $1$ 的!!{derivation}成立。$!B$ 从 $\Gamma \cup \{!A\}$ 出发的长度为 $1$ 的!!^a{derivation}恰由 $!B$ 本身构成；若它是正确的，则 $!B$ 要么 $\in \Gamma \cup \{!A\}$，要么是一条公理。若 $!B \in \Gamma$ 或者是公理，则 $\Gamma \Proves !B$。我们亦有 $\Gamma
 \Proves !B \lif (!A \lif !B)$，这来自 \olref[prp]{ax:lif1}，而
-\olref{prop:mp} 给出 $\Gamma \Proves !A \lif !B$。如果 $!B \in \{ !A\}$，则 $\Gamma \Proves !A \lif !B$，因为最后的那个!!{sentence}~$!A
+\olref{prop:mp} 给出 $\Gamma \Proves !A \lif !B$。若 $!B \in \{ !A\}$，则 $\Gamma \Proves !A \lif !B$，因为最后的那个!!{sentence}~$!A
 \lif !B$ 与 $!A \lif !A$ 相同，而我们已在
 \olref[pro]{ex:identity} 中!!{derive}出了它。
 
 对于归纳步骤，设 $!B$ 从
 $\Gamma \cup \{!A\}$ 出发的!!a{derivation}以某一步骤$~!B$ 结尾，而该步骤由分离
-规则证成。（如果它不是由分离规则证成的，则 $!B \in \Gamma$、$!B
+规则证成。（若它不是由分离规则证成的，则 $!B \in \Gamma$、$!B
 \ident !A$，或 $!B$ 是一条公理，此时与归纳基始相同的推理适用。）那么在!!{derivation}中某两个较早的步骤是 $!C \lif !B$ 与 $!C$，对某个!!{formula}~$!C$
 而言，即 $\Gamma \cup \{!A\} \Proves !C \lif !B$ 且 $\Gamma \cup \{!A\}
 \Proves !C$，而相应的!!{derivation}更短，因此归纳
@@ -88,14 +88,14 @@ $\Gamma \Proves !A \lif !B$，如所要求。
 \begin{enumerate}
 \item $\Proves (!A \lif !B) \lif ((!B \lif !C)
   \lif (!A \lif !C)$； \ollabel{derivfacts:a}
-\item 如果 $\Gamma \cup \{ \lnot !A\}
+\item 若 $\Gamma \cup \{ \lnot !A\}
   \Proves \lnot !B$，则 $\Gamma \cup \{ !B\} \Proves
   !A$（逆否律）； \ollabel{derivfacts:b}
 \item  $\{ !A, \lnot!A\} \Proves
     !B$（爆炸原理）； \ollabel{derivfacts:c}
 \item  $\{ \lnot\lnot!A\} \Proves
   !A$（双重否定消去）；\ollabel{derivfacts:d}
-\item 如果 $\Gamma \Proves \lnot\lnot!A$，则 $\Gamma \Proves
+\item 若 $\Gamma \Proves \lnot\lnot!A$，则 $\Gamma \Proves
   !A$；\ollabel{derivfacts:e}
 \end{enumerate}
 \end{prop}

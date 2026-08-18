@@ -21,9 +21,9 @@
 
 \begin{prop}\ollabel{prop:sat-entails}
   \begin{enumerate}
-  \item\ollabel{prop:sat-entails1} 如果 $\mSat{M}{\Gamma}[w]$ 且
+  \item\ollabel{prop:sat-entails1} 若 $\mSat{M}{\Gamma}[w]$ 且
     $\Gamma \Entails !A$，则 $\mSat{M}{!A}[w]$。
-  \item\ollabel{prop:sat-entails2} 如果 $\mSat{M}{\Gamma}$ 且 $\Gamma
+  \item\ollabel{prop:sat-entails2} 若 $\mSat{M}{\Gamma}$ 且 $\Gamma
     \Entails !A$，则 $\mSat{M}{!A}$。
   \end{enumerate}
 \end{prop}
@@ -31,7 +31,7 @@
 \begin{proof}
   \begin{enumerate}
   \item 设 $\mSat{M}{\Gamma}$。由于 $\Gamma \Entails !A$，我们
-    知道如果 $\mSat{M}{\Gamma}[w]$，则 $\mSat{M}{!A}[w]$。又因为对所有
+    知道若 $\mSat{M}{\Gamma}[w]$，则 $\mSat{M}{!A}[w]$。又因为对所有
     $u \in W$ 都有 $\mSat{M}{\Gamma}[u]$，故 $\mSat{M}{\Gamma}[w]$。
     因此 $\mSat{M}{!A}[w]$。
   \item 直接由 \olref{prop:sat-entails1} 得出。

@@ -16,7 +16,7 @@ $\Sigma$-一致的集合中。我们对典范模型的构造将表明，对每�
 因此，\zhFirst{Lindenbaum}{林登鲍姆}引理保证了每个 $\Sigma$-一致的集合在典范模型的某个世界处为真。
 
 \begin{thm}[\zhFirst{Lindenbaum}{林登鲍姆}引理]\ollabel{thm:lindenbaum}
-  如果 $\Gamma$ 是 $\Sigma$-一致的，则存在一个完全的
+  若 $\Gamma$ 是 $\Sigma$-一致的，则存在一个完全的
   $\Sigma$-一致的集合 $\Delta$ 扩张~$\Gamma$。
 \end{thm}
 
@@ -29,7 +29,7 @@ $\Delta_n$，然后置 $\Delta = \bigcup_n \Delta_n$。我们先令 $\Delta_0 = 
 \[
 \Delta_{n+1} =
 \begin{cases}
-  \Delta_n \cup \{!A_n\}, & \text{如果 $\Delta_n \cup \{ !A_n\}$
+  \Delta_n \cup \{!A_n\}, & \text{若 $\Delta_n \cup \{ !A_n\}$
     $\Sigma$-一致；}\\
   \Delta_n \cup \{ \lnot !A_n\}, & \text{否则。}
 \end{cases}
@@ -46,7 +46,7 @@ $\Delta_n$，然后置 $\Delta = \bigcup_n \Delta_n$。我们先令 $\Delta_0 = 
 \Delta_{m}$。）在构造的每一阶段，我们要么加入 $!A_n$ 要么加入 $\lnot !A_n$，而每个!!{formula}都（至少一次）出现在所有~$!A_n$ 的列表中。因此，对每个 $!A$，要么 $!A \in \Delta$，
 要么 $\lnot !A \in \Delta$，所以按定义 $\Delta$ 是完全的。
 
-最后，我们必须表明 $\Delta$ 是 $\Sigma$-一致的。为此，我们证明（a）如果 $\Delta$ 是
+最后，我们必须表明 $\Delta$ 是 $\Sigma$-一致的。为此，我们证明（a）若 $\Delta$ 是
 $\Sigma$-不一致的，则某个 $\Delta_n$ 会是 $\Sigma$-不一致的，以及（b）所有 $\Delta_n$
 都是 $\Sigma$-一致的。
 
@@ -76,9 +76,9 @@ $\Delta_n \cup \{!A_n\}$ 或 $\Delta_n \cup \{\lnot!A_n\}$ 之一是
 
 \begin{proof}
   设 $\Gamma \Proves[\Sigma] !A$，并设 $\Delta$ 是任意扩张 $\Gamma$ 的完全 $\Sigma$-一致的集合。
-  如果 $!A \notin \Delta$，则由极大性 $\lnot!A \in \Delta$，因此
+  若 $!A \notin \Delta$，则由极大性 $\lnot!A \in \Delta$，因此
   $\Delta \Proves[\Sigma] !A$（由单调性）且 $\Delta \Proves[\Sigma] \lnot!A$
-  （由自反性），从而 $\Delta$ 是不一致的。反之，如果 $\Gamma \Proves/[\Sigma] !A$，则
+  （由自反性），从而 $\Delta$ 是不一致的。反之，若 $\Gamma \Proves/[\Sigma] !A$，则
   $\Gamma \cup \{ \lnot!A\}$ 是 $\Sigma$-一致的，且由\zhFirst{Lindenbaum}{林登鲍姆}引理存在一个扩张
   $\Gamma \cup \{ \lnot!A \}$ 的完全一致集合 $\Delta$。由一致性，$!A \notin \Delta$。
 \end{proof}
