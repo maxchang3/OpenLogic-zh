@@ -23,32 +23,32 @@
     \iftag{prvTrue}{\pValue{v}(\ltrue) & = \True; \\}{}
     \pValue{v}(\Obj p_n) & = \pAssign{v}(\Obj p_n); \\
     \iftag{prvNot}{\pValue{v}(\lnot !A) & = \begin{cases}
-        \True & \text{如果 } \pValue{v}(!A) = \False;\\
+        \True & \text{若 } \pValue{v}(!A) = \False;\\
         \False & \text{否则。}
       \end{cases} \\ }{}
     \iftag{prvAnd}{\pValue{v}(!A \land !B) & = \begin{cases}
         \True &
-        \text{如果 $\pValue{v}(!A) = \True$ 且 $\pValue{v}(!B) = \True$;}\\
+        \text{若 $\pValue{v}(!A) = \True$ 且 $\pValue{v}(!B) = \True$;}\\
         \False &
-        \text{如果 $\pValue{v}(!A) = \False$ 或 $\pValue{v}(!B) = \False$}.
+        \text{若 $\pValue{v}(!A) = \False$ 或 $\pValue{v}(!B) = \False$}.
       \end{cases}\\}{}
     \iftag{prvOr}{\pValue{v}(!A \lor !B) & = \begin{cases}
         \True &
-        \text{如果 $\pValue{v}(!A) = \True$ 或 $\pValue{v}(!B) = \True$;}\\
+        \text{若 $\pValue{v}(!A) = \True$ 或 $\pValue{v}(!B) = \True$;}\\
         \False &
-        \text{如果 $\pValue{v}(!A) = \False$ 且 $\pValue{v}(!B) = \False$}.
+        \text{若 $\pValue{v}(!A) = \False$ 且 $\pValue{v}(!B) = \False$}.
       \end{cases}\\}{}
     \iftag{prvIf}{\pValue{v}(!A \lif !B) & = \begin{cases}
         \True &
-        \text{如果 $\pValue{v}(!A) = \False$ 或 $\pValue{v}(!B) = \True$;}\\
+        \text{若 $\pValue{v}(!A) = \False$ 或 $\pValue{v}(!B) = \True$;}\\
         \False &
-        \text{如果 $\pValue{v}(!A) = \True$ 且 $\pValue{v}(!B) = \False$}.
+        \text{若 $\pValue{v}(!A) = \True$ 且 $\pValue{v}(!B) = \False$}.
       \end{cases}\\}{}
     \iftag{prvIff}{\pValue{v}(!A \liff !B) & = \begin{cases}
         \True &
-        \text{如果 $\pValue{v}(!A) = \pValue{v}(!B)$;}\\
+        \text{若 $\pValue{v}(!A) = \pValue{v}(!B)$;}\\
         \False &
-        \text{如果 $\pValue{v}(!A) \neq \pValue{v}(!B)$}.
+        \text{若 $\pValue{v}(!A) \neq \pValue{v}(!B)$}.
       \end{cases}}{}
 \end{align*}
 \end{defn}
@@ -118,9 +118,9 @@
 \begin{gather*}
   \pValue{v}(\diamondsuit( !A , !B , !C ) ) = \begin{cases}
     \pValue{v}( !B ) &
-    \text{如果 $\pValue{v}(!A) = \True$;}\\
+    \text{若 $\pValue{v}(!A) = \True$;}\\
     \pValue{v}( !C ) &
-    \text{如果 $\pValue{v}(!A) = \False $}.
+    \text{若 $\pValue{v}(!A) = \False $}.
   \end{cases}
 \end{gather*}
 写出这个联结词的真值表。

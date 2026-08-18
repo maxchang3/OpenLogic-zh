@@ -18,7 +18,7 @@
 
 \begin{defn}
   若 $\mModel{F}$ 是一个框架，则我们称 $!A$ 在 $\mModel{F}$ 中\emph{有效}，即
-  $\mModel{F} \Entails !A$，如果对基于 $\mModel{F}$ 的每个模型~$\mModel{M}$ 都有 $\mSat{M}{!A}$。
+  $\mModel{F} \Entails !A$，若对基于 $\mModel{F}$ 的每个模型~$\mModel{M}$ 都有 $\mSat{M}{!A}$。
 
   若 $\mClass{F}$ 是一个框架类，则我们称 $!A$ 在 $\mClass{F}$ 中\emph{有效}，即
   $\mClass{F} \Entails !A$，当且仅当对每个框架~$\mModel{F} \in \mClass{F}$ 都有 $\mModel{F} \Entails !A$。
@@ -29,7 +29,7 @@
 \begin{rem}
 框架类中的有效性是模型类中有效性概念的一个特例：$\mClass{F} \Entails !A$ 当且仅当 $\mClass{C} \Entails !A$，其中 $\mClass{C}$ 是由所有基于~$\mClass{F}$ 中某个框架的模型组成的模型类。
 
-显然，如果!!a{formula}或一个模式是有效的，即在由\emph{全体}模型组成的模型类中有效，那么它在任意框架类~$\mClass{F}$ 中也有效。
+显然，若!!a{formula}或一个模式是有效的，即在由\emph{全体}模型组成的模型类中有效，则它在任意框架类~$\mClass{F}$ 中也有效。
 \end{rem}
 
 \end{document}

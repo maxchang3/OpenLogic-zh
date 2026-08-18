@@ -18,12 +18,12 @@
   \emph{模态逻辑}是一个模态!!{formula}集合~$\Sigma$，它
   \begin{enumerate}
   \item 包含所有重言式，并且
-  \item 对代入封闭，即，如果 $!A \in \Sigma$，并且
+  \item 对代入封闭，即，若 $!A \in \Sigma$，并且
     $!D_1$, \dots, $!D_n$ 是!!{formula}，则
     \[
     \SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \in \Sigma,
     \]
-    \item 对\emph{分离规则}封闭，即，如果 $!A$ 且 $!A
+    \item 对\emph{分离规则}封闭，即，若 $!A$ 且 $!A
       \lif !B \in \Sigma$，则 $!B \in \Sigma$。
   \end{enumerate}
 \end{defn}
@@ -32,13 +32,13 @@
 \emph{正规模态逻辑}。（当然，也有非正规模态逻辑，但通常的关系模型对它们并不合适。）
 
 \begin{defn}
-  一个模态逻辑 $\Sigma$ 是\emph{正规的}，如果它包含
+  一个模态逻辑 $\Sigma$ 是\emph{正规的}，若它包含
   \begin{align*}
     \tag{\Ax{K}} & \Box(p \lif q) \lif (\Box p \lif \Box q),
     \iftag{prvDiamond}{\\
       \tag{\Dual} & \Diamond p \liff \lnot\Box\lnot p}{}
   \end{align*}
-  并对\emph{必然化}封闭，即，如果 $!A \in
+  并对\emph{必然化}封闭，即，若 $!A \in
   \Sigma$，则 $\Box !A \in \Sigma$。
 \end{defn}
 
@@ -56,7 +56,7 @@
 \end{prop}
 
 \begin{proof}
-  对~$n$ 归纳：如果 $n = 1$，则该规则就是 \Nec，而每个正规模态逻辑都对 \Nec 封闭。
+  对~$n$ 归纳：若 $n = 1$，则该规则就是 \Nec，而每个正规模态逻辑都对 \Nec 封闭。
 
   现在假设结果对 $n-1$ 成立；我们证明它对~$n$ 成立。
 

@@ -15,12 +15,12 @@
 双模拟是我们可以在关系模型之间定义的一种关系，用来表明它们实际上具有相同的结构。而且，正如我们将看到的，它刻画了模型之间某种可用我们认知语言刻画出的等价性。
 
 \begin{defn}[双模拟]
-设 $M_1 = \tuple{W_1, R_1, V_1}$ 与 $M_2 = \tuple{W_2, R_2, V_2}$ 是两个关系模型。并设 $\mathcal{R} \subseteq W_1 \times W_2$ 是一个二元关系。我们说 $\mathcal{R}$ 是一个\emph{双模拟}，如果对每个 $\tuple{w_1, w_2} \in \mathcal{R}$ 都有：
+设 $M_1 = \tuple{W_1, R_1, V_1}$ 与 $M_2 = \tuple{W_2, R_2, V_2}$ 是两个关系模型。并设 $\mathcal{R} \subseteq W_1 \times W_2$ 是一个二元关系。我们说 $\mathcal{R}$ 是一个\emph{双模拟}，若对每个 $\tuple{w_1, w_2} \in \mathcal{R}$ 都有：
 
 \begin{enumerate}
   \item 对所有!!{propositional variable}~$p$，$w_1 \in V_1(p)$ 当且仅当 $w_2 \in V_2(p)$。
-  \item 对所有主体 $a \in A$ 与世界 $v_1 \in W_1$，如果 $R_{1_a} w_1 v_1$，则存在某个 $v_2 \in W_2$ 使得 $R_{2_a} w_2 v_2$，且 $\tuple{v_1, v_2} \in \mathcal{R}$。
-  \item 对所有主体 $a \in A$ 与世界 $v_2 \in W_2$，如果 $R_{2_a} w_2 v_2$，则存在某个 $v_1 \in W_1$ 使得 $R_{1_a} w_1 v_1$，且 $\tuple{v_1, v_2} \in \mathcal{R}$。
+  \item 对所有主体 $a \in A$ 与世界 $v_1 \in W_1$，若 $R_{1_a} w_1 v_1$，则存在某个 $v_2 \in W_2$ 使得 $R_{2_a} w_2 v_2$，且 $\tuple{v_1, v_2} \in \mathcal{R}$。
+  \item 对所有主体 $a \in A$ 与世界 $v_2 \in W_2$，若 $R_{2_a} w_2 v_2$，则存在某个 $v_1 \in W_1$ 使得 $R_{1_a} w_1 v_1$，且 $\tuple{v_1, v_2} \in \mathcal{R}$。
 \end{enumerate}
 
 当 $M_1$ 与 $M_2$ 之间存在一个连接世界 $w_1$ 与 $w_2$ 的双模拟时，我们也可以写作 $\tuple{M_1, w_1} \leftrightarroweq \tuple{M_2, w_2}$，并把 $\tuple{M_1, w_1}$ 与 $\tuple{M_2, w_2}$ 称为\emph{双模拟等价的}。
@@ -29,7 +29,7 @@
 双模拟关系中的不同条款保证了不同的事情。条款 1 保证双模拟等价的世界满足相同的无模态公式，因为它保证了对所有!!{propositional variable}的一致。另外两个条款——有时分别被称为「forth」条件与「back」条件——保证可及关系具有相同的结构。
 
 \begin{thm}
-如果 $\tuple{M_1, w_1} \leftrightarroweq \tuple{M_2, w_2}$，则对每个!!{formula}~$!A$，我们有 $\mSat{M_1}{!A}[w_1]$ 当且仅当 $\mSat{M_2}{!A}[w_2]$。
+若 $\tuple{M_1, w_1} \leftrightarroweq \tuple{M_2, w_2}$，则对每个!!{formula}~$!A$，我们有 $\mSat{M_1}{!A}[w_1]$ 当且仅当 $\mSat{M_2}{!A}[w_2]$。
 \end{thm}
 
 \begin{figure}

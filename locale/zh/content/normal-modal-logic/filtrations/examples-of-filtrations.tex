@@ -28,7 +28,7 @@
   我们需要检验如此定义的 $R^*$ 满足
   \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R}。我们依次检验三个条件。
 
-  如果 $Ruv$，那么由于 $u \in [u]$ 且 $v \in [v]$，也有 $R^*[u][v]$，
+  若 $Ruv$，则由于 $u \in [u]$ 且 $v \in [v]$，也有 $R^*[u][v]$，
   所以 \olref[fil]{defn:filtration-R1} 得以满足。
 
   \iftag{prvBox}{\iftag{probBox}{我们把
@@ -60,11 +60,11 @@
   当 $\Gamma$ 对子公式封闭时，模型~$\mModel{M}$ 的\emph{最粗的}过滤~$\mModel{M^*}$ 由如下方式定义：令 $R^*[u][v]$ 当且仅当
   \iftag{notprvBox,notprvDiamond}{如下条件得以满足：}{\emph{以下两个}条件都得以满足：}
   \begin{tagenumerate}{prvBox,prvDiamond}
-  \tagitem{prvBox}{\ollabel{defn:coarsest-Box}如果 $\Box!A \in \Gamma$
-    且 $\mSat{M}{\Box!A}[u]$，那么
+  \tagitem{prvBox}{\ollabel{defn:coarsest-Box}若 $\Box!A \in \Gamma$
+    且 $\mSat{M}{\Box!A}[u]$，则
     $\mSat{M}{!A}[v]$\iftag{prvDiamond}{；}{。}}{}
-  \tagitem{prvDiamond}{\ollabel{defn:coarsest-Diamond}如果 $\Diamond!A
-    \in \Gamma$ 且 $\mSat{M}{!A}[v]$，那么
+  \tagitem{prvDiamond}{\ollabel{defn:coarsest-Diamond}若 $\Diamond!A
+    \in \Gamma$ 且 $\mSat{M}{!A}[v]$，则
     $\mSat{M}{\Diamond!A}[u]$。}{}
   \end{tagenumerate}
 \end{defn}
@@ -137,7 +137,7 @@
   必须有 $R^*[1][2]$（由
   \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R1}），并且
   由于 $R23$ 我们必须有 $R^*[2][3]$，而 $[3]=[1]$。它不能
-  包含 $\tuple{[1],[1]}$：如果包含，就会有 $R^*[1][1]$、
+  包含 $\tuple{[1],[1]}$：若包含，就会有 $R^*[1][1]$、
   $\mSat{M}{\Box p}[1]$ 但 $\mSat/{M}{p}[1]$，这与
   \olref[fil]{defn:filtration-R2} 矛盾。没有任何东西要求或排除
   $R^*[2][2]$。因此，~$\mModel{M}$ 有两个可能的过滤，

@@ -65,19 +65,19 @@ $\Frm[L_0]$中的每一个!!{formula}~$!A$都有一个形成序列。
 $\tuple{!B_0,\dotsc,!B_n}$和$\tuple{!C_0,\dotsc,!C_m}$。
 %
 \begin{enumerate}
-  \tagitem{prvNot}{如果$!A \ident \lnot !B$，
+  \tagitem{prvNot}{若$!A \ident \lnot !B$，
       则$\tuple{!B_0,\dotsc,!B_n,\lnot !B_n}$
       是~$!A$的一个形成序列。}{}
-  \tagitem{prvAnd}{如果$!A \ident (!B \land !C)$，
+  \tagitem{prvAnd}{若$!A \ident (!B \land !C)$，
       则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \land !C_m)}$
       是~$!A$的一个形成序列。}{}
-  \tagitem{prvOr}{如果$!A \ident (!B \lor !C)$，
+  \tagitem{prvOr}{若$!A \ident (!B \lor !C)$，
       则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lor !C_m)}$
       是~$!A$的一个形成序列。}{}
-  \tagitem{prvIf}{如果$!A \ident (!B \lif !C)$，
+  \tagitem{prvIf}{若$!A \ident (!B \lif !C)$，
       则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lif !C_m)}$
       是~$!A$的一个形成序列。}{}
-  \tagitem{prvIff}{如果$!A \ident (!B \liff !C)$，
+  \tagitem{prvIff}{若$!A \ident (!B \liff !C)$，
       则$\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
       是~$!A$的一个形成序列。}{}
 \end{enumerate}
@@ -121,7 +121,7 @@ $\Frm[L_0] \subseteq F$，所以现在我们来证明其逆。
     \tagitem{prvIf}{$!A_n \ident (!A_j \lif !A_k)$.}{}%
     \tagitem{prvIff}{$!A_n \ident (!A_j \liff !A_k)$.}{}%
 \end{enumerate}
-现在我们分情形推理。如果$!A_n$是原子的，则
+现在我们分情形推理。若$!A_n$是原子的，则
 $!A_n \in \Frm[L_0]$。反之，设$!A \equiv
 (!A_j \land !A_k)$。由 \olref[pl][syn][fseq]{lem:fseq-init}，
 $\tuple{!A_0,\dotsc,!A_j}$和$\tuple{!A_0,\dotsc,!A_k}$分别是

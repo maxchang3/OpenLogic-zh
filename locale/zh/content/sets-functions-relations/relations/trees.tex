@@ -37,13 +37,13 @@
 
 \begin{defn}[后继点]
 设 $T = \tuple{A, \le}$ 是一棵树。
-如果 $x,y \in A$，$x < y$，且不存在 $z \in A$ 使 $x < z < y$，那么我们说 $y$ 是~$x$ 的一个\emph{后继}。
+若 $x,y \in A$，$x < y$，且不存在 $z \in A$ 使 $x < z < y$，则我们说 $y$ 是~$x$ 的一个\emph{后继}。
 \end{defn}
 
-$x \in A$ 的后继也称为它的\emph{子节点}。如果 $y$ 是~$x$ 的一个后继，那么我们称 $x$ 是~$y$ 的\emph{前驱点}或\emph{父节点}。
+$x \in A$ 的后继也称为它的\emph{子节点}。若 $y$ 是~$x$ 的一个后继，则我们称 $x$ 是~$y$ 的\emph{前驱点}或\emph{父节点}。
 
 \begin{prop}
-如果 $\tuple{A,\le}$ 是一棵树，那么除根之外的每个 $x \in A$ 至多有一个前驱点。
+若 $\tuple{A,\le}$ 是一棵树，则除根之外的每个 $x \in A$ 至多有一个前驱点。
 \end{prop}
 
 \begin{proof}
@@ -53,7 +53,7 @@ $x \in A$ 的后继也称为它的\emph{子节点}。如果 $y$ 是~$x$ 的一�
 \end{proof}
 
 \begin{defn}
-如果 $A$ 是无穷集合，则称树 $T = \tuple{A, \le}$ 是\emph{无穷的}，否则称它是\emph{有穷的}。如果 $T$ 使得每个 $x \in A$ 只有有穷多个后继，那么我们说 $T$ 是\emph{有穷分支的}。
+若 $A$ 是无穷集合，则称树 $T = \tuple{A, \le}$ 是\emph{无穷的}，否则称它是\emph{有穷的}。若 $T$ 使得每个 $x \in A$ 只有有穷多个后继，则我们说 $T$ 是\emph{有穷分支的}。
 \end{defn}
 
 \begin{defn}[支]
@@ -72,7 +72,7 @@ $x \in A$ 的后继也称为它的\emph{子节点}。如果 $y$ 是~$x$ 的一�
 \end{ex}
 
 \begin{prop}[K\H{o}nig 引理]
-如果 $T = \tuple{A,\le}$ 是一棵有穷分支的无穷树，那么 $T$ 有一个无穷支。
+若 $T = \tuple{A,\le}$ 是一棵有穷分支的无穷树，则 $T$ 有一个无穷支。
 \end{prop}
 
 K\H{o}nig 引理的一个在可计算性理论中广泛使用的特殊情形，称为\emph{弱 K\H{o}nig 引理}，如下：$\{0,1\}^*$ 的任何无穷子树都有一个无穷支。
