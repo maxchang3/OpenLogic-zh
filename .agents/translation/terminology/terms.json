@@ -3350,6 +3350,12 @@
       "zh": "初等模型类",
       "module": "modal-logic",
       "source": "confirmed"
+    },
+    {
+      "en": "class of frames",
+      "zh": "框架类",
+      "module": "modal-logic",
+      "source": "confirmed"
     }
   ]
 }
