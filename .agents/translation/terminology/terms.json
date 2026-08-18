@@ -1,3343 +1,3355 @@
 {
- "schema": "1",
- "context": {
-  "core": "`!!{complete}` 的可执行映射刻意使用「完全」：源文中的 `!!{complete}的` 组合为「完全的」，避免 token 自带「的」后重复渲染。\n定义中的 `iff` 句型统一写作「`!A ∈ Γ` 当且仅当……」。数学或宏参数内的变量、标签和控制序列不随中文句式改变。\nOpen Logic Project 保留英文；Open Logic Text 在中文散文中写作《开放逻辑读本》。项目链接、GitHub 链接、DOI、逻辑系统名（K、T、B、D、S4、S5、GL、K4、KB、K45 等）、公理模式名、文献引用和人名保留原文；其他书名若有通行中文译名，可保留原名并附中文名。\n`operator`（逻辑算子）与 `connective`（命题联结词）是两个独立概念，分别译「算子」与「联结词」；`syntax/syntactic` 在逻辑学语境译「句法/句法的」，自然语言或程序语言的 `grammar` 才译「语法」。",
-  "modal-logic": "本表覆盖正规模态逻辑、关系语义、反事实条件句、时态逻辑和认知逻辑。它建立在 `terminology/core.md` 之上；核心术语不在此重复，除非需要明确模态语境。没有模态语境时，优先使用核心术语。\n这些词在模态框架或可及关系语境中使用；若出现在一般集合论或序理论语境，仍按核心术语和具体定义处理。\n`modality` 在理论层译「模态」，□◇ 作为算子译「模态算子」，自然语言中的必然、可能、知道、相信等副词称「模态词」；不要把三者不加说明地互换。`agent` 在认知逻辑中译「主体」，知识或信念的持有者是「认知主体」，不采用 AI 领域的「智能体」。\n`normal` 在 `normal modal logic` 或模态 axiom system 等模态语境中译「正规」；普通英语中的 `normal` 不自动套用该译法。`model` 是核心通用词「模型」，只有 `Kripke model`、`modal model` 等条目明确添加模态限定。\n逻辑系统名保留裸字母（K、T、B、D、S4、S5 等）；需要在散文中称呼系统时写「K 系统」等，不写「系统 K」。\n文学锋《模态逻辑导论》的参考范围和采用理由见 `../references/wenxuefeng-modal-logic.md`；未定条目见 `../pending.md`，pending 中的候选不得被 worker 当作最终规范。"
- },
- "terms": [
-  {
-   "en": "syntax",
-   "zh": "句法",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "syntactic",
-   "zh": "句法的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "semantics",
-   "zh": "语义",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "semantic",
-   "zh": "语义的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "formula",
-   "zh": "公式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "sentence",
-   "zh": "语句",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑教程》：「推理关系都是在语句层面上发生的」；不用「句子」"
-  },
-  {
-   "en": "language",
-   "zh": "语言",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "propositional variable",
-   "zh": "命题变元",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "variable",
-   "zh": "变元",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑教程》：「引入了变元，又称作变量」；「语句变元，又称命题变元」；不用「变项」"
-  },
-  {
-   "en": "constant",
-   "zh": "常元",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑教程》：「若 t 是个体常元」；不用「常项」"
-  },
-  {
-   "en": "individual constant",
-   "zh": "个体常元",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "predicate",
-   "zh": "谓词",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "predicate symbol",
-   "zh": "谓词符号",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "function",
-   "zh": "函数",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "function symbol",
-   "zh": "函数符号",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "operator",
-   "zh": "算子",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "propositional operator",
-   "zh": "命题算子",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "main operator",
-   "zh": "主算子",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "connective",
-   "zh": "联结词",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "logical connective",
-   "zh": "逻辑联结词",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "negation",
-   "zh": "否定",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "conjunction",
-   "zh": "合取",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "disjunction",
-   "zh": "析取",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "implication",
-   "zh": "蕴含",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》正文用「蕴含」，索引条目作「蕴含式」（33 页）"
-  },
-  {
-   "en": "subformula",
-   "zh": "子公式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "schema",
-   "zh": "模式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "instance",
-   "zh": "特例",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "substitution instance",
-   "zh": "代入特例",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "truth table",
-   "zh": "真值表",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "truth value",
-   "zh": "真值",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "formation sequence",
-   "zh": "形成序列",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "unique readability",
-   "zh": "唯一可读性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "inductive definition",
-   "zh": "归纳定义",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "interpretation",
-   "zh": "解释",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "assignment",
-   "zh": "指派",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "object language",
-   "zh": "对象语言",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "meta-language",
-   "zh": "元语言",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "meta-linguistic expression",
-   "zh": "元语言表达式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "standard translation",
-   "zh": "标准翻译",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "well-formed formula",
-   "zh": "合式公式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "metavariable",
-   "zh": "元变元",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "uniform substitution",
-   "zh": "统一代入",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "iterated substitution",
-   "zh": "迭代代入",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "model",
-   "zh": "模型",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "structure",
-   "zh": "结构",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "domain",
-   "zh": "论域",
-   "module": "core",
-   "source": "confirmed",
-   "note": "一阶逻辑/模型语境；函数语境见 domain→定义域。文学锋《模态逻辑导论》中「定义域」（5 页）指函数定义域"
-  },
-  {
-   "en": "element",
-   "zh": "元素",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "value",
-   "zh": "值",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "truth",
-   "zh": "真",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "falsity",
-   "zh": "假",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "valuation",
-   "zh": "赋值",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "satisfaction",
-   "zh": "满足",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "satisfiable",
-   "zh": "可满足的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "unsatisfiable",
-   "zh": "不可满足的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "satisfiability relation",
-   "zh": "可满足关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "valid",
-   "zh": "有效的",
-   "module": "core",
-   "source": "confirmed",
-   "note": "有效性语境（valid/invalid）"
-  },
-  {
-   "en": "validity",
-   "zh": "有效性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "invalid",
-   "zh": "无效的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "consequence",
-   "zh": "后承",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "entail / entailment",
-   "zh": "衍推",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "sound",
-   "zh": "可靠的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "soundness",
-   "zh": "可靠性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "complete",
-   "zh": "完全的",
-   "module": "core",
-   "source": "confirmed",
-   "note": "完全性语境（complete/completeness）"
-  },
-  {
-   "en": "completeness",
-   "zh": "完全性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "consistency",
-   "zh": "一致性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "consistent",
-   "zh": "一致的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "inconsistent",
-   "zh": "不一致的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "tautology",
-   "zh": "重言式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "counterexample",
-   "zh": "反例",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "countermodel",
-   "zh": "反模型",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "truth lemma",
-   "zh": "真值引理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "compactness",
-   "zh": "紧致性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "finite model property",
-   "zh": "有穷模型性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "decision procedure",
-   "zh": "判定程序",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "decidable",
-   "zh": "可判定的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "decidability",
-   "zh": "可判定性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "undecidable",
-   "zh": "不可判定的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "deductively closed",
-   "zh": "演绎封闭的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "non-constructive",
-   "zh": "非构造性的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "axiomatic",
-   "zh": "公理化的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "characteristic",
-   "zh": "特征的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "definable",
-   "zh": "可定义的",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》「可定义」（3、42 页）"
-  },
-  {
-   "en": "generalized",
-   "zh": "广义的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "derivation",
-   "zh": "推演",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "derive",
-   "zh": "推演出",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "derivable",
-   "zh": "可推演的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "derivability",
-   "zh": "可推演性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "non-derivability",
-   "zh": "不可推演性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "proof / prove",
-   "zh": "证明",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "provable",
-   "zh": "可证明的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "provability",
-   "zh": "可证明性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "rule",
-   "zh": "规则",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "rule of inference / rules of inference",
-   "zh": "推理规则",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "axiom",
-   "zh": "公理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "axiomatic system",
-   "zh": "公理系统",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "derivable rule",
-   "zh": "导出规则",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "hypothesis / assumption",
-   "zh": "假设",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "premise",
-   "zh": "前提",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "conclusion",
-   "zh": "结论",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "induction",
-   "zh": "归纳",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "induction hypothesis",
-   "zh": "归纳假设",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "case",
-   "zh": "情形",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "deduction",
-   "zh": "演绎",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "deduction theorem",
-   "zh": "演绎定理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "natural deduction",
-   "zh": "自然演绎",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "sequent calculus",
-   "zh": "矢列演算",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "tableau",
-   "zh": "表列",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "closed tableau",
-   "zh": "闭的表列",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "open branch",
-   "zh": "开放的支",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》索引作「开的枝」（165 页），正文用「支」"
-  },
-  {
-   "en": "branch",
-   "zh": "支",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》正文用「支」（57 次），索引个别条目作「枝」；保持「支」"
-  },
-  {
-   "en": "closure",
-   "zh": "闭合",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "modus ponens",
-   "zh": "分离规则（肯定前件）",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》作「分离规则」（44 页）；「（肯定前件）」为解释性括注，保留"
-  },
-  {
-   "en": "rule of necessitation",
-   "zh": "必然化规则",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "substitution",
-   "zh": "代入",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "tautological instance",
-   "zh": "重言式特例",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "valid",
-   "zh": "有效",
-   "module": "core",
-   "source": "confirmed",
-   "note": "模式语境（valid/invalid schema）"
-  },
-  {
-   "en": "invalid schema",
-   "zh": "无效模式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "undischarged",
-   "zh": "未消去的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "complete",
-   "zh": "完全",
-   "module": "core",
-   "source": "confirmed",
-   "note": "token 映射刻意用「完全」，源文 !!{complete}的 组合为「完全的」，避免重复渲染"
-  },
-  {
-   "en": "set",
-   "zh": "集合",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "subset",
-   "zh": "子集",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "proper subset",
-   "zh": "真子集",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "union",
-   "zh": "并",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "intersection",
-   "zh": "交",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "set difference",
-   "zh": "差集",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "relative difference",
-   "zh": "相对差集",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "relation",
-   "zh": "关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "binary relation",
-   "zh": "二元关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "equivalence relation",
-   "zh": "等价关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "class",
-   "zh": "等价类",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "identity relation",
-   "zh": "恒等关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "inverse",
-   "zh": "逆关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "transitive closure",
-   "zh": "传递闭包",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "reflexive closure",
-   "zh": "自反闭包",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "reflexive transitive closure",
-   "zh": "自反传递闭包",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "quotient",
-   "zh": "商集",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "comprehension",
-   "zh": "概括（原则）",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "ordered pair",
-   "zh": "有序对",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "cartesian product",
-   "zh": "卡氏积",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "power set",
-   "zh": "幂集",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "disjoint",
-   "zh": "不相交的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "partial order",
-   "zh": "偏序",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "preorder",
-   "zh": "预序",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "total order",
-   "zh": "全序",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "linear order",
-   "zh": "线性序",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "strict order",
-   "zh": "严格序",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "strict total order",
-   "zh": "严格全序",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "order relation",
-   "zh": "序关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "well-ordered",
-   "zh": "良序的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "least element",
-   "zh": "最小元",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "initial segment",
-   "zh": "初始段",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "successor",
-   "zh": "后继点",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "predecessor",
-   "zh": "前驱点",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "weakly dense",
-   "zh": "弱稠密的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "weakly connected",
-   "zh": "弱连通的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "weakly directed",
-   "zh": "弱有向的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "partially functional",
-   "zh": "部分函数的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "universal relation",
-   "zh": "全域关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "empty relation",
-   "zh": "空关系",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "non-self-membered",
-   "zh": "非自属的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "connected",
-   "zh": "连通的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "injective",
-   "zh": "单射的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "surjective",
-   "zh": "满射的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "bijection",
-   "zh": "双射",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "partial function",
-   "zh": "部分函数",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "domain",
-   "zh": "定义域",
-   "module": "core",
-   "source": "confirmed",
-   "note": "函数语境：函数的定义域；一阶逻辑论域语境见 domain→论域"
-  },
-  {
-   "en": "codomain",
-   "zh": "目标域",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "identity",
-   "zh": "同一性",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "equality",
-   "zh": "相等",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "directed graph",
-   "zh": "有向图",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "graph",
-   "zh": "图",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "vertices",
-   "zh": "顶点",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "edges",
-   "zh": "边",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "tree",
-   "zh": "树",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "root",
-   "zh": "根",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "children",
-   "zh": "子节点",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "parent",
-   "zh": "父节点",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "subtree",
-   "zh": "子树",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "ancestor",
-   "zh": "祖先",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "finitely branching",
-   "zh": "有穷分支的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "infinite binary tree",
-   "zh": "无穷二叉树",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "finite",
-   "zh": "有穷的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "infinite",
-   "zh": "无穷的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "countable",
-   "zh": "可数的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "uncountable",
-   "zh": "不可数的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "intuitionistic logic",
-   "zh": "直觉主义逻辑",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "intuitionistic",
-   "zh": "直觉主义的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "constructive",
-   "zh": "构造性的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "constructive reasoning",
-   "zh": "构造性推理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "topological space",
-   "zh": "拓扑空间",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "open sets",
-   "zh": "开集",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "topological model",
-   "zh": "拓扑模型",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "interior",
-   "zh": "内部",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "prime (formula)",
-   "zh": "素的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "BHK interpretation",
-   "zh": "BHK 解释",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "atomic formula",
-   "zh": "原子公式",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "excluded middle",
-   "zh": "排中律",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "Law of Excluded Middle",
-   "zh": "排中律",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "state description",
-   "zh": "状态描述",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "symbolic logic",
-   "zh": "符号逻辑",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "word",
-   "zh": "词",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "finite strings",
-   "zh": "有穷字符串",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "definition",
-   "zh": "定义",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "example",
-   "zh": "例",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "exercise",
-   "zh": "习题",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "theorem",
-   "zh": "定理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "lemma",
-   "zh": "引理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "proposition",
-   "zh": "命题",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "corollary",
-   "zh": "推论",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "note",
-   "zh": "注",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "convention",
-   "zh": "约定",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "suppose",
-   "zh": "设",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "then",
-   "zh": "则",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "hence",
-   "zh": "因此",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "thus",
-   "zh": "于是",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "note that",
-   "zh": "注意，……",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "recall that",
-   "zh": "回顾，……",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "it is easy to see that",
-   "zh": "容易看出，……",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "the following proposition",
-   "zh": "如下命题",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "iff",
-   "zh": "当且仅当",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "i.e.",
-   "zh": "即",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "e.g.",
-   "zh": "例如",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "viz.",
-   "zh": "亦即",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "prove",
-   "zh": "证明",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "relational structures",
-   "zh": "关系结构",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "relative product",
-   "zh": "相对积",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "partitions",
-   "zh": "划分",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "first",
-   "zh": "一阶",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "second-order definable",
-   "zh": "二阶可定义的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "balanced",
-   "zh": "平衡的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "in parallel",
-   "zh": "并行地",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "finest",
-   "zh": "最细的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "coarsest",
-   "zh": "最粗的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "assumptions",
-   "zh": "假设",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "closed",
-   "zh": "闭的",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「封闭」（5 页）用于集合在运算下封闭；表列语境「闭的」与书一致（闭的支 160 页）"
-  },
-  {
-   "en": "open",
-   "zh": "开的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "labelled",
-   "zh": "加标的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "prefixed",
-   "zh": "带前缀的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "principia mathematica",
-   "zh": "《数学原理》（保留原文）",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "begriffsschrift",
-   "zh": "《概念文字》（保留原文）",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "meaning and necessity",
-   "zh": "《意义与必然性》（保留原文）",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "de interpretatione",
-   "zh": "《解释篇》（保留原文）",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "soundness theorem",
-   "zh": "可靠性定理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "completeness theorem",
-   "zh": "完全性定理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "theory",
-   "zh": "理论",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "extension",
-   "zh": "扩张",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》「扩张」（23 页），一致"
-  },
-  {
-   "en": "Lindenbaum lemma",
-   "zh": "Lindenbaum 引理",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "truth-functional",
-   "zh": "真值函项的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "deductive",
-   "zh": "演绎的",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "purported counterexample",
-   "zh": "所谓反例",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "closed under subformulas",
-   "zh": "对子公式封闭",
-   "module": "core",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal logic",
-   "zh": "模态逻辑",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "normal modal logic",
-   "zh": "正规模态逻辑",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal",
-   "zh": "模态的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modality",
-   "zh": "模态",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal propositions",
-   "zh": "模态命题",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal-free",
-   "zh": "无模态的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modally closed",
-   "zh": "模态封闭的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal system",
-   "zh": "模态系统",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal degree",
-   "zh": "模态度",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "necessity",
-   "zh": "必然性",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "possibility",
-   "zh": "可能性",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "necessary",
-   "zh": "必然的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "necessarily",
-   "zh": "必然地",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "necessarily true",
-   "zh": "必然真",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "possible",
-   "zh": "可能的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "possible world",
-   "zh": "可能世界",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "world",
-   "zh": "世界",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "actual world",
-   "zh": "现实世界",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal operator",
-   "zh": "模态算子",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "iterated modality",
-   "zh": "叠加模态",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "innermost modality",
-   "zh": "最内层的模态算子",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "dual",
-   "zh": "对偶",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "relational",
-   "zh": "关系的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "relational semantics",
-   "zh": "关系语义",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "relational model",
-   "zh": "关系模型",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "accessibility relation",
-   "zh": "可及关系",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「通达关系」与「可及关系」并用（关系定义处明示同义）；保持「可及关系」"
-  },
-  {
-   "en": "frame",
-   "zh": "框架",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "Kripke frame/model",
-   "zh": "Kripke 框架/模型",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "Kripke semantics",
-   "zh": "Kripke 语义",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "canonical",
-   "zh": "典范的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "canonical model",
-   "zh": "典范模型",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "filtration",
-   "zh": "过滤",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "bisimulation",
-   "zh": "双模拟",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》10.1.15 定义标题并列「双模拟，双仿」；bisimulation→双模拟、bisimilar→双仿的；国内文献亦常见「互模拟」（SEP 中译即用此），保持「双模拟」"
-  },
-  {
-   "en": "maximal consistent",
-   "zh": "极大一致的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "forth condition",
-   "zh": "forth 条件",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "back condition",
-   "zh": "back 条件",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "bisimilar",
-   "zh": "双模拟等价的",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》作「双仿的」（10.1.15）；本条目保持「双模拟等价的」"
-  },
-  {
-   "en": "valid on a frame",
-   "zh": "在框架上有效",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "true in a model",
-   "zh": "在模型中为真",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "truth at a world",
-   "zh": "在世界处为真",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "correspondence theory",
-   "zh": "对应理论",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "term model",
-   "zh": "项模型",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "reflexive",
-   "zh": "自反的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "transitive",
-   "zh": "传递的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "symmetric",
-   "zh": "对称的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "antisymmetric",
-   "zh": "反对称的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "asymmetric",
-   "zh": "禁对称的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "irreflexive",
-   "zh": "禁自反的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "Euclidean",
-   "zh": "欧性的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "serial",
-   "zh": "持续的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "frame definability",
-   "zh": "框架可定义性",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "necessitation (rule)",
-   "zh": "必然化（规则）",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "prefixed tableau",
-   "zh": "带前缀的表列",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "prefixes",
-   "zh": "前缀",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "labelled tableau",
-   "zh": "加标的表列",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "signed formula",
-   "zh": "带符号公式",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "hypersequent",
-   "zh": "超矢列",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "modal model",
-   "zh": "模态模型",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "axiom schema",
-   "zh": "公理模式",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "normal (modal logic)",
-   "zh": "正规的（模态逻辑）",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "counterfactual",
-   "zh": "反事实的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "counterfactual conditional",
-   "zh": "反事实条件句",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "counterfactual conditionals",
-   "zh": "反事实条件句",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "subjunctive conditional",
-   "zh": "虚拟条件句",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "indicative conditional",
-   "zh": "直陈条件句",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "indicative",
-   "zh": "直陈的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "material conditional",
-   "zh": "实质条件句",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》作「实质蕴含联结词」；SEP 中译作「实质蕴涵」。B&D 原文将 material conditional 定义为联结词（\"A connective with this semantics is called the material conditional\"），与「反事实条件句」对举；保持「实质条件句」"
-  },
-  {
-   "en": "strict conditional",
-   "zh": "严格条件句",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "antecedent",
-   "zh": "前件",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "consequent",
-   "zh": "后件",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "closest worlds",
-   "zh": "最接近的世界",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "sphere model",
-   "zh": "球面模型",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "system of spheres",
-   "zh": "球面系统",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "admitting sphere",
-   "zh": "容纳球面",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "p-admitting sphere",
-   "zh": "p-容纳球面",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "centered",
-   "zh": "中心的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "nested",
-   "zh": "嵌套的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "innermost",
-   "zh": "最内层的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "minimal change semantics",
-   "zh": "最小变化语义",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "strata",
-   "zh": "分层",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "vacuously",
-   "zh": "空真地",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "agglomeration / agglomerates",
-   "zh": "聚合",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "antecedent strengthening",
-   "zh": "前件强化",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "contrapositive",
-   "zh": "逆否命题",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "chain rule",
-   "zh": "链规则",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "contingent",
-   "zh": "偶然的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "monotonic",
-   "zh": "单调的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "symbolize",
-   "zh": "符号化",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "capture",
-   "zh": "刻画",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "opposite (diagram label)",
-   "zh": "颠倒式",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "tense logic",
-   "zh": "时态逻辑",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "temporal",
-   "zh": "时态的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "possible histories model",
-   "zh": "可能历史模型",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "possible histories",
-   "zh": "可能历史",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "linear time",
-   "zh": "线性时间",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "linear (time)",
-   "zh": "线性的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "dense time",
-   "zh": "稠密时间",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "dense (time)",
-   "zh": "稠密的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "unbounded (past/future)",
-   "zh": "无界的（过去/未来）",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "unbounded",
-   "zh": "无界的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "precedes",
-   "zh": "先于",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "since",
-   "zh": "自从",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "until (temporal operators)",
-   "zh": "直到",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "future contingent",
-   "zh": "未来偶然命题",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "open future",
-   "zh": "开放的未来",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "determinist",
-   "zh": "决定论者",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "updates",
-   "zh": "更新",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "events",
-   "zh": "事件",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "alethic",
-   "zh": "真性的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "epistemic",
-   "zh": "认知的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "doxastic",
-   "zh": "信念的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "deontic",
-   "zh": "道义的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "knowledge and belief",
-   "zh": "知识与信念",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "knowledge",
-   "zh": "知识",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "epistemic possibility",
-   "zh": "认知可能性",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "epistemic proposition",
-   "zh": "认知命题",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "agent (epistemic logic)",
-   "zh": "主体",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "epistemic agent",
-   "zh": "认知主体",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "multi-agent",
-   "zh": "多主体",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "single-agent",
-   "zh": "单主体",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "informational state",
-   "zh": "信息状态",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "public announcement",
-   "zh": "公开宣告",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "announcement operator",
-   "zh": "宣告算子",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "dynamic epistemic logic",
-   "zh": "动态认知逻辑",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "update",
-   "zh": "更新",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "event",
-   "zh": "事件",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "group knowledge",
-   "zh": "群体知识",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "common knowledge",
-   "zh": "公共知识",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "veridicality",
-   "zh": "真实性",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "positive",
-   "zh": "正内省",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "negative introspection",
-   "zh": "负内省",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "KK principle",
-   "zh": "KK 原则",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "box operator",
-   "zh": "盒子算子",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "renaming",
-   "zh": "重命名",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "node",
-   "zh": "节点",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "arrow (diagram)",
-   "zh": "箭头",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "computational path",
-   "zh": "计算路径",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "iterated (modality)",
-   "zh": "叠加模态",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》「叠加模态」（83 页）"
-  },
-  {
-   "en": "regular (modal context)",
-   "zh": "正则的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "Kripke frame",
-   "zh": "Kripke 框架",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "indicative (conditionals)",
-   "zh": "直陈的（直陈条件句）",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "subjunctive conditionals",
-   "zh": "虚拟条件句",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "material",
-   "zh": "实质的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "strict",
-   "zh": "严格的",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "epistemic logic",
-   "zh": "认知逻辑",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "epistemic propositions",
-   "zh": "认知命题",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "belief",
-   "zh": "信念",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "validities",
-   "zh": "有效式",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "Veridicality",
-   "zh": "真实性",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "Positive",
-   "zh": "正内省",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "Negative Introspection",
-   "zh": "负内省",
-   "module": "modal-logic",
-   "source": "confirmed"
-  },
-  {
-   "en": "well-founded",
-   "zh": "良基的",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「良基的」12 页"
-  },
-  {
-   "en": "well-foundedness",
-   "zh": "良基性",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「良基性」"
-  },
-  {
-   "en": "converse well-founded",
-   "zh": "逆良基的",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「逆良基的」8、125 页；另有「弱逆良基的」"
-  },
-  {
-   "en": "converse well-foundedness",
-   "zh": "逆良基性",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「逆良基性」（构词同「逆良基的」）"
-  },
-  {
-   "en": "monotonicity",
-   "zh": "单调性",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「单调性」53、194 页"
-  },
-  {
-   "en": "reflexivity",
-   "zh": "自反性",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「自反性」53、98 页"
-  },
-  {
-   "en": "semantic consequence",
-   "zh": "语义后承",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「语义后承」18、195 页"
-  },
-  {
-   "en": "truth condition",
-   "zh": "真值条件",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「真值条件」36 页"
-  },
-  {
-   "en": "proper inclusion",
-   "zh": "真包含",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「真包含（于）」416 行"
-  },
-  {
-   "en": "restriction",
-   "zh": "限制",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「f 在 C 上的限制」489 行"
-  },
-  {
-   "en": "axiomatization",
-   "zh": "公理化",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「公理化」7.1.24 定义"
-  },
-  {
-   "en": "equivalent axiomatization",
-   "zh": "等价的公理化",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「公理化」构词"
-  },
-  {
-   "en": "maximality",
-   "zh": "极大性",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「极大性」"
-  },
-  {
-   "en": "construction",
-   "zh": "构造",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「构造」"
-  },
-  {
-   "en": "closed term",
-   "zh": "闭项",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「闭项」14967 行"
-  },
-  {
-   "en": "variable assignment",
-   "zh": "指派",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「指派」62、280 页（含「变体指派」）"
-  },
-  {
-   "en": "image",
-   "zh": "像集",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「值域或像集」487 行；与 application 语境区分待定"
-  },
-  {
-   "en": "falsify",
-   "zh": "使……为假",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「使得……为假」9383 行"
-  },
-  {
-   "en": "inductive step",
-   "zh": "归纳步",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「归纳步」734 行"
-  },
-  {
-   "en": "Hilbert-type system",
-   "zh": "希尔伯特式公理系统",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「希尔伯特式公理系统」1067、2052 行"
-  },
-  {
-   "en": "atomic statement",
-   "zh": "原子公式",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「原子公式」16、58 页；与 atomic formula 同译"
-  },
-  {
-   "en": "set variable",
-   "zh": "谓词变元",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「一元谓词变元」9261 行"
-  },
-  {
-   "en": "universally quantified",
-   "zh": "全称量化",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「全称分配/例示/概括公理」"
-  },
-  {
-   "en": "y-variant",
-   "zh": "y-变体",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「x-变体」（变体指派，2822 行）"
-  },
-  {
-   "en": "monadic second-order",
-   "zh": "一元二阶的",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「一元谓词变元」+「二阶逻辑」构词"
-  },
-  {
-   "en": "contraposition",
-   "zh": "逆否",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「逆否律」39 页与「假言易位」53 页并用，索引均对应 contrapositive law；与 contrapositive→逆否命题 一致"
-  },
-  {
-   "en": "Cut",
-   "zh": "切割",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中直接保留英文 cut（999 行）"
-  },
-  {
-   "en": "metaphysical",
-   "zh": "形而上学的",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「形而上学」118 行"
-  },
-  {
-   "en": "logical",
-   "zh": "逻辑的",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "模态分类形容词"
-  },
-  {
-   "en": "physical",
-   "zh": "物理的",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "模态分类形容词"
-  },
-  {
-   "en": "saturated",
-   "zh": "饱和的",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「饱和的/饱和集/模态饱和/φ-饱和的」"
-  },
-  {
-   "en": "saturated set",
-   "zh": "饱和集",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「饱和集 saturated set, 26」"
-  },
-  {
-   "en": "modal saturation",
-   "zh": "模态饱和",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「模态饱和 modally saturated, 204」"
-  },
-  {
-   "en": "state of knowledge",
-   "zh": "信息状态",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「信息状态」178 页（7631 行「主体认为可能的所有世界」）"
-  },
-  {
-   "en": "complete Σ-consistent set",
-   "zh": "完全 Σ-一致集",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中用「极大一致」与「否定完全」表述（2283 行）"
-  },
-  {
-   "en": "cardinality",
-   "zh": "基数",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「基数」6、19 页"
-  },
-  {
-   "en": "seriality",
-   "zh": "持续性",
-   "module": "modal-logic",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「持续性」（1.2.5 定义，588 行）"
-  },
-  {
-   "en": "disjunct",
-   "zh": "析取支",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「合取支/析取支」1587 行；与 conjunct→合取支 配套"
-  },
-  {
-   "en": "conjunct",
-   "zh": "合取支",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》中「合取支/析取支」1587 行"
-  },
-  {
-   "en": "application",
-   "zh": "像集",
-   "module": "core",
-   "source": "confirmed",
-   "note": "与 image 同译（文学锋《模态逻辑导论》「值域或像集」487 行）；指 $R$ 对 $A$ 的像 $R[A]$"
-  },
-  {
-   "en": "truth tree",
-   "zh": "真值树",
-   "module": "core",
-   "source": "confirmed",
-   "note": "用户确认；OLP 表列旧称（文学锋《模态逻辑导论》表列语境用「表列」）"
-  },
-  {
-   "en": "universality",
-   "zh": "全域性",
-   "module": "modal-logic",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；S5 语义（所有世界两两可达）"
-  },
-  {
-   "en": "universal frame",
-   "zh": "全域框架",
-   "module": "modal-logic",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；S5 语义"
-  },
-  {
-   "en": "universal model",
-   "zh": "全域模型",
-   "module": "modal-logic",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；S5 语义"
-  },
-  {
-   "en": "well-behaved",
-   "zh": "良态",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；正文可按语境译「性质良好的/表现良好的」；勿用「规范」（与 normal 冲突）"
-  },
-  {
-   "en": "effective procedure",
-   "zh": "能行程序",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；递归论通行译法（丘奇—图灵论题）"
-  },
-  {
-   "en": "epistemic alternative",
-   "zh": "认知选项",
-   "module": "modal-logic",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；与当前知识相容的可能世界"
-  },
-  {
-   "en": "prime set",
-   "zh": "素集",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；与格论「素滤子/素理想」同源；勿与「素数」混淆"
-  },
-  {
-   "en": "absurdity",
-   "zh": "荒谬",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；直觉主义「无构造」语义；句法语境可并用「假/假命题」"
-  },
-  {
-   "en": "Polish notation",
-   "zh": "波兰表示法",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；通行译法"
-  },
-  {
-   "en": "condensed derivation",
-   "zh": "压缩的推导",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；OLP 中为描述性用法（步骤被压缩的推演），与 condensed detachment 无关"
-  },
-  {
-   "en": "model existence result",
-   "zh": "模型存在性结果",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；完全性定理的第二表述"
-  },
-  {
-   "en": "exhaustive listing",
-   "zh": "穷尽性列出",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；与「穷尽的」一致"
-  },
-  {
-   "en": "syntactic counterpart",
-   "zh": "句法对应物",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；与已落地译文一致"
-  },
-  {
-   "en": "provability result",
-   "zh": "可证明性结果",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；「可证性」留给 provability logic"
-  },
-  {
-   "en": "Induction Basis",
-   "zh": "归纳基始",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；王宪钧《数理逻辑引论》「基始」传统，与「归纳步骤」对称"
-  },
-  {
-   "en": "knowledge closure",
-   "zh": "知识封闭",
-   "module": "modal-logic",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "用户确认；epistemic closure→认知封闭；与传递闭包等数学 closure 区分"
-  },
-  {
-   "en": "Kripke",
-   "zh": "克里普克",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译；全名 Saul Kripke→索尔·克里普克。译文用 \\zhFullName{Kripke}{索尔·克里普克}{克里普克}：首次输出「索尔·克里普克（Saul Kripke）」，之后输出「克里普克」"
-  },
-  {
-   "en": "Lewis",
-   "zh": "刘易斯",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Stalnaker",
-   "zh": "斯达内克",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Arthur Prior",
-   "zh": "亚瑟·普莱尔",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译；译文用 \\zhFullName{Prior}{亚瑟·普莱尔}{普莱尔}：首次输出「亚瑟·普莱尔（Arthur Prior）」，之后输出「普莱尔」"
-  },
-  {
-   "en": "Prior",
-   "zh": "普莱尔",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Brouwer",
-   "zh": "布劳威尔",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Heyting",
-   "zh": "海廷",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Kolmogorov",
-   "zh": "柯尔莫哥洛夫",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Brouwer--Heyting--Kolmogorov",
-   "zh": "布劳威尔–海廷–柯尔莫哥洛夫",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Russell",
-   "zh": "罗素",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Hilbert",
-   "zh": "希尔伯特",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Frege",
-   "zh": "弗雷格",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Lindenbaum",
-   "zh": "林登鲍姆",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Carnap",
-   "zh": "卡尔纳普",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Hintikka",
-   "zh": "欣蒂卡",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Skolem",
-   "zh": "斯科伦",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
-  },
-  {
-   "en": "Dana",
-   "zh": "达娜",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "例句虚构人名，直接译出，不使用 \\zhFirst 括号机制"
-  },
-  {
-   "en": "Saul Kripke",
-   "zh": "索尔·克里普克",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "全名音译；见 Kripke 条目（zhFullName 同键）"
-  },
-  {
-   "en": "Langford",
-   "zh": "兰福德",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "Michael Dummett",
-   "zh": "迈克尔·达米特",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "Robert Stalnaker",
-   "zh": "罗伯特·斯达内克",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "David K. Lewis",
-   "zh": "大卫·刘易斯",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "Rudolf Carnap",
-   "zh": "鲁道夫·卡尔纳普",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "David Hilbert",
-   "zh": "大卫·希尔伯特",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "Gottlob Frege",
-   "zh": "戈特洛布·弗雷格",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "L. E. J. Brouwer",
-   "zh": "L. E. J. 布劳威尔",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
-  },
-  {
-   "en": "Leibniz",
-   "zh": "莱布尼茨",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Alfred North Whitehead",
-   "zh": "阿尔弗雷德·诺斯·怀特海",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Bertrand Russell",
-   "zh": "伯特兰·罗素",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Kurt Gödel",
-   "zh": "库尔特·哥德尔",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "J. Edgar Hoover",
-   "zh": "J. 埃德加·胡佛",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Lee Harvey Oswald",
-   "zh": "李·哈维·奥斯瓦尔德",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "John F. Kennedy",
-   "zh": "约翰·F. 肯尼迪",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Warren",
-   "zh": "沃伦",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Richard",
-   "zh": "理查德",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "例句虚构人名，直接译出，不使用 \\zhFirst 括号机制"
-  },
-  {
-   "en": "Audrey",
-   "zh": "奥黛丽",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "例句虚构 agent 名（与真实人物 Audrey Yap 区分），直接译出，不使用 \\zhFirst 括号机制"
-  },
-  {
-   "en": "Wiener",
-   "zh": "维纳",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Kuratowski",
-   "zh": "库拉托夫斯基",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Bishop",
-   "zh": "毕晓普",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Evert Beth",
-   "zh": "埃弗特·贝特",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Raymond Smullyan",
-   "zh": "雷蒙德·斯穆里安",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Jaakko Hintikka",
-   "zh": "亚科·欣蒂卡",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Gödel",
-   "zh": "哥德尔",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Godel",
-   "zh": "哥德尔",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
-  },
-  {
-   "en": "Goethe",
-   "zh": "歌德",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
-  },
-  {
-   "en": "Riemann",
-   "zh": "黎曼",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
-  },
-  {
-   "en": "Riemann hypothesis",
-   "zh": "黎曼猜想",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
-  },
-  {
-   "en": "Adams",
-   "zh": "亚当斯",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
-  },
-  {
-   "en": "SuperSoaker",
-   "zh": "超级水枪",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
-  },
-  {
-   "en": "C. I. Lewis",
-   "zh": "C. I. 刘易斯",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "人名音译（\\zhFullName 机制）；即 Clarence Irving Lewis，注意与 David K. Lewis 区分"
-  },
-  {
-   "en": "Kratzer",
-   "zh": "Kratzer",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "无通行译名，保留原文"
-  },
-  {
-   "en": "Aldo Antonelli",
-   "zh": "Aldo Antonelli",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "无通行译名，保留原文"
-  },
-  {
-   "en": "Beezie",
-   "zh": "Beezie",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "虚构角色名（狗），保留原文"
-  },
-  {
-   "en": "Audrey Yap",
-   "zh": "Audrey Yap",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "无通行译名，保留原文"
-  },
-  {
-   "en": "Ruth",
-   "zh": "露丝",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "例句虚构人名（Richard 的姐妹），直接译出，不使用 \\zhFirst 括号机制"
-  },
-  {
-   "en": "Jaako Hintikka",
-   "zh": "亚科·欣蒂卡",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "上游 EN 拼写错误（正确为 Jaakko Hintikka）；译文宏键统一用 Jaakko Hintikka"
-  },
-  {
-   "en": "vertex",
-   "zh": "顶点",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "图论术语；vertices 为复数，条目 vertices → 顶点 已存在"
-  },
-  {
-   "en": "edge",
-   "zh": "边",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "图论术语；modal-logic 语境中 relation 的边"
-  },
-  {
-   "en": "isolated vertex",
-   "zh": "孤立顶点",
-   "module": "core",
-   "kind": "word",
-   "source": "confirmed",
-   "note": "图论术语"
-  },
-  {
-   "en": "primitive symbol",
-   "zh": "初始符号",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》作「初始联结词」（同词根「初始」）；不用「原始符号」"
-  },
-  {
-   "en": "primitive connective",
-   "zh": "初始联结词",
-   "module": "core",
-   "source": "confirmed",
-   "note": "文学锋《模态逻辑导论》：「设命题逻辑的初始联结词为 ¬ 和 ∧」"
-  }
- ]
+  "schema": "1",
+  "context": {
+    "core": "`!!{complete}` 的可执行映射刻意使用「完全」：源文中的 `!!{complete}的` 组合为「完全的」，避免 token 自带「的」后重复渲染。\n定义中的 `iff` 句型统一写作「`!A ∈ Γ` 当且仅当……」。数学或宏参数内的变量、标签和控制序列不随中文句式改变。\nOpen Logic Project 保留英文；Open Logic Text 在中文散文中写作《开放逻辑读本》。项目链接、GitHub 链接、DOI、逻辑系统名（K、T、B、D、S4、S5、GL、K4、KB、K45 等）、公理模式名、文献引用和人名保留原文；其他书名若有通行中文译名，可保留原名并附中文名。\n`operator`（逻辑算子）与 `connective`（命题联结词）是两个独立概念，分别译「算子」与「联结词」；`syntax/syntactic` 在逻辑学语境译「句法/句法的」，自然语言或程序语言的 `grammar` 才译「语法」。",
+    "modal-logic": "本表覆盖正规模态逻辑、关系语义、反事实条件句、时态逻辑和认知逻辑。它建立在 `terminology/core.md` 之上；核心术语不在此重复，除非需要明确模态语境。没有模态语境时，优先使用核心术语。\n这些词在模态框架或可及关系语境中使用；若出现在一般集合论或序理论语境，仍按核心术语和具体定义处理。\n`modality` 在理论层译「模态」，□◇ 作为算子译「模态算子」，自然语言中的必然、可能、知道、相信等副词称「模态词」；不要把三者不加说明地互换。`agent` 在认知逻辑中译「主体」，知识或信念的持有者是「认知主体」，不采用 AI 领域的「智能体」。\n`normal` 在 `normal modal logic` 或模态 axiom system 等模态语境中译「正规」；普通英语中的 `normal` 不自动套用该译法。`model` 是核心通用词「模型」，只有 `Kripke model`、`modal model` 等条目明确添加模态限定。\n逻辑系统名保留裸字母（K、T、B、D、S4、S5 等）；需要在散文中称呼系统时写「K 系统」等，不写「系统 K」。\n文学锋《模态逻辑导论》的参考范围和采用理由见 `../references/wenxuefeng-modal-logic.md`；未定条目见 `../pending.md`，pending 中的候选不得被 worker 当作最终规范。"
+  },
+  "terms": [
+    {
+      "en": "syntax",
+      "zh": "句法",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "syntactic",
+      "zh": "句法的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "semantics",
+      "zh": "语义",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "semantic",
+      "zh": "语义的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "formula",
+      "zh": "公式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "sentence",
+      "zh": "语句",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑教程》：「推理关系都是在语句层面上发生的」；不用「句子」"
+    },
+    {
+      "en": "language",
+      "zh": "语言",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "propositional variable",
+      "zh": "命题变元",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "variable",
+      "zh": "变元",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑教程》：「引入了变元，又称作变量」；「语句变元，又称命题变元」；不用「变项」"
+    },
+    {
+      "en": "constant",
+      "zh": "常元",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑教程》：「若 t 是个体常元」；不用「常项」"
+    },
+    {
+      "en": "individual constant",
+      "zh": "个体常元",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "predicate",
+      "zh": "谓词",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "predicate symbol",
+      "zh": "谓词符号",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "function",
+      "zh": "函数",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "function symbol",
+      "zh": "函数符号",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "operator",
+      "zh": "算子",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "propositional operator",
+      "zh": "命题算子",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "main operator",
+      "zh": "主算子",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "connective",
+      "zh": "联结词",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "logical connective",
+      "zh": "逻辑联结词",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "negation",
+      "zh": "否定",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "conjunction",
+      "zh": "合取",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "disjunction",
+      "zh": "析取",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "implication",
+      "zh": "蕴含",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》正文用「蕴含」，索引条目作「蕴含式」（33 页）"
+    },
+    {
+      "en": "subformula",
+      "zh": "子公式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "schema",
+      "zh": "模式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "instance",
+      "zh": "特例",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "substitution instance",
+      "zh": "代入特例",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "truth table",
+      "zh": "真值表",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "truth value",
+      "zh": "真值",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "formation sequence",
+      "zh": "形成序列",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "unique readability",
+      "zh": "唯一可读性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "inductive definition",
+      "zh": "归纳定义",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "interpretation",
+      "zh": "解释",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "assignment",
+      "zh": "指派",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "object language",
+      "zh": "对象语言",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "meta-language",
+      "zh": "元语言",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "meta-linguistic expression",
+      "zh": "元语言表达式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "standard translation",
+      "zh": "标准翻译",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "well-formed formula",
+      "zh": "合式公式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "metavariable",
+      "zh": "元变元",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "uniform substitution",
+      "zh": "统一代入",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "iterated substitution",
+      "zh": "迭代代入",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "model",
+      "zh": "模型",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "structure",
+      "zh": "结构",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "domain",
+      "zh": "论域",
+      "module": "core",
+      "source": "confirmed",
+      "note": "一阶逻辑/模型语境；函数语境见 domain→定义域。文学锋《模态逻辑导论》中「定义域」（5 页）指函数定义域"
+    },
+    {
+      "en": "element",
+      "zh": "元素",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "value",
+      "zh": "值",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "truth",
+      "zh": "真",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "falsity",
+      "zh": "假",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "valuation",
+      "zh": "赋值",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "satisfaction",
+      "zh": "满足",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "satisfiable",
+      "zh": "可满足的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "unsatisfiable",
+      "zh": "不可满足的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "satisfiability relation",
+      "zh": "可满足关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "valid",
+      "zh": "有效的",
+      "module": "core",
+      "source": "confirmed",
+      "note": "有效性语境（valid/invalid）"
+    },
+    {
+      "en": "validity",
+      "zh": "有效性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "invalid",
+      "zh": "无效的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "consequence",
+      "zh": "后承",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "entail / entailment",
+      "zh": "衍推",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "sound",
+      "zh": "可靠的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "soundness",
+      "zh": "可靠性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "complete",
+      "zh": "完全的",
+      "module": "core",
+      "source": "confirmed",
+      "note": "完全性语境（complete/completeness）"
+    },
+    {
+      "en": "completeness",
+      "zh": "完全性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "consistency",
+      "zh": "一致性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "consistent",
+      "zh": "一致的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "inconsistent",
+      "zh": "不一致的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "tautology",
+      "zh": "重言式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "counterexample",
+      "zh": "反例",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "countermodel",
+      "zh": "反模型",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "truth lemma",
+      "zh": "真值引理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "compactness",
+      "zh": "紧致性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "finite model property",
+      "zh": "有穷模型性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "decision procedure",
+      "zh": "判定程序",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "decidable",
+      "zh": "可判定的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "decidability",
+      "zh": "可判定性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "undecidable",
+      "zh": "不可判定的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "deductively closed",
+      "zh": "演绎封闭的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "non-constructive",
+      "zh": "非构造性的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "axiomatic",
+      "zh": "公理化的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "characteristic",
+      "zh": "特征的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "definable",
+      "zh": "可定义的",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》「可定义」（3、42 页）"
+    },
+    {
+      "en": "generalized",
+      "zh": "广义的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "derivation",
+      "zh": "推演",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "derive",
+      "zh": "推演出",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "derivable",
+      "zh": "可推演的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "derivability",
+      "zh": "可推演性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "non-derivability",
+      "zh": "不可推演性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "proof / prove",
+      "zh": "证明",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "provable",
+      "zh": "可证明的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "provability",
+      "zh": "可证明性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "rule",
+      "zh": "规则",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "rule of inference / rules of inference",
+      "zh": "推理规则",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "axiom",
+      "zh": "公理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "axiomatic system",
+      "zh": "公理系统",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "derivable rule",
+      "zh": "导出规则",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "hypothesis / assumption",
+      "zh": "假设",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "premise",
+      "zh": "前提",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "conclusion",
+      "zh": "结论",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "induction",
+      "zh": "归纳",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "induction hypothesis",
+      "zh": "归纳假设",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "case",
+      "zh": "情形",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "deduction",
+      "zh": "演绎",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "deduction theorem",
+      "zh": "演绎定理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "natural deduction",
+      "zh": "自然演绎",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "sequent calculus",
+      "zh": "矢列演算",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "tableau",
+      "zh": "表列",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "closed tableau",
+      "zh": "闭的表列",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "open branch",
+      "zh": "开放的支",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》索引作「开的枝」（165 页），正文用「支」"
+    },
+    {
+      "en": "branch",
+      "zh": "支",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》正文用「支」（57 次），索引个别条目作「枝」；保持「支」"
+    },
+    {
+      "en": "closure",
+      "zh": "闭合",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "modus ponens",
+      "zh": "分离规则（肯定前件）",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》作「分离规则」（44 页）；「（肯定前件）」为解释性括注，保留"
+    },
+    {
+      "en": "rule of necessitation",
+      "zh": "必然化规则",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "substitution",
+      "zh": "代入",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "tautological instance",
+      "zh": "重言式特例",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "valid",
+      "zh": "有效",
+      "module": "core",
+      "source": "confirmed",
+      "note": "模式语境（valid/invalid schema）"
+    },
+    {
+      "en": "invalid schema",
+      "zh": "无效模式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "undischarged",
+      "zh": "未消去的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "complete",
+      "zh": "完全",
+      "module": "core",
+      "source": "confirmed",
+      "note": "token 映射刻意用「完全」，源文 !!{complete}的 组合为「完全的」，避免重复渲染"
+    },
+    {
+      "en": "set",
+      "zh": "集合",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "subset",
+      "zh": "子集",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "proper subset",
+      "zh": "真子集",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "union",
+      "zh": "并",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "intersection",
+      "zh": "交",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "set difference",
+      "zh": "差集",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "relative difference",
+      "zh": "相对差集",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "relation",
+      "zh": "关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "binary relation",
+      "zh": "二元关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "equivalence relation",
+      "zh": "等价关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "class",
+      "zh": "等价类",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "identity relation",
+      "zh": "恒等关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "inverse",
+      "zh": "逆关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "transitive closure",
+      "zh": "传递闭包",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "reflexive closure",
+      "zh": "自反闭包",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "reflexive transitive closure",
+      "zh": "自反传递闭包",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "quotient",
+      "zh": "商集",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "comprehension",
+      "zh": "概括（原则）",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "ordered pair",
+      "zh": "有序对",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "cartesian product",
+      "zh": "卡氏积",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "power set",
+      "zh": "幂集",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "disjoint",
+      "zh": "不相交的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "partial order",
+      "zh": "偏序",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "preorder",
+      "zh": "预序",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "total order",
+      "zh": "全序",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "linear order",
+      "zh": "线性序",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "strict order",
+      "zh": "严格序",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "strict total order",
+      "zh": "严格全序",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "order relation",
+      "zh": "序关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "well-ordered",
+      "zh": "良序的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "least element",
+      "zh": "最小元",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "initial segment",
+      "zh": "初始段",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "successor",
+      "zh": "后继点",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "predecessor",
+      "zh": "前驱点",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "weakly dense",
+      "zh": "弱稠密的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "weakly connected",
+      "zh": "弱连通的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "weakly directed",
+      "zh": "弱有向的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "partially functional",
+      "zh": "部分函数的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "universal relation",
+      "zh": "全域关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "empty relation",
+      "zh": "空关系",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "non-self-membered",
+      "zh": "非自属的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "connected",
+      "zh": "连通的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "injective",
+      "zh": "单射的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "surjective",
+      "zh": "满射的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "bijection",
+      "zh": "双射",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "partial function",
+      "zh": "部分函数",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "domain",
+      "zh": "定义域",
+      "module": "core",
+      "source": "confirmed",
+      "note": "函数语境：函数的定义域；一阶逻辑论域语境见 domain→论域"
+    },
+    {
+      "en": "codomain",
+      "zh": "目标域",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "identity",
+      "zh": "同一性",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "equality",
+      "zh": "相等",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "directed graph",
+      "zh": "有向图",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "graph",
+      "zh": "图",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "vertices",
+      "zh": "顶点",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "edges",
+      "zh": "边",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "tree",
+      "zh": "树",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "root",
+      "zh": "根",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "children",
+      "zh": "子节点",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "parent",
+      "zh": "父节点",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "subtree",
+      "zh": "子树",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "ancestor",
+      "zh": "祖先",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "finitely branching",
+      "zh": "有穷分支的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "infinite binary tree",
+      "zh": "无穷二叉树",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "finite",
+      "zh": "有穷的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "infinite",
+      "zh": "无穷的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "countable",
+      "zh": "可数的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "uncountable",
+      "zh": "不可数的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "intuitionistic logic",
+      "zh": "直觉主义逻辑",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "intuitionistic",
+      "zh": "直觉主义的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "constructive",
+      "zh": "构造性的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "constructive reasoning",
+      "zh": "构造性推理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "topological space",
+      "zh": "拓扑空间",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "open sets",
+      "zh": "开集",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "topological model",
+      "zh": "拓扑模型",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "interior",
+      "zh": "内部",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "prime (formula)",
+      "zh": "素的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "BHK interpretation",
+      "zh": "BHK 解释",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "atomic formula",
+      "zh": "原子公式",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "excluded middle",
+      "zh": "排中律",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "Law of Excluded Middle",
+      "zh": "排中律",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "state description",
+      "zh": "状态描述",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "symbolic logic",
+      "zh": "符号逻辑",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "word",
+      "zh": "词",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "finite strings",
+      "zh": "有穷字符串",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "definition",
+      "zh": "定义",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "example",
+      "zh": "例",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "exercise",
+      "zh": "习题",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "theorem",
+      "zh": "定理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "lemma",
+      "zh": "引理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "proposition",
+      "zh": "命题",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "corollary",
+      "zh": "推论",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "note",
+      "zh": "注",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "convention",
+      "zh": "约定",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "suppose",
+      "zh": "设",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "then",
+      "zh": "则",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "hence",
+      "zh": "因此",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "thus",
+      "zh": "于是",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "note that",
+      "zh": "注意，……",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "recall that",
+      "zh": "回顾，……",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "it is easy to see that",
+      "zh": "容易看出，……",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "the following proposition",
+      "zh": "如下命题",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "iff",
+      "zh": "当且仅当",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "i.e.",
+      "zh": "即",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "e.g.",
+      "zh": "例如",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "viz.",
+      "zh": "亦即",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "prove",
+      "zh": "证明",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "relational structures",
+      "zh": "关系结构",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "relative product",
+      "zh": "相对积",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "partitions",
+      "zh": "划分",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "first",
+      "zh": "一阶",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "second-order definable",
+      "zh": "二阶可定义的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "balanced",
+      "zh": "平衡的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "in parallel",
+      "zh": "并行地",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "finest",
+      "zh": "最细的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "coarsest",
+      "zh": "最粗的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "assumptions",
+      "zh": "假设",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "closed",
+      "zh": "闭的",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「封闭」（5 页）用于集合在运算下封闭；表列语境「闭的」与书一致（闭的支 160 页）"
+    },
+    {
+      "en": "open",
+      "zh": "开的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "labelled",
+      "zh": "加标的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "prefixed",
+      "zh": "带前缀的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "principia mathematica",
+      "zh": "《数学原理》（保留原文）",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "begriffsschrift",
+      "zh": "《概念文字》（保留原文）",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "meaning and necessity",
+      "zh": "《意义与必然性》（保留原文）",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "de interpretatione",
+      "zh": "《解释篇》（保留原文）",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "soundness theorem",
+      "zh": "可靠性定理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "completeness theorem",
+      "zh": "完全性定理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "theory",
+      "zh": "理论",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "extension",
+      "zh": "扩张",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》「扩张」（23 页），一致"
+    },
+    {
+      "en": "Lindenbaum lemma",
+      "zh": "Lindenbaum 引理",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "truth-functional",
+      "zh": "真值函项的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "deductive",
+      "zh": "演绎的",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "purported counterexample",
+      "zh": "所谓反例",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "closed under subformulas",
+      "zh": "对子公式封闭",
+      "module": "core",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal logic",
+      "zh": "模态逻辑",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "normal modal logic",
+      "zh": "正规模态逻辑",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal",
+      "zh": "模态的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modality",
+      "zh": "模态",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal propositions",
+      "zh": "模态命题",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal-free",
+      "zh": "无模态的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modally closed",
+      "zh": "模态封闭的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal system",
+      "zh": "模态系统",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal degree",
+      "zh": "模态度",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "necessity",
+      "zh": "必然性",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "possibility",
+      "zh": "可能性",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "necessary",
+      "zh": "必然的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "necessarily",
+      "zh": "必然地",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "necessarily true",
+      "zh": "必然真",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "possible",
+      "zh": "可能的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "possible world",
+      "zh": "可能世界",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "world",
+      "zh": "世界",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "actual world",
+      "zh": "现实世界",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal operator",
+      "zh": "模态算子",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "iterated modality",
+      "zh": "叠加模态",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "innermost modality",
+      "zh": "最内层的模态算子",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "dual",
+      "zh": "对偶",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "relational",
+      "zh": "关系的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "relational semantics",
+      "zh": "关系语义",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "relational model",
+      "zh": "关系模型",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "accessibility relation",
+      "zh": "可及关系",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「通达关系」与「可及关系」并用（关系定义处明示同义）；保持「可及关系」"
+    },
+    {
+      "en": "frame",
+      "zh": "框架",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "Kripke frame/model",
+      "zh": "Kripke 框架/模型",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "Kripke semantics",
+      "zh": "Kripke 语义",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "canonical",
+      "zh": "典范的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "canonical model",
+      "zh": "典范模型",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "filtration",
+      "zh": "过滤",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "bisimulation",
+      "zh": "双模拟",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》10.1.15 定义标题并列「双模拟，双仿」；bisimulation→双模拟、bisimilar→双仿的；国内文献亦常见「互模拟」（SEP 中译即用此），保持「双模拟」"
+    },
+    {
+      "en": "maximal consistent",
+      "zh": "极大一致的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "forth condition",
+      "zh": "forth 条件",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "back condition",
+      "zh": "back 条件",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "bisimilar",
+      "zh": "双模拟等价的",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》作「双仿的」（10.1.15）；本条目保持「双模拟等价的」"
+    },
+    {
+      "en": "valid on a frame",
+      "zh": "在框架上有效",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "true in a model",
+      "zh": "在模型中为真",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "truth at a world",
+      "zh": "在世界处为真",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "correspondence theory",
+      "zh": "对应理论",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "term model",
+      "zh": "项模型",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "reflexive",
+      "zh": "自反的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "transitive",
+      "zh": "传递的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "symmetric",
+      "zh": "对称的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "antisymmetric",
+      "zh": "反对称的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "asymmetric",
+      "zh": "禁对称的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "irreflexive",
+      "zh": "禁自反的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "Euclidean",
+      "zh": "欧性的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "serial",
+      "zh": "持续的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "frame definability",
+      "zh": "框架可定义性",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "necessitation (rule)",
+      "zh": "必然化（规则）",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "prefixed tableau",
+      "zh": "带前缀的表列",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "prefixes",
+      "zh": "前缀",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "labelled tableau",
+      "zh": "加标的表列",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "signed formula",
+      "zh": "带符号公式",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "hypersequent",
+      "zh": "超矢列",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "modal model",
+      "zh": "模态模型",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "axiom schema",
+      "zh": "公理模式",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "normal (modal logic)",
+      "zh": "正规的（模态逻辑）",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "counterfactual",
+      "zh": "反事实的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "counterfactual conditional",
+      "zh": "反事实条件句",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "counterfactual conditionals",
+      "zh": "反事实条件句",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "subjunctive conditional",
+      "zh": "虚拟条件句",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "indicative conditional",
+      "zh": "直陈条件句",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "indicative",
+      "zh": "直陈的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "material conditional",
+      "zh": "实质条件句",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》作「实质蕴含联结词」；SEP 中译作「实质蕴涵」。B&D 原文将 material conditional 定义为联结词（\"A connective with this semantics is called the material conditional\"），与「反事实条件句」对举；保持「实质条件句」"
+    },
+    {
+      "en": "strict conditional",
+      "zh": "严格条件句",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "antecedent",
+      "zh": "前件",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "consequent",
+      "zh": "后件",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "closest worlds",
+      "zh": "最接近的世界",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "sphere model",
+      "zh": "球面模型",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "system of spheres",
+      "zh": "球面系统",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "admitting sphere",
+      "zh": "容纳球面",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "p-admitting sphere",
+      "zh": "p-容纳球面",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "centered",
+      "zh": "中心的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "nested",
+      "zh": "嵌套的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "innermost",
+      "zh": "最内层的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "minimal change semantics",
+      "zh": "最小变化语义",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "strata",
+      "zh": "分层",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "vacuously",
+      "zh": "空真地",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "agglomeration / agglomerates",
+      "zh": "聚合",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "antecedent strengthening",
+      "zh": "前件强化",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "contrapositive",
+      "zh": "逆否命题",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "chain rule",
+      "zh": "链规则",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "contingent",
+      "zh": "偶然的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "monotonic",
+      "zh": "单调的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "symbolize",
+      "zh": "符号化",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "capture",
+      "zh": "刻画",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "opposite (diagram label)",
+      "zh": "颠倒式",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "tense logic",
+      "zh": "时态逻辑",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "temporal",
+      "zh": "时态的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "possible histories model",
+      "zh": "可能历史模型",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "possible histories",
+      "zh": "可能历史",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "linear time",
+      "zh": "线性时间",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "linear (time)",
+      "zh": "线性的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "dense time",
+      "zh": "稠密时间",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "dense (time)",
+      "zh": "稠密的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "unbounded (past/future)",
+      "zh": "无界的（过去/未来）",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "unbounded",
+      "zh": "无界的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "precedes",
+      "zh": "先于",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "since",
+      "zh": "自从",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "until (temporal operators)",
+      "zh": "直到",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "future contingent",
+      "zh": "未来偶然命题",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "open future",
+      "zh": "开放的未来",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "determinist",
+      "zh": "决定论者",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "updates",
+      "zh": "更新",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "events",
+      "zh": "事件",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "alethic",
+      "zh": "真性的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "epistemic",
+      "zh": "认知的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "doxastic",
+      "zh": "信念的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "deontic",
+      "zh": "道义的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "knowledge and belief",
+      "zh": "知识与信念",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "knowledge",
+      "zh": "知识",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "epistemic possibility",
+      "zh": "认知可能性",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "epistemic proposition",
+      "zh": "认知命题",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "agent (epistemic logic)",
+      "zh": "主体",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "epistemic agent",
+      "zh": "认知主体",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "multi-agent",
+      "zh": "多主体",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "single-agent",
+      "zh": "单主体",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "informational state",
+      "zh": "信息状态",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "public announcement",
+      "zh": "公开宣告",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "announcement operator",
+      "zh": "宣告算子",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "dynamic epistemic logic",
+      "zh": "动态认知逻辑",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "update",
+      "zh": "更新",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "event",
+      "zh": "事件",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "group knowledge",
+      "zh": "群体知识",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "common knowledge",
+      "zh": "公共知识",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "veridicality",
+      "zh": "真实性",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "positive",
+      "zh": "正内省",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "negative introspection",
+      "zh": "负内省",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "KK principle",
+      "zh": "KK 原则",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "box operator",
+      "zh": "盒子算子",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "renaming",
+      "zh": "重命名",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "node",
+      "zh": "节点",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "arrow (diagram)",
+      "zh": "箭头",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "computational path",
+      "zh": "计算路径",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "iterated (modality)",
+      "zh": "叠加模态",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》「叠加模态」（83 页）"
+    },
+    {
+      "en": "regular (modal context)",
+      "zh": "正则的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "Kripke frame",
+      "zh": "Kripke 框架",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "indicative (conditionals)",
+      "zh": "直陈的（直陈条件句）",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "subjunctive conditionals",
+      "zh": "虚拟条件句",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "material",
+      "zh": "实质的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "strict",
+      "zh": "严格的",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "epistemic logic",
+      "zh": "认知逻辑",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "epistemic propositions",
+      "zh": "认知命题",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "belief",
+      "zh": "信念",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "validities",
+      "zh": "有效式",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "Veridicality",
+      "zh": "真实性",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "Positive",
+      "zh": "正内省",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "Negative Introspection",
+      "zh": "负内省",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "well-founded",
+      "zh": "良基的",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「良基的」12 页"
+    },
+    {
+      "en": "well-foundedness",
+      "zh": "良基性",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「良基性」"
+    },
+    {
+      "en": "converse well-founded",
+      "zh": "逆良基的",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「逆良基的」8、125 页；另有「弱逆良基的」"
+    },
+    {
+      "en": "converse well-foundedness",
+      "zh": "逆良基性",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「逆良基性」（构词同「逆良基的」）"
+    },
+    {
+      "en": "monotonicity",
+      "zh": "单调性",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「单调性」53、194 页"
+    },
+    {
+      "en": "reflexivity",
+      "zh": "自反性",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「自反性」53、98 页"
+    },
+    {
+      "en": "semantic consequence",
+      "zh": "语义后承",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「语义后承」18、195 页"
+    },
+    {
+      "en": "truth condition",
+      "zh": "真值条件",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「真值条件」36 页"
+    },
+    {
+      "en": "proper inclusion",
+      "zh": "真包含",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「真包含（于）」416 行"
+    },
+    {
+      "en": "restriction",
+      "zh": "限制",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「f 在 C 上的限制」489 行"
+    },
+    {
+      "en": "axiomatization",
+      "zh": "公理化",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「公理化」7.1.24 定义"
+    },
+    {
+      "en": "equivalent axiomatization",
+      "zh": "等价的公理化",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「公理化」构词"
+    },
+    {
+      "en": "maximality",
+      "zh": "极大性",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「极大性」"
+    },
+    {
+      "en": "construction",
+      "zh": "构造",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「构造」"
+    },
+    {
+      "en": "closed term",
+      "zh": "闭项",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「闭项」14967 行"
+    },
+    {
+      "en": "variable assignment",
+      "zh": "指派",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「指派」62、280 页（含「变体指派」）"
+    },
+    {
+      "en": "image",
+      "zh": "像集",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「值域或像集」487 行；与 application 语境区分待定"
+    },
+    {
+      "en": "falsify",
+      "zh": "使……为假",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「使得……为假」9383 行"
+    },
+    {
+      "en": "inductive step",
+      "zh": "归纳步",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「归纳步」734 行"
+    },
+    {
+      "en": "Hilbert-type system",
+      "zh": "希尔伯特式公理系统",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「希尔伯特式公理系统」1067、2052 行"
+    },
+    {
+      "en": "atomic statement",
+      "zh": "原子公式",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「原子公式」16、58 页；与 atomic formula 同译"
+    },
+    {
+      "en": "set variable",
+      "zh": "谓词变元",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「一元谓词变元」9261 行"
+    },
+    {
+      "en": "universally quantified",
+      "zh": "全称量化",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「全称分配/例示/概括公理」"
+    },
+    {
+      "en": "y-variant",
+      "zh": "y-变体",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「x-变体」（变体指派，2822 行）"
+    },
+    {
+      "en": "monadic second-order",
+      "zh": "一元二阶的",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「一元谓词变元」+「二阶逻辑」构词"
+    },
+    {
+      "en": "contraposition",
+      "zh": "逆否",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「逆否律」39 页与「假言易位」53 页并用，索引均对应 contrapositive law；与 contrapositive→逆否命题 一致"
+    },
+    {
+      "en": "Cut",
+      "zh": "切割",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中直接保留英文 cut（999 行）"
+    },
+    {
+      "en": "metaphysical",
+      "zh": "形而上学的",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「形而上学」118 行"
+    },
+    {
+      "en": "logical",
+      "zh": "逻辑的",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "模态分类形容词"
+    },
+    {
+      "en": "physical",
+      "zh": "物理的",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "模态分类形容词"
+    },
+    {
+      "en": "saturated",
+      "zh": "饱和的",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「饱和的/饱和集/模态饱和/φ-饱和的」"
+    },
+    {
+      "en": "saturated set",
+      "zh": "饱和集",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「饱和集 saturated set, 26」"
+    },
+    {
+      "en": "modal saturation",
+      "zh": "模态饱和",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「模态饱和 modally saturated, 204」"
+    },
+    {
+      "en": "state of knowledge",
+      "zh": "信息状态",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「信息状态」178 页（7631 行「主体认为可能的所有世界」）"
+    },
+    {
+      "en": "complete Σ-consistent set",
+      "zh": "完全 Σ-一致集",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中用「极大一致」与「否定完全」表述（2283 行）"
+    },
+    {
+      "en": "cardinality",
+      "zh": "基数",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「基数」6、19 页"
+    },
+    {
+      "en": "seriality",
+      "zh": "持续性",
+      "module": "modal-logic",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「持续性」（1.2.5 定义，588 行）"
+    },
+    {
+      "en": "disjunct",
+      "zh": "析取支",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「合取支/析取支」1587 行；与 conjunct→合取支 配套"
+    },
+    {
+      "en": "conjunct",
+      "zh": "合取支",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》中「合取支/析取支」1587 行"
+    },
+    {
+      "en": "application",
+      "zh": "像集",
+      "module": "core",
+      "source": "confirmed",
+      "note": "与 image 同译（文学锋《模态逻辑导论》「值域或像集」487 行）；指 $R$ 对 $A$ 的像 $R[A]$"
+    },
+    {
+      "en": "truth tree",
+      "zh": "真值树",
+      "module": "core",
+      "source": "confirmed",
+      "note": "用户确认；OLP 表列旧称（文学锋《模态逻辑导论》表列语境用「表列」）"
+    },
+    {
+      "en": "universality",
+      "zh": "全域性",
+      "module": "modal-logic",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；S5 语义（所有世界两两可达）"
+    },
+    {
+      "en": "universal frame",
+      "zh": "全域框架",
+      "module": "modal-logic",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；S5 语义"
+    },
+    {
+      "en": "universal model",
+      "zh": "全域模型",
+      "module": "modal-logic",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；S5 语义"
+    },
+    {
+      "en": "well-behaved",
+      "zh": "良态",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；正文可按语境译「性质良好的/表现良好的」；勿用「规范」（与 normal 冲突）"
+    },
+    {
+      "en": "effective procedure",
+      "zh": "能行程序",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；递归论通行译法（丘奇—图灵论题）"
+    },
+    {
+      "en": "epistemic alternative",
+      "zh": "认知选项",
+      "module": "modal-logic",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；与当前知识相容的可能世界"
+    },
+    {
+      "en": "prime set",
+      "zh": "素集",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；与格论「素滤子/素理想」同源；勿与「素数」混淆"
+    },
+    {
+      "en": "absurdity",
+      "zh": "荒谬",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；直觉主义「无构造」语义；句法语境可并用「假/假命题」"
+    },
+    {
+      "en": "Polish notation",
+      "zh": "波兰表示法",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；通行译法"
+    },
+    {
+      "en": "condensed derivation",
+      "zh": "压缩的推导",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；OLP 中为描述性用法（步骤被压缩的推演），与 condensed detachment 无关"
+    },
+    {
+      "en": "model existence result",
+      "zh": "模型存在性结果",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；完全性定理的第二表述"
+    },
+    {
+      "en": "exhaustive listing",
+      "zh": "穷尽性列出",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；与「穷尽的」一致"
+    },
+    {
+      "en": "syntactic counterpart",
+      "zh": "句法对应物",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；与已落地译文一致"
+    },
+    {
+      "en": "provability result",
+      "zh": "可证明性结果",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；「可证性」留给 provability logic"
+    },
+    {
+      "en": "Induction Basis",
+      "zh": "归纳基始",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；王宪钧《数理逻辑引论》「基始」传统，与「归纳步骤」对称"
+    },
+    {
+      "en": "knowledge closure",
+      "zh": "知识封闭",
+      "module": "modal-logic",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "用户确认；epistemic closure→认知封闭；与传递闭包等数学 closure 区分"
+    },
+    {
+      "en": "Kripke",
+      "zh": "克里普克",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译；全名 Saul Kripke→索尔·克里普克。译文用 \\zhFullName{Kripke}{索尔·克里普克}{克里普克}：首次输出「索尔·克里普克（Saul Kripke）」，之后输出「克里普克」"
+    },
+    {
+      "en": "Lewis",
+      "zh": "刘易斯",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Stalnaker",
+      "zh": "斯达内克",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Arthur Prior",
+      "zh": "亚瑟·普莱尔",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译；译文用 \\zhFullName{Prior}{亚瑟·普莱尔}{普莱尔}：首次输出「亚瑟·普莱尔（Arthur Prior）」，之后输出「普莱尔」"
+    },
+    {
+      "en": "Prior",
+      "zh": "普莱尔",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Brouwer",
+      "zh": "布劳威尔",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Heyting",
+      "zh": "海廷",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Kolmogorov",
+      "zh": "柯尔莫哥洛夫",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Brouwer--Heyting--Kolmogorov",
+      "zh": "布劳威尔–海廷–柯尔莫哥洛夫",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Russell",
+      "zh": "罗素",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Hilbert",
+      "zh": "希尔伯特",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Frege",
+      "zh": "弗雷格",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Lindenbaum",
+      "zh": "林登鲍姆",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Carnap",
+      "zh": "卡尔纳普",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Hintikka",
+      "zh": "欣蒂卡",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Skolem",
+      "zh": "斯科伦",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（通行译名）；译文用 \\zhFirst{原名}{译名}，全书首次出现自动附原文，之后纯音译；无通行译名者保留原文（如 Kratzer）"
+    },
+    {
+      "en": "Dana",
+      "zh": "达娜",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "例句虚构人名，直接译出，不使用 \\zhFirst 括号机制"
+    },
+    {
+      "en": "Saul Kripke",
+      "zh": "索尔·克里普克",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "全名音译；见 Kripke 条目（zhFullName 同键）"
+    },
+    {
+      "en": "Langford",
+      "zh": "兰福德",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "Michael Dummett",
+      "zh": "迈克尔·达米特",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "Robert Stalnaker",
+      "zh": "罗伯特·斯达内克",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "David K. Lewis",
+      "zh": "大卫·刘易斯",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "Rudolf Carnap",
+      "zh": "鲁道夫·卡尔纳普",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "David Hilbert",
+      "zh": "大卫·希尔伯特",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "Gottlob Frege",
+      "zh": "戈特洛布·弗雷格",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "L. E. J. Brouwer",
+      "zh": "L. E. J. 布劳威尔",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名全名音译；\\zhFullName 同键（首次全名+原文，之后单姓）"
+    },
+    {
+      "en": "Leibniz",
+      "zh": "莱布尼茨",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Alfred North Whitehead",
+      "zh": "阿尔弗雷德·诺斯·怀特海",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Bertrand Russell",
+      "zh": "伯特兰·罗素",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Kurt Gödel",
+      "zh": "库尔特·哥德尔",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "J. Edgar Hoover",
+      "zh": "J. 埃德加·胡佛",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Lee Harvey Oswald",
+      "zh": "李·哈维·奥斯瓦尔德",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "John F. Kennedy",
+      "zh": "约翰·F. 肯尼迪",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Warren",
+      "zh": "沃伦",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Richard",
+      "zh": "理查德",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "例句虚构人名，直接译出，不使用 \\zhFirst 括号机制"
+    },
+    {
+      "en": "Audrey",
+      "zh": "奥黛丽",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "例句虚构 agent 名（与真实人物 Audrey Yap 区分），直接译出，不使用 \\zhFirst 括号机制"
+    },
+    {
+      "en": "Wiener",
+      "zh": "维纳",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Kuratowski",
+      "zh": "库拉托夫斯基",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Bishop",
+      "zh": "毕晓普",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Evert Beth",
+      "zh": "埃弗特·贝特",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Raymond Smullyan",
+      "zh": "雷蒙德·斯穆里安",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Jaakko Hintikka",
+      "zh": "亚科·欣蒂卡",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Gödel",
+      "zh": "哥德尔",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Godel",
+      "zh": "哥德尔",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFirst/\\zhFullName 机制）"
+    },
+    {
+      "en": "Goethe",
+      "zh": "歌德",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+    },
+    {
+      "en": "Riemann",
+      "zh": "黎曼",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+    },
+    {
+      "en": "Riemann hypothesis",
+      "zh": "黎曼猜想",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+    },
+    {
+      "en": "Adams",
+      "zh": "亚当斯",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+    },
+    {
+      "en": "SuperSoaker",
+      "zh": "超级水枪",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名/专名音译（\\zhFirst 机制）；SuperSoaker 品牌名保留原文"
+    },
+    {
+      "en": "C. I. Lewis",
+      "zh": "C. I. 刘易斯",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "人名音译（\\zhFullName 机制）；即 Clarence Irving Lewis，注意与 David K. Lewis 区分"
+    },
+    {
+      "en": "Kratzer",
+      "zh": "Kratzer",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "无通行译名，保留原文"
+    },
+    {
+      "en": "Aldo Antonelli",
+      "zh": "Aldo Antonelli",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "无通行译名，保留原文"
+    },
+    {
+      "en": "Beezie",
+      "zh": "Beezie",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "虚构角色名（狗），保留原文"
+    },
+    {
+      "en": "Audrey Yap",
+      "zh": "Audrey Yap",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "无通行译名，保留原文"
+    },
+    {
+      "en": "Ruth",
+      "zh": "露丝",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "例句虚构人名（Richard 的姐妹），直接译出，不使用 \\zhFirst 括号机制"
+    },
+    {
+      "en": "Jaako Hintikka",
+      "zh": "亚科·欣蒂卡",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "上游 EN 拼写错误（正确为 Jaakko Hintikka）；译文宏键统一用 Jaakko Hintikka"
+    },
+    {
+      "en": "vertex",
+      "zh": "顶点",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "图论术语；vertices 为复数，条目 vertices → 顶点 已存在"
+    },
+    {
+      "en": "edge",
+      "zh": "边",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "图论术语；modal-logic 语境中 relation 的边"
+    },
+    {
+      "en": "isolated vertex",
+      "zh": "孤立顶点",
+      "module": "core",
+      "kind": "word",
+      "source": "confirmed",
+      "note": "图论术语"
+    },
+    {
+      "en": "primitive symbol",
+      "zh": "初始符号",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》作「初始联结词」（同词根「初始」）；不用「原始符号」"
+    },
+    {
+      "en": "primitive connective",
+      "zh": "初始联结词",
+      "module": "core",
+      "source": "confirmed",
+      "note": "文学锋《模态逻辑导论》：「设命题逻辑的初始联结词为 ¬ 和 ∧」"
+    },
+    {
+      "en": "class of models",
+      "zh": "模型类",
+      "module": "modal-logic",
+      "source": "confirmed"
+    },
+    {
+      "en": "elementary class of models",
+      "zh": "初等模型类",
+      "module": "modal-logic",
+      "source": "confirmed"
+    }
+  ]
 }
