@@ -1025,7 +1025,8 @@
       "en": "identity",
       "zh": "同一性",
       "module": "core",
-      "source": "confirmed"
+      "source": "confirmed",
+      "note": "仅用于 identity 作为抽象逻辑/哲学概念的语境。数学散文中的 `the identity A=B` 通常指具体等式或相等事实，应译作「等式」或直接改写为「A=B」「可推出 A=B」，不得机械译作「同一性 A=B」。"
     },
     {
       "en": "equality",

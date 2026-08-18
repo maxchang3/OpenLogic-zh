@@ -129,46 +129,51 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item 设 $\Sigma$ 包含模式 $\Diamond !A \lif \Box !A$，要证明
-    $R^\Sigma$ 是部分函数的，我们需要证明：对任意 $\Delta_1$、$\Delta_2$、
-    $\Delta_3 \in W^\Sigma$，如果 $R^\Sigma \Delta_1\Delta_2$ 且 $R^\Sigma
-    \Delta_1\Delta_3$，则 $\Delta_2=\Delta_3$。由于 $R^\Sigma
-    \Delta_1\Delta_2$，我们有 $\Box^{-1}\Delta_1 \subseteq
-    \Delta_2$，并且由于 $R^\Sigma \Delta_1\Delta_3$，也有
+  \item 设 $\Sigma$ 包含模式 $\Diamond !A \lif \Box !A$。要证明
+    $R^\Sigma$ 是部分函数的，只需证明：对任意 $\Delta_1$、$\Delta_2$、
+    $\Delta_3 \in W^\Sigma$，若 $R^\Sigma \Delta_1\Delta_2$ 且
+    $R^\Sigma \Delta_1\Delta_3$，则 $\Delta_2=\Delta_3$。
+    由 $R^\Sigma \Delta_1\Delta_2$，有 $\Box^{-1}\Delta_1 \subseteq \Delta_2$；
+    由 $R^\Sigma \Delta_1\Delta_3$，又有
     $\Box^{-1}\Delta_1 \subseteq
-    \Delta_3$\iftag{prvBox}{}{，两者都
-      由 \olref[mod]{lem:box-iff-diamond} 得出}。如果能确立两个包含
-    $\Delta_2 \subseteq \Delta_3$ 和 $\Delta_3 \subseteq \Delta_2$，
-    则同一性 $\Delta_2=\Delta_3$ 就会随之而来。对于第一个包含，令
-    $!A \in \Delta_2$；则 $\Diamond!A \in \Delta_1$，由该模式和
-    $\Delta_1$ 的演绎封闭性，还有 $\Box!A \in \Delta_1$，从而由假设
-    $R^\Sigma \Delta_1\Delta_3$，$!A \in \Delta_3$。第二个包含类似。
+    \Delta_3$\iftag{prvBox}{}{，两者都由 \olref[mod]{lem:box-iff-diamond} 得出}。
+    只需证明 $\Delta_2 \subseteq \Delta_3$ 和 $\Delta_3 \subseteq \Delta_2$，即可推出 $\Delta_2=\Delta_3$。
+    先证 $\Delta_2 \subseteq \Delta_3$。任取
+    $!A \in \Delta_2$；则 $\Diamond!A \in \Delta_1$。
+    由该模式及 $\Delta_1$ 的演绎封闭性，得
+    $\Box!A \in \Delta_1$；再由
+    $R^\Sigma \Delta_1\Delta_3$，得 $!A \in \Delta_3$。
+    因此 $\Delta_2 \subseteq \Delta_3$。
+    $\Delta_3 \subseteq \Delta_2$ 的证明类似。
+  \item 由 \olref{prop:anotherfive-a} 以及
+    \olref{thm:completeframeprops} 中关于持续性的证明立即可得。
 
-  \item 这直接从部分~\olref{prop:anotherfive-a}和
-    \olref{thm:completeframeprops} 中的持续性证明得出。
-
-  \item 设 $\Sigma$ 包含模式 $\Box\Box!A \lif \Box!A$，并设 $R^\Sigma
-    \Delta_1\Delta_2$ 以证明 $R^\Sigma$ 是弱稠密的。我们需要证明存在
-    一个完全的 $\Sigma$-一致集 $\Delta_3$ 使得 $R^\Sigma
-    \Delta_1\Delta_3$ 且 $R^\Sigma \Delta_3\Delta_2$。令：
+  \item 设 $\Sigma$ 包含模式 $\Box\Box!A \lif \Box!A$。
+    为证明 $R^\Sigma$ 是弱稠密的，设
+    $R^\Sigma \Delta_1\Delta_2$。需证存在一个完全的
+    $\Sigma$-一致集 $\Delta_3$，使得
+    $R^\Sigma \Delta_1\Delta_3$ 且
+    $R^\Sigma \Delta_3\Delta_2$。令
     \[
     \Gamma = \Box^{-1}\Delta_1 \cup \Diamond\Delta_2.
     \]
-    只需证明 $\Gamma$ 是 $\Sigma$-一致的，因为那样的话，由\zhFirst{Lindenbaum}{林登鲍姆}
-    引理它可以被扩张为一个完全的 $\Sigma$-一致集~$\Delta_3$，使得
-    $\Box^{-1}\Delta_1 \subseteq \Delta_3$ 且 $\Diamond\Delta_2
-    \subseteq \Delta_3$，即 $R^\Sigma \Delta_1\Delta_3$\iftag{prvBox}{}{（由
-      \olref[mod]{lem:box-iff-diamond}）}且 $R^\Sigma
-    \Delta_3\Delta_2$\iftag{prvBox}{（由
+    只需证明 $\Gamma$ 是 $\Sigma$-一致的。
+    若此成立，则由 \zhFirst{Lindenbaum}{林登鲍姆}引理，
+    可将 $\Gamma$ 扩张为一个完全的 $\Sigma$-一致集~$\Delta_3$，使得
+    $\Box^{-1}\Delta_1 \subseteq \Delta_3$ 且
+    $\Diamond\Delta_2 \subseteq \Delta_3$，即
+    $R^\Sigma \Delta_1\Delta_3$\iftag{prvBox}{}{（由
+      \olref[mod]{lem:box-iff-diamond}）}且
+    $R^\Sigma \Delta_3\Delta_2$\iftag{prvBox}{（由
       \olref[mod]{lem:box-iff-diamond}）}{}。
 
-    反设 $\Gamma$ 不一致。那么存在!!{formula} $\Box!A_1$、\dots、
-    $\Box!A_n \in \Delta_1$ 和 $!B_1$、\dots、~$!B_m \in \Delta_2$ 使得
+    反设 $\Gamma$ 不一致。则存在!!{formula}
+    $\Box!A_1$、\dots、$\Box!A_n \in \Delta_1$
+    以及 $!B_1$、\dots、~$!B_m \in \Delta_2$，使得
     \[!A_1, \dots, !A_n, \Diamond!B_1, \dots, \Diamond!B_m \Proves[\Sigma]
     \lfalse.\] 由于 $\Diamond (!B_1 \land \dots \land !B_m) \to
-    (\Diamond!B_1 \land \dots \land \Diamond!B_m)$ 在
-    每个正规模态逻辑中都!!{derivable}，我们论证如下，这与~$\Delta_2$
-    的一致性相矛盾：
+    (\Diamond!B_1 \land \dots \land \Diamond!B_m)$ 
+    在每个正规模态逻辑中都!!{derivable}，可作如下推导，从而与 $\Delta_2$ 的一致性矛盾：
     \begin{align*}
       !A_1, \dots, !A_n, & \Diamond!B_1, \dots,
       \Diamond!B_m \Proves[\Sigma] \lfalse \\
