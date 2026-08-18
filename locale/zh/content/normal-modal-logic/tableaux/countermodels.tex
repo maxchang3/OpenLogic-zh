@@ -11,15 +11,15 @@
 \olsection{来自\usetoken{P}{tableau}的反模型}
 
 \begin{explain}
-  完全性定理的证明不仅表明如果 $\Entails !A$ 则 $\Proves !A$，它还给了我们一个方法：若 $\Entails/ A$，就为~$!A$ 构造反模型。就~$\Log{K}$ 而言，这一方法构成一个\emph{判定程序}。设 $\Entails/ !A$。则 \olref[cpl]{prop:complete-tableau} 的证明给出一个构造完全!!{tableau}的方法。事实上，这一方法总是会终止。$\Log{K}$~的命题规则只添加复杂度更低的带前缀!!{formula}；即，对任何带符号公式 $\sFmla{S}{!A}[\sigma]$，每条命题规则在一支上只需应用一次。新的前缀只由
+  完全性定理的证明不仅表明，若 $\Entails !A$，则 $\Proves !A$；它还给出了一个方法：若 $\Entails/ A$，则为~$!A$ 构造反模型。就~$\Log{K}$ 而言，这一方法构成一个\emph{判定程序}。设 $\Entails/ !A$。则 \olref[cpl]{prop:complete-tableau} 的证明给出一个构造完全!!{tableau}的方法。事实上，这一方法总会终止。$\Log{K}$~的命题规则只添加复杂度更低的带前缀!!{formula}；即，对任何带符号公式 $\sFmla{S}{!A}[\sigma]$，每条命题规则在一支上只需应用一次。新的前缀只由
   \iftag{prvBox}{$\TRule{\False}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
     和 }\iftag{prvDiamond}{$\TRule{\True}{\Diamond}$}{}
-  \iftag{notprvBox,notprvDiamond}{规则}{规则}生成，而且也只需应用一次（并产生一个新的前缀）。
+  \iftag{notprvBox,notprvDiamond}{规则}{规则}生成，而且这些规则也只需应用一次（并产生一个新的前缀）。
   \iftag{prvBox}{$\TRule{\True}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
     和 }\iftag{prvDiamond}{$\TRule{\False}{\Diamond}$}{}
-  \iftag{notprvBox,notprvDiamond}{}{}需要可能多次应用，但每个前缀只应用一次，而且只生成有穷多个新的前缀。因此，这一构造在有限多个阶段之后要么产生一个闭的支，要么产生一个完全的支。
+  \iftag{notprvBox,notprvDiamond}{}{}可能需要多次应用，但对每个前缀只需应用一次，而且只会生成有穷多个新的前缀。因此，这一构造在有限多个阶段之后，要么产生一个闭的支，要么产生一个完全的支。
 
-  一旦构造出具有开放完全的支的表列，\olref[cpl]{thm:tableau-completeness} 的证明就给出一个满足原始带前缀!!{formula}集合的显式模型。因此不仅成立：若 $\Gamma \Entails !A$，则存在闭的!!{tableau}且 $\Gamma \Proves !A$；如果以正确的方式寻找闭的!!{tableau}，最终得到一个「完全」的!!{tableau}，那么我们不仅会知道 $\Gamma \Entails/ !A$，而且实际上能够构造一个反模型。
+  一旦构造出具有一个开放且完全的支的!!{tableau}，\olref[cpl]{thm:tableau-completeness} 的证明就给出一个满足原始带前缀!!{formula}集合的显式模型。因此，我们得到的不只是：若 $\Gamma \Entails !A$，则存在闭的!!{tableau}，且 $\Gamma \Proves !A$；若以适当的方式寻找闭的!!{tableau}，而最终得到一个「完全」的!!{tableau}，那么我们不仅会知道 $\Gamma \Entails/ !A$，而且实际上能够构造一个反模型。
 \end{explain}
 
 \iftag{prvBox}{
@@ -50,7 +50,7 @@
     ]
   \end{oltableau}
   当然，!!{tableau}还没有完成。下一步，我们考虑唯一没有对勾的行：第~$2$~行的带前缀!!{formula}
-  $\sFmla{\True}{\Box(p \lor q)}[1]$。闭表列的构造要求对支上使用的每个前缀应用 $\TRule{\True}{\Box}$ 规则，即对 $1.1$ 和 $1.2$ 两者都应用：
+  $\sFmla{\True}{\Box(p \lor q)}[1]$。按照闭!!{tableau}的构造方法，需要对支上使用的每个前缀应用 $\TRule{\True}{\Box}$ 规则，即对 $1.1$ 和 $1.2$ 两者都应用：
   \begin{oltableau}
     [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
       just = \TAss, checked
@@ -80,7 +80,7 @@
       ]
     ]
   \end{oltableau}
-  现在第 2、8、9 行没有对勾。但没有添加新的前缀，因此我们对第~8~行和第~9~行应用 $\TRule{\True}{\lor}$，对由此产生的所有支都应用（只要它们不闭合）：
+  现在第 2、8、9 行没有对勾。但没有添加新的前缀，因此我们在由此产生的所有支上（只要它们尚未闭合）对第~8~行和第~9~行应用 $\TRule{\True}{\lor}$：
   \begin{oltableau}
     [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
       just = \TAss, checked
@@ -204,8 +204,8 @@
       ]
     ]
   \end{oltableau}
-  现在第 3、8、9 行没有对勾。但没有添加新的前缀，因此我们对第~8~行和第~9~行应用 $\TRule{\False}{\land}$，对由此产生的所有支都应用（只要它们不闭合）：
-  \begin{oltableau}
+    现在第 3、8、9 行没有对勾。但没有添加新的前缀，因此我们在由此产生的所有支上（只要它们尚未闭合）对第~8~行和第~9~行应用 $\TRule{\False}{\land}$：  
+    \begin{oltableau}
     [\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1},
       just = \TAss, checked
       [\pFmla{\True}{\Diamond p \land \Diamond q}{1},
@@ -244,7 +244,7 @@
       ]
     ]
   \end{oltableau}
-  还剩下一个开放的支，并且它是完全的。我们从它定义模型：世界 $W = \{1, 1.1, 1.2\}$（开放支上出现的唯一一些前缀）、可及关系
+  还剩下一个开放的支，并且它是完全的。我们由此定义模型：世界 $W = \{1, 1.1, 1.2\}$（开放支上出现的全部前缀）、可及关系
   $R = \{\tuple{1, 1.1}, \tuple{1, 1.2}\}$，以及指派 $V(p) =
   \{1.1\}$（因为第~6~行包含 $\sFmla{\True}{p}[1.1]$）和
   $V(q) = \{1.2\}$（因为第~7~行包含
