@@ -1,10 +1,12 @@
 # OpenLogic-Zh
 
 > [!WARNING]  
-> 
-> **现阶段的译文全部由 AI 生成**，使用 DeepSeek Harness（DeepSeek V4 Flash 0731，思考强度 Max），并经过术语统一、TeX 结构检查和 PDF 审校；尚未进行大规模人工校验。
-> 
-> AI 翻译工作流可见 `.agents/translation/`。
+>  
+> **当前译文由 AI 初步生成，仍在持续润色中。**
+> - 初始翻译：使用 DeepSeek Harness（DeepSeek V4 Flash 0731 Max）
+> - 翻译润色：使用 GPT 5.6 Sol High，并辅以人工校对
+>  
+> AI 翻译工作流详见 `.agents/translation/`。
 
 本仓库旨在完整翻译 [OpenLogicProject/OpenLogic](https://github.com/OpenLogicProject/OpenLogic)，目前翻译**仍在进行中**，译文维护在 `locale/zh/` 中。
 
