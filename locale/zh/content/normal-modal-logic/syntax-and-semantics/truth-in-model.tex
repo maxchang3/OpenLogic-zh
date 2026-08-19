@@ -24,7 +24,7 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item 若 $\mSat{M}{!A}$，则 $!A$ 在 $W$ 中的所有世界处为真；由于 $W \neq \emptyset$，不可能有 $\mSat{M}{\lnot!A}$，否则 $!A$ 就得在某个世界处既真又假。
+  \item 若 $\mSat{M}{!A}$，则 $!A$ 在 $W$ 中的所有世界处都为真。又由于 $W \neq \emptyset$，不可能有 $\mSat{M}{\lnot!A}$；否则，$!A$ 就会在某个世界处既真又假。
 
     另一方面，若 $\mSat/{M}{\lnot !A}$，则 $!A$ 在某个世界 $w \in W$ 处为真。这并不蕴含对\emph{每个}~$w \in W$ 都有 $\mSat{M}{!A}[w]$。例如，在 \olref[rel]{fig:simple} 的模型中，$\mSat/{M}{\lnot p}$，同时也有 $\mSat/{M}{p}$。
   \item 假设 $\mSat{M}{!A \lif !B}$ 且 $\mSat{M}{!A}$；为证明 $\mSat{M}{!B}$，令 $w \in W$ 是任意世界。则 $\mSat{M}{!A \lif !B}[w]$ 且 $\mSat{M}{!A}[w]$，于是 $\mSat{M}{!B}[w]$，由于 $w$ 是任意的，故 $\mSat{M}{!B}$。
