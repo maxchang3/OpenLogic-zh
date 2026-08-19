@@ -10,16 +10,16 @@
 
 \olsection{关系模型}
 
-正规模态逻辑语义的基本概念是\emph{关系模型}。它由一个世界集、这些世界之间的二元「可及关系」，以及一个决定哪些!!{propositional variable}在哪些世界处算作「真」的指派构成。
+正规模态逻辑语义的基本概念是\emph{关系模型}。它包括一个世界、这些世界间的二元「可及关系」，以及一个决定哪些!!{propositional variable}在哪些世界为「真」的指派。
 
 \begin{defn}
-  基本模态语言的一个\emph{模型}是三元组 $\mModel{M}
-  = \tuple{W, R, V}$，其中
+  基本模态语言的\emph{模型}是形如 $\mModel{M}
+  = \tuple{W, R, V}$ 的三元组，其中
   \begin{enumerate}
-  \item $W$ 是一个「世界」的非空集，
-  \item $R$ 是 $W$ 上的二元可及关系，并且
-  \item $V$ 是一个给每个!!{propositional
-    variable}~$p$ 指派一个可能世界集 $V(p)$ 的函数。
+  \item $W$ 为一个非空的「世界」集，
+  \item $R$ 为 $W$ 上的二元可及关系，并且
+  \item $V$ 为函数，给每个!!{propositional
+    variable}~$p$ 指派一个可能世界集 $V(p)$。
   \end{enumerate}
   当 $Rww'$ 成立时，称 $w'$ 从~$w$ \emph{可及}。当 $w \in
   V(p)$ 时，称 $p$ 在~$w$ 处\emph{为真}。
