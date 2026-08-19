@@ -20,6 +20,7 @@
 - `nml/tableaux/completeness.tex`（EN 80 / zh 63）：命题称「每条分支都是完成的」，证明末句却写「每条分支都是闭的」，应为「完成的」。PDF 可见。
 - `counterfactuals/minimal-change-semantics/transitivity.tex`（EN 60 / zh 36）：`$\mSat/{M}{q \lif r}$ is true at all worlds in it` 记号与真值矛盾（$q \lif r$ 在 $S'$ 的所有世界为真，应为 $\mSat{M}$）；zh 照搬（译文中删除了译员添加的冗余括注「即 $q \lif r$」，其余与上游一致）。
 - `intuitionistic-logic/tableaux/soundness.tex`（EN 22-23 / zh 20）：`$\mSat{M}{!A}[w]$` 缺否定，应为 $\mSat/{M}{!A}[w]$（反模型要求 !A 在 w 不成立）。
+- `normal-modal-logic/tableaux/countermodels.tex`（EN 282-285 / zh 248-251，`prvDiamond` 分支）：`$V(q)=\{1.2\}$` 处注释写 `line~7 contains $\sFmla{\True}{q}[1.1]$`，应为 `[1.2]`；`$V(p)$` 注释正确。中文照搬上游，PDF 可见，不主动改译文。
 - `normal-modal-logic/filtrations/introduction.tex`（EN 13）：句子末尾缺右括号（`2^{n^2}。`）。
 
 ## 术语易混点（2026 审计批次）
