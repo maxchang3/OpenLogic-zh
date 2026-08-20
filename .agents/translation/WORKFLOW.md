@@ -2,6 +2,8 @@
 
 每个文件由一个 worker 负责；批次控制在 3–5 个。worker 开始前读 `README.md`、`POLICY.md`、`terminology/terms.json`（按需用 jq 过滤 `module`），再读 `content/<相对路径>`，把完整译文写入 `locale/zh/content/<同路径>`。
 
+译文工作按 `status` → `brief` → 编辑/审查 → `make check-zh-static` → `confirm --write` → `make check-zh` 流转。`translation-state.py` 的用法见 `--help`；`confirm` 是人工或 agent 审查后的记录动作，只写入当前英文和中文的 Git blob，不自动验证翻译语义。
+
 worker 必须保留宏、数学、token、标签和 `\olfileid[zh]` 规则；返回空值视为失败，必须检查目标文件真实存在且不是未经翻译的英文副本，不能只依据返回消息判断成功。
 
 未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个文件中采用互相冲突的译法。确认后的术语必须回填 `terminology/terms.json`，并检查可执行 locale 映射是否一致。**术语定案或修改后立即 grep 全部译文同步替换旧译名**（曾发生定案「逆良基的/全称量化/原子公式」后译文仍残留旧译名「反良基/普遍量化/原子命题」多处的案例）。
