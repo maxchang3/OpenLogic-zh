@@ -27,7 +27,7 @@ git fetch upstream
 git log --oneline HEAD..upstream/master
 ```
 
-Actions 运行上游英文构建，并在中文 workflow 中执行不依赖 TeX 的静态门禁：译文清单、路径与文件标识、术语和令牌映射、人名及人名指代。
+Actions 运行上游英文构建，并在中文 workflow 中执行不依赖 TeX 的静态门禁与翻译状态检查：译文清单、路径与文件标识、术语和令牌映射、人名及人名指代，以及已记录确认内容的 Git blob。
 
 ## Upstream project
 

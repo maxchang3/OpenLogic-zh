@@ -9,15 +9,19 @@
 # The PDF of the open-logic-config documentation also requires
 # pandoc http://pandoc.org/
 
-.PHONY : FORCE_MAKE check-zh
+.PHONY : FORCE_MAKE check-zh check-zh-static
 
-check-zh:
+check-zh-static:
 	python3 scripts/check-zh-manifest.py
 	python3 scripts/check-terms.py
 	python3 scripts/check-tokens.py
 	python3 scripts/check-names.py
 	python3 scripts/check-name-refs.py
 	python3 scripts/test_static_checks.py
+	python3 scripts/test_translation_state.py
+
+check-zh: check-zh-static
+	python3 scripts/translation-state.py check
 
 ALLTEXFILES = open-logic-debug.tex open-logic-complete.tex \
 	$(shell test -f open-logic-debug.fls && grep 'INPUT content/.*/.*\.tex' open-logic-debug.fls | uniq | sed 's/INPUT //g' || true)
