@@ -7,7 +7,6 @@
 - 首次出现括号原文的标记必须使用可保护的宏、全局 `\csname` 标记和目录/书签开关；不能把 `\ifcsname` 当作有副作用的初始化机制，也不能让 `\write` 展开出 `\def\relax`。
 - 书签环境不支持正文中的首次检测逻辑；在 `\pdfstringdefDisableCommands` 中让 token 只展开为中文，避免书签显示英文键名或消耗正文首次标记。
 - 中文令牌不区分英语冠词形态；`!!a{token}`、`!!^a{token}` 的输出不能保留原英文实现中的 tie 空格，否则会在 CJK 与令牌之间产生多余空隙。
-- 令牌键必须保持英文原样，不能把 `!!{formula}` 等键翻译成中文或在令牌后手工保留英文复数 `s`。
 - XeLaTeX（中文版）下不要用 Type1 字体包（如 `\usepackage[osf]{Baskervaldx}`）：其 T1 .fd 声明在 fontspec/xeCJK 环境失效，整个西文字体族退化、斜体丢失。中文版必须走 `open-logic-book.cls` 的 XeLaTeX 分支（fontspec 加载 Baskervaldx OpenType）；pdfLaTeX（英文版）才用 Type1 包。`\emph{英文}` 在 ctex 下是中文强调（楷体），西文斜体要用 `\textit{}`。
 - 数学宏必须留在数学模式内；`\text{...}` 中的普通文字可按 POLICY 翻译，但不能移动变量、关系符号或数学命令。
 - `\iftag{FOL}` 等门控内容是否出现由上游 tag 配置决定；缺少某段输出不应直接判断为翻译遗漏。
@@ -28,8 +27,3 @@
 - `anti-symmetric`＝反对称的（偏序用），`asymmetric`＝禁对称的（严格序用）；两者不可互换。
 - `functional`＝函数的（从每个世界恰好一个可及），`partially functional`＝部分函数的（至多一个）；functional 蕴含 serial。
 - `p-admitting sphere`＝$p$-容纳球面（不要写成「容许/允许/可容纳 $p$ 的球面」）。
-- 中文术语后不要手工补英文括注（首次出现由 token 机制自动呈现原文）。
-- 人名勿张冠李戴：C.~I. Lewis（严格条件句、实质条件句批评者）≠ David K. Lewis（反事实条件句、最小变化语义）；`check-name-refs.py` 会校验。
-
-- 术语定案/改名后必须立即同步全部译文：曾发生定案「逆良基的/全称量化/原子公式/逆否律」后，`first-order-definability.tex` 仍残留 5 处「反良基」、「bhk-interpretation.tex」仍用「原子命题」；定案即 grep 全文替换。
-- 修复/审计类 LLM worker 会把普通词加成 `!!{token}`、把 token 改回普通词或改键（6 文件案例）；任何批量修改后跑 `scripts/check-tokens.py` 兜底，比对 EN/ZH 的 token 序列定位（勿信行号）。

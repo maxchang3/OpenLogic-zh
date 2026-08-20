@@ -1,23 +1,29 @@
 # OpenLogic-Zh 翻译与校验工作流
 
+## 批次与状态
+
 每个文件由一个 worker 负责；批次控制在 3–5 个。worker 开始前读 `README.md`、`POLICY.md`、`terminology/terms.json`（按需用 jq 过滤 `module`），再读 `content/<相对路径>`，把完整译文写入 `locale/zh/content/<同路径>`。
 
-译文工作按 `status` → `brief` → 编辑/审查 → `make check-zh-static` → `confirm --write` → `make check-zh` 流转。`translation-state.py` 的用法见 `--help`；`confirm` 是人工或 agent 审查后的记录动作，只写入当前英文和中文的 Git blob，不自动验证翻译语义。
+译文工作按 `status` → `brief` → 编辑/审查 → `make check-zh-static` → `confirm --write` → `make check-zh` 流转。`translation-state.py` 的用法见 `--help`；`confirm` 是人工或审查主体确认后的记录动作，只写入当前英文和中文的 Git blob，不自动验证翻译语义。
 
-worker 必须保留宏、数学、token、标签和 `\olfileid[zh]` 规则；返回空值视为失败，必须检查目标文件真实存在且不是未经翻译的英文副本，不能只依据返回消息判断成功。
+worker 遵守 `POLICY.md` 的 TeX 不变量；返回空值视为失败，必须检查目标文件真实存在且不是未经翻译的英文副本，不能只依据返回消息判断成功。
 
-未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个文件中采用互相冲突的译法。确认后的术语必须回填 `terminology/terms.json`，并检查可执行 locale 映射是否一致。**术语定案或修改后立即 grep 全部译文同步替换旧译名**（曾发生定案「逆良基的/全称量化/原子公式」后译文仍残留旧译名「反良基/普遍量化/原子命题」多处的案例）。
+## 术语与审查
 
-每批完成后先在 `OpenLogic-Zh/` 运行 `make check-zh`，执行快速、无 TeX 的静态门禁（译文范围、路径与 `\olfileid`、术语和令牌映射、人名及人名指代）；然后在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`。失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。**任何 LLM 批量修改（翻译、审计修复、重构）后都必须再次运行令牌校验并清零**——修复类 worker 曾把普通词加成 `!!{token}`、把 token 改回普通词、改动 token 键，只有机械校验能兜底。
+未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个 worker 中采用互相冲突的译法。确认后的术语必须回填 `terminology/terms.json`，并检查可执行 locale 映射是否一致。术语定案或修改后，立即检索并同步替换全部译文中的旧译名。
+
+每批完成后先在 `OpenLogic-Zh/` 运行 `make check-zh`，执行快速、无 TeX 的静态门禁（译文范围、路径与 `\olfileid`、术语和令牌映射、人名及人名指代）；然后在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`。失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。任何批量修改后都必须重跑 `make check-zh`，令牌校验须通过。
 
 审计与修复 worker 的要求：
-- 提示词必须包含：`!!{...}` 原样保留、不得改动 token 键、不得把普通词改写为 token（或反之）、每处修改用最小 diff；
-- worker 加载 `terms.json`（避免把已定译名当错报）与 `../notes/tex-traps.md` 的上游疑点清单（避免把忠实照搬当错报）；
-- 审计报告的行号仅供参考（LLM 统计易错位），复核以 EN/ZH 内容匹配为准；
-- 大批次数据（文件清单、问题清单）写入临时文件由 worker 自行读取，不要内嵌进调度参数（曾发生内嵌 JSON 错乱导致批次丢失）。
+- 明确保留 `!!{...}`、token 键、普通词与 token 的边界；每处修改保持最小 diff；
+- 加载 `terms.json`（避免把已定译名当错报）与 `../notes/tex-traps.md` 的上游疑点清单（避免把忠实照搬当错报）；
+- 审计报告的行号仅供参考，复核以 EN/ZH 内容匹配为准；
+- 大批次数据（文件清单、问题清单）写入临时文件由 worker 自行读取，不要内嵌在任务参数中；
 - 审计时注意上下文敏感的普通数学词，不得因术语表存在某一译法就机械逐词替换；遇到 `identity`、`part` 等词须结合其句法功能和数学对象判断。
 
 人名处理：有通行译名的人名在译文中写 `\zhFirst{原名}{译名}`（音译表见 `terms.json` 人名条目），不要手工判断首次出现位置或手工加括号；无通行译名的人名保留原文。
+
+## 构建与视觉验收
 
 OpenLogic-Zh 自身的 `make`/`make all` 仍构建上游英文文档；中文排版验证由 B&D 组装器完成。同步上游前先检查差异，只合并必要提交，不改写上游源文件或远程配置。
 
