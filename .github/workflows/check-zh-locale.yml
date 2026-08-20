@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Check locale paths and file-id markers
+      - name: Run Chinese locale static gate (no TeX)
         run: make check-zh
