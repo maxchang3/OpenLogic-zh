@@ -12,7 +12,7 @@
 .PHONY : FORCE_MAKE check-zh
 
 check-zh:
-	sh scripts/check-zh-locale.sh
+	python3 scripts/check-zh-manifest.py
 
 ALLTEXFILES = open-logic-debug.tex open-logic-complete.tex \
 	$(shell test -f open-logic-debug.fls && grep 'INPUT content/.*/.*\.tex' open-logic-debug.fls | uniq | sed 's/INPUT //g' || true)
