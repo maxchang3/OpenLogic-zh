@@ -6,7 +6,7 @@
 
 规范的优先顺序是：用户已经确认的决定，其次是 `POLICY.md` 中的共同不变量与决策记录，再次是 `terminology/terms.json`；`pending.md` 只记录尚未定案的候选译法，不得作为规范引用。
 
-`locale/zh/open-logic-config.sty` 是可执行的术语映射，必须与 `terms.json` 保持一致；若实现与文档冲突，应报告并同步修正，不应在 worker 中自行创造隐式覆盖。术语条目之间没有默认覆盖关系，语境不同的同形英文词必须在条目中明确语境（`note` 字段）。
+`locale/zh/open-logic-config.sty` 中的 token 映射必须与 `terminology/tokens.json` 保持一致；`terms.json` 是可翻译词条的数据源，二者职责不同。若实现与对应数据冲突，应报告并同步修正，不应在 worker 中自行创造隐式覆盖。术语条目之间没有默认覆盖关系，语境不同的同形英文词必须在条目中明确语境（`note` 字段）。
 
 `references/` 记录术语来源和适用范围；文学锋《模态逻辑导论》是模态逻辑术语的重要参考，不是整个 OpenLogic-Zh 的唯一来源或自动覆盖规则。
 
