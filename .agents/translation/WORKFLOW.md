@@ -27,8 +27,4 @@ worker 遵守 `POLICY.md` 的 TeX 不变量；返回空值视为失败，必须�
 
 OpenLogic-Zh 自身的 `make`/`make all` 仍构建上游英文文档；中文排版验证由 B&D 组装器完成。同步上游前先检查差异，只合并必要提交，不改写上游源文件或远程配置。
 
-JavaScript 调度 prompt 不要把 TeX 的两个反引号引号对直接放入模板字符串；需要时用文字描述或字符串数组拼接。并发失败后先检查文件状态，再补跑失败文件。
-
-视觉排版问题先渲染目标 PDF 页面为 PNG（`pdftoppm -png -r 150 file.pdf out`，图片放在工作区内），再交由视觉模型提出具体字号、行距和颜色建议；视觉建议不能代替实际 XeLaTeX 构建与文本检查。
-
-视觉模型的调用方式（DSH workflow，provider/model 覆盖）：用 workflow 工具跑单个 agent，`agent(prompt, { provider: 'opencode-go', model: 'minimax-m3' })`，prompt 里给出图片路径（工作区内）并让 agent 用 `read_image` 看图、逐项回答具体问题。注意：视觉模型对字符间空隙的观察不可全信——花体/斜体字形（如 `\mathcal{L}_0`）的视觉重心偏移会被误读为「间距大」，且与 TeX 宽度测量可能矛盾；精确间距以 `\hbox` 宽度测量（`\the\wd0`）为准，视觉仅作交叉验证。中文与数学/英文之间的 `~` 和普通空格都会被 xeCJK 吸收，不产生额外间距，无需为对齐而添加。
+视觉排版问题先渲染目标 PDF 页面为 PNG（`pdftoppm -png -r 150 file.pdf out`，图片放在工作区内）。视觉核验只作辅助，不能代替实际 XeLaTeX 构建与文本检查；字符间空隙可能受字形视觉重心影响，精确间距以 `\hbox` 宽度测量（`\the\wd0`）和实际构建为准。中文与数学/英文之间的 `~` 和普通空格会被 xeCJK 吸收，不要为对齐盲目补空格。
