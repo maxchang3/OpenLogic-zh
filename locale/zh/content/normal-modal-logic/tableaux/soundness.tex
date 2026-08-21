@@ -31,7 +31,7 @@
   设 $P$ 是某一前缀集，即 $P \subseteq (\PosInt)^*
   \setminus \{\emptyseq\}$，并设 $\mModel{M}$ 是一个模型。若只要 $\sigma$ 和 $\sigma.n$ 都在~$P$ 中，就有 $Rf(\sigma)f(\sigma.n)$，则函数~$f\colon P \to W$ 是~$P$ 在~$\mModel{M}$ 中的\emph{解释}。
 
-  给定前缀~$P$ 的一个解释，我们可以定义：
+  给定前缀~$P$ 的一个解释，定义如下：
   \begin{enumerate}
   \item $\mModel{M}$ 满足 $\sFmla{\True}{!A}[\sigma]$ 当且仅当 $\mSat{M}{!A}[f(\sigma)]$。
   \item $\mModel{M}$ 满足 $\sFmla{\False}{!A}[\sigma]$ 当且仅当 $\mSat/{M}{!A}[f(\sigma)]$。
@@ -39,7 +39,7 @@
 \end{defn}
 
 \begin{defn}
-  设 $\Gamma$ 是一个带前缀的!!{formula}集，并设 $P(\Gamma)$ 是其中出现的前缀集。若 $f$ 是~$P(\Gamma)$ 在 $\mModel{M}$ 中的一个解释，则当 $\mModel{M}$ 相对于~$f$ 满足~$\Gamma$ 中的每个带前缀的!!{formula}时，我们就说 $\mModel{M}$ 相对于~$f$ 满足~$\Gamma$，记作 $\mSat{M}{\Gamma}[f]$。$\Gamma$ 是\emph{可满足的}当且仅当存在模型~$\mModel{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\mSat{M}{\Gamma}[f]$。
+  设 $\Gamma$ 是一个带前缀的!!{formula}集，并设 $P(\Gamma)$ 是其中出现的前缀集。若 $f$ 是~$P(\Gamma)$ 在 $\mModel{M}$ 中的一个解释，则当 $\mModel{M}$ 相对于~$f$ 满足~$\Gamma$ 中的每个带前缀的!!{formula}时，称 $\mModel{M}$ 相对于~$f$ 满足~$\Gamma$，记作 $\mSat{M}{\Gamma}[f]$。$\Gamma$ 是\emph{可满足的}当且仅当存在模型~$\mModel{M}$ 和 $P(\Gamma)$ 的解释~$f$ 使得 $\mSat{M}{\Gamma}[f]$。
 \end{defn}
 
 \begin{prop}
@@ -56,7 +56,7 @@
 \end{thm}
 
 \begin{proof}
-我们把!!a{tableau}的一条支称为可满足的，当且仅当它上面的!!{signed formula}集是可满足的；并且如果!!a{tableau}含有至少一条可满足的支，则称它是可满足的。
+称!!a{tableau}的一条支为可满足的，当且仅当它上面的!!{signed formula}集是可满足的；并且如果!!a{tableau}含有至少一条可满足的支，则称它是可满足的。
 
 我们证明如下：用一个推理规则去扩展一个可满足的!!{tableau}，总是得到一个可满足的!!{tableau}。这将证明定理：任何一个闭的!!{tableau}都是通过把推理规则应用于仅由~$\Gamma$ 中的假设构成的!!{tableau}而得出的。所以，若 $\Gamma$ 是可满足的，则它的任何!!{tableau}都将是可满足的。然而，一个闭的!!{tableau}显然不是可满足的，因为它的所有支都是闭的，而闭的支是不可满足的。
 

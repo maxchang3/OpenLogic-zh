@@ -40,7 +40,7 @@
 若 $x,y \in A$，$x < y$，且不存在 $z \in A$ 使 $x < z < y$，则称 $y$ 是~$x$ 的一个\emph{后继}。
 \end{defn}
 
-$x \in A$ 的后继也称为它的\emph{子节点}。若 $y$ 是~$x$ 的一个后继，则我们称 $x$ 是~$y$ 的\emph{前驱点}或\emph{父节点}。
+$x \in A$ 的后继也称为它的\emph{子节点}。若 $y$ 是~$x$ 的一个后继，则称 $x$ 为~$y$ 的\emph{前驱点}或\emph{父节点}。
 
 \begin{prop}
 若 $\tuple{A,\le}$ 是一棵树，则除根之外的每个 $x \in A$ 至多有一个前驱点。
@@ -59,7 +59,7 @@ $x \in A$ 的后继也称为它的\emph{子节点}。若 $y$ 是~$x$ 的一个�
 \begin{defn}[支]
 给定一棵树 $T = \tuple{A, \le}$，$T$ 的一个\emph{支}是~$T$ 中的极大链，即一个集合 $B \subseteq A$，使得对任意 $x, y \in B$ 要么 $x \le y$ 要么 $y \le x$，且对任意 $z \in A \setminus B$ 存在 $u \in B$ 使得既非 $z \le u$ 也非 $u \le z$。
 %
-我们用 $[T]$ 表示 $T$ 的所有支的集合。
+用 $[T]$ 表示 $T$ 的所有支的集合。
 \end{defn}
 
 \begin{ex}

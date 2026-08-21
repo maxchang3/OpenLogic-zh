@@ -31,7 +31,7 @@
   都在~$P$ 中时，都有 $Rf(\sigma)f(\sigma.n)$，则函数~$f\colon P \to W$ 是在
   $\mModel{M}$ 中对~$P$ 的一个\emph{解释}。
 
-  给定前缀~$P$ 的一个解释，我们可以定义：
+  给定前缀~$P$ 的一个解释，定义如下：
   \begin{enumerate}
   \item $\mModel{M}$ 满足 $\sFmla{\True}{!A}[\sigma]$ 当且仅当 $\mSat{M}{!A}[f(\sigma)]$。
   \item $\mModel{M}$ 满足 $\sFmla{\False}{!A}[\sigma]$ 当且仅当 $\mSat/{M}{!A}[f(\sigma)]$。
@@ -75,7 +75,7 @@ $Rf(\sigma)f(\sigma.{*})$。
 \end{thm}
 
 \begin{proof}
-我们把!!a{tableau}的一条支称为可满足的，当且仅当其上的
+称!!a{tableau}的一条支为可满足的，当且仅当其上的
 !!{signed formula}集合是可满足的；并且若!!a{tableau}至少包含一条可满足的支，则称它是可满足的。
 
 我们证明如下：用一个推理规则去扩展一个可满足的!!{tableau}，总是得到一个可满足的!!{tableau}。这将证明定理：任何一个闭的!!{tableau}都是通过把推理规则应用于仅由~$\Gamma$ 中的假设构成的!!{tableau}而得出的。所以，若 $\Gamma$ 是可满足的，则它的任何!!{tableau}都将是可满足的。然而，一个闭的!!{tableau}显然不是可满足的，因为它的所有支都是闭的，而闭的支是不可满足的。
