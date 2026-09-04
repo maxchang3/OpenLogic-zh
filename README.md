@@ -3,8 +3,8 @@
 > [!WARNING]  
 >  
 > **当前译文由 AI 初步生成，仍在持续润色中。**
-> - 初始翻译：使用 DeepSeek Harness（DeepSeek V4 Flash 0731 Max）
-> - 翻译润色：使用 GPT 5.6 Sol High，并辅以人工校对
+> - 初始翻译：使用 DeepSeek V4 Flash 0731 Max (DeepSeek Harness)
+> - 翻译润色：使用 GPT 5.6 Sol High (Codex)、GPT 5.6 Sol Pro (ChatGPT)，并辅以人工校对
 >  
 > AI 翻译工作流详见 `.agents/translation/`。
 
