@@ -34,15 +34,21 @@ def load_json(path):
         return json.load(handle, object_pairs_hook=reject_duplicate_keys)
 
 
-def manifest_paths(root):
+def consumer_paths(root):
+    """返回消费者闭包；由静态检查器统一解析和校验。"""
     global _MANIFEST_MODULE
-    path = Path(root) / "locale" / "zh" / "manifest.txt"
     if _MANIFEST_MODULE is None:
         module_path = Path(__file__).with_name("check-zh-manifest.py")
         spec = importlib.util.spec_from_file_location("check_zh_manifest", module_path)
         _MANIFEST_MODULE = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(_MANIFEST_MODULE)
-    return _MANIFEST_MODULE.manifest_paths(path)
+    return _MANIFEST_MODULE.consumer_paths(root)
+
+
+def manifest_paths(root):
+    """消费者闭包并集（旧称 manifest），作为状态工具处理的路径宇宙。"""
+    consumers, problems = consumer_paths(root)
+    return sorted({rel for paths in consumers.values() for rel in paths}), problems
 
 
 def strip_tex_comments(text):
@@ -90,7 +96,7 @@ def load_state(root, manifest):
     valid_pairs = {}
     for rel, pair in pairs.items():
         if canonical_path(rel, manifest) is None:
-            problems.append(f"translation state pair path is not in manifest: {rel!r}")
+            problems.append(f"translation state pair path is not in any consumer closure: {rel!r}")
             continue
         if not isinstance(pair, dict) or set(pair) != {"source", "translation"}:
             problems.append(
@@ -184,6 +190,9 @@ def check_state(root=ROOT):
 
 
 def derive_status(root, rel, pair):
+    # 闭包可以包含尚未翻译的条目；这类路径只有英文源，没有可比较的译文。
+    if not (Path(root) / "locale" / "zh" / "content" / rel).is_file():
+        return "untranslated"
     source = file_oid(root, Path("content") / rel)
     translation = file_oid(root, Path("locale/zh/content") / rel)
     if pair is None:
@@ -199,19 +208,30 @@ def derive_status(root, rel, pair):
     return "confirmed"
 
 
-def status_entries(root=ROOT, requested=None):
+def status_entries(root=ROOT, requested=None, consumer=None):
     root = Path(root)
-    manifest, problems = manifest_paths(root)
+    consumers, problems = consumer_paths(root)
+    manifest = sorted({rel for paths in consumers.values() for rel in paths})
     state, state_problems = load_state(root, manifest)
     problems.extend(state_problems)
     problems.extend(check_blob_objects(root, state))
+    if consumer is not None and consumer not in consumers:
+        available = ", ".join(sorted(consumers)) or "（无）"
+        problems.append(f"unknown consumer {consumer!r}; available: {available}")
+        consumer_paths_filter = set()
+    elif consumer is None:
+        consumer_paths_filter = set(manifest)
+    else:
+        consumer_paths_filter = set(consumers[consumer])
     if requested is None:
-        paths = manifest
+        paths = [rel for rel in manifest if rel in consumer_paths_filter]
     else:
         paths = []
         for rel in requested:
             if canonical_path(rel, manifest) is None:
-                problems.append(f"path is not a manifest .tex path: {rel!r}")
+                problems.append(f"path is not in any consumer closure: {rel!r}")
+            elif rel not in consumer_paths_filter:
+                problems.append(f"path is not in consumer {consumer!r}: {rel!r}")
             elif rel not in paths:
                 paths.append(rel)
     entries = []
@@ -279,7 +299,7 @@ def brief(root, rel):
     root = Path(root)
     manifest, problems = manifest_paths(root)
     if canonical_path(rel, manifest) is None:
-        problems.append(f"path is not a manifest .tex path: {rel!r}")
+        problems.append(f"path is not in any consumer closure: {rel!r}")
         return "", problems
     state, state_problems = load_state(root, manifest)
     problems.extend(state_problems)
@@ -289,9 +309,10 @@ def brief(root, rel):
     translation_path = root / "locale" / "zh" / "content" / rel
     try:
         current_source = source_path.read_text(encoding="utf-8")
-        translation_path.read_text(encoding="utf-8")
+        if translation_path.is_file():
+            translation_path.read_text(encoding="utf-8")
     except (OSError, UnicodeError) as exc:
-        return "", [f"cannot read translation pair {rel!r}: {exc}"]
+        return "", [f"cannot read source or translation {rel!r}: {exc}"]
     pair = state["pairs"].get(rel)
     try:
         status_name = derive_status(root, rel, pair)
@@ -305,7 +326,12 @@ def brief(root, rel):
         "",
         "英文变化:",
     ]
-    if pair is None:
+    if status_name == "untranslated":
+        lines.append(
+            "[新译；尚无译文与确认基线，请读取上述 EN 文件并创建 ZH 文件]"
+        )
+        term_source = strip_tex_comments(current_source)
+    elif pair is None:
         lines.append(
             "[unconfirmed；没有确认基线，未生成增量 diff；请直接读取上述 EN/ZH 文件]"
         )
@@ -349,7 +375,6 @@ def brief(root, rel):
         [
             "",
             "门禁:",
-            "- make check-zh-static",
             f"- python3 scripts/translation-state.py confirm --write {rel}",
             "- make check-zh",
         ]
@@ -388,7 +413,9 @@ def confirm_paths(root, requested, write=False, run_static=True):
     manifest, problems = manifest_paths(root)
     for rel in requested:
         if canonical_path(rel, manifest) is None:
-            problems.append(f"path is not a manifest .tex path: {rel!r}")
+            problems.append(f"path is not in any consumer closure: {rel!r}")
+        elif not (root / "locale" / "zh" / "content" / rel).is_file():
+            problems.append(f"no translation yet: locale/zh/content/{rel}")
     if problems:
         return problems, []
     state, state_problems = load_state(root, manifest)
@@ -420,7 +447,8 @@ def parser():
     subparsers = command.add_subparsers(dest="command", required=True)
 
     status_parser = subparsers.add_parser("status", help="显示译文确认状态")
-    status_parser.add_argument("rel", nargs="*", help="manifest 中的相对 .tex 路径")
+    status_parser.add_argument("rel", nargs="*", help="consumer 闭包中的相对 .tex 路径")
+    status_parser.add_argument("--consumer", help="只显示指定 consumer 闭包")
     status_parser.add_argument("--json", action="store_true", dest="as_json")
 
     subparsers.add_parser("check", help="校验确认状态和 Git blob")
@@ -430,14 +458,14 @@ def parser():
 
     confirm_parser = subparsers.add_parser("confirm", help="记录审阅后的当前内容")
     confirm_parser.add_argument("--write", action="store_true")
-    confirm_parser.add_argument("rel", nargs="+", help="manifest 中的相对 .tex 路径")
+    confirm_parser.add_argument("rel", nargs="+", help="consumer 闭包中的相对 .tex 路径")
     return command
 
 
 def main(argv=None, root=ROOT):
     args = parser().parse_args(argv)
     if args.command == "status":
-        entries, problems = status_entries(root, args.rel or None)
+        entries, problems = status_entries(root, args.rel or None, args.consumer)
         if problems:
             for problem in problems:
                 print(f"错误: {problem}", file=sys.stderr)

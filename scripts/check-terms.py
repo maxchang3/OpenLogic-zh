@@ -138,13 +138,23 @@ def validate_terms(path=TERMS):
             )
         if "note" in term and not isinstance(term["note"], str):
             problems.append(f"terms[{i}]: note not string")
+    context = doc.get("context")
+    if not isinstance(context, dict):
+        problems.append('terms.json: "context" missing or not object')
+        modules = set()
+    else:
+        modules = set(context)
+        for module, description in context.items():
+            if not isinstance(module, str) or not module.strip():
+                problems.append("terms.json: context module name must be a non-empty string")
+            if not isinstance(description, str) or not description.strip():
+                problems.append(
+                    f"terms.json: context description for {module!r} must be a non-empty string"
+                )
     for module in {
         term.get("module") for term in valid_terms if isinstance(term.get("module"), str)
-    }:
-        if module not in ("core", "modal-logic"):
-            problems.append(f"unexpected module: {module!r}")
-    if not isinstance(doc.get("context"), dict):
-        problems.append('terms.json: "context" missing or not object')
+    } - modules:
+        problems.append(f"module is not declared in terms.json context: {module!r}")
     return problems, len(terms)
 
 

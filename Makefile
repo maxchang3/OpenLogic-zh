@@ -19,6 +19,8 @@ check-zh-static:
 	python3 scripts/check-name-refs.py
 	python3 scripts/test_static_checks.py
 	python3 scripts/test_translation_state.py
+	python3 scripts/test_consumer_closure.py
+	python3 .github/scripts/test_plan_dispatch.py
 
 check-zh: check-zh-static
 	python3 scripts/translation-state.py check

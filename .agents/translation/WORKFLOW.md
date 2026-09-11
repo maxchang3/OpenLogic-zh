@@ -4,7 +4,7 @@
 
 每个文件由一个 worker 负责；批次控制在 3–5 个。worker 开始前读 `README.md`、`POLICY.md`、`terminology/terms.json`（按需用 jq 过滤 `module`），再读 `content/<相对路径>`，把完整译文写入 `locale/zh/content/<同路径>`。
 
-译文工作按 `status` → `brief` → 编辑/审查 → `make check-zh-static` → `confirm --write` → `make check-zh` 流转。`translation-state.py` 的用法见 `--help`；`confirm` 是人工或审查主体确认后的记录动作，只写入当前英文和中文的 Git blob，不自动验证翻译语义。
+先用 `python3 scripts/translation-state.py status --consumer <名称>` 选取待办，再对每个文件运行 `brief`。未译文件的 brief 给出英文位置、目标译文位置、整篇命中术语和门禁；已有确认基线的文件只列英文增量。完成翻译和审查后运行 `confirm --write`，最后按批次运行 `make check-zh`。`confirm` 内部执行静态门禁，只记录通过门禁的当前英文和中文 Git blob，不自动判断翻译语义。
 
 worker 遵守 `POLICY.md` 的 TeX 不变量；返回空值视为失败，必须检查目标文件真实存在且不是未经翻译的英文副本，不能只依据返回消息判断成功。
 
@@ -12,7 +12,7 @@ worker 遵守 `POLICY.md` 的 TeX 不变量；返回空值视为失败，必须�
 
 未覆盖术语先查通行译法并在交付报告登记；协调者把尚未确认的项目写入 `pending.md`，不要直接在多个 worker 中采用互相冲突的译法。确认后的术语必须回填 `terminology/terms.json`，并检查可执行 locale 映射是否一致。术语定案或修改后，立即检索并同步替换全部译文中的旧译名。
 
-每批完成后先在 `OpenLogic-Zh/` 运行 `make check-zh`，执行快速、无 TeX 的静态门禁（译文范围、路径与 `\olfileid`、术语和令牌映射、人名及人名指代）；然后在兄弟仓库 `boxes-and-diamonds-zh/` 至少运行一次 `make check`。失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数。用 `pdftotext` 抽查目录、章节标题和关键术语，并用 `git diff --check` 检查空白。任何批量修改后都必须重跑 `make check-zh`，令牌校验须通过。
+每批完成后在 `OpenLogic-Zh/` 运行 `make check-zh`，检查译文范围、路径与 `\olfileid`、术语和令牌映射、人名及人名指代。失败时优先检查花括号、数学模式、`!!{token}` 键、`\tagitem` 嵌套和 `\olfileid[zh]` 参数；任何批量修改后都要重跑本门禁，并用 `git diff --check` 检查空白。
 
 审计与修复 worker 的要求：
 - 明确保留 `!!{...}`、token 键、普通词与 token 的边界；每处修改保持最小 diff；
@@ -25,6 +25,6 @@ worker 遵守 `POLICY.md` 的 TeX 不变量；返回空值视为失败，必须�
 
 ## 构建与视觉验收
 
-OpenLogic-Zh 自身的 `make`/`make all` 仍构建上游英文文档；中文排版验证由 B&D 组装器完成。同步上游前先检查差异，只合并必要提交，不改写上游源文件或远程配置。
+OpenLogic-Zh 自身的 `make`/`make all` 仍构建上游英文文档。正文批次形成完整章节后，在受影响的组装仓库做中文试编译、`pdftotext` 抽查和必要的页面渲染；SLC 整书未齐时运行 `make zh-chapter`。共享章节要验证所有消费它的书，共享 TeX 改动要回归两书；整书中文目标仍不允许英文回退。
 
 视觉排版问题先渲染目标 PDF 页面为 PNG（`pdftoppm -png -r 150 file.pdf out`，图片放在工作区内）。视觉核验只作辅助，不能代替实际 XeLaTeX 构建与文本检查；字符间空隙可能受字形视觉重心影响，精确间距以 `\hbox` 宽度测量（`\the\wd0`）和实际构建为准。中文与数学/英文之间的 `~` 和普通空格会被 xeCJK 吸收，不要为对齐盲目补空格。

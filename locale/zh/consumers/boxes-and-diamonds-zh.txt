@@ -1,4 +1,9 @@
-# 条目是相对于 locale/zh/content/ 的路径。
+# boxes-and-diamonds-zh 的完整正文导入闭包；路径相对 content/。
+# 由 LaTeX recorder 输出生成；译文完整性由组装仓库判定。
+# driver: zh-bd-screen.tex
+# tag-config: bd-config.sty
+# consumer-revision: 635e71d317826342e4450a67ff590fabf844891b
+# openlogic-revision: e695a387774800f087652d75c7dee9f8031f3dfc
 applied-modal-logic/applied-modal-logic.tex
 applied-modal-logic/epistemic-logic/bisimulations.tex
 applied-modal-logic/epistemic-logic/epistemic-logic.tex

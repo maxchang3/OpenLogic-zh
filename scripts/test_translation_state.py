@@ -43,7 +43,8 @@ class TemporaryTranslationRepository:
         (self.root / "locale" / "zh" / "content" / "one.tex").write_text(
             "阿尔法出现。\n", encoding="utf-8"
         )
-        (self.root / "locale" / "zh" / "manifest.txt").write_text(
+        (self.root / "locale" / "zh" / "consumers").mkdir()
+        (self.root / "locale" / "zh" / "consumers" / "test-zh.txt").write_text(
             "one.tex\n", encoding="utf-8"
         )
         (self.root / ".agents" / "translation" / "state.json").write_text(
@@ -58,6 +59,7 @@ class TemporaryTranslationRepository:
         ).write_text(
             json.dumps(
                 {
+                    "context": {"core": "shared terms"},
                     "terms": [
                         {"en": "alpha", "zh": "阿尔法", "module": "core"},
                         {"en": "beta", "zh": "贝塔", "module": "core"},
@@ -99,7 +101,7 @@ class TemporaryTranslationRepository:
 
 
 class TranslationStateChecks(unittest.TestCase):
-    def test_empty_state_covers_every_manifest_entry(self):
+    def test_empty_state_covers_every_closure_entry(self):
         fixture = TemporaryTranslationRepository()
         self.addCleanup(fixture.close)
         (fixture.root / "content" / "two.tex").write_text(
@@ -108,7 +110,7 @@ class TranslationStateChecks(unittest.TestCase):
         (fixture.root / "locale" / "zh" / "content" / "two.tex").write_text(
             "第二个\n", encoding="utf-8"
         )
-        (fixture.root / "locale" / "zh" / "manifest.txt").write_text(
+        (fixture.root / "locale" / "zh" / "consumers" / "test-zh.txt").write_text(
             "one.tex\ntwo.tex\n", encoding="utf-8"
         )
         entries, problems = state.status_entries(fixture.root)
@@ -117,6 +119,52 @@ class TranslationStateChecks(unittest.TestCase):
             {entry["path"] for entry in entries}, {"one.tex", "two.tex"}
         )
         self.assertEqual({entry["status"] for entry in entries}, {"unconfirmed"})
+
+    def test_untranslated_closure_entry_is_reported(self):
+        fixture = TemporaryTranslationRepository()
+        self.addCleanup(fixture.close)
+        (fixture.root / "content" / "planned.tex").write_text(
+            "planned\n", encoding="utf-8"
+        )
+        (fixture.root / "locale" / "zh" / "consumers" / "test-zh.txt").write_text(
+            "one.tex\nplanned.tex\n", encoding="utf-8"
+        )
+        statuses = fixture.statuses()
+        self.assertEqual(statuses["planned.tex"], "untranslated")
+        self.assertEqual(statuses["one.tex"], "unconfirmed")
+
+    def test_status_can_filter_by_consumer(self):
+        fixture = TemporaryTranslationRepository()
+        self.addCleanup(fixture.close)
+        (fixture.root / "content" / "two.tex").write_text("second\n", encoding="utf-8")
+        (fixture.root / "locale" / "zh" / "consumers" / "other-zh.txt").write_text(
+            "two.tex\n", encoding="utf-8"
+        )
+        entries, problems = state.status_entries(
+            fixture.root, consumer="test-zh"
+        )
+        self.assertEqual(problems, [])
+        self.assertEqual([entry["path"] for entry in entries], ["one.tex"])
+
+        _, problems = state.status_entries(fixture.root, consumer="missing-zh")
+        self.assertTrue(any("unknown consumer" in problem for problem in problems))
+
+    def test_brief_supports_untranslated_file(self):
+        fixture = TemporaryTranslationRepository()
+        self.addCleanup(fixture.close)
+        (fixture.root / "content" / "planned.tex").write_text(
+            "beta is planned.\n", encoding="utf-8"
+        )
+        (fixture.root / "locale" / "zh" / "consumers" / "test-zh.txt").write_text(
+            "one.tex\nplanned.tex\n", encoding="utf-8"
+        )
+        output, problems = state.brief(fixture.root, "planned.tex")
+        self.assertEqual(problems, [])
+        self.assertIn("状态: untranslated", output)
+        self.assertIn("EN: content/planned.tex", output)
+        self.assertIn("ZH: locale/zh/content/planned.tex", output)
+        self.assertIn("beta → 贝塔", output)
+        self.assertNotIn("make check-zh-static", output)
 
     def test_confirm_records_blobs_and_derives_all_change_states(self):
         fixture = TemporaryTranslationRepository()
@@ -156,7 +204,7 @@ class TranslationStateChecks(unittest.TestCase):
             json.dumps(document) + "\n", encoding="utf-8"
         )
         problems = state.check_state(fixture.root)
-        self.assertTrue(any("not in manifest" in problem for problem in problems))
+        self.assertTrue(any("not in any consumer closure" in problem for problem in problems))
 
         document = {
             "schema": 1,

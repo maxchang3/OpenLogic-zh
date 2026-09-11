@@ -37,36 +37,40 @@ class ManifestChecks(unittest.TestCase):
         locale_content.mkdir(parents=True)
         (content / "one.tex").write_text("source\n", encoding="utf-8")
         (locale_content / "one.tex").write_text("translation\n", encoding="utf-8")
-        (self.root / "locale" / "zh" / "manifest.txt").write_text(
+        (self.root / "locale" / "zh" / "consumers").mkdir()
+        (self.root / "locale" / "zh" / "consumers" / "sample-zh.txt").write_text(
             "# path list\none.tex\n", encoding="utf-8"
         )
 
     def tearDown(self):
         self.temp.cleanup()
 
-    def test_scope_reports_unlisted_and_missing_source_paths(self):
+    def test_scope_reports_unlisted_locale_files(self):
         extra = self.root / "locale" / "zh" / "content" / "extra.tex"
         extra.write_text("extra\n", encoding="utf-8")
         problems, _ = manifest_checks.validate(self.root)
         report = "\n".join(problems)
-        self.assertIn("not listed in manifest", report)
-        self.assertIn("without an English counterpart", report)
+        self.assertIn("not listed in any consumer closure", report)
 
-        extra.unlink()
-        (self.root / "locale" / "zh" / "manifest.txt").write_text(
-            "# path list\nmissing.tex\none.tex\n", encoding="utf-8"
-        )
+    def test_consumer_list_reports_paths_without_source(self):
+        consumer = self.root / "locale" / "zh" / "consumers" / "sample-zh.txt"
+        consumer.write_text("# path list\nmissing.tex\none.tex\n", encoding="utf-8")
         problems, _ = manifest_checks.validate(self.root)
         report = "\n".join(problems)
-        self.assertIn("manifest entries missing", report)
-        self.assertIn("without an English counterpart", report)
+        self.assertIn("no English counterpart in content/: missing.tex", report)
 
-    def test_manifest_rejects_noncanonical_paths(self):
-        manifest = self.root / "locale" / "zh" / "manifest.txt"
-        manifest.write_text(
-            "# path list\na//b.tex\na/./b.tex\n", encoding="utf-8"
-        )
-        paths, problems = manifest_checks.manifest_paths(manifest)
+    def test_untranslated_closure_entries_are_allowed(self):
+        (self.root / "content" / "planned.tex").write_text("source\n", encoding="utf-8")
+        consumer = self.root / "locale" / "zh" / "consumers" / "sample-zh.txt"
+        consumer.write_text("# path list\none.tex\nplanned.tex\n", encoding="utf-8")
+        problems, consumers = manifest_checks.validate(self.root)
+        self.assertEqual(problems, [])
+        self.assertEqual(consumers["sample-zh"], ["one.tex", "planned.tex"])
+
+    def test_consumer_list_rejects_noncanonical_paths(self):
+        consumer = self.root / "locale" / "zh" / "consumers" / "sample-zh.txt"
+        consumer.write_text("# path list\na//b.tex\na/./b.tex\n", encoding="utf-8")
+        paths, problems = manifest_checks.read_consumer_list(consumer)
         self.assertEqual(paths, [])
         report = "\n".join(problems)
         self.assertIn("a//b.tex", report)
@@ -122,6 +126,31 @@ class TokenChecks(unittest.TestCase):
             index.write_text("{}", encoding="utf-8")
             index_problems, _ = term_checks.validate_index(index)
             self.assertIn('"entries" missing', index_problems[0])
+
+    def test_term_modules_are_declared_by_context(self):
+        with tempfile.TemporaryDirectory() as directory:
+            terms = Path(directory) / "terms.json"
+            document = {
+                "context": {
+                    "core": "shared terms",
+                    "computability": "computability terms",
+                },
+                "terms": [
+                    {
+                        "en": "Turing machine",
+                        "zh": "图灵机",
+                        "module": "computability",
+                    }
+                ],
+            }
+            terms.write_text(json.dumps(document), encoding="utf-8")
+            problems, _ = term_checks.validate_terms(terms)
+            self.assertEqual(problems, [])
+
+            document["terms"][0]["module"] = "set-theory"
+            terms.write_text(json.dumps(document), encoding="utf-8")
+            problems, _ = term_checks.validate_terms(terms)
+            self.assertTrue(any("not declared" in problem for problem in problems))
 
     def test_index_allows_empty_english_and_checks_line_type(self):
         with tempfile.TemporaryDirectory() as directory:
