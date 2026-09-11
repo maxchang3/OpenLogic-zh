@@ -48,7 +48,7 @@ jobs:
       - name: Dispatch to boxes-and-diamonds-zh
         if: steps.plan.outputs.bd == 'true'
         env:
-          DISPATCH_TOKEN: ${{ secrets.BD_DISPATCH_TOKEN }}
+          DISPATCH_TOKEN: ${{ secrets.ASSEMBLY_DISPATCH_TOKEN || secrets.BD_DISPATCH_TOKEN }}
         run: |
           # -f 让 HTTP 错误直接失败，避免静默漏派发。
           curl -fsS -X POST \
@@ -60,7 +60,7 @@ jobs:
       - name: Dispatch to sets-logic-computation-zh
         if: steps.plan.outputs.slc == 'true'
         env:
-          DISPATCH_TOKEN: ${{ secrets.BD_DISPATCH_TOKEN }}
+          DISPATCH_TOKEN: ${{ secrets.ASSEMBLY_DISPATCH_TOKEN || secrets.BD_DISPATCH_TOKEN }}
         run: |
           curl -fsS -X POST \
             -H "Authorization: Bearer $DISPATCH_TOKEN" \
